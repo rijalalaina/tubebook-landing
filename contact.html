@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact Us — TubeBook</title>
+<meta name="description" content="Get in touch with the TubeBook team for support, billing or privacy questions." />
+<link rel="canonical" href="https://tubebook.org/contact" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #08090d; --bg2: #0f1118; --bg3: #14171f; --card: #131620;
+  --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
+  --amber: #f0a832; --amber2: #fcc45a; --amber-dim: rgba(240,168,50,0.12);
+  --red: #ff3b3b; --red-dim: rgba(255,59,59,0.12);
+  --text: #f0eee8; --muted: #7b7d8a; --muted2: #a0a3b1;
+  --radius: 14px; --radius-lg: 20px;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+a { color: var(--amber); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--amber2); }
+nav {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 4rem;
+  background: rgba(8,9,13,0.85); backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; font-size: 1.2rem; font-weight: 700; color: var(--text); text-decoration: none; }
+.logo-icon { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, var(--red) 0%, #b72a2a 100%); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0; }
+.logo-text span { color: var(--amber); }
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-links a { color: var(--muted2); font-size: 0.875rem; text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--amber); }
+.nav-cta { background: var(--amber); color: #1a1200; font-size: 0.85rem; font-weight: 600; padding: 0.5rem 1.2rem; border-radius: 8px; text-decoration: none; transition: background 0.2s; }
+.nav-cta:hover { background: var(--amber2); color: #1a1200; }
+.page-wrap { max-width: 760px; margin: 0 auto; padding: 0 2rem 6rem; }
+.page-header { padding: 4rem 0 2.5rem; border-bottom: 1px solid var(--border); margin-bottom: 3rem; position: relative; }
+.page-header::before { content: ''; position: absolute; top: 0; right: 0; width: 320px; height: 200px; background: radial-gradient(ellipse, rgba(240,168,50,0.06) 0%, transparent 70%); pointer-events: none; }
+.breadcrumb { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; display: flex; align-items: center; gap: 6px; }
+.breadcrumb a { color: var(--muted); }
+.breadcrumb a:hover { color: var(--amber); }
+.breadcrumb span { opacity: 0.5; }
+h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 900; line-height: 1.15; letter-spacing: -0.02em; color: var(--text); }
+.page-lead { font-size: 1.05rem; color: var(--muted2); margin-top: 0.8rem; max-width: 520px; line-height: 1.7; }
+h2 { font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 700; color: var(--text); margin: 3rem 0 1rem; letter-spacing: -0.01em; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+h3 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin: 1.2rem 0 0.4rem; }
+p { color: var(--muted2); line-height: 1.75; margin-bottom: 0.8rem; }
+strong { color: var(--text); font-weight: 600; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.8rem; margin: 1rem 0; position: relative; overflow: hidden; }
+.card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(240,168,50,0.2), transparent); }
+
+/* CONTACT CHANNELS GRID */
+.channels { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0 2.5rem; }
+@media (max-width: 540px) { .channels { grid-template-columns: 1fr; } }
+.channel { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem 1.6rem; transition: border-color 0.2s; }
+.channel:hover { border-color: var(--border2); }
+.channel-icon { font-size: 1.4rem; margin-bottom: 0.8rem; display: block; }
+.channel h3 { margin: 0 0 0.3rem; font-size: 0.9rem; }
+.channel p { margin: 0; font-size: 0.84rem; color: var(--muted); }
+
+/* FORM */
+.form-group { margin-bottom: 1.2rem; }
+label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--muted2); margin-bottom: 0.4rem; }
+input, textarea, select {
+  width: 100%; background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 10px; padding: 0.7rem 1rem;
+  color: var(--text); font-family: 'Outfit', sans-serif; font-size: 0.95rem;
+  outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: rgba(240,168,50,0.4);
+  box-shadow: 0 0 0 3px rgba(240,168,50,0.08);
+}
+textarea { min-height: 140px; resize: vertical; line-height: 1.6; }
+select option { background: var(--bg3); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 540px) { .form-row { grid-template-columns: 1fr; } }
+.btn-submit {
+  background: var(--amber); color: #1a1200; font-size: 0.95rem; font-weight: 700;
+  padding: 0.8rem 2rem; border-radius: 10px; border: none; cursor: pointer;
+  font-family: 'Outfit', sans-serif; transition: background 0.2s, transform 0.15s;
+  display: flex; align-items: center; gap: 8px;
+}
+.btn-submit:hover { background: var(--amber2); transform: translateY(-1px); }
+
+/* QUICK HELP */
+.quick-links { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1rem; }
+.quick-link { display: flex; align-items: center; gap: 10px; padding: 0.8rem 1rem; background: var(--bg3); border: 1px solid var(--border); border-radius: 10px; font-size: 0.88rem; color: var(--muted2); text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+.quick-link:hover { border-color: rgba(240,168,50,0.3); color: var(--amber); }
+.quick-link-arrow { margin-left: auto; color: var(--amber); opacity: 0.6; }
+
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2.5rem 4rem; }
+.footer-inner { max-width: 760px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.footer-brand { font-size: 0.82rem; color: var(--muted); }
+.footer-brand a { color: var(--amber); }
+.footer-links { display: flex; gap: 1.8rem; flex-wrap: wrap; }
+.footer-links a { font-size: 0.82rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text); }
+@media (max-width: 760px) {
+  nav { padding: 0.9rem 1.2rem; }
+  .nav-links { display: none; }
+  .page-wrap { padding: 0 1.2rem 4rem; }
+  footer { padding: 2rem 1.2rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="logo-icon">T</div>
+    <div class="logo-text">Tube<span>Book</span></div>
+  </a>
+  <div class="nav-links">
+    <a href="/help">Help</a>
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+    <a href="/contact" class="active">Contact</a>
+  </div>
+  <a href="https://app.tubebook.org/signup" class="nav-cta">Start free →</a>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/">Home</a><span>/</span>Contact</div>
+    <h1>Contact Us</h1>
+    <p class="page-lead">Questions, feedback or a bug to report? We typically reply within 1 business day.</p>
+  </div>
+
+  <div class="channels">
+    <div class="channel">
+      <span class="channel-icon">✉</span>
+      <h3>Email support</h3>
+      <p><a href="mailto:support@tubebook.org">support@tubebook.org</a></p>
+    </div>
+    <div class="channel">
+      <span class="channel-icon">⏱</span>
+      <h3>Response time</h3>
+      <p>Within 1 business day, Mon–Fri</p>
+    </div>
+    <div class="channel">
+      <span class="channel-icon">💳</span>
+      <h3>Billing &amp; subscriptions</h3>
+      <p>Use the subject "Billing" for fastest routing</p>
+    </div>
+    <div class="channel">
+      <span class="channel-icon">🔒</span>
+      <h3>Privacy &amp; data requests</h3>
+      <p>GDPR requests handled within 30 days</p>
+    </div>
+  </div>
+
+  <h2>Send us a message</h2>
+
+  <form action="mailto:support@tubebook.org" method="post" enctype="text/plain" style="margin-top: 1.4rem;">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Your name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="topic">Topic</label>
+      <select id="topic" name="topic">
+        <option value="">Select a topic...</option>
+        <option value="support">Technical support</option>
+        <option value="billing">Billing &amp; subscription</option>
+        <option value="privacy">Privacy &amp; data request</option>
+        <option value="feedback">Feature feedback</option>
+        <option value="bug">Bug report</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="subject">Subject</label>
+      <input id="subject" name="subject" type="text" placeholder="Brief description of your issue" required />
+    </div>
+
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Describe your issue or question in as much detail as helpful..." required></textarea>
+    </div>
+
+    <button type="submit" class="btn-submit">Send message →</button>
+  </form>
+
+  <h2 style="margin-top: 3.5rem;">Before you write</h2>
+  <p>You may find a quicker answer in our documentation:</p>
+  <div class="quick-links">
+    <a href="/help#quick-start" class="quick-link">
+      <span>🚀</span> Quick start guide
+      <span class="quick-link-arrow">→</span>
+    </a>
+    <a href="/help#faq" class="quick-link">
+      <span>❓</span> Frequently asked questions
+      <span class="quick-link-arrow">→</span>
+    </a>
+    <a href="/help#retention" class="quick-link">
+      <span>🗂</span> File retention policy
+      <span class="quick-link-arrow">→</span>
+    </a>
+    <a href="/pricing" class="quick-link">
+      <span>💎</span> Plan comparison &amp; pricing
+      <span class="quick-link-arrow">→</span>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">© 2026 TubeBook · <a href="https://tubebook.org">tubebook.org</a></div>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/help">Help</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

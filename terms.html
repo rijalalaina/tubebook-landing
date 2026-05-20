@@ -3,81 +3,107 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Terms and Conditions — TubeBook</title>
-<meta name="description" content="Terms of service for using TubeBook to generate ebooks from YouTube videos." />
+<title>Terms &amp; Conditions — TubeBook</title>
+<meta name="description" content="The terms governing your use of TubeBook, including subscriptions, credits, acceptable use, and content ownership." />
 <link rel="canonical" href="https://tubebook.org/terms" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <style>
+/* ─── TUBEBOOK INNER PAGE — SHARED CSS ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
   --bg: #08090d; --bg2: #0f1118; --bg3: #14171f; --card: #131620;
   --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
   --amber: #f0a832; --amber2: #fcc45a; --amber-dim: rgba(240,168,50,0.12);
   --red: #ff3b3b; --red-dim: rgba(255,59,59,0.12);
+  --green: #2ecc71; --green-dim: rgba(46,204,113,0.11);
   --text: #f0eee8; --muted: #7b7d8a; --muted2: #a0a3b1;
   --radius: 14px; --radius-lg: 20px;
 }
 html { scroll-behavior: smooth; }
-body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; overflow-x: hidden; }
 a { color: var(--amber); text-decoration: none; transition: color 0.2s; }
-a:hover { color: var(--amber2); }
-nav {
-  position: sticky; top: 0; z-index: 100;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 1rem 4rem;
-  background: rgba(8,9,13,0.85); backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--border);
-}
+a:hover { color: var(--amber2); text-decoration: underline; }
+strong { color: var(--text); font-weight: 600; }
+code, kbd { background: var(--bg3); border: 1px solid var(--border); padding: 2px 7px; border-radius: 5px; font-size: .85em; font-family: 'DM Mono', 'Fira Code', monospace; color: var(--amber2); }
+
+/* NAV */
+nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 4rem; background: rgba(8,9,13,0.88); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); }
 .nav-logo { display: flex; align-items: center; gap: 10px; font-size: 1.2rem; font-weight: 700; color: var(--text); text-decoration: none; }
+.nav-logo:hover { text-decoration: none; }
 .logo-icon { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, var(--red) 0%, #b72a2a 100%); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0; }
 .logo-text span { color: var(--amber); }
 .nav-links { display: flex; align-items: center; gap: 2rem; }
 .nav-links a { color: var(--muted2); font-size: 0.875rem; text-decoration: none; transition: color 0.2s; }
-.nav-links a:hover, .nav-links a.active { color: var(--amber); }
-.nav-cta { background: var(--amber); color: #1a1200; font-size: 0.85rem; font-weight: 600; padding: 0.5rem 1.2rem; border-radius: 8px; text-decoration: none; transition: background 0.2s; }
-.nav-cta:hover { background: var(--amber2); color: #1a1200; }
-.page-wrap { max-width: 760px; margin: 0 auto; padding: 0 2rem 6rem; }
-.page-header { padding: 4rem 0 2.5rem; border-bottom: 1px solid var(--border); margin-bottom: 3rem; position: relative; }
-.page-header::before { content: ''; position: absolute; top: 0; right: 0; width: 320px; height: 200px; background: radial-gradient(ellipse, rgba(240,168,50,0.05) 0%, transparent 70%); pointer-events: none; }
+.nav-links a:hover, .nav-links a.active { color: var(--amber); text-decoration: none; }
+.nav-cta { background: var(--amber); color: #1a1200 !important; font-size: 0.85rem; font-weight: 600; padding: 0.5rem 1.2rem; border-radius: 8px; text-decoration: none !important; transition: background 0.2s; }
+.nav-cta:hover { background: var(--amber2); }
+
+/* LAYOUT */
+.page-wrap { max-width: 860px; margin: 0 auto; padding: 0 2rem 6rem; }
+.page-header { padding: 4rem 0 2.5rem; border-bottom: 1px solid var(--border); margin-bottom: 3rem; position: relative; overflow: hidden; }
+.page-header::after { content: ''; position: absolute; top: 0; right: -40px; width: 340px; height: 220px; background: radial-gradient(ellipse, rgba(240,168,50,0.06) 0%, transparent 70%); pointer-events: none; }
 .breadcrumb { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; display: flex; align-items: center; gap: 6px; }
-.breadcrumb a { color: var(--muted); }
+.breadcrumb a { color: var(--muted); text-decoration: none; }
 .breadcrumb a:hover { color: var(--amber); }
-.breadcrumb span { opacity: 0.5; }
+.breadcrumb span { opacity: 0.4; }
 h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 900; line-height: 1.15; letter-spacing: -0.02em; color: var(--text); }
-.page-lead { font-size: 1.05rem; color: var(--muted2); margin-top: 0.8rem; max-width: 560px; line-height: 1.7; }
-.meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.6rem; }
-h2 { font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 700; color: var(--text); margin: 3rem 0 1rem; letter-spacing: -0.01em; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
-.section-num { font-family: 'Outfit', sans-serif; font-size: 0.72rem; font-weight: 600; color: var(--amber); background: var(--amber-dim); border: 1px solid rgba(240,168,50,0.2); padding: 0.15rem 0.55rem; border-radius: 100px; letter-spacing: 0.05em; flex-shrink: 0; }
-h3 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin: 1.4rem 0 0.4rem; }
+.page-lead { font-size: 1.05rem; color: var(--muted2); margin-top: 0.8rem; max-width: 580px; line-height: 1.7; }
+.page-meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.6rem; }
+
+/* TYPOGRAPHY */
+h2 { font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 700; color: var(--text); margin: 3rem 0 1rem; letter-spacing: -0.01em; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+.sec-num { font-family: 'Outfit', sans-serif; font-size: 0.7rem; font-weight: 600; color: var(--amber); background: var(--amber-dim); border: 1px solid rgba(240,168,50,0.22); padding: 0.15rem 0.55rem; border-radius: 100px; letter-spacing: 0.05em; flex-shrink: 0; }
+h3 { font-size: 0.97rem; font-weight: 600; color: var(--text); margin: 1.5rem 0 0.5rem; }
 p { color: var(--muted2); line-height: 1.75; margin-bottom: 0.8rem; }
 ul, ol { color: var(--muted2); padding-left: 1.4rem; line-height: 1.75; }
-li { margin-bottom: 0.5rem; }
-strong { color: var(--text); font-weight: 600; }
-.card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.8rem; margin: 1rem 0; position: relative; overflow: hidden; }
+li { margin-bottom: 0.45rem; }
+
+/* CARDS */
+.card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.6rem 1.8rem; margin: 1rem 0; position: relative; overflow: hidden; }
 .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(240,168,50,0.18), transparent); }
-.toc { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem 1.8rem; margin-bottom: 2.5rem; }
-.toc-title { font-size: 0.75rem; font-weight: 600; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.8rem; }
-.toc ol { padding-left: 1.2rem; }
-.toc li { margin-bottom: 0.3rem; }
-.toc a { font-size: 0.88rem; color: var(--muted2); }
-.toc a:hover { color: var(--amber); }
-.warn-card { background: rgba(255,59,59,0.06); border: 1px solid rgba(255,59,59,0.2); border-radius: var(--radius); padding: 1.2rem 1.5rem; margin: 1rem 0; }
-.warn-card p { color: var(--muted2); margin: 0; font-size: 0.9rem; }
+
+/* TOC */
+.toc-box { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem 1.8rem; margin-bottom: 2.5rem; }
+.toc-box-title { font-size: 0.72rem; font-weight: 600; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.8rem; }
+.toc-box ol { padding-left: 1.2rem; }
+.toc-box li { margin-bottom: 0.3rem; }
+.toc-box a { font-size: 0.88rem; color: var(--muted2); text-decoration: none; }
+.toc-box a:hover { color: var(--amber); }
+
+/* TABLES */
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+th { text-align: left; padding: 0.7rem 0.9rem; font-size: 0.75rem; font-weight: 600; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1px solid var(--border2); }
+td { padding: 0.7rem 0.9rem; color: var(--muted2); border-bottom: 1px solid var(--border); }
+tr:last-child td { border-bottom: none; }
+td strong { color: var(--text); }
+
+/* PILLS */
+.pill { display: inline-block; background: var(--amber-dim); border: 1px solid rgba(240,168,50,0.25); color: var(--amber2); font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.65rem; border-radius: 100px; letter-spacing: 0.04em; margin-right: 6px; vertical-align: middle; }
+
+/* ALERT BOXES */
+.alert-warn { background: rgba(255,59,59,0.07); border: 1px solid rgba(255,59,59,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: #ff9a9a; }
+.alert-tip { background: var(--green-dim); border: 1px solid rgba(46,204,113,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: #7be8a8; }
+.alert-info { background: var(--amber-dim); border: 1px solid rgba(240,168,50,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: var(--amber2); }
+
+/* FOOTER */
 footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2.5rem 4rem; }
-.footer-inner { max-width: 760px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.footer-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
 .footer-brand { font-size: 0.82rem; color: var(--muted); }
-.footer-brand a { color: var(--amber); }
+.footer-brand a { color: var(--amber); text-decoration: none; }
 .footer-links { display: flex; gap: 1.8rem; flex-wrap: wrap; }
 .footer-links a { font-size: 0.82rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
 .footer-links a:hover { color: var(--text); }
+
 @media (max-width: 760px) {
   nav { padding: 0.9rem 1.2rem; }
   .nav-links { display: none; }
   .page-wrap { padding: 0 1.2rem 4rem; }
   footer { padding: 2rem 1.2rem; }
 }
+.warn-card { background: rgba(255,59,59,0.06); border: 1px solid rgba(255,59,59,0.2); border-radius: var(--radius); padding: 1.2rem 1.5rem; margin: 1rem 0; }
+.warn-card ul, .warn-card p { color: var(--muted2); }
 </style>
 </head>
 <body>
@@ -93,134 +119,114 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <a href="/terms" class="active">Terms</a>
     <a href="/contact">Contact</a>
   </div>
-  <a href="https://app.tubebook.org/signup" class="nav-cta">Start free →</a>
+  <a href="https://tube-book.lovable.app" class="nav-cta">Open app →</a>
 </nav>
 
 <div class="page-wrap">
   <div class="page-header">
-    <div class="breadcrumb"><a href="/">Home</a><span>/</span>Terms and Conditions</div>
-    <h1>Terms and Conditions</h1>
-    <p class="page-lead">By creating an account or using TubeBook, you agree to these Terms. Please read them carefully.</p>
-    <p class="meta">Last updated: May 12, 2026</p>
+    <div class="breadcrumb"><a href="/">Home</a><span>/</span>Terms &amp; Conditions</div>
+    <h1>Terms &amp; Conditions</h1>
+    <p class="page-lead">By creating an account or using the Service, you agree to these Terms. If you do not agree, do not use the Service.</p>
+    <p class="page-meta">Last updated: May 20, 2026</p>
   </div>
 
-  <div class="toc">
-    <div class="toc-title">Contents</div>
+  <div class="toc-box">
+    <div class="toc-box-title">Contents</div>
     <ol>
-      <li><a href="#s1">Service</a></li>
-      <li><a href="#s2">Account</a></li>
-      <li><a href="#s3">Plans and billing</a></li>
-      <li><a href="#s4">Refunds</a></li>
-      <li><a href="#s5">Intellectual property</a></li>
-      <li><a href="#s6">Fidelity modes and copyright</a></li>
-      <li><a href="#s7">Scope, styles, and refunds</a></li>
-      <li><a href="#s8">Acceptable use</a></li>
-      <li><a href="#s9">AI-generated content</a></li>
-      <li><a href="#s10">Service availability</a></li>
-      <li><a href="#s11">Liability</a></li>
-      <li><a href="#s12">Termination</a></li>
-      <li><a href="#s13">Governing law</a></li>
-      <li><a href="#s14">Changes</a></li>
-      <li><a href="#s15">Contact</a></li>
+      <li><a href="#s1">The Service</a></li>
+      <li><a href="#s2">Accounts</a></li>
+      <li><a href="#s3">Subscriptions, credits &amp; billing</a></li>
+      <li><a href="#s4">Content &amp; ownership</a></li>
+      <li><a href="#s5">Acceptable use</a></li>
+      <li><a href="#s6">Third-party services</a></li>
+      <li><a href="#s7">Disclaimers</a></li>
+      <li><a href="#s8">Limitation of liability</a></li>
+      <li><a href="#s9">Termination</a></li>
+      <li><a href="#s10">Changes</a></li>
+      <li><a href="#s11">Governing law</a></li>
+      <li><a href="#s12">Contact</a></li>
     </ol>
   </div>
 
-  <h2 id="s1"><span class="section-num">01</span>Service</h2>
-  <p>TubeBook is an online tool that converts public YouTube videos into ebooks (PDF, DOCX, EPUB, PPTX) using automated AI processing. The service is provided on an "as-is" and "as-available" basis.</p>
+  <h2 id="s1"><span class="sec-num">01</span>The Service</h2>
+  <p>TubeBook transforms YouTube videos and transcripts into ebooks using AI. Features, pricing, and credit costs may evolve over time.</p>
 
-  <h2 id="s2"><span class="section-num">02</span>Account</h2>
+  <h2 id="s2"><span class="sec-num">02</span>Accounts</h2>
   <ul>
-    <li>You must be at least 18 years old to create an account.</li>
-    <li>You are responsible for keeping your credentials secure and for all activity on your account.</li>
-    <li>One person, one account. Sharing accounts is not permitted.</li>
+    <li>You must be at least 13 years old (16 in the EEA) to create an account.</li>
+    <li>You are responsible for your credentials and all activity under your account.</li>
+    <li>One person or legal entity per account. No account sharing across teams without a plan that expressly allows it.</li>
   </ul>
 
-  <h2 id="s3"><span class="section-num">03</span>Plans and billing</h2>
+  <h2 id="s3"><span class="sec-num">03</span>Subscriptions, credits &amp; billing</h2>
   <div class="card">
     <ul>
-      <li><strong>Free:</strong> limited generations, with a "TubeBook" watermark on outputs.</li>
-      <li><strong>Starter / Pro:</strong> monthly subscriptions billed by Stripe. No watermark, higher quotas, HD cover download.</li>
-      <li>Subscriptions renew automatically until cancelled. You can cancel at any time from the Billing page; access continues until the end of the paid period.</li>
-      <li>Prices are shown in USD. Local taxes (VAT/GST) may apply.</li>
+      <li>The Service operates on a credit system. Each generation deducts credits per the cost shown before you confirm.</li>
+      <li>Subscription credits refresh at the start of each billing cycle and do not roll over.</li>
+      <li>One-time credit packs do not expire while your account remains active.</li>
+      <li>All fees are billed via Stripe in advance and are non-refundable except as required by law or as expressly stated.</li>
+      <li>You can cancel any time; access continues until the end of the current billing period.</li>
+      <li>We may change prices with at least 30 days' notice; existing billing periods are not affected.</li>
     </ul>
   </div>
 
-  <h2 id="s4"><span class="section-num">04</span>Refunds</h2>
-  <p>We offer a 14-day refund on your first paid subscription if you have generated fewer than 3 paid ebooks. Beyond that, monthly fees are non-refundable. Contact <a href="mailto:support@tubebook.org">support@tubebook.org</a>.</p>
-
-  <h2 id="s5"><span class="section-num">05</span>Intellectual property</h2>
+  <h2 id="s4"><span class="sec-num">04</span>Content &amp; ownership</h2>
+  <h3>Your input</h3>
+  <p>You retain all rights to the YouTube URLs and transcripts you submit. You represent that you have the necessary rights to submit and generate derivative works from that content.</p>
+  <h3>Generated output</h3>
+  <p>Subject to your compliance with these Terms and payment of applicable fees, you own the ebooks and assets generated through the Service and may use them commercially. Free-plan exports include a TubeBook watermark; paid plans export without watermark.</p>
+  <h3>Fidelity modes and copyright responsibility</h3>
   <ul>
-    <li><strong>Your content:</strong> you retain full ownership of the ebooks generated from videos you have the right to use. You are responsible for ensuring you have the necessary rights to convert and distribute the source video's content.</li>
-    <li><strong>Free plan:</strong> ebooks include a TubeBook watermark and are intended for personal evaluation only. Commercial use of free-plan outputs is not permitted.</li>
-    <li><strong>Paid plans:</strong> you may use generated ebooks commercially (sell, distribute, give as lead magnets) provided the source content rights allow it.</li>
-    <li><strong>TubeBook IP:</strong> the platform, branding, code, prompts and templates remain our property.</li>
+    <li><strong>High Fidelity</strong> — creates a derivative work closely tracking the source. You must own the video, hold an explicit licence from the rights holder, or be confident the source is in the public domain.</li>
+    <li><strong>Smart Adapt</strong> — rewrites and restructures the source. Generally safer for original publication, but you remain responsible for verifying the output does not reproduce protected expression.</li>
+    <li><strong>Low Fidelity</strong> — uses the video as a thematic seed only and produces substantially original content. Recommended for commercial publishing where you do not own the source. To maximise copyright protection, add your own editorial contributions before publishing.</li>
   </ul>
+  <div class="alert-warn">⚠ In many jurisdictions, purely AI-generated text has limited copyright protection. Your editorial choices, custom instructions, and post-generation edits are what create human authorship. TubeBook makes no warranty that any specific output is registrable as your copyrighted work.</div>
+  <h3>Our IP</h3>
+  <p>The Service, including software, prompts, design, and branding, is owned by TubeBook and its licensors. No rights are granted except as expressly stated.</p>
 
-  <h2 id="s6"><span class="section-num">06</span>Fidelity modes &amp; copyright</h2>
-  <p>TubeBook lets you pick how closely the generated ebook follows the source video. Each mode carries different intellectual-property risk, and that risk is yours to manage.</p>
-  <div class="card">
-    <h3>6.1 — High Fidelity (close adaptation)</h3>
-    <p>Produces a derivative work that closely tracks the source. You must own the video, have an explicit license from the rights holder, or be confident the source is in the public domain.</p>
-    <h3>6.2 — Smart Adapt (default)</h3>
-    <p>Rewrites and restructures the source into new long-form text. The output is generally safer for original publication but is still derived from the source idea; you remain responsible for verifying it does not reproduce protected expression.</p>
-    <h3>6.3 — Low Fidelity (inspired)</h3>
-    <p>Uses the video only as a thematic seed and produces substantially original content. Recommended for KDP, lead magnets, and commercial distribution where you do not own the source.</p>
-    <h3>6.4 — Limited AI copyright</h3>
-    <p>In many jurisdictions (including the US), purely AI-generated text is not copyrightable. Your editorial choices, custom instructions, and post-generation edits are what create human authorship. We make no warranty that any specific output is registrable or enforceable as your copyrighted work.</p>
-  </div>
-
-  <h2 id="s7"><span class="section-num">07</span>Scope, styles &amp; refunds</h2>
-  <ul>
-    <li><strong>7.1 Writing styles and custom instructions:</strong> style presets and your custom instructions are creative inputs to a probabilistic model. We do not guarantee an exact tone, structure, length, or stylistic match.</li>
-    <li><strong>7.2 Subjective dissatisfaction:</strong> dissatisfaction with style, tone, voice, or fidelity match is not a refundable defect. You can regenerate within your plan quota.</li>
-    <li><strong>7.3 Refund eligibility:</strong> refunds remain governed by Section 4 and apply to clear technical failures — not to creative judgment calls about the output.</li>
-  </ul>
-
-  <h2 id="s8"><span class="section-num">08</span>Acceptable use</h2>
-  <p>You agree <strong>not</strong> to use TubeBook to:</p>
+  <h2 id="s5"><span class="sec-num">05</span>Acceptable use</h2>
+  <p>You must not:</p>
   <div class="warn-card">
     <ul>
-      <li>Process content you do not have the right to use (copyright infringement).</li>
-      <li>Generate hateful, defamatory, sexually explicit involving minors, or otherwise illegal content.</li>
-      <li>Resell raw API access or attempt to scrape, reverse-engineer or overload the service.</li>
-      <li>Bypass quotas, watermarks or billing.</li>
+      <li>Submit content you do not have rights to use, or that infringes any third party's rights.</li>
+      <li>Generate content that is illegal, defamatory, harassing, sexual content involving minors, or that violates AI provider policies.</li>
+      <li>Attempt to bypass credit limits, reverse-engineer the Service, or probe for vulnerabilities without written permission.</li>
+      <li>Resell raw API access to the Service.</li>
     </ul>
   </div>
   <p>We may suspend or terminate accounts that violate these rules, with or without notice.</p>
 
-  <h2 id="s9"><span class="section-num">09</span>AI-generated content</h2>
-  <p>TubeBook uses third-party AI models. Generated text may contain inaccuracies, hallucinations or biased phrasings. You are responsible for reviewing the output before publishing or distributing it.</p>
+  <h2 id="s6"><span class="sec-num">06</span>Third-party services</h2>
+  <p>TubeBook relies on third-party AI providers, payment processors, and infrastructure. Their availability and policies may impact the Service. We are not liable for outages or limitations imposed by those providers.</p>
 
-  <h2 id="s10"><span class="section-num">10</span>Service availability</h2>
-  <p>We aim for high availability but do not guarantee uninterrupted service. Generation times are indicative and may vary based on video length and provider load.</p>
+  <h2 id="s7"><span class="sec-num">07</span>Disclaimers</h2>
+  <p>The Service is provided "as is" and "as available" without warranties of any kind, express or implied, including merchantability, fitness for a particular purpose, and non-infringement. AI-generated output may contain errors; you are responsible for reviewing it before publishing or distributing.</p>
 
-  <h2 id="s11"><span class="section-num">11</span>Liability</h2>
-  <p>To the maximum extent permitted by law, TubeBook's total liability for any claim is limited to the amount you paid in the 12 months preceding the claim. We are not liable for indirect, incidental, or consequential damages.</p>
+  <h2 id="s8"><span class="sec-num">08</span>Limitation of liability</h2>
+  <p>To the maximum extent permitted by law, TubeBook's aggregate liability arising out of or relating to the Service will not exceed the greater of (a) the amount you paid us in the 12 months preceding the claim, or (b) USD 100. We are not liable for indirect, incidental, special, consequential, or punitive damages, or loss of profits, revenue, data, or goodwill.</p>
 
-  <h2 id="s12"><span class="section-num">12</span>Termination</h2>
-  <p>You can delete your account at any time. We may terminate or suspend accounts that breach these Terms. Upon termination, your data is deleted as described in our <a href="/privacy">Privacy Policy</a>.</p>
+  <h2 id="s9"><span class="sec-num">09</span>Termination</h2>
+  <p>You may close your account at any time. We may suspend or terminate accounts for breach of these Terms, abuse, or non-payment. Sections that by their nature should survive termination (ownership, disclaimers, liability, dispute resolution) will continue to apply.</p>
 
-  <h2 id="s13"><span class="section-num">13</span>Governing law</h2>
-  <p>These Terms are governed by the laws of England and Wales. Disputes will be submitted to the competent courts of England and Wales, unless mandatory consumer protection law requires otherwise.</p>
+  <h2 id="s10"><span class="sec-num">10</span>Changes</h2>
+  <p>We may update these Terms. Material changes will be announced at least 14 days before they take effect. Continued use after the effective date constitutes acceptance.</p>
 
-  <h2 id="s14"><span class="section-num">14</span>Changes</h2>
-  <p>We may update these Terms. Material changes will be notified at least 14 days in advance. Continued use of the service after the effective date constitutes acceptance.</p>
+  <h2 id="s11"><span class="sec-num">11</span>Governing law</h2>
+  <p>These Terms are governed by the laws applicable to the entity operating TubeBook, without regard to conflict-of-law principles. Disputes will be resolved in the competent courts of that jurisdiction, unless local consumer law provides otherwise.</p>
 
-  <h2 id="s15"><span class="section-num">15</span>Contact</h2>
-  <p><a href="mailto:support@tubebook.org">support@tubebook.org</a></p>
+  <h2 id="s12"><span class="sec-num">12</span>Contact</h2>
+  <p>Questions about these Terms: <a href="mailto:support@tubebook.org">support@tubebook.org</a></p>
 </div>
 
 <footer>
   <div class="footer-inner">
-    <div class="footer-brand">© 2026 TubeBook · <a href="https://tubebook.org">tubebook.org</a></div>
+    <div class="footer-brand">© <span id="y"></span> TubeBook · <a href="https://tubebook.org">tubebook.org</a></div>
     <div class="footer-links">
-      <a href="/">Home</a>
-      <a href="/help">Help</a>
-      <a href="/privacy">Privacy</a>
-      <a href="/terms">Terms</a>
-      <a href="/contact">Contact</a>
+      <a href="/">Home</a><a href="/help">Help</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/contact">Contact</a>
     </div>
   </div>
 </footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>

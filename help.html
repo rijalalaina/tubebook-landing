@@ -3,103 +3,95 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Help & Tutorials — TubeBook</title>
-<meta name="description" content="Learn how to turn YouTube videos into professional ebooks with TubeBook: quick start, formats, cover styles, preview, retention and FAQ." />
+<title>Help &amp; Tutorials — TubeBook</title>
+<meta name="description" content="Learn how to turn YouTube videos and transcripts into polished ebooks with TubeBook. Step-by-step tutorials, credit usage, exports, and troubleshooting." />
 <link rel="canonical" href="https://tubebook.org/help" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <style>
+/* ─── TUBEBOOK INNER PAGE — SHARED CSS ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
   --bg: #08090d; --bg2: #0f1118; --bg3: #14171f; --card: #131620;
   --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
   --amber: #f0a832; --amber2: #fcc45a; --amber-dim: rgba(240,168,50,0.12);
   --red: #ff3b3b; --red-dim: rgba(255,59,59,0.12);
+  --green: #2ecc71; --green-dim: rgba(46,204,113,0.11);
   --text: #f0eee8; --muted: #7b7d8a; --muted2: #a0a3b1;
   --radius: 14px; --radius-lg: 20px;
 }
 html { scroll-behavior: smooth; }
-body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; overflow-x: hidden; }
 a { color: var(--amber); text-decoration: none; transition: color 0.2s; }
-a:hover { color: var(--amber2); }
+a:hover { color: var(--amber2); text-decoration: underline; }
+strong { color: var(--text); font-weight: 600; }
+code, kbd { background: var(--bg3); border: 1px solid var(--border); padding: 2px 7px; border-radius: 5px; font-size: .85em; font-family: 'DM Mono', 'Fira Code', monospace; color: var(--amber2); }
 
 /* NAV */
-nav {
-  position: sticky; top: 0; z-index: 100;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 1rem 4rem;
-  background: rgba(8,9,13,0.85); backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--border);
-}
+nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 4rem; background: rgba(8,9,13,0.88); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); }
 .nav-logo { display: flex; align-items: center; gap: 10px; font-size: 1.2rem; font-weight: 700; color: var(--text); text-decoration: none; }
+.nav-logo:hover { text-decoration: none; }
 .logo-icon { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, var(--red) 0%, #b72a2a 100%); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0; }
 .logo-text span { color: var(--amber); }
 .nav-links { display: flex; align-items: center; gap: 2rem; }
 .nav-links a { color: var(--muted2); font-size: 0.875rem; text-decoration: none; transition: color 0.2s; }
-.nav-links a:hover, .nav-links a.active { color: var(--amber); }
-.nav-cta { background: var(--amber); color: #1a1200; font-size: 0.85rem; font-weight: 600; padding: 0.5rem 1.2rem; border-radius: 8px; text-decoration: none; transition: background 0.2s; }
-.nav-cta:hover { background: var(--amber2); color: #1a1200; }
+.nav-links a:hover, .nav-links a.active { color: var(--amber); text-decoration: none; }
+.nav-cta { background: var(--amber); color: #1a1200 !important; font-size: 0.85rem; font-weight: 600; padding: 0.5rem 1.2rem; border-radius: 8px; text-decoration: none !important; transition: background 0.2s; }
+.nav-cta:hover { background: var(--amber2); }
 
-/* PAGE SHELL */
+/* LAYOUT */
 .page-wrap { max-width: 860px; margin: 0 auto; padding: 0 2rem 6rem; }
-.page-header { padding: 4rem 0 2.5rem; border-bottom: 1px solid var(--border); margin-bottom: 3rem; position: relative; }
-.page-header::before { content: ''; position: absolute; top: 0; right: 0; width: 320px; height: 200px; background: radial-gradient(ellipse, rgba(240,168,50,0.06) 0%, transparent 70%); pointer-events: none; }
+.page-header { padding: 4rem 0 2.5rem; border-bottom: 1px solid var(--border); margin-bottom: 3rem; position: relative; overflow: hidden; }
+.page-header::after { content: ''; position: absolute; top: 0; right: -40px; width: 340px; height: 220px; background: radial-gradient(ellipse, rgba(240,168,50,0.06) 0%, transparent 70%); pointer-events: none; }
 .breadcrumb { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; display: flex; align-items: center; gap: 6px; }
-.breadcrumb a { color: var(--muted); }
+.breadcrumb a { color: var(--muted); text-decoration: none; }
 .breadcrumb a:hover { color: var(--amber); }
-.breadcrumb span { opacity: 0.5; }
+.breadcrumb span { opacity: 0.4; }
 h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 900; line-height: 1.15; letter-spacing: -0.02em; color: var(--text); }
-.page-lead { font-size: 1.05rem; color: var(--muted2); margin-top: 0.8rem; max-width: 560px; line-height: 1.7; }
+.page-lead { font-size: 1.05rem; color: var(--muted2); margin-top: 0.8rem; max-width: 580px; line-height: 1.7; }
+.page-meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.6rem; }
 
-/* CONTENT TYPOGRAPHY */
-h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--text); margin: 3rem 0 1rem; letter-spacing: -0.01em; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
-h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin: 1.5rem 0 0.5rem; }
+/* TYPOGRAPHY */
+h2 { font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 700; color: var(--text); margin: 3rem 0 1rem; letter-spacing: -0.01em; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+.sec-num { font-family: 'Outfit', sans-serif; font-size: 0.7rem; font-weight: 600; color: var(--amber); background: var(--amber-dim); border: 1px solid rgba(240,168,50,0.22); padding: 0.15rem 0.55rem; border-radius: 100px; letter-spacing: 0.05em; flex-shrink: 0; }
+h3 { font-size: 0.97rem; font-weight: 600; color: var(--text); margin: 1.5rem 0 0.5rem; }
 p { color: var(--muted2); line-height: 1.75; margin-bottom: 0.8rem; }
 ul, ol { color: var(--muted2); padding-left: 1.4rem; line-height: 1.75; }
-li { margin-bottom: 0.4rem; }
-strong { color: var(--text); font-weight: 600; }
-code { background: var(--bg3); border: 1px solid var(--border); padding: 2px 7px; border-radius: 5px; font-size: 0.82em; font-family: 'DM Mono', 'Fira Code', monospace; color: var(--amber2); }
+li { margin-bottom: 0.45rem; }
 
 /* CARDS */
-.card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.8rem; margin: 1rem 0; position: relative; overflow: hidden; }
-.card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(240,168,50,0.2), transparent); }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.6rem 1.8rem; margin: 1rem 0; position: relative; overflow: hidden; }
+.card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(240,168,50,0.18), transparent); }
 
-/* STEPS */
-.steps { display: flex; flex-direction: column; gap: 1.2rem; }
-.step { display: flex; gap: 1rem; align-items: flex-start; }
-.step-num { flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: var(--amber-dim); border: 1px solid rgba(240,168,50,0.3); color: var(--amber); font-size: 0.82rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
-.step-body { padding-top: 4px; }
-.step-body strong { color: var(--text); }
+/* TOC */
+.toc-box { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem 1.8rem; margin-bottom: 2.5rem; }
+.toc-box-title { font-size: 0.72rem; font-weight: 600; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.8rem; }
+.toc-box ol { padding-left: 1.2rem; }
+.toc-box li { margin-bottom: 0.3rem; }
+.toc-box a { font-size: 0.88rem; color: var(--muted2); text-decoration: none; }
+.toc-box a:hover { color: var(--amber); }
 
-/* TWO-COL GRID */
-.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
-@media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } }
+/* TABLES */
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+th { text-align: left; padding: 0.7rem 0.9rem; font-size: 0.75rem; font-weight: 600; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1px solid var(--border2); }
+td { padding: 0.7rem 0.9rem; color: var(--muted2); border-bottom: 1px solid var(--border); }
+tr:last-child td { border-bottom: none; }
+td strong { color: var(--text); }
 
-/* BADGE */
-.badge { display: inline-block; background: var(--amber-dim); border: 1px solid rgba(240,168,50,0.25); color: var(--amber2); font-size: 0.7rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 100px; margin-left: 6px; vertical-align: middle; letter-spacing: 0.04em; }
+/* PILLS */
+.pill { display: inline-block; background: var(--amber-dim); border: 1px solid rgba(240,168,50,0.25); color: var(--amber2); font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.65rem; border-radius: 100px; letter-spacing: 0.04em; margin-right: 6px; vertical-align: middle; }
 
-/* ACCORDION / FAQ */
-details { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); margin: 0.6rem 0; overflow: hidden; transition: border-color 0.2s; }
-details:hover { border-color: var(--border2); }
-details[open] { border-color: rgba(240,168,50,0.25); }
-details summary { cursor: pointer; padding: 1.1rem 1.5rem; font-weight: 600; font-size: 0.95rem; color: var(--text); list-style: none; display: flex; align-items: center; justify-content: space-between; user-select: none; }
-details summary::-webkit-details-marker { display: none; }
-details summary::after { content: '+'; font-size: 1.2rem; color: var(--amber); font-weight: 300; transition: transform 0.2s; flex-shrink: 0; }
-details[open] summary::after { transform: rotate(45deg); }
-details .detail-body { padding: 0 1.5rem 1.2rem; }
-details .detail-body p, details .detail-body li { color: var(--muted2); font-size: 0.9rem; }
-
-/* HIGHLIGHT BOX */
-.highlight { background: var(--amber-dim); border: 1px solid rgba(240,168,50,0.2); border-radius: var(--radius); padding: 1.2rem 1.5rem; margin: 1rem 0; display: flex; gap: 12px; align-items: flex-start; }
-.highlight-icon { color: var(--amber); font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
-.highlight p { color: var(--muted2); margin: 0; font-size: 0.9rem; }
+/* ALERT BOXES */
+.alert-warn { background: rgba(255,59,59,0.07); border: 1px solid rgba(255,59,59,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: #ff9a9a; }
+.alert-tip { background: var(--green-dim); border: 1px solid rgba(46,204,113,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: #7be8a8; }
+.alert-info { background: var(--amber-dim); border: 1px solid rgba(240,168,50,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: var(--amber2); }
 
 /* FOOTER */
 footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2.5rem 4rem; }
 .footer-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
 .footer-brand { font-size: 0.82rem; color: var(--muted); }
-.footer-brand a { color: var(--amber); }
+.footer-brand a { color: var(--amber); text-decoration: none; }
 .footer-links { display: flex; gap: 1.8rem; flex-wrap: wrap; }
 .footer-links a { font-size: 0.82rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
 .footer-links a:hover { color: var(--text); }
@@ -110,6 +102,18 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
   .page-wrap { padding: 0 1.2rem 4rem; }
   footer { padding: 2rem 1.2rem; }
 }
+
+
+/* PAGE-SPECIFIC */
+.toc-nav { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 1.5rem 0 2.5rem; }
+.toc-nav a { display: block; padding: 0.9rem 1.1rem; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); color: var(--muted2); font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+.toc-nav a:hover { border-color: rgba(240,168,50,0.4); color: var(--amber); text-decoration: none; }
+.step-list { display: flex; flex-direction: column; gap: 1rem; }
+.step-row { display: flex; gap: 1rem; align-items: flex-start; }
+.step-n { flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--amber-dim); border: 1px solid rgba(240,168,50,0.3); color: var(--amber); font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+.step-body { color: var(--muted2); font-size: 0.92rem; line-height: 1.65; }
+.step-body strong { color: var(--text); }
+
 </style>
 </head>
 <body>
@@ -125,114 +129,147 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <a href="/terms">Terms</a>
     <a href="/contact">Contact</a>
   </div>
-  <a href="https://app.tubebook.org/signup" class="nav-cta">Start free →</a>
+  <a href="https://tube-book.lovable.app" class="nav-cta">Open app →</a>
 </nav>
 
 <div class="page-wrap">
   <div class="page-header">
-    <div class="breadcrumb">
-      <a href="/">Home</a><span>/</span>Help &amp; Tutorials
-    </div>
+    <div class="breadcrumb"><a href="/">Home</a><span>/</span>Help &amp; Tutorials</div>
     <h1>Help &amp; Tutorials</h1>
-    <p class="page-lead">Everything you need to turn YouTube videos into professional ebooks in just a few minutes.</p>
+    <p class="page-lead">Everything you need to turn YouTube videos and transcripts into publishable ebooks with TubeBook.</p>
   </div>
 
-  <h2>Quick start</h2>
-  <div class="card">
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-body"><strong>Create a free account</strong> at <a href="https://app.tubebook.org/signup">app.tubebook.org</a>. No credit card required.</div>
+  <div class="toc-nav">
+    <a href="#getting-started">Getting started</a>
+    <a href="#generation">Generating an ebook</a>
+    <a href="#credits">Credits &amp; pricing</a>
+    <a href="#exports">Exports &amp; formats</a>
+    <a href="#troubleshooting">Troubleshooting</a>
+    <a href="#account">Account &amp; billing</a>
+  </div>
+
+  <!-- GETTING STARTED -->
+  <div class="card" id="getting-started">
+    <h2>Getting started</h2>
+    <div class="step-list">
+      <div class="step-row">
+        <div class="step-n">1</div>
+        <div class="step-body">Create a free account at <a href="https://tube-book.lovable.app">the TubeBook app</a>. You receive a small daily allowance of free credits to try the product.</div>
       </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-body"><strong>Paste a YouTube URL</strong> on the Generate page, choose a format (Lead Magnet or Commercial) and a cover style.</div>
+      <div class="step-row">
+        <div class="step-n">2</div>
+        <div class="step-body">Open <strong>Generate</strong>, paste a YouTube URL or a transcript, pick a fidelity mode and writing style, then submit.</div>
       </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-body"><strong>Download your ebook</strong> in PDF, DOCX, EPUB and PPTX within minutes.</div>
+      <div class="step-row">
+        <div class="step-n">3</div>
+        <div class="step-body">TubeBook handles the rest — transcription, structuring, writing, optional cover and chapter images — then exports to <strong>PDF, DOCX, EPUB and PPTX</strong>.</div>
       </div>
     </div>
   </div>
 
-  <h2>Lead Magnet vs Commercial</h2>
-  <div class="grid-2">
-    <div class="card">
-      <h3>Lead Magnet <span class="badge">~5,000 words</span></h3>
-      <p>Short format, perfect to grow your email list. Fast generation, condensed structure, ideal as a signup gift.</p>
-    </div>
-    <div class="card">
-      <h3>Commercial <span class="badge">25,000+ words</span></h3>
-      <p>Long format, ready to sell. Detailed chapters, illustrations, editorial consistency — built for Amazon KDP, Gumroad or your own site.</p>
-    </div>
+  <!-- GENERATION -->
+  <div class="card" id="generation">
+    <h2>Generating an ebook</h2>
+    <h3>Lead magnet vs commercial ebook</h3>
+    <ul>
+      <li><strong>Lead magnet</strong> — short, punchy, ~5 chapters and ~5,000 words. Great for newsletter freebies and opt-ins.</li>
+      <li><strong>Commercial ebook</strong> — long-form, ~10 chapters, 25,000+ words. Deeper structure and styling, ready to sell.</li>
+    </ul>
+    <h3>Fidelity modes</h3>
+    <ul>
+      <li><strong>High Fidelity</strong> — follows the exact structure, names, and ideas of your source. For repurposing your own content only.</li>
+      <li><strong>Smart Adapt (default)</strong> — rewrites and restructures the source into fresh text, staying close to the original theme.</li>
+      <li><strong>Low Fidelity</strong> — uses the video as a thematic seed only; generates substantially original content safe for commercial publishing (Amazon KDP, Gumroad, etc.).</li>
+    </ul>
+    <h3>Writing styles</h3>
+    <p>Choose from Professional, Conversational, Stoic, Scientific, Narrative, Academic, Motivational, or Minimalist before generation begins.</p>
+    <h3>Sources</h3>
+    <ul>
+      <li><strong>YouTube URL</strong> — TubeBook ingests the video directly via Gemini.</li>
+      <li><strong>Transcript</strong> — paste any text transcript you already have.</li>
+    </ul>
+    <h3>Images</h3>
+    <p>Optional AI cover and per-chapter images (0–3 per chapter). More images consume more credits.</p>
+    <div class="alert-tip">💡 For best quality, use the Data Density score shown after URL analysis to pick the right target word count before committing credits.</div>
   </div>
 
-  <h2>Cover style</h2>
-  <p>Before generating, pick a cover preset — palette, typography, and layout. The chosen style is applied consistently across all exported formats.</p>
-
-  <h2>Side-by-side preview</h2>
-  <p>From your dashboard, click <strong>Preview</strong> to open a comparison view of all 4 formats (PDF, DOCX, EPUB, PPTX) before downloading. Handy for checking layout without downloading anything first.</p>
-
-  <h2>Privacy &amp; file retention</h2>
-  <div class="card">
-    <h3>24-hour download links</h3>
-    <p>Signed download URLs expire after 24 hours. After that, the app automatically refreshes them on demand.</p>
-    <h3>30-day storage</h3>
-    <p>Your files are automatically deleted from storage after <strong>30 days</strong>. A countdown is shown on each ebook card, turning orange in the last 3 days.</p>
-    <h3>Permanent delete with ZIP export</h3>
-    <p>You can delete your ebooks at any time. Before permanent deletion, TubeBook offers a ZIP archive containing all formats plus the cover image.</p>
+  <!-- CREDITS -->
+  <div class="card" id="credits">
+    <h2>Credits &amp; pricing</h2>
+    <p>TubeBook uses a transparent credit system. Every action shows its cost before you confirm.</p>
+    <table>
+      <thead><tr><th>Item</th><th>Credits</th></tr></thead>
+      <tbody>
+        <tr><td>Lead magnet (base, ~5,000 words)</td><td><strong>30</strong></td></tr>
+        <tr><td>Commercial ebook (base, 25,000+ words)</td><td><strong>80</strong></td></tr>
+        <tr><td>YouTube URL source (add-on)</td><td><strong>+20</strong></td></tr>
+        <tr><td>Per chapter image</td><td><strong>+2</strong></td></tr>
+      </tbody>
+    </table>
+    <h3>Plans</h3>
+    <ul>
+      <li><span class="pill">Free</span> Daily free credits — PDF export with TubeBook watermark.</li>
+      <li><span class="pill">Starter — \$9/mo</span> 500 credits/month — ≈ 10 lead magnets or 5 commercial ebooks. No watermark.</li>
+      <li><span class="pill">Pro — \$29/mo</span> 2,000 credits/month — ≈ 25 commercial ebooks with images. Priority queue.</li>
+    </ul>
+    <h3>Top-up credit packs</h3>
+    <ul>
+      <li>Starter pack — 250 credits, \$5</li>
+      <li>Boost pack — 1,000 credits, \$15</li>
+      <li>Power pack — 3,500 credits, \$40</li>
+    </ul>
+    <p>Subscription credits refresh each billing cycle and do not roll over. Top-up credits never expire while your account is active.</p>
   </div>
 
-  <h2>FAQ</h2>
+  <!-- EXPORTS -->
+  <div class="card" id="exports">
+    <h2>Exports &amp; formats</h2>
+    <ul>
+      <li><strong>PDF</strong> — fully styled with cover and chapter imagery, chosen fonts and trim size.</li>
+      <li><strong>DOCX</strong> — editable in Word or Google Docs.</li>
+      <li><strong>EPUB</strong> — Kindle, Apple Books, Kobo.</li>
+      <li><strong>PPTX</strong> — slide deck version for talks and webinars.</li>
+    </ul>
+    <p>Free plan exports include a TubeBook watermark. Paid plans export without watermark.</p>
+    <div class="alert-info">📦 Before deleting an ebook, TubeBook offers a ZIP archive of all formats plus the cover image.</div>
+  </div>
 
-  <details>
-    <summary>How long does generation take?</summary>
-    <div class="detail-body"><p>Lead Magnet: 3–8 minutes. Commercial ebook: 15–30 minutes depending on source video length.</p></div>
-  </details>
-  <details>
-    <summary>Which formats can I export?</summary>
-    <div class="detail-body"><p>PDF, DOCX (Word), EPUB (e-readers / Kindle via conversion), and PPTX (slides). The cover is also downloadable separately in high resolution.</p></div>
-  </details>
-  <details>
-    <summary>What are the plan quotas?</summary>
-    <div class="detail-body">
-      <ul>
-        <li><strong>Free:</strong> 1 lead magnet lifetime, TubeBook watermark</li>
-        <li><strong>Starter ($9/mo):</strong> 10 lead magnets/month, no watermark</li>
-        <li><strong>Pro ($29/mo):</strong> 5 commercial ebooks + 5 lead magnets/month, all formats, priority generation</li>
-      </ul>
-    </div>
-  </details>
-  <details>
-    <summary>Can I generate several ebooks in parallel?</summary>
-    <div class="detail-body"><p>Free: 1 at a time. Starter: 2 in parallel. Pro: 4 in parallel. Extra generations are queued and start automatically when a slot opens.</p></div>
-  </details>
-  <details>
-    <summary>Is my data safe?</summary>
-    <div class="detail-body"><p>Yes. Authentication is required for all access. File access is protected by row-level security (each user only sees their own ebooks). Data is encrypted at rest, and files are automatically deleted after 30 days.</p></div>
-  </details>
-  <details>
-    <summary>Can I sell the generated ebooks?</summary>
-    <div class="detail-body"><p>Yes, with a paid plan (Starter or Pro) which removes the watermark. The ebooks you generate are yours to keep and sell — provided the source content rights allow it. See our <a href="/terms">Terms</a> for full details on fidelity modes and copyright responsibility.</p></div>
-  </details>
+  <!-- TROUBLESHOOTING -->
+  <div class="card" id="troubleshooting">
+    <h2>Troubleshooting</h2>
+    <h3>Generation seems stuck</h3>
+    <p>Generations resume automatically if a step is interrupted — no action needed. Most ebooks complete within a few minutes; long commercial ebooks with images can take longer.</p>
+    <h3>YouTube URL won't ingest</h3>
+    <p>Make sure the video is public and has captions (auto or manual). Private, age-restricted, or live videos cannot be processed.</p>
+    <h3>I don't see my ebook</h3>
+    <p>Open <strong>Dashboard</strong>. Ebooks are kept for <strong>30 days</strong> after generation — a countdown is shown on each card. Download anything you want to keep before it expires.</p>
+    <h3>Download link expired</h3>
+    <p>Signed download URLs expire after 24 hours. The app refreshes them on demand — just open your Dashboard and the links will be updated automatically.</p>
+  </div>
 
-  <div class="highlight" style="margin-top: 3rem;">
-    <div class="highlight-icon">✉</div>
-    <p>Still have questions? Reach us at <a href="mailto:support@tubebook.org">support@tubebook.org</a> — we typically reply within 1 business day.</p>
+  <!-- ACCOUNT -->
+  <div class="card" id="account">
+    <h2>Account &amp; billing</h2>
+    <ul>
+      <li>Manage your plan and payment method from <strong>Billing</strong> inside the app.</li>
+      <li>You can cancel any time; access continues until the end of the current billing period.</li>
+      <li>Need help with a refund, invoice, or your account? Email <a href="mailto:support@tubebook.org">support@tubebook.org</a>.</li>
+    </ul>
+  </div>
+
+  <div class="alert-info" style="margin-top: 3rem;">
+    ✉ Still have questions? Email <a href="mailto:support@tubebook.org">support@tubebook.org</a> — we typically reply within 1 business day.
   </div>
 </div>
 
 <footer>
   <div class="footer-inner">
-    <div class="footer-brand">© 2026 TubeBook · <a href="https://tubebook.org">tubebook.org</a></div>
+    <div class="footer-brand">© <span id="y"></span> TubeBook · <a href="https://tubebook.org">tubebook.org</a></div>
     <div class="footer-links">
-      <a href="/">Home</a>
-      <a href="/help">Help</a>
-      <a href="/privacy">Privacy</a>
-      <a href="/terms">Terms</a>
-      <a href="/contact">Contact</a>
+      <a href="/">Home</a><a href="/help">Help</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/contact">Contact</a>
     </div>
   </div>
 </footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>

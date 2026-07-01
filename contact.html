@@ -4,9 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-tubebook_32x32.png" />
-<title>Terms &amp; Conditions — TubeBook</title>
-<meta name="description" content="The terms governing your use of TubeBook, including subscriptions, credits, acceptable use, and content ownership." />
-<link rel="canonical" href="https://tubebook.org/terms" />
+<title>Contact Us — TubeBook</title>
+<meta name="description" content="Get in touch with the TubeBook team for support, billing, partnerships, press, and privacy requests." />
+<link rel="canonical" href="https://tubebook.org/contact" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -103,8 +103,33 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
   .page-wrap { padding: 0 1.2rem 4rem; }
   footer { padding: 2rem 1.2rem; }
 }
-.warn-card { background: rgba(255,59,59,0.06); border: 1px solid rgba(255,59,59,0.2); border-radius: var(--radius); padding: 1.2rem 1.5rem; margin: 1rem 0; }
-.warn-card ul, .warn-card p { color: var(--muted2); }
+/* PAGE-SPECIFIC */
+.channel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 1.5rem 0 2.5rem; }
+.channel-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.3rem 1.5rem; transition: border-color 0.2s; position: relative; overflow: hidden; }
+.channel-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,98,0,0.18), transparent); }
+.channel-card:hover { border-color: var(--border2); }
+.channel-icon { font-size: 1.3rem; margin-bottom: 0.7rem; display: block; }
+.channel-card h3 { font-size: 0.9rem; font-weight: 600; margin: 0 0 0.3rem; }
+.channel-card p { font-size: 0.8rem; color: var(--muted); margin: 0 0 0.8rem; line-height: 1.45; }
+.channel-card a.ch-btn { display: inline-block; background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.3); color: var(--amber2); font-size: 0.78rem; font-weight: 600; padding: 0.35rem 0.9rem; border-radius: 7px; text-decoration: none; transition: background 0.2s; }
+.channel-card a.ch-btn:hover { background: rgba(255,98,0,0.22); text-decoration: none; }
+.form-wrap { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; margin-top: 0.5rem; position: relative; overflow: hidden; }
+.form-wrap::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--amber), transparent); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 520px) { .form-row { grid-template-columns: 1fr; } }
+.form-group { margin-bottom: 1.1rem; }
+label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--muted2); margin-bottom: 0.4rem; }
+input, select, textarea { width: 100%; background: var(--bg3); border: 1px solid var(--border); border-radius: 9px; padding: 0.7rem 1rem; color: var(--text); font-family: 'Outfit', sans-serif; font-size: 0.92rem; outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
+input:focus, select:focus, textarea:focus { border-color: rgba(255,98,0,0.4); box-shadow: 0 0 0 3px rgba(255,98,0,0.08); }
+select option { background: var(--bg3); }
+textarea { min-height: 140px; resize: vertical; line-height: 1.6; }
+.btn-submit { background: var(--amber); color: #1a1200; font-size: 0.95rem; font-weight: 700; padding: 0.8rem 2rem; border-radius: 10px; border: none; cursor: pointer; font-family: 'Outfit', sans-serif; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 8px; margin-top: 0.5rem; }
+.btn-submit:hover { background: var(--amber2); transform: translateY(-1px); }
+.form-note { font-size: 0.76rem; color: var(--muted); margin-top: 0.6rem; }
+.quick-links { display: flex; flex-direction: column; gap: 0.55rem; margin-top: 1rem; }
+.quick-link { display: flex; align-items: center; gap: 10px; padding: 0.75rem 1rem; background: var(--bg3); border: 1px solid var(--border); border-radius: 10px; font-size: 0.875rem; color: var(--muted2); text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+.quick-link:hover { border-color: rgba(255,98,0,0.3); color: var(--amber); text-decoration: none; }
+.quick-link-arrow { margin-left: auto; opacity: 0.5; }
 </style>
 </head>
 <body>
@@ -116,110 +141,102 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
   <div class="nav-links">
     <a href="/help">Help</a>
     <a href="/privacy">Privacy</a>
-    <a href="/terms" class="active">Terms</a>
-    <a href="/contact">Contact</a>
+    <a href="/terms">Terms</a>
+    <a href="/contact" class="active">Contact</a>
   </div>
   <a href="https://tube-book.lovable.app" class="nav-cta">Open app →</a>
 </nav>
 
 <div class="page-wrap">
   <div class="page-header">
-    <div class="breadcrumb"><a href="/">Home</a><span>/</span>Terms &amp; Conditions</div>
-    <h1>Terms &amp; Conditions</h1>
-    <p class="page-lead">By creating an account or using the Service, you agree to these Terms. If you do not agree, do not use the Service.</p>
-    <p class="page-meta">Last updated: May 20, 2026</p>
+    <div class="breadcrumb"><a href="/">Home</a><span>/</span>Contact</div>
+    <h1>Contact Us</h1>
+    <p class="page-lead">We typically reply within one business day. For the fastest help, check the <a href="/help">Help &amp; Tutorials</a> page first.</p>
   </div>
 
-  <div class="toc-box">
-    <div class="toc-box-title">Contents</div>
-    <ol>
-      <li><a href="#s1">The Service</a></li>
-      <li><a href="#s2">Accounts</a></li>
-      <li><a href="#s3">Subscriptions, credits &amp; billing</a></li>
-      <li><a href="#s4">Content &amp; ownership</a></li>
-      <li><a href="#s5">Acceptable use</a></li>
-      <li><a href="#s6">Third-party services</a></li>
-      <li><a href="#s7">Disclaimers</a></li>
-      <li><a href="#s8">Limitation of liability</a></li>
-      <li><a href="#s9">Termination</a></li>
-      <li><a href="#s10">Changes</a></li>
-      <li><a href="#s11">Governing law</a></li>
-      <li><a href="#s12">Contact</a></li>
-    </ol>
+  <div class="channel-grid">
+    <div class="channel-card">
+      <span class="channel-icon">🛠</span>
+      <h3>Support</h3>
+      <p>Account, generations, exports, bugs.</p>
+      <a class="ch-btn" href="mailto:support@tubebook.org">support@tubebook.org</a>
+    </div>
+    <div class="channel-card">
+      <span class="channel-icon">💳</span>
+      <h3>Billing</h3>
+      <p>Invoices, refunds, plan changes, credit packs.</p>
+      <a class="ch-btn" href="mailto:support@tubebook.org">support@tubebook.org</a>
+    </div>
+    <div class="channel-card">
+      <span class="channel-icon">🔒</span>
+      <h3>Privacy &amp; legal</h3>
+      <p>Data requests, GDPR/CCPA, takedowns.</p>
+      <a class="ch-btn" href="mailto:support@tubebook.org">support@tubebook.org</a>
+    </div>
+    <div class="channel-card">
+      <span class="channel-icon">🤝</span>
+      <h3>Partnerships &amp; press</h3>
+      <p>Collaborations, integrations, interviews.</p>
+      <a class="ch-btn" href="mailto:support@tubebook.org">support@tubebook.org</a>
+    </div>
   </div>
 
-  <h2 id="s1"><span class="sec-num">01</span>The Service</h2>
-  <p>TubeBook transforms YouTube videos and transcripts into ebooks using AI. Features, pricing, and credit costs may evolve over time.</p>
-
-  <h2 id="s2"><span class="sec-num">02</span>Accounts</h2>
-  <ul>
-    <li>You must be at least 13 years old (16 in the EEA) to create an account.</li>
-    <li>You are responsible for your credentials and all activity under your account.</li>
-    <li>One person or legal entity per account. No account sharing across teams without a plan that expressly allows it.</li>
-  </ul>
-
-  <h2 id="s3"><span class="sec-num">03</span>Subscriptions, credits &amp; billing</h2>
-  <div class="card">
-    <ul>
-      <li>The Service operates on a credit system. Each generation deducts credits per the cost shown before you confirm.</li>
-      <li><strong>Free plan:</strong> 50 credits, granted once at account creation — no renewal. Sufficient for one lead magnet ebook.</li>
-      <li><strong>Starter ($9/mo):</strong> 500 credits per billing cycle — approximately 10 lead magnets or 4 commercial ebooks.</li>
-      <li><strong>Pro ($29/mo):</strong> 2,000 credits per billing cycle — approximately 40 lead magnets, 15 commercial ebooks, or any combination.</li>
-      <li>Subscription credits refresh at the start of each billing cycle and do not roll over.</li>
-      <li>One-time credit top-up packs do not expire while your account remains active.</li>
-      <li>All fees are billed via Stripe in advance and are non-refundable except as required by law or as expressly stated.</li>
-      <li>You can cancel any time; access continues until the end of the current billing period.</li>
-      <li>We may change prices with at least 30 days' notice; existing billing periods are not affected.</li>
-    </ul>
+  <h2>Send us a message</h2>
+  <div class="form-wrap">
+    <form action="mailto:support@tubebook.org" method="post" enctype="text/plain">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" placeholder="Jane Smith" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="topic">Topic</label>
+        <select id="topic" name="topic">
+          <option>Support</option>
+          <option>Billing</option>
+          <option>Privacy / legal</option>
+          <option>Partnership / press</option>
+          <option>Feedback</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required placeholder="Tell us what's going on. If it's a generation issue, include the ebook title or ID if you have it."></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Send message →</button>
+      <p class="form-note">This form opens your default email app. If it doesn't work, email <a href="mailto:support@tubebook.org">support@tubebook.org</a> directly.</p>
+    </form>
   </div>
 
-  <h2 id="s4"><span class="sec-num">04</span>Content &amp; ownership</h2>
-  <h3>Your input</h3>
-  <p>You retain all rights to the YouTube URLs and transcripts you submit. You represent that you have the necessary rights to submit and generate derivative works from that content.</p>
-  <h3>Generated output</h3>
-  <p>Subject to your compliance with these Terms and payment of applicable fees, you own the ebooks and assets generated through the Service and may use them commercially. Free-plan exports include a TubeBook watermark; Starter and Pro plans export without watermark.</p>
-  <h3>Fidelity modes and copyright responsibility</h3>
-  <ul>
-    <li><strong>High Fidelity</strong> — creates a derivative work closely tracking the source. You must own the video, hold an explicit licence from the rights holder, or be confident the source is in the public domain.</li>
-    <li><strong>Smart Adapt</strong> — rewrites and restructures the source. Generally safer for original publication, but you remain responsible for verifying the output does not reproduce protected expression.</li>
-    <li><strong>Low Fidelity</strong> — uses the video as a thematic seed only and produces substantially original content. Recommended for commercial publishing where you do not own the source. To maximise copyright protection, add your own editorial contributions before publishing.</li>
-  </ul>
-  <div class="alert-warn">⚠ In many jurisdictions, purely AI-generated text has limited copyright protection. Your editorial choices, custom instructions, and post-generation edits are what create human authorship. TubeBook makes no warranty that any specific output is registrable as your copyrighted work.</div>
-  <h3>Our IP</h3>
-  <p>The Service, including software, prompts, design, and branding, is owned by TubeBook and its licensors. No rights are granted except as expressly stated.</p>
-
-  <h2 id="s5"><span class="sec-num">05</span>Acceptable use</h2>
-  <p>You must not:</p>
-  <div class="warn-card">
-    <ul>
-      <li>Submit content you do not have rights to use, or that infringes any third party's rights.</li>
-      <li>Generate content that is illegal, defamatory, harassing, sexual content involving minors, or that violates AI provider policies.</li>
-      <li>Attempt to bypass credit limits, reverse-engineer the Service, or probe for vulnerabilities without written permission.</li>
-      <li>Resell raw API access to the Service.</li>
-    </ul>
+  <h2 style="margin-top: 3.5rem;">Before you write</h2>
+  <p style="color:var(--muted2);">You may find a faster answer here:</p>
+  <div class="quick-links">
+    <a href="/help#getting-started" class="quick-link">
+      <span>🚀</span> Getting started guide
+      <span class="quick-link-arrow">→</span>
+    </a>
+    <a href="/help#credits" class="quick-link">
+      <span>💎</span> Credits &amp; pricing explained
+      <span class="quick-link-arrow">→</span>
+    </a>
+    <a href="/help#troubleshooting" class="quick-link">
+      <span>🔧</span> Troubleshooting common issues
+      <span class="quick-link-arrow">→</span>
+    </a>
+    <a href="/help#account" class="quick-link">
+      <span>👤</span> Account &amp; billing
+      <span class="quick-link-arrow">→</span>
+    </a>
+    <a href="/#pricing" class="quick-link">
+      <span>📊</span> Plan comparison &amp; pricing
+      <span class="quick-link-arrow">→</span>
+    </a>
   </div>
-  <p>We may suspend or terminate accounts that violate these rules, with or without notice.</p>
-
-  <h2 id="s6"><span class="sec-num">06</span>Third-party services</h2>
-  <p>TubeBook relies on third-party AI providers, payment processors, and infrastructure. Their availability and policies may impact the Service. We are not liable for outages or limitations imposed by those providers.</p>
-
-  <h2 id="s7"><span class="sec-num">07</span>Disclaimers</h2>
-  <p>The Service is provided "as is" and "as available" without warranties of any kind, express or implied, including merchantability, fitness for a particular purpose, and non-infringement. AI-generated output may contain errors; you are responsible for reviewing it before publishing or distributing.</p>
-
-  <h2 id="s8"><span class="sec-num">08</span>Limitation of liability</h2>
-  <p>To the maximum extent permitted by law, TubeBook's aggregate liability arising out of or relating to the Service will not exceed the greater of (a) the amount you paid us in the 12 months preceding the claim, or (b) USD 100. We are not liable for indirect, incidental, special, consequential, or punitive damages, or loss of profits, revenue, data, or goodwill.</p>
-
-  <h2 id="s9"><span class="sec-num">09</span>Termination</h2>
-  <p>You may close your account at any time. We may suspend or terminate accounts for breach of these Terms, abuse, or non-payment. Sections that by their nature should survive termination (ownership, disclaimers, liability, dispute resolution) will continue to apply.</p>
-
-  <h2 id="s10"><span class="sec-num">10</span>Changes</h2>
-  <p>We may update these Terms. Material changes will be announced at least 14 days before they take effect. Continued use after the effective date constitutes acceptance.</p>
-
-  <h2 id="s11"><span class="sec-num">11</span>Governing law</h2>
-  <p>These Terms are governed by the laws applicable to the entity operating TubeBook, without regard to conflict-of-law principles. Disputes will be resolved in the competent courts of that jurisdiction, unless local consumer law provides otherwise.</p>
-
-  <h2 id="s12"><span class="sec-num">12</span>Contact</h2>
-  <p>Questions about these Terms: <a href="mailto:support@tubebook.org">support@tubebook.org</a></p>
 </div>
 
 <footer>

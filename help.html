@@ -4,9 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-tubebook_32x32.png" />
-<title>Terms &amp; Conditions — TubeBook</title>
-<meta name="description" content="The terms governing your use of TubeBook, including subscriptions, credits, acceptable use, and content ownership." />
-<link rel="canonical" href="https://tubebook.org/terms" />
+<title>Help &amp; Tutorials — TubeBook</title>
+<meta name="description" content="Learn how to turn YouTube videos and transcripts into polished ebooks with TubeBook. Step-by-step tutorials, credit usage, exports, and troubleshooting." />
+<link rel="canonical" href="https://tubebook.org/help" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -103,8 +103,18 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
   .page-wrap { padding: 0 1.2rem 4rem; }
   footer { padding: 2rem 1.2rem; }
 }
-.warn-card { background: rgba(255,59,59,0.06); border: 1px solid rgba(255,59,59,0.2); border-radius: var(--radius); padding: 1.2rem 1.5rem; margin: 1rem 0; }
-.warn-card ul, .warn-card p { color: var(--muted2); }
+
+
+/* PAGE-SPECIFIC */
+.toc-nav { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 1.5rem 0 2.5rem; }
+.toc-nav a { display: block; padding: 0.9rem 1.1rem; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); color: var(--muted2); font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+.toc-nav a:hover { border-color: rgba(255,98,0,0.4); color: var(--amber); text-decoration: none; }
+.step-list { display: flex; flex-direction: column; gap: 1rem; }
+.step-row { display: flex; gap: 1rem; align-items: flex-start; }
+.step-n { flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.3); color: var(--amber); font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+.step-body { color: var(--muted2); font-size: 0.92rem; line-height: 1.65; }
+.step-body strong { color: var(--text); }
+
 </style>
 </head>
 <body>
@@ -114,9 +124,9 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <img src="/logo-tubebook_250x150.png" alt="TubeBook" style="height:38px;width:auto;display:block;" />
   </a>
   <div class="nav-links">
-    <a href="/help">Help</a>
+    <a href="/help" class="active">Help</a>
     <a href="/privacy">Privacy</a>
-    <a href="/terms" class="active">Terms</a>
+    <a href="/terms">Terms</a>
     <a href="/contact">Contact</a>
   </div>
   <a href="https://tube-book.lovable.app" class="nav-cta">Open app →</a>
@@ -124,102 +134,132 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
 
 <div class="page-wrap">
   <div class="page-header">
-    <div class="breadcrumb"><a href="/">Home</a><span>/</span>Terms &amp; Conditions</div>
-    <h1>Terms &amp; Conditions</h1>
-    <p class="page-lead">By creating an account or using the Service, you agree to these Terms. If you do not agree, do not use the Service.</p>
-    <p class="page-meta">Last updated: May 20, 2026</p>
+    <div class="breadcrumb"><a href="/">Home</a><span>/</span>Help &amp; Tutorials</div>
+    <h1>Help &amp; Tutorials</h1>
+    <p class="page-lead">Everything you need to turn YouTube videos and transcripts into publishable ebooks with TubeBook.</p>
   </div>
 
-  <div class="toc-box">
-    <div class="toc-box-title">Contents</div>
-    <ol>
-      <li><a href="#s1">The Service</a></li>
-      <li><a href="#s2">Accounts</a></li>
-      <li><a href="#s3">Subscriptions, credits &amp; billing</a></li>
-      <li><a href="#s4">Content &amp; ownership</a></li>
-      <li><a href="#s5">Acceptable use</a></li>
-      <li><a href="#s6">Third-party services</a></li>
-      <li><a href="#s7">Disclaimers</a></li>
-      <li><a href="#s8">Limitation of liability</a></li>
-      <li><a href="#s9">Termination</a></li>
-      <li><a href="#s10">Changes</a></li>
-      <li><a href="#s11">Governing law</a></li>
-      <li><a href="#s12">Contact</a></li>
-    </ol>
+  <div class="toc-nav">
+    <a href="#getting-started">Getting started</a>
+    <a href="#generation">Generating an ebook</a>
+    <a href="#credits">Credits &amp; pricing</a>
+    <a href="#exports">Exports &amp; formats</a>
+    <a href="#troubleshooting">Troubleshooting</a>
+    <a href="#account">Account &amp; billing</a>
   </div>
 
-  <h2 id="s1"><span class="sec-num">01</span>The Service</h2>
-  <p>TubeBook transforms YouTube videos and transcripts into ebooks using AI. Features, pricing, and credit costs may evolve over time.</p>
+  <!-- GETTING STARTED -->
+  <div class="card" id="getting-started">
+    <h2>Getting started</h2>
+    <div class="step-list">
+      <div class="step-row">
+        <div class="step-n">1</div>
+        <div class="step-body">Create a free account at <a href="https://tube-book.lovable.app">the TubeBook app</a>. Free accounts include <strong>50 credits</strong> — enough to generate one lead magnet ebook.</div>
+      </div>
+      <div class="step-row">
+        <div class="step-n">2</div>
+        <div class="step-body">Open <strong>Generate</strong>, paste a YouTube URL or a transcript, pick a fidelity mode and writing style, then submit.</div>
+      </div>
+      <div class="step-row">
+        <div class="step-n">3</div>
+        <div class="step-body">TubeBook handles the rest — transcription, structuring, writing, optional cover and chapter images — then exports to <strong>PDF, DOCX, EPUB and PPTX</strong>.</div>
+      </div>
+    </div>
+  </div>
 
-  <h2 id="s2"><span class="sec-num">02</span>Accounts</h2>
-  <ul>
-    <li>You must be at least 13 years old (16 in the EEA) to create an account.</li>
-    <li>You are responsible for your credentials and all activity under your account.</li>
-    <li>One person or legal entity per account. No account sharing across teams without a plan that expressly allows it.</li>
-  </ul>
-
-  <h2 id="s3"><span class="sec-num">03</span>Subscriptions, credits &amp; billing</h2>
-  <div class="card">
+  <!-- GENERATION -->
+  <div class="card" id="generation">
+    <h2>Generating an ebook</h2>
+    <h3>Lead magnet vs commercial ebook</h3>
     <ul>
-      <li>The Service operates on a credit system. Each generation deducts credits per the cost shown before you confirm.</li>
-      <li><strong>Free plan:</strong> 50 credits, granted once at account creation — no renewal. Sufficient for one lead magnet ebook.</li>
-      <li><strong>Starter ($9/mo):</strong> 500 credits per billing cycle — approximately 10 lead magnets or 4 commercial ebooks.</li>
-      <li><strong>Pro ($29/mo):</strong> 2,000 credits per billing cycle — approximately 40 lead magnets, 15 commercial ebooks, or any combination.</li>
-      <li>Subscription credits refresh at the start of each billing cycle and do not roll over.</li>
-      <li>One-time credit top-up packs do not expire while your account remains active.</li>
-      <li>All fees are billed via Stripe in advance and are non-refundable except as required by law or as expressly stated.</li>
+      <li><strong>Lead magnet</strong> — short, punchy, ~5 chapters and ~5,000 words. Great for newsletter freebies and opt-ins.</li>
+      <li><strong>Commercial ebook</strong> — long-form, ~10 chapters, 25,000+ words. Deeper structure and styling, ready to sell.</li>
+    </ul>
+    <h3>Fidelity modes</h3>
+    <ul>
+      <li><strong>High Fidelity</strong> — follows the exact structure, names, and ideas of your source. For repurposing your own content only.</li>
+      <li><strong>Smart Adapt (default)</strong> — rewrites and restructures the source into fresh text, staying close to the original theme.</li>
+      <li><strong>Low Fidelity</strong> — uses the video as a thematic seed only; generates substantially original content safe for commercial publishing (Amazon KDP, Gumroad, etc.).</li>
+    </ul>
+    <h3>Writing styles</h3>
+    <p>Choose from Professional, Conversational, Stoic, Scientific, Narrative, Academic, Motivational, or Minimalist before generation begins.</p>
+    <h3>Sources</h3>
+    <ul>
+      <li><strong>YouTube URL</strong> — TubeBook ingests the video directly via Gemini.</li>
+      <li><strong>Transcript</strong> — paste any text transcript you already have.</li>
+    </ul>
+    <h3>Images</h3>
+    <p>Optional AI cover and per-chapter images (0–3 per chapter). More images consume more credits.</p>
+    <div class="alert-tip">💡 For best quality, use the Data Density score shown after URL analysis to pick the right target word count before committing credits.</div>
+  </div>
+
+  <!-- CREDITS -->
+  <div class="card" id="credits">
+    <h2>Credits &amp; pricing</h2>
+    <p>TubeBook uses a transparent credit system. Every action shows its cost before you confirm.</p>
+    <table>
+      <thead><tr><th>Item</th><th>Credits</th></tr></thead>
+      <tbody>
+        <tr><td>Lead magnet (base, ~5,000 words)</td><td><strong>30</strong></td></tr>
+        <tr><td>Commercial ebook (base, 25,000+ words)</td><td><strong>80</strong></td></tr>
+        <tr><td>YouTube URL source (add-on)</td><td><strong>+20</strong></td></tr>
+        <tr><td>Per chapter image</td><td><strong>+2</strong></td></tr>
+      </tbody>
+    </table>
+    <h3>Plans</h3>
+    <ul>
+      <li><span class="pill">Free</span> 50 credits (one-time) — 1 lead magnet ebook, PDF export with TubeBook watermark.</li>
+      <li><span class="pill">Starter — $9/mo</span> 500 credits/month — ≈ 10 lead magnets or 4 commercial ebooks. No watermark.</li>
+      <li><span class="pill">Pro — $29/mo</span> 2,000 credits/month — ≈ 40 lead magnets, 15 commercial ebooks, or any combination. Priority queue.</li>
+    </ul>
+    <h3>Top-up credit packs</h3>
+    <ul>
+      <li>Starter pack — 250 credits, \$5</li>
+      <li>Boost pack — 1,000 credits, \$15</li>
+      <li>Power pack — 3,500 credits, \$40</li>
+    </ul>
+    <p>Subscription credits refresh each billing cycle and do not roll over. Top-up credits never expire while your account is active.</p>
+  </div>
+
+  <!-- EXPORTS -->
+  <div class="card" id="exports">
+    <h2>Exports &amp; formats</h2>
+    <ul>
+      <li><strong>PDF</strong> — fully styled with cover and chapter imagery, chosen fonts and trim size.</li>
+      <li><strong>DOCX</strong> — editable in Word or Google Docs.</li>
+      <li><strong>EPUB</strong> — Kindle, Apple Books, Kobo.</li>
+      <li><strong>PPTX</strong> — slide deck version for talks and webinars.</li>
+    </ul>
+    <p>Free plan exports include a TubeBook watermark. Starter and Pro plans export without watermark.</p>
+    <div class="alert-info">📦 Before deleting an ebook, TubeBook offers a ZIP archive of all formats plus the cover image.</div>
+  </div>
+
+  <!-- TROUBLESHOOTING -->
+  <div class="card" id="troubleshooting">
+    <h2>Troubleshooting</h2>
+    <h3>Generation seems stuck</h3>
+    <p>Generations resume automatically if a step is interrupted — no action needed. Most ebooks complete within a few minutes; long commercial ebooks with images can take longer.</p>
+    <h3>YouTube URL won't ingest</h3>
+    <p>Make sure the video is public and has captions (auto or manual). Private, age-restricted, or live videos cannot be processed.</p>
+    <h3>I don't see my ebook</h3>
+    <p>Open <strong>Dashboard</strong>. Ebooks are kept for <strong>30 days</strong> after generation — a countdown is shown on each card. Download anything you want to keep before it expires.</p>
+    <h3>Download link expired</h3>
+    <p>Signed download URLs expire after 24 hours. The app refreshes them on demand — just open your Dashboard and the links will be updated automatically.</p>
+  </div>
+
+  <!-- ACCOUNT -->
+  <div class="card" id="account">
+    <h2>Account &amp; billing</h2>
+    <ul>
+      <li>Manage your plan and payment method from <strong>Billing</strong> inside the app.</li>
       <li>You can cancel any time; access continues until the end of the current billing period.</li>
-      <li>We may change prices with at least 30 days' notice; existing billing periods are not affected.</li>
+      <li>Need help with a refund, invoice, or your account? Email <a href="mailto:support@tubebook.org">support@tubebook.org</a>.</li>
     </ul>
   </div>
 
-  <h2 id="s4"><span class="sec-num">04</span>Content &amp; ownership</h2>
-  <h3>Your input</h3>
-  <p>You retain all rights to the YouTube URLs and transcripts you submit. You represent that you have the necessary rights to submit and generate derivative works from that content.</p>
-  <h3>Generated output</h3>
-  <p>Subject to your compliance with these Terms and payment of applicable fees, you own the ebooks and assets generated through the Service and may use them commercially. Free-plan exports include a TubeBook watermark; Starter and Pro plans export without watermark.</p>
-  <h3>Fidelity modes and copyright responsibility</h3>
-  <ul>
-    <li><strong>High Fidelity</strong> — creates a derivative work closely tracking the source. You must own the video, hold an explicit licence from the rights holder, or be confident the source is in the public domain.</li>
-    <li><strong>Smart Adapt</strong> — rewrites and restructures the source. Generally safer for original publication, but you remain responsible for verifying the output does not reproduce protected expression.</li>
-    <li><strong>Low Fidelity</strong> — uses the video as a thematic seed only and produces substantially original content. Recommended for commercial publishing where you do not own the source. To maximise copyright protection, add your own editorial contributions before publishing.</li>
-  </ul>
-  <div class="alert-warn">⚠ In many jurisdictions, purely AI-generated text has limited copyright protection. Your editorial choices, custom instructions, and post-generation edits are what create human authorship. TubeBook makes no warranty that any specific output is registrable as your copyrighted work.</div>
-  <h3>Our IP</h3>
-  <p>The Service, including software, prompts, design, and branding, is owned by TubeBook and its licensors. No rights are granted except as expressly stated.</p>
-
-  <h2 id="s5"><span class="sec-num">05</span>Acceptable use</h2>
-  <p>You must not:</p>
-  <div class="warn-card">
-    <ul>
-      <li>Submit content you do not have rights to use, or that infringes any third party's rights.</li>
-      <li>Generate content that is illegal, defamatory, harassing, sexual content involving minors, or that violates AI provider policies.</li>
-      <li>Attempt to bypass credit limits, reverse-engineer the Service, or probe for vulnerabilities without written permission.</li>
-      <li>Resell raw API access to the Service.</li>
-    </ul>
+  <div class="alert-info" style="margin-top: 3rem;">
+    ✉ Still have questions? Email <a href="mailto:support@tubebook.org">support@tubebook.org</a> — we typically reply within 1 business day.
   </div>
-  <p>We may suspend or terminate accounts that violate these rules, with or without notice.</p>
-
-  <h2 id="s6"><span class="sec-num">06</span>Third-party services</h2>
-  <p>TubeBook relies on third-party AI providers, payment processors, and infrastructure. Their availability and policies may impact the Service. We are not liable for outages or limitations imposed by those providers.</p>
-
-  <h2 id="s7"><span class="sec-num">07</span>Disclaimers</h2>
-  <p>The Service is provided "as is" and "as available" without warranties of any kind, express or implied, including merchantability, fitness for a particular purpose, and non-infringement. AI-generated output may contain errors; you are responsible for reviewing it before publishing or distributing.</p>
-
-  <h2 id="s8"><span class="sec-num">08</span>Limitation of liability</h2>
-  <p>To the maximum extent permitted by law, TubeBook's aggregate liability arising out of or relating to the Service will not exceed the greater of (a) the amount you paid us in the 12 months preceding the claim, or (b) USD 100. We are not liable for indirect, incidental, special, consequential, or punitive damages, or loss of profits, revenue, data, or goodwill.</p>
-
-  <h2 id="s9"><span class="sec-num">09</span>Termination</h2>
-  <p>You may close your account at any time. We may suspend or terminate accounts for breach of these Terms, abuse, or non-payment. Sections that by their nature should survive termination (ownership, disclaimers, liability, dispute resolution) will continue to apply.</p>
-
-  <h2 id="s10"><span class="sec-num">10</span>Changes</h2>
-  <p>We may update these Terms. Material changes will be announced at least 14 days before they take effect. Continued use after the effective date constitutes acceptance.</p>
-
-  <h2 id="s11"><span class="sec-num">11</span>Governing law</h2>
-  <p>These Terms are governed by the laws applicable to the entity operating TubeBook, without regard to conflict-of-law principles. Disputes will be resolved in the competent courts of that jurisdiction, unless local consumer law provides otherwise.</p>
-
-  <h2 id="s12"><span class="sec-num">12</span>Contact</h2>
-  <p>Questions about these Terms: <a href="mailto:support@tubebook.org">support@tubebook.org</a></p>
 </div>
 
 <footer>

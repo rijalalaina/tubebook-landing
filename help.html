@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-tubebook_32x32.png" />
 <title>Help &amp; Tutorials — TubeBook</title>
-<meta name="description" content="Learn how to turn YouTube videos and transcripts into polished ebooks with TubeBook. Step-by-step tutorials, credit usage, exports, and troubleshooting." />
+<meta name="description" content="Learn how to turn YouTube videos, web articles and transcripts into polished ebooks with TubeBook — single-source or multi-source. Step-by-step tutorials, credit usage, exports, and troubleshooting." />
 <link rel="canonical" href="https://tubebook.org/help" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -184,10 +184,24 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <h3>Writing styles</h3>
     <p>Choose from Professional, Conversational, Storytelling, Academic, Inspirational, or Stoic before generation begins.</p>
     <h3>Sources</h3>
+    <p>On the generate page you first choose <strong>One source</strong> or <strong>Many sources</strong>.</p>
+    <p><strong>One source</strong> is the classic flow — a single YouTube URL, or a transcript you paste in.</p>
+    <p><strong>Many sources</strong> lets you combine a whole research set into one book. Add as many entries as your plan allows, in any mix:</p>
     <ul>
-      <li><strong>YouTube URL</strong> — TubeBook ingests the video directly via Gemini.</li>
-      <li><strong>Transcript</strong> — paste any text transcript you already have.</li>
+      <li><strong>YouTube URL</strong> — TubeBook ingests the video directly and pulls its transcript.</li>
+      <li><strong>Web page</strong> — paste an article or blog post URL and TubeBook extracts the readable text. Paywalled and JavaScript-only pages can't be read; paste the text instead.</li>
+      <li><strong>Pasted text</strong> — any transcript, article, or set of notes (200 characters minimum).</li>
     </ul>
+    <p>Give each source an optional label so you can recognise it later. Sources are numbered <strong>S1, S2, S3…</strong> in the order you add them.</p>
+    <h3>How multi-source books are written</h3>
+    <ol>
+      <li>TubeBook reads every source in turn and summarises each one. You'll see "Reading source 2 of 6" on the dashboard.</li>
+      <li>It merges those summaries and drafts a single outline across the whole set.</li>
+      <li>Each chapter is tagged with the sources it draws on — you'll see chips like <strong>S1</strong>, <strong>S4</strong> next to it in the outline review.</li>
+      <li>When writing, each chapter is given the full text of just its own sources, so it works from real detail rather than a shared summary.</li>
+    </ol>
+    <div class="alert-tip">💡 Sources are best-effort. If one URL is dead or paywalled it's skipped and the book is still built from the rest — you'll see "1 of 6 sources couldn't be read" on the dashboard. Your ebook only fails if <em>none</em> of them could be read, and then credits are refunded automatically.</div>
+    <p><strong>How many sources can I use?</strong> Free up to 3, Starter up to 10, Pro up to 25 per ebook.</p>
     <h3>Images</h3>
     <p>AI cover image is generated for all plans. Per-chapter illustrations (0–5 per chapter) are available on <strong>Starter and Pro</strong> plans only. More images = longer generation time.</p>
     <div class="alert-tip">💡 For best quality, review and edit the AI-drafted outline before approving it — chapter scope drives the whole book, and nothing is written until you approve.</div>
@@ -197,19 +211,21 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
   <div class="card" id="credits">
     <h2>Credits &amp; pricing</h2>
     <p>TubeBook uses a transparent credit system. Every action shows its cost before you confirm.</p>
+    <p>Your first source is always included in the base price, so a single-source ebook costs exactly what it always has. A 5-source lead magnet costs 30 + 4 &times; 8 = <strong>62 credits</strong>.</p>
     <table>
       <thead><tr><th>Item</th><th>Credits</th></tr></thead>
       <tbody>
         <tr><td>Lead magnet (~5,000 words)</td><td><strong>30</strong></td></tr>
         <tr><td>Commercial ebook (25,000+ words)</td><td><strong>100</strong></td></tr>
         <tr><td>Chapter illustration (per image, optional)</td><td><strong>+1</strong></td></tr>
+        <tr><td>Each source beyond the first (multi-source books)</td><td><strong>+8</strong></td></tr>
       </tbody>
     </table>
     <h3>Plans</h3>
     <ul>
-      <li><span class="pill">Free</span> 30 credits (one-time) — 1 lead magnet ebook. PDF export with a small "Made with TubeBook.org" footer credit (any purchase, subscription or credit pack, removes it). No illustrations, no DOCX/EPUB/PPTX.</li>
-      <li><span class="pill">Starter — $9/mo</span> 250 credits/month — ≈ 8 lead magnets or 2 commercial ebooks, or any mix. PDF &amp; DOCX export, chapter illustrations. No EPUB/PPTX.</li>
-      <li><span class="pill">Pro — $29/mo</span> 1,000 credits/month — ≈ 33 lead magnets or 10 commercial ebooks, or any mix. All formats (PDF, DOCX, EPUB, PPTX), chapter illustrations, priority queue.</li>
+      <li><span class="pill">Free</span> 30 credits (one-time) — 1 lead magnet ebook. Up to 3 sources per ebook. PDF export with a small "Made with TubeBook.org" footer credit (any purchase, subscription or credit pack, removes it). No illustrations, no DOCX/EPUB/PPTX.</li>
+      <li><span class="pill">Starter — $9/mo</span> 250 credits/month — ≈ 8 lead magnets or 2 commercial ebooks, or any mix. Up to 10 sources per ebook. PDF &amp; DOCX export, chapter illustrations. No EPUB/PPTX.</li>
+      <li><span class="pill">Pro — $29/mo</span> 1,000 credits/month — ≈ 33 lead magnets or 10 commercial ebooks, or any mix. Up to 25 sources per ebook. All formats (PDF, DOCX, EPUB, PPTX), chapter illustrations, priority queue.</li>
     </ul>
     <h3>Top-up credit packs</h3>
     <ul>

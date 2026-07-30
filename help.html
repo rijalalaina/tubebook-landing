@@ -142,6 +142,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
   <div class="toc-nav">
     <a href="#getting-started">Getting started</a>
     <a href="#generation">Generating an ebook</a>
+    <a href="#find-a-topic">Find a topic</a>
     <a href="#credits">Credits &amp; pricing</a>
     <a href="#exports">Exports &amp; formats</a>
     <a href="#troubleshooting">Troubleshooting</a>
@@ -158,10 +159,14 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
       </div>
       <div class="step-row">
         <div class="step-n">2</div>
-        <div class="step-body">Open <strong>Generate</strong>, paste a YouTube URL or a transcript, pick a fidelity mode and writing style, then submit.</div>
+        <div class="step-body">Not sure what to write about? Open <strong>Find a topic</strong> first — see what readers are searching for, pick a concept, and TubeBook hands you the sources. Or skip straight to step 3.</div>
       </div>
       <div class="step-row">
         <div class="step-n">3</div>
+        <div class="step-body">Open <strong>Generate</strong>, paste a YouTube URL or a transcript, pick a fidelity mode and writing style, then submit.</div>
+      </div>
+      <div class="step-row">
+        <div class="step-n">4</div>
         <div class="step-body">TubeBook handles the rest — transcription, structuring, writing, optional cover and chapter images (Starter &amp; Pro) — then exports to <strong>PDF</strong> (all plans), <strong>DOCX</strong> (Starter &amp; Pro), or <strong>EPUB &amp; PPTX</strong> (Pro only).</div>
       </div>
     </div>
@@ -210,6 +215,33 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <div class="alert-tip">💡 For best quality, review and edit the AI-drafted outline before approving it — chapter scope drives the whole book, and nothing is written until you approve.</div>
   </div>
 
+  <!-- FIND A TOPIC -->
+  <div class="card" id="find-a-topic">
+    <h2>Find a topic</h2>
+    <p><strong>Find a topic</strong> answers the question that comes before everything else: what book is worth writing? Enter a niche and TubeBook shows you what people are actually searching for, how crowded each topic already is, and a set of book concepts built from the gaps — then finds the sources to write it from.</p>
+    <h3>What the numbers mean</h3>
+    <p>This is the important part to understand. The demand figures come from <strong>what Amazon and Google autocomplete</strong> when someone starts typing — real queries, ordered by how often people type them. They are <strong>search-demand signals, not Amazon sales ranks</strong>.</p>
+    <p>We would love to show you true Best Seller Rank, and we deliberately do not fake it. Amazon retired public access to that data: the Product Advertising API closed in May 2026, and its replacement requires an Amazon Associates account with ongoing qualifying sales. So no honest tool can hand you live BSR without you having your own seller relationship with Amazon.</p>
+    <ul>
+      <li><strong>Score (0-100)</strong> — a ranking aid only, combining demand with competition. Use it to order your shortlist, never as a sales forecast.</li>
+      <li><strong>Book buyers</strong> — this phrase autocompletes inside Amazon's <em>Books</em> or <em>Kindle Store</em>, not just all departments. It is the strongest buying signal available here, because the person typing it is already shopping for a book.</li>
+      <li><strong>Competition</strong> — how many books already target the phrase and how heavily reviewed they are. A crowded shelf of forgotten titles is easier to enter than a small shelf of bestsellers, so both are weighed.</li>
+      <li><strong>Competition: unknown</strong> — the competition lookup was unavailable for that phrase. It means we don't know, <em>not</em> that the topic is wide open.</li>
+    </ul>
+    <h3>Suggested sources</h3>
+    <p>Pick a concept and TubeBook shortlists YouTube videos and web articles for it. Two filters are applied before you ever see the list:</p>
+    <ul>
+      <li>Videos must have <strong>captions</strong>, because that is what TubeBook reads. A video without them cannot be turned into a chapter, so suggesting it would waste your credits.</li>
+      <li>Every link is checked for reachability and safety first, using the same validation the ingester applies.</li>
+    </ul>
+    <p>Everything is preselected but fully editable — untick anything you don't want, and add your own sources on the generate page before spending a credit on the book itself.</p>
+    <h3>Better KDP keywords</h3>
+    <p>When a book comes from a researched topic, its 7 KDP keywords are drawn from the <strong>phrases actually observed in search</strong> rather than invented by the AI. An invented keyword nobody types ranks for nothing, so this is a real difference in discoverability.</p>
+    <h3>Cost and caching</h3>
+    <p>Researching a niche costs <strong>5 credits</strong>. Results are cached for <strong>14 days</strong> — reopening the same niche in that window is free, and word order doesn't matter ("stoicism for beginners" and "beginners stoicism" are the same niche). Finding sources for a concept costs nothing extra.</p>
+    <div class="alert-tip">💡 If research fails part-way, your 5 credits are refunded automatically. If a niche returns nothing useful, try a broader term — "journaling" rather than "bullet journaling for INFJ nurses".</div>
+  </div>
+
   <!-- CREDITS -->
   <div class="card" id="credits">
     <h2>Credits &amp; pricing</h2>
@@ -218,6 +250,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <table>
       <thead><tr><th>Item</th><th>Credits</th></tr></thead>
       <tbody>
+        <tr><td>Topic research (per niche, cached free for 14 days)</td><td><strong>5</strong></td></tr>
         <tr><td>Short lead magnet (~6,000 words, 10-25 pages)</td><td><strong>30</strong></td></tr>
         <tr><td>Short book (~13,000 words, 25-50 pages)</td><td><strong>60</strong></td></tr>
         <tr><td>Full commercial book (25,000+ words)</td><td><strong>100</strong></td></tr>
@@ -227,7 +260,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     </table>
     <h3>Plans</h3>
     <ul>
-      <li><span class="pill">Free</span> 30 credits (one-time) — 1 lead magnet ebook. Up to 3 sources per ebook. PDF export with a small "Made with TubeBook.org" footer credit (any purchase, subscription or credit pack, removes it). No illustrations, no DOCX/EPUB/PPTX.</li>
+      <li><span class="pill">Free</span> 30 credits (one-time) — 1 lead magnet ebook, or 6 topic searches. Up to 3 sources per ebook. PDF export with a small "Made with TubeBook.org" footer credit (any purchase, subscription or credit pack, removes it). No illustrations, no DOCX/EPUB/PPTX.</li>
       <li><span class="pill">Starter — $9/mo</span> 250 credits/month — ≈ 8 lead magnets or 2 commercial ebooks, or any mix. Up to 10 sources per ebook. PDF &amp; DOCX export, chapter illustrations. No EPUB/PPTX.</li>
       <li><span class="pill">Pro — $29/mo</span> 1,000 credits/month — ≈ 33 lead magnets or 10 commercial ebooks, or any mix. Up to 25 sources per ebook. All formats (PDF, DOCX, EPUB, PPTX), chapter illustrations, priority queue.</li>
     </ul>
@@ -257,6 +290,10 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
   <!-- TROUBLESHOOTING -->
   <div class="card" id="troubleshooting">
     <h2>Troubleshooting</h2>
+    <h3>Find a topic returned no results</h3>
+    <p>The suggestion services are occasionally unavailable. Nothing is charged when research fails — the 5 credits are refunded automatically. Try again in a few minutes, or use a broader niche term.</p>
+    <h3>No sources were suggested for my topic</h3>
+    <p>Source discovery draws on shared daily quotas from YouTube and our search provider. When those are used up for the day, TubeBook tells you so rather than silently returning an empty list — your research results are unaffected, and you can add sources by hand on the generate page.</p>
     <h3>Generation seems stuck</h3>
     <p>Generations resume automatically if a step is interrupted — no action needed. Most ebooks complete within a few minutes; long commercial ebooks with images can take longer.</p>
     <h3>YouTube URL won't ingest</h3>

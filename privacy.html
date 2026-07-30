@@ -129,7 +129,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <div class="breadcrumb"><a href="/">Home</a><span>/</span>Privacy Policy</div>
     <h1>Privacy Policy</h1>
     <p class="page-lead">How TubeBook collects, uses, and protects your information when you use our website and applications.</p>
-    <p class="page-meta">Last updated: July 26, 2026</p>
+    <p class="page-meta">Last updated: July 30, 2026</p>
   </div>
 
   <div class="toc-box">
@@ -163,6 +163,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
       <li>Source material you submit for processing: YouTube URLs, web page URLs, and transcripts or text you paste.</li>
       <li>Text retrieved from web page URLs you supply. When you add a web page as a source, we fetch that page on your behalf and store its extracted text with your ebook so it can be used to write your chapters.</li>
       <li>Generated ebooks, covers, chapter images, and related metadata.</li>
+      <li><strong>Topic research queries.</strong> The niche or topic you type into Find a topic, together with the results returned for it, are stored against your account so you can reopen the research without paying for it again. Research results are cached and may be reused to answer an equivalent query from another user — the cached record contains only the topic and public market data, never your identity or any of your source material.</li>
     </ul>
     <h3>Technical data</h3>
     <ul>
@@ -189,10 +190,23 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
       <li><strong>Cloudflare</strong> — hosting, edge runtime, DDoS protection.</li>
     </ul>
   </div>
+  <h3>Topic research</h3>
+  <p>When you use Find a topic, the <strong>topic text you enter</strong> (and phrases derived from it) is sent to the services below in order to look up market data. Your name, email, account identifier and source material are <strong>not</strong> sent — these requests are made by our server and carry no information identifying you.</p>
+  <div class="card">
+    <ul>
+      <li><strong>Amazon</strong> — public search-suggestion service, to see what shoppers type.</li>
+      <li><strong>Google</strong> — public search-suggestion service, for the same purpose.</li>
+      <li><strong>Google Books API</strong> — to count and describe already-published titles.</li>
+      <li><strong>YouTube Data API</strong> (Google) — to find candidate source videos.</li>
+      <li><strong>Serper</strong> — Google search results, to find candidate source articles.</li>
+    </ul>
+  </div>
+  <p>Each of these providers may log the query it receives under its own privacy policy. Because the query is a topic rather than personal data, and is sent without account identifiers, we consider this low-risk — but if you would rather a topic never leave our systems, do not enter it into Find a topic.</p>
 
   <h2 id="s4"><span class="sec-num">04</span>Data retention</h2>
   <ul>
     <li>Generated ebooks are retained for <strong>30 days</strong>, then archived/deleted. Download anything you want to keep.</li>
+    <li>Topic research results are cached for <strong>14 days</strong>, after which the same niche is researched afresh. The stored record of your own past searches remains available in your account until you delete your account.</li>
     <li>Account and billing records are retained while your account is active and as required by law (typically up to 7 years for invoices).</li>
     <li>You may request deletion of your account at any time (see Section 7).</li>
   </ul>

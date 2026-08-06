@@ -136,13 +136,17 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
   <div class="page-header">
     <div class="breadcrumb"><a href="/">Home</a><span>/</span>Help &amp; Tutorials</div>
     <h1>Help &amp; Tutorials</h1>
-    <p class="page-lead">Everything you need to turn YouTube videos and transcripts into publishable ebooks with TubeBook.</p>
+    <p class="page-lead">Everything you need to turn YouTube videos, articles, documents and your own manuscripts into publishable ebooks with TubeBook.</p>
   </div>
 
   <div class="toc-nav">
     <a href="#getting-started">Getting started</a>
     <a href="#generation">Generating an ebook</a>
+    <a href="#design">Design &amp; readability</a>
+    <a href="#artwork">Cover &amp; illustrations</a>
+    <a href="#grounding">Where the facts come from</a>
     <a href="#book-parts">Book parts</a>
+    <a href="#title">Title &amp; subtitle</a>
     <a href="#find-a-topic">Find a topic</a>
     <a href="#credits">Credits &amp; pricing</a>
     <a href="#exports">Exports &amp; formats</a>
@@ -201,7 +205,11 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
       <li><strong>YouTube URL</strong> — TubeBook ingests the video directly and pulls its transcript.</li>
       <li><strong>Web page</strong> — paste an article or blog post URL and TubeBook extracts the readable text. Paywalled and JavaScript-only pages can't be read; paste the text instead.</li>
       <li><strong>Pasted text</strong> — any transcript, article, or set of notes (200 characters minimum).</li>
+      <li><strong>Document</strong> — a <strong>.docx</strong>, <strong>.pptx</strong> or <strong>.pdf</strong>, either uploaded from your computer (up to 25 MB) or linked by URL. Word manuscripts, slide decks, research papers, reports and course notes all work.</li>
     </ul>
+    <p>You pick <em>Document</em> and nothing else — TubeBook identifies the format from the file itself, not from its name, so a <code>.docx</code> that is really a PDF is read as the PDF it is instead of failing later.</p>
+    <div class="alert-tip">💡 A <strong>scanned</strong> PDF — pages that are photographs of text, with nothing selectable — is refused with a clear reason rather than ingested as an empty source. Export a fresh PDF from the original file, or paste the text.</div>
+    <p>A document costs exactly what a web page costs: no YouTube transcript credit, no search call. Parsing happens inside TubeBook.</p>
     <p>Give each source an optional label so you can recognise it later. Sources are numbered <strong>S1, S2, S3…</strong> in the order you add them.</p>
     <h3>How multi-source books are written</h3>
     <ol>
@@ -212,9 +220,90 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     </ol>
     <div class="alert-tip">💡 Sources are best-effort. If one URL is dead or paywalled it's skipped and the book is still built from the rest — you'll see "1 of 6 sources couldn't be read" on the dashboard. Your ebook only fails if <em>none</em> of them could be read, and then credits are refunded automatically.</div>
     <p><strong>How many sources can I use?</strong> Free up to 3, Starter up to 10, Pro up to 25 per ebook.</p>
+
+    <h3>Pasting a whole manuscript</h3>
+    <p>The paste box takes up to <strong>850,000 characters — about 500 printed pages</strong>, so you can drop in an entire unpublished book and have TubeBook restructure it.</p>
+    <p>Past roughly 47 pages, no single step can read every word at once, so TubeBook works from excerpts — and it is worth knowing exactly how, because it is not "the first fifty pages":</p>
+    <ul>
+      <li>The <strong>outline</strong> is planned from excerpts spread evenly across the <em>whole</em> text, pinned to your real opening and your real ending.</li>
+      <li>Each <strong>chapter</strong> is written from the stretch of the manuscript it covers, with the windows overlapping so nothing falls between two chapters.</li>
+    </ul>
+    <p>The generate page tells you, before you spend a credit, what proportion the length you picked will reach — for example <em>"At 5 chapters this format reaches about 47% of it."</em> A 200-page manuscript is covered completely at any length; a 500-page one needs a longer format, or split it across several sources by part.</p>
     <h3>Images</h3>
-    <p>AI cover image is generated for all plans. Per-chapter illustrations (0–5 per chapter) are available on <strong>Starter and Pro</strong> plans only. More images = longer generation time.</p>
+    <p>An AI cover is generated on every plan. Per-chapter illustrations (0–5 per chapter) are available on <strong>Starter and Pro</strong>, at 1 credit per image. More images means a longer generation.</p>
+    <p>You are not stuck with what comes out — see <a href="#artwork">Cover &amp; illustrations</a> for choosing between options, uploading your own cover, and briefing the artist.</p>
     <div class="alert-tip">💡 For best quality, review and edit the AI-drafted outline before approving it — chapter scope drives the whole book, and nothing is written until you approve.</div>
+  </div>
+
+  <!-- DESIGN -->
+  <div class="card" id="design">
+    <h2>Design &amp; readability</h2>
+    <h3>Text size</h3>
+    <p>Pick a reading comfort before you generate, or change it on a finished book and rebuild:</p>
+    <ul>
+      <li><strong>Standard — 12 pt.</strong> The normal setting for a trade paperback.</li>
+      <li><strong>Comfortable — 14 pt.</strong> Easier on the eye over a long sitting.</li>
+      <li><strong>Large print — 16 pt.</strong> The size large-print editions are actually set at. If your readers are older, this is the one.</li>
+      <li><strong>Custom — anything from 11 to 20 pt.</strong></li>
+    </ul>
+    <p>In a large-print book the front matter keeps its own scale: the copyright notice and the detailed contents stay at 12 pt, because a copyright page set at 16 pt looks like a mistake rather than a kindness.</p>
+    <div class="alert-warn">⚠️ <strong>Text size changes your page count</strong>, and page count drives the spine width on a paperback wrap. Change it on a book already listed on KDP and you must re-upload <strong>both</strong> the interior and the cover — the old cover will no longer fit.</div>
+
+    <h3>Fonts and trim</h3>
+    <p>Choose separate fonts for headings, subtitle and body from twelve families, eight KDP trim sizes from 5″ × 8″ to 8.5″ × 11″, portrait or landscape, and white or cream paper. Cream is slightly thicker, which affects the spine.</p>
+    <p>Page estimates on the generate page update live as you change any of these, and tell you whether the book clears Amazon's 24-page paperback minimum.</p>
+  </div>
+
+  <!-- ARTWORK -->
+  <div class="card" id="artwork">
+    <h2>Cover &amp; illustrations</h2>
+    <p>Everything here lives under <strong>Edit this book</strong> on a finished ebook, and all of it follows one rule: <strong>drawing pictures rebuilds nothing.</strong> You draw, you compare, you choose — and only then are the files rebuilt, once.</p>
+
+    <h3>Choosing a cover</h3>
+    <p><strong>Draw 3 options</strong> gives you three covers side by side. They stay on a shortlist, so the one you liked four attempts ago is still there. When you press <strong>Use this cover</strong>, TubeBook redraws the cover page, the Kindle cover and the paperback wrap and rebuilds your files — your chapters and illustrations are untouched.</p>
+    <p>Three options per press, one per <em>idea</em> rather than three renderings of one idea. If you press again you get three fresh ideas, not the same three redrawn.</p>
+    <div class="alert-tip">💡 The old <strong>Regenerate cover</strong> button still exists and still works. It draws one picture and rebuilds everything immediately — quicker if you just want a reroll, slower if you want a choice.</div>
+
+    <h3>Uploading your own cover</h3>
+    <p>Have a designer's artwork, or a photograph you own? <strong>Upload your own</strong> puts it straight into the shortlist alongside the drawn options.</p>
+    <p><strong>Upload the picture, not a finished cover.</strong> Your title, subtitle and author name are drawn on top afterwards, sized correctly for each format — a cover that already carries its title ends up with the title on it twice. Portrait, at least 1200 × 1800px (ideally 1600 × 2560), PNG, JPEG or WebP, up to 15 MB.</p>
+
+    <h3>The art brief</h3>
+    <p>TubeBook writes its own art direction from your title, subject and chapter list. That is a reasonable guess and it is only a guess — you may want ink line drawings, a period, a palette, or no people at all. The <strong>art brief</strong> is where you say so, in your own words:</p>
+    <p><em>"Fine ink line drawings, warm sepia, no photographs. Show real people in everyday settings."</em></p>
+    <p>One brief covers <strong>both</strong> the cover and the chapter illustrations, on purpose — a book whose cover is a woodcut and whose chapters are watercolours looks worse than either choice made consistently. It applies to the next cover or illustration you draw, so save it first, then draw.</p>
+    <div class="alert-tip">💡 The brief cannot ask for lettering. Artwork is deliberately wordless — your real title is composed on top afterwards — so a request for a title or a caption in the picture is expressed through imagery instead. It saves you a cover with the title on it twice, once in garbled AI text.</div>
+
+    <h3>Reviewing chapter illustrations</h3>
+    <p><strong>Review chapter illustrations</strong> shows every chapter with its pictures. For each one you can:</p>
+    <ul>
+      <li><strong>Untick any that miss.</strong> A chapter can have none at all if you prefer.</li>
+      <li><strong>Draw 2 more</strong> for that chapter alone — the other chapters are untouched, so the eleven you already accepted stay exactly as they are.</li>
+    </ul>
+    <p>A redraw keeps the same subject and moves the camera — wider, closer, lower, tighter on the hands — because you objected to the picture, not to what the chapter is about.</p>
+    <p>Selections save as you make them. Nothing reaches your files until you press <strong>Save &amp; rebuild files</strong>, so one rebuild covers a whole review pass however many chapters you adjusted.</p>
+
+    <h3>What the pictures are actually of</h3>
+    <p>Before anything is drawn, TubeBook turns your book into <em>nameable physical scenes</em> — one for the cover, one per chapter. It is the difference between a picture of your subject and a picture of a mood. A book about conversation gets people mid-conversation; a book about a craft gets the tools and the workspace.</p>
+  </div>
+
+  <!-- GROUNDING -->
+  <div class="card" id="grounding">
+    <h2>Where the facts come from</h2>
+    <p>This is the setting that decides whether you can stand behind your own book, and it is easy to confuse with fidelity. They answer different questions:</p>
+    <ul>
+      <li><strong>Fidelity</strong> governs <em>expression</em> — the structure, the ordering, the wording, which examples appear.</li>
+      <li><strong>Grounding</strong> governs <em>substance</em> — which facts, figures, names and claims may appear at all.</li>
+    </ul>
+    <p><strong>TubeBook never searches the web while writing your book.</strong> There is no retrieval step, no live lookup, nothing added from the internet once generation starts. But that is not the same promise as "only your sources": a large AI model carries an enormous amount of subject knowledge, and left unconstrained it will happily supply a statistic, a date or a piece of background you never provided. So you choose:</p>
+    <ul>
+      <li><strong>My sources only</strong> <em>(default)</em> — every fact, figure, name, quotation and example must come from the material you supplied. If the model knows something relevant that your sources do not contain, it is left out. Depth comes from working your material harder, not from importing new material.</li>
+      <li><strong>Sources + AI knowledge</strong> — your sources stay the backbone, and the AI may add well-established background where it genuinely helps. Books built this way are badged on your dashboard so you can spot them later.</li>
+    </ul>
+    <p><strong>Neither setting may invent evidence.</strong> On both, the model is forbidden from inventing statistics, studies, citations or quotations, and from attributing anything to a named person or organisation that your sources do not. "Sources + AI knowledge" means <em>add background</em>, never <em>add evidence</em>.</p>
+    <div class="alert-tip">💡 Why <em>My sources only</em> is the default: it is the only setting you can truly vouch for. Everything in the book traces back to something you chose. If you switch to the other one, fact-check anything you cannot trace to a source before you publish.</div>
+    <p>Combine <strong>My sources only</strong> with <strong>High Fidelity</strong> and you have a genuine "restructure my own manuscript" mode — your material is the only thing allowed in.</p>
+    <p>One nuance worth stating, because the two settings look like they collide: on <strong>Low Fidelity</strong> with <em>My sources only</em>, the AI writes original prose and original illustrations of your points, but it may not invent facts to fill them. An invented number is invented whether or not it replaced a real one.</p>
   </div>
 
   <!-- BOOK PARTS -->
@@ -227,6 +316,11 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
       <li><strong>Call to action</strong>, <strong>About the author</strong>, <strong>Contact / back cover</strong></li>
     </ul>
     <div class="alert-tip">💡 Untick the introduction or conclusion <em>at the outline stage</em> and they are never written, so you do not pay to generate them. Untick them later and they are only left out of the files.</div>
+    <h3>How each chapter ends</h3>
+    <p>By default every chapter closes with a <strong>Key Takeaways</strong> list and a short <strong>Reflection</strong> prompt. Both are now yours to switch off — separately — for a book that simply reads as prose.</p>
+    <p>Unlike the parts above, these can be removed from a book that is <em>already written</em>: they are taken out when the files are built, so unticking one and rebuilding is <strong>free and rewrites nothing</strong>. Tick it again and it comes back.</p>
+    <div class="alert-tip">💡 If you ever saw a chapter with a "Key Takeaways" heading and nothing under it, that is fixed: any heading with no content beneath it is now dropped from the files, whatever it says.</div>
+
     <h3>Changing your mind later</h3>
     <p>On any finished book, use <strong>Change what's in this book</strong> to adjust the selection and rebuild the files. This is <strong>free and costs no credits</strong> — these parts are assembled when the files are built, so nothing is rewritten.</p>
 
@@ -242,6 +336,20 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <h3>QR codes</h3>
     <p>You can add a QR code to the About the author page, pointing at your website, your Amazon book page, or anywhere else. It is printed in the <strong>paperback only</strong> — in a Kindle or EPUB edition a reader taps a link instead, so it would just take up space.</p>
     <p><strong>One thing worth knowing about Amazon.</strong> KDP's <a href="https://kdp.amazon.com/en_US/help/topic/GQ6JQ7FM6C72HE4X" target="_blank" rel="noopener">hyperlink guidelines</a> prohibit "links to web forms that request customer information" inside a book — which is exactly what an email opt-in or lead-magnet landing page is. Links to Amazon itself are fine, and links to other books in your series are explicitly permitted. A QR code is an image rather than a link, so it is not covered by that rule in so many words, but Amazon reserves the right to remove links at its discretion. TubeBook warns you when a QR target looks like a sign-up page, and prints it anyway if you keep it — it is your book.</p>
+  </div>
+
+  <!-- TITLE -->
+  <div class="card" id="title">
+    <h2>Title &amp; subtitle</h2>
+    <h3>Amazon's 200-character limit</h3>
+    <p>KDP allows <strong>200 characters for the title and subtitle combined</strong>, spaces and punctuation included. Go over and Amazon rejects the listing. TubeBook counts them for you wherever they can be edited, and warns before you are over rather than after.</p>
+
+    <h3>Editing them after the book is built</h3>
+    <p>Under <strong>Edit this book</strong> you can rewrite the title, subtitle and author name on a finished ebook and rebuild. This is <strong>free</strong>. The cover artwork is kept — only the lettering over it is redrawn — and the Amazon description and keywords are rewritten to match the new title.</p>
+
+    <h3>AI title suggestions</h3>
+    <p><strong>Suggest SEO titles</strong> proposes alternatives written against your book's actual chapters and, if the book came from <em>Find a topic</em>, the phrases readers really searched for. Each suggestion shows its character count against the 200 limit. Clicking one fills the fields; nothing is saved until you press save, so trying them costs nothing.</p>
+    <p>Suggestions are written to work three ways at once: <strong>search</strong> (keywords people actually type), <strong>answer engines</strong> (a subtitle that reads as a direct, literal answer), and <strong>AI recommendations</strong> (a title and subtitle that make the subject, scope and reader unmistakable when read on their own, with no cover around them). And never keyword-stuffed — a title that reads as SEO bait loses the human sale and the AI recommendation together.</p>
   </div>
 
   <!-- FIND A TOPIC -->
@@ -267,12 +375,18 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
       <li><strong>Competition: unknown</strong> — the competition lookup was unavailable for that phrase. It means we don't know, <em>not</em> that the topic is wide open.</li>
     </ul>
     <h3>Suggested sources</h3>
-    <p>Pick a concept and TubeBook shortlists YouTube videos and web articles for it. Two filters are applied before you ever see the list:</p>
+    <p>Pick a concept and TubeBook shortlists <strong>up to 25 sources</strong> for it — as many as a Pro book can combine. Filters are applied before you ever see the list:</p>
     <ul>
       <li>Videos must have <strong>captions</strong>, because that is what TubeBook reads. A video without them cannot be turned into a chapter, so suggesting it would waste your credits.</li>
+      <li>Videos under four minutes are dropped — too little for a chapter. Long-form talks, lectures and interviews are <em>included</em>, and each row shows the runtime, which is the best single guide to how much of a chapter a video can carry.</li>
+      <li><strong>PDFs and Office documents</strong> in the results — papers, government reports, whitepapers, course notes — are recognised as documents and read with the document extractor rather than being handed to a web reader that cannot open them.</li>
       <li>Every link is checked for reachability and safety first, using the same validation the ingester applies.</li>
     </ul>
-    <p>Everything is preselected but fully editable — untick anything you don't want, and add your own sources on the generate page before spending a credit on the book itself.</p>
+    <p>The first ten are shown; <strong>Show 10 more</strong> reveals the rest. Those are already loaded — revealing them costs nothing and makes no new searches.</p>
+    <p>The first ten are also the ones preselected, deliberately: sources past the first add credits to the book, so TubeBook does not tick twenty-five on your behalf. The panel shows your plan's limit (Free 3, Starter 10, Pro 25) and stops you selecting past it, here, rather than letting you find out on the generate page.</p>
+    <h3>How the concepts are written</h3>
+    <p>Each proposed title and subtitle has to work for all three ways a book gets found today: <strong>search</strong> (keywords drawn from phrases really observed, never invented), <strong>answer engines</strong> (a subtitle that reads as a direct, literal answer — a number, a timeframe, a named situation, and no wordplay), and <strong>AI recommendations</strong> (a title and subtitle that make the subject, scope and reader unmistakable read on their own). Concepts also respect Amazon's 200-character title-plus-subtitle limit, so none of them arrive unusable.</p>
+
     <h3>Better KDP keywords</h3>
     <p>When a book comes from a researched topic, its 7 KDP keywords are drawn from the <strong>phrases actually observed in search</strong> rather than invented by the AI. An invented keyword nobody types ranks for nothing, so this is a real difference in discoverability.</p>
     <h3>Cost and caching</h3>
@@ -357,6 +471,12 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <p>The suggestion services are occasionally unavailable. Nothing is charged when research fails — the 5 credits are refunded automatically. Try again in a few minutes, or use a broader niche term.</p>
     <h3>No sources were suggested for my topic</h3>
     <p>Source discovery draws on shared daily quotas from YouTube and our search provider. When those are used up for the day, TubeBook tells you so rather than silently returning an empty list — your research results are unaffected, and you can add sources by hand on the generate page.</p>
+    <h3>"Not enough transcript capacity this month"</h3>
+    <p>YouTube transcripts come from a shared monthly allowance. When there is not enough left for the videos in your book, TubeBook <strong>refuses before charging you</strong> and tells you how many remain and when the allowance resets — rather than building the book from whichever sources happened to fit and billing you for it. Non-YouTube sources are unaffected, so a book from documents, articles or pasted text still runs.</p>
+
+    <h3>My chapter illustrations don't suit the book</h3>
+    <p>Open <strong>Edit this book → Review chapter illustrations</strong>: untick any that miss, or draw new options for that one chapter. Write an <a href="#artwork">art brief</a> first if you want a particular style, then draw. Nothing is rebuilt until you save.</p>
+
     <h3>Generation seems stuck</h3>
     <p>Generations resume automatically if a step is interrupted — no action needed. Most ebooks complete within a few minutes; long commercial ebooks with images can take longer.</p>
     <h3>YouTube URL won't ingest</h3>

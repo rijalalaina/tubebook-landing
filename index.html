@@ -99,7 +99,7 @@ section{padding:6rem 4rem;}
 .hiw{background:var(--bg2);}
 .hiw-inner{max-width:1100px;margin:0 auto;}
 .hiw-header{margin-bottom:3.5rem;}
-.steps-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1.5px;background:var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+.steps-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1.5px;background:var(--border);border-radius:var(--radius-lg);overflow:hidden;}
 .step-card{background:var(--card);padding:2rem 1.4rem;position:relative;transition:background 0.3s;}
 .step-card:hover{background:#181b28;}
 .step-num{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;color:rgba(255,98,0,0.14);line-height:1;margin-bottom:1rem;}
@@ -216,7 +216,7 @@ section{padding:6rem 4rem;}
 /* PRICING */
 .pricing{background:var(--bg2);}
 .pricing-inner{max-width:1000px;margin:0 auto;text-align:center;}
-.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem;text-align:left;}
+.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3.5rem;text-align:left;}
 .plan-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem 1.8rem;position:relative;transition:border-color 0.3s,transform 0.3s;}
 .plan-card:hover{transform:translateY(-4px);}
 .plan-card.popular{border-color:rgba(255,98,0,0.4);background:linear-gradient(160deg,#1a1c28 0%,#141620 100%);}
@@ -262,6 +262,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 4
 .fade-in-up.visible{opacity:1;transform:translateY(0);}
 
 /* RESPONSIVE */
+@media(max-width:1400px){.steps-grid{grid-template-columns:repeat(3,1fr);}.pricing-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:1000px){.steps-grid{grid-template-columns:1fr 1fr;}.fidelity-grid{grid-template-columns:1fr;}.styles-layout{grid-template-columns:1fr;gap:2.5rem;}.analysis-layout{grid-template-columns:1fr;gap:2.5rem;}.features-grid{grid-template-columns:1fr 1fr;}.testi-grid{grid-template-columns:1fr;}.pricing-grid{grid-template-columns:1fr;}}
 @media(max-width:760px){nav{padding:1rem 1.5rem;}.nav-links{display:none;}section{padding:4.5rem 1.5rem;}.logos-section{padding:2rem 1.5rem;}.steps-grid{grid-template-columns:1fr;}.features-grid{grid-template-columns:1fr;}footer{padding:2.5rem 1.5rem;}}
 </style>
@@ -368,27 +369,27 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 4
         <span class="step-badge">New</span>
       </div>
       <div class="step-card">
-        <div class="step-num">06</div>
+        <div class="step-num">03</div>
         <div class="step-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
         <h3>Automatic Source Analysis</h3>
         <p>TubeBook reads every source, detects the language, and maps the topic, themes, and audience across all of them before writing a word.</p>
       </div>
       <div class="step-card">
-        <div class="step-num">03</div>
+        <div class="step-num">04</div>
         <div class="step-icon-wrap"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
         <h3>Configure Your Book</h3>
         <p>Choose fidelity mode (High / Smart / Low), writing style, cover style, illustrations, and your own custom instructions — before any generation begins.</p>
         <span class="step-badge">New</span>
       </div>
       <div class="step-card">
-        <div class="step-num">04</div>
+        <div class="step-num">05</div>
         <div class="step-icon-wrap"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div>
         <h3>Preview &amp; Approve TOC</h3>
         <p>Review the AI-generated chapter structure. Edit or rewrite chapters freely, and on multi-source books see which sources each chapter draws on — nothing is drafted until you approve, and failed generations are refunded automatically.</p>
         <span class="step-badge">New</span>
       </div>
       <div class="step-card">
-        <div class="step-num">05</div>
+        <div class="step-num">06</div>
         <div class="step-icon-wrap"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
         <h3>Download Your Ebook</h3>
         <p>PDF, DOCX, EPUB &amp; PPTX (plan-dependent) with AI cover, illustrations, your fonts — plus a print-ready paperback wrap cover.</p>
@@ -588,7 +589,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 4
       <div class="feat-card">
         <div class="feat-icon green"><svg viewBox="0 0 24 24"><path d="M2 12h20"/><path d="M12 2a15 15 0 010 20 15 15 0 010-20z"/><circle cx="12" cy="12" r="10"/></svg></div>
         <h3>Seven Languages <span class="feat-new">New</span></h3>
-        <p>Publish the same book in French, Spanish, German, Portuguese, Italian or Dutch. Each becomes <strong>its own book</strong> — which is what Amazon needs, since every language is a separate listing. Your cover art and illustrations are reused and the keywords are researched fresh for that market, so a second edition costs about 40% of the first.</p>
+        <p>Seven in total: your original English edition plus French, Spanish, German, Portuguese, Italian and Dutch. Each becomes <strong>its own book</strong> — which is what Amazon needs, since every language is a separate listing. Your cover art and illustrations are reused and the keywords are researched fresh for that market, so a second edition costs about 40% of the first.</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon blue"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
@@ -655,13 +656,14 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 4
         <div class="plan-divider"></div>
         <ul class="plan-features">
           <li><span class="chk">✓</span>30 credits on signup (1 lead magnet, or 6 topic searches)</li>
+          <li><span class="chk">✓</span>Trending topic boards — free to browse</li>
           <li><span class="chk">✓</span>Any length: lead magnet, short book or full book</li>
           <li><span class="chk">✓</span>Up to 3 sources per ebook</li>
           <li><span class="chk">✓</span>Topic research (5 credits per niche)</li>
           <li><span class="chk">✓</span>All 3 fidelity modes &amp; 6 writing styles</li>
           <li><span class="chk">✓</span>Outline review + approval</li>
           <li><span class="chk">✓</span>AI cover + PDF download</li>
-                    <li class="dimmed"><span class="chk"></span>Chapter illustrations</li>
+          <li class="dimmed"><span class="chk"></span>Chapter illustrations</li>
           <li class="dimmed"><span class="chk"></span>Priority queue</li>
         </ul>
         <a href="https://app.tubebook.org/signup" class="plan-btn outline">Get started free</a>
@@ -673,10 +675,10 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 4
         <p class="plan-desc">For creators regularly converting content into lead magnets, quick guides, and whitepapers.</p>
         <div class="plan-divider"></div>
         <ul class="plan-features">
-          <li><span class="chk">✓</span>250 credits/month</li>
+          <li><span class="chk">✓</span>250 credits/month (≈ 8 lead magnets or 2 commercial ebooks — or mix)</li>
+          <li><span class="chk">✓</span>Credits refill monthly — unused ones do not roll over</li>
           <li><span class="chk">✓</span>Up to 10 sources per ebook</li>
           <li><span class="chk">✓</span>Topic research + suggested sources</li>
-          <li><span class="chk">✓</span>≈ 8 lead magnets or 2 commercial ebooks — or mix</li>
           <li><span class="chk">✓</span>All 3 fidelity modes &amp; 6 writing styles</li>
           <li><span class="chk">✓</span>Outline review + approval</li>
           <li><span class="chk">✓</span>Chapter illustrations + AI cover</li>
@@ -694,11 +696,12 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 4
         <p class="plan-desc">For serious creators publishing full-length ebooks for sale on KDP, Gumroad, or their own site.</p>
         <div class="plan-divider"></div>
         <ul class="plan-features">
-          <li><span class="chk">✓</span>1,000 credits/month</li>
+          <li><span class="chk">✓</span>1,000 credits/month (≈ 33 lead magnets or 10 commercial ebooks — or mix)</li>
+          <li><span class="chk">✓</span>Credits refill monthly — unused ones do not roll over</li>
           <li><span class="chk">✓</span>Up to 25 sources per ebook</li>
           <li><span class="chk">✓</span>Topic research + suggested sources</li>
-          <li><span class="chk">✓</span>≈ 33 lead magnets or 10 commercial ebooks — or mix</li>
-                    <li><span class="chk">✓</span>All 3 fidelity modes &amp; 6 writing styles</li>
+          <li><span class="chk">✓</span>Trademark register checks (1 credit each)</li>
+          <li><span class="chk">✓</span>All 3 fidelity modes &amp; 6 writing styles</li>
           <li><span class="chk">✓</span>Outline review + approval</li>
           <li><span class="chk">✓</span>Chapter illustrations + AI cover</li>
           <li><span class="chk">✓</span>All formats: PDF, EPUB, DOCX &amp; PPTX</li>
@@ -713,11 +716,11 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 4
         <p class="plan-desc">For publishers who ship the audiobook alongside the book. A narrator costs $200&ndash;500 per finished hour; three commercial audiobooks a month is roughly eight hours of narration.</p>
         <div class="plan-divider"></div>
         <ul class="plan-features">
-          <li><span class="chk">✓</span>Everything in Pro</li>
-          <li><span class="chk">✓</span>900 audio credits/month</li>
+          <li><span class="chk">✓</span>Everything in Pro, plus:</li>
+          <li><span class="chk">✓</span>900 audio credits/month — refills monthly, unused do not roll over</li>
           <li><span class="chk">✓</span>≈ 3 commercial audiobooks on the premium voice, or 7 on standard</li>
           <li><span class="chk">✓</span>Male and female narrators in 6 languages</li>
-          <li><span class="chk">✓</span>One MP3 per part, or combine chosen parts into one file</li>
+          <li><span class="chk">✓</span>One MP3 per part, or combine the parts you choose into a single file</li>
           <li><span class="chk">✓</span>Second narration provider on standby</li>
         </ul>
         <a href="https://app.tubebook.org/signup?plan=pro_audio" class="plan-btn outline">Start Pro Audio</a>

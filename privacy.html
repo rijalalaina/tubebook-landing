@@ -187,9 +187,20 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <ul>
       <li><strong>Supabase / Lovable Cloud</strong> — database, authentication, storage.</li>
       <li><strong>Stripe</strong> — payments and subscription management.</li>
-      <li><strong>Cloudflare</strong> — hosting, edge runtime, DDoS protection.</li>
+      <li><strong>Cloudflare</strong> — hosting, edge runtime, DDoS protection, and the AI models used for chapter illustrations and premium narration.</li>
     </ul>
   </div>
+
+  <h3>Audiobook narration</h3>
+  <p>If you narrate a book, the <strong>text of that book</strong> is sent to a text-to-speech provider so it can be spoken. Nothing else goes with it — no name, no email, no account identifier — and the provider returns audio and retains no rights in it. Which provider depends on the voice you chose, and on availability:</p>
+  <div class="card">
+    <ul>
+      <li><strong>Google Cloud Text-to-Speech</strong> — the standard voices.</li>
+      <li><strong>Cloudflare Workers AI</strong> (Deepgram Aura) — the premium voices, processed on the same infrastructure that already hosts the app.</li>
+      <li><strong>OpenAI</strong> — used only as a fallback, when the provider for your chosen voice is unavailable. Under OpenAI's API terms this content is not used to train their models.</li>
+    </ul>
+  </div>
+  <p>Narration is optional and only ever runs when you ask for it on a specific book. If you would rather your text never reach a speech provider, do not narrate that book.</p>
   <h3>Topic research</h3>
   <p>When you use Find a topic, the <strong>topic text you enter</strong> (and phrases derived from it) is sent to the services below in order to look up market data. Your name, email, account identifier and source material are <strong>not</strong> sent — these requests are made by our server and carry no information identifying you.</p>
   <div class="card">

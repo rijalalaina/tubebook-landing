@@ -379,27 +379,33 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <h2>Audiobooks</h2>
     <p><strong>Edit this book → Make an audiobook</strong> narrates a finished book. It runs <em>after</em> your files exist, so the book stays downloadable throughout and a narration problem never affects the ebook you already paid for.</p>
 
-    <h3>Two voices</h3>
+    <h3>The voices</h3>
     <ul>
-      <li><strong>Standard</strong> — clear and consistent, and audibly synthetic. English, Spanish, French, Chinese, Japanese and Korean. 40 / 80 / 120 credits by book length.</li>
-      <li><strong>Premium</strong> — natural, expressive narration with a choice of voices. English and Spanish only. 100 / 200 / 300 credits.</li>
+      <li><strong>Standard — male</strong> and <strong>Standard — female</strong> — clear and consistent, and audibly synthetic. English, Spanish, French, Chinese, Japanese and Korean. 40 / 80 / 120 audio credits by book length.</li>
+      <li><strong>Premium</strong> — natural, expressive narration, with Thalia, Apollo (English) and Celeste (Spanish). 100 / 200 / 300 audio credits.</li>
     </ul>
+    <p>Both standard voices cover all six languages, and each one keeps the same narrator sex across every language — so a book published in several languages does not change narrator between editions.</p>
+    <div class="alert-info">🎧 Audiobooks are billed from a separate <strong>audio-credit</strong> balance, not from your ebook credits. Writing a book and narrating one cost us wildly different amounts, so keeping the two apart is what lets ebook credits stay cheap. Audio credits come with the <strong>Pro Audio</strong> plan.</div>
     <p>Only voices that can actually speak your book's language are offered, and the panel says so rather than quietly showing a shorter list.</p>
     <div class="alert-tip">💡 Premium costs more than the ebook it narrates, and that is not a markup — narrating a commercial book with the premium engine genuinely costs us more than the book earns. Standard costs us a few pence, which is why it is cheap. Try Standard first; if you are selling the audiobook, Premium is worth it.</div>
 
-    <h3>One file per chapter</h3>
-    <p>You get an MP3 per chapter, with a player on each so you can skip to the one you want to check. That is deliberate: it is the format audiobook players expect, it is what ACX requires for submission, and it is what lets us produce a three-hour audiobook at all.</p>
+    <h3>One file per part — and one combined file</h3>
+    <p>You get an MP3 per part, with a player on each so you can skip to the one you want to check. Then tick the parts you want and <strong>Download as one audiobook</strong> joins them, in book order, into a single MP3. Nothing is re-narrated and no credits are spent — you already paid for those parts.</p>
+    <p>Per-part files are what lets us produce a three-hour audiobook at all, and they are what makes the combined file a choice rather than a fixed result: drop the copyright page, keep the call to action, re-narrate one chapter without touching the rest.</p>
     <p>The first file opens with your title, subtitle and author name; the last closes with a sign-off. Headings, bullet lists and abbreviations are rewritten for the ear — a list is read as "First… Second… And finally…", "40%" becomes "40 percent", and links and image captions are dropped, because a narrator reading a URL aloud is the fastest way to lose a listener.</p>
-    <p>Your <strong>Key Takeaways</strong> and <strong>Reflection</strong> settings are respected, so the audiobook contains the same words your ebook does. The copyright page and the tables of contents are never narrated.</p>
+    <p>Your <strong>Key Takeaways</strong> and <strong>Reflection</strong> settings are respected, so the audiobook contains the same words your ebook does. <strong>Every part is narrated</strong> — including the copyright page, the tables of contents, your call to action and your author bio — because whether an audiobook opens with a copyright line or closes with your offer is your decision, not ours. Chapters are ticked for the combined file by default and the front and back matter is not, so the default is the book alone.</p>
 
     <h3>Selling it — read this before you upload</h3>
-    <p>ACX and Audible <strong>do accept AI narration</strong> as of 2026, but on terms worth knowing before you count on it:</p>
+    <p><strong>Selling direct is the simple route</strong> — Gumroad, Payhip, Shopify, or a download on your own site. No approval, no audio-spec review, and you keep the margin. The combined single file is the format those stores expect.</p>
+    <p><strong>Audible and ACX are possible but conditional.</strong> ACX's standard submission flow is for human narration: its Audio Submission Requirements say a title must be human-narrated <em>unless otherwise authorized</em>, and list unauthorized text-to-speech and AI as prohibited. That is a rule against <em>unauthorized</em> AI, not a ban on AI — but the difference is one you have to arrange in advance, not discover at submission:</p>
     <ul>
-      <li>You must <strong>contact ACX support first</strong> rather than submitting through the standard flow.</li>
-      <li>You must <strong>disclose</strong> the AI narration in the book description. This is enforced.</li>
+      <li><strong>Contact ACX support first</strong> and get the title authorized, rather than submitting through the standard flow and hoping.</li>
+      <li><strong>Disclose</strong> the AI narration in the book description. This is enforced.</li>
       <li>ACX measures audio levels — RMS between −23 and −18 dB, peak no higher than −3 dB, noise floor under −60 dB.</li>
+      <li><strong>KDP Virtual Voice is not a route for these files.</strong> It is Amazon's own AI narration programme, it uses Amazon's voices, and it does not accept audio you supply.</li>
     </ul>
-    <p><strong>We do not measure or adjust those levels</strong>, and we will not tell you a file is ACX-compliant, because that would be a promise we cannot keep. The per-chapter format is the right shape for submission and the audio is clean; checking the levels is yours to do, in any free audio editor. Selling on Gumroad, your own site, or through an aggregator such as Findaway Voices is simpler and has no such requirement.</p>
+    <p><strong>Aggregators are the easier path to Audible.</strong> Author's Republic, Kobo Writing Life and Spotify's audiobook programme (formerly Findaway Voices) accept AI-narrated audiobooks and distribute into Audible's catalogue, with AI disclosure required. No per-title authorization to negotiate.</p>
+    <p><strong>We do not measure or adjust audio levels</strong>, and we will not tell you a file is ACX-compliant, because that would be a promise we cannot keep. The audio is clean and the format is right; checking the levels is yours to do, in any free audio editor.</p>
     <div class="alert-info">📦 Audio files are not included in the ZIP archive — an audiobook is far too large for it. Download the chapters you want from the audiobook panel.</div>
   </div>
 
@@ -466,7 +472,9 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
       <li><span class="pill">Free</span> 30 credits (one-time) — 1 lead magnet ebook, or 6 topic searches. Up to 3 sources per ebook. PDF export with a small "Made with TubeBook.org" footer credit (any purchase, subscription or credit pack, removes it). No illustrations, no DOCX/EPUB/PPTX.</li>
       <li><span class="pill">Starter — $9/mo</span> 250 credits/month — ≈ 8 lead magnets or 2 commercial ebooks, or any mix. Up to 10 sources per ebook. PDF &amp; DOCX export, chapter illustrations. No EPUB/PPTX.</li>
       <li><span class="pill">Pro — $29/mo</span> 1,000 credits/month — ≈ 33 lead magnets or 10 commercial ebooks, or any mix. Up to 25 sources per ebook. All formats (PDF, DOCX, EPUB, PPTX), chapter illustrations, priority queue.</li>
+      <li><span class="pill">Pro Audio — $49/mo</span> Everything in Pro, plus <strong>900 audio credits/month</strong> — ≈ 3 commercial audiobooks on the premium voice, or 7 on standard. Audio credits are a separate balance and are the only way to narrate a book.</li>
     </ul>
+    <p>Annual billing is available on every paid plan: Starter $90/yr, Pro $290/yr, Pro Audio $490/yr — roughly two months free.</p>
     <h3>Top-up credit packs</h3>
     <ul>
       <li>Starter pack — 100 credits, \$5</li>
@@ -474,7 +482,10 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
       <li>Power pack — 1,500 credits, \$40</li>
     </ul>
     <p>Chapter illustrations cost 1 additional credit per image (cover art is included free). The exact total is shown before you confirm a generation.</p>
-    <p>Subscription credits are added to your balance each billing cycle. Unused subscription credits do not carry over to the next cycle — use them before your renewal date. Top-up credits are unaffected and never expire while your account is active.</p>
+    <h3>How the monthly allowance works</h3>
+    <p>Plan credits are an <strong>allowance, not a balance</strong>. They refill to your plan's monthly figure at the start of each month and whatever is unused at that point is forfeited — so there is nothing to hoard and nothing to lose track of.</p>
+    <p><strong>This applies to annual billing too.</strong> An annual plan buys twelve months of access at a discount, not twelve months of credits in one lump: you receive the same monthly allowance as a monthly subscriber, refilled each month. Audio credits work identically.</p>
+    <p><strong>Top-up credit packs are different and never expire</strong> while your account is active. They sit on top of your allowance, and when you spend, the expiring plan credits are used first — so a pack you paid for is never burned while a free allowance times out beside it. Your billing page shows which part of your balance is which.</p>
   </div>
 
   <!-- EXPORTS -->

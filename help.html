@@ -390,10 +390,23 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <div class="alert-tip">💡 Premium costs more than the ebook it narrates, and that is not a markup — narrating a commercial book with the premium engine genuinely costs us more than the book earns. Standard costs us a few pence, which is why it is cheap. Try Standard first; if you are selling the audiobook, Premium is worth it.</div>
 
     <h3>One file per part — and one combined file</h3>
-    <p>You get an MP3 per part, with a player on each so you can skip to the one you want to check. Then tick the parts you want and <strong>Download as one audiobook</strong> joins them, in book order, into a single MP3. Nothing is re-narrated and no credits are spent — you already paid for those parts.</p>
+    <p>You get a file per part, with a player on each so you can skip to the one you want to check. Parts are stored as <strong>lossless WAV masters</strong> at the rate the narration engine actually produces, and each one can be downloaded from the link under its player. Then tick the parts you want and <strong>Download as one audiobook</strong> joins them, in book order, into a single MP3 at 192 kbps. Nothing is re-narrated and no credits are spent — you already paid for those parts.</p>
+    <p>The MP3s are built <em>in your browser</em> when you click, which is why a long book takes a minute. That is deliberate: encoding from the lossless master means the one lossy step happens once, at the end. Converting a small preview up to 192 kbps would triple the file size while preserving the flaws of the first encode rather than the audio.</p>
     <p>Per-part files are what lets us produce a three-hour audiobook at all, and they are what makes the combined file a choice rather than a fixed result: drop the copyright page, keep the call to action, re-narrate one chapter without touching the rest.</p>
     <p>The first file opens with your title, subtitle and author name; the last closes with a sign-off. Headings, bullet lists and abbreviations are rewritten for the ear — a list is read as "First… Second… And finally…", "40%" becomes "40 percent", and links and image captions are dropped, because a narrator reading a URL aloud is the fastest way to lose a listener.</p>
     <p>Your <strong>Key Takeaways</strong> and <strong>Reflection</strong> settings are respected, so the audiobook contains the same words your ebook does. <strong>Every part is narrated</strong> — including the copyright page, the tables of contents, your call to action and your author bio — because whether an audiobook opens with a copyright line or closes with your offer is your decision, not ours. Chapters are ticked for the combined file by default and the front and back matter is not, so the default is the book alone.</p>
+
+    <h3>The distribution package</h3>
+    <p><strong>Download package (ZIP)</strong> builds everything an aggregator asks for, in one click:</p>
+    <ul>
+      <li>Every part as a <strong>numbered MP3</strong> — <code>00-title-page.mp3</code>, <code>02-chapter-01.mp3</code> — zero-padded so a plain alphabetical sort is also the right play order, which is how an uploader reads them.</li>
+      <li><strong>192 kbps CBR, 44.1 kHz, mono</strong>, levelled to about &minus;20 dB RMS with peak below &minus;3 dB.</li>
+      <li><strong>cover.jpg</strong> at 3000&times;3000, RGB — the square artwork every audiobook store requires and no ebook cover is.</li>
+      <li><strong>retail-sample.mp3</strong>, the first five minutes of chapter one, cut on a frame boundary.</li>
+      <li><strong>metadata.json</strong> — title, author, narrator, language, per-file durations and measured levels, and an explicit <code>"narration": "digital"</code>.</li>
+      <li>ID3 tags and embedded cover art on every track, so a buyer who unzips into VLC sees a book rather than a dozen anonymous files.</li>
+    </ul>
+    <div class="alert-info">🔊 <strong>Why the disclosure is in the file.</strong> Most aggregators require AI narration to be declared. A package that quietly omits it is not rejected at upload — it is taken down after distribution, once it has been sold. Declaring it costs nothing and is the difference between a catalogue entry and a takedown.</div>
 
     <h3>Selling it — read this before you upload</h3>
     <p><strong>Selling direct is the simple route</strong> — Gumroad, Payhip, Shopify, or a download on your own site. No approval, no audio-spec review, and you keep the margin. The combined single file is the format those stores expect.</p>
@@ -405,8 +418,9 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
       <li><strong>KDP Virtual Voice is not a route for these files.</strong> It is Amazon's own AI narration programme, it uses Amazon's voices, and it does not accept audio you supply.</li>
     </ul>
     <p><strong>Aggregators are the easier path to Audible.</strong> Author's Republic, Kobo Writing Life and Spotify's audiobook programme (formerly Findaway Voices) accept AI-narrated audiobooks and distribute into Audible's catalogue, with AI disclosure required. No per-title authorization to negotiate.</p>
-    <p><strong>We do not measure or adjust audio levels</strong>, and we will not tell you a file is ACX-compliant, because that would be a promise we cannot keep. The audio is clean and the format is right; checking the levels is yours to do, in any free audio editor.</p>
-    <div class="alert-info">📦 Audio files are not included in the ZIP archive — an audiobook is far too large for it. Download the chapters you want from the audiobook panel.</div>
+    <p><strong>We do now measure and set audio levels.</strong> Every file in the package and every combined download is analysed and levelled to roughly &minus;20 dB RMS with peak below &minus;3 dB — the same window listed above — and the measured figures for each track are written into <code>metadata.json</code> so you can check them without opening an editor. Loudness is measured on the speech itself rather than averaged with the pauses between sentences, which is what stops a part with long gaps from being pushed louder than the rest of the book.</p>
+    <p><strong>We still will not tell you a file is ACX-compliant</strong>, because levels are the part we can prove and authorization is not. A file that hits every number in the spec is still ineligible for ACX's standard flow until ACX has authorized the title. The technical side is ours; the permission is yours.</p>
+    <div class="alert-info">📦 <strong>Two different ZIPs.</strong> Audio is not in your <em>ebook</em> archive — an audiobook is far too large to sit alongside the PDF and EPUB. The audiobook has its own <strong>Download package (ZIP)</strong> in the audiobook panel, described above.</div>
   </div>
 
   <!-- FIND A TOPIC -->
@@ -552,7 +566,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <h3>YouTube URL won't ingest</h3>
     <p>Make sure the video is public and has captions (auto or manual). Private, age-restricted, or live videos cannot be processed.</p>
     <h3>I don't see my ebook</h3>
-    <p>Open <strong>Dashboard</strong>. Ebooks are kept for <strong>30 days</strong> after generation — a countdown is shown on each card. Download anything you want to keep before it expires.</p>
+    <p>Open <strong>Dashboard</strong>. Ebooks are kept for <strong>30 days</strong> after generation — a countdown is shown on each card. Download anything you want to keep before it expires. <strong>Audiobook narration expires with its book</strong>, on the same countdown, so build the package before the clock runs out.</p>
     <h3>Download link expired</h3>
     <p>Signed download URLs expire after 24 hours. The app refreshes them on demand — just open your Dashboard and the links will be updated automatically.</p>
   </div>

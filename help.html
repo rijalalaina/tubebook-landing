@@ -146,6 +146,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <a href="#artwork">Cover &amp; illustrations</a>
     <a href="#grounding">Where the facts come from</a>
     <a href="#book-parts">Book parts</a>
+    <a href="#writing-style">Your writing style</a>
     <a href="#editing">Editing &amp; proofreading</a>
     <a href="#references">References</a>
     <a href="#title">Title &amp; subtitle</a>
@@ -357,6 +358,22 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
   </div>
 
   <!-- LANGUAGES -->
+  <div class="card" id="writing-style">
+    <h2>Your writing style</h2>
+    <p>On your <strong>Profile</strong> page, under <strong>Your writing style</strong>, upload something you have already written — a blog post, a chapter, an essay — or paste a few pages in. Your books are then written the way you write, rather than in the careful, even register that AI writing falls into by default.</p>
+
+    <h3>What actually happens</h3>
+    <p>Your sample is read once and a <strong>description of how you write</strong> is worked out from it: sentence length and how much it varies, whether you address the reader directly, how you open a section and how you close one, your punctuation habits, what you never do. That description is shown to you, along with a few short observations, so you can judge whether it got you right.</p>
+    <p>Every chapter of every book you generate afterwards is written with that description in front of the writer. It replaces the generic tone setting, which was previously a single sentence — that is the whole reason it makes a visible difference.</p>
+
+    <div class="alert-info">🔒 <strong>This is not model training, and your writing is yours.</strong> No model is fine-tuned, nothing you upload is used for anyone else&rsquo;s books, and your files are <strong>deleted as soon as they have been read</strong>. Only the description and short excerpts are kept — the excerpts so the description can be worked out again when you add another sample. Teaching us how you write should not hand us a permanent copy of your manuscript.</div>
+
+    <h3>What it will and will not do</h3>
+    <p>It shifts register, rhythm and vocabulary, and it is the single biggest lever on how a generated book reads. It will not make the writing indistinguishable from yours, and we would rather say so than let you find out. A few pages works far better than a few paragraphs: one paragraph is an accident, a few pages is a style.</p>
+
+    <div class="alert-tip">💡 Your style is <strong>copied onto each book when you create it</strong>. Refining your profile later changes future books and never rewrites one you have already published. At <strong>High Fidelity</strong> it is ignored, exactly as the per-book tone setting already is — that mode reproduces the speaker&rsquo;s own voice from the source, and a personal writing manner on top would defeat the point.</div>
+  </div>
+
   <div class="card" id="editing">
     <h2>Editing &amp; proofreading</h2>
     <p>On any finished book, <strong>Edit the writing</strong> opens the editor: your chapters down the left, the text of one of them beside it. A finished book is not a frozen one.</p>
@@ -374,6 +391,11 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <p>Findings are listed worst first. Each one quotes the exact words it objects to, and clicking it selects those words in the editor.</p>
     <div class="alert-tip">💡 <strong>Why some real problems are not reported.</strong> Every finding has to quote your text exactly, and we search for that quote in the chapter before showing it. Anything we cannot find is thrown away — including, occasionally, a genuine problem the model quoted slightly wrong. That is deliberate. A list where every item can be trusted is more useful than a longer list you have to verify yourself, which was the job the check was supposed to do.</div>
     <p>Checking is <strong>free</strong>, however many times you run it. Findings are not saved: a check describes your text at that moment, and your next edit would leave it pointing at sentences that no longer exist.</p>
+
+    <h3>Ask for a second opinion</h3>
+    <p>Under the chapter is <strong>Ask about this chapter</strong>. It has read your outline and the chapter you are on, so it can answer questions about direction, pacing, whether a chapter earns its length, or what a weak opening is missing. It will tell you when something is already fine, and it will disagree with you once if it thinks a change would weaken the book.</p>
+    <p>Ask it for a change to the wording and it comes back as a <strong>proposal</strong>: the full replacement text, which section it would replace, and Accept or Discard. It <strong>never edits your book on its own</strong> — accepting is the same action as saving your own typing, so everything that follows an edit (files marked out of date, narration marked out of step) happens exactly the same way.</p>
+    <p>Free, and the conversation is not saved — it belongs to the sitting you are in.</p>
 
     <h3>What editing affects</h3>
     <ul>

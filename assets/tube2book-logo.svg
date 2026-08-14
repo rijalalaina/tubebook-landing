@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 460" role="img" aria-labelledby="title desc">
+  <title id="title">Tube2Book</title>
+  <desc id="desc">Tube2Book logo: a continuous orange number two flows into the pages of an open book.</desc>
+
+  <!-- Tube2Book master logo. Orange #FF7A00, white #FFFFFF, transparent canvas. -->
+  <g id="symbol" transform="translate(28 22)">
+    <!-- Media timeline flowing into the numeral 2. -->
+    <path
+      d="M72 62H285C359 62 407 104 407 169C407 220 379 250 326 283L132 402"
+      fill="none"
+      stroke="#FF7A00"
+      stroke-width="72"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M72 126H218"
+      fill="none"
+      stroke="#FF7A00"
+      stroke-width="42"
+      stroke-linecap="round"
+    />
+
+    <!-- Open-book base; the descending stroke of the 2 meets the spine. -->
+    <path
+      d="M106 342C171 326 232 338 286 389C340 338 401 326 466 342L454 419C392 402 338 410 286 446C234 410 180 402 118 419Z"
+      fill="#FF7A00"
+    />
+    <path
+      d="M125 354C183 343 232 355 277 401L283 425C235 393 187 383 130 394Z"
+      fill="#FFFFFF"
+    />
+    <path
+      d="M447 354C389 343 340 355 295 401L289 425C337 393 385 383 442 394Z"
+      fill="#FFFFFF"
+    />
+    <path d="M278 397L286 442L294 397L286 384Z" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Outfit is the Tube2Book brand typeface; Arial is the fallback. -->
+  <g id="wordmark" font-family="Outfit, Arial, Helvetica, sans-serif" font-size="190" font-weight="800" letter-spacing="0">
+    <text x="540" y="310" fill="#FFFFFF">Tube</text>
+    <text x="955" y="310" fill="#FF7A00">2Book</text>
+  </g>
+</svg>

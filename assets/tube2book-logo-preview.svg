@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1100" role="img" aria-labelledby="title">
+<title id="title">Tube2Book light and dark logo variants</title>
+<rect width="1800" height="550" fill="#08090D"/>
+<rect y="550" width="1800" height="550" fill="#FFFFFF"/>
+<text x="90" y="80" fill="#A0A3B1" font-family="Outfit,Arial,sans-serif" font-size="28" font-weight="600">DARK BACKGROUND</text>
+<text x="90" y="630" fill="#676B73" font-family="Outfit,Arial,sans-serif" font-size="28" font-weight="600">LIGHT BACKGROUND</text>
+
+<g transform="translate(100 90) scale(.95)">
+<path d="M72 62H285C359 62 407 104 407 169C407 220 379 250 326 283L132 402" fill="none" stroke="#FF7A00" stroke-width="72" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M72 126H218" fill="none" stroke="#FF7A00" stroke-width="42" stroke-linecap="round"/>
+<path d="M106 342C171 326 232 338 286 389C340 338 401 326 466 342L454 419C392 402 338 410 286 446C234 410 180 402 118 419Z" fill="#FF7A00"/>
+<path d="M125 354C183 343 232 355 277 401L283 425C235 393 187 383 130 394ZM447 354C389 343 340 355 295 401L289 425C337 393 385 383 442 394Z" fill="#FFFFFF"/>
+<path d="M278 397L286 442L294 397L286 384Z" fill="#FFFFFF"/>
+<text x="540" y="310" fill="#FFFFFF" font-family="Outfit,Arial,sans-serif" font-size="190" font-weight="800">Tube</text>
+<text x="955" y="310" fill="#FF7A00" font-family="Outfit,Arial,sans-serif" font-size="190" font-weight="800">2Book</text>
+</g>
+
+<g transform="translate(100 640) scale(.95)">
+<path d="M72 62H285C359 62 407 104 407 169C407 220 379 250 326 283L132 402" fill="none" stroke="#FF7A00" stroke-width="72" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M72 126H218" fill="none" stroke="#FF7A00" stroke-width="42" stroke-linecap="round"/>
+<path d="M106 342C171 326 232 338 286 389C340 338 401 326 466 342L454 419C392 402 338 410 286 446C234 410 180 402 118 419Z" fill="#FF7A00"/>
+<path d="M125 354C183 343 232 355 277 401L283 425C235 393 187 383 130 394ZM447 354C389 343 340 355 295 401L289 425C337 393 385 383 442 394Z" fill="#FFFFFF"/>
+<path d="M278 397L286 442L294 397L286 384Z" fill="#FFFFFF"/>
+<text x="540" y="310" fill="#111318" font-family="Outfit,Arial,sans-serif" font-size="190" font-weight="800">Tube</text>
+<text x="955" y="310" fill="#FF7A00" font-family="Outfit,Arial,sans-serif" font-size="190" font-weight="800">2Book</text>
+</g>
+</svg>

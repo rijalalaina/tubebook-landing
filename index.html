@@ -76,7 +76,7 @@ h1 em{font-style:italic;color:var(--amber);display:block;}
 .chip-dot.green{background:var(--green);}
 .chip-dot.yellow{background:var(--yellow);}
 .chip-dot.red{background:var(--red);}
-.demo-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;}
+.demo-steps{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;}
 .demo-step{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:0.6rem 0.4rem;text-align:center;font-size:0.66rem;color:var(--muted);line-height:1.3;}
 .demo-step.active{border-color:rgba(255,98,0,0.35);color:var(--amber2);background:var(--amber-dim);}
 .demo-step .step-icon{font-size:0.95rem;margin-bottom:3px;display:block;}
@@ -99,7 +99,8 @@ section{padding:6rem 4rem;}
 .hiw{background:var(--bg2);}
 .hiw-inner{max-width:1100px;margin:0 auto;}
 .hiw-header{margin-bottom:3.5rem;}
-.steps-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1.5px;background:var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5px;background:var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+.step-card.step-wide{grid-column:span 2;}
 .step-card{background:var(--card);padding:2rem 1.4rem;position:relative;transition:background 0.3s;}
 .step-card:hover{background:#181b28;}
 .step-num{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;color:rgba(255,98,0,0.14);line-height:1;margin-bottom:1rem;}
@@ -262,7 +263,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 4
 .fade-in-up.visible{opacity:1;transform:translateY(0);}
 
 /* RESPONSIVE */
-@media(max-width:1400px){.steps-grid{grid-template-columns:repeat(3,1fr);}.pricing-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:1400px){.steps-grid{grid-template-columns:repeat(3,1fr);}.step-card.step-wide{grid-column:auto;}.pricing-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:1000px){.steps-grid{grid-template-columns:1fr 1fr;}.fidelity-grid{grid-template-columns:1fr;}.styles-layout{grid-template-columns:1fr;gap:2.5rem;}.analysis-layout{grid-template-columns:1fr;gap:2.5rem;}.features-grid{grid-template-columns:1fr 1fr;}.testi-grid{grid-template-columns:1fr;}.pricing-grid{grid-template-columns:1fr;}}
 @media(max-width:760px){nav{padding:1rem 1.5rem;}.nav-links{display:none;}section{padding:4.5rem 1.5rem;}.logos-section{padding:2rem 1.5rem;}.steps-grid{grid-template-columns:1fr;}.features-grid{grid-template-columns:1fr;}footer{padding:2.5rem 1.5rem;}}
 
@@ -350,6 +351,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 4
         <div class="demo-step"><span class="step-icon">⚙️</span>Configure</div>
         <div class="demo-step"><span class="step-icon">📋</span>Preview TOC</div>
         <div class="demo-step"><span class="step-icon">✍️</span>Write</div>
+        <div class="demo-step"><span class="step-icon">🔍</span>Quality check</div>
         <div class="demo-step"><span class="step-icon">📄</span>Export</div>
       </div>
     </div>
@@ -373,7 +375,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 4
   <div class="hiw-inner">
     <div class="hiw-header fade-in-up">
       <span class="section-label">The Process</span>
-      <h2 class="section-title">Six steps, one publishable book</h2>
+      <h2 class="section-title">Seven steps, one publishable book</h2>
       <p class="section-sub">Start from a researched topic or jump straight in with your own sources. Either way, you approve the structure before a single word is written.</p>
     </div>
     <div class="steps-grid fade-in-up">
@@ -413,6 +415,13 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 4
       </div>
       <div class="step-card">
         <div class="step-num">06</div>
+        <div class="step-icon-wrap"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+        <h3>Quality Check</h3>
+        <p>Every chapter goes through a second pass before you ever see it: a line edit for structure and readability, then an integrity check that <strong>completes a chapter cut off mid-sentence</strong>, removes any instruction that leaked into the prose, fixes repeated or numbered headings, and applies the typography rules of the book&rsquo;s own language. Most tools hand you the first draft. This is the pass that makes it a manuscript.</p>
+        <span class="step-badge">New</span>
+      </div>
+      <div class="step-card step-wide">
+        <div class="step-num">07</div>
         <div class="step-icon-wrap"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
         <h3>Download Your Ebook</h3>
         <p>PDF, DOCX, EPUB &amp; PPTX (plan-dependent) with AI cover, illustrations, your fonts — plus a print-ready paperback wrap cover.</p>
@@ -623,6 +632,11 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 4
         <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
         <h3>Edit it after it is written <span class="feat-new">New</span></h3>
         <p>A finished book is not a frozen one. Change any paragraph yourself, or have a <strong>single section rewritten</strong> in the same style, fidelity and language as the rest of the book — not in a generic AI register that reads as foreign two paragraphs later. Your PDF, EPUB and DOCX keep working while you edit, and are rebuilt when you are done.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>Every chapter checked before you see it <span class="feat-new">New</span></h3>
+        <p>A language model stops mid-sentence when it runs out of room, and the draft looks finished because the paragraph before it reads fine. So every chapter gets a second pass: a line edit for structure, then a check that <strong>writes the missing ending of a chapter that was cut off</strong>, deletes any instruction that leaked into the prose, replaces headings repeated word for word, and applies the typography of the book&rsquo;s own language — the narrow spaces before French punctuation, the right quotation marks, the correct dashes. You never run it and it never costs a credit. It happens on the way to your files, and you watch it happen on the progress bar.</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon amber"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="m8 11 2 2 4-4"/></svg></div>

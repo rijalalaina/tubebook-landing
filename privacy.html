@@ -129,7 +129,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <div class="breadcrumb"><a href="/">Home</a><span>/</span>Privacy Policy</div>
     <h1>Privacy Policy</h1>
     <p class="page-lead">How TubeBook collects, uses, and protects your information when you use our website and applications.</p>
-    <p class="page-meta">Last updated: August 2, 2026</p>
+    <p class="page-meta">Last updated: August 25, 2026</p>
   </div>
 
   <div class="toc-box">
@@ -160,9 +160,11 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     </ul>
     <h3>Content you provide</h3>
     <ul>
-      <li>Source material you submit for processing: YouTube URLs, web page URLs, and transcripts or text you paste.</li>
+      <li>Source material you submit for processing: YouTube URLs, web page URLs, pasted text, and uploaded Word, PowerPoint or PDF documents.</li>
       <li>Text retrieved from web page URLs you supply. When you add a web page as a source, we fetch that page on your behalf and store its extracted text with your ebook so it can be used to write your chapters.</li>
-      <li>Generated ebooks, covers, chapter images, and related metadata.</li>
+      <li>Generated ebooks, covers, chapter images, audiobook files, translations, edits, quality-check findings, and related publishing metadata.</li>
+      <li>Artwork you upload and the placement choices you make for images inside a book.</li>
+      <li>Writing samples you provide to build a personal style profile. The uploaded file is deleted after it is read; the resulting style description and short excerpts are kept with your profile so you can review, refine or delete them.</li>
       <li><strong>Topic research queries.</strong> The niche or topic you type into Find a topic, together with the results returned for it, are stored against your account so you can reopen the research without paying for it again. Research results are cached and may be reused to answer an equivalent query from another user — the cached record contains only the topic and public market data, never your identity or any of your source material.</li>
     </ul>
     <h3>Technical data</h3>
@@ -182,12 +184,14 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
   </ul>
 
   <h2 id="s3"><span class="sec-num">03</span>AI processing &amp; sub-processors</h2>
-  <p>To generate ebooks, the content of your sources — video transcripts, text retrieved from web page URLs you supply, and text you paste — is sent to AI model providers such as Google (Gemini) through our AI gateway. These providers process the content solely to return generated results and do not use it to train their models under our enterprise terms.</p>
+  <p>To generate, edit, check or translate ebooks, the relevant content of your sources and book — video transcripts, extracted web or document text, pasted text, chapter text and instructions — is sent to the configured AI model providers through our server-side integrations. These providers process the content to return the requested result and do not use API content to train their models under the applicable business/API terms.</p>
   <div class="card">
     <ul>
       <li><strong>Supabase / Lovable Cloud</strong> — database, authentication, storage.</li>
       <li><strong>Stripe</strong> — payments and subscription management.</li>
       <li><strong>Cloudflare</strong> — hosting, edge runtime, DDoS protection, and the AI models used for chapter illustrations and premium narration.</li>
+      <li><strong>Google</strong> — Gemini text and image generation when selected or used as a fallback.</li>
+      <li><strong>DeepSeek</strong> and <strong>Anthropic</strong> — text generation, editing or quality review when configured by TubeBook.</li>
     </ul>
   </div>
 
@@ -201,6 +205,16 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     </ul>
   </div>
   <p>Narration is optional and only ever runs when you ask for it on a specific book. If you would rather your text never reach a speech provider, do not narrate that book.</p>
+
+  <h3>Stock photographs and user artwork</h3>
+  <p>If you choose <strong>Stock photos</strong>, TubeBook sends a descriptive search query derived from the book or chapter topic to one or more supported libraries. It does not send your name, email or account identifier. Search results may include the provider's image identifier, photographer name, source URL and attribution URL; TubeBook stores those details with the selected image so required credit and links can be included in the editor and exported book.</p>
+  <div class="card">
+    <ul>
+      <li><strong>Unsplash</strong> — stock-photo search, download tracking required by its API guidelines, and linked photographer attribution.</li>
+      <li><strong>Pexels</strong> and <strong>Pixabay</strong> — stock-photo search and source attribution where available.</li>
+    </ul>
+  </div>
+  <p>If you upload your own artwork, the file is stored privately with the book and used only for the cover or chapter placement you choose. You are responsible for having the rights to use it.</p>
   <h3>Topic research</h3>
   <p>When you use Find a topic, the <strong>topic text you enter</strong> (and phrases derived from it) is sent to the services below in order to look up market data. Your name, email, account identifier and source material are <strong>not</strong> sent — these requests are made by our server and carry no information identifying you.</p>
   <div class="card">

@@ -1,4 +1,4 @@
-// The launch-promotion banner, on every page, driven by the app.
+// The free-monthly-credit banner, on every page, driven by the app.
 //
 // ── Where the switch lives ─────────────────────────────────────────────────
 // Admin → Cost controls → "Free monthly credits". That one dropdown decides
@@ -22,7 +22,7 @@ var PROMO_ENDPOINT = 'https://app.tubebook.org/api/public/promo';
   // Bump when the OFFER changes, so people who dismissed the old one see the
   // new one. Not for copy tweaks — a banner that keeps returning is one people
   // learn to ignore.
-  var VERSION = '2026-08-free75';
+  var VERSION = '2026-08-free100';
 
   function dismissed() {
     try {
@@ -75,10 +75,10 @@ var PROMO_ENDPOINT = 'https://app.tubebook.org/api/public/promo';
     var bar = document.createElement('div');
     bar.className = 'tb-promo';
     bar.setAttribute('role', 'region');
-    bar.setAttribute('aria-label', 'Launch offer');
+    bar.setAttribute('aria-label', 'Free monthly credits');
     bar.innerHTML =
-      '<span>Launch offer: <strong>' + promo.credits + ' free credits every month</strong>' +
-        ' — about two illustrated lead magnets, or one illustrated short book. While it lasts.</span>' +
+      '<span><strong>' + promo.credits + ' free credits every month</strong>' +
+        ' — every feature included, no credit card required.</span>' +
       '<a class="tb-promo-cta" href="https://app.tubebook.org/signup' +
         '?utm_source=site&utm_medium=promo_banner">Start free</a>' +
       '<button type="button" aria-label="Dismiss">&times;</button>';

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Поддержка — TubeBook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #08090d; --bg2: #0f1118; --card: #131620;
+  --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
+  --amber: #f0a832; --amber2: #fcc45a; --amber-dim: rgba(240,168,50,0.12);
+  --text: #f0eee8; --muted: #7b7d8a; --muted2: #a0a3b1;
+  --radius-lg: 20px;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+nav {
+  position: fixed; top: 0; inset-inline-start: 0; inset-inline-end: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.1rem 4rem; background: rgba(8,9,13,0.75);
+  backdrop-filter: blur(18px); border-bottom: 1px solid var(--border);
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; font-size: 1.35rem; font-weight: 700; color: var(--text); text-decoration: none; }
+.logo-icon { width: 34px; height: 34px; border-radius: 9px; flex-shrink: 0; overflow: hidden; }
+.logo-icon img { width: 100%; height: 100%; object-fit: cover; border-radius: 9px; }
+.logo-text span { color: var(--amber); }
+.nav-cta {
+  background: var(--amber); color: #1a1200; font-size: 0.875rem;
+  font-weight: 600; padding: 0.55rem 1.35rem; border-radius: 8px;
+  text-decoration: none; transition: background 0.2s, transform 0.15s;
+}
+.nav-cta:hover { background: var(--amber2); transform: translateY(-1px); }
+.page-content {
+  max-width: 780px; margin: 0 auto; padding: 8rem 2rem 4rem;
+}
+.page-content h1 {
+  font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 900;
+  margin-bottom: 0.5rem; color: var(--text);
+}
+.page-content .subtitle { color: var(--muted2); font-size: 1rem; margin-bottom: 3rem; }
+.page-content h2 {
+  font-size: 1.2rem; font-weight: 600; color: var(--amber);
+  margin: 2.5rem 0 0.8rem; padding-top: 1.5rem; border-top: 1px solid var(--border);
+}
+.page-content h2:first-of-type { border-top: none; padding-top: 0; }
+.page-content p, .page-content li { font-size: 0.92rem; color: var(--muted2); line-height: 1.8; margin-bottom: 0.8rem; }
+.page-content ul { padding-inline-start: 1.5rem; margin-bottom: 1rem; }
+.page-content a { color: var(--amber); text-decoration: none; }
+.page-content a:hover { text-decoration: underline; }
+footer {
+  background: var(--bg2); border-top: 1px solid var(--border);
+  padding: 3.5rem 4rem; display: flex; align-items: center;
+  justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;
+}
+.footer-brand { font-size: 0.82rem; color: var(--muted); }
+.footer-brand a { color: var(--amber); text-decoration: none; }
+.footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+.footer-links a { font-size: 0.82rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text); }
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  .page-content { padding: 7rem 1.5rem 3rem; }
+  footer { padding: 2.5rem 1.5rem; }
+}
+</style>
+<!-- i18n:begin -->
+<link rel="alternate" hreflang="en" href="https://tubebook.org/support" />
+<link rel="alternate" hreflang="fr" href="https://tubebook.org/fr/support" />
+<link rel="alternate" hreflang="es" href="https://tubebook.org/es/support" />
+<link rel="alternate" hreflang="pt" href="https://tubebook.org/pt/support" />
+<link rel="alternate" hreflang="de" href="https://tubebook.org/de/support" />
+<link rel="alternate" hreflang="ru" href="https://tubebook.org/ru/support" />
+<link rel="alternate" hreflang="zh-Hans" href="https://tubebook.org/zh/support" />
+<link rel="alternate" hreflang="ar" href="https://tubebook.org/ar/support" />
+<link rel="alternate" hreflang="x-default" href="https://tubebook.org/support" />
+<link rel="canonical" href="https://tubebook.org/ru/support" />
+<script src="/lang-switcher.js" defer></script>
+<!-- i18n:end -->
+</head>
+<body>
+<nav>
+  <a href="tubebook-landing.html" class="nav-logo">
+    <div class="logo-icon"><img src="data:image/png;base64,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" alt="Логотип TubeBook"></div>
+    <div class="logo-text">Tube<span>Book</span></div>
+  </a>
+  <a href="https://app.tubebook.org" class="nav-cta">Начать бесплатно →</a>
+</nav>
+<div class="page-content">
+<h1>Поддержка</h1>
+<p class="subtitle">Мы здесь, чтобы помочь вам получить максимум от TubeBook.</p>
+
+<h2>Часто задаваемые вопросы</h2>
+
+<p><strong>Сколько времени занимает генерация электронной книги?</strong></p>
+<p>Большинство электронных книг генерируются от 5 минут до 2 часов в зависимости от длины исходного видео, типа книги (лид-магнит или коммерческая книга) и текущей загрузки сервера.</p>
+
+<p><strong>Какая длина видео поддерживается?</strong></p>
+<p>TubeBook работает с видео YouTube, веб-страницами, вставленным текстом и загруженными документами Word, PowerPoint и PDF. Объединяйте до 25 источников на любом тарифе или вставляйте рукопись объемом до примерно 500 страниц.</p>
+
+<p><strong>Можно ли редактировать сгенерированную электронную книгу?</strong></p>
+<p>Да. TubeBook включает этап ручной проверки, где вы можете просмотреть и отредактировать план и содержимое глав перед сборкой итоговой книги.</p>
+
+<p><strong>Какие форматы доступны?</strong></p>
+<p>Каждый тариф экспортирует PDF, EPUB, DOCX и PPTX, а также готовые к печати файлы для мягкой обложки и Kindle. Бесплатные аккаунты получают 100 кредитов каждый месяц и имеют те же функции создания, редактирования, оформления, перевода, аудиокниг и экспорта, что и платные; отличается только включенный кредитный лимит.</p>
+
+<p><strong>Можно ли использовать видео других авторов?</strong></p>
+<p>Вы несете ответственность за наличие прав на переработку видеоконтента. Мы рекомендуем использовать собственные видео или видео, на которые у вас есть явное разрешение автора.</p>
+
+<p><strong>Как отменить подписку?</strong></p>
+<p>Вы можете отменить подписку в любое время в настройках аккаунта. Подписка остается активной до конца текущего расчетного периода.</p>
+
+<h2>Свяжитесь с нами</h2>
+<p>Если вам нужна дополнительная помощь, обратитесь в нашу службу поддержки:</p>
+<ul>
+  <li><strong>Эл. почта:</strong> <a href="mailto:support@tubebook.org">support@tubebook.org</a></li>
+</ul>
+<p>Мы обычно отвечаем в течение 24 часов в рабочие дни.</p>
+
+<h2>Отчеты об ошибках и запросы функций</h2>
+<p>Нашли ошибку или хотите улучшить TubeBook? Напишите нам на <a href="mailto:support@tubebook.org">support@tubebook.org</a> с описанием, и мы свяжемся с вами.</p>
+</div>
+<footer>
+  <div class="footer-brand">© 2026 TubeBook · <a href="https://tubebook.org">tubebook.org</a></div>
+  <div class="footer-links">
+    <a href="privacy.html">Политика конфиденциальности</a>
+    <a href="terms.html">Условия использования</a>
+    <a href="support.html">Поддержка</a>
+    <a href="admin.html">Админ</a>
+  </div>
+</footer>
+</body>
+</html>

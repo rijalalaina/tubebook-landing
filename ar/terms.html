@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-tubebook_32x32.png" />
+<title>الشروط والأحكام — TubeBook</title>
+<meta name="description" content="الشروط التي تحكم استخدامك لـ TubeBook، بما في ذلك الاشتراكات والائتمانات والاستخدام المقبول وملكية المحتوى." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* ─── TUBEBOOK INNER PAGE — SHARED CSS ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #08090d; --bg2: #0f1118; --bg3: #14171f; --card: #131620;
+  --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
+  --amber: #ff6200; --amber2: #ff8c42; --amber-dim: rgba(255,98,0,0.12);
+  --red: #ff3b3b; --red-dim: rgba(255,59,59,0.12);
+  --green: #2ecc71; --green-dim: rgba(46,204,113,0.11);
+  --text: #f0eee8; --muted: #7b7d8a; --muted2: #a0a3b1;
+  --radius: 14px; --radius-lg: 20px;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; overflow-x: hidden; }
+a { color: var(--amber); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--amber2); text-decoration: underline; }
+strong { color: var(--text); font-weight: 600; }
+code, kbd { background: var(--bg3); border: 1px solid var(--border); padding: 2px 7px; border-radius: 5px; font-size: .85em; font-family: 'DM Mono', 'Fira Code', monospace; color: var(--amber2); }
+
+/* NAV */
+nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 4rem; background: rgba(8,9,13,0.88); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); }
+.nav-logo { display: flex; align-items: center; gap: 10px; font-size: 1.2rem; font-weight: 700; color: var(--text); text-decoration: none; }
+.nav-logo:hover { text-decoration: none; }
+.logo-icon { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, #ff6200 0%, #cc4e00 100%); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0; }
+.logo-text span { color: var(--amber); }
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-links a { color: var(--muted2); font-size: 0.875rem; text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--amber); text-decoration: none; }
+.nav-cta { background: var(--amber); color: #1a1200 !important; font-size: 0.85rem; font-weight: 600; padding: 0.5rem 1.2rem; border-radius: 8px; text-decoration: none !important; transition: background 0.2s; }
+.nav-cta:hover { background: var(--amber2); }
+
+/* LAYOUT */
+.page-wrap { max-width: 860px; margin: 0 auto; padding: 0 2rem 6rem; }
+.page-header { padding: 4rem 0 2.5rem; border-bottom: 1px solid var(--border); margin-bottom: 3rem; position: relative; overflow: hidden; }
+.page-header::after { content: ''; position: absolute; top: 0; inset-inline-end: -40px; width: 340px; height: 220px; background: radial-gradient(ellipse, rgba(255,98,0,0.06) 0%, transparent 70%); pointer-events: none; }
+.breadcrumb { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; display: flex; align-items: center; gap: 6px; }
+.breadcrumb a { color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--amber); }
+.breadcrumb span { opacity: 0.4; }
+h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 900; line-height: 1.15; letter-spacing: -0.02em; color: var(--text); }
+.page-lead { font-size: 1.05rem; color: var(--muted2); margin-top: 0.8rem; max-width: 580px; line-height: 1.7; }
+.page-meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.6rem; }
+
+/* TYPOGRAPHY */
+h2 { font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 700; color: var(--text); margin: 3rem 0 1rem; letter-spacing: -0.01em; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+.sec-num { font-family: 'Outfit', sans-serif; font-size: 0.7rem; font-weight: 600; color: var(--amber); background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.22); padding: 0.15rem 0.55rem; border-radius: 100px; letter-spacing: 0.05em; flex-shrink: 0; }
+h3 { font-size: 0.97rem; font-weight: 600; color: var(--text); margin: 1.5rem 0 0.5rem; }
+p { color: var(--muted2); line-height: 1.75; margin-bottom: 0.8rem; }
+ul, ol { color: var(--muted2); padding-inline-start: 1.4rem; line-height: 1.75; }
+li { margin-bottom: 0.45rem; }
+
+/* CARDS */
+.card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.6rem 1.8rem; margin: 1rem 0; position: relative; overflow: hidden; }
+.card::before { content: ''; position: absolute; top: 0; inset-inline-start: 0; inset-inline-end: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,98,0,0.18), transparent); }
+
+/* TOC */
+.toc-box { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem 1.8rem; margin-bottom: 2.5rem; }
+.toc-box-title { font-size: 0.72rem; font-weight: 600; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.8rem; }
+.toc-box ol { padding-inline-start: 1.2rem; }
+.toc-box li { margin-bottom: 0.3rem; }
+.toc-box a { font-size: 0.88rem; color: var(--muted2); text-decoration: none; }
+.toc-box a:hover { color: var(--amber); }
+
+/* TABLES */
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+th { text-align:start; padding: 0.7rem 0.9rem; font-size: 0.75rem; font-weight: 600; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1px solid var(--border2); }
+td { padding: 0.7rem 0.9rem; color: var(--muted2); border-bottom: 1px solid var(--border); }
+tr:last-child td { border-bottom: none; }
+td strong { color: var(--text); }
+
+/* PILLS */
+.pill { display: inline-block; background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.25); color: var(--amber2); font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.65rem; border-radius: 100px; letter-spacing: 0.04em; margin-inline-end: 6px; vertical-align: middle; }
+
+/* ALERT BOXES */
+.alert-warn { background: rgba(255,59,59,0.07); border: 1px solid rgba(255,59,59,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: #ff9a9a; }
+.alert-tip { background: var(--green-dim); border: 1px solid rgba(46,204,113,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: #7be8a8; }
+.alert-info { background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: var(--amber2); }
+
+/* FOOTER */
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2.5rem 4rem; }
+.footer-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.footer-brand { font-size: 0.82rem; color: var(--muted); }
+.footer-brand a { color: var(--amber); text-decoration: none; }
+.footer-links { display: flex; gap: 1.8rem; flex-wrap: wrap; }
+.footer-links a { font-size: 0.82rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text); }
+
+@media (max-width: 760px) {
+  nav { padding: 0.9rem 1.2rem; }
+  .nav-links { display: none; }
+  .page-wrap { padding: 0 1.2rem 4rem; }
+  footer { padding: 2rem 1.2rem; }
+}
+.warn-card { background: rgba(255,59,59,0.06); border: 1px solid rgba(255,59,59,0.2); border-radius: var(--radius); padding: 1.2rem 1.5rem; margin: 1rem 0; }
+.warn-card ul, .warn-card p { color: var(--muted2); }
+</style>
+<!-- i18n:begin -->
+<link rel="alternate" hreflang="en" href="https://tubebook.org/terms" />
+<link rel="alternate" hreflang="fr" href="https://tubebook.org/fr/terms" />
+<link rel="alternate" hreflang="es" href="https://tubebook.org/es/terms" />
+<link rel="alternate" hreflang="pt" href="https://tubebook.org/pt/terms" />
+<link rel="alternate" hreflang="de" href="https://tubebook.org/de/terms" />
+<link rel="alternate" hreflang="ru" href="https://tubebook.org/ru/terms" />
+<link rel="alternate" hreflang="zh-Hans" href="https://tubebook.org/zh/terms" />
+<link rel="alternate" hreflang="ar" href="https://tubebook.org/ar/terms" />
+<link rel="alternate" hreflang="x-default" href="https://tubebook.org/terms" />
+<link rel="canonical" href="https://tubebook.org/ar/terms" />
+<script src="/lang-switcher.js" defer></script>
+<!-- i18n:end -->
+</head>
+<body>
+
+<nav>
+  <a href="/ar/" class="nav-logo" style="padding:0;">
+    <img src="/logo-tubebook-1500x450.png" alt="TubeBook" style="height:48px;width:auto;display:block;" />
+  </a>
+  <div class="nav-links">
+    <a href="/ar/help">المساعدة</a>
+    <a href="/ar/privacy">الخصوصية</a>
+    <a href="/ar/terms" class="active">الشروط</a>
+    <a href="/ar/contact">اتصل بنا</a>
+  </div>
+  <a href="https://app.tubebook.org" class="nav-cta">افتح التطبيق ←</a>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/ar/">الرئيسية</a><span>/</span>الشروط والأحكام</div>
+    <h1>الشروط والأحكام</h1>
+    <p class="page-lead">بإنشائك حسابًا أو استخدامك الخدمة، فإنك توافق على هذه الشروط. إذا كنت لا توافق، فلا تستخدم الخدمة.</p>
+    <p class="page-meta">آخر تحديث: 25 أغسطس 2026</p>
+  </div>
+
+  <div class="toc-box">
+    <div class="toc-box-title">المحتويات</div>
+    <ol>
+      <li><a href="#s1">الخدمة</a></li>
+      <li><a href="#s2">الحسابات</a></li>
+      <li><a href="#s3">الاشتراكات والرصيد والفوترة</a></li>
+      <li><a href="#s4">المحتوى والملكية</a></li>
+      <li><a href="#s5">بيانات البحث عن المواضيع وعدم وجود ضمان تجاري</a></li>
+      <li><a href="#s6">الاستخدام المقبول</a></li>
+      <li><a href="#s7">خدمات الطرف الثالث</a></li>
+      <li><a href="#s8">إخلاء المسؤولية</a></li>
+      <li><a href="#s9">تحديد المسؤولية</a></li>
+      <li><a href="#s10">إنهاء الخدمة</a></li>
+      <li><a href="#s11">التغييرات</a></li>
+      <li><a href="#s12">القانون الحاكم</a></li>
+      <li><a href="#s13">اتصل بنا</a></li>
+    </ol>
+  </div>
+
+  <h2 id="s1"><span class="sec-num">01</span>الخدمة</h2>
+  <p>يحول TubeBook المواد المصدرية التي تقدمها — فيديوهات YouTube، روابط صفحات الويب، والنصوص أو المحتوى النصي الذي تلصقه — إلى كتب إلكترونية باستخدام الذكاء الاصطناعي. يمكن إنشاء كتاب إلكتروني واحد من مصدر واحد أو من عدة مصادر مجمعة في مشروع واحد. تقدم الخدمة أيضًا <strong>بحثًا عن الموضوع</strong>، والذي يعرض بيانات اقتراحات البحث والكتب المنشورة المتاحة للعامة لمجال تدخله ويقترح مصادر قد تختار استخدامها. قد تتطور الميزات والأسعار وتكاليف الائتمان بمرور الوقت.</p>
+
+  <h2 id="s2"><span class="sec-num">02</span>الحسابات</h2>
+  <ul>
+    <li>يجب أن يكون عمرك 13 عامًا على الأقل (16 في المنطقة الاقتصادية الأوروبية) لإنشاء حساب.</li>
+    <li>أنت مسؤول عن بيانات اعتمادك وجميع الأنشطة التي تتم تحت حسابك.</li>
+    <li>حساب واحد لكل شخص أو كيان قانوني. لا يُسمح بمشاركة الحساب بين فرق دون خطة تسمح بذلك صراحةً.</li>
+  </ul>
+
+  <h2 id="s3"><span class="sec-num">03</span>الاشتراكات والرصيد والفوترة</h2>
+  <div class="card">
+    <ul>
+      <li>تعمل الخدمة بنظام الائتمانات. كل عملية إنشاء تخصم ائتمانات حسب التكلفة المعروضة قبل التأكيد.</li>
+      <li><strong>الخطة المجانية:</strong> الحسابات ذات <strong>البريد الإلكتروني الموثق</strong> تحصل على رصيد شهري قدره 100 ائتمان للكتب الإلكترونية. لا يتطلب الأمر بطاقة دفع. يمكن للحسابات المجانية استخدام نفس أطوال الكتب، وحد المصادر، وأدوات الإنشاء، والتحرير، وأدوات الجودة، وخيارات الفن، والترجمات، وأدوات الكتب الصوتية، وصيغ التصدير مثل الحسابات المدفوعة؛ تُدار التوفرية برصيد الكتب أو الائتمانات الصوتية ذات الصلة وليس بحاجز ميزات. تتضمن ملفات PDF للحسابات المجانية تذييلًا صغيرًا "Made with TubeBook.org" حتى يقوم الحساب بأي عملية شراء.</li>
+      <li><strong>السعة البحثية المشتركة:</strong> قراءة المواد المصدرية تعتمد على خدمات خارجية ذات سعة شهرية ثابتة يتقاسمها جميع المستخدمين. عندما تنخفض هذه السعة، قد يتوقف الإنشاء على الخطة المجانية حتى إعادة تعيينها، بينما تستمر الخطط المدفوعة. لا تُخصم ائتمانات عن عملية إنشاء مرفوضة لهذا السبب.</li>
+      <li><strong>مبتدئ (9$ شهريًا):</strong> 250 ائتمانًا لكل دورة فوترة — أي ما يعادل تقريبًا 8 مغناطيسات رصاص أو كتابين إلكترونيين تجاريين، أو أي مزيج. تشمل نفس ميزات المنتج وحد 25 مصدرًا مثل الخطط الأخرى؛ الفرق هو الرصيد الشهري الأكبر.</li>
+      <li><strong>احترافي (29$ شهريًا):</strong> 1,000 ائتمان لكل دورة فوترة — أي ما يعادل تقريبًا 33 مغناطيس رصاص أو 10 كتب إلكترونية تجارية، أو أي مزيج. تشمل نفس ميزات المنتج وحد 25 مصدرًا مثل الخطط الأخرى؛ الفرق هو الرصيد الشهري الأكبر.</li>
+      <li><strong>احترافي صوتي (49$ شهريًا):</strong> كل ما في خطة احترافي، بالإضافة إلى 900 <strong>ائتمان صوتي</strong> شهريًا — أي ما يعادل تقريبًا 3 كتب صوتية تجارية بالصوت المميز، أو 7 بالصوت القياسي.</li>
+      <li><strong>الفوترة السنوية:</strong> مبتدئ 90$ سنويًا، احترافي 290$ سنويًا، احترافي صوتي 490$ سنويًا. الخطة السنوية تشتري اثني عشر شهرًا من الوصول بخصم. وهي لا <strong>تمنح</strong> اثني عشر شهرًا من الائتمانات مقدمًا: يُسلَّم الرصيد الشهري الموضح أدناه كل شهر طوال مدة الخطة، بنفس شروط الفوترة الشهرية.</li>
+      <li><strong>الائتمانات الصوتية:</strong> رصيد منفصل عن ائتمانات الكتب الإلكترونية، يُستخدم فقط لسرد الكتب الصوتية ولا يمكن استبداله بائتمانات الكتب. كتاب صوتي بالصوت القياسي يكلف 40 / 80 / 120 ائتمانًا صوتيًا حسب طول الكتاب؛ كتاب صوتي بالصوت المميز يكلف 100 / 200 / 300. الائتمانات الصوتية مشمولة في خطة احترافي صوتي ويمكن أيضًا شراؤها كحزم ائتمانات صوتية لمرة واحدة على أي خطة، بما في ذلك المجانية، دون اشتراك. الخطط غير احترافي صوتي لا تجمع رصيدًا صوتيًا شهريًا. حزم الائتمانات الصوتية المشتراة لا تنتهي صلاحيتها ما دام حسابك نشطًا، وإذا كان رصيدك يحتوي على كليهما، يُنفق الرصيد الشهري المنتهي أولاً. دمج الأجزاء المُسجلة بالفعل في ملف واحد لا يكلف شيئًا.</li>
+      <li><strong>أطوال الكتب الإلكترونية:</strong> مغناطيس الرصاص القصير يكلف 30 ائتمانًا، والكتاب القصير 60 ائتمانًا، والكتاب التجاري الكامل 100 ائتمان. جميعها متاحة على كل خطة، بما في ذلك المجانية — فهي محدودة برصيدك فقط، وليس بمستوى اشتراكك.</li>
+      <li><strong>الأطوال وعدد الصفحات:</strong> الأطوال أهداف وليست ضمانات. عدد الصفحات المعروض قبل الإنشاء تقديرات مشتقة من هدف الكلمات وحجم القطع الذي اخترته؛ عدد الصفحات المطبوع يعتمد على حجم القطع والخطوط والرسوم التوضيحية، وعدد أمازون نفسه هو المرجع. نحن لا نضمن أن طولًا معينًا سيلبي الحد الأدنى لعدد صفحات أمازون KDP للطباعة الورقية — صفحة الإنشاء تعرض تقديرًا لمساعدتك على الاختيار.</li>
+      <li><strong>مصادر متعددة:</strong> كل خطة يمكنها دمج ما يصل إلى 25 مصدرًا لكل كتاب إلكتروني. المصدر الأول مشمول في التكلفة الأساسية؛ كل مصدر إضافي يُفوتر بـ 8 ائتمانات إضافية. إذا تعذر قراءة مصدر (مثل صفحة غير قابلة للوصول أو محجوبة)، يتم تخطيه ويُنشأ الكتاب من المصادر المتبقية؛ لا يتم تعديل الائتمانات للمصادر المتخطاة. إذا تعذر قراءة أي مصدر، يفشل الإنشاء وتُسترد الائتمانات تلقائيًا.</li>
+      <li><strong>بحث الموضوع:</strong> يُفوتر بـ 5 ائتمانات لكل مجال بحث. تُخزن النتائج مؤقتًا لمدة 14 يومًا وإعادة فتح مجال مخزن لا تكلف شيئًا؛ تُطابق المجالات متجاهلة ترتيب الكلمات والأحرف الكبيرة وكلمات الحشو الشائعة، لذا الاستعلامات المتكافئة تقريبًا تحل إلى نفس النتيجة المخزنة. إذا فشل البحث قبل إرجاع النتائج، تُسترد الائتمانات الخمسة تلقائيًا. العثور على مصادر مقترحة لموضوع تم بحثه لا يحمل تكلفة ائتمانية إضافية.</li>
+      <li><strong>العمل الفني:</strong> كل خطة تتيح إنشاء غلاف وفصول فنية بالذكاء الاصطناعي، أو البحث في مكتبات الصور المدعومة، أو رفع عمل فني يملك المستخدم حقوق استخدامه. الرسوم التوضيحية للفصول المولدة بالذكاء الاصطناعي اختيارية وتُحتسب برصيد إضافي واحد لكل صورة؛ يُعرض الإجمالي الدقيق قبل التأكيد. غلاف الكتاب مشمول دون تكلفة إضافية من أرصدة الكتب الإلكترونية. يبقى استخدام الصور من المكتبات خاضعًا لترخيص المزود ومتطلبات النسب، وتتضمن TubeBook اعتمادات المصورين والروابط المتاحة في الصادرات المدعومة.</li>
+      <li><strong>البدل الشهري واستحقاقه:</strong> أرصدة الاشتراك — سواء أرصدة الكتب الإلكترونية أو أرصدة الصوت — هي بدل يتجدد إلى المبلغ الشهري لخطتك في بداية كل فترة شهرية. أي جزء غير منفق في تلك النقطة يُحتسب منتهيًا ولا يُرحل. ينطبق هذا على كل دورات الفوترة، <strong>بما في ذلك الخطط السنوية</strong>، التي تحصل على البدل الشهري كل شهر بدلاً من أرصدة سنة مقدمًا.</li>
+      <li>حزم الرصيد الإضافية لمرة واحدة غير متأثرة بهذا ولا تنتهي صلاحيتها ما دام حسابك نشطًا. إذا كان رصيدك يتضمن كليهما، يُنفق بدل الاشتراك المنتهي أولاً.</li>
+      <li>تُدفع جميع الرسوم عبر Stripe مقدمًا وهي غير قابلة للاسترداد إلا كما يقتضي القانون أو كما هو منصوص صراحةً.</li>
+      <li>يمكنك الإلغاء في أي وقت؛ ويستمر الوصول حتى نهاية فترة الفوترة الحالية.</li>
+      <li>قد نغير الأسعار مع إشعار قبل 30 يومًا على الأقل؛ ولا تتأثر فترات الفوترة الحالية.</li>
+    </ul>
+  </div>
+
+  <h2 id="s4"><span class="sec-num">04</span>المحتوى والملكية</h2>
+  <h3>مدخلاتك</h3>
+  <p>تحتفظ بجميع الحقوق في المواد التي تقدمها — روابط YouTube، وروابط صفحات الويب، والنصوص أو النصوص التي تلصقها. أنت تقر بأنه، لكل مصدر تقدمه، لديك الحقوق اللازمة لتقديمه وتوليد أعمال مشتقة منه. ينطبق هذا على كل مصدر على حدة في كتاب إلكتروني متعدد المصادر: دمج عدة مصادر لا ينشئ حقوقًا لا تملكها في أي منها، وإرشادات وضع الدقة أدناه تنطبق على جميعها.</p>
+  <p>عند تقديم رابط صفحة ويب، تسترجع TubeBook النص المتاح للجمهور من تلك الصفحة لتوليد كتابك الإلكتروني. أنت مسؤول عن ضمان أن القيام بذلك مسموح به بموجب شروط استخدام مالك الصفحة، وعن احترام حقوق الطبع والنشر في أي مواد تابعة لجهات خارجية تقدمها.</p>
+  <h3>المخرجات المولدة</h3>
+  <p>رهنًا بامتثالك لهذه الشروط ودفع الرسوم المستحقة، أنت تملك الكتب الإلكترونية والأصول المولدة بالذكاء الاصطناعي المنتجة عبر الخدمة ويمكنك استخدامها تجاريًا، مع مراعاة الحقوق والقيود الخاصة بأي محتوى مقدم أو من مكتبات الصور. PDF وDOCX وEPUB وPPTX وأصول النشر المدعومة متاحة في كل خطة. تتضمن صادرات PDF للحسابات المجانية تذييلًا صغيرًا "Made with TubeBook.org" حتى يقوم الحساب بأي عملية شراء (اشتراك أو حزمة أرصدة كتب إلكترونية أو حزمة أرصدة صوتية)؛ بعد أي عملية شراء، لا تحمل الصادرات أي علامة TubeBook.</p>
+  <h3>أوضاع الدقة ومسؤولية حقوق النشر</h3>
+  <ul>
+    <li><strong>دقة عالية</strong> — ينشئ عملًا مشتقًا يتبع المصدر عن كثب. يجب أن تملك الفيديو، أو تحمل ترخيصًا صريحًا من صاحب الحقوق، أو تكون واثقًا من أن المصدر في المجال العام.</li>
+    <li><strong>تكيف ذكي</strong> — يعيد كتابة المصدر وإعادة هيكلته. عمومًا أكثر أمانًا للنشر الأصلي، لكنك تبقى مسؤولًا عن التحقق من أن المخرجات لا تعيد إنتاج تعبير محمي.</li>
+    <li><strong>دقة منخفضة</strong> — يستخدم الفيديو كبذرة موضوعية فقط وينتج محتوى أصليًا بشكل كبير. موصى به للنشر التجاري عندما لا تملك المصدر. لتعظيم حماية حقوق النشر، أضف مساهماتك التحريرية قبل النشر.</li>
+  </ul>
+  <div class="alert-warn">⚠ في العديد من الولايات القضائية، النص المولد بالذكاء الاصطناعي بحتًا له حماية محدودة لحقوق النشر. اختياراتك التحريرية وتعليماتك المخصصة وتعديلاتك بعد التوليد هي ما ينشئ التأليف البشري. لا تقدم TubeBook أي ضمان بأن أي مخرجات محددة قابلة للتسجيل كعمل محمي بحقوق النشر خاص بك.</div>
+  <h3>فحص مخاطر النشر</h3>
+  <p>قد تشير الخدمة إلى مخاطر محتملة للملكية الفكرية في بيانات كتابك الوصفية — على سبيل المثال أسماء العلامات التجارية أو الامتيازات أو الأفراد المذكورين أو ادعاءات التأييد في العنوان أو العنوان الفرعي أو الكلمات المفتاحية — وقد تقدم لك رابطًا إلى سجل علامات تجارية عام لتفحص المصطلح المُشار إليه بنفسك. نحن لا نجري هذا البحث نيابة عنك ولا نقدم أي تمثيل بشأن محتويات السجل. هذه <strong>أداة آلية استشارية فقط. ليست نصيحة قانونية، وليست بحثًا عن تصريح، وليست رأيًا قانونيًا</strong>، ولا تنشأ عنها أي علاقة محامٍ-عميل.</p>
+  <p>الفحص ناقص عمدًا: يراجع البيانات الوصفية وعناوين الفصول بدلاً من مخطوطتك الكاملة، وسيفوته أشياء، وقد تكون بيانات الطرف الثالث خاطئة أو قديمة، ولا يمكنه توقع أي قرار من Amazon أو أي بائع تجزئة آخر. <strong>غياب الإشارة ليس نتيجة أن كتابك خالٍ من حقوق الطرف الثالث، ولا يجوز الاعتماد عليه كذلك.</strong> عندما تبلغ الخدمة أنه لم يتم الإشارة إلى شيء، فهذا يعني فقط أن هذا الفحص الآلي لم يُثر شيئًا — وليس أن كتابك آمن للنشر.</p>
+  <p>لا شيء في هذا الفحص يقلل أو ينقل التزاماتك بموجب هذا القسم أو القسم 06. تظل مسؤولاً وحدك عن امتلاك الحقوق في كل ما تنشره، وعن أي عواقب لنشره، بما في ذلك الحذف أو الإزالة أو إنهاء حسابك من قبل بائع التجزئة. إذا كنت غير متأكد، استشر محامياً مؤهلاً.</p>
+  <h3>ملكيتنا الفكرية</h3>
+  <p>الخدمة، بما في ذلك البرمجيات والموجهات والتصميم والعلامة التجارية، مملوكة لـ TubeBook ومرخصيها. لا تُمنح أي حقوق باستثناء ما هو منصوص عليه صراحة.</p>
+
+  <h2 id="s5"><span class="sec-num">05</span>بيانات البحث عن المواضيع وعدم وجود ضمان تجاري</h2>
+  <div class="card">
+    <p><strong>ما هي البيانات.</strong> تقارير أبحاث المواضيع (أ) العبارات التي تُرجعها خدمات اقتراحات البحث العامة من Amazon وGoogle، و(ب) عدد وتفاصيل العناوين المنشورة بالفعل من Google Books API. هذه مؤشرات على <em>اهتمام البحث</em>. وهي ليست أرقام مبيعات أو تصنيفات مبيعات أو تقديرات إيرادات أو توقعات إتاوات.</p>
+    <p><strong>لماذا ليس تصنيف Amazon الأكثر مبيعاً.</strong> لا توفر Amazon بيانات تصنيف الأكثر مبيعاً للجمهور لخدمات مثل خدمتنا: تم إيقاف Product Advertising API في مايو 2026 ويتطلب بديله حساب Amazon Associates مع مبيعات مؤهلة مستمرة باسم صاحب الحساب. لذلك نحن لا نقدم ولا ندعي تقديم تصنيف مبيعات Amazon. أي رقم يُسمى درجة في الخدمة هو أداة ترتيب لترتيب قائمتك المختصرة.</p>
+    <p><strong>لا ضمان للنتائج.</strong> لا شيء في أبحاث المواضيع هو توقع أو وعد أو ضمان للمبيعات أو الإيرادات أو التصنيفات أو الظهور أو النجاح التجاري لأي كتاب تنشره. تعتمد نتائج النشر على عوامل خارجة تماماً عن سيطرتنا، بما في ذلك كتابتك وغطاء الكتاب والتسعير والتسويق والتوقيت وخوارزميات السوق والمنافسة. أنت وحدك المسؤول عن قراراتك التجارية.</p>
+    <p><strong>الدقة والتوفر.</strong> البيانات الأساسية تأتي من أطراف ثالثة، وهي ليست تحت سيطرتنا، وقد تكون غير كاملة أو قديمة أو غير متاحة، وقد تتغير أو تتوقف دون إشعار. عندما يتعذر استرداد رقم منافسة، تبلغ الخدمة عنه كغير معروف؛ لا يجب أن تقرأ ذلك على أنه غياب المنافسة. المصادر المقترحة مقدمة للراحة فقط - نحن لا نؤيدها ولا نضمن دقتها، وتبقى مسؤولاً بموجب القسم 06 عن امتلاك الحقوق اللازمة في كل مصدر تختار استخدامه.</p>
+    <p><strong>سعة مشتركة.</strong> يعتمد اكتشاف المصادر على حصص أطراف ثالثة مشتركة بين جميع مستخدمي الخدمة. عندما تستنفد الحصة، قد تكون اقتراحات المصادر غير متاحة مؤقتاً. هذا لا يؤثر على نتائج الأبحاث التي تم تسليمها بالفعل وليس عيباً في الخدمة.</p>
+  </div>
+
+  <h2 id="s6"><span class="sec-num">06</span>الاستخدام المقبول</h2>
+  <p>يجب ألا:</p>
+  <div class="warn-card">
+    <ul>
+      <li>تقديم محتوى لا تملك حقوق استخدامه، أو ينتهك حقوق أي طرف ثالث.</li>
+      <li>إنشاء محتوى غير قانوني أو تشهيري أو مضايق أو محتوى جنسي يتضمن قاصرين، أو ينتهك سياسات مزودي الذكاء الاصطناعي.</li>
+      <li>محاولة تجاوز حدود الائتمان أو هندسة الخدمة عكسياً أو فحص الثغرات دون إذن كتابي.</li>
+      <li>إعادة بيع الوصول الخام إلى واجهة برمجة التطبيقات للخدمة.</li>
+    </ul>
+  </div>
+  <p>قد نعلق أو ننهي الحسابات التي تنتهك هذه القواعد، مع أو بدون إشعار.</p>
+
+  <h2 id="s7"><span class="sec-num">07</span>خدمات الطرف الثالث</h2>
+  <p>تعتمد TubeBook على مزودي ذكاء اصطناعي وموفري دفع وبنية تحتية من أطراف ثالثة. قد يؤثر توفرهم وسياساتهم على الخدمة. لسنا مسؤولين عن انقطاعات أو قيود يفرضها هؤلاء المزودون.</p>
+  <p>بالإضافة إلى ذلك، يستعلم بحث المواضيع عن خدمات اقتراحات البحث العامة من Amazon وGoogle وGoogle Books API وYouTube Data API وموفر بحث تابع لجهة خارجية. يتم الاستعلام عنها بالمجال أو الموضوع الذي تدخله؛ راجع سياسة الخصوصية لمعرفة ما يتم إرساله. شروطهم وتوفرهم وحدود معدلهم خارجة عن سيطرتنا، وقد يؤدي تغيير من جانبهم إلى تقليل أو إزالة أجزاء من ميزة البحث.</p>
+
+  <h2 id="s8"><span class="sec-num">08</span>إخلاء المسؤولية</h2>
+  <p>الخدمة مقدمة "كما هي" و"كما هي متاحة" دون أي ضمانات من أي نوع، صريحة أو ضمنية، بما في ذلك قابلية التسويق والملاءمة لغرض معين وعدم الانتهاك. قد يحتوي الإخراج الناتج عن الذكاء الاصطناعي على أخطاء؛ أنت مسؤول عن مراجعته قبل النشر أو التوزيع.</p>
+
+  <h2 id="s9"><span class="sec-num">09</span>تحديد المسؤولية</h2>
+  <p>إلى أقصى حد يسمح به القانون، لن يتجاوز إجمالي مسؤولية TubeBook الناشئة عن الخدمة أو المتعلقة بها أكبر من (أ) المبلغ الذي دفعته لنا في الأشهر الـ 12 السابقة للمطالبة، أو (ب) 100 دولار أمريكي. لسنا مسؤولين عن الأضرار غير المباشرة أو العرضية أو الخاصة أو التبعية أو العقابية، أو فقدان الأرباح أو الإيرادات أو البيانات أو الشهرة.</p>
+
+  <h2 id="s10"><span class="sec-num">10</span>إنهاء الخدمة</h2>
+  <p>يمكنك إغلاق حسابك في أي وقت. قد نعلق أو ننهي الحسابات لخرق هذه الشروط أو إساءة الاستخدام أو عدم الدفع. ستستمر الأقسام التي يجب بطبيعتها أن تبقى بعد الإنهاء (الملكية وإخلاء المسؤولية والمسؤولية وحل النزاعات) في التطبيق.</p>
+
+  <h2 id="s11"><span class="sec-num">11</span>التغييرات</h2>
+  <p>قد نقوم بتحديث هذه الشروط. سيتم الإعلان عن التغييرات الجوهرية قبل 14 يوماً على الأقل من سريانها. استمرار الاستخدام بعد تاريخ السريان يشكل قبولاً.</p>
+
+  <h2 id="s12"><span class="sec-num">12</span>القانون الحاكم</h2>
+  <p>تخضع هذه الشروط للقوانين المطبقة على الكيان الذي يدير TubeBook، دون اعتبار لمبادئ تنازع القوانين. سيتم حل النزاعات في المحاكم المختصة في تلك الولاية القضائية، ما لم ينص قانون المستهلك المحلي على خلاف ذلك.</p>
+
+  <h2 id="s13"><span class="sec-num">13</span>اتصل بنا</h2>
+  <p>أسئلة حول هذه الشروط: <a href="mailto:support@tubebook.org">support@tubebook.org</a></p>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">© <span id="y"></span> TubeBook · <a href="https://tubebook.org">tubebook.org</a></div>
+    <div class="footer-links">
+      <a href="/ar/">الرئيسية</a><a href="/ar/help">المساعدة</a><a href="/ar/privacy">الخصوصية</a><a href="/ar/terms">الشروط</a><a href="/ar/contact">اتصل بنا</a>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script src="/promo-banner.js" defer></script>
+</body>
+</html>

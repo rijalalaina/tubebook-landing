@@ -6,7 +6,6 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-tubebook_32x32.png" />
 <title>Help &amp; Tutorials — TubeBook</title>
 <meta name="description" content="Learn how to turn YouTube videos, web articles and transcripts into polished ebooks with TubeBook — single-source or multi-source. Step-by-step tutorials, credit usage, exports, and troubleshooting." />
-<link rel="canonical" href="https://tubebook.org/help" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -44,7 +43,7 @@ nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center
 /* LAYOUT */
 .page-wrap { max-width: 860px; margin: 0 auto; padding: 0 2rem 6rem; }
 .page-header { padding: 4rem 0 2.5rem; border-bottom: 1px solid var(--border); margin-bottom: 3rem; position: relative; overflow: hidden; }
-.page-header::after { content: ''; position: absolute; top: 0; right: -40px; width: 340px; height: 220px; background: radial-gradient(ellipse, rgba(255,98,0,0.06) 0%, transparent 70%); pointer-events: none; }
+.page-header::after { content: ''; position: absolute; top: 0; inset-inline-end: -40px; width: 340px; height: 220px; background: radial-gradient(ellipse, rgba(255,98,0,0.06) 0%, transparent 70%); pointer-events: none; }
 .breadcrumb { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; display: flex; align-items: center; gap: 6px; }
 .breadcrumb a { color: var(--muted); text-decoration: none; }
 .breadcrumb a:hover { color: var(--amber); }
@@ -58,30 +57,30 @@ h2 { font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 70
 .sec-num { font-family: 'Outfit', sans-serif; font-size: 0.7rem; font-weight: 600; color: var(--amber); background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.22); padding: 0.15rem 0.55rem; border-radius: 100px; letter-spacing: 0.05em; flex-shrink: 0; }
 h3 { font-size: 0.97rem; font-weight: 600; color: var(--text); margin: 1.5rem 0 0.5rem; }
 p { color: var(--muted2); line-height: 1.75; margin-bottom: 0.8rem; }
-ul, ol { color: var(--muted2); padding-left: 1.4rem; line-height: 1.75; }
+ul, ol { color: var(--muted2); padding-inline-start: 1.4rem; line-height: 1.75; }
 li { margin-bottom: 0.45rem; }
 
 /* CARDS */
 .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.6rem 1.8rem; margin: 1rem 0; position: relative; overflow: hidden; }
-.card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,98,0,0.18), transparent); }
+.card::before { content: ''; position: absolute; top: 0; inset-inline-start: 0; inset-inline-end: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,98,0,0.18), transparent); }
 
 /* TOC */
 .toc-box { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem 1.8rem; margin-bottom: 2.5rem; }
 .toc-box-title { font-size: 0.72rem; font-weight: 600; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.8rem; }
-.toc-box ol { padding-left: 1.2rem; }
+.toc-box ol { padding-inline-start: 1.2rem; }
 .toc-box li { margin-bottom: 0.3rem; }
 .toc-box a { font-size: 0.88rem; color: var(--muted2); text-decoration: none; }
 .toc-box a:hover { color: var(--amber); }
 
 /* TABLES */
 table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
-th { text-align: left; padding: 0.7rem 0.9rem; font-size: 0.75rem; font-weight: 600; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1px solid var(--border2); }
+th { text-align:start; padding: 0.7rem 0.9rem; font-size: 0.75rem; font-weight: 600; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1px solid var(--border2); }
 td { padding: 0.7rem 0.9rem; color: var(--muted2); border-bottom: 1px solid var(--border); }
 tr:last-child td { border-bottom: none; }
 td strong { color: var(--text); }
 
 /* PILLS */
-.pill { display: inline-block; background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.25); color: var(--amber2); font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.65rem; border-radius: 100px; letter-spacing: 0.04em; margin-right: 6px; vertical-align: middle; }
+.pill { display: inline-block; background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.25); color: var(--amber2); font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.65rem; border-radius: 100px; letter-spacing: 0.04em; margin-inline-end: 6px; vertical-align: middle; }
 
 /* ALERT BOXES */
 .alert-warn { background: rgba(255,59,59,0.07); border: 1px solid rgba(255,59,59,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: #ff9a9a; }
@@ -119,6 +118,19 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     .footer-note { max-width: 780px; margin: 1.25rem auto 0; font-size: 0.78rem; line-height: 1.6; color: var(--muted); text-align: center; }
     .footer-note strong { color: var(--muted2); font-weight: 600; }
 </style>
+<!-- i18n:begin -->
+<link rel="alternate" hreflang="en" href="https://tubebook.org/help" />
+<link rel="alternate" hreflang="fr" href="https://tubebook.org/fr/help" />
+<link rel="alternate" hreflang="es" href="https://tubebook.org/es/help" />
+<link rel="alternate" hreflang="pt" href="https://tubebook.org/pt/help" />
+<link rel="alternate" hreflang="de" href="https://tubebook.org/de/help" />
+<link rel="alternate" hreflang="ru" href="https://tubebook.org/ru/help" />
+<link rel="alternate" hreflang="zh-Hans" href="https://tubebook.org/zh/help" />
+<link rel="alternate" hreflang="ar" href="https://tubebook.org/ar/help" />
+<link rel="alternate" hreflang="x-default" href="https://tubebook.org/help" />
+<link rel="canonical" href="https://tubebook.org/help" />
+<script src="/lang-switcher.js" defer></script>
+<!-- i18n:end -->
 </head>
 <body>
 

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-tubebook_32x32.png" />
+<title>Términos y condiciones — TubeBook</title>
+<meta name="description" content="Las condiciones que rigen el uso de TubeBook, incluyendo suscripciones, créditos, uso aceptable y propiedad del contenido." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* ─── TUBEBOOK INNER PAGE — SHARED CSS ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #08090d; --bg2: #0f1118; --bg3: #14171f; --card: #131620;
+  --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
+  --amber: #ff6200; --amber2: #ff8c42; --amber-dim: rgba(255,98,0,0.12);
+  --red: #ff3b3b; --red-dim: rgba(255,59,59,0.12);
+  --green: #2ecc71; --green-dim: rgba(46,204,113,0.11);
+  --text: #f0eee8; --muted: #7b7d8a; --muted2: #a0a3b1;
+  --radius: 14px; --radius-lg: 20px;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; overflow-x: hidden; }
+a { color: var(--amber); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--amber2); text-decoration: underline; }
+strong { color: var(--text); font-weight: 600; }
+code, kbd { background: var(--bg3); border: 1px solid var(--border); padding: 2px 7px; border-radius: 5px; font-size: .85em; font-family: 'DM Mono', 'Fira Code', monospace; color: var(--amber2); }
+
+/* NAV */
+nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 4rem; background: rgba(8,9,13,0.88); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); }
+.nav-logo { display: flex; align-items: center; gap: 10px; font-size: 1.2rem; font-weight: 700; color: var(--text); text-decoration: none; }
+.nav-logo:hover { text-decoration: none; }
+.logo-icon { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, #ff6200 0%, #cc4e00 100%); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0; }
+.logo-text span { color: var(--amber); }
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-links a { color: var(--muted2); font-size: 0.875rem; text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--amber); text-decoration: none; }
+.nav-cta { background: var(--amber); color: #1a1200 !important; font-size: 0.85rem; font-weight: 600; padding: 0.5rem 1.2rem; border-radius: 8px; text-decoration: none !important; transition: background 0.2s; }
+.nav-cta:hover { background: var(--amber2); }
+
+/* LAYOUT */
+.page-wrap { max-width: 860px; margin: 0 auto; padding: 0 2rem 6rem; }
+.page-header { padding: 4rem 0 2.5rem; border-bottom: 1px solid var(--border); margin-bottom: 3rem; position: relative; overflow: hidden; }
+.page-header::after { content: ''; position: absolute; top: 0; inset-inline-end: -40px; width: 340px; height: 220px; background: radial-gradient(ellipse, rgba(255,98,0,0.06) 0%, transparent 70%); pointer-events: none; }
+.breadcrumb { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; display: flex; align-items: center; gap: 6px; }
+.breadcrumb a { color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--amber); }
+.breadcrumb span { opacity: 0.4; }
+h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 900; line-height: 1.15; letter-spacing: -0.02em; color: var(--text); }
+.page-lead { font-size: 1.05rem; color: var(--muted2); margin-top: 0.8rem; max-width: 580px; line-height: 1.7; }
+.page-meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.6rem; }
+
+/* TYPOGRAPHY */
+h2 { font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 700; color: var(--text); margin: 3rem 0 1rem; letter-spacing: -0.01em; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+.sec-num { font-family: 'Outfit', sans-serif; font-size: 0.7rem; font-weight: 600; color: var(--amber); background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.22); padding: 0.15rem 0.55rem; border-radius: 100px; letter-spacing: 0.05em; flex-shrink: 0; }
+h3 { font-size: 0.97rem; font-weight: 600; color: var(--text); margin: 1.5rem 0 0.5rem; }
+p { color: var(--muted2); line-height: 1.75; margin-bottom: 0.8rem; }
+ul, ol { color: var(--muted2); padding-inline-start: 1.4rem; line-height: 1.75; }
+li { margin-bottom: 0.45rem; }
+
+/* CARDS */
+.card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.6rem 1.8rem; margin: 1rem 0; position: relative; overflow: hidden; }
+.card::before { content: ''; position: absolute; top: 0; inset-inline-start: 0; inset-inline-end: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,98,0,0.18), transparent); }
+
+/* TOC */
+.toc-box { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem 1.8rem; margin-bottom: 2.5rem; }
+.toc-box-title { font-size: 0.72rem; font-weight: 600; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.8rem; }
+.toc-box ol { padding-inline-start: 1.2rem; }
+.toc-box li { margin-bottom: 0.3rem; }
+.toc-box a { font-size: 0.88rem; color: var(--muted2); text-decoration: none; }
+.toc-box a:hover { color: var(--amber); }
+
+/* TABLES */
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+th { text-align:start; padding: 0.7rem 0.9rem; font-size: 0.75rem; font-weight: 600; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1px solid var(--border2); }
+td { padding: 0.7rem 0.9rem; color: var(--muted2); border-bottom: 1px solid var(--border); }
+tr:last-child td { border-bottom: none; }
+td strong { color: var(--text); }
+
+/* PILLS */
+.pill { display: inline-block; background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.25); color: var(--amber2); font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.65rem; border-radius: 100px; letter-spacing: 0.04em; margin-inline-end: 6px; vertical-align: middle; }
+
+/* ALERT BOXES */
+.alert-warn { background: rgba(255,59,59,0.07); border: 1px solid rgba(255,59,59,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: #ff9a9a; }
+.alert-tip { background: var(--green-dim); border: 1px solid rgba(46,204,113,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: #7be8a8; }
+.alert-info { background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: var(--amber2); }
+
+/* FOOTER */
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2.5rem 4rem; }
+.footer-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.footer-brand { font-size: 0.82rem; color: var(--muted); }
+.footer-brand a { color: var(--amber); text-decoration: none; }
+.footer-links { display: flex; gap: 1.8rem; flex-wrap: wrap; }
+.footer-links a { font-size: 0.82rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text); }
+
+@media (max-width: 760px) {
+  nav { padding: 0.9rem 1.2rem; }
+  .nav-links { display: none; }
+  .page-wrap { padding: 0 1.2rem 4rem; }
+  footer { padding: 2rem 1.2rem; }
+}
+.warn-card { background: rgba(255,59,59,0.06); border: 1px solid rgba(255,59,59,0.2); border-radius: var(--radius); padding: 1.2rem 1.5rem; margin: 1rem 0; }
+.warn-card ul, .warn-card p { color: var(--muted2); }
+</style>
+<!-- i18n:begin -->
+<link rel="alternate" hreflang="en" href="https://tubebook.org/terms" />
+<link rel="alternate" hreflang="fr" href="https://tubebook.org/fr/terms" />
+<link rel="alternate" hreflang="es" href="https://tubebook.org/es/terms" />
+<link rel="alternate" hreflang="pt" href="https://tubebook.org/pt/terms" />
+<link rel="alternate" hreflang="de" href="https://tubebook.org/de/terms" />
+<link rel="alternate" hreflang="ru" href="https://tubebook.org/ru/terms" />
+<link rel="alternate" hreflang="zh-Hans" href="https://tubebook.org/zh/terms" />
+<link rel="alternate" hreflang="ar" href="https://tubebook.org/ar/terms" />
+<link rel="alternate" hreflang="x-default" href="https://tubebook.org/terms" />
+<link rel="canonical" href="https://tubebook.org/es/terms" />
+<script src="/lang-switcher.js" defer></script>
+<!-- i18n:end -->
+</head>
+<body>
+
+<nav>
+  <a href="/es/" class="nav-logo" style="padding:0;">
+    <img src="/logo-tubebook-1500x450.png" alt="TubeBook" style="height:48px;width:auto;display:block;" />
+  </a>
+  <div class="nav-links">
+    <a href="/es/help">Ayuda</a>
+    <a href="/es/privacy">Privacidad</a>
+    <a href="/es/terms" class="active">Términos</a>
+    <a href="/es/contact">Contacto</a>
+  </div>
+  <a href="https://app.tubebook.org" class="nav-cta">Abrir app →</a>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/es/">Inicio</a><span>/</span>Términos y condiciones</div>
+    <h1>Términos y condiciones</h1>
+    <p class="page-lead">Al crear una cuenta o usar el Servicio, aceptas estos Términos. Si no estás de acuerdo, no uses el Servicio.</p>
+    <p class="page-meta">Última actualización: 25 de agosto de 2026</p>
+  </div>
+
+  <div class="toc-box">
+    <div class="toc-box-title">Contenido</div>
+    <ol>
+      <li><a href="#s1">El Servicio</a></li>
+      <li><a href="#s2">Cuentas</a></li>
+      <li><a href="#s3">Suscripciones, créditos y facturación</a></li>
+      <li><a href="#s4">Contenido y propiedad</a></li>
+      <li><a href="#s5">Datos de investigación de temas y sin garantía comercial</a></li>
+      <li><a href="#s6">Uso aceptable</a></li>
+      <li><a href="#s7">Servicios de terceros</a></li>
+      <li><a href="#s8">Avisos legales</a></li>
+      <li><a href="#s9">Limitación de responsabilidad</a></li>
+      <li><a href="#s10">Terminación</a></li>
+      <li><a href="#s11">Cambios</a></li>
+      <li><a href="#s12">Legislación aplicable</a></li>
+      <li><a href="#s13">Contacto</a></li>
+    </ol>
+  </div>
+
+  <h2 id="s1"><span class="sec-num">01</span>El Servicio</h2>
+  <p>TubeBook transforma el material fuente que proporcionas — videos de YouTube, URLs de páginas web y transcripciones o texto que pegues — en libros electrónicos mediante IA. Un libro electrónico puede generarse a partir de una sola fuente o de varias combinadas en un proyecto. El Servicio también ofrece <strong>investigación de temas</strong>, que informa sobre datos de sugerencias de búsqueda y de libros publicados para un nicho que ingreses y sugiere fuentes que puedes optar por usar. Las funciones, los precios y los costos de créditos pueden evolucionar con el tiempo.</p>
+
+  <h2 id="s2"><span class="sec-num">02</span>Cuentas</h2>
+  <ul>
+    <li>Debes tener al menos 13 años (16 en el EEE) para crear una cuenta.</li>
+    <li>Eres responsable de tus credenciales y de toda actividad bajo tu cuenta.</li>
+    <li>Una persona o entidad legal por cuenta. No se permite compartir la cuenta entre equipos sin un plan que lo permita expresamente.</li>
+  </ul>
+
+  <h2 id="s3"><span class="sec-num">03</span>Suscripciones, créditos y facturación</h2>
+  <div class="card">
+    <ul>
+      <li>El Servicio funciona con un sistema de créditos. Cada generación descuenta créditos según el costo que se muestra antes de confirmar.</li>
+      <li><strong>Plan gratuito:</strong> cuentas con un <strong>correo electrónico verificado</strong> reciben una asignación de 100 créditos de ebook cada mes. No se requiere tarjeta de pago. Las cuentas gratuitas pueden usar las mismas longitudes de ebook, límite de fuentes, herramientas de creación, edición y calidad, opciones de arte, traducciones, herramientas de audiolibro y formatos de exportación que las cuentas de pago; la disponibilidad se rige por el saldo de créditos de ebook o audio correspondiente, no por un muro de pago de funciones. Los PDF de cuentas gratuitas incluyen un pequeño pie de página "Hecho con TubeBook.org" hasta que la cuenta realice alguna compra.</li>
+      <li><strong>Capacidad de investigación compartida:</strong> la lectura de material fuente depende de servicios de terceros con una capacidad mensual fija compartida por todos los usuarios. Cuando esa capacidad se agota, la generación en el plan gratuito puede pausarse hasta que se restablezca, mientras que los planes de pago continúan. No se cobran créditos por una generación que se rechace por este motivo.</li>
+      <li><strong>Starter ($9/mes):</strong> 250 créditos por ciclo de facturación: aproximadamente 8 imanes de clientes potenciales o 2 ebooks comerciales, o cualquier combinación. Incluye las mismas funciones de producto y el límite de 25 fuentes que los otros planes; la mayor asignación mensual de créditos es la diferencia.</li>
+      <li><strong>Pro ($29/mes):</strong> 1,000 créditos por ciclo de facturación: aproximadamente 33 imanes de clientes potenciales o 10 ebooks comerciales, o cualquier combinación. Incluye las mismas funciones de producto y el límite de 25 fuentes que los otros planes; la mayor asignación mensual de créditos es la diferencia.</li>
+      <li><strong>Pro Audio ($49/mes):</strong> todo lo de Pro, más 900 <strong>créditos de audio</strong> por mes: aproximadamente 3 audiolibros comerciales con la voz premium, o 7 con la voz estándar.</li>
+      <li><strong>Facturación anual:</strong> Starter $90/año, Pro $290/año, Pro Audio $490/año. Un plan anual compra doce meses de acceso con descuento. No <strong>otorga</strong> doce meses de créditos por adelantado: la asignación mensual descrita a continuación se entrega cada mes durante la duración del plan, en los mismos términos que la facturación mensual.</li>
+      <li><strong>Créditos de audio:</strong> un saldo separado de los créditos de ebook, que se usa solo para narrar audiolibros y no es intercambiable con los créditos de ebook. Un audiolibro con voz estándar cuesta 40 / 80 / 120 créditos de audio según la longitud del libro; un audiolibro con voz premium cuesta 100 / 200 / 300. Los créditos de audio se incluyen con el plan Pro Audio y también se pueden comprar como paquetes de créditos de audio de una sola vez en cualquier plan, incluido el gratuito, sin suscripción. Los planes que no sean Pro Audio no acumulan una asignación mensual de audio. Los paquetes de créditos de audio comprados no caducan mientras su cuenta esté activa, y si su saldo contiene ambos, la asignación del plan que caduca se gasta primero. Combinar partes ya narradas en un solo archivo no cuesta nada.</li>
+      <li><strong>Longitudes de ebook:</strong> un imán de clientes potenciales corto cuesta 30 créditos, un libro corto 60 créditos y un libro comercial completo 100 créditos. Los tres están disponibles en todos los planes, incluido el gratuito: están limitados solo por su saldo de créditos, no por su nivel de suscripción.</li>
+      <li><strong>Longitudes y recuentos de páginas:</strong> las longitudes son objetivos, no garantías. Los recuentos de páginas que se muestran antes de la generación son estimaciones derivadas del objetivo de palabras y del tamaño de recorte elegido; el recuento de páginas impreso depende del tamaño de recorte, las fuentes y las ilustraciones, y el recuento de Amazon es la autoridad. No garantizamos que una longitud determinada cumpla con el recuento mínimo de páginas de Amazon KDP para la impresión en rústica: la página de generación muestra una estimación para ayudarle a elegir.</li>
+      <li><strong>Múltiples fuentes:</strong> cada plan puede combinar hasta 25 fuentes por ebook. La primera fuente está incluida en el costo base; cada fuente adicional se factura con 8 créditos adicionales. Si una fuente no se puede leer (por ejemplo, una página inaccesible o con muro de pago), se omite y el ebook se genera a partir de las fuentes restantes; no se realiza ningún ajuste de crédito por las fuentes omitidas. Si no se puede leer ninguna fuente, la generación falla y los créditos se reembolsan automáticamente.</li>
+      <li><strong>Investigación de temas:</strong> se factura a 5 créditos por nicho investigado. Los resultados se almacenan en caché durante 14 días y reabrir un nicho en caché no cuesta nada; los nichos se comparan ignorando el orden de las palabras, las mayúsculas y las palabras de relleno comunes, por lo que las consultas equivalentes se resuelven en el mismo resultado en caché. Si la investigación falla antes de devolver resultados, los 5 créditos se reembolsan automáticamente. Encontrar fuentes sugeridas para un tema investigado no tiene costo adicional de créditos.</li>
+      <li><strong>Arte de portada:</strong> Todos los planes permiten crear portadas e ilustraciones de capítulos con IA, buscar en bibliotecas de fotos de stock compatibles o subir arte que el usuario tenga derecho a utilizar. Las ilustraciones de capítulos generadas por IA son opcionales y se facturan a 1 crédito adicional por imagen; el total exacto se muestra antes de la confirmación. La portada está incluida sin coste adicional de créditos de ebook. El uso de fotos de stock está sujeto a la licencia y los requisitos de atribución del proveedor, y TubeBook incluye los créditos y enlaces del fotógrafo disponibles en las exportaciones compatibles.</li>
+      <li><strong>Asignación mensual y caducidad:</strong> los créditos de suscripción —tanto de ebook como de audio— son una asignación que se renueva hasta la cifra mensual de tu plan al comienzo de cada período mensual. Cualquier parte no utilizada en ese momento se pierde y no se acumula. Esto se aplica en todas las frecuencias de facturación, <strong>incluidos los planes anuales</strong>, que reciben la asignación mensual cada mes en lugar de un año de créditos por adelantado.</li>
+      <li>Los paquetes de créditos adicionales de pago único no se ven afectados por esto y no caducan mientras tu cuenta esté activa. Si tu saldo incluye ambos, la asignación de suscripción que caduca se gasta primero.</li>
+      <li>Todas las tarifas se facturan por adelantado a través de Stripe y no son reembolsables, salvo que lo exija la ley o se indique expresamente.</li>
+      <li>Puedes cancelar en cualquier momento; el acceso continúa hasta el final del período de facturación actual.</li>
+      <li>Puedes cancelar en cualquier momento; el acceso continúa hasta el final del período de facturación actual.</li>
+    </ul>
+  </div>
+
+  <h2 id="s4"><span class="sec-num">04</span>Contenido y propiedad</h2>
+  <h3>Puedes cambiar los precios con un aviso de al menos 30 días; los períodos de facturación existentes no se ven afectados.</h3>
+  <p>Tu aportación</p>
+  <p>Conservas todos los derechos sobre el material que envías: URLs de YouTube, URLs de páginas web y transcripciones o texto que pegues. Declaras que, para cada fuente que proporciones, tienes los derechos necesarios para enviarla y generar obras derivadas de ella. Esto se aplica a cada fuente individualmente en un ebook de múltiples fuentes: combinar varias fuentes no crea derechos que no tengas por separado en cada una de ellas, y las pautas de modo de fidelidad a continuación se aplican a todas.</p>
+  <h3>Cuando envías una URL de página web, TubeBook recupera el texto de acceso público de esa página para generar tu ebook. Eres responsable de asegurarte de que hacerlo está permitido por los términos de uso del propietario de la página y de respetar los derechos de autor de cualquier material de terceros que proporciones.</h3>
+  <p>Resultado generado</p>
+  <h3>Sujeto a tu cumplimiento de estos Términos y al pago de las tarifas aplicables, eres propietario de los ebooks y los activos generados por IA a través del Servicio y puedes usarlos comercialmente, sujeto a los derechos y restricciones de cualquier contenido suministrado o de stock. PDF, DOCX, EPUB, PPTX y los activos de publicación compatibles están disponibles en todos los planes. Las exportaciones en PDF de cuentas gratuitas incluyen un pequeño crédito de pie de página "Hecho con TubeBook.org" hasta que la cuenta realice cualquier compra (suscripción, paquete de créditos de ebook o paquete de créditos de audio); después de cualquier compra, las exportaciones no llevan marca de TubeBook.</h3>
+  <ul>
+    <li><strong>Modos de fidelidad y responsabilidad de derechos de autor</strong> Alta fidelidad</li>
+    <li><strong>— crea una obra derivada que sigue de cerca la fuente. Debes ser propietario del video, tener una licencia explícita del titular de los derechos o estar seguro de que la fuente es de dominio público.</strong> Adaptación inteligente</li>
+    <li><strong>— reescribe y reestructura la fuente. Generalmente más seguro para la publicación original, pero sigues siendo responsable de verificar que el resultado no reproduzca expresión protegida.</strong> Baja fidelidad</li>
+  </ul>
+  <div class="alert-warn">— utiliza el video solo como semilla temática y produce contenido sustancialmente original. Recomendado para publicación comercial cuando no eres propietario de la fuente. Para maximizar la protección de derechos de autor, añade tus propias contribuciones editoriales antes de publicar.</div>
+  <h3>⚠ En muchas jurisdicciones, el texto puramente generado por IA tiene protección de derechos de autor limitada. Tus elecciones editoriales, instrucciones personalizadas y ediciones posteriores a la generación son lo que crea autoría humana. TubeBook no garantiza que ningún resultado específico sea registrable como tu obra protegida por derechos de autor.</h3>
+  <p>Verificación de riesgo de publicación <strong>El Servicio puede señalar posibles riesgos de propiedad intelectual en los metadatos de tu libro —por ejemplo, nombres de marcas, franquicias, personas nombradas o afirmaciones de respaldo en un título, subtítulo o palabras clave— y puede enlazarte a un registro público de marcas para que puedas comprobar un término señalado por ti mismo. No realizamos esa búsqueda por ti y no hacemos ninguna declaración sobre el contenido del registro. Esto es una</strong>ayuda automatizada y solo informativa. No es asesoramiento legal, ni una búsqueda de autorización, ni una opinión legal</p>
+  <p>, y no surge ninguna relación abogado-cliente de ello. <strong>La verificación es deliberadamente incompleta: revisa metadatos y encabezados de capítulos en lugar de tu manuscrito completo, puede pasar por alto cosas, los datos de terceros pueden ser incorrectos o estar desactualizados, y no puede predecir ninguna decisión de Amazon o cualquier otro minorista.</strong> Cuando el Servicio informa que no se señaló nada, eso significa solo que esta verificación automatizada no planteó nada, no que tu libro sea seguro de publicar.</p>
+  <p>Nada en esta verificación reduce o transfiere tus obligaciones bajo esta sección o la sección 06. Sigues siendo el único responsable de poseer los derechos de todo lo que publiques y de cualquier consecuencia de publicarlo, incluida la supresión, eliminación o terminación de tu cuenta por parte de un minorista. Si tienes dudas, consulta a un abogado calificado.</p>
+  <h3>Nuestra propiedad intelectual</h3>
+  <p>El Servicio, incluido el software, las indicaciones, el diseño y la marca, es propiedad de TubeBook y sus licenciantes. No se otorgan derechos excepto los expresamente establecidos.</p>
+
+  <h2 id="s5"><span class="sec-num">05</span>Datos de investigación de temas y sin garantía comercial</h2>
+  <div class="card">
+    <p><strong>Qué son los datos.</strong> Los informes de investigación de temas incluyen (a) frases devueltas por los servicios públicos de sugerencias de búsqueda de Amazon y Google, y (b) recuentos y detalles de títulos ya publicados de la API de Google Books. Estos son indicadores de <em>interés de búsqueda</em>. No son cifras de ventas, rankings de ventas, estimaciones de ingresos ni proyecciones de regalías.</p>
+    <p><strong>Por qué no el ranking de Best Seller de Amazon.</strong> Amazon no pone a disposición del público los datos del ranking de Best Seller para servicios como el nuestro: la API de Publicidad de Productos se retiró en mayo de 2026 y su reemplazo requiere una cuenta de Amazon Associates con ventas calificadas continuas a nombre del titular de la cuenta. Por lo tanto, no proporcionamos ni afirmamos proporcionar el ranking de ventas de Amazon. Cualquier cifra etiquetada como puntuación en el Servicio es una ayuda para ordenar tu propia lista corta.</p>
+    <p><strong>Sin garantía de resultados.</strong> Nada en la investigación de temas es una predicción, promesa o garantía de ventas, ingresos, rankings, visibilidad o éxito comercial de cualquier libro que publiques. Los resultados de la publicación dependen de factores totalmente fuera de nuestro control, incluidos tu escritura, portada, precio, marketing, momento, algoritmos del mercado y competencia. Eres el único responsable de tus decisiones comerciales.</p>
+    <p><strong>Precisión y disponibilidad.</strong> Los datos subyacentes provienen de terceros, no están bajo nuestro control, pueden estar incompletos, desactualizados o no disponibles, y pueden cambiar o dejar de estar disponibles sin previo aviso. Cuando no se pudo recuperar una cifra de competencia, el Servicio la informa como desconocida; no debes interpretar eso como ausencia de competencia. Las fuentes sugeridas se proporcionan solo por conveniencia: no las respaldamos, no garantizamos su precisión, y sigues siendo responsable según la sección 06 de poseer los derechos necesarios sobre cada fuente que elijas usar.</p>
+    <p><strong>Capacidad compartida.</strong> El descubrimiento de fuentes depende de cuotas de terceros compartidas entre todos los usuarios del Servicio. Cuando se agota una cuota, las sugerencias de fuentes pueden no estar disponibles temporalmente. Esto no afecta los resultados de investigación ya entregados y no es un defecto del Servicio.</p>
+  </div>
+
+  <h2 id="s6"><span class="sec-num">06</span>Uso aceptable</h2>
+  <p>No debes:</p>
+  <div class="warn-card">
+    <ul>
+      <li>Enviar contenido para el que no tengas derechos de uso o que infrinja los derechos de terceros.</li>
+      <li>Generar contenido ilegal, difamatorio, acosador, contenido sexual que involucre a menores, o que viole las políticas de los proveedores de IA.</li>
+      <li>Intentar eludir los límites de crédito, realizar ingeniería inversa del Servicio o probar vulnerabilidades sin permiso por escrito.</li>
+      <li>Revender acceso directo a la API del Servicio.</li>
+    </ul>
+  </div>
+  <p>Podemos suspender o terminar cuentas que violen estas reglas, con o sin previo aviso.</p>
+
+  <h2 id="s7"><span class="sec-num">07</span>Servicios de terceros</h2>
+  <p>TubeBook depende de proveedores de IA, procesadores de pago e infraestructura de terceros. Su disponibilidad y políticas pueden afectar el Servicio. No somos responsables de interrupciones o limitaciones impuestas por esos proveedores.</p>
+  <p>La investigación de temas también consulta los servicios públicos de sugerencias de búsqueda de Amazon y Google, la API de Google Books, la API de datos de YouTube y un proveedor de búsqueda de terceros. Estos se consultan con el nicho o tema que ingresas; consulta la Política de Privacidad para ver qué se envía. Sus términos, disponibilidad y límites de velocidad están fuera de nuestro control, y un cambio en su lado puede reducir o eliminar partes de la función de investigación.</p>
+
+  <h2 id="s8"><span class="sec-num">08</span>Avisos legales</h2>
+  <p>El Servicio se proporciona "tal cual" y "según disponibilidad" sin garantías de ningún tipo, expresas o implícitas, incluidas las de comerciabilidad, idoneidad para un propósito particular y no infracción. El resultado generado por IA puede contener errores; eres responsable de revisarlo antes de publicarlo o distribuirlo.</p>
+
+  <h2 id="s9"><span class="sec-num">09</span>Limitación de responsabilidad</h2>
+  <p>En la máxima medida permitida por la ley, la responsabilidad agregada de TubeBook derivada o relacionada con el Servicio no excederá la mayor de (a) la cantidad que nos pagaste en los 12 meses anteriores a la reclamación, o (b) USD 100. No somos responsables de daños indirectos, incidentales, especiales, consecuentes o punitivos, ni de pérdida de ganancias, ingresos, datos o fondo de comercio.</p>
+
+  <h2 id="s10"><span class="sec-num">10</span>Terminación</h2>
+  <p>Puedes cerrar tu cuenta en cualquier momento. Podemos suspender o terminar cuentas por incumplimiento de estos Términos, abuso o falta de pago. Las secciones que por su naturaleza deben sobrevivir a la terminación (propiedad, exenciones de responsabilidad, responsabilidad, resolución de disputas) seguirán aplicándose.</p>
+
+  <h2 id="s11"><span class="sec-num">11</span>Cambios</h2>
+  <p>Podemos actualizar estos Términos. Los cambios importantes se anunciarán al menos 14 días antes de que entren en vigor. El uso continuado después de la fecha de vigencia constituye aceptación.</p>
+
+  <h2 id="s12"><span class="sec-num">12</span>Legislación aplicable</h2>
+  <p>Estos Términos se rigen por las leyes aplicables a la entidad que opera TubeBook, sin tener en cuenta los principios de conflicto de leyes. Las disputas se resolverán en los tribunales competentes de esa jurisdicción, a menos que la ley de protección al consumidor local disponga lo contrario.</p>
+
+  <h2 id="s13"><span class="sec-num">13</span>Contacto</h2>
+  <p>Preguntas sobre estos Términos: <a href="mailto:support@tubebook.org">support@tubebook.org</a></p>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">© <span id="y"></span> TubeBook · <a href="https://tubebook.org">tubebook.org</a></div>
+    <div class="footer-links">
+      <a href="/es/">Inicio</a><a href="/es/help">Ayuda</a><a href="/es/privacy">Privacidad</a><a href="/es/terms">Términos</a><a href="/es/contact">Contacto</a>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script src="/promo-banner.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-tubebook_32x32.png" />
+<title>TubeBook — Transforme vídeos do YouTube e artigos em ebooks publicáveis</title>
+<meta name="description" content="Ganhe 100 créditos grátis todo mês. Transforme vídeos, artigos, documentos ou um manuscrito em um ebook completo, escrito e ilustrado — com todos os recursos disponíveis em todos os planos." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://tubebook.org/" />
+<meta property="og:title" content="TubeBook — Transforme vídeos do YouTube em ebooks publicáveis" />
+<meta property="og:description" content="Transforme vídeos, artigos, documentos e anotações em um ebook estruturado e totalmente escrito. Todo plano inclui todos os recursos de criação, edição, arte e exportação; o plano gratuito recebe 100 créditos mensais." />
+<meta property="og:image" content="https://tubebook.org/banner-tubebook_1200x600.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="600" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://tubebook.org/banner-tubebook_1200x600.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:#08090d;--bg2:#0f1118;--bg3:#14171f;--card:#131620;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);
+  --amber:#ff6200;--amber2:#ff8c42;--amber-dim:rgba(255,98,0,0.12);
+  --red:#ff3b3b;--red-dim:rgba(255,59,59,0.12);
+  --green:#2ecc71;--green-dim:rgba(46,204,113,0.11);
+  --yellow:#f5c842;--yellow-dim:rgba(245,200,66,0.11);
+  --text:#f0eee8;--muted:#7b7d8a;--muted2:#a0a3b1;
+  --radius:14px;--radius-lg:20px;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6;}
+nav{position:fixed;top:0;inset-inline-start:0;inset-inline-end:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 4rem;background:rgba(8,9,13,0.80);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:10px;font-size:1.35rem;font-weight:700;color:var(--text);text-decoration:none;}
+.logo-icon{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--red) 0%,#b72a2a 100%);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;flex-shrink:0;}
+.logo-text span{color:var(--amber);}
+.nav-links{display:flex;align-items:center;gap:2rem;}
+.nav-links a{color:var(--muted2);font-size:0.9rem;text-decoration:none;font-weight:400;transition:color 0.2s;}
+.nav-links a:hover{color:var(--text);}
+.nav-cta{background:var(--amber);color:#1a1200;font-size:0.875rem;font-weight:600;padding:0.55rem 1.35rem;border-radius:8px;text-decoration:none;transition:background 0.2s,transform 0.15s;}
+.nav-cta:hover{background:var(--amber2);transform:translateY(-1px);}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 6rem;position:relative;overflow:hidden;}
+.hero-orb-1{position:absolute;top:-180px;left:50%;transform:translateX(-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(255,98,0,0.08) 0%,transparent 70%);pointer-events:none;}
+.hero-orb-2{position:absolute;bottom:-120px;inset-inline-end:-160px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,59,59,0.07) 0%,transparent 70%);pointer-events:none;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.25);color:var(--amber2);font-size:0.8rem;font-weight:500;padding:0.4rem 1rem;border-radius:100px;margin-bottom:2.2rem;animation:fadeDown 0.6s ease both;}
+.hero-badge svg{width:14px;height:14px;fill:var(--amber2);}
+h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,5.2rem);font-weight:900;line-height:1.1;letter-spacing:-0.02em;color:var(--text);max-width:860px;animation:fadeUp 0.7s 0.1s ease both;}
+h1 em{font-style:italic;color:var(--amber);display:block;}
+.hero-sub{max-width:600px;margin:1.8rem auto 0;font-size:1.1rem;color:var(--muted2);line-height:1.7;animation:fadeUp 0.7s 0.2s ease both;}
+.hero-sub strong{color:var(--text);}
+.hero-actions{display:flex;align-items:center;gap:1rem;margin-top:2.8rem;flex-wrap:wrap;justify-content:center;animation:fadeUp 0.7s 0.3s ease both;}
+.btn-primary{background:var(--amber);color:#1a1200;font-size:1rem;font-weight:700;padding:0.85rem 2.2rem;border-radius:10px;text-decoration:none;display:flex;align-items:center;gap:8px;transition:background 0.2s,transform 0.15s,box-shadow 0.2s;box-shadow:0 4px 24px rgba(255,98,0,0.25);}
+.btn-primary:hover{background:var(--amber2);transform:translateY(-2px);box-shadow:0 8px 36px rgba(255,98,0,0.35);}
+.btn-secondary{background:transparent;color:var(--muted2);font-size:1rem;font-weight:500;padding:0.85rem 1.8rem;border-radius:10px;text-decoration:none;border:1px solid var(--border2);transition:border-color 0.2s,color 0.2s;}
+.btn-secondary:hover{border-color:var(--amber);color:var(--amber);}
+.hero-note{margin-top:1.2rem;font-size:0.82rem;color:var(--muted);animation:fadeUp 0.7s 0.4s ease both;}
+
+/* DEMO CARD */
+.demo-wrap{margin-top:4.5rem;width:100%;max-width:700px;animation:fadeUp 0.8s 0.5s ease both;}
+.demo-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:1.6rem 1.8rem;position:relative;overflow:hidden;}
+.demo-card::before{content:'';position:absolute;top:0;inset-inline-start:0;inset-inline-end:0;height:1px;background:linear-gradient(90deg,transparent,var(--amber),transparent);}
+.demo-row{display:flex;align-items:center;gap:10px;margin-bottom:1.2rem;}
+.demo-yt{background:var(--red-dim);border:1px solid rgba(255,59,59,0.2);border-radius:8px;padding:0.55rem 0.9rem;font-size:0.8rem;color:#ff7b7b;font-weight:500;display:flex;align-items:center;gap:7px;flex:1;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.demo-arrow{color:var(--amber);font-size:1.1rem;font-weight:700;flex-shrink:0;animation:pulse 1.5s infinite;}
+.demo-book-tag{background:var(--amber-dim);border:1px solid rgba(255,98,0,0.25);border-radius:8px;padding:0.55rem 0.9rem;font-size:0.8rem;color:var(--amber2);font-weight:500;display:flex;align-items:center;gap:6px;flex-shrink:0;}
+.demo-controls{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem;}
+.demo-control-chip{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:0.55rem 0.85rem;font-size:0.72rem;}
+.chip-label{color:var(--muted);margin-bottom:2px;}
+.chip-value{color:var(--text);font-weight:600;display:flex;align-items:center;gap:6px;}
+.chip-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.chip-dot.green{background:var(--green);}
+.chip-dot.yellow{background:var(--yellow);}
+.chip-dot.red{background:var(--red);}
+.demo-steps{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;}
+.demo-step{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:0.6rem 0.4rem;text-align:center;font-size:0.66rem;color:var(--muted);line-height:1.3;}
+.demo-step.active{border-color:rgba(255,98,0,0.35);color:var(--amber2);background:var(--amber-dim);}
+.demo-step .step-icon{font-size:0.95rem;margin-bottom:3px;display:block;}
+
+/* LOGOS */
+.logos-section{padding:2.8rem 4rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center;}
+.logos-label{font-size:0.78rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.6rem;}
+.logos-row{display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap;}
+.logo-badge{font-size:0.88rem;color:var(--muted);font-weight:500;display:flex;align-items:center;gap:7px;opacity:0.55;filter:grayscale(1);transition:opacity 0.2s,filter 0.2s;}
+.logo-badge:hover{opacity:1;filter:none;}
+.logo-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--amber);opacity:0.5;}
+
+/* SECTIONS */
+section{padding:6rem 4rem;}
+.section-label{display:inline-block;font-size:0.75rem;font-weight:600;color:var(--amber);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1rem;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1.2;letter-spacing:-0.02em;margin-bottom:1rem;}
+.section-sub{font-size:1.05rem;color:var(--muted2);max-width:520px;line-height:1.7;}
+
+/* HOW IT WORKS */
+.hiw{background:var(--bg2);}
+.hiw-inner{max-width:1100px;margin:0 auto;}
+.hiw-header{margin-bottom:3.5rem;}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5px;background:var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+.step-card.step-wide{grid-column:span 2;}
+.step-card{background:var(--card);padding:2rem 1.4rem;position:relative;transition:background 0.3s;}
+.step-card:hover{background:#181b28;}
+.step-num{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;color:rgba(255,98,0,0.14);line-height:1;margin-bottom:1rem;}
+.step-icon-wrap{width:40px;height:40px;border-radius:10px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;}
+.step-icon-wrap svg{width:20px;height:20px;stroke:var(--amber2);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.step-icon-wrap.red-tint{background:var(--red-dim);border-color:rgba(255,59,59,0.2);}
+.step-icon-wrap.red-tint svg{stroke:#ff7b7b;}
+.step-card h3{font-size:0.92rem;font-weight:600;margin-bottom:0.4rem;}
+.step-card p{font-size:0.82rem;color:var(--muted2);line-height:1.6;}
+.step-badge{display:inline-block;font-size:0.62rem;font-weight:600;padding:0.18rem 0.55rem;border-radius:100px;margin-top:0.6rem;letter-spacing:0.04em;background:var(--amber-dim);color:var(--amber2);border:1px solid rgba(255,98,0,0.25);}
+
+/* FIDELITY */
+.fidelity-inner{max-width:1100px;margin:0 auto;}
+.fidelity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-top:3.5rem;}
+.fidelity-card{background:var(--card);padding:2.2rem 2rem;position:relative;overflow:hidden;transition:background 0.3s;}
+.fidelity-card:hover{background:#181b28;}
+.legal-badge{display:inline-flex;align-items:center;gap:7px;font-size:0.72rem;font-weight:700;padding:0.28rem 0.8rem;border-radius:100px;margin-bottom:1.4rem;letter-spacing:0.05em;text-transform:uppercase;}
+.legal-badge.red{background:rgba(255,59,59,0.13);color:#ff7b7b;border:1px solid rgba(255,59,59,0.25);}
+.legal-badge.yellow{background:rgba(245,200,66,0.12);color:var(--yellow);border:1px solid rgba(245,200,66,0.25);}
+.legal-badge.green{background:var(--green-dim);color:var(--green);border:1px solid rgba(46,204,113,0.25);}
+.legal-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.legal-dot.red{background:var(--red);}
+.legal-dot.yellow{background:var(--yellow);}
+.legal-dot.green{background:var(--green);}
+.fidelity-card h3{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin-bottom:0.5rem;}
+.fidelity-tagline{font-size:0.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem;}
+.fidelity-card p{font-size:0.88rem;color:var(--muted2);line-height:1.7;margin-bottom:1rem;}
+.fidelity-uses{display:flex;flex-direction:column;gap:0.45rem;margin-top:1.2rem;}
+.fidelity-use{font-size:0.8rem;color:var(--muted2);display:flex;align-items:center;gap:8px;}
+.fidelity-use::before{content:'→';color:var(--amber);font-size:0.8rem;flex-shrink:0;}
+.fidelity-card.highlight-green{background:linear-gradient(160deg,#0d1a12 0%,var(--card) 100%);}
+.fidelity-card.highlight-green::before{content:'';position:absolute;top:0;inset-inline-start:0;inset-inline-end:0;height:2px;background:linear-gradient(90deg,transparent,var(--green),transparent);}
+.ownership-note{background:rgba(255,59,59,0.07);border:1px solid rgba(255,59,59,0.18);border-radius:10px;padding:0.7rem 1rem;margin-top:1.2rem;font-size:0.76rem;color:#ff9a9a;line-height:1.5;display:flex;gap:8px;align-items:flex-start;}
+.kdp-tip{background:var(--green-dim);border:1px solid rgba(46,204,113,0.2);border-radius:10px;padding:0.7rem 1rem;margin-top:1.2rem;font-size:0.76rem;color:#7be8a8;line-height:1.5;display:flex;gap:8px;align-items:flex-start;}
+
+/* ANALYSIS */
+.analysis-section{background:var(--bg3);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.analysis-inner{max-width:1100px;margin:0 auto;}
+.analysis-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:center;}
+.analysis-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:2rem;position:relative;overflow:hidden;}
+.analysis-card::before{content:'';position:absolute;top:0;inset-inline-start:0;inset-inline-end:0;height:1px;background:linear-gradient(90deg,transparent,var(--amber),transparent);}
+.analysis-title{font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1.4rem;}
+.density-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.6rem;}
+.density-label{font-size:0.82rem;color:var(--muted2);}
+.density-score{font-size:0.82rem;font-weight:700;color:var(--amber2);}
+.density-bar-wrap{background:var(--bg3);border-radius:100px;height:5px;margin-bottom:1.4rem;overflow:hidden;}
+.density-bar{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--amber),var(--amber2));transition:width 1s ease;}
+.toc-preview{margin-top:1.4rem;border-top:1px solid var(--border);padding-top:1.2rem;}
+.toc-preview-label{font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.8rem;}
+.toc-items{display:flex;flex-direction:column;gap:0.5rem;}
+.toc-item{display:flex;align-items:center;gap:10px;font-size:0.82rem;color:var(--muted2);}
+.toc-num{width:20px;height:20px;border-radius:5px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);color:var(--amber2);font-size:0.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.toc-item span{color:var(--text);font-size:0.82rem;}
+.wc-selector{margin-top:1.4rem;border-top:1px solid var(--border);padding-top:1.2rem;}
+.wc-label{font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.8rem;}
+.wc-options{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.wc-option{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:0.7rem 0.9rem;cursor:pointer;transition:all 0.2s;}
+.wc-option.selected{border-color:rgba(255,98,0,0.4);background:var(--amber-dim);}
+.wc-name{font-size:0.8rem;font-weight:600;color:var(--text);}
+.wc-words{font-size:0.72rem;color:var(--muted);}
+.warn-banner{margin-top:0.8rem;background:rgba(245,200,66,0.08);border:1px solid rgba(245,200,66,0.2);border-radius:8px;padding:0.65rem 0.9rem;font-size:0.76rem;color:var(--yellow);line-height:1.5;display:none;gap:8px;align-items:flex-start;}
+.warn-banner.visible{display:flex;}
+
+/* WRITING STYLES */
+.styles-section{background:var(--bg2);}
+.styles-inner{max-width:1100px;margin:0 auto;}
+.styles-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:3.5rem;}
+.style-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:2rem;}
+.style-tag{background:var(--card);border:1px solid var(--border2);border-radius:100px;padding:0.5rem 1.1rem;font-size:0.85rem;font-weight:500;color:var(--muted2);cursor:pointer;transition:all 0.2s;user-select:none;}
+.style-tag:hover,.style-tag.active{background:var(--amber-dim);border-color:rgba(255,98,0,0.4);color:var(--amber2);}
+.styles-preview{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.8rem;position:relative;overflow:hidden;min-height:240px;}
+.styles-preview::before{content:'';position:absolute;top:0;inset-inline-start:0;inset-inline-end:0;height:1px;background:linear-gradient(90deg,transparent,var(--amber),transparent);}
+.preview-label{font-size:0.7rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1rem;}
+.preview-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--text);margin-bottom:0.8rem;}
+.preview-text{font-size:0.88rem;color:var(--muted2);line-height:1.75;}
+.preview-text em{color:var(--amber2);font-style:normal;font-weight:600;}
+.preview-style-chip{display:inline-flex;align-items:center;gap:6px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);color:var(--amber2);font-size:0.7rem;font-weight:600;padding:0.2rem 0.65rem;border-radius:100px;margin-bottom:1.2rem;}
+
+/* FEATURES */
+.features-inner{max-width:1100px;margin:0 auto;}
+.features-grid{margin-top:3.5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+.feat-card{background:var(--bg);padding:2rem 1.8rem;transition:background 0.3s;}
+.feat-card:hover{background:var(--card);}
+.feat-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;}
+.feat-icon.amber{background:var(--amber-dim);}
+.feat-icon.red{background:var(--red-dim);}
+.feat-icon.blue{background:rgba(80,130,255,0.12);}
+.feat-icon.green{background:var(--green-dim);}
+.feat-icon svg{width:20px;height:20px;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;fill:none;}
+.feat-icon.amber svg{stroke:var(--amber2);}
+.feat-icon.red svg{stroke:#ff6b6b;}
+.feat-icon.blue svg{stroke:#7ab0ff;}
+.feat-icon.green svg{stroke:var(--green);}
+.feat-card h3{font-size:0.98rem;font-weight:600;margin-bottom:0.5rem;}
+.feat-card p{font-size:0.86rem;color:var(--muted2);line-height:1.65;}
+.feat-new{display:inline-block;font-size:0.62rem;font-weight:700;background:var(--amber-dim);color:var(--amber2);border:1px solid rgba(255,98,0,0.25);padding:0.15rem 0.5rem;border-radius:100px;margin-inline-start:6px;vertical-align:middle;letter-spacing:0.04em;}
+
+/* TESTIMONIALS */
+.testimonials-inner{max-width:1100px;margin:0 auto;}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3.5rem;}
+.testi-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.8rem;}
+.stars{color:var(--amber2);font-size:0.9rem;margin-bottom:1rem;letter-spacing:2px;}
+.testi-tag{display:inline-block;font-size:0.68rem;font-weight:600;padding:0.18rem 0.6rem;border-radius:100px;margin-bottom:1rem;}
+.testi-tag.green{background:var(--green-dim);color:var(--green);border:1px solid rgba(46,204,113,0.2);}
+.testi-tag.yellow{background:var(--yellow-dim);color:var(--yellow);border:1px solid rgba(245,200,66,0.2);}
+.testi-tag.red-t{background:var(--red-dim);color:#ff9a9a;border:1px solid rgba(255,59,59,0.2);}
+.testi-quote{font-size:0.92rem;color:var(--muted2);line-height:1.7;margin-bottom:1.4rem;}
+.testi-quote strong{color:var(--text);font-weight:500;}
+.testi-author{display:flex;align-items:center;gap:10px;}
+.testi-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;}
+.testi-name{font-size:0.84rem;font-weight:600;}
+.testi-role{font-size:0.75rem;color:var(--muted);}
+
+/* PRICING */
+.pricing{background:var(--bg2);}
+.pricing-inner{max-width:1000px;margin:0 auto;text-align:center;}
+.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3.5rem;text-align:start;}
+.plan-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem 1.8rem;position:relative;transition:border-color 0.3s,transform 0.3s;}
+.plan-card:hover{transform:translateY(-4px);}
+.plan-card.popular{border-color:rgba(255,98,0,0.4);background:linear-gradient(160deg,#1a1c28 0%,#141620 100%);}
+.popular-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--amber);color:#1a1200;font-size:0.72rem;font-weight:700;padding:0.28rem 1rem;border-radius:100px;letter-spacing:0.05em;text-transform:uppercase;white-space:nowrap;}
+.plan-name{font-size:0.8rem;font-weight:600;color:var(--muted2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.8rem;}
+.plan-price{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:900;line-height:1;margin-bottom:0.3rem;}
+.plan-price sup{font-size:1.2rem;vertical-align:super;font-family:'Outfit',sans-serif;font-weight:600;}
+.plan-price .per{font-family:'Outfit',sans-serif;font-size:0.9rem;font-weight:400;color:var(--muted);}
+.plan-target{font-size:0.78rem;font-weight:600;color:var(--amber);margin:0.5rem 0;}
+.plan-desc{font-size:0.84rem;color:var(--muted2);margin:0.6rem 0 1.2rem;line-height:1.5;}
+.plan-divider{height:1px;background:var(--border);margin:1.2rem 0;}
+.plan-features{list-style:none;display:flex;flex-direction:column;gap:0.65rem;}
+.plan-features li{font-size:0.85rem;color:var(--muted2);display:flex;align-items:flex-start;gap:8px;}
+.chk{width:16px;height:16px;flex-shrink:0;border-radius:50%;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.3);display:flex;align-items:center;justify-content:center;font-size:0.6rem;color:var(--amber);margin-top:2px;}
+.plan-features li.dimmed{color:var(--muted);}
+.plan-features li.dimmed .chk{background:rgba(255,255,255,0.04);border-color:var(--border);color:transparent;}
+.plan-btn{display:block;text-align:center;margin-top:1.8rem;padding:0.75rem;border-radius:9px;font-size:0.9rem;font-weight:600;text-decoration:none;transition:all 0.2s;}
+.plan-btn.outline{border:1px solid var(--border2);color:var(--muted2);}
+.plan-btn.outline:hover{border-color:var(--amber);color:var(--amber);}
+.plan-btn.filled{background:var(--amber);color:#1a1200;}
+.plan-btn.filled:hover{background:var(--amber2);transform:translateY(-1px);}
+
+/* CTA */
+.cta-section{background:var(--bg);text-align:center;position:relative;overflow:hidden;}
+.cta-orb{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;border-radius:50%;background:radial-gradient(ellipse,rgba(255,98,0,0.07) 0%,transparent 70%);pointer-events:none;}
+.cta-inner{position:relative;z-index:1;max-width:680px;margin:0 auto;}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 4rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;}
+.footer-brand{font-size:0.82rem;color:var(--muted);}
+.footer-brand a{color:var(--amber);text-decoration:none;}
+.footer-links{display:flex;gap:2rem;flex-wrap:wrap;}
+.footer-links a{font-size:0.82rem;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--text);}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-12px);}to{opacity:1;transform:translateY(0);}}
+@keyframes pulse{0%,100%{transform:translateX(0);opacity:1;}50%{transform:translateX(3px);opacity:0.7;}}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
+.typing-cursor{display:inline-block;width:2px;height:1em;background:var(--amber);margin-inline-start:2px;vertical-align:text-bottom;animation:blink 0.9s infinite;}
+.fade-in-up{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.fade-in-up.visible{opacity:1;transform:translateY(0);}
+
+/* RESPONSIVE */
+@media(max-width:1400px){.steps-grid{grid-template-columns:repeat(3,1fr);}.step-card.step-wide{grid-column:auto;}.pricing-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:1000px){.steps-grid{grid-template-columns:1fr 1fr;}.fidelity-grid{grid-template-columns:1fr;}.styles-layout{grid-template-columns:1fr;gap:2.5rem;}.analysis-layout{grid-template-columns:1fr;gap:2.5rem;}.features-grid{grid-template-columns:1fr 1fr;}.testi-grid{grid-template-columns:1fr;}.pricing-grid{grid-template-columns:1fr;}}
+@media(max-width:760px){nav{padding:1rem 1.5rem;}.nav-links{display:none;}section{padding:4.5rem 1.5rem;}.logos-section{padding:2rem 1.5rem;}.steps-grid{grid-template-columns:1fr;}.features-grid{grid-template-columns:1fr;}footer{padding:2.5rem 1.5rem;}}
+
+    .faq-section { padding: 6rem 4rem; background: var(--bg2); }
+    .faq-inner { max-width: 820px; margin: 0 auto; }
+    .faq-list { margin-top: 3rem; display: flex; flex-direction: column; gap: 0.75rem; }
+    .faq-item { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+    .faq-item summary { cursor: pointer; padding: 1.15rem 1.4rem; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; transition: color .15s; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; font-size: 1.4rem; font-weight: 400; color: var(--amber); line-height: 1; flex-shrink: 0; transition: transform .2s; }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item summary:hover { color: var(--amber); }
+    .faq-item[open] { border-color: var(--border2); }
+    .faq-a { padding: 0 1.4rem 1.25rem; color: var(--muted2); font-size: 0.94rem; line-height: 1.7; }
+    .faq-a p { margin: 0; }
+    .faq-a strong { color: var(--fg, #fff); font-weight: 600; }
+    @media (max-width: 720px) {
+      .faq-section { padding: 4rem 1.25rem; }
+      .faq-item summary { padding: 1rem 1.1rem; font-size: 0.95rem; }
+      .faq-a { padding: 0 1.1rem 1.1rem; }
+    }
+
+    .footer-note { max-width: 780px; margin: 1.25rem auto 0; font-size: 0.78rem; line-height: 1.6; color: var(--muted); text-align: center; }
+    .footer-note strong { color: var(--muted2); font-weight: 600; }
+</style>
+<!-- i18n:begin -->
+<link rel="alternate" hreflang="en" href="https://tubebook.org/" />
+<link rel="alternate" hreflang="fr" href="https://tubebook.org/fr/" />
+<link rel="alternate" hreflang="es" href="https://tubebook.org/es/" />
+<link rel="alternate" hreflang="pt" href="https://tubebook.org/pt/" />
+<link rel="alternate" hreflang="de" href="https://tubebook.org/de/" />
+<link rel="alternate" hreflang="ru" href="https://tubebook.org/ru/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://tubebook.org/zh/" />
+<link rel="alternate" hreflang="ar" href="https://tubebook.org/ar/" />
+<link rel="alternate" hreflang="x-default" href="https://tubebook.org/" />
+<link rel="canonical" href="https://tubebook.org/pt/" />
+<script src="/lang-switcher.js" defer></script>
+<!-- i18n:end -->
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/pt/" class="nav-logo" style="padding:0;">
+    <img src="/logo-tubebook-1500x450.png" alt="TubeBook" style="height:48px;width:auto;display:block;" />
+  </a>
+  <div class="nav-links">
+    <a href="#how-it-works">Como funciona</a>
+    <a href="#fidelity">Modos de fidelidade</a>
+    <a href="#features">Recursos</a>
+    <a href="#pricing">Preços</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <a href="https://app.tubebook.org/signup" class="nav-cta">Comece grátis →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-orb-1"></div>
+  <div class="hero-orb-2"></div>
+  <div class="hero-badge">
+    <svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+    Novo: Somente suas fontes — cada fato rastreável até o que você forneceu
+  </div>
+  <h1>Encontre o tópico. Reúna as fontes.<br><em>Publique o livro — em qualquer idioma, impresso ou em áudio.</em></h1>
+  <p class="hero-sub">O TubeBook não transcreve — ele <strong>escreve um livro completo</strong>. Comece vendo <strong>o que os leitores realmente procuram</strong>, adicione vídeos, artigos, documentos ou seu próprio manuscrito, depois escolha o quão fiel seguir e aprove o sumário antes que uma única palavra seja escrita. <strong style="color:var(--amber2);">Contas gratuitas recebem 100 créditos todo mês</strong> — com as mesmas ferramentas de criação, edição, arte e exportação de todos os planos pagos. Por padrão, cada fato do livro vem de <strong>suas fontes e nada mais</strong>.</p>
+  <div class="hero-actions">
+    <a href="https://app.tubebook.org/signup" class="btn-primary">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l-4 4-4-4"/><circle cx="12" cy="12" r="10"/></svg>
+      Gere seu primeiro ebook grátis
+    </a>
+    <a href="#how-it-works" class="btn-secondary">Veja como funciona</a>
+  </div>
+  <p class="hero-note">Plano gratuito · 100 créditos todo mês · Todos os recursos · Sem cartão de crédito</p>
+
+  <div class="demo-wrap">
+    <div class="demo-card">
+      <div class="demo-row">
+        <div class="demo-yt">
+          <span style="color:var(--red);font-size:0.9rem;flex-shrink:0;">▶</span>
+          youtube.com/watch?v=<span id="typing-url"></span><span class="typing-cursor"></span>
+        </div>
+        <div class="demo-arrow">→</div>
+        <div class="demo-book-tag">📖 Ebook</div>
+      </div>
+      <div class="demo-controls">
+        <div class="demo-control-chip">
+          <div class="chip-label">Modo de fidelidade</div>
+          <div class="chip-value" id="demo-fidelity"><span class="chip-dot green"></span> Baixo — Pronto para publicação</div>
+        </div>
+        <div class="demo-control-chip">
+          <div class="chip-label">Estilo de escrita</div>
+          <div class="chip-value" id="demo-style">✦ Profissional</div>
+        </div>
+      </div>
+      <div class="demo-steps">
+        <div class="demo-step"><span class="step-icon">🎬</span>Analisar</div>
+        <div class="demo-step"><span class="step-icon">⚙️</span>Configurar</div>
+        <div class="demo-step"><span class="step-icon">📋</span>Pré-visualizar sumário</div>
+        <div class="demo-step"><span class="step-icon">✍️</span>Escrever</div>
+        <div class="demo-step"><span class="step-icon">🔍</span>Verificação de qualidade</div>
+        <div class="demo-step"><span class="step-icon">📄</span>Exportar</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGOS -->
+<div class="logos-section">
+  <p class="logos-label">Construído sobre infraestrutura de classe mundial</p>
+  <div class="logos-row">
+    <div class="logo-badge"><div class="dot"></div>IA multimodelo</div>
+    <div class="logo-badge"><div class="dot"></div>Supabase</div>
+    <div class="logo-badge"><div class="dot"></div>Cloudflare Workers</div>
+    <div class="logo-badge"><div class="dot"></div>Stripe Payments</div>
+    <div class="logo-badge"><div class="dot"></div>TanStack Start</div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="hiw" id="how-it-works">
+  <div class="hiw-inner">
+    <div class="hiw-header fade-in-up">
+      <span class="section-label">O Processo</span>
+      <h2 class="section-title">Sete passos, um livro publicável</h2>
+      <p class="section-sub">Comece com um tópico pesquisado ou vá direto com suas próprias fontes. De qualquer forma, você aprova a estrutura antes que uma única palavra seja escrita.</p>
+    </div>
+    <div class="steps-grid fade-in-up">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <div class="step-icon-wrap red-tint"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <h3>Encontre um Tópico <span style="font-size:0.7rem;color:var(--muted);font-weight:400;">(opcional)</span></h3>
+        <p>Digite um nicho e veja as frases que as pessoas realmente digitam no Amazon e no Google, quais mostram intenção de compra de livros e quão concorrido cada uma já é — depois escolha um conceito de livro construído a partir das lacunas. 5 créditos, reabertura gratuita por 14 dias.</p>
+        <span class="step-badge">Novo</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <div class="step-icon-wrap red-tint"><svg viewBox="0 0 24 24"><path d="M15 10l-4 4-4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
+        <h3>Adicione Suas Fontes</h3>
+        <p>Deixe o TubeBook selecionar até 25 vídeos, artigos e documentos para o seu tópico — apenas aqueles que ele consegue ler — ou adicione os seus: URLs do YouTube, páginas da web, <strong>arquivos Word, PowerPoint e PDF</strong>, ou cole um manuscrito inteiro de 500 páginas. Até 25 fontes por livro.</p>
+        <span class="step-badge">Novo</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <div class="step-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+        <h3>Análise Automática de Fontes</h3>
+        <p>O TubeBook lê cada fonte, detecta o idioma e mapeia o tópico, os temas e o público em todas elas antes de escrever uma palavra.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <div class="step-icon-wrap"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+        <h3>Configure Seu Livro</h3>
+        <p>Escolha o modo de fidelidade (Alto / Inteligente / Baixo), estilo de escrita, estilo de capa, ilustrações e suas próprias instruções personalizadas — antes de qualquer geração começar.</p>
+        <span class="step-badge">Novo</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">05</div>
+        <div class="step-icon-wrap"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div>
+        <h3>Pré-visualizar e aprovar sumário</h3>
+        <p>Revise a estrutura de capítulos gerada por IA. Edite ou reescreva os capítulos livremente e, em livros com várias fontes, veja de quais fontes cada capítulo se origina — nada é redigido até você aprovar, e gerações com falha são reembolsadas automaticamente.</p>
+        <span class="step-badge">Novo</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">06</div>
+        <div class="step-icon-wrap"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+        <h3>Verificação de Qualidade</h3>
+        <p>Cada capítulo passa por uma segunda revisão antes de você vê-lo: uma edição de linha para estrutura e legibilidade, e depois uma verificação de integridade que <strong>completa um capítulo cortado no meio de uma frase</strong>, remove qualquer instrução que vazou para o texto, corrige títulos repetidos ou numerados e aplica as regras tipográficas do idioma do livro. A maioria das ferramentas entrega o primeiro rascunho. Esta é a etapa que o transforma em manuscrito.</p>
+        <span class="step-badge">Novo</span>
+      </div>
+      <div class="step-card step-wide">
+        <div class="step-num">07</div>
+        <div class="step-icon-wrap"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <h3>Baixe Seu Ebook</h3>
+        <p>PDF, DOCX, EPUB e PPTX em todos os planos, com sua capa escolhida, ilustrações e fontes — além de miolo para brochura pronto para impressão, capa de brochura, capa para Kindle e pacote de metadados KDP.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIDELITY MODES -->
+<section id="fidelity">
+  <div class="fidelity-inner">
+    <div class="fade-in-up" style="text-align:center;max-width:640px;margin:0 auto;">
+      <span class="section-label">Modos de Fidelidade</span>
+      <h2 class="section-title">Quão próximo seu ebook deve seguir o vídeo?</h2>
+      <p class="section-sub" style="margin:0 auto;">Três modos. Três posturas legais. Você escolhe o quão original o resultado precisa ser.</p>
+    </div>
+    <div class="fidelity-grid fade-in-up">
+      <div class="fidelity-card">
+        <div class="legal-badge red"><span class="legal-dot red"></span>Apenas Reaproveitamento</div>
+        <div class="fidelity-tagline">Alta Fidelidade</div>
+        <h3>Seu vídeo, estrutura palavra por palavra</h3>
+        <p>O ebook segue exatamente a estrutura, nomes, histórias e ideias do seu transcrição — ideal para reaproveitar seu próprio conteúdo em um livro.</p>
+        <div class="fidelity-uses">
+          <div class="fidelity-use">Reaproveite seu próprio canal do YouTube</div>
+          <div class="fidelity-use">Material de curso → guia complementar</div>
+          <div class="fidelity-use">Série de palestras → livro-texto impresso</div>
+        </div>
+        <div class="ownership-note">⚠ Você deve possuir os direitos do vídeo de origem. Distribuir saída de Alta Fidelidade de conteúdo de terceiros sem permissão é violação de direitos autorais.</div>
+      </div>
+      <div class="fidelity-card">
+        <div class="legal-badge yellow"><span class="legal-dot yellow"></span>Verifique Seus Direitos</div>
+        <div class="fidelity-tagline">Adaptação Inteligente <span style="font-size:0.68rem;color:var(--muted);font-weight:400;">(padrão)</span></div>
+        <h3>Mesmas ideias, estrutura reconstruída</h3>
+        <p>A IA reescreve e reestrutura a fonte — os nomes podem mudar, o fluxo é reconstruído, mas o conteúdo central permanece próximo ao original.</p>
+        <div class="fidelity-uses">
+          <div class="fidelity-use">Atualize conteúdo antigo para uma nova marca</div>
+          <div class="fidelity-use">Adapte um tutorial em um guia de como fazer</div>
+          <div class="fidelity-use">Reembale entrevistas em estudos de caso</div>
+        </div>
+      </div>
+      <div class="fidelity-card highlight-green">
+        <div class="legal-badge green"><span class="legal-dot green"></span>Pronto para Comercialização</div>
+        <div class="fidelity-tagline">Baixa Fidelidade</div>
+        <h3>Inspirado no vídeo, verdadeiramente original</h3>
+        <p>O vídeo é apenas uma semente temática. A IA gera conteúdo substancialmente original — nomes, estrutura e redação são todos novos. Seguro para KDP, Gumroad e publicação comercial.</p>
+        <div class="fidelity-uses">
+          <div class="fidelity-use">Venda na Amazon KDP</div>
+          <div class="fidelity-use">Publique no Gumroad ou no seu próprio site</div>
+          <div class="fidelity-use">Gere ebooks a partir de qualquer vídeo público</div>
+        </div>
+        <div class="kdp-tip">💡 Para ter total direito autoral, adicione seus próprios insights ao rascunho de IA antes de publicar. Edição humana é o que cria autoria.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANALYSIS DEEP DIVE -->
+<section class="analysis-section" id="analysis">
+  <div class="analysis-inner">
+    <div class="analysis-layout fade-in-up">
+      <div>
+        <span class="section-label">Feito para Ser Encontrado</span>
+        <h2 class="section-title" style="font-size:clamp(1.8rem,3.5vw,2.5rem);">Pronto para publicar e para busca,<br>de fábrica</h2>
+        <p class="section-sub" style="max-width:100%;">Cada livro sai otimizado para os lugares onde leitores realmente procuram: busca da Amazon, Google e pipelines de ingestão de lojas. Sem lição de casa de SEO.</p>
+        <div style="margin-top:2rem;display:flex;flex-direction:column;gap:1rem;">
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div style="width:32px;height:32px;border-radius:8px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.8rem;color:var(--amber2);font-weight:700;">1</div>
+            <div><div style="font-size:0.9rem;font-weight:600;margin-bottom:0.2rem;">Títulos e subtítulos otimizados para busca</div><div style="font-size:0.84rem;color:var(--muted2);">Os subtítulos são escritos para conter as frases que leitores realmente digitam na Amazon e no Google — a superfície de ranqueamento mais forte que um autor controla.</div></div>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div style="width:32px;height:32px;border-radius:8px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.8rem;color:var(--amber2);font-weight:700;">2</div>
+            <div><div style="font-size:0.9rem;font-weight:600;margin-bottom:0.2rem;">Metadados embutidos em cada arquivo</div><div style="font-size:0.84rem;color:var(--muted2);">PDF, EPUB, DOCX e PPTX vêm com título, autor, descrição, palavras-chave e idioma embutidos no arquivo — o que as lojas e mecanismos de busca realmente leem.</div></div>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div style="width:32px;height:32px;border-radius:8px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.8rem;color:var(--amber2);font-weight:700;">3</div>
+            <div><div style="font-size:0.9rem;font-weight:600;margin-bottom:0.2rem;">Kit KDP completo por livro</div><div style="font-size:0.84rem;color:var(--muted2);">Descrição pronta para Amazon (texto simples + HTML formatado), 7 palavras-chave de busca, 3 sugestões de categoria, texto para contracapa e largura exata da lombada — um clique para copiar cada.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="analysis-card">
+        <div class="analysis-title">Pacote de Metadados KDP — gerado com cada livro</div>
+        <div class="density-row"><span class="density-label">Descrição para Amazon</span><span class="density-score">✓ simples + HTML</span></div>
+        <div class="density-row"><span class="density-label">Texto para contracapa</span><span class="density-score">✓ pronto para impressão</span></div>
+        <div class="density-row"><span class="density-label">Largura da lombada</span><span class="density-score">0,58" @ 232 páginas</span></div>
+        <div class="toc-preview">
+          <div class="toc-preview-label">7 palavras-chave de busca</div>
+          <div class="toc-items">
+            <div class="toc-item"><div class="toc-num">1</div><span>sistemas de produtividade para criadores</span></div>
+            <div class="toc-item"><div class="toc-num">2</div><span>framework de gestão de tempo</span></div>
+            <div class="toc-item"><div class="toc-num">3</div><span>hábitos de trabalho profundo</span></div>
+            <div class="toc-item"><div class="toc-num">4</div><span>técnicas de foco para empreendedores</span></div>
+            <div class="toc-item"><div class="toc-num">5</div><span>+ 3 mais, únicas por livro…</span></div>
+          </div>
+        </div>
+        <div class="toc-preview">
+          <div class="toc-preview-label">Sugestões de categoria</div>
+          <div class="toc-items">
+            <div class="toc-item"><div class="toc-num">›</div><span>Negócios &amp; Dinheiro &gt; Gestão de Tempo</span></div>
+            <div class="toc-item"><div class="toc-num">›</div><span>Autoajuda &gt; Transformação Pessoal</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WRITING STYLES -->
+<section class="styles-section" id="styles">
+  <div class="styles-inner">
+    <div class="fade-in-up" style="max-width:1100px;margin:0 auto;">
+      <span class="section-label">Estilos de escrita</span>
+      <h2 class="section-title">Seu livro, sua voz</h2>
+    </div>
+    <div class="styles-layout fade-in-up" style="max-width:1100px;margin:0 auto;">
+      <div>
+        <p class="section-sub" style="max-width:100%;">Escolha o estilo de escrita que combina com seu público antes de gerar. A IA adapta o tom, o vocabulário e a estrutura de acordo — do rigor acadêmico ao storytelling casual.</p>
+        <div class="style-tags" id="style-tags">
+          <div class="style-tag active" data-style="Professional" data-preview="The following framework provides a systematic approach to optimising your workflow. By implementing these <em>evidence-based methodologies</em>, organisations can achieve measurable improvements in operational efficiency.">Profissional</div>
+          <div class="style-tag" data-style="Conversational" data-preview="Here's the thing nobody tells you about productivity — it's not about doing more. It's about <em>doing the right things</em>. Let me walk you through what actually changed everything for me.">Conversacional</div>
+          <div class="style-tag" data-style="Stoic" data-preview="The obstacle before you is not a barrier. It is the path. <em>What you resist persists; what you engage with transforms.</em> Begin where you are. Use what you have. Do what you can.">Estóico</div>
+          <div class="style-tag" data-style="Storytelling" data-preview="It was a Tuesday in October when Marcus first realised the system was broken. He'd spent <em>three years</em> following the same routine — and for the first time, he stopped to ask why.">Storytelling</div>
+          <div class="style-tag" data-style="Academic" data-preview="This chapter examines the theoretical underpinnings of the proposed model. Drawing upon <em>Bourdieu's concept of cultural capital</em>, the analysis situates the findings within a broader socio-economic context.">Acadêmico</div>
+          <div class="style-tag" data-style="Inspirational" data-preview="You already have everything you need. The gap between where you are and where you want to be isn't talent — it's <em>decision</em>. Today is the day you close that gap.">Inspirador</div>
+        </div>
+      </div>
+      <div>
+        <div class="styles-preview">
+          <div class="preview-style-chip" id="style-chip">✦ Profissional</div>
+          <div class="preview-label">Parágrafo de exemplo — Capítulo 2</div>
+          <div class="preview-title">O Framework Central Explicado</div>
+          <div class="preview-text" id="style-preview-text">O framework a seguir fornece uma abordagem sistemática para otimizar seu fluxo de trabalho. Ao implementar essas <em>metodologias baseadas em evidências</em>, as organizações podem alcançar melhorias mensuráveis na eficiência operacional.</div>
+        </div>
+        <p style="font-size:0.78rem;color:var(--muted);margin-top:1rem;text-align:center;">Clique em qualquer estilo para pré-visualizar o tom da IA</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="features-inner">
+    <div class="fade-in-up">
+      <span class="section-label">Recursos</span>
+      <h2 class="section-title">Tudo o que você precisa para<br>publicar como um profissional</h2>
+    </div>
+    <div class="features-grid fade-in-up">
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <h3>Encontre um Tópico <span class="feat-new">Novo</span></h3>
+        <p>Não sabe sobre o que escrever? Veja o que está em alta nos EUA, Reino Unido, Alemanha, Canadá, Austrália e França — grátis. Depois, veja as frases que os leitores realmente digitam na Amazon, quantos livros já competem, e receba uma lista dos melhores vídeos e artigos para começar. <strong>Pesquise demanda, não adivinhe.</strong></p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon green"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+        <h3>Livros Multi-Fonte <span class="feat-new">Novo</span></h3>
+        <p>Combine até 25 vídeos do YouTube, artigos da web, <strong>documentos do Word, PowerPoint e PDF</strong> e texto colado em um único livro — enviados do seu computador ou por link. Cole um manuscrito inteiro não publicado, de até 500 páginas impressas, e tenha-o reestruturado. O TubeBook lê tudo, cria um único esboço para o conjunto e escreve cada capítulo a partir das fontes que realmente o cobrem.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon blue"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <h3>Apenas Suas Fontes <span class="feat-new">Novo</span></h3>
+        <p>O TubeBook nunca pesquisa na web enquanto escreve. Por padrão, ele também não usa o conhecimento próprio da IA — <strong>cada fato, número, nome e exemplo remonta ao material que você forneceu</strong>, para que você possa garantir seu próprio livro. Quer também o conhecimento de fundo do modelo? Ative-o deliberadamente, e esses livros recebem um selo para você saber a diferença. Nenhuma das configurações pode inventar estatísticas, estudos ou citações.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon green"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>3 Modos de Fidelidade &amp; 6 Estilos de Escrita</h3>
+        <p>Um pipeline de modelo de ponta com failover automático escreve prosa coerente e pronta para publicação — não um despejo de transcrição. Alta Fidelidade para reaproveitar seu conteúdo, Adaptação Inteligente para um novo visual de marca, Baixa Fidelidade para ebooks comerciais totalmente originais — e depois escolha Profissional, Conversacional, Storytelling, Acadêmico, Inspirador ou Estóico. Tudo escolhido antes de uma palavra ser escrita.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <h3>Verificação de Risco de Publicação <span class="feat-new">Novo</span></h3>
+        <p>Antes de publicar, o TubeBook revisa seu título, subtítulo e palavras-chave KDP em busca de marcas registradas, franquias, autores vivos e alegações de endosso oficial — os metadados que o Amazon suprime. Ele sinaliza cada um, explica por que importa, sugere uma redação mais segura e linka direto para o registro de marcas dos EUA para ver quem é o dono do nome. Em todos os planos, um crédito verifica todas as marcas sinalizadas de uma vez e mostra o proprietário e se está ativa. Nunca bloqueia você e nunca diz que um livro é seguro: <strong>os direitos são sempre seus para verificar.</strong></p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <h3>SEO &amp; KDP Pronto <span class="feat-new">Novo</span></h3>
+        <p>Subtítulos otimizados para palavras-chave, metadados embutidos em cada arquivo e um pacote KDP copiar-e-colar: descrição, 7 palavras-chave, categorias, texto da contracapa. Pesquise um tópico primeiro e essas palavras-chave vêm de <strong>frases de busca reais observadas</strong> em vez de suposições.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon red"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div>
+        <h3>Aprovação &amp; Partes do Livro <span class="feat-new">Novo</span></h3>
+        <p>Revise e edite a estrutura de capítulos antes de começar a escrever e marque exatamente quais partes o livro contém — introdução, conclusão, sobre o autor e mais. Os frontais são de nível profissional: uma página de direitos autorais real com selo editorial, cidade, edição, créditos de design e um aviso opcional de serviços profissionais, um prefácio com a assinatura do colaborador e um código QR para sua edição impressa. Qualquer coisa que você deixar em branco é simplesmente omitida. Escolha se os capítulos terminam com <strong>Principais Conclusões</strong> e um <strong>Prompt de Reflexão</strong> — ou nenhum. Nada é redigido até você aprovar, gerações falhas são reembolsadas, e mudar de ideia depois reconstrói os arquivos gratuitamente.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon red"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
+        <h3>Três Tamanhos <span class="feat-new">Novo</span></h3>
+        <p>Um ímã de leads de 10 a 25 páginas para crescer sua lista, um livro curto de 25 a 50 páginas que você pode vender como brochura no KDP, ou um livro comercial completo de 25.000+ palavras — você escolhe antes de gerar. Defina o tipo em <strong>12, 14 ou 16 pt em letras grandes</strong> para leitores mais velhos, escolha entre oito tamanhos de corte KDP e doze fontes, e veja a estimativa de páginas atualizar ao vivo contra o mínimo de 24 páginas do Amazon para brochura.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon red"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
+        <h3>Capa &amp; Ilustrações Você Escolhe <span class="feat-new">Novo</span></h3>
+        <p>Para a capa e cada capítulo, escolha <strong>três opções geradas por IA</strong>, pesquise <strong>fotos de banco de imagens</strong> do Unsplash, Pexels e Pixabay, ou <strong>envie sua própria arte</strong> — tudo em todos os planos. Créditos e links de fotos de banco de imagens são preservados no livro exportado. Posicione cada imagem de capítulo automaticamente ou escolha a seção e o parágrafo exatos após os quais ela aparece. Escreva um briefing de arte para uma linguagem visual consistente, compare opções lado a lado e reconstrua somente depois de escolher. 14 predefinições de design, 1 crédito por ilustração gerada, arte da capa gratuita.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+        <h3>Doze modelos de livro <span class="feat-new">Novo</span></h3>
+        <p>Escolha <strong>que tipo de livro</strong> antes de escrevê-lo — um guia prático, um plano de 7 dias, um caderno de exercícios, um livro de leitura diária, um guia de campo, um manual de referência. Cada um define a extensão, o tom e os blocos de capítulo, e muda a forma como um capítulo é realmente construído: um guia de campo usa os mesmos três ritmos todas as vezes, um livro de leitura diária se sustenta sozinho em cada entrada, um caderno de exercícios dá mais espaço ao trabalho do leitor do que à explicação. Tudo o que um modelo define é um controle que você ainda pode alterar.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
+        <h3>Escrito no seu próprio estilo <span class="feat-new">Novo</span></h3>
+        <p>Envie algo que você já escreveu — um post, um capítulo, um ensaio — e seus livros são escritos <strong>o seu jeito de escrever</strong>: seu ritmo, suas estruturas de frase, como você abre uma ideia e como a conclui. Em vez do registro plano e cuidadoso que a escrita de IA usa por padrão. Seus arquivos são lidos uma vez e depois excluídos; nada é usado para treinar um modelo, e sua escrita nunca toca os livros de ninguém.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Uma segunda opinião enquanto você edita <span class="feat-new">Novo</span></h3>
+        <p>Pergunte sobre direção, ritmo ou se um capítulo merece o tamanho que tem — e receba uma resposta de algo que leu seu esboço e o capítulo à sua frente. Peça uma mudança na redação e ela volta como <strong>uma proposta que você lê por inteiro e aceita ou descarta</strong>. Nunca edita seu livro por conta própria.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
+        <h3>Edite depois de escrito <span class="feat-new">Novo</span></h3>
+        <p>Um livro pronto não é um livro congelado. Altere qualquer parágrafo você mesmo, de graça, aplique uma correção focada de IA de um revisor por <strong>0,1 crédito</strong>, ou peça uma <strong>reescrita completa de seção por 1 crédito</strong> no mesmo estilo, fidelidade e idioma do resto do livro. Os arquivos existentes continuam funcionando enquanto você edita e são reconstruídos quando você termina.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>Cada capítulo verificado antes de você ver <span class="feat-new">Novo</span></h3>
+        <p>Um modelo de linguagem para no meio da frase quando o espaço acaba, e o rascunho parece completo porque o parágrafo anterior está bem escrito. Então cada capítulo passa por uma segunda revisão: uma edição de linha para estrutura e depois uma verificação que <strong>escreve o final que faltava de um capítulo cortado</strong>, exclui qualquer instrução que vazou para o texto, substitui títulos repetidos palavra por palavra e aplica a tipografia do idioma do livro — os espaços estreitos antes da pontuação francesa, as aspas corretas, os travessões corretos. Você nunca o executa e ele nunca custa um crédito. Acontece no caminho para seus arquivos, e você o vê acontecer na barra de progresso.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="m8 11 2 2 4-4"/></svg></div>
+        <h3>Revisão antes de publicar <span class="feat-new">Novo</span></h3>
+        <p>Gramática, repetição e clareza capítulo por capítulo — além dos problemas que nenhum capítulo isolado mostra: um termo nomeado de duas formas, uma ideia apresentada depois de usada, uma promessa nunca cumprida. Cada achado <strong>cita as palavras exatas</strong>, e clicar em um leva você direto a elas. Grátis, quantas vezes você executar.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <h3>Referências que são verdadeiras <span class="feat-new">Novo</span></h3>
+        <p>Uma bibliografia construída a partir de <strong>as fontes com que seu livro foi escrito</strong>, agrupadas pelo capítulo que usou cada uma — não uma lista inventada por um modelo para parecer acadêmica. Ative para um livro que você terminou no mês passado e reconstrua.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M5 3v18l15-9z"/></svg></div>
+        <h3>Audiobooks <span class="feat-new">Novo</span></h3>
+        <p>Transforme qualquer livro pronto em um audiolivro narrado. Cada parte é narrada — capítulos e material de abertura e encerramento — então você recebe <strong>um arquivo por parte</strong> e pode então <strong>combinar as partes que escolher em um único arquivo</strong>. Um clique também cria um <strong>pacote de distribuição</strong>: cada parte como MP3 numerado em <strong>192 kbps CBR, 44,1 kHz</strong>, nivelado para o volume que os agregadores verificam no upload, além de uma <strong>capa 3000&times;3000</strong>, uma <strong>amostra de varejo de cinco minutos</strong> e metadados que revelam a narração por IA — os arquivos que um agregador pede, no formato que eles pedem. Narradores masculinos e femininos em dez idiomas na voz padrão, ou uma voz premium natural em inglês e espanhol, e você ouve uma amostra antes de publicar. Suas listas, títulos e abreviações são reescritos para o ouvido, para que soe como um narrador, não como um leitor de tela. Venda direto no Gumroad, Payhip, Shopify ou no seu próprio site — ou alcance o Audible por meio de um agregador que aceite narração por IA (<a href="help.html#audiobooks">o que saber primeiro</a>).</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon green"><svg viewBox="0 0 24 24"><path d="M2 12h20"/><path d="M12 2a15 15 0 010 20 15 15 0 010-20z"/><circle cx="12" cy="12" r="10"/></svg></div>
+        <h3>Sete Idiomas <span class="feat-new">Novo</span></h3>
+        <p>Sete no total: sua edição original em inglês mais francês, espanhol, alemão, português, italiano e holandês. Cada uma se torna <strong>seu próprio livro</strong> — que é o que a Amazon precisa, já que cada idioma é uma listagem separada. Sua arte de capa e ilustrações são reutilizadas e as palavras-chave são pesquisadas do zero para aquele mercado, então uma segunda edição custa cerca de 40% da primeira. <strong>Cada uma delas também pode ser narrada</strong>, masculino ou feminino, então uma edição traduzida pode ser lançada como audiolivro exatamente como o original.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon blue"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+        <h3>Seguro &amp; Privado</h3>
+        <p>Todos os arquivos em buckets privados por proprietário. Segurança em nível de linha em todas as tabelas do banco de dados. Seu conteúdo é só seu — sempre.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section style="background:var(--bg2);padding:6rem 4rem;">
+  <div class="testimonials-inner">
+    <div class="fade-in-up" style="text-align:center;margin-bottom:3.5rem;">
+      <span class="section-label">Depoimentos</span>
+      <h2 class="section-title">Criadores amam o TubeBook</h2>
+    </div>
+    <div class="testi-grid fade-in-up">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <div class="testi-tag green">Baixa Fidelidade — KDP</div>
+        <p class="testi-quote">Usei o modo Baixa Fidelidade em um vídeo de finanças públicas e obtive um <strong>ebook de 22.000 palavras</strong> Agora estou vendendo na Amazon KDP. O estilo de escrita que escolhi combinou perfeitamente com minha marca.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:rgba(255,98,0,0.15);color:var(--amber2);">JM</div>
+          <div><div class="testi-name">James M.</div><div class="testi-role">Educador Financeiro, 180 mil inscritos</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <div class="testi-tag red-t">Alta Fidelidade — Reaproveitamento</div>
+        <p class="testi-quote">Reaproveitei toda a minha série de treinamento de 40 vídeos usando o modo Alta Fidelidade. Cada vídeo virou um capítulo. <strong>Meu próprio conteúdo, finalmente em um livro.</strong></p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:rgba(255,59,59,0.12);color:#ff7b7b;">SR</div>
+          <div><div class="testi-name">Sofia R.</div><div class="testi-role">Coach de Negócios &amp; Autora</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <div class="testi-tag yellow">Smart Adapt — Isca Digital</div>
+        <p class="testi-quote">A prévia do sumário mudou tudo — editei dois capítulos antes de aprovar e o ebook final ficou exatamente como eu queria. <strong>Minha lista de e-mails cresceu 3× em dois meses.</strong></p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:rgba(80,130,255,0.12);color:#7ab0ff;">AT</div>
+          <div><div class="testi-name">Alex T.</div><div class="testi-role">Desenvolvedor &amp; Criador de Cursos</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="pricing-inner">
+    <div class="fade-in-up">
+      <span class="section-label">Preços</span>
+      <h2 class="section-title">Preço simples baseado em créditos</h2>
+      <p class="section-sub" style="margin:0 auto;">Todos os planos funcionam com créditos — uma isca digital usa 30, um livro curto 60, um livro comercial completo 100, e cada fonte adicional soma 8. Pesquisa de tópicos custa <strong>5 créditos</strong> por nicho, e reabrir o mesmo nicho em até 14 dias é grátis. Uma isca digital com 5 fontes custa 30 + 4 &times; 8 = <strong>62 créditos</strong>. Todos os planos incluem pesquisa de tópicos, livros com múltiplas fontes, modos de fidelidade, estilos de escrita, revisão e aprovação do sumário e o kit de ferramentas de metadados KDP. Planos mensais reabastecem créditos automaticamente.</p>
+    </div>
+    <div class="pricing-grid fade-in-up">
+      <div class="plan-card">
+        <div class="plan-name">Grátis</div>
+        <div class="plan-price"><sup>$</sup>0</div>
+        <div class="plan-target">100 créditos todo mês</div>
+        <p class="plan-desc">Crie todo mês com o produto completo — sem cartão e sem recursos bloqueados.</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li><span class="chk">✓</span>100 créditos todo mês</li>
+          <li><span class="chk">✓</span>Mesmos recursos de todos os planos pagos</li>
+          <li><span class="chk">✓</span>Quadros de tópicos em alta — grátis para navegar</li>
+          <li><span class="chk">✓</span>Qualquer tamanho: isca digital, livro curto ou livro completo</li>
+          <li><span class="chk">✓</span>Até 25 fontes por ebook</li>
+          <li><span class="chk">✓</span>Pesquisa de tópicos (5 créditos por nicho)</li>
+          <li><span class="chk">✓</span>Todos os 3 modos de fidelidade &amp; 6 estilos de escrita</li>
+          <li><span class="chk">✓</span>Revisão + aprovação do sumário</li>
+          <li><span class="chk">✓</span>Todos os exports, artes, edição e ferramentas de qualidade</li>
+        </ul>
+        <a href="https://app.tubebook.org/signup" class="plan-btn outline">Comece grátis</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Iniciante</div>
+        <div class="plan-price"><sup>$</sup>9<span class="per">/mês</span></div>
+        <div class="plan-target">250 créditos/mês</div>
+        <p class="plan-desc">Para criadores que transformam conteúdo em iscas digitais, guias rápidos e whitepapers regularmente.</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li><span class="chk">✓</span>250 créditos/mês (≈ 8 iscas digitais ou 2 ebooks comerciais — ou misture)</li>
+          <li><span class="chk">✓</span>Créditos renovam mensalmente — não acumulam</li>
+          <li><span class="chk">✓</span>Mesmos recursos de todos os planos</li>
+          <li><span class="chk">✓</span>Até 25 fontes por ebook</li>
+          <li><span class="chk">✓</span>Pesquisa de tópicos + fontes sugeridas</li>
+          <li><span class="chk">✓</span>Todos os 3 modos de fidelidade &amp; 6 estilos de escrita</li>
+          <li><span class="chk">✓</span>Revisão + aprovação do sumário</li>
+          <li><span class="chk">✓</span>Todos os exports, artes, edição e ferramentas de qualidade</li>
+        </ul>
+        <a href="https://app.tubebook.org/signup?plan=starter" class="plan-btn outline">Começar Starter</a>
+      </div>
+      <div class="plan-card popular">
+        <div class="popular-badge">Mais Popular</div>
+        <div class="plan-name">Pro</div>
+        <div class="plan-price"><sup>$</sup>29<span class="per">/mês</span></div>
+        <div class="plan-target">1.000 créditos/mês</div>
+        <p class="plan-desc">Para criadores sérios que publicam ebooks completos à venda na KDP, Gumroad ou em seu próprio site.</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li><span class="chk">✓</span>1.000 créditos/mês (≈ 33 iscas digitais ou 10 ebooks comerciais — ou misture)</li>
+          <li><span class="chk">✓</span>Créditos renovam mensalmente — não acumulam</li>
+          <li><span class="chk">✓</span>Mesmos recursos de todos os planos</li>
+          <li><span class="chk">✓</span>Até 25 fontes por ebook</li>
+          <li><span class="chk">✓</span>Pesquisa de tópicos + fontes sugeridas</li>
+          <li><span class="chk">✓</span>Verificações de registro de marca (1 crédito cada)</li>
+          <li><span class="chk">✓</span>Todos os 3 modos de fidelidade &amp; 6 estilos de escrita</li>
+          <li><span class="chk">✓</span>Revisão + aprovação do sumário</li>
+          <li><span class="chk">✓</span>Todos os exports, artes, edição e ferramentas de qualidade</li>
+        </ul>
+        <a href="https://app.tubebook.org/signup?plan=pro" class="plan-btn filled">Começar Pro →</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Pro Audio</div>
+        <div class="plan-price"><sup>$</sup>49<span class="per">/mês</span></div>
+        <div class="plan-target">1.000 créditos + 900 créditos de áudio/mês</div>
+        <p class="plan-desc">Para editoras que lançam o audiolivro junto com o livro. Um narrador custa US$ 200&ndash;500 por hora finalizada; três audiolivros comerciais por mês são aproximadamente oito horas de narração. Narra apenas ocasionalmente? Compre um pacote de créditos de áudio &mdash; sem necessidade de assinatura.</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li><span class="chk">✓</span>Tudo do Pro, mais:</li>
+          <li><span class="chk">✓</span>900 créditos de áudio/mês — renovam mensalmente, não acumulam</li>
+          <li><span class="chk">✓</span>≈ 3 audiolivros comerciais na voz premium, ou 7 na padrão</li>
+          <li><span class="chk">✓</span>Narradores masculinos e femininos em 10 idiomas</li>
+          <li><span class="chk">✓</span>Um arquivo por parte, ou combine as partes escolhidas em um único arquivo</li>
+          <li><span class="chk">✓</span>Pacote de distribuição &mdash; masters em 192 kbps, capa quadrada, amostra para varejo</li>
+          <li><span class="chk">✓</span>Masters WAV sem perda, download por capítulo por 30 dias</li>
+          <li><span class="chk">✓</span>Segundo provedor de narração em espera</li>
+        </ul>
+        <a href="https://app.tubebook.org/signup?plan=pro_audio" class="plan-btn outline">Começar Pro Audio</a>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:2rem;font-size:0.84rem;color:var(--muted);">
+      Cancele quando quiser · Faturamento anual disponível: Starter US$ 90/ano, Pro US$ 290/ano, Pro Audio US$ 490/ano · Os créditos do plano renovam mensalmente em cada ciclo de cobrança, inclusive anual, e não acumulam · Pacotes de créditos nunca expiram · Reembolso em 14 dias na primeira assinatura
+    </p>
+
+    <!-- CREDIT PACKS -->
+    <div class="fade-in-up" style="margin-top: 4rem;">
+      <span class="section-label">Extras</span>
+      <h3 style="font-size: 1.5rem; font-weight: 700; margin: 0.5rem 0 0.5rem;">Precisa de mais créditos?</h3>
+      <p style="font-size: 0.88rem; color: var(--muted2); margin-bottom: 2rem;">Pacotes de créditos avulsos combinam com qualquer plano, nunca expiram e removem o crédito de rodapé do plano gratuito. Pesquisa de tópicos = 5 créditos por nicho (reabertura gratuita por 14 dias) · Isca digital = 30 créditos · Livro curto = 60 · Livro comercial completo = 100 · Ilustrações de capítulo geradas por IA +1 crédito por imagem · Cada fonte extra +8 créditos · Verificação de registro de marca = 1 crédito por livro. Audiolivros são cobrados de um saldo separado de créditos de áudio: voz padrão = 40 / 80 / 120 créditos de áudio por tamanho de livro, premium = 100 / 200 / 300.</p>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; max-width: 780px; margin: 0 auto;">
+        <div class="plan-card" style="padding: 1.5rem 1.4rem;">
+          <div class="plan-name">Pacote Starter</div>
+          <div class="plan-price" style="font-size: 2rem;"><sup>$</sup>5</div>
+          <p class="plan-desc" style="margin: 0.6rem 0 0.8rem;">100 créditos<br><span style="font-size: 0.8rem;">~3 iscas digitais ou 1 ebook comercial</span></p>
+          <a href="https://app.tubebook.org/billing" class="plan-btn outline" style="margin-top: 1rem;">Comprar pacote</a>
+        </div>
+        <div class="plan-card popular" style="padding: 1.5rem 1.4rem;">
+          <div class="popular-badge">Melhor valor</div>
+          <div class="plan-name">Pacote Boost</div>
+          <div class="plan-price" style="font-size: 2rem;"><sup>$</sup>15</div>
+          <p class="plan-desc" style="margin: 0.6rem 0 0.8rem;">400 créditos<br><span style="font-size: 0.8rem;">~13 iscas digitais ou 4 ebooks comerciais</span></p>
+          <a href="https://app.tubebook.org/billing" class="plan-btn filled" style="margin-top: 1rem;">Comprar pacote →</a>
+        </div>
+        <div class="plan-card" style="padding: 1.5rem 1.4rem;">
+          <div class="plan-name">Pacote Power</div>
+          <div class="plan-price" style="font-size: 2rem;"><sup>$</sup>40</div>
+          <p class="plan-desc" style="margin: 0.6rem 0 0.8rem;">1.500 créditos<br><span style="font-size: 0.8rem;">~50 iscas digitais ou 15 ebooks comerciais</span></p>
+          <a href="https://app.tubebook.org/billing" class="plan-btn outline" style="margin-top: 1rem;">Comprar pacote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- AUDIO CREDIT PACKS -->
+    <div class="fade-in-up" style="margin-top: 3.5rem;">
+      <h3 style="font-size: 1.5rem; font-weight: 700; margin: 0.5rem 0 0.5rem;">Quer apenas um audiolivro?</h3>
+      <p style="font-size: 0.88rem; color: var(--muted2); margin-bottom: 2rem;">Créditos de áudio podem ser comprados separadamente, em qualquer plano, incluindo o Gratuito — sem assinatura. Eles nunca expiram e são usados apenas para narração, então seus créditos de ebook ficam intactos. Se você narra mais de uma vez por mês, o Pro Audio é mais barato.</p>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; max-width: 780px; margin: 0 auto;">
+        <div class="plan-card" style="padding: 1.5rem 1.4rem;">
+          <div class="plan-name">Audiobook único</div>
+          <div class="plan-price" style="font-size: 2rem;"><sup>$</sup>12</div>
+          <p class="plan-desc" style="margin: 0.6rem 0 0.8rem;">120 créditos de áudio<br><span style="font-size: 0.8rem;">1 audiobook comercial, voz padrão</span></p>
+          <a href="https://app.tubebook.org/billing" class="plan-btn outline" style="margin-top: 1rem;">Comprar pacote</a>
+        </div>
+        <div class="plan-card popular" style="padding: 1.5rem 1.4rem;">
+          <div class="plan-name">Pacote Autor</div>
+          <div class="plan-price" style="font-size: 2rem;"><sup>$</sup>27</div>
+          <p class="plan-desc" style="margin: 0.6rem 0 0.8rem;">300 créditos de áudio<br><span style="font-size: 0.8rem;">1 audiobook comercial, voz premium</span></p>
+          <a href="https://app.tubebook.org/billing" class="plan-btn filled" style="margin-top: 1rem;">Comprar pacote</a>
+        </div>
+        <div class="plan-card" style="padding: 1.5rem 1.4rem;">
+          <div class="plan-name">Pacote Estúdio</div>
+          <div class="plan-price" style="font-size: 2rem;"><sup>$</sup>69</div>
+          <p class="plan-desc" style="margin: 0.6rem 0 0.8rem;">900 créditos de áudio<br><span style="font-size: 0.8rem;">3 audiobooks comerciais com voz premium, ou 7 com voz padrão</span></p>
+          <a href="https://app.tubebook.org/billing" class="plan-btn outline" style="margin-top: 1rem;">Comprar pacote</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="faq-inner">
+    <div class="hiw-header fade-in-up">
+      <span class="section-label">Perguntas</span>
+      <h2 class="section-title">Respostas antes de você gastar um crédito</h2>
+      <p class="section-sub">As perguntas que mais recebemos, respondidas de forma clara. O que faltar está na <a href="help.html">central de ajuda</a>.</p>
+    </div>
+    <div class="faq-list fade-in-up">
+      <details class="faq-item">
+        <summary>Preciso ser dono do vídeo que uso para criar?</summary>
+        <div class="faq-a"><p>Não, qualquer vídeo público do YouTube serve — mas o que você publica é de sua responsabilidade. É para isso que servem os três modos de fidelidade. <strong>Alta Fidelidade</strong> segue a estrutura do vídeo de perto e é adequado para conteúdo próprio; <strong>Inteligente</strong> e <strong>Baixo</strong> reconstruir as ideias em um texto substancialmente original, que é a opção mais segura para o vídeo de outra pessoa. As páginas da web são recuperadas apenas onde os termos do proprietário da página o permitem.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>A Amazon aceitará um livro escrito dessa forma?</summary>
+        <div class="faq-a"><p>Sim. O KDP permite conteúdo gerado por IA e pede que você declare isso ao enviar — uma caixa de seleção, não um obstáculo. Todo livro vem com os metadados, categorias e palavras-chave necessários para a listagem, e o tamanho curto supera o mínimo de 24 páginas do KDP para brochura, então você pode vendê-lo impresso em vez de apenas como e-book.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Quanto custa um livro de verdade?</summary>
+        <div class="faq-a"><p>Um ímã de leads custa 30 créditos, um livro curto 60, um livro comercial completo 100. Ilustrações de capítulo adicionam 1 crédito por imagem, cada fonte extra 8 créditos, pesquisa de tópico 5 créditos por nicho e uma verificação de registro de marca 1 crédito em todos os planos. Audiolivros são cobrados separadamente, com créditos de áudio.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Créditos não utilizados são acumulados?</summary>
+        <div class="faq-a"><p>Os créditos do plano são renovados todo mês — também na cobrança anual — e os não utilizados não passam para o mês seguinte. Créditos comprados como pacote funcionam ao contrário: nunca expiram enquanto sua conta estiver ativa, e quando seu saldo tiver ambos, os créditos do plano que expiram são usados primeiro para que nada seja desperdiçado.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Serei cobrado se algo falhar?</summary>
+        <div class="faq-a"><p>Não. Se a pesquisa falhar no meio, os 5 créditos voltam automaticamente. Se algumas de suas fontes estiverem indisponíveis ou atrás de paywall, o livro ainda é construído com o restante e o painel mostra quais foram puladas; um livro só falha se nenhuma puder ser lida, e então os créditos também são reembolsados automaticamente.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Em quais idiomas posso publicar e narrar?</summary>
+        <div class="faq-a"><p>Você pode publicar em <strong>sete</strong> — inglês, francês, espanhol, português, alemão, italiano e holandês — e cada tradução vira seu próprio livro, que é o que a Amazon exige, já que cada idioma é uma listagem separada. A narração cobre <strong>todos esses sete mais chinês, japonês e coreano</strong> — dez no total, com um narrador masculino e um feminino em cada. Cada edição que você pode publicar, também pode transformar em audiolivro.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Posso vender o audiolivro no Audible?</summary>
+        <div class="faq-a"><p>Através de um agregador, sim — Author's Republic, Kobo Writing Life e o programa de audiolivros do Spotify aceitam narração por IA e distribuem no catálogo do Audible, com divulgação. O fluxo de envio do ACX é para narração humana, a menos que o título seja <em>autorizado</em> com antecedência, então entre em contato com o ACX primeiro em vez de enviar e torcer. O pacote que construímos atende à especificação técnica que eles verificam; a permissão é a parte que você providencia.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>O que está incluído no pacote do audiolivro?</summary>
+        <div class="faq-a"><p>Cada parte como MP3 numerado a 192 kbps CBR, 44,1 kHz, nivelado para cerca de −20 dB RMS com pico abaixo de −3 dB, mais uma capa quadrada de 3000×3000, uma amostra de cinco minutos para varejo, tags ID3 com arte incorporada e um arquivo de metadados que declara a narração como digital. Masters WAV sem perda são mantidos junto e podem ser baixados por parte.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Preciso começar de um vídeo?</summary>
+        <div class="faq-a"><p>Não. Um livro pode ser construído a partir de artigos da web, documentos do Word, apresentações do PowerPoint e PDFs, além de vídeos, e você pode misturá-los em um livro. Se você não tem nenhum tópico, comece pelos quadros de tendências e pesquisa de tópicos — eles mostram o que as pessoas realmente procuram antes de você comprometer créditos para escrever qualquer coisa.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Por quanto tempo meus livros são mantidos?</summary>
+        <div class="faq-a"><p>Os arquivos ficam por 30 dias, com uma contagem regressiva em cada cartão do painel, depois os ativos são excluídos enquanto o registro do livro permanece na sua conta. A narração do audiolivro expira no mesmo prazo do livro a que pertence. Baixe o que quiser manter — nada impede que você baixe novamente quantas vezes quiser dentro do prazo.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>O plano gratuito é realmente gratuito?</summary>
+        <div class="faq-a"><p>Sim, e nenhum cartão é necessário. Contas gratuitas recebem 100 créditos todo mês e usam os mesmos recursos de criação, edição, fonte de imagem, qualidade, audiolivro, tradução e exportação que contas pagas. Os planos diferem pelos créditos disponíveis, não por ferramentas bloqueadas. Créditos comprados permanecem no seu saldo enquanto a cota mensal é renovada.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Preciso saber que tipo de livro quero?</summary>
+        <div class="faq-a"><p>Não — é para isso que servem os modelos. Escolha entre doze tipos (guia prático, plano de 7 dias, livro de exercícios, leitura diária, estudos de caso, guia de campo, manual de referência e mais) e o tamanho, tom e estrutura de capítulos são definidos para você. Não é apenas um rótulo: um guia de campo constrói cada capítulo com os mesmos três ritmos, uma leitura diária faz cada entrada ser independente, um livro de exercícios dá mais espaço aos seus exercícios do que à explicação. Tudo o que um modelo define é um controle que você ainda pode alterar, e pular tudo isso também é permitido.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Posso mudar o livro antes de ser escrito?</summary>
+        <div class="faq-a"><p>Esse é o objetivo da etapa de esboço. A IA cria uma estrutura de capítulos e nada é escrito até que você aprove, então você pode renomear, reordenar, adicionar e excluir capítulos enquanto ainda é barato mudar de ideia. Em livros com várias fontes, você também pode ver de qual fonte cada capítulo é extraído.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Posso alterar o livro depois de gerado?</summary>
+        <div class="faq-a"><p>Sim — cada palavra dele. <strong>Edite o texto</strong> permite que você altere qualquer coisa manualmente de graça, aplique uma sugestão focada de IA de um revisor por 0,1 crédito, ou reescreva uma seção inteira por 1 crédito no mesmo estilo e idioma do resto do livro. Seus arquivos existentes continuam funcionando com o texto anterior até que você os reconstrua, então você nunca fica sem downloads no meio de uma edição.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Ele verificará minha gramática antes de eu publicar?</summary>
+        <div class="faq-a"><p>Sim, e de graça, quantas vezes você quiser. Ele lê cada capítulo em busca de gramática, repetição e clareza, e depois examina o livro inteiro para encontrar coisas que um capítulo isolado não revela — um termo nomeado de duas formas diferentes, uma ideia usada antes de ser introduzida, uma promessa nunca cumprida. Cada achado cita as palavras exatas e clicar nele leva você até elas. Achados que não conseguimos localizar no seu texto palavra por palavra são descartados em vez de mostrados com um palpite, então uma lista mais curta em que você pode confiar é melhor do que uma mais longa que você teria que verificar.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Ele pode escrever no meu próprio estilo, e meu texto é usado para treiná-lo?</summary>
+        <div class="faq-a"><p>Pode, e não é. Envie algo que você já escreveu e uma <strong>descrição de como você escreve</strong> é elaborada a partir disso — comprimento e variação de frases, como você abre e fecha uma seção, se você se dirige ao leitor, seus hábitos de pontuação — e cada capítulo seguinte é escrito com essa descrição diante do escritor. Nenhum modelo é ajustado, nada que você enviar é usado para os livros de outras pessoas, e seus arquivos são <strong>excluídos assim que forem lidos</strong>. Ele muda visivelmente o registro, o ritmo e o vocabulário; não tornará o texto indistinguível do seu, e preferimos dizer isso a deixar você descobrir.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-orb"></div>
+  <div class="cta-inner fade-in-up">
+    <span class="section-label">Começar</span>
+    <h2 class="section-title">Seu próximo ebook está a<br>um URL de distância</h2>
+    <p class="section-sub" style="margin:0 auto 2.5rem;">Adicione uma fonte ou vinte. Escolha seu modo de fidelidade, selecione seu estilo de escrita, aprove o esboço — e deixe o TubeBook escrever o livro.</p>
+    <a href="https://app.tubebook.org/signup" class="btn-primary" style="display:inline-flex;font-size:1.05rem;">Crie seu ebook grátis →</a>
+    <p style="margin-top:1.2rem;font-size:0.82rem;color:var(--muted);">Plano gratuito · 100 créditos todo mês · Todos os recursos · Sem cartão de crédito</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">© 2026 TubeBook · <a href="https://tubebook.org">tubebook.org</a></div>
+  <div class="footer-links">
+    <a href="https://app.tubebook.org/ideas">Ideias de Livros</a>
+    <a href="/pt/help">Ajuda &amp; Tutoriais</a>
+    <a href="/pt/privacy">Política de Privacidade</a>
+    <a href="/pt/terms">Termos</a>
+    <a href="/pt/contact">Contato</a>
+  </div>
+  <div class="footer-note">TubeBook (tubebook.org) é um produto independente e <strong>não é afiliado à TubeBook AI (tubebookai.com)</strong>, uma empresa separada com nome semelhante. TubeBook é vendido apenas através de tubebook.org — não temos revendedores, e nenhum plano vitalício ou ilimitado.</div>
+</footer>
+
+<script>
+// Typing URL
+const urls=['dQw4w9WgXcQ','jNQXAC9IVRw','hY7m5jF7iO4','kXYiU8k6t5E'];
+let uI=0,cI=0,del=false;
+const tEl=document.getElementById('typing-url');
+function typeUrl(){const c=urls[uI];if(!del){tEl.textContent=c.slice(0,++cI);if(cI===c.length){del=true;setTimeout(typeUrl,1800);return;}}else{tEl.textContent=c.slice(0,--cI);if(cI===0){del=false;uI=(uI+1)%urls.length;}}setTimeout(typeUrl,del?60:110);}
+typeUrl();
+
+// Demo steps
+const dSteps=document.querySelectorAll('.demo-step');
+let aC=1;
+setInterval(()=>{dSteps.forEach((s,i)=>s.classList.toggle('active',i<aC));aC=aC>=dSteps.length?1:aC+1;},900);
+
+// Demo controls cycle
+const fidels=[{dot:'green',label:'Low — Commercial Ready'},{dot:'yellow',label:'Smart — Check Rights'},{dot:'red',label:'High — Repurposing Only'}];
+const styls=['Professional','Conversational','Storytelling','Academic','Inspirational','Stoic'];
+let fI=0,sI=0;
+setInterval(()=>{fI=(fI+1)%fidels.length;const f=fidels[fI];document.getElementById('demo-fidelity').innerHTML=`<span class="chip-dot ${f.dot}"></span> ${f.label}`;},2200);
+setInterval(()=>{sI=(sI+1)%styls.length;document.getElementById('demo-style').textContent='✦ '+styls[sI];},1800);
+
+// Style tag preview
+document.querySelectorAll('.style-tag').forEach(tag=>{
+  tag.addEventListener('click',()=>{
+    document.querySelectorAll('.style-tag').forEach(t=>t.classList.remove('active'));
+    tag.classList.add('active');
+    document.getElementById('style-preview-text').innerHTML=tag.dataset.preview;
+    document.getElementById('style-chip').textContent='✦ '+tag.dataset.style;
+  });
+});
+
+// Scroll fade-in
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:0.1});
+document.querySelectorAll('.fade-in-up').forEach(el=>obs.observe(el));
+</script>
+<script src="/promo-banner.js" defer></script>
+</body>
+</html>

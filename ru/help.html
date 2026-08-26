@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-tubebook_32x32.png" />
+<title>Справка и руководства — TubeBook</title>
+<meta name="description" content="Узнайте, как превращать видео с YouTube, веб-статьи и транскрипты в качественные электронные книги с помощью TubeBook — из одного или нескольких источников. Пошаговые руководства, использование кредитов, экспорт и устранение неполадок." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* ─── TUBEBOOK INNER PAGE — SHARED CSS ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #08090d; --bg2: #0f1118; --bg3: #14171f; --card: #131620;
+  --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
+  --amber: #ff6200; --amber2: #ff8c42; --amber-dim: rgba(255,98,0,0.12);
+  --red: #ff3b3b; --red-dim: rgba(255,59,59,0.12);
+  --green: #2ecc71; --green-dim: rgba(46,204,113,0.11);
+  --text: #f0eee8; --muted: #7b7d8a; --muted2: #a0a3b1;
+  --radius: 14px; --radius-lg: 20px;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; overflow-x: hidden; }
+a { color: var(--amber); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--amber2); text-decoration: underline; }
+strong { color: var(--text); font-weight: 600; }
+code, kbd { background: var(--bg3); border: 1px solid var(--border); padding: 2px 7px; border-radius: 5px; font-size: .85em; font-family: 'DM Mono', 'Fira Code', monospace; color: var(--amber2); }
+
+/* NAV */
+nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 4rem; background: rgba(8,9,13,0.88); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); }
+.nav-logo { display: flex; align-items: center; gap: 10px; font-size: 1.2rem; font-weight: 700; color: var(--text); text-decoration: none; }
+.nav-logo:hover { text-decoration: none; }
+.logo-icon { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, #ff6200 0%, #cc4e00 100%); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0; }
+.logo-text span { color: var(--amber); }
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-links a { color: var(--muted2); font-size: 0.875rem; text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--amber); text-decoration: none; }
+.nav-cta { background: var(--amber); color: #1a1200 !important; font-size: 0.85rem; font-weight: 600; padding: 0.5rem 1.2rem; border-radius: 8px; text-decoration: none !important; transition: background 0.2s; }
+.nav-cta:hover { background: var(--amber2); }
+
+/* LAYOUT */
+.page-wrap { max-width: 860px; margin: 0 auto; padding: 0 2rem 6rem; }
+.page-header { padding: 4rem 0 2.5rem; border-bottom: 1px solid var(--border); margin-bottom: 3rem; position: relative; overflow: hidden; }
+.page-header::after { content: ''; position: absolute; top: 0; inset-inline-end: -40px; width: 340px; height: 220px; background: radial-gradient(ellipse, rgba(255,98,0,0.06) 0%, transparent 70%); pointer-events: none; }
+.breadcrumb { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; display: flex; align-items: center; gap: 6px; }
+.breadcrumb a { color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--amber); }
+.breadcrumb span { opacity: 0.4; }
+h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 900; line-height: 1.15; letter-spacing: -0.02em; color: var(--text); }
+.page-lead { font-size: 1.05rem; color: var(--muted2); margin-top: 0.8rem; max-width: 580px; line-height: 1.7; }
+.page-meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.6rem; }
+
+/* TYPOGRAPHY */
+h2 { font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 700; color: var(--text); margin: 3rem 0 1rem; letter-spacing: -0.01em; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+.sec-num { font-family: 'Outfit', sans-serif; font-size: 0.7rem; font-weight: 600; color: var(--amber); background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.22); padding: 0.15rem 0.55rem; border-radius: 100px; letter-spacing: 0.05em; flex-shrink: 0; }
+h3 { font-size: 0.97rem; font-weight: 600; color: var(--text); margin: 1.5rem 0 0.5rem; }
+p { color: var(--muted2); line-height: 1.75; margin-bottom: 0.8rem; }
+ul, ol { color: var(--muted2); padding-inline-start: 1.4rem; line-height: 1.75; }
+li { margin-bottom: 0.45rem; }
+
+/* CARDS */
+.card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.6rem 1.8rem; margin: 1rem 0; position: relative; overflow: hidden; }
+.card::before { content: ''; position: absolute; top: 0; inset-inline-start: 0; inset-inline-end: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,98,0,0.18), transparent); }
+
+/* TOC */
+.toc-box { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem 1.8rem; margin-bottom: 2.5rem; }
+.toc-box-title { font-size: 0.72rem; font-weight: 600; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.8rem; }
+.toc-box ol { padding-inline-start: 1.2rem; }
+.toc-box li { margin-bottom: 0.3rem; }
+.toc-box a { font-size: 0.88rem; color: var(--muted2); text-decoration: none; }
+.toc-box a:hover { color: var(--amber); }
+
+/* TABLES */
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+th { text-align:start; padding: 0.7rem 0.9rem; font-size: 0.75rem; font-weight: 600; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1px solid var(--border2); }
+td { padding: 0.7rem 0.9rem; color: var(--muted2); border-bottom: 1px solid var(--border); }
+tr:last-child td { border-bottom: none; }
+td strong { color: var(--text); }
+
+/* PILLS */
+.pill { display: inline-block; background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.25); color: var(--amber2); font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.65rem; border-radius: 100px; letter-spacing: 0.04em; margin-inline-end: 6px; vertical-align: middle; }
+
+/* ALERT BOXES */
+.alert-warn { background: rgba(255,59,59,0.07); border: 1px solid rgba(255,59,59,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: #ff9a9a; }
+.alert-tip { background: var(--green-dim); border: 1px solid rgba(46,204,113,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: #7be8a8; }
+.alert-info { background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: var(--amber2); }
+
+/* FOOTER */
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2.5rem 4rem; }
+.footer-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.footer-brand { font-size: 0.82rem; color: var(--muted); }
+.footer-brand a { color: var(--amber); text-decoration: none; }
+.footer-links { display: flex; gap: 1.8rem; flex-wrap: wrap; }
+.footer-links a { font-size: 0.82rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text); }
+
+@media (max-width: 760px) {
+  nav { padding: 0.9rem 1.2rem; }
+  .nav-links { display: none; }
+  .page-wrap { padding: 0 1.2rem 4rem; }
+  footer { padding: 2rem 1.2rem; }
+}
+
+
+/* PAGE-SPECIFIC */
+.toc-nav { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 1.5rem 0 2.5rem; }
+.toc-nav a { display: block; padding: 0.9rem 1.1rem; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); color: var(--muted2); font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+.toc-nav a:hover { border-color: rgba(255,98,0,0.4); color: var(--amber); text-decoration: none; }
+.step-list { display: flex; flex-direction: column; gap: 1rem; }
+.step-row { display: flex; gap: 1rem; align-items: flex-start; }
+.step-n { flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.3); color: var(--amber); font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+.step-body { color: var(--muted2); font-size: 0.92rem; line-height: 1.65; }
+.step-body strong { color: var(--text); }
+
+
+    .footer-note { max-width: 780px; margin: 1.25rem auto 0; font-size: 0.78rem; line-height: 1.6; color: var(--muted); text-align: center; }
+    .footer-note strong { color: var(--muted2); font-weight: 600; }
+</style>
+<!-- i18n:begin -->
+<link rel="alternate" hreflang="en" href="https://tubebook.org/help" />
+<link rel="alternate" hreflang="fr" href="https://tubebook.org/fr/help" />
+<link rel="alternate" hreflang="es" href="https://tubebook.org/es/help" />
+<link rel="alternate" hreflang="pt" href="https://tubebook.org/pt/help" />
+<link rel="alternate" hreflang="de" href="https://tubebook.org/de/help" />
+<link rel="alternate" hreflang="ru" href="https://tubebook.org/ru/help" />
+<link rel="alternate" hreflang="zh-Hans" href="https://tubebook.org/zh/help" />
+<link rel="alternate" hreflang="ar" href="https://tubebook.org/ar/help" />
+<link rel="alternate" hreflang="x-default" href="https://tubebook.org/help" />
+<link rel="canonical" href="https://tubebook.org/ru/help" />
+<script src="/lang-switcher.js" defer></script>
+<!-- i18n:end -->
+</head>
+<body>
+
+<nav>
+  <a href="/ru/" class="nav-logo" style="padding:0;">
+    <img src="/logo-tubebook-1500x450.png" alt="TubeBook" style="height:48px;width:auto;display:block;" />
+  </a>
+  <div class="nav-links">
+    <a href="/ru/help" class="active">Справка</a>
+    <a href="/ru/privacy">Конфиденциальность</a>
+    <a href="/ru/terms">Условия</a>
+    <a href="/ru/contact">Контакты</a>
+  </div>
+  <a href="https://app.tubebook.org" class="nav-cta">Открыть приложение →</a>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/ru/">Главная</a><span>/</span>Справка и руководства</div>
+    <h1>Справка и руководства</h1>
+    <p class="page-lead">Всё, что нужно, чтобы превращать видео с YouTube, статьи, документы и ваши рукописи в готовые к публикации электронные книги с TubeBook.</p>
+  </div>
+
+  <div class="toc-nav">
+    <a href="#getting-started">Начало работы</a>
+    <a href="#generation">Создание электронной книги</a>
+    <a href="#design">Дизайн и читабельность</a>
+    <a href="#artwork">Обложка и иллюстрации</a>
+    <a href="#grounding">Откуда берутся факты</a>
+    <a href="#book-parts">Части книги</a>
+    <a href="#templates">Шаблоны книг</a>
+    <a href="#writing-style">Ваш стиль письма</a>
+    <a href="#editing">Редактирование и корректура</a>
+    <a href="#references">Ссылки</a>
+    <a href="#title">Название и подзаголовок</a>
+    <a href="#languages">Другие языки</a>
+    <a href="#audiobooks">Другие языки</a>
+    <a href="#find-a-topic">Аудиокниги</a>
+    <a href="#credits">Кредиты и цены</a>
+    <a href="#exports">Экспорт и форматы</a>
+    <a href="#publishing-risk">Экспорт и форматы</a>
+    <a href="#troubleshooting">Проверка рисков публикации</a>
+    <a href="#account">Аккаунт и оплата</a>
+  </div>
+
+  <!-- GETTING STARTED -->
+  <div class="card" id="getting-started">
+    <h2>Начало работы</h2>
+    <div class="step-list">
+      <div class="step-row">
+        <div class="step-n">1</div>
+        <div class="step-body">Создайте бесплатный аккаунт в <a href="https://app.tubebook.org">приложении TubeBook</a>. Бесплатные аккаунты получают <strong>100 кредитов каждый месяц</strong>, без карты и с теми же функциями, что и платные.</div>
+      </div>
+      <div class="step-row">
+        <div class="step-n">2</div>
+        <div class="step-body">Не знаете, о чём писать? Откройте <strong>Аудиокниги</strong> — посмотрите, что ищут читатели, выберите идею, и TubeBook предоставит источники. Или сразу переходите к шагу 3.</div>
+      </div>
+      <div class="step-row">
+        <div class="step-n">3</div>
+        <div class="step-body">Открыть <strong>Создать</strong>, вставьте URL YouTube или транскрипт, выберите режим точности и стиль, затем отправьте.</div>
+      </div>
+      <div class="step-row">
+        <div class="step-n">4</div>
+        <div class="step-body">TubeBook сделает всё остальное — чтение источников, структурирование, написание, проверку качества, обложку и изображения глав — и экспортирует в <strong>PDF, DOCX, EPUB и PPTX</strong> на любом тарифе, плюс готовые файлы для печати и Kindle.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GENERATION -->
+  <div class="card" id="generation">
+    <h2>Создание электронной книги</h2>
+    <h3>Выбор длины</h3>
+    <ul>
+      <li><strong>Короткий лид-магнит</strong> — примерно 10–25 печатных страниц (~6 000 слов, 5 глав). Отлично для бесплатных подарков и подписок. <strong>30 кредитов.</strong></li>
+      <li><strong>Короткая книга</strong> — примерно 25–50 страниц (~13 000 слов, 9 глав). Достаточно для минимального объёма Amazon KDP в 24 страницы, так что можно продавать в печати. <strong>60 кредитов.</strong></li>
+      <li><strong>Полноценная коммерческая книга</strong> — длинная форма, 10–14 глав, более 25 000 слов. Глубокая структура и стиль. <strong>100 кредитов.</strong></li>
+    </ul>
+    <p>Любая длина доступна на любом тарифе, включая бесплатный — ограничение по кредитам, а не по подписке.</p>
+    <div class="alert-tip">💡 Количество страниц — оценка по числу слов и формату, поэтому одна и та же книга на большем формате покажет меньше страниц. Если планируете продавать в печати, следите за оценкой на странице создания: Amazon не печатает книги короче 24 страниц. Короткая книга в формате 6″ × 9″ легко проходит; на 8.5″ × 11″ может не пройти.</div>
+    <h3>Режимы точности</h3>
+    <ul>
+      <li><strong>Высокая точность</strong> — точно следует структуре, именам и идеям источника. Только для переработки собственного контента.</li>
+      <li><strong>Умная адаптация (по умолчанию)</strong> — переписывает и перестраивает источник в новый текст, сохраняя основную тему.</li>
+      <li><strong>Низкое качество</strong> — использует видео только как тематическую основу; генерирует существенно оригинальный контент, безопасный для коммерческой публикации (Amazon KDP, Gumroad и т. д.).</li>
+    </ul>
+    <h3>Стили письма</h3>
+    <p>Выберите «Профессиональный», «Разговорный», «Сторителлинг», «Академический», «Вдохновляющий» или «Стоический» до начала генерации.</p>
+    <h3>Источники</h3>
+    <p>На странице генерации вы сначала выбираете <strong>Один источник</strong> или <strong>Много источников</strong>.</p>
+    <p><strong>Один источник</strong> — это классический сценарий: один URL YouTube или вставленный вручную транскрипт.</p>
+    <p><strong>Много источников</strong> позволяет объединить целый набор исследовательских материалов в одну книгу. Добавляйте столько записей, сколько позволяет ваш тариф, в любом сочетании:</p>
+    <ul>
+      <li><strong>URL YouTube</strong> — TubeBook напрямую обрабатывает видео и извлекает его транскрипт.</li>
+      <li><strong>Веб-страница</strong> — вставьте URL статьи или блога, и TubeBook извлечет читаемый текст. Страницы за пейволом и сайты на JavaScript не читаются; вставьте текст вручную.</li>
+      <li><strong>Вставленный текст</strong> — любой транскрипт, статья или набор заметок (минимум 200 символов).</li>
+      <li><strong>Документ</strong> — <strong>.docx</strong>, <strong>.pptx</strong> или <strong>.pdf</strong>— загруженный с компьютера (до 25 МБ) или по ссылке. Подойдут рукописи Word, презентации, научные статьи, отчеты и конспекты.</li>
+    </ul>
+    <p>Вы выбираете <em>Документ</em> и больше ничего — TubeBook определяет формат по содержимому файла, а не по его имени, поэтому <code>.docx</code> с расширением .docx, который на самом деле является PDF, будет прочитан как PDF, а не вызовет ошибку позже.</p>
+    <div class="alert-tip">💡 Сканированный <strong>PDF</strong> — страницы, которые являются фотографиями текста без выделяемого слоя, — будет отклонен с понятным объяснением, а не обработан как пустой источник. Экспортируйте свежий PDF из исходного файла или вставьте текст.</div>
+    <p>Документ стоит ровно столько же, сколько веб-страница: ни кредита на транскрипт YouTube, ни поискового вызова. Разбор происходит внутри TubeBook.</p>
+    <p>Дайте каждому источнику необязательную подпись, чтобы потом его можно было узнать. Источники нумеруются <strong>S1, S2, S3…</strong> в порядке добавления.</p>
+    <h3>Как пишутся книги из нескольких источников</h3>
+    <ol>
+      <li>TubeBook читает каждый источник по очереди и создаёт краткое изложение каждого. На панели управления вы увидите «Читаю источник 2 из 6».</li>
+      <li>Затем эти краткие изложения объединяются, и на основе всего набора составляется единый план.</li>
+      <li>Каждая глава помечается источниками, на которые она опирается — рядом с ней в обзоре плана вы увидите метки вроде <strong>S1</strong>, <strong>S4</strong> .</li>
+      <li>При написании каждая глава получает полный текст только своих источников, так что она работает с реальными деталями, а не с общим кратким изложением.</li>
+    </ol>
+    <div class="alert-tip">💡 Источники обрабатываются по мере возможности. Если один URL недоступен или закрыт платным доступом, он пропускается, и книга всё равно создаётся из остальных — на панели управления вы увидите «1 из 6 источников не удалось прочитать». Электронная книга не будет создана, только если <em>ни один</em> из них не удалось прочитать; в этом случае кредиты возвращаются автоматически.</div>
+    <p><strong>Сколько источников можно использовать?</strong> Каждый тариф позволяет объединять до 25 источников на одну электронную книгу. Первый источник включён в стоимость книги, каждый дополнительный стоит 8 кредитов.</p>
+
+    <h3>Вставка целой рукописи</h3>
+    <p>Поле для вставки принимает до <strong>850 000 символов — примерно 500 печатных страниц</strong>, так что вы можете вставить целую неопубликованную книгу, и TubeBook перестроит её.</p>
+    <p>Если объём превышает примерно 47 страниц, ни один шаг не может прочитать весь текст сразу, поэтому TubeBook работает с отрывками — и важно понимать, как именно, потому что это не «первые пятьдесят страниц»:</p>
+    <ul>
+      <li>План <strong>составляется по отрывкам, равномерно распределённым по</strong> всему <em>тексту, с привязкой к вашему реальному началу и реальному концу.</em> текст, привязанный к вашему реальному началу и реальному концу.</li>
+      <li>Каждая <strong>глава</strong> пишется по тому фрагменту рукописи, который она охватывает, при этом окна перекрываются, чтобы ничего не потерялось между главами.</li>
+    </ul>
+    <p>На странице создания книги до списания кредита вы увидите, какую долю текста охватит выбранная вами длина — например <em>"При 5 главах этот формат охватывает около 47%."</em> Рукопись на 200 страниц покрывается полностью при любой длине; для 500 страниц нужен формат подлиннее или разбейте её на несколько источников по частям.</p>
+    <h3>Изображения</h3>
+    <p>Обложка и иллюстрации к главам доступны на всех тарифах. Для каждого места вы можете сгенерировать варианты с помощью ИИ, найти стоковые фото или загрузить своё изображение. ИИ-иллюстрации для глав стоят 1 кредит за изображение; поиск стоковых фото и загрузка не расходуют кредиты на генерацию.</p>
+    <p>Вы не привязаны к тому, что получилось — см. <a href="#artwork">Обложка и иллюстрации</a> о выборе вариантов, загрузке своей обложки, задании художнику и размещении иллюстраций к главам автоматически или после точного раздела и абзаца.</p>
+    <div class="alert-tip">💡 Для лучшего результата проверьте и отредактируйте черновик плана перед утверждением — структура глав определяет всю книгу, и ничего не пишется, пока вы не одобрите.</div>
+  </div>
+
+  <!-- DESIGN -->
+  <div class="card" id="design">
+    <h2>Дизайн и читабельность</h2>
+    <h3>Размер шрифта</h3>
+    <p>Выберите комфортный размер до генерации или измените его в готовой книге и пересоберите:</p>
+    <ul>
+      <li><strong>Стандартный — 12 пт.</strong> Обычный для массовой книги в мягкой обложке.</li>
+      <li><strong>Комфортный — 14 пт.</strong> Легче для глаз при долгом чтении.</li>
+      <li><strong>Крупный — 16 пт.</strong> Размер, который реально используется в изданиях с крупным шрифтом. Если ваши читатели старшего возраста, выбирайте этот.</li>
+      <li><strong>Свой — от 11 до 20 пт.</strong></li>
+    </ul>
+    <p>В книге с крупным шрифтом выходные данные сохраняют свой масштаб: уведомление об авторских правах и подробное содержание остаются 12 пт, потому что страница с авторскими правами, набранная 16 пт, выглядит как ошибка, а не как забота.</p>
+    <div class="alert-warn">⚠️ <strong>Изменение размера шрифта меняет количество страниц</strong>, а количество страниц определяет ширину корешка для обложки мягкой обложки. Если вы измените его в книге, уже размещённой на KDP, вам придётся заново загрузить <strong>оба</strong> файла — внутренний блок и обложку — старая обложка больше не подойдёт.</div>
+
+    <h3>Шрифты и формат</h3>
+    <p>Выбирайте отдельные шрифты для заголовков, подзаголовка и основного текста из двенадцати семейств, восемь форматов KDP от 5″ × 8″ до 8.5″ × 11″, книжную или альбомную ориентацию, а также белую или кремовую бумагу. Кремовая немного толще, что влияет на корешок.</p>
+    <p>Оценки количества страниц на странице генерации обновляются в реальном времени при изменении любого из этих параметров и показывают, проходит ли книга минимальный порог Amazon в 24 страницы для мягкой обложки.</p>
+  </div>
+
+  <!-- ARTWORK -->
+  <div class="card" id="artwork">
+    <h2>Обложка и иллюстрации</h2>
+    <p>Всё это находится в разделе <strong>Редактировать книгу</strong> в готовой электронной книге, и всё подчиняется одному правилу: <strong>рисование картинок ничего не пересобирает.</strong> Вы рисуете, сравниваете, выбираете — и только потом файлы пересобираются, один раз.</p>
+
+    <h3>Выбор обложки</h3>
+    <p><strong>Draw 3 options</strong> gives you three covers side by side. They stay on a shortlist, so the one you liked four attempts ago is still there. When you press <strong>Use this cover</strong>, TubeBook redraws the cover page, the Kindle cover and the paperback wrap and rebuilds your files — your chapters and illustrations are untouched.</p>
+    <p>Three options per press, one per <em>idea</em> rather than three renderings of one idea. If you press again you get three fresh ideas, not the same three redrawn.</p>
+    <div class="alert-tip">💡 The old <strong>Regenerate cover</strong> button still exists and still works. It draws one picture and rebuilds everything immediately — quicker if you just want a reroll, slower if you want a choice.</div>
+
+    <h3>Uploading your own cover</h3>
+    <p>Have a designer's artwork, or a photograph you own? <strong>Upload your own</strong> puts it straight into the shortlist alongside the drawn options.</p>
+    <p><strong>Upload the picture, not a finished cover.</strong> Your title, subtitle and author name are drawn on top afterwards, sized correctly for each format — a cover that already carries its title ends up with the title on it twice. Portrait, at least 1200 × 1800px (ideally 1600 × 2560), PNG, JPEG or WebP, up to 15 MB.</p>
+
+    <h3>The art brief</h3>
+    <p>TubeBook writes its own art direction from your title, subject and chapter list. That is a reasonable guess and it is only a guess — you may want ink line drawings, a period, a palette, or no people at all. The <strong>art brief</strong> is where you say so, in your own words:</p>
+    <p><em>"Fine ink line drawings, warm sepia, no photographs. Show real people in everyday settings."</em></p>
+    <p>One brief covers <strong>оба</strong> the cover and the chapter illustrations, on purpose — a book whose cover is a woodcut and whose chapters are watercolours looks worse than either choice made consistently. It applies to the next cover or illustration you draw, so save it first, then draw.</p>
+    <div class="alert-tip">💡 The brief cannot ask for lettering. Artwork is deliberately wordless — your real title is composed on top afterwards — so a request for a title or a caption in the picture is expressed through imagery instead. It saves you a cover with the title on it twice, once in garbled AI text.</div>
+
+    <h3>Reviewing chapter illustrations</h3>
+    <p><strong>Review chapter illustrations</strong> shows every chapter with its pictures. For each one you can:</p>
+    <ul>
+      <li><strong>Untick any that miss.</strong> A chapter can have none at all if you prefer.</li>
+      <li><strong>Draw 3 options with AI</strong> для этой главы — остальные главы не затрагиваются.</li>
+      <li><strong>Стоковые фото</strong> ищет на Unsplash, Pexels и Pixabay по теме главы, избегая повторяющихся предложений. Требуемые атрибуции фотографов и ссылки переносятся в экспортированную книгу на языке книги.</li>
+      <li><strong>Upload your own</strong> добавляет изображения, которые вы имеете право использовать.</li>
+      <li><strong>Выберите размещение</strong> чтобы TubeBook разместил изображение автоматически, поместите его после определенного раздела или после определенного абзаца в этом разделе.</li>
+    </ul>
+    <p>Перерисовка сохраняет тот же сюжет и меняет ракурс — шире, ближе, ниже, крупнее на руках — потому что вы возражали против картинки, а не против содержания главы.</p>
+    <p>Выбор сохраняется по мере его внесения. Ничего не попадает в ваши файлы, пока вы не нажмете <strong>Сохранить и пересобрать файлы</strong>, так что одна пересборка покрывает весь цикл правок, сколько бы глав вы ни изменили.</p>
+
+    <h3>Что изображения на самом деле изображают</h3>
+    <p>Прежде чем что-либо будет нарисовано, TubeBook превращает вашу книгу в <em>называемые физические сцены</em> — одну для обложки, одну для каждой главы. Это разница между картинкой вашего предмета и картинкой настроения. Книга о разговоре получает людей в процессе разговора; книга о ремесле — инструменты и рабочее место.</p>
+  </div>
+
+  <!-- GROUNDING -->
+  <div class="card" id="grounding">
+    <h2>Откуда берутся факты</h2>
+    <p>Это параметр, который определяет, можете ли вы ручаться за свою книгу, и его легко спутать с точностью. Они отвечают на разные вопросы:</p>
+    <ul>
+      <li><strong>Точность</strong> управляет <em>выражением</em> — структурой, порядком, формулировками, тем, какие примеры приводятся.</li>
+      <li><strong>Обоснованность</strong> управляет <em>содержанием</em> — какие факты, цифры, имена и утверждения могут вообще появляться.</li>
+    </ul>
+    <p><strong>TubeBook никогда не ищет в интернете во время написания вашей книги.</strong> Нет этапа поиска, нет живого запроса, ничего не добавляется из интернета после начала генерации. Но это не то же самое, что обещание «только ваши источники»: большая языковая модель несет огромный объем предметных знаний, и если ее не ограничить, она с радостью предоставит статистику, дату или фоновую информацию, которую вы не давали. Поэтому вы выбираете:</p>
+    <ul>
+      <li><strong>Только мои источники</strong> <em>(по умолчанию)</em> — каждый факт, цифра, имя, цитата и пример должны происходить из предоставленных вами материалов. Если модель знает что-то релевантное, чего нет в ваших источниках, это опускается. Глубина достигается за счет более тщательной работы с вашим материалом, а не за счет импорта нового.</li>
+      <li><strong>Источники + знания ИИ</strong> — ваши источники остаются основой, и ИИ может добавлять общеизвестные факты там, где это действительно помогает. Книги, созданные таким образом, помечаются на вашей панели управления, чтобы вы могли найти их позже.</li>
+    </ul>
+    <p><strong>Ни один из параметров не допускает выдуманных доказательств.</strong> В обоих случаях модели запрещено выдумывать статистику, исследования, цитаты или ссылки, а также приписывать что-либо конкретному лицу или организации, если этого нет в ваших источниках. "Источники + знания ИИ" означает <em>добавить контекст</em>, никогда <em>добавить доказательства</em>.</p>
+    <div class="alert-tip">💡 Почему <em>Только мои источники</em> — это вариант по умолчанию: единственный, за который вы можете поручиться. Всё в книге восходит к тому, что вы выбрали. Если переключитесь на другой, проверяйте всё, что не можете проследить до источника, перед публикацией.</div>
+    <p>Комбинируйте <strong>Только мои источники</strong> с <strong>Высокая точность</strong> и получите настоящий режим "перестройки моей рукописи" — только ваш материал допускается.</p>
+    <p>Один нюанс, который стоит упомянуть, потому что два параметра выглядят так, будто конфликтуют: на <strong>Низкое качество</strong> с <em>Только мои источники</em>ИИ пишет оригинальную прозу и оригинальные иллюстрации ваших мыслей, но не может выдумывать факты для их заполнения. Выдуманное число — выдумано, независимо от того, заменило ли оно реальное.</p>
+  </div>
+
+  <!-- BOOK PARTS -->
+  <div class="card" id="book-parts">
+    <h2>Выбор того, что войдёт в вашу книгу</h2>
+    <p>Когда вы просматриваете план, вы также получаете контрольный список частей книги. Главы всегда включены; всё остальное — на ваш выбор:</p>
+    <ul>
+      <li><strong>Титульный лист</strong>, <strong>Страница авторских прав</strong>, <strong>Предисловие</strong>, <strong>Оглавление</strong>, <strong>Подробное содержание</strong></li>
+      <li><strong>Введение</strong> и <strong>Заключение</strong></li>
+      <li><strong>Призыв к действию</strong>, <strong>Об авторе</strong>, <strong>Контакты / задняя обложка</strong></li>
+    </ul>
+    <div class="alert-tip">💡 Снимите флажок с введения или заключения <em>на этапе плана</em> и они никогда не будут написаны, так что вы не платите за их генерацию. Снимите флажок позже — они просто не попадут в файлы.</div>
+    <h3>Как заканчивается каждая глава</h3>
+    <p>По умолчанию каждая глава завершается разделом <strong>Ключевые выводы</strong> список и короткий <strong>Рефлексия</strong> подсказка. Теперь обе можно отключить — по отдельности — чтобы книга читалась как сплошной текст.</p>
+    <p>В отличие от частей выше, их можно убрать из уже <em>написанной книги</em>: они исключаются при сборке файлов, так что снять галочку и пересобрать — <strong>бесплатно и без переписывания</strong>. Поставьте галочку снова — и всё вернётся.</p>
+    <div class="alert-tip">💡 Если вы когда-нибудь видели главу с заголовком «Ключевые выводы» и пустотой под ним, это исправлено: любой заголовок без содержимого теперь исключается из файлов, что бы он ни гласил.</div>
+
+    <h3>Передумали позже</h3>
+    <p>В любой готовой книге используйте <strong>Изменить содержимое книги</strong> чтобы скорректировать выбор и пересобрать файлы. Это <strong>бесплатно и не тратит кредиты</strong> — эти части собираются при формировании файлов, так что ничего не переписывается.</p>
+
+    <h3>Страница авторских прав</h3>
+    <p>Заполните столько, сколько хотите: псевдоним, издательство или импринт, город и страна, издание, дизайнер обложки, дизайнер внутреннего оформления и страна печати. <strong>Всё, что оставлено пустым, полностью опускается</strong> — никакой «[Название издательства]» никогда не появится в вашей книге.</p>
+    <p>Необязательный <strong>дисклеймер</strong> указывает, что книга носит образовательный характер и что ни автор, ни издатель не предоставляют юридических, финансовых или медицинских консультаций. Он включён по умолчанию.</p>
+    <p>Задайте их один раз в <strong>Профиль &rarr; Настройки импринта</strong> и каждая новая книга будет заполняться автоматически. У каждой книги своя копия, так что изменение профиля никогда не повлияет на уже опубликованную книгу.</p>
+
+    <h3>Предисловие</h3>
+    <p>Предисловие пишет кто-то другой — коллега, наставник или признанный голос в вашей области. Укажите его имя, регалии, место и дату, а затем либо напишите текст сами, либо позвольте TubeBook составить его на основе реальной темы и глав вашей книги.</p>
+    <div class="alert-tip">💡 Если вы используете черновик, пусть человек, чьё имя указано, прочитает и одобрит его перед публикацией. Это его имя, а не ваше.</div>
+
+    <h3>QR-коды</h3>
+    <p>Вы можете добавить QR-код на страницу «Об авторе», ведущий на ваш сайт, страницу книги на Amazon или куда угодно ещё. Он печатается в <strong>только в мягкой обложке</strong> — в издании Kindle или EPUB читатель нажимает на ссылку, поэтому она просто заняла бы место.</p>
+    <p><strong>Одна вещь, которую стоит знать об Amazon.</strong> Правила KDP <a href="https://kdp.amazon.com/en_US/help/topic/GQ6JQ7FM6C72HE4X" target="_blank" rel="noopener">правила гиперссылок</a> запрещают «ссылки на веб-формы, запрашивающие информацию о клиенте» внутри книги — а это именно то, чем является форма подписки по электронной почте или целевая страница лид-магнита. Ссылки на сам Amazon допустимы, а ссылки на другие книги вашей серии явно разрешены. QR-код — это изображение, а не ссылка, поэтому формально он не подпадает под это правило, но Amazon оставляет за собой право удалять ссылки по своему усмотрению. TubeBook предупреждает вас, когда цель QR-кода выглядит как страница регистрации, и все равно печатает его, если вы его оставляете — это ваша книга.</p>
+  </div>
+
+  <!-- TITLE -->
+  <div class="card" id="title">
+    <h2>Название и подзаголовок</h2>
+    <h3>Лимит Amazon в 200 символов</h3>
+    <p>KDP позволяет <strong>200 символов для названия и подзаголовка вместе</strong>, включая пробелы и знаки препинания. Если превысить — Amazon отклоняет объявление. TubeBook считает их за вас везде, где их можно редактировать, и предупреждает до того, как вы превысите, а не после.</p>
+
+    <h3>Редактирование после сборки книги</h3>
+    <p>В разделе <strong>Редактировать книгу</strong> вы можете переписать название, подзаголовок и имя автора в готовой электронной книге и пересобрать её. Это <strong>бесплатно</strong>. Обложка сохраняется — только надпись на ней перерисовывается — а описание и ключевые слова на Amazon переписываются в соответствии с новым названием.</p>
+
+    <h3>AI-подсказки для названия</h3>
+    <p><strong>Предложить SEO-названия</strong> предлагает альтернативы, написанные на основе фактических глав вашей книги, и, если книга создана из <em>Аудиокниги</em>, фраз, которые реально искали читатели. Каждое предложение показывает количество символов с учётом лимита в 200. Нажатие на предложение заполняет поля; ничего не сохраняется, пока вы не нажмёте «Сохранить», так что попробовать их ничего не стоит.</p>
+    <p>Предложения написаны так, чтобы работать сразу в трёх направлениях: <strong>поиск</strong> (ключевые слова, которые люди реально вводят), <strong>ответные движки</strong> (подзаголовок, который читается как прямой, буквальный ответ), и <strong>AI-рекомендации</strong> (название и подзаголовок, которые делают тему, охват и читателя безошибочно понятными при самостоятельном чтении, без обложки). И никогда не перегруженные ключевыми словами — название, которое читается как SEO-приманка, теряет и человеческую продажу, и рекомендацию AI одновременно.</p>
+  </div>
+
+  <!-- LANGUAGES -->
+  <div class="card" id="templates">
+    <h2>Шаблоны книг</h2>
+    <p>Первый вопрос в <strong>Создать книгу</strong> — это тип книги. Двенадцать шаблонов в четырёх группах:</p>
+    <table>
+      <tr><th>Практические</th><td><strong>Практическое руководство</strong> — нумерованные шаги к одному конкретному результату.<br><strong>Руководство для начинающих</strong> — не требует предварительных знаний, объясняет каждый термин.<br><strong>Быстрый старт за 7 дней</strong> — по одной главе в день, по одному действию.<br><strong>Чек-лист для лид-магнита</strong> — короткий и легко читаемый, создан для раздачи.</td></tr>
+      <tr><th>Бизнес</th><td><strong>Кейсы</strong> — по одному проработанному примеру в главе.<br><strong>Бизнес-руководство</strong> — фреймворки и критерии выбора между ними.</td></tr>
+      <tr><th>Личностный рост</th><td><strong>Рабочая тетрадь</strong> — упражнения и задания, которые выполняет читатель.<br><strong>Ежедневное чтение</strong> — короткие записи, по одной идее в каждой.<br><strong>Разрушение мифов</strong> — каждая глава разбирает одно убеждение.</td></tr>
+      <tr><th>Справочник</th><td><strong>Объяснение</strong> — делает сложную тему понятной.<br><strong>Справочное руководство</strong> — для поиска информации, а не для чтения подряд.<br><strong>Полевой справочник</strong> — распознать, понять, знать, что делать.</td></tr>
+    </table>
+
+    <h3>Что на самом деле меняет шаблон</h3>
+    <p>Он задает длину, стиль написания, количество иллюстраций и то, какими блоками заканчивается каждая глава — и меняет <strong>структуру главы</strong>. Полевой справочник использует одни и те же три такта в одном и том же порядке каждый раз, поэтому вы можете предсказать структуру следующей главы и перейти к нужной части. Ежедневное чтение никогда не перекрестно ссылается на другие записи, поэтому открытие наугад всегда работает. Рабочая тетрадь уделяет больше места работе читателя, чем вашим объяснениям.</p>
+
+    <div class="alert-tip">💡 <strong>Шаблоны заполняют настройки — они не блокируют их.</strong> Выберите один, и длина, тон и блоки глав ниже изменятся соответствующим образом; если вы измените их позже, ваш выбор будет иметь приоритет. Если вы хотите девятиглавную версию двенадцатиглавного шаблона, ничто вам не мешает.</div>
+
+    <p>Выбор шаблона необязателен. Пропустите его, и книги будут генерироваться как обычно — а книги, созданные до появления шаблонов, останутся нетронутыми, в том числе при пересборке файлов.</p>
+  </div>
+
+  <div class="card" id="writing-style">
+    <h2>Ваш стиль письма</h2>
+    <p>На странице <strong>Профиль</strong> в разделе <strong>Ваш стиль письма</strong>загрузите что-то, что вы уже написали — пост в блоге, главу, эссе — или вставьте несколько страниц. Тогда ваши книги будут написаны в вашем стиле, а не в том аккуратном, ровном регистре, в который по умолчанию впадает ИИ-письмо.</p>
+
+    <h3>Что происходит на самом деле</h3>
+    <p>Ваш образец читается один раз, и на его основе составляется <strong>описание того, как вы пишете</strong> : длина предложений и ее вариативность, обращаетесь ли вы напрямую к читателю, как вы начинаете раздел и как заканчиваете, ваши привычки в пунктуации, чего вы никогда не делаете. Это описание показывается вам вместе с несколькими краткими наблюдениями, чтобы вы могли оценить, насколько точно оно вас отражает.</p>
+    <p>Каждая глава каждой книги, созданной после этого, пишется с этим описанием перед писателем. Оно заменяет общую настройку тона, которая ранее была одним предложением — именно поэтому оно дает видимую разницу.</p>
+
+    <div class="alert-info">🔒 <strong>Это не обучение модели, и ваш текст принадлежит вам.</strong> Ни одна модель не дообучается, ничто из загруженного вами не используется для чужих книг, а ваши файлы <strong>удаляются сразу после прочтения</strong>. Сохраняются только описание и короткие отрывки — отрывки для того, чтобы описание можно было составить заново, когда вы добавите еще один образец. Обучение нас тому, как вы пишете, не должно давать нам постоянную копию вашей рукописи.</div>
+
+    <h3>Что это сделает и чего не сделает</h3>
+    <p>Это меняет регистр, ритм и словарный запас, и это самый мощный рычаг влияния на то, как читается сгенерированная книга. Это не сделает текст неотличимым от вашего, и мы предпочитаем сказать об этом прямо, чем позволить вам узнать самим. Несколько страниц работают гораздо лучше, чем несколько абзацев: один абзац — случайность, несколько страниц — стиль.</p>
+
+    <div class="alert-tip">💡 Ваш стиль <strong>копируется в каждую книгу при ее создании</strong>. Уточнение профиля позже изменит будущие книги и никогда не перепишет уже опубликованные. В режиме <strong>Высокая точность</strong> он игнорируется, точно так же, как уже существующая настройка тона для книги — этот режим воспроизводит голос самого спикера из источника, и личный стиль письма поверх него противоречил бы цели.</div>
+  </div>
+
+  <div class="card" id="editing">
+    <h2>Редактирование и корректура</h2>
+    <p>На любой готовой книге <strong>Редактировать текст</strong> открывает редактор: ваши главы слева, текст одной из них рядом. Готовая книга не заморожена.</p>
+
+    <h3>Изменяйте что угодно сами</h3>
+    <p>Отредактируйте главу и нажмите Сохранить. Это бесплатно и без ограничений — набор текста не является услугой, за которую мы берем плату.</p>
+    <div class="alert-info">📄 <strong>Ваши файлы продолжают работать, пока вы редактируете.</strong> PDF, EPUB, DOCX и PPTX, которые у вас уже есть, остаются доступными для скачивания и сохраняют <em>назад</em> формулировка, пока вы не нажмёте <strong>Пересобрать файлы</strong>. Мы могли бы удалить их в тот момент, когда вы изменили слово, но лишать вас загрузок из-за исправленной опечатки хуже, чем честно сказать, что они отстают на версию.</div>
+
+    <h3>Переписать раздел</h3>
+    <p>Под текстом находится список разделов главы. Выберите один, при желании укажите, что нужно изменить («сократить», «добавить конкретный пример»), и он вернется переписанным — в <strong>том же стиле, с той же точностью, привязкой к фактам и языком, что и остальная книга</strong>, — с учётом соседних разделов, чтобы всё стыковалось. Именно поэтому он не читается как чужеродный абзац, вставленный в главу.</p>
+    <p><strong>1 кредит</strong> за полную переработку раздела. Списание происходит до запуска модели, а при сбое кредит автоматически возвращается — вы никогда не платите за текст, который не получили.</p>
+
+    <h3>Вычитать рукопись</h3>
+    <p><strong>Проверить</strong> читает текущую главу. <strong>Проверить всю книгу</strong> читает все главы и ищет проблемы, которые не видны в отдельной главе: одна и та же мысль под разными названиями, термин, использованный до введения, обещание, которое не выполнено, две главы, повторяющие друг друга.</p>
+    <p>Находки отсортированы от худших к лучшим. Каждая цитирует точные слова, к которым относится, и предлагает конкретную замену. <strong>Применить предложение</strong> выполняет точечную правку ИИ за <strong>0.1 кредита</strong>; <strong>Исправить вручную</strong> открывает нужную главу или раздел, чтобы вы изменили их сами бесплатно.</p>
+    <div class="alert-tip">💡 <strong>Почему некоторые реальные проблемы не сообщаются.</strong> Каждая находка должна точно цитировать ваш текст, и мы ищем эту цитату в главе перед показом. Всё, что не найдено, отбрасывается — включая иногда настоящую проблему, которую модель процитировала с небольшой ошибкой. Это осознанно. Список, где каждому пункту можно доверять, полезнее длинного списка, который приходится проверять самому, — а это и была задача проверки.</div>
+    <p>Проверка <strong>бесплатно</strong>бесплатна, сколько бы раз вы её ни запускали. Находки не сохраняются: проверка описывает текст на данный момент, и следующая правка сделает их указывающими на несуществующие предложения.</p>
+
+    <h3>Запросить второе мнение</h3>
+    <p>Под главой находится <strong>Спросить о главе</strong>. Он прочитал ваш план и текущую главу, поэтому может ответить на вопросы о направлении, темпе, оправданности длины главы или о том, чего не хватает слабому началу. Он скажет, когда что-то уже хорошо, и один раз возразит, если посчитает, что изменение ослабит книгу.</p>
+    <p>Попросите его изменить формулировку — и он вернётся с <strong>предложение</strong>: полный текст замены, какой раздел он заменяет, и Принять или Отклонить. Он <strong>никогда не редактирует вашу книгу сам</strong> — принятие — это то же действие, что и сохранение вашего собственного текста, поэтому все, что следует за редактированием (файлы, помеченные как устаревшие, озвучка, помеченная как рассинхронизированная), происходит точно так же.</p>
+    <p>Бесплатно, и разговор не сохраняется — он принадлежит текущему сеансу.</p>
+
+    <h3>На что влияет редактирование</h3>
+    <ul>
+      <li><strong>Ваши файлы</strong> — отстают на версию, пока вы не пересоберёте, как указано выше.</li>
+      <li><strong>Ваша аудиокнига</strong> — если вы редактируете главу, которая была озвучена, эта часть помечается как несоответствующая. <strong>Ничего не удаляется</strong>: вы потратили на неё аудиокредиты, и исправление опечатки не должно уничтожить то, за что вы заплатили. Озвучьте заново, когда захотите вернуть их в синхронизацию.</li>
+      <li><strong>Больше ничего.</strong> Ваша обложка, иллюстрации, переводы и метаданные KDP не затрагиваются.</li>
+    </ul>
+  </div>
+
+  <div class="card" id="references">
+    <h2>Ссылки</h2>
+    <p>Отметить <strong>Ссылки</strong> в разделе «Части книги», и ваша книга получит список источников в конце, сгруппированный по главам, в которых использовался каждый источник. Пересоберите — и он появится, даже в книге, законченной недели назад.</p>
+    <p>Он создаётся из <strong>материала, который фактически был передан писателю</strong>: видео, статей и документов, которые вы предоставили, и записи о том, какие главы были написаны из каких. Он не генерируется путём запроса модели о том, что она, по её мнению, прочитала, что дало бы правдоподобные цитаты, которые могут не соответствовать ничему. Для книги, основанной на исследованиях, это хуже, чем отсутствие библиографии.</p>
+    <div class="alert-info">📚 Выключено по умолчанию, намеренно. Каждая книга, созданная до появления этой функции, иначе получила бы библиографию при следующей пересборке файлов — включая те, что уже продаются. Если вы отметите пункт, а в списке ничего нет, значит, ваша книга была написана из одного вставленного транскрипта, и цитировать нечего; мы опускаем раздел, а не печатаем пустой заголовок.</div>
+  </div>
+
+  <div class="card" id="languages">
+    <h2>Публикация на другом языке</h2>
+    <p>На любой готовой книге <strong>Редактировать эту книгу → Опубликовать на другом языке</strong> создаёт полное издание на французском, испанском, португальском, немецком, итальянском, нидерландском или английском. <strong>Каждое из них также можно озвучить</strong>, мужским или женским голосом, так что переведённое издание может выйти как аудиокнига точно так же, как оригинал — см. <a href="#audiobooks">Другие языки</a>.</p>
+
+    <h3>Оно становится отдельной книгой</h3>
+    <p>Не дополнительные файлы к оригиналу — <strong>это отдельная книга на вашем дашборде</strong>, потому что именно это нужно Amazon. Каждый язык — это отдельный листинг KDP со своим ASIN и своими ключевыми словами, поэтому французское издание получает свою обложку, своё описание на Amazon, свои файлы и свои элементы управления редактированием. Оригинал не затрагивается, и они связаны, так что вы можете найти одно из другого.</p>
+
+    <h3>Почему это стоит копейки по сравнению с книгой</h3>
+    <p>Ваши <strong>обложка и все иллюстрации глав используются повторно</strong> — копируются в новое издание, так что оно продолжает работать, даже если вы потом удалите оригинал. Переделываются только слова, а это дешевая часть. Поэтому перевод стоит около 40% от стоимости книги: 12 кредитов за лид-магнит, 24 за короткую книгу, 40 за коммерческую.</p>
+
+    <h3>Что переводится, а что переписывается</h3>
+    <ul>
+      <li><strong>Переводится</strong> — каждая глава, название, подзаголовок и список глав, как книга для читателей на этом языке, а не дословно. Идиомы становятся идиомами этого языка; имена собственные, названия брендов, числа и статистика остаются как есть.</li>
+      <li><strong>Переписывается, а не переводится</strong> — описание для Amazon и 7 ключевых слов для KDP, созданные заново для этого рынка. Немецкие читатели не ищут переведенные английские фразы, а ключевые слова — это весь смысл этого пакета.</li>
+      <li><strong>Перерисовывается</strong> — текст на обложке, на новом языке, поверх того же изображения.</li>
+    </ul>
+    <div class="alert-tip">💡 Предлагаются только эти семь языков, и причина стоит знать: страница авторских прав, содержание и заголовки разделов правильно локализованы именно для них. Книга, главы которой на одном языке, а выходные данные на английском, выглядит наполовину переведенной, что хуже, чем не предлагать ее вовсе. Другие будут добавлены по мере локализации.</div>
+  </div>
+
+  <!-- AUDIOBOOKS -->
+  <div class="card" id="audiobooks">
+    <h2>Другие языки</h2>
+    <p><strong>Редактировать эту книгу → Создать аудиокнигу</strong> озвучивает готовую книгу. Это происходит <em>после</em> того, как ваши файлы существуют, так что книга остается доступной для скачивания на протяжении всего процесса, и проблема с озвучкой никогда не повлияет на электронную книгу, за которую вы уже заплатили.</p>
+
+    <h3>Голоса</h3>
+    <ul>
+      <li><strong>Стандартный — мужской</strong> и <strong>Стандартный — женский</strong> — четкий и последовательный, но слышно, что синтетический. Английский, французский, испанский, португальский, немецкий, итальянский, нидерландский, китайский, японский и корейский. 40 / 80 / 120 аудиокредитов в зависимости от длины книги.</li>
+      <li><strong>Премиум</strong> — естественное, выразительное озвучивание, с голосами Талия, Аполлон (английский) и Селеста (испанский). <strong>Только английский и испанский</strong> — премиальный движок не выпускает модели для остальных восьми, поэтому немецкая или японская книга использует стандартный голос. 100 / 200 / 300 аудиокредитов.</li>
+    </ul>
+    <p>Оба стандартных голоса охватывают все десять языков озвучивания — английский, французский, испанский, португальский, немецкий, итальянский, нидерландский, китайский, японский и корейский — и каждый сохраняет один и тот же пол диктора на всех языках, так что книга, опубликованная на нескольких языках, не меняет диктора между изданиями. <strong>Каждый язык, на котором вы можете публиковать, также можно озвучить</strong>; китайский, японский и корейский — только для озвучивания, для книг, уже написанных на них.</p>
+    <div class="alert-info">🎧 Аудиокниги оплачиваются с отдельного <strong>аудио-кредитного</strong> баланса, а не с кредитов на электронные книги. Написание книги и ее озвучивание стоят нам совершенно по-разному, поэтому разделение позволяет держать кредиты на электронные книги дешевыми. Аудиокредиты входят в <strong>Pro Audio</strong> план, или можно <strong>купить сразу на любом плане</strong> — см. ниже.</div>
+    <p>Предлагаются только те голоса, которые действительно могут озвучить книгу на вашем языке, и панель сообщает об этом, а не просто показывает сокращённый список.</p>
+    <div class="alert-tip">💡 Premium стоит дороже, чем электронная книга, которую он озвучивает, и это не наценка — озвучивание коммерческой книги премиальным движком действительно обходится нам дороже, чем приносит книга. Standard стоит нам несколько пенсов, поэтому он дешёвый. Попробуйте сначала Standard; если вы продаёте аудиокнигу, Premium того стоит.</div>
+
+    <h3>По файлу на каждую часть — и один объединённый файл</h3>
+    <p>Вы получаете файл для каждой части с плеером, чтобы можно было перейти к нужной и проверить. Части хранятся как <strong>без потерь WAV-мастера</strong> в том качестве, которое выдаёт движок озвучивания, и каждую можно скачать по ссылке под плеером. Затем отметьте нужные части и <strong>Скачать одной аудиокнигой</strong> объединит их в порядке книги в один MP3 с битрейтом 192 кбит/с. Ничего не переозвучивается и кредиты не тратятся — вы уже заплатили за эти части.</p>
+    <p>MP3-файлы создаются <em>в вашем браузере</em> при нажатии, поэтому длинная книга обрабатывается минуту. Это осознанное решение: кодирование из мастера без потерь означает, что единственный шаг с потерями происходит один раз, в конце. Конвертация небольшого превью в 192 кбит/с утроила бы размер файла, сохранив недостатки первого кодирования, а не аудио.</p>
+    <p>Файлы по частям позволяют нам вообще создавать трёхчасовую аудиокнигу, и именно они делают объединённый файл выбором, а не фиксированным результатом: уберите страницу с авторскими правами, оставьте призыв к действию, переозвучьте одну главу, не трогая остальные.</p>
+    <p>Первый файл начинается с вашего заголовка, подзаголовка и имени автора; последний заканчивается прощанием. Заголовки, маркированные списки и сокращения переписываются для слуха — список читается как «Первый… Второй… И наконец…», «40%» становится «сорок процентов», а ссылки и подписи к изображениям опускаются, потому что чтец, читающий URL вслух, — самый быстрый способ потерять слушателя.</p>
+    <p>Ваши <strong>Ключевые выводы</strong> и <strong>Рефлексия</strong> настройки соблюдаются, поэтому аудиокнига содержит те же слова, что и ваша электронная книга. <strong>Каждая часть озвучивается</strong> — включая страницу с авторскими правами, оглавление, ваш призыв к действию и биографию автора — потому что открывается ли аудиокнига строкой об авторских правах или закрывается вашим предложением, решаете вы, а не мы. Главы по умолчанию отмечены для объединённого файла, а вступительные и заключительные материалы — нет, так что по умолчанию это только книга.</p>
+
+    <h3>Мастера без потерь</h3>
+    <p>Что транслирует плеер <strong>— это</strong> мастер — озвучивание хранится как PCM без потерь (WAV), и ничего не перекодируется для воспроизведения. Под каждым плеером есть ссылка с указанием размера, например <em>Мастер без потерь &middot; WAV 24 кГц, 34 МБ</em>, которая скачивает эту часть с именем вашей книги и главы, а не <code>ch03.wav</code>.</p>
+    <p>Они хранятся в течение <strong>тех же 30 дней, что и книга</strong>, и они не являются дополнением Pro Audio — они есть у любой озвученной книги, включая ту, что озвучена одним пакетом аудиокредитов на бесплатном плане.</p>
+    <div class="alert-info">🎚️ <strong>Мастера имеют частоту 24 кГц, а не 44,1 кГц</strong>, потому что именно это реально выдают движки озвучки — все они работают в 24 кГц. 44.1 кГц в готовых MP3 — это ресемплинг при кодировании, чтобы соответствовать спецификации контейнера. Хранить архив в 44.1 кГц было бы вдвое больше и без пользы: это был бы апсемплинг 24 кГц с большим числом.</div>
+
+    <h3>Дистрибутивный пакет</h3>
+    <p><strong>Скачать пакет (ZIP)</strong> собирает всё, что нужно агрегатору, в один клик:</p>
+    <ul>
+      <li>Каждая часть как <strong>нумерованный MP3</strong> — <code>00-title-page.mp3</code>, <code>02-chapter-01.mp3</code> — с нулями, чтобы простая сортировка по алфавиту совпадала с порядком воспроизведения, как их читает загрузчик.</li>
+      <li><strong>192 kbps CBR, 44.1 кГц, моно</strong>, с уровнем около &minus;20 дБ RMS и пиком ниже &minus;3 дБ.</li>
+      <li><strong>cover.jpg</strong> 3000&times;3000, RGB — квадратная обложка, которую требует каждый аудиокнижный магазин, и которой нет у электронных книг.</li>
+      <li><strong>retail-sample.mp3</strong>— первые пять минут первой главы, обрезанные по границе кадра.</li>
+      <li><strong>metadata.json</strong> — название, автор, чтец, язык, длительность каждого файла и измеренные уровни, а также явное <code>"narration": "digital"</code>.</li>
+      <li>ID3-теги и встроенная обложка на каждом треке, чтобы покупатель, распаковав в VLC, увидел книгу, а не дюжину безымянных файлов.</li>
+    </ul>
+    <div class="alert-info">🔊 <strong>Зачем раскрытие в файле.</strong> Большинство агрегаторов требуют указывать ИИ-озвучку. Пакет, где это тихо пропущено, не отклонят при загрузке — его снимут после публикации, когда уже продано. Указать это ничего не стоит и отличает запись в каталоге от удаления.</div>
+
+    <h3>Продажа — прочтите перед загрузкой</h3>
+    <p><strong>Прямая продажа — простой путь</strong> — Gumroad, Payhip, Shopify или загрузка на своём сайте. Без одобрения, без проверки аудио-спеки, и вы сохраняете маржу. Объединённый файл — это формат, который ожидают такие магазины.</p>
+    <p><strong>Audible и ACX возможны, но с условиями.</strong> Стандартный процесс подачи ACX рассчитан на человеческую озвучку: в требованиях к аудио сказано, что книга должна быть озвучена человеком <em>если не указано иное</em>, и перечислены неавторизованный текст-в-речь и ИИ как запрещённые. Это правило против <em>неавторизованного</em> ИИ, а не запрет ИИ — но разницу нужно согласовать заранее, а не обнаружить при подаче:</p>
+    <ul>
+      <li><strong>Сначала свяжитесь с поддержкой ACX</strong> и получите разрешение на название, а не отправляйте через стандартную процедуру в надежде на удачу.</li>
+      <li><strong>Укажите</strong> использование ИИ-озвучки в описании книги. Это обязательное требование.</li>
+      <li>ACX измеряет уровни звука — RMS от −23 до −18 дБ, пик не выше −3 дБ, уровень шума ниже −60 дБ.</li>
+      <li><strong>KDP Virtual Voice не подходит для этих файлов.</strong> Это программа Amazon по озвучке с помощью ИИ, использующая голоса Amazon, и она не принимает предоставленные вами аудиофайлы.</li>
+    </ul>
+    <p><strong>Агрегаторы — более простой путь к Audible.</strong> Author's Republic, Kobo Writing Life и программа аудиокниг Spotify (ранее Findaway Voices) принимают аудиокниги с ИИ-озвучкой и распространяют их в каталоге Audible, с обязательным указанием использования ИИ. Никаких переговоров о разрешении для каждого названия.</p>
+    <p><strong>Теперь мы измеряем и устанавливаем уровни звука.</strong> Каждый файл в пакете и каждая объединенная загрузка анализируются и выравниваются примерно до −20 дБ RMS с пиком ниже −3 дБ — тот же диапазон, что указан выше — и измеренные значения для каждого трека записываются в <code>metadata.json</code> чтобы вы могли проверить их без открытия редактора. Громкость измеряется на самой речи, а не усредняется с паузами между предложениями, что предотвращает усиление частей с длинными паузами по сравнению с остальной книгой.</p>
+    <p><strong>Мы по-прежнему не утверждаем, что файл соответствует требованиям ACX</strong>, потому что уровни — это то, что мы можем доказать, а разрешение — нет. Файл, соответствующий всем параметрам спецификации, все равно не подходит для стандартной процедуры ACX, пока ACX не разрешит название. Техническая сторона — наша; разрешение — ваше.</p>
+    <div class="alert-info">📦 <strong>Два разных ZIP-архива.</strong> Аудио не входит в ваш <em>электронной книги</em> архив — аудиокнига слишком велика, чтобы размещаться рядом с PDF и EPUB. У аудиокниги есть свой <strong>Скачать пакет (ZIP)</strong> в панели аудиокниги, описанной выше.</div>
+  </div>
+
+  <!-- FIND A TOPIC -->
+  <div class="card" id="find-a-topic">
+    <h2>Аудиокниги</h2>
+    <p><strong>Аудиокниги</strong> отвечает на вопрос, который возникает раньше всех остальных: какую книгу стоит написать? Введите нишу, и TubeBook покажет, что люди на самом деле ищут, насколько переполнена каждая тема, и набор концепций книг, созданных на основе пробелов, — а затем найдет источники для их написания.</p>
+    <h3>Начиная без единой идеи</h3>
+    <p>Если у вас еще нет ниши, откройте вкладку <strong>Что в тренде</strong> Она показывает доску для каждой страны — <strong>США, Великобритания, Германия, Канада, Австралия и Франция</strong> — созданную на основе трендовых видео YouTube с инструкциями и образовательным контентом в этой стране, а также того, что покупатели вводят в местном магазине Amazon. Просмотр <strong>бесплатно</strong>; выбор темы запускает обычное исследование за 5 кредитов.</p>
+    <p>Доски обновляются <strong>еженедельно</strong> и показывают дату. Две важные вещи о том, как их читать:</p>
+    <ul>
+      <li><strong>Многие фразы Amazon — это существующие названия книг.</strong> «Как завоёвывать друзей и оказывать влияние на людей» — это не тема, а доказательство того, что читатели этого рынка хотят книг о социальных навыках. Предложенные темы — это базовые предметы, а не названия для копирования.</li>
+      <li><strong>Строка «в тренде новостей» — это не спрос на книги.</strong> Это ежедневные тренды поиска Google, в которых доминируют спорт, акции и знаменитости. Она показана отдельно и подписана, потому что иногда реальная история порождает реальную книгу, но в основном это шум.</li>
+    </ul>
+    <div class="alert-tip">💡 Страна — это максимум точности. Спрос на книги действительно различается по городам, но ни один бесплатный источник данных не разбивает его так детально, поэтому мы не притворяемся.</div>
+
+    <h3>Что означают цифры</h3>
+    <p>Это важно понять. Показатели спроса взяты из <strong>автодополнений Amazon и Google</strong> когда кто-то начинает вводить запрос — реальные запросы, упорядоченные по частоте ввода. Это <strong>сигналы поискового спроса, а не рейтинги продаж Amazon</strong>.</p>
+    <p>Мы хотели бы показать вам настоящий рейтинг бестселлеров, но сознательно не подделываем его. Amazon закрыл публичный доступ к этим данным: Product Advertising API закрылся в мае 2026 года, а его замена требует аккаунта Amazon Associates с постоянными квалифицированными продажами. Поэтому ни один честный инструмент не может предоставить вам живой BSR без вашего собственного партнёрства с Amazon.</p>
+    <ul>
+      <li><strong>Оценка (0-100)</strong> — вспомогательный рейтинг, сочетающий спрос и конкуренцию. Используйте его для упорядочивания шорт-листа, но не как прогноз продаж.</li>
+      <li><strong>Покупатели книг</strong> — эта фраза автодополняется в разделе <em>Книги</em> или <em>Kindle Store</em>, а не во всех категориях. Это самый сильный сигнал покупательского намерения, потому что человек, вводящий его, уже ищет книгу.</li>
+      <li><strong>Конкуренция</strong> — сколько книг уже используют эту фразу и насколько они прорецензированы. Переполненная полка забытых книг легче для входа, чем маленькая полка бестселлеров, поэтому учитываются оба фактора.</li>
+      <li><strong>Конкуренция: неизвестно</strong> — проверка конкуренции для этой фразы была недоступна. Это значит, что мы не знаем, <em>а не</em> что тема свободна.</li>
+    </ul>
+    <h3>Предложенные источники</h3>
+    <p>Выберите концепцию, и TubeBook подберёт <strong>до 25 источников</strong> — столько, сколько может объединить книга Pro. Фильтры применяются до того, как вы увидите список:</p>
+    <ul>
+      <li>Видео должны иметь <strong>субтитры</strong>, потому что именно это читает TubeBook. Видео без них нельзя превратить в главу, поэтому предлагать его было бы пустой тратой кредитов.</li>
+      <li>Видео короче четырех минут отбрасываются — слишком мало для главы. Длинные выступления, лекции и интервью <em>включаются</em>, и в каждой строке указано время воспроизведения — лучший ориентир для того, сколько глав может вместить видео.</li>
+      <li><strong>PDF и офисные документы</strong> в результатах — статьи, правительственные отчеты, технические документы, конспекты курсов — распознаются как документы и обрабатываются извлекателем документов, а не передаются веб-ридеру, который не может их открыть.</li>
+      <li>Каждая ссылка сначала проверяется на доступность и безопасность с помощью той же валидации, что и при загрузке.</li>
+    </ul>
+    <p>Показаны первые десять; <strong>Показать еще 10</strong> показывает остальные. Они уже загружены — их показ ничего не стоит и не требует новых поисков.</p>
+    <p>Первые десять также предварительно выбраны, и это осознанно: источники сверх первых добавляют кредиты к книге, поэтому TubeBook не отмечает двадцать пять за вас. Каждый план позволяет комбинировать до 25 источников, и селектор останавливается на этом общем лимите.</p>
+    <h3>Как пишутся концепции</h3>
+    <p>Каждое предлагаемое название и подзаголовок должны работать для всех трех способов, которыми книга сегодня находится: <strong>поиск</strong> (ключевые слова, взятые из реально наблюдаемых фраз, а не выдуманные), <strong>ответные движки</strong> (подзаголовок, который читается как прямой, буквальный ответ — число, срок, названная ситуация, без игры слов), и <strong>AI-рекомендации</strong> (название и подзаголовок, которые делают предмет, охват и читателя безошибочно понятными при самостоятельном чтении). Концепции также соблюдают лимит Amazon в 200 символов для названия и подзаголовка, поэтому ни одна из них не приходит непригодной.</p>
+
+    <h3>Лучшие ключевые слова для KDP</h3>
+    <p>Когда книга создается на основе исследованной темы, ее 7 ключевых слов для KDP берутся из <strong>фраз, реально встречающихся в поиске</strong> а не выдумываются ИИ. Выдуманное ключевое слово, которое никто не вводит, не дает ранжирования, так что это реальная разница в обнаруживаемости.</p>
+    <h3>Стоимость и кэширование</h3>
+    <p>Исследование ниши стоит <strong>5 кредитов</strong>. Результаты кэшируются на <strong>14 дней</strong> — повторное открытие той же ниши в этот период бесплатно, и порядок слов не важен ("стоицизм для начинающих" и "начинающие стоицизм" — одна и та же ниша). Поиск источников для концепции ничего не стоит.</p>
+    <div class="alert-tip">💡 Если исследование не удается частично, ваши 5 кредитов возвращаются автоматически. Если ниша не дает полезных результатов, попробуйте более широкий термин — "ведение дневника" вместо "ведение дневника для медсестер INFJ".</div>
+  </div>
+
+  <!-- CREDITS -->
+  <div class="card" id="credits">
+    <h2>Кредиты и цены</h2>
+    <p>TubeBook использует прозрачную систему кредитов. Каждое действие показывает свою стоимость до подтверждения.</p>
+
+    <div class="alert-info">🔎 <strong>Купили «пожизненную» или «безлимитную» сделку TubeBook где-то еще?</strong> Это были не мы. Отдельная компания продает <strong>TubeBook AI</strong> (tubebookai.com) через партнерские сети; мы — <strong>TubeBook</strong> (tubebook.org), и мы не связаны с ними. Мы продаем только через этот сайт, у нас нет дилеров, и мы никогда не предлагали пожизненный или безлимитный план — наши планы стоят $9, $29 и $49 в месяц, плюс разовые пакеты кредитов. Если вы заплатили за безлимитное обновление, в чеке будет указан продавец, и именно к нему нужно обращаться за доступом или возвратом. Мы не получали платеж, поэтому не можем ни предоставить доступ, ни вернуть деньги.</div>
+    <p>Первый источник всегда включен в базовую цену, поэтому электронная книга из одного источника стоит ровно столько же, сколько и раньше. Лид-магнит из 5 источников стоит 30 + 4 &times; 8 = <strong>62 кредита</strong>.</p>
+    <table>
+      <thead><tr><th>Позиция</th><th>Кредиты</th></tr></thead>
+      <tbody>
+        <tr><td>Исследование темы (за нишу, кэш бесплатно 14 дней)</td><td><strong>5</strong></td></tr>
+        <tr><td>Короткий лид-магнит (~6000 слов, 10–25 страниц)</td><td><strong>30</strong></td></tr>
+        <tr><td>Короткая книга (~13 000 слов, 25–50 страниц)</td><td><strong>60</strong></td></tr>
+        <tr><td>Полноценная коммерческая книга (25 000+ слов)</td><td><strong>100</strong></td></tr>
+        <tr><td>Иллюстрация главы (за изображение, опционально)</td><td><strong>+1</strong></td></tr>
+        <tr><td>Каждый дополнительный источник (для книг из нескольких источников)</td><td><strong>+8</strong></td></tr>
+      </tbody>
+    </table>
+    <h3>Планы</h3>
+    <ul>
+      <li><span class="pill">Бесплатно</span> <strong>100 кредитов каждый месяц</strong>, без карты. До 25 источников на книгу и те же функции создания, редактирования, иллюстраций, перевода, аудиокниг и экспорта, что и в платных аккаунтах. Небольшой футер «Сделано с TubeBook.org» появляется в PDF бесплатных аккаунтов, пока аккаунт не совершит покупку.</li>
+      <li><span class="pill">Старт — $9/мес</span> 250 кредитов/мес — ≈ 8 лид-магнитов или 2 коммерческие книги, или любая комбинация. Те же функции и лимит 25 источников; разница только в большем объеме.</li>
+      <li><span class="pill">Про — $29/мес</span> 1000 кредитов/мес — ≈ 33 лид-магнита или 10 коммерческих книг, или любая комбинация. Те же функции и лимит 25 источников; разница только в большем объеме.</li>
+      <li><span class="pill">Про Аудио — $49/мес</span> Все функции Про, плюс <strong>900 аудиокредитов/мес</strong> — ≈ 3 коммерческие аудиокниги на премиальном голосе или 7 на стандартном. Аудиокредиты — это отдельный баланс, и только ими можно озвучивать книги.</li>
+    </ul>
+    <p>Годовая оплата доступна для всех платных планов: Старт $90/год, Про $290/год, Про Аудио $490/год — примерно два месяца бесплатно.</p>
+    <h3>Пакеты пополнения кредитов</h3>
+    <ul>
+      <li>Стартовый пакет — 100 кредитов, \$5</li>
+      <li>Пакет «Буст» — 400 кредитов, \$15</li>
+      <li>Пакет «Мощь» — 1500 кредитов, \$40</li>
+    </ul>
+    <h3>Пакеты аудиокредитов</h3>
+    <p>Для создания аудиокниги подписка не нужна. Аудиокредиты можно купить отдельно, на любом тарифе, включая бесплатный:</p>
+    <ul>
+      <li>Одна аудиокнига — 120 аудиокредитов, \$12 — одна коммерческая аудиокнига на стандартном голосе</li>
+      <li>Пакет автора — 300 аудиокредитов, \$27 — одна коммерческая аудиокнига на премиальном голосе</li>
+      <li>Студийный пакет — 900 аудиокредитов, \$69 — три коммерческие аудиокниги на премиальном голосе или семь на стандартном</li>
+    </ul>
+    <p>Как и пакеты кредитов для электронных книг, они не сгорают. Если вы озвучиваете чаще, чем раз в месяц, <strong>Pro Audio</strong> выходит выгоднее: он включает 900 аудиокредитов каждый месяц за \$49.</p>
+    <p>Иллюстрации к главам стоят 1 дополнительный кредит за изображение (обложка включена бесплатно). Точная сумма видна до подтверждения генерации.</p>
+    <h3>Как работает ежемесячный лимит</h3>
+    <p>Кредиты по тарифу — это <strong>лимит, а не баланс</strong>. Они пополняются до месячного значения вашего тарифа в начале каждого месяца, а неиспользованные к этому моменту сгорают — так что нечего копить и нечего отслеживать.</p>
+    <p><strong>Это касается и ежегодной оплаты.</strong> Годовой тариф — это двенадцать месяцев доступа со скидкой, а не двенадцать месяцев кредитов одним платежом: вы получаете тот же ежемесячный лимит, что и при помесячной оплате, и он пополняется каждый месяц. Аудиокредиты работают так же.</p>
+    <p><strong>Пакеты дополнительных кредитов не сгорают</strong> пока ваш аккаунт активен. Они добавляются к вашему лимиту, и при тратах сначала используются кредиты по тарифу — так что купленный пакет не сгорит, пока рядом истекает бесплатный лимит. На странице оплаты видно, какая часть баланса какая.</p>
+  </div>
+
+  <!-- EXPORTS -->
+  <div class="card" id="exports">
+    <h2>Экспорт и форматы</h2>
+    <ul>
+      <li><strong>PDF</strong> — полностью оформленный: обложка, выбранные шрифты и размер страницы. Доступен на всех тарифах (на бесплатном аккаунте — с небольшой подписью внизу, пока не будет первой покупки).</li>
+      <li><strong>DOCX</strong> — редактируется в Word или Google Docs. Доступен на всех тарифах.</li>
+      <li><strong>EPUB</strong> — для Kindle, Apple Books и Kobo. Доступен на всех тарифах.</li>
+      <li><strong>PPTX</strong> — версия для слайдов: презентации и вебинары. Доступен на всех тарифах.</li>
+      <li><strong>Файлы для публикации</strong> — интерьер для печати по требованию и обложка, обложка для Kindle, HD-обложка и пакет метаданных KDP. Доступны на всех тарифах.</li>
+    </ul>
+    <p>PDF на бесплатном аккаунте содержат небольшую подпись «Сделано с TubeBook.org» внизу, пока аккаунт не совершит покупку, включая разовый пакет кредитов. Все остальные форматы доступны, а экспорт с оплаченных аккаунтов не содержит брендинга TubeBook.</p>
+    <div class="alert-info">📦 Перед удалением электронной книги TubeBook предлагает ZIP-архив всех форматов и обложки.</div>
+  </div>
+
+  <!-- PUBLISHING RISK -->
+  <div class="card" id="publishing-risk">
+    <h2>Проверка рисков публикации</h2>
+    <p>Amazon возлагает ответственность на вас, издателя: вы должны «гарантировать, что ваш контент не нарушает законы или авторские права, товарные знаки, бренды, конфиденциальность, публичность или другие права». В метаданных Amazon заявляет о <strong>политике нулевой терпимости</strong> для всего, что предназначено для рекламы, продвижения или введения в заблуждение — "включая бренды, которыми вы не владеете или на использование которых у вас нет разрешения". Обычное наказание — ваша книга перестает продаваться; повторные проблемы могут затронуть и сам аккаунт.</p>
+    <p>Поэтому TubeBook проверяет метаданные вашей книги и отмечает то, на что обратил бы внимание разумный рецензент KDP:</p>
+    <ul>
+      <li><strong>Бренды</strong> — товарный знак, которым вы не владеете (Lego, Notion, Peloton).</li>
+      <li><strong>Франшизы и персонажи</strong> — Гарри Поттер, Покемоны, Звездные войны.</li>
+      <li><strong>Живые авторы и публичные личности</strong> на которых ссылается книга.</li>
+      <li><strong>Заявления о поддержке</strong> — "официальный", "авторизованный" или формулировка "краткое изложение" или "рабочая тетрадь", подразумевающая разрешение. Производные работы на основе книги, защищенной авторским правом, требуют письменного разрешения правообладателя.</li>
+      <li><strong>Тексты песен</strong> и длинные цитаты из произведений, защищенных авторским правом.</li>
+      <li><strong>Неотличимые переиздания общественного достояния</strong>, которые KDP отклоняет, если бесплатная версия уже существует.</li>
+      <li><strong>Ключевые слова, не описывающие вашу книгу</strong> — набивка ключевыми словами.</li>
+    </ul>
+    <h3>Когда это происходит</h3>
+    <p>Дважды. Один раз <strong>когда вы утверждаете план</strong>, где название и подзаголовок еще можно изменить, и еще раз на <strong>сгенерированных метаданных KDP</strong> — потому что даже идеально чистое название может содержать название бренда в одном из 7 ключевых слов, и именно это часто приводит к блокировке карточки товара.</p>
+    <h3>Подозреваемые товарные знаки подтверждаются</h3>
+    <p>Каждый отмеченный бренд или франшиза сопровождается ссылкой в один клик на реестр товарных знаков США, чтобы вы могли увидеть фактического владельца и действует ли знак. "MONOPOLY, зарегистрирован Hasbro" говорит гораздо больше, чем "это может быть бренд" — и проверка занимает секунды.</p>
+    <p>На <strong>каждом тарифе</strong>вы можете пропустить переходы по ссылкам: одна кнопка проверяет все отмеченные бренды и франшизы сразу и выводит зарегистрированного владельца, статус (действует/не действует) и серийный номер рядом с каждым результатом. Это стоит <strong>1 кредит за всю книгу</strong>, независимо от количества отмеченных знаков, и вас попросят оплатить только после того, как вы увидите результаты — ничего не проверяется и не списывается автоматически. Если ничего не отмечено, предложение не появляется.</p>
+    <p>Ссылки на отдельные знаки остаются бесплатными на всех тарифах, а поиск в реестре USPTO бесплатен напрямую. Вы платите за то, что проверки выполняются за вас и результаты показываются на месте, а не за доступ к публичным данным.</p>
+    <div class="alert-tip">💡 Почему это не просто поиск по базе товарных знаков: почти каждое обычное английское слово является зарегистрированным товарным знаком в каком-то классе. <em>Цитадель</em>, <em>Момент</em>, <em>Инструменты</em>, <em>Журнал</em> и <em>Жизнь</em> принадлежат кому-то. Инструмент, который сопоставлял бы ваше название с реестром, пометил бы каждую книгу, когда-либо написанную, и вы бы справедливо перестали его читать. Реестр существует, чтобы подтвердить конкретное подозрение, а не порождать их.</div>
+    <h3>Чего он не делает</h3>
+    <p><strong>Он никогда не блокирует вашу книгу</strong>, и <strong>он никогда не говорит, что книга безопасна.</strong> Когда он ничего не находит, он говорит «ничего не обнаружено» — не «одобрено» и не «проблем нет», потому что это были бы обещания, которые никто не может дать. Это автоматическая проверка, а не юридическая консультация, она может что-то упустить и не может предсказать решение Amazon. Если ваша книга затрагивает чьи-то права, урегулирование этого — ваша задача, и если вы не уверены, спросите юриста, а не проверяющий сервис.</p>
+  </div>
+
+  <!-- TROUBLESHOOTING -->
+  <div class="card" id="troubleshooting">
+    <h2>Проверка рисков публикации</h2>
+    <h3>Поиск темы не дал результатов</h3>
+    <p>Сервисы рекомендаций иногда недоступны. При неудачном поиске ничего не списывается — 5 кредитов возвращаются автоматически. Попробуйте снова через несколько минут или используйте более широкий термин.</p>
+    <h3>Для моей темы не было предложено источников</h3>
+    <p>Поиск источников использует общие дневные квоты YouTube и нашего поискового провайдера. Когда они исчерпаны на день, TubeBook сообщает вам об этом, а не молча возвращает пустой список — ваши результаты исследования не затрагиваются, и вы можете добавить источники вручную на странице генерации.</p>
+    <h3>«Недостаточно транскрипций в этом месяце»</h3>
+    <p>Транскрипции YouTube берутся из общей месячной квоты. Когда её не хватает для видео в вашей книге, TubeBook <strong>отказывается до списания</strong> и сообщает, сколько осталось и когда квота обновится — вместо того, чтобы собрать книгу из тех источников, которые случайно подошли, и выставить счёт. Источники, не связанные с YouTube, не затрагиваются, поэтому книга из документов, статей или вставленного текста всё равно будет создана.</p>
+
+    <h3>Мои иллюстрации к главам не подходят для книги</h3>
+    <p>Открыть <strong>Редактировать книгу → Просмотр иллюстраций к главам</strong>: снимите галочки с неподходящих или создайте новые варианты для этой главы. Напишите <a href="#artwork">art brief</a> сначала, если хотите определённый стиль, затем создавайте. Ничего не пересобирается, пока вы не сохраните.</p>
+
+    <h3>Генерация зависла</h3>
+    <p>Генерация возобновляется автоматически, если шаг был прерван — никаких действий не требуется. Большинство электронных книг завершаются за несколько минут; длинные коммерческие книги с изображениями могут занять больше времени.</p>
+    <h3>URL YouTube не обрабатывается</h3>
+    <p>Убедитесь, что видео открыто и имеет субтитры (автоматические или ручные). Приватные, с возрастным ограничением или прямые трансляции обработать нельзя.</p>
+    <h3>Я не вижу свою электронную книгу</h3>
+    <p>Открыть <strong>Панель управления</strong>Электронные книги хранятся <strong>30 дней</strong> после генерации — на каждой карточке виден обратный отсчёт. Скачайте всё, что хотите сохранить, до истечения срока. <strong>Озвучка аудиокниги истекает вместе с книгой</strong>, по тому же отсчёту, так что соберите пакет до того, как время выйдет.</p>
+    <h3>Срок действия ссылки истёк</h3>
+    <p>Подписанные ссылки для скачивания действуют 24 часа. Приложение обновляет их по запросу — просто откройте панель управления, и ссылки обновятся автоматически.</p>
+  </div>
+
+  <!-- ACCOUNT -->
+  <div class="card" id="account">
+    <h2>Аккаунт и оплата</h2>
+    <ul>
+      <li>Управляйте планом и способом оплаты в разделе <strong>Оплата</strong> в приложении.</li>
+      <li>Вы можете отменить подписку в любой момент; доступ сохранится до конца текущего расчётного периода.</li>
+      <li>Нужна помощь с возвратом, счётом или аккаунтом? Напишите на <a href="mailto:support@tubebook.org">support@tubebook.org</a>.</li>
+    </ul>
+  </div>
+
+  <div class="alert-info" style="margin-top: 3rem;">
+    ✉ Остались вопросы? Напишите на <a href="mailto:support@tubebook.org">support@tubebook.org</a> — обычно отвечаем в течение 1 рабочего дня.
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">© <span id="y"></span> TubeBook · <a href="https://tubebook.org">tubebook.org</a></div>
+    <div class="footer-links">
+      <a href="/ru/">Главная</a><a href="/ru/help">Справка</a><a href="/ru/privacy">Конфиденциальность</a><a href="/ru/terms">Условия</a><a href="/ru/contact">Контакты</a>
+    </div>
+  </div>
+  <div class="footer-note">TubeBook (tubebook.org) — независимый продукт и <strong>не имеет отношения к TubeBook AI (tubebookai.com)</strong>, отдельной компании с похожим названием. TubeBook продаётся только через tubebook.org — у нас нет посредников и нет тарифов с пожизненным или безлимитным доступом.</div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script src="/promo-banner.js" defer></script>
+</body>
+</html>

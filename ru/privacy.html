@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-tubebook_32x32.png" />
+<title>Политика конфиденциальности — TubeBook</title>
+<meta name="description" content="Как TubeBook собирает, использует, хранит и защищает ваши персональные данные и создаваемый вами контент." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* ─── TUBEBOOK INNER PAGE — SHARED CSS ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #08090d; --bg2: #0f1118; --bg3: #14171f; --card: #131620;
+  --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
+  --amber: #ff6200; --amber2: #ff8c42; --amber-dim: rgba(255,98,0,0.12);
+  --red: #ff3b3b; --red-dim: rgba(255,59,59,0.12);
+  --green: #2ecc71; --green-dim: rgba(46,204,113,0.11);
+  --text: #f0eee8; --muted: #7b7d8a; --muted2: #a0a3b1;
+  --radius: 14px; --radius-lg: 20px;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; overflow-x: hidden; }
+a { color: var(--amber); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--amber2); text-decoration: underline; }
+strong { color: var(--text); font-weight: 600; }
+code, kbd { background: var(--bg3); border: 1px solid var(--border); padding: 2px 7px; border-radius: 5px; font-size: .85em; font-family: 'DM Mono', 'Fira Code', monospace; color: var(--amber2); }
+
+/* NAV */
+nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 4rem; background: rgba(8,9,13,0.88); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); }
+.nav-logo { display: flex; align-items: center; gap: 10px; font-size: 1.2rem; font-weight: 700; color: var(--text); text-decoration: none; }
+.nav-logo:hover { text-decoration: none; }
+.logo-icon { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, #ff6200 0%, #cc4e00 100%); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0; }
+.logo-text span { color: var(--amber); }
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-links a { color: var(--muted2); font-size: 0.875rem; text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--amber); text-decoration: none; }
+.nav-cta { background: var(--amber); color: #1a1200 !important; font-size: 0.85rem; font-weight: 600; padding: 0.5rem 1.2rem; border-radius: 8px; text-decoration: none !important; transition: background 0.2s; }
+.nav-cta:hover { background: var(--amber2); }
+
+/* LAYOUT */
+.page-wrap { max-width: 860px; margin: 0 auto; padding: 0 2rem 6rem; }
+.page-header { padding: 4rem 0 2.5rem; border-bottom: 1px solid var(--border); margin-bottom: 3rem; position: relative; overflow: hidden; }
+.page-header::after { content: ''; position: absolute; top: 0; inset-inline-end: -40px; width: 340px; height: 220px; background: radial-gradient(ellipse, rgba(255,98,0,0.06) 0%, transparent 70%); pointer-events: none; }
+.breadcrumb { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; display: flex; align-items: center; gap: 6px; }
+.breadcrumb a { color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--amber); }
+.breadcrumb span { opacity: 0.4; }
+h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 900; line-height: 1.15; letter-spacing: -0.02em; color: var(--text); }
+.page-lead { font-size: 1.05rem; color: var(--muted2); margin-top: 0.8rem; max-width: 580px; line-height: 1.7; }
+.page-meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.6rem; }
+
+/* TYPOGRAPHY */
+h2 { font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 700; color: var(--text); margin: 3rem 0 1rem; letter-spacing: -0.01em; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+.sec-num { font-family: 'Outfit', sans-serif; font-size: 0.7rem; font-weight: 600; color: var(--amber); background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.22); padding: 0.15rem 0.55rem; border-radius: 100px; letter-spacing: 0.05em; flex-shrink: 0; }
+h3 { font-size: 0.97rem; font-weight: 600; color: var(--text); margin: 1.5rem 0 0.5rem; }
+p { color: var(--muted2); line-height: 1.75; margin-bottom: 0.8rem; }
+ul, ol { color: var(--muted2); padding-inline-start: 1.4rem; line-height: 1.75; }
+li { margin-bottom: 0.45rem; }
+
+/* CARDS */
+.card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.6rem 1.8rem; margin: 1rem 0; position: relative; overflow: hidden; }
+.card::before { content: ''; position: absolute; top: 0; inset-inline-start: 0; inset-inline-end: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,98,0,0.18), transparent); }
+
+/* TOC */
+.toc-box { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem 1.8rem; margin-bottom: 2.5rem; }
+.toc-box-title { font-size: 0.72rem; font-weight: 600; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.8rem; }
+.toc-box ol { padding-inline-start: 1.2rem; }
+.toc-box li { margin-bottom: 0.3rem; }
+.toc-box a { font-size: 0.88rem; color: var(--muted2); text-decoration: none; }
+.toc-box a:hover { color: var(--amber); }
+
+/* TABLES */
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+th { text-align:start; padding: 0.7rem 0.9rem; font-size: 0.75rem; font-weight: 600; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1px solid var(--border2); }
+td { padding: 0.7rem 0.9rem; color: var(--muted2); border-bottom: 1px solid var(--border); }
+tr:last-child td { border-bottom: none; }
+td strong { color: var(--text); }
+
+/* PILLS */
+.pill { display: inline-block; background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.25); color: var(--amber2); font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.65rem; border-radius: 100px; letter-spacing: 0.04em; margin-inline-end: 6px; vertical-align: middle; }
+
+/* ALERT BOXES */
+.alert-warn { background: rgba(255,59,59,0.07); border: 1px solid rgba(255,59,59,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: #ff9a9a; }
+.alert-tip { background: var(--green-dim); border: 1px solid rgba(46,204,113,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: #7be8a8; }
+.alert-info { background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: var(--amber2); }
+
+/* FOOTER */
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2.5rem 4rem; }
+.footer-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.footer-brand { font-size: 0.82rem; color: var(--muted); }
+.footer-brand a { color: var(--amber); text-decoration: none; }
+.footer-links { display: flex; gap: 1.8rem; flex-wrap: wrap; }
+.footer-links a { font-size: 0.82rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text); }
+
+@media (max-width: 760px) {
+  nav { padding: 0.9rem 1.2rem; }
+  .nav-links { display: none; }
+  .page-wrap { padding: 0 1.2rem 4rem; }
+  footer { padding: 2rem 1.2rem; }
+}
+.rights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 1rem 0; }
+@media (max-width: 500px) { .rights-grid { grid-template-columns: 1fr; } }
+.right-pill { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 0.7rem 1rem; font-size: 0.84rem; color: var(--muted2); display: flex; align-items: center; gap: 8px; }
+.right-pill::before { content: '✓'; color: var(--amber); font-weight: 700; flex-shrink: 0; }
+</style>
+<!-- i18n:begin -->
+<link rel="alternate" hreflang="en" href="https://tubebook.org/privacy" />
+<link rel="alternate" hreflang="fr" href="https://tubebook.org/fr/privacy" />
+<link rel="alternate" hreflang="es" href="https://tubebook.org/es/privacy" />
+<link rel="alternate" hreflang="pt" href="https://tubebook.org/pt/privacy" />
+<link rel="alternate" hreflang="de" href="https://tubebook.org/de/privacy" />
+<link rel="alternate" hreflang="ru" href="https://tubebook.org/ru/privacy" />
+<link rel="alternate" hreflang="zh-Hans" href="https://tubebook.org/zh/privacy" />
+<link rel="alternate" hreflang="ar" href="https://tubebook.org/ar/privacy" />
+<link rel="alternate" hreflang="x-default" href="https://tubebook.org/privacy" />
+<link rel="canonical" href="https://tubebook.org/ru/privacy" />
+<script src="/lang-switcher.js" defer></script>
+<!-- i18n:end -->
+</head>
+<body>
+
+<nav>
+  <a href="/ru/" class="nav-logo" style="padding:0;">
+    <img src="/logo-tubebook-1500x450.png" alt="TubeBook" style="height:48px;width:auto;display:block;" />
+  </a>
+  <div class="nav-links">
+    <a href="/ru/help">Помощь</a>
+    <a href="/ru/privacy" class="active">Конфиденциальность</a>
+    <a href="/ru/terms">Условия</a>
+    <a href="/ru/contact">Контакты</a>
+  </div>
+  <a href="https://app.tubebook.org" class="nav-cta">Открыть приложение →</a>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/ru/">Главная</a><span>/</span>Политика конфиденциальности</div>
+    <h1>Политика конфиденциальности</h1>
+    <p class="page-lead">Как TubeBook собирает, использует и защищает вашу информацию при использовании нашего сайта и приложений.</p>
+    <p class="page-meta">Последнее обновление: 25 августа 2026 г.</p>
+  </div>
+
+  <div class="toc-box">
+    <div class="toc-box-title">Содержание</div>
+    <ol>
+      <li><a href="#s1">Какую информацию мы собираем</a></li>
+      <li><a href="#s2">Как мы используем информацию</a></li>
+      <li><a href="#s3">AI-обработка и субпроцессоры</a></li>
+      <li><a href="#s4">Хранение данных</a></li>
+      <li><a href="#s5">Файлы cookie</a></li>
+      <li><a href="#s6">Безопасность</a></li>
+      <li><a href="#s7">Ваши права</a></li>
+      <li><a href="#s8">Международная передача данных</a></li>
+      <li><a href="#s9">Дети</a></li>
+      <li><a href="#s10">Изменения</a></li>
+      <li><a href="#s11">Контакты</a></li>
+    </ol>
+  </div>
+
+  <p style="color:var(--muted2);">Используя Сервис, вы соглашаетесь с описанными здесь правилами.</p>
+
+  <h2 id="s1"><span class="sec-num">01</span>Какую информацию мы собираем</h2>
+  <div class="card">
+    <h3>Данные аккаунта</h3>
+    <ul>
+      <li>Адрес электронной почты, отображаемое имя, хэш пароля (или идентификатор OAuth).</li>
+      <li>Платёжные данные — обрабатываются Stripe; мы никогда не храним полные номера карт.</li>
+    </ul>
+    <h3>Контент, который вы предоставляете</h3>
+    <ul>
+      <li>Исходный материал, который вы отправляете для обработки: URL-адреса YouTube, URL-адреса веб-страниц, вставленный текст, а также загруженные документы Word, PowerPoint или PDF.</li>
+      <li>Текст, извлечённый с указанных вами URL-адресов веб-страниц. Когда вы добавляете веб-страницу в качестве источника, мы получаем эту страницу от вашего имени и сохраняем извлечённый текст вместе с вашей электронной книгой, чтобы его можно было использовать для написания глав.</li>
+      <li>Сгенерированные электронные книги, обложки, изображения глав, аудиофайлы, переводы, правки, результаты проверки качества и связанные метаданные публикации.</li>
+      <li>Изображения, которые вы загружаете, и выбор размещения изображений внутри книги.</li>
+      <li>Образцы текста, которые вы предоставляете для создания личного профиля стиля. Загруженный файл удаляется после чтения; полученное описание стиля и короткие отрывки сохраняются в вашем профиле, чтобы вы могли просмотреть, уточнить или удалить их.</li>
+      <li><strong>Запросы на исследование тем.</strong> Ниша или тема, которую вы вводите в поле «Найти тему», вместе с полученными результатами, сохраняются в вашем аккаунте, чтобы вы могли снова открыть исследование без повторной оплаты. Результаты исследования кэшируются и могут быть использованы для ответа на аналогичный запрос другого пользователя — кэшированная запись содержит только тему и публичные рыночные данные, никогда не содержит вашу личность или исходные материалы.</li>
+    </ul>
+    <h3>Технические данные</h3>
+    <ul>
+      <li>IP-адрес, информация о браузере и устройстве, временные метки журналов.</li>
+      <li>События использования (запущенные генерации, потраченные кредиты, ошибки).</li>
+    </ul>
+  </div>
+
+  <h2 id="s2"><span class="sec-num">02</span>Как мы используем информацию</h2>
+  <ul>
+    <li>Для работы Сервиса: обработка генераций, доставка экспортов, отслеживание баланса кредитов.</li>
+    <li>Для выставления счетов за подписки и пакеты кредитов через Stripe.</li>
+    <li>Для отправки транзакционных писем (аккаунт, оплата, безопасность).</li>
+    <li>Для отправки occasional новостей о продукте и предложений владельцам аккаунтов через нашего почтового провайдера (Brevo). Каждое такое письмо содержит ссылку для отказа от подписки в один клик, которая действует немедленно и навсегда.</li>
+    <li>Для отладки, защиты платформы и улучшения качества.</li>
+  </ul>
+
+  <h2 id="s3"><span class="sec-num">03</span>AI-обработка и субпроцессоры</h2>
+  <p>Для генерации, редактирования, проверки или перевода электронных книг соответствующее содержимое ваших источников и книги — транскрипты видео, извлеченный текст веб-страниц или документов, вставленный текст, текст глав и инструкции — отправляется настроенным провайдерам ИИ-моделей через наши серверные интеграции. Эти провайдеры обрабатывают контент для возврата запрошенного результата и не используют содержимое API для обучения своих моделей в соответствии с применимыми бизнес/API условиями.</p>
+  <div class="card">
+    <ul>
+      <li><strong>Supabase / Lovable Cloud</strong> — база данных, аутентификация, хранилище.</li>
+      <li><strong>Stripe</strong> — платежи и управление подписками.</li>
+      <li><strong>Cloudflare</strong> — хостинг, edge-среда выполнения, защита от DDoS, а также ИИ-модели для иллюстраций глав и премиального озвучивания.</li>
+      <li><strong>Google</strong> — генерация текста и изображений Gemini при выборе или использовании в качестве запасного варианта.</li>
+      <li><strong>DeepSeek</strong> и <strong>Anthropic</strong> — генерация текста, редактирование или проверка качества при настройке TubeBook.</li>
+    </ul>
+  </div>
+
+  <h3>Озвучивание аудиокниг</h3>
+  <p>Если вы озвучиваете книгу, <strong>текст этой книги</strong> отправляется провайдеру text-to-speech для озвучивания. Больше ничего не передается — ни имени, ни email, ни идентификатора аккаунта — и провайдер возвращает аудио и не сохраняет прав на него. Какой провайдер используется, зависит от выбранного голоса и доступности:</p>
+  <div class="card">
+    <ul>
+      <li><strong>Google Cloud Text-to-Speech</strong> — стандартные голоса.</li>
+      <li><strong>Cloudflare Workers AI</strong> (Deepgram Aura) — премиальные голоса, обрабатываемые на той же инфраструктуре, которая уже размещает приложение.</li>
+      <li><strong>OpenAI</strong> — используется только как запасной вариант, когда провайдер выбранного голоса недоступен. По условиям API OpenAI этот контент не используется для обучения их моделей.</li>
+    </ul>
+  </div>
+  <p>Озвучивание необязательно и запускается только по вашему запросу для конкретной книги. Если вы не хотите, чтобы ваш текст попадал к провайдеру озвучивания, просто не озвучивайте эту книгу.</p>
+
+  <h3>Стоковые фотографии и пользовательские изображения</h3>
+  <p>Если вы выберете <strong>Стоковые фото</strong>, TubeBook отправляет описательный поисковый запрос, основанный на теме книги или главы, в одну или несколько поддерживаемых библиотек. Он не отправляет ваше имя, адрес электронной почты или идентификатор учетной записи. Результаты поиска могут включать идентификатор изображения провайдера, имя фотографа, исходный URL и URL для указания авторства; TubeBook хранит эти данные вместе с выбранным изображением, чтобы необходимые кредиты и ссылки были включены в редактор и экспортированную книгу.</p>
+  <div class="card">
+    <ul>
+      <li><strong>Unsplash</strong> — поиск стоковых фото, отслеживание загрузок, требуемое их API, и указание авторства фотографа.</li>
+      <li><strong>Pexels</strong> и <strong>Pixabay</strong> — поиск стоковых фото и указание источника, где это возможно.</li>
+    </ul>
+  </div>
+  <p>Если вы загружаете собственные изображения, файл хранится конфиденциально вместе с книгой и используется только для обложки или размещения в главе по вашему выбору. Вы несете ответственность за наличие прав на его использование.</p>
+  <h3>Исследование темы</h3>
+  <p>При использовании «Найти тему» <strong>введённый вами текст темы</strong> (и производные от него фразы) отправляется в следующие сервисы для поиска рыночных данных. Ваше имя, адрес электронной почты, идентификатор учетной записи и исходный материал <strong>не</strong> отправляются — эти запросы выполняются нашим сервером и не содержат информации, идентифицирующей вас.</p>
+  <div class="card">
+    <ul>
+      <li><strong>Amazon</strong> — публичный сервис поисковых подсказок, чтобы видеть, что вводят покупатели.</li>
+      <li><strong>Google</strong> — публичный сервис поисковых подсказок для той же цели.</li>
+      <li><strong>Google Books API</strong> — для подсчета и описания уже опубликованных книг.</li>
+      <li><strong>YouTube Data API</strong> (Google) — для поиска подходящих исходных видео.</li>
+      <li><strong>Serper</strong> — результаты поиска Google для поиска потенциальных исходных статей.</li>
+    </ul>
+  </div>
+  <p>Каждый из этих провайдеров может регистрировать полученный запрос в соответствии со своей политикой конфиденциальности. Поскольку запрос является темой, а не личными данными, и отправляется без идентификаторов учетной записи, мы считаем этот риск низким — но если вы предпочитаете, чтобы тема никогда не покидала наши системы, не вводите ее в поле «Найти тему».</p>
+
+  <h3>Проверка издательских рисков</h3>
+  <p>Чтобы выявить возможные риски интеллектуальной собственности, ваши <strong>название, подзаголовок, описание, ключевые слова, категории и заголовки глав</strong> отправляются тем же ИИ-провайдерам, описанным выше. Текст глав не отправляется.</p>
+  <p>Мы <strong>не</strong> не отправляем ничего в службу регистрации товарных знаков. Если проверка указывает на бренд, TubeBook показывает вам ссылку на публичный реестр; переход по ней — ваш выбор, и запрос выполняется вашим браузером, а не нами.</p>
+
+  <h2 id="s4"><span class="sec-num">04</span>Хранение данных</h2>
+  <ul>
+    <li>Сгенерированные электронные книги хранятся <strong>30 дней</strong>, затем архивируются/удаляются. Скачайте все, что хотите сохранить.</li>
+    <li>Озвучка аудиокниги — без потерь мастер-копии и всё, что из них создано, — удаляется в <strong>тому же 30-дневному сроку</strong> , что и книга, к которой они относятся. Аудио не хранится дольше, чем электронная книга.</li>
+    <li>Результаты исследования темы кэшируются на <strong>14 дней</strong>, после чего та же ниша исследуется заново. Хранимая запись ваших прошлых поисков остается доступной в вашей учетной записи до тех пор, пока вы не удалите учетную запись.</li>
+    <li>Записи об учетной записи и выставлении счетов хранятся, пока ваша учетная запись активна, и в соответствии с законом (обычно до 7 лет для счетов).</li>
+    <li>Вы можете запросить удаление своей учетной записи в любое время (см. Раздел 7).</li>
+  </ul>
+
+  <h2 id="s5"><span class="sec-num">05</span>Файлы cookie</h2>
+  <p>Мы используем строго необходимые файлы cookie для аутентификации и управления сеансами, а также минимальную аналитику для понимания использования продукта. Мы не запускаем сторонние рекламные трекеры.</p>
+
+  <h2 id="s6"><span class="sec-num">06</span>Безопасность</h2>
+  <p>Мы используем TLS при передаче, шифрование в состоянии покоя, ограниченный доступ к базе данных (безопасность на уровне строк) и серверные учетные данные с минимальными привилегиями. Ни одна система не является абсолютно безопасной; если вы считаете, что ваша учетная запись скомпрометирована, немедленно свяжитесь с нами по адресу <a href="mailto:support@tubebook.org">support@tubebook.org</a>.</p>
+
+  <h2 id="s7"><span class="sec-num">07</span>Ваши права</h2>
+  <p>В зависимости от вашей юрисдикции (например, GDPR, CCPA) у вас есть следующие права в отношении ваших персональных данных:</p>
+  <div class="rights-grid">
+    <div class="right-pill">Доступ к данным</div>
+    <div class="right-pill">Исправление неточностей</div>
+    <div class="right-pill">Экспорт данных</div>
+    <div class="right-pill">Удаление учетной записи</div>
+    <div class="right-pill">Ограничение обработки</div>
+    <div class="right-pill">Возражение против обработки</div>
+  </div>
+  <p>Email <a href="mailto:support@tubebook.org">support@tubebook.org</a> для осуществления любого из этих прав. Мы отвечаем в течение 30 дней.</p>
+
+  <h2 id="s8"><span class="sec-num">08</span>Международная передача данных</h2>
+  <p>Ваши данные могут обрабатываться в США и Европейском союзе. При необходимости передача данных осуществляется на основе стандартных договорных положений или эквивалентных гарантий.</p>
+
+  <h2 id="s9"><span class="sec-num">09</span>Дети</h2>
+  <p>TubeBook не предназначен для детей младше 13 лет (или младше 16 лет в ЕЭЗ). Мы сознательно не собираем данные детей. Если нам станет известно о таких данных, мы незамедлительно удалим соответствующий аккаунт.</p>
+
+  <h2 id="s10"><span class="sec-num">10</span>Изменения</h2>
+  <p>Мы можем обновлять эту политику. О существенных изменениях мы сообщим по электронной почте или через уведомление в приложении не менее чем за 14 дней до их вступления в силу.</p>
+
+  <h2 id="s11"><span class="sec-num">11</span>Контакты</h2>
+  <p>Вопросы о конфиденциальности и запросы данных: <a href="mailto:support@tubebook.org">support@tubebook.org</a></p>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">© <span id="y"></span> TubeBook · <a href="https://tubebook.org">tubebook.org</a></div>
+    <div class="footer-links">
+      <a href="/ru/">Главная</a><a href="/ru/help">Помощь</a><a href="/ru/privacy">Конфиденциальность</a><a href="/ru/terms">Условия</a><a href="/ru/contact">Контакты</a>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script src="/promo-banner.js" defer></script>
+</body>
+</html>

@@ -19,7 +19,7 @@
 html { scroll-behavior: smooth; }
 body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
 nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  position: fixed; top: 0; inset-inline-start: 0; inset-inline-end: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
   padding: 1.1rem 4rem; background: rgba(8,9,13,0.75);
   backdrop-filter: blur(18px); border-bottom: 1px solid var(--border);
@@ -48,7 +48,7 @@ nav {
 }
 .page-content h2:first-of-type { border-top: none; padding-top: 0; }
 .page-content p, .page-content li { font-size: 0.92rem; color: var(--muted2); line-height: 1.8; margin-bottom: 0.8rem; }
-.page-content ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+.page-content ul { padding-inline-start: 1.5rem; margin-bottom: 1rem; }
 .page-content a { color: var(--amber); text-decoration: none; }
 .page-content a:hover { text-decoration: underline; }
 footer {

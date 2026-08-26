@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-tubebook_32x32.png" />
+<title>TubeBook — превращайте видео с YouTube и статьи в готовые к публикации электронные книги</title>
+<meta name="description" content="Получайте 100 бесплатных кредитов каждый месяц. Превращайте видео, статьи, документы или рукопись в полностью написанную, иллюстрированную электронную книгу — со всеми функциями на любом тарифе." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://tubebook.org/" />
+<meta property="og:title" content="TubeBook — превращайте видео с YouTube в готовые к публикации электронные книги" />
+<meta property="og:description" content="Превращайте видео, статьи, документы и заметки в структурированную, полностью написанную электронную книгу. Каждый тариф включает все функции создания, редактирования, оформления и экспорта; бесплатный тариф — 100 кредитов ежемесячно." />
+<meta property="og:image" content="https://tubebook.org/banner-tubebook_1200x600.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="600" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://tubebook.org/banner-tubebook_1200x600.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:#08090d;--bg2:#0f1118;--bg3:#14171f;--card:#131620;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);
+  --amber:#ff6200;--amber2:#ff8c42;--amber-dim:rgba(255,98,0,0.12);
+  --red:#ff3b3b;--red-dim:rgba(255,59,59,0.12);
+  --green:#2ecc71;--green-dim:rgba(46,204,113,0.11);
+  --yellow:#f5c842;--yellow-dim:rgba(245,200,66,0.11);
+  --text:#f0eee8;--muted:#7b7d8a;--muted2:#a0a3b1;
+  --radius:14px;--radius-lg:20px;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6;}
+nav{position:fixed;top:0;inset-inline-start:0;inset-inline-end:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 4rem;background:rgba(8,9,13,0.80);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:10px;font-size:1.35rem;font-weight:700;color:var(--text);text-decoration:none;}
+.logo-icon{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--red) 0%,#b72a2a 100%);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;flex-shrink:0;}
+.logo-text span{color:var(--amber);}
+.nav-links{display:flex;align-items:center;gap:2rem;}
+.nav-links a{color:var(--muted2);font-size:0.9rem;text-decoration:none;font-weight:400;transition:color 0.2s;}
+.nav-links a:hover{color:var(--text);}
+.nav-cta{background:var(--amber);color:#1a1200;font-size:0.875rem;font-weight:600;padding:0.55rem 1.35rem;border-radius:8px;text-decoration:none;transition:background 0.2s,transform 0.15s;}
+.nav-cta:hover{background:var(--amber2);transform:translateY(-1px);}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 6rem;position:relative;overflow:hidden;}
+.hero-orb-1{position:absolute;top:-180px;left:50%;transform:translateX(-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(255,98,0,0.08) 0%,transparent 70%);pointer-events:none;}
+.hero-orb-2{position:absolute;bottom:-120px;inset-inline-end:-160px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,59,59,0.07) 0%,transparent 70%);pointer-events:none;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.25);color:var(--amber2);font-size:0.8rem;font-weight:500;padding:0.4rem 1rem;border-radius:100px;margin-bottom:2.2rem;animation:fadeDown 0.6s ease both;}
+.hero-badge svg{width:14px;height:14px;fill:var(--amber2);}
+h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,5.2rem);font-weight:900;line-height:1.1;letter-spacing:-0.02em;color:var(--text);max-width:860px;animation:fadeUp 0.7s 0.1s ease both;}
+h1 em{font-style:italic;color:var(--amber);display:block;}
+.hero-sub{max-width:600px;margin:1.8rem auto 0;font-size:1.1rem;color:var(--muted2);line-height:1.7;animation:fadeUp 0.7s 0.2s ease both;}
+.hero-sub strong{color:var(--text);}
+.hero-actions{display:flex;align-items:center;gap:1rem;margin-top:2.8rem;flex-wrap:wrap;justify-content:center;animation:fadeUp 0.7s 0.3s ease both;}
+.btn-primary{background:var(--amber);color:#1a1200;font-size:1rem;font-weight:700;padding:0.85rem 2.2rem;border-radius:10px;text-decoration:none;display:flex;align-items:center;gap:8px;transition:background 0.2s,transform 0.15s,box-shadow 0.2s;box-shadow:0 4px 24px rgba(255,98,0,0.25);}
+.btn-primary:hover{background:var(--amber2);transform:translateY(-2px);box-shadow:0 8px 36px rgba(255,98,0,0.35);}
+.btn-secondary{background:transparent;color:var(--muted2);font-size:1rem;font-weight:500;padding:0.85rem 1.8rem;border-radius:10px;text-decoration:none;border:1px solid var(--border2);transition:border-color 0.2s,color 0.2s;}
+.btn-secondary:hover{border-color:var(--amber);color:var(--amber);}
+.hero-note{margin-top:1.2rem;font-size:0.82rem;color:var(--muted);animation:fadeUp 0.7s 0.4s ease both;}
+
+/* DEMO CARD */
+.demo-wrap{margin-top:4.5rem;width:100%;max-width:700px;animation:fadeUp 0.8s 0.5s ease both;}
+.demo-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:1.6rem 1.8rem;position:relative;overflow:hidden;}
+.demo-card::before{content:'';position:absolute;top:0;inset-inline-start:0;inset-inline-end:0;height:1px;background:linear-gradient(90deg,transparent,var(--amber),transparent);}
+.demo-row{display:flex;align-items:center;gap:10px;margin-bottom:1.2rem;}
+.demo-yt{background:var(--red-dim);border:1px solid rgba(255,59,59,0.2);border-radius:8px;padding:0.55rem 0.9rem;font-size:0.8rem;color:#ff7b7b;font-weight:500;display:flex;align-items:center;gap:7px;flex:1;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.demo-arrow{color:var(--amber);font-size:1.1rem;font-weight:700;flex-shrink:0;animation:pulse 1.5s infinite;}
+.demo-book-tag{background:var(--amber-dim);border:1px solid rgba(255,98,0,0.25);border-radius:8px;padding:0.55rem 0.9rem;font-size:0.8rem;color:var(--amber2);font-weight:500;display:flex;align-items:center;gap:6px;flex-shrink:0;}
+.demo-controls{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem;}
+.demo-control-chip{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:0.55rem 0.85rem;font-size:0.72rem;}
+.chip-label{color:var(--muted);margin-bottom:2px;}
+.chip-value{color:var(--text);font-weight:600;display:flex;align-items:center;gap:6px;}
+.chip-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.chip-dot.green{background:var(--green);}
+.chip-dot.yellow{background:var(--yellow);}
+.chip-dot.red{background:var(--red);}
+.demo-steps{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;}
+.demo-step{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:0.6rem 0.4rem;text-align:center;font-size:0.66rem;color:var(--muted);line-height:1.3;}
+.demo-step.active{border-color:rgba(255,98,0,0.35);color:var(--amber2);background:var(--amber-dim);}
+.demo-step .step-icon{font-size:0.95rem;margin-bottom:3px;display:block;}
+
+/* LOGOS */
+.logos-section{padding:2.8rem 4rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center;}
+.logos-label{font-size:0.78rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.6rem;}
+.logos-row{display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap;}
+.logo-badge{font-size:0.88rem;color:var(--muted);font-weight:500;display:flex;align-items:center;gap:7px;opacity:0.55;filter:grayscale(1);transition:opacity 0.2s,filter 0.2s;}
+.logo-badge:hover{opacity:1;filter:none;}
+.logo-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--amber);opacity:0.5;}
+
+/* SECTIONS */
+section{padding:6rem 4rem;}
+.section-label{display:inline-block;font-size:0.75rem;font-weight:600;color:var(--amber);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1rem;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1.2;letter-spacing:-0.02em;margin-bottom:1rem;}
+.section-sub{font-size:1.05rem;color:var(--muted2);max-width:520px;line-height:1.7;}
+
+/* HOW IT WORKS */
+.hiw{background:var(--bg2);}
+.hiw-inner{max-width:1100px;margin:0 auto;}
+.hiw-header{margin-bottom:3.5rem;}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5px;background:var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+.step-card.step-wide{grid-column:span 2;}
+.step-card{background:var(--card);padding:2rem 1.4rem;position:relative;transition:background 0.3s;}
+.step-card:hover{background:#181b28;}
+.step-num{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;color:rgba(255,98,0,0.14);line-height:1;margin-bottom:1rem;}
+.step-icon-wrap{width:40px;height:40px;border-radius:10px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;}
+.step-icon-wrap svg{width:20px;height:20px;stroke:var(--amber2);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.step-icon-wrap.red-tint{background:var(--red-dim);border-color:rgba(255,59,59,0.2);}
+.step-icon-wrap.red-tint svg{stroke:#ff7b7b;}
+.step-card h3{font-size:0.92rem;font-weight:600;margin-bottom:0.4rem;}
+.step-card p{font-size:0.82rem;color:var(--muted2);line-height:1.6;}
+.step-badge{display:inline-block;font-size:0.62rem;font-weight:600;padding:0.18rem 0.55rem;border-radius:100px;margin-top:0.6rem;letter-spacing:0.04em;background:var(--amber-dim);color:var(--amber2);border:1px solid rgba(255,98,0,0.25);}
+
+/* FIDELITY */
+.fidelity-inner{max-width:1100px;margin:0 auto;}
+.fidelity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-top:3.5rem;}
+.fidelity-card{background:var(--card);padding:2.2rem 2rem;position:relative;overflow:hidden;transition:background 0.3s;}
+.fidelity-card:hover{background:#181b28;}
+.legal-badge{display:inline-flex;align-items:center;gap:7px;font-size:0.72rem;font-weight:700;padding:0.28rem 0.8rem;border-radius:100px;margin-bottom:1.4rem;letter-spacing:0.05em;text-transform:uppercase;}
+.legal-badge.red{background:rgba(255,59,59,0.13);color:#ff7b7b;border:1px solid rgba(255,59,59,0.25);}
+.legal-badge.yellow{background:rgba(245,200,66,0.12);color:var(--yellow);border:1px solid rgba(245,200,66,0.25);}
+.legal-badge.green{background:var(--green-dim);color:var(--green);border:1px solid rgba(46,204,113,0.25);}
+.legal-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.legal-dot.red{background:var(--red);}
+.legal-dot.yellow{background:var(--yellow);}
+.legal-dot.green{background:var(--green);}
+.fidelity-card h3{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin-bottom:0.5rem;}
+.fidelity-tagline{font-size:0.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem;}
+.fidelity-card p{font-size:0.88rem;color:var(--muted2);line-height:1.7;margin-bottom:1rem;}
+.fidelity-uses{display:flex;flex-direction:column;gap:0.45rem;margin-top:1.2rem;}
+.fidelity-use{font-size:0.8rem;color:var(--muted2);display:flex;align-items:center;gap:8px;}
+.fidelity-use::before{content:'→';color:var(--amber);font-size:0.8rem;flex-shrink:0;}
+.fidelity-card.highlight-green{background:linear-gradient(160deg,#0d1a12 0%,var(--card) 100%);}
+.fidelity-card.highlight-green::before{content:'';position:absolute;top:0;inset-inline-start:0;inset-inline-end:0;height:2px;background:linear-gradient(90deg,transparent,var(--green),transparent);}
+.ownership-note{background:rgba(255,59,59,0.07);border:1px solid rgba(255,59,59,0.18);border-radius:10px;padding:0.7rem 1rem;margin-top:1.2rem;font-size:0.76rem;color:#ff9a9a;line-height:1.5;display:flex;gap:8px;align-items:flex-start;}
+.kdp-tip{background:var(--green-dim);border:1px solid rgba(46,204,113,0.2);border-radius:10px;padding:0.7rem 1rem;margin-top:1.2rem;font-size:0.76rem;color:#7be8a8;line-height:1.5;display:flex;gap:8px;align-items:flex-start;}
+
+/* ANALYSIS */
+.analysis-section{background:var(--bg3);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.analysis-inner{max-width:1100px;margin:0 auto;}
+.analysis-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:center;}
+.analysis-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:2rem;position:relative;overflow:hidden;}
+.analysis-card::before{content:'';position:absolute;top:0;inset-inline-start:0;inset-inline-end:0;height:1px;background:linear-gradient(90deg,transparent,var(--amber),transparent);}
+.analysis-title{font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1.4rem;}
+.density-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.6rem;}
+.density-label{font-size:0.82rem;color:var(--muted2);}
+.density-score{font-size:0.82rem;font-weight:700;color:var(--amber2);}
+.density-bar-wrap{background:var(--bg3);border-radius:100px;height:5px;margin-bottom:1.4rem;overflow:hidden;}
+.density-bar{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--amber),var(--amber2));transition:width 1s ease;}
+.toc-preview{margin-top:1.4rem;border-top:1px solid var(--border);padding-top:1.2rem;}
+.toc-preview-label{font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.8rem;}
+.toc-items{display:flex;flex-direction:column;gap:0.5rem;}
+.toc-item{display:flex;align-items:center;gap:10px;font-size:0.82rem;color:var(--muted2);}
+.toc-num{width:20px;height:20px;border-radius:5px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);color:var(--amber2);font-size:0.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.toc-item span{color:var(--text);font-size:0.82rem;}
+.wc-selector{margin-top:1.4rem;border-top:1px solid var(--border);padding-top:1.2rem;}
+.wc-label{font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.8rem;}
+.wc-options{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.wc-option{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:0.7rem 0.9rem;cursor:pointer;transition:all 0.2s;}
+.wc-option.selected{border-color:rgba(255,98,0,0.4);background:var(--amber-dim);}
+.wc-name{font-size:0.8rem;font-weight:600;color:var(--text);}
+.wc-words{font-size:0.72rem;color:var(--muted);}
+.warn-banner{margin-top:0.8rem;background:rgba(245,200,66,0.08);border:1px solid rgba(245,200,66,0.2);border-radius:8px;padding:0.65rem 0.9rem;font-size:0.76rem;color:var(--yellow);line-height:1.5;display:none;gap:8px;align-items:flex-start;}
+.warn-banner.visible{display:flex;}
+
+/* WRITING STYLES */
+.styles-section{background:var(--bg2);}
+.styles-inner{max-width:1100px;margin:0 auto;}
+.styles-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:3.5rem;}
+.style-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:2rem;}
+.style-tag{background:var(--card);border:1px solid var(--border2);border-radius:100px;padding:0.5rem 1.1rem;font-size:0.85rem;font-weight:500;color:var(--muted2);cursor:pointer;transition:all 0.2s;user-select:none;}
+.style-tag:hover,.style-tag.active{background:var(--amber-dim);border-color:rgba(255,98,0,0.4);color:var(--amber2);}
+.styles-preview{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.8rem;position:relative;overflow:hidden;min-height:240px;}
+.styles-preview::before{content:'';position:absolute;top:0;inset-inline-start:0;inset-inline-end:0;height:1px;background:linear-gradient(90deg,transparent,var(--amber),transparent);}
+.preview-label{font-size:0.7rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1rem;}
+.preview-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--text);margin-bottom:0.8rem;}
+.preview-text{font-size:0.88rem;color:var(--muted2);line-height:1.75;}
+.preview-text em{color:var(--amber2);font-style:normal;font-weight:600;}
+.preview-style-chip{display:inline-flex;align-items:center;gap:6px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);color:var(--amber2);font-size:0.7rem;font-weight:600;padding:0.2rem 0.65rem;border-radius:100px;margin-bottom:1.2rem;}
+
+/* FEATURES */
+.features-inner{max-width:1100px;margin:0 auto;}
+.features-grid{margin-top:3.5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+.feat-card{background:var(--bg);padding:2rem 1.8rem;transition:background 0.3s;}
+.feat-card:hover{background:var(--card);}
+.feat-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;}
+.feat-icon.amber{background:var(--amber-dim);}
+.feat-icon.red{background:var(--red-dim);}
+.feat-icon.blue{background:rgba(80,130,255,0.12);}
+.feat-icon.green{background:var(--green-dim);}
+.feat-icon svg{width:20px;height:20px;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;fill:none;}
+.feat-icon.amber svg{stroke:var(--amber2);}
+.feat-icon.red svg{stroke:#ff6b6b;}
+.feat-icon.blue svg{stroke:#7ab0ff;}
+.feat-icon.green svg{stroke:var(--green);}
+.feat-card h3{font-size:0.98rem;font-weight:600;margin-bottom:0.5rem;}
+.feat-card p{font-size:0.86rem;color:var(--muted2);line-height:1.65;}
+.feat-new{display:inline-block;font-size:0.62rem;font-weight:700;background:var(--amber-dim);color:var(--amber2);border:1px solid rgba(255,98,0,0.25);padding:0.15rem 0.5rem;border-radius:100px;margin-inline-start:6px;vertical-align:middle;letter-spacing:0.04em;}
+
+/* TESTIMONIALS */
+.testimonials-inner{max-width:1100px;margin:0 auto;}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3.5rem;}
+.testi-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.8rem;}
+.stars{color:var(--amber2);font-size:0.9rem;margin-bottom:1rem;letter-spacing:2px;}
+.testi-tag{display:inline-block;font-size:0.68rem;font-weight:600;padding:0.18rem 0.6rem;border-radius:100px;margin-bottom:1rem;}
+.testi-tag.green{background:var(--green-dim);color:var(--green);border:1px solid rgba(46,204,113,0.2);}
+.testi-tag.yellow{background:var(--yellow-dim);color:var(--yellow);border:1px solid rgba(245,200,66,0.2);}
+.testi-tag.red-t{background:var(--red-dim);color:#ff9a9a;border:1px solid rgba(255,59,59,0.2);}
+.testi-quote{font-size:0.92rem;color:var(--muted2);line-height:1.7;margin-bottom:1.4rem;}
+.testi-quote strong{color:var(--text);font-weight:500;}
+.testi-author{display:flex;align-items:center;gap:10px;}
+.testi-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;}
+.testi-name{font-size:0.84rem;font-weight:600;}
+.testi-role{font-size:0.75rem;color:var(--muted);}
+
+/* PRICING */
+.pricing{background:var(--bg2);}
+.pricing-inner{max-width:1000px;margin:0 auto;text-align:center;}
+.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3.5rem;text-align:start;}
+.plan-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem 1.8rem;position:relative;transition:border-color 0.3s,transform 0.3s;}
+.plan-card:hover{transform:translateY(-4px);}
+.plan-card.popular{border-color:rgba(255,98,0,0.4);background:linear-gradient(160deg,#1a1c28 0%,#141620 100%);}
+.popular-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--amber);color:#1a1200;font-size:0.72rem;font-weight:700;padding:0.28rem 1rem;border-radius:100px;letter-spacing:0.05em;text-transform:uppercase;white-space:nowrap;}
+.plan-name{font-size:0.8rem;font-weight:600;color:var(--muted2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.8rem;}
+.plan-price{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:900;line-height:1;margin-bottom:0.3rem;}
+.plan-price sup{font-size:1.2rem;vertical-align:super;font-family:'Outfit',sans-serif;font-weight:600;}
+.plan-price .per{font-family:'Outfit',sans-serif;font-size:0.9rem;font-weight:400;color:var(--muted);}
+.plan-target{font-size:0.78rem;font-weight:600;color:var(--amber);margin:0.5rem 0;}
+.plan-desc{font-size:0.84rem;color:var(--muted2);margin:0.6rem 0 1.2rem;line-height:1.5;}
+.plan-divider{height:1px;background:var(--border);margin:1.2rem 0;}
+.plan-features{list-style:none;display:flex;flex-direction:column;gap:0.65rem;}
+.plan-features li{font-size:0.85rem;color:var(--muted2);display:flex;align-items:flex-start;gap:8px;}
+.chk{width:16px;height:16px;flex-shrink:0;border-radius:50%;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.3);display:flex;align-items:center;justify-content:center;font-size:0.6rem;color:var(--amber);margin-top:2px;}
+.plan-features li.dimmed{color:var(--muted);}
+.plan-features li.dimmed .chk{background:rgba(255,255,255,0.04);border-color:var(--border);color:transparent;}
+.plan-btn{display:block;text-align:center;margin-top:1.8rem;padding:0.75rem;border-radius:9px;font-size:0.9rem;font-weight:600;text-decoration:none;transition:all 0.2s;}
+.plan-btn.outline{border:1px solid var(--border2);color:var(--muted2);}
+.plan-btn.outline:hover{border-color:var(--amber);color:var(--amber);}
+.plan-btn.filled{background:var(--amber);color:#1a1200;}
+.plan-btn.filled:hover{background:var(--amber2);transform:translateY(-1px);}
+
+/* CTA */
+.cta-section{background:var(--bg);text-align:center;position:relative;overflow:hidden;}
+.cta-orb{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;border-radius:50%;background:radial-gradient(ellipse,rgba(255,98,0,0.07) 0%,transparent 70%);pointer-events:none;}
+.cta-inner{position:relative;z-index:1;max-width:680px;margin:0 auto;}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 4rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;}
+.footer-brand{font-size:0.82rem;color:var(--muted);}
+.footer-brand a{color:var(--amber);text-decoration:none;}
+.footer-links{display:flex;gap:2rem;flex-wrap:wrap;}
+.footer-links a{font-size:0.82rem;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--text);}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-12px);}to{opacity:1;transform:translateY(0);}}
+@keyframes pulse{0%,100%{transform:translateX(0);opacity:1;}50%{transform:translateX(3px);opacity:0.7;}}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
+.typing-cursor{display:inline-block;width:2px;height:1em;background:var(--amber);margin-inline-start:2px;vertical-align:text-bottom;animation:blink 0.9s infinite;}
+.fade-in-up{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.fade-in-up.visible{opacity:1;transform:translateY(0);}
+
+/* RESPONSIVE */
+@media(max-width:1400px){.steps-grid{grid-template-columns:repeat(3,1fr);}.step-card.step-wide{grid-column:auto;}.pricing-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:1000px){.steps-grid{grid-template-columns:1fr 1fr;}.fidelity-grid{grid-template-columns:1fr;}.styles-layout{grid-template-columns:1fr;gap:2.5rem;}.analysis-layout{grid-template-columns:1fr;gap:2.5rem;}.features-grid{grid-template-columns:1fr 1fr;}.testi-grid{grid-template-columns:1fr;}.pricing-grid{grid-template-columns:1fr;}}
+@media(max-width:760px){nav{padding:1rem 1.5rem;}.nav-links{display:none;}section{padding:4.5rem 1.5rem;}.logos-section{padding:2rem 1.5rem;}.steps-grid{grid-template-columns:1fr;}.features-grid{grid-template-columns:1fr;}footer{padding:2.5rem 1.5rem;}}
+
+    .faq-section { padding: 6rem 4rem; background: var(--bg2); }
+    .faq-inner { max-width: 820px; margin: 0 auto; }
+    .faq-list { margin-top: 3rem; display: flex; flex-direction: column; gap: 0.75rem; }
+    .faq-item { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+    .faq-item summary { cursor: pointer; padding: 1.15rem 1.4rem; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; transition: color .15s; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; font-size: 1.4rem; font-weight: 400; color: var(--amber); line-height: 1; flex-shrink: 0; transition: transform .2s; }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item summary:hover { color: var(--amber); }
+    .faq-item[open] { border-color: var(--border2); }
+    .faq-a { padding: 0 1.4rem 1.25rem; color: var(--muted2); font-size: 0.94rem; line-height: 1.7; }
+    .faq-a p { margin: 0; }
+    .faq-a strong { color: var(--fg, #fff); font-weight: 600; }
+    @media (max-width: 720px) {
+      .faq-section { padding: 4rem 1.25rem; }
+      .faq-item summary { padding: 1rem 1.1rem; font-size: 0.95rem; }
+      .faq-a { padding: 0 1.1rem 1.1rem; }
+    }
+
+    .footer-note { max-width: 780px; margin: 1.25rem auto 0; font-size: 0.78rem; line-height: 1.6; color: var(--muted); text-align: center; }
+    .footer-note strong { color: var(--muted2); font-weight: 600; }
+</style>
+<!-- i18n:begin -->
+<link rel="alternate" hreflang="en" href="https://tubebook.org/" />
+<link rel="alternate" hreflang="fr" href="https://tubebook.org/fr/" />
+<link rel="alternate" hreflang="es" href="https://tubebook.org/es/" />
+<link rel="alternate" hreflang="pt" href="https://tubebook.org/pt/" />
+<link rel="alternate" hreflang="de" href="https://tubebook.org/de/" />
+<link rel="alternate" hreflang="ru" href="https://tubebook.org/ru/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://tubebook.org/zh/" />
+<link rel="alternate" hreflang="ar" href="https://tubebook.org/ar/" />
+<link rel="alternate" hreflang="x-default" href="https://tubebook.org/" />
+<link rel="canonical" href="https://tubebook.org/ru/" />
+<script src="/lang-switcher.js" defer></script>
+<!-- i18n:end -->
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/ru/" class="nav-logo" style="padding:0;">
+    <img src="/logo-tubebook-1500x450.png" alt="TubeBook" style="height:48px;width:auto;display:block;" />
+  </a>
+  <div class="nav-links">
+    <a href="#how-it-works">Как это работает</a>
+    <a href="#fidelity">Режимы точности</a>
+    <a href="#features">Возможности</a>
+    <a href="#pricing">Цены</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <a href="https://app.tubebook.org/signup" class="nav-cta">Начать бесплатно →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-orb-1"></div>
+  <div class="hero-orb-2"></div>
+  <div class="hero-badge">
+    <svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+    Новое: только ваши источники — каждый факт можно проследить до предоставленных материалов
+  </div>
+  <h1>Найдите тему. Соберите источники.<br><em>Опубликуйте книгу — на любом языке, в печати или в аудио.</em></h1>
+  <p class="hero-sub">TubeBook не транскрибирует — он <strong>пишет полноценную книгу</strong>. Начните с просмотра <strong>того, что читатели действительно ищут</strong>, добавьте видео, статьи, документы или свою рукопись, затем выберите, насколько точно следовать им, и утвердите план, прежде чем будет написано хоть слово. <strong style="color:var(--amber2);">Бесплатные аккаунты получают 100 кредитов каждый месяц</strong> — с теми же инструментами создания, редактирования, оформления и экспорта, что и в платных тарифах. По умолчанию каждый факт в книге происходит из <strong>ваших источников и ниоткуда больше</strong>.</p>
+  <div class="hero-actions">
+    <a href="https://app.tubebook.org/signup" class="btn-primary">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l-4 4-4-4"/><circle cx="12" cy="12" r="10"/></svg>
+      Создайте свою первую электронную книгу бесплатно
+    </a>
+    <a href="#how-it-works" class="btn-secondary">Посмотрите, как это работает</a>
+  </div>
+  <p class="hero-note">Бесплатный план · 100 кредитов каждый месяц · Все функции · Без кредитной карты</p>
+
+  <div class="demo-wrap">
+    <div class="demo-card">
+      <div class="demo-row">
+        <div class="demo-yt">
+          <span style="color:var(--red);font-size:0.9rem;flex-shrink:0;">▶</span>
+          youtube.com/watch?v=<span id="typing-url"></span><span class="typing-cursor"></span>
+        </div>
+        <div class="demo-arrow">→</div>
+        <div class="demo-book-tag">📖 Электронная книга</div>
+      </div>
+      <div class="demo-controls">
+        <div class="demo-control-chip">
+          <div class="chip-label">Режим точности</div>
+          <div class="chip-value" id="demo-fidelity"><span class="chip-dot green"></span> Низкий — готово к публикации</div>
+        </div>
+        <div class="demo-control-chip">
+          <div class="chip-label">Стиль письма</div>
+          <div class="chip-value" id="demo-style">✦ Профессиональный</div>
+        </div>
+      </div>
+      <div class="demo-steps">
+        <div class="demo-step"><span class="step-icon">🎬</span>Анализ</div>
+        <div class="demo-step"><span class="step-icon">⚙️</span>Настройка</div>
+        <div class="demo-step"><span class="step-icon">📋</span>Предпросмотр оглавления</div>
+        <div class="demo-step"><span class="step-icon">✍️</span>Написание</div>
+        <div class="demo-step"><span class="step-icon">🔍</span>Проверка качества</div>
+        <div class="demo-step"><span class="step-icon">📄</span>Экспорт</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGOS -->
+<div class="logos-section">
+  <p class="logos-label">Построено на инфраструктуре мирового класса</p>
+  <div class="logos-row">
+    <div class="logo-badge"><div class="dot"></div>Мультимодельный ИИ</div>
+    <div class="logo-badge"><div class="dot"></div>Supabase</div>
+    <div class="logo-badge"><div class="dot"></div>Cloudflare Workers</div>
+    <div class="logo-badge"><div class="dot"></div>Stripe Payments</div>
+    <div class="logo-badge"><div class="dot"></div>TanStack Start</div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="hiw" id="how-it-works">
+  <div class="hiw-inner">
+    <div class="hiw-header fade-in-up">
+      <span class="section-label">Процесс</span>
+      <h2 class="section-title">Семь шагов — и книга готова к публикации</h2>
+      <p class="section-sub">Начните с исследованной темы или сразу добавьте свои источники. В любом случае вы утверждаете структуру до того, как будет написано хоть слово.</p>
+    </div>
+    <div class="steps-grid fade-in-up">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <div class="step-icon-wrap red-tint"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <h3>Найти тему <span style="font-size:0.7rem;color:var(--muted);font-weight:400;">(необязательно)</span></h3>
+        <p>Введите нишу и увидите фразы, которые люди реально вводят в Amazon и Google, какие из них указывают на намерение купить книгу и насколько конкурентна ниша — затем выберите концепцию книги, основанную на пробелах. 5 кредитов, бесплатно для повторного открытия в течение 14 дней.</p>
+        <span class="step-badge">Новое</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <div class="step-icon-wrap red-tint"><svg viewBox="0 0 24 24"><path d="M15 10l-4 4-4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
+        <h3>Добавьте источники</h3>
+        <p>Позвольте TubeBook подобрать до 25 видео, статей и документов по вашей теме — только те, которые он действительно может прочитать — или добавьте свои: URL YouTube, веб-страницы, <strong>файлы Word, PowerPoint и PDF</strong>, или вставьте целую рукопись на 500 страниц. До 25 источников на книгу.</p>
+        <span class="step-badge">Новое</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <div class="step-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+        <h3>Автоматический анализ источников</h3>
+        <p>TubeBook читает каждый источник, определяет язык и сопоставляет темы, идеи и аудиторию по всем источникам, прежде чем написать хоть слово.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <div class="step-icon-wrap"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+        <h3>Настройте книгу</h3>
+        <p>Выберите режим точности (Высокий / Умный / Низкий), стиль написания, стиль обложки, иллюстрации и свои собственные инструкции — до начала генерации.</p>
+        <span class="step-badge">Новое</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">05</div>
+        <div class="step-icon-wrap"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div>
+        <h3>Предпросмотр и утверждение оглавления</h3>
+        <p>Проверьте структуру глав, созданную ИИ. Редактируйте или переписывайте главы свободно, а в книгах из нескольких источников видите, на какие источники опирается каждая глава — ничего не создается, пока вы не одобрите, а неудачные генерации автоматически возвращаются.</p>
+        <span class="step-badge">Новое</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">06</div>
+        <div class="step-icon-wrap"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+        <h3>Проверка качества</h3>
+        <p>Каждая глава проходит вторую проверку до того, как вы ее увидите: редактура структуры и читабельности, затем проверка целостности, которая <strong>завершает главу, оборванную на полуслове</strong>, удаляет любые инструкции, попавшие в текст, исправляет повторяющиеся или нумерованные заголовки и применяет типографские правила языка книги. Большинство инструментов выдают черновик. Этот этап превращает его в рукопись.</p>
+        <span class="step-badge">Новое</span>
+      </div>
+      <div class="step-card step-wide">
+        <div class="step-num">07</div>
+        <div class="step-icon-wrap"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <h3>Скачать электронную книгу</h3>
+        <p>PDF, DOCX, EPUB и PPTX на всех тарифах, с выбранной обложкой, иллюстрациями и шрифтами — плюс готовый к печати внутренний блок и обложка для мягкой обложки, обложка для Kindle и пакет метаданных KDP.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIDELITY MODES -->
+<section id="fidelity">
+  <div class="fidelity-inner">
+    <div class="fade-in-up" style="text-align:center;max-width:640px;margin:0 auto;">
+      <span class="section-label">Режимы точности</span>
+      <h2 class="section-title">Насколько точно электронная книга должна следовать видео?</h2>
+      <p class="section-sub" style="margin:0 auto;">Три режима. Три юридических позиции. Вы выбираете, насколько оригинальным должен быть результат.</p>
+    </div>
+    <div class="fidelity-grid fade-in-up">
+      <div class="fidelity-card">
+        <div class="legal-badge red"><span class="legal-dot red"></span>Только переработка</div>
+        <div class="fidelity-tagline">Высокая точность</div>
+        <h3>Ваше видео, структура слово в слово</h3>
+        <p>Электронная книга точно повторяет структуру, имена, истории и идеи вашего транскрипта — идеально для переработки вашего контента в книгу.</p>
+        <div class="fidelity-uses">
+          <div class="fidelity-use">Переработайте свой канал YouTube</div>
+          <div class="fidelity-use">Материалы курса → руководство для студентов</div>
+          <div class="fidelity-use">Серия лекций → печатный учебник</div>
+        </div>
+        <div class="ownership-note">⚠ Вы должны владеть правами на исходное видео. Распространение результатов с высокой точностью из стороннего контента без разрешения является нарушением авторских прав.</div>
+      </div>
+      <div class="fidelity-card">
+        <div class="legal-badge yellow"><span class="legal-dot yellow"></span>Проверить права</div>
+        <div class="fidelity-tagline">Умная адаптация <span style="font-size:0.68rem;color:var(--muted);font-weight:400;">(по умолчанию)</span></div>
+        <h3>Те же идеи, новая структура</h3>
+        <p>ИИ переписывает и перестраивает источник — имена могут измениться, поток перестроен, но основное содержание остается близким к оригиналу.</p>
+        <div class="fidelity-uses">
+          <div class="fidelity-use">Обновите старый контент для нового бренда</div>
+          <div class="fidelity-use">Адаптируйте учебник в практическое руководство</div>
+          <div class="fidelity-use">Превратите интервью в тематические исследования</div>
+        </div>
+      </div>
+      <div class="fidelity-card highlight-green">
+        <div class="legal-badge green"><span class="legal-dot green"></span>Коммерческая готовность</div>
+        <div class="fidelity-tagline">Низкая точность</div>
+        <h3>Вдохновлено видео, но по-настоящему оригинально</h3>
+        <p>Видео — лишь тематическое зерно. ИИ генерирует существенно оригинальный контент — имена, структура и формулировки полностью новые. Безопасно для KDP, Gumroad и коммерческой публикации.</p>
+        <div class="fidelity-uses">
+          <div class="fidelity-use">Продавайте на Amazon KDP</div>
+          <div class="fidelity-use">Публикуйте на Gumroad или на своём сайте</div>
+          <div class="fidelity-use">Создавайте электронные книги из любого публичного видео</div>
+        </div>
+        <div class="kdp-tip">💡 Чтобы полностью владеть авторскими правами, добавьте свои мысли в черновик ИИ перед публикацией. Редактура человеком — это то, что создаёт авторство.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANALYSIS DEEP DIVE -->
+<section class="analysis-section" id="analysis">
+  <div class="analysis-inner">
+    <div class="analysis-layout fade-in-up">
+      <div>
+        <span class="section-label">Создано для обнаружения</span>
+        <h2 class="section-title" style="font-size:clamp(1.8rem,3.5vw,2.5rem);">Готово к публикации и поиску<br>из коробки</h2>
+        <p class="section-sub" style="max-width:100%;">Каждая книга оптимизирована для мест, где читатели её находят: поиск Amazon, Google и конвейеры магазинов. Никакой SEO-домашней работы не требуется.</p>
+        <div style="margin-top:2rem;display:flex;flex-direction:column;gap:1rem;">
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div style="width:32px;height:32px;border-radius:8px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.8rem;color:var(--amber2);font-weight:700;">1</div>
+            <div><div style="font-size:0.9rem;font-weight:600;margin-bottom:0.2rem;">Оптимизированные для поиска заголовки и подзаголовки</div><div style="font-size:0.84rem;color:var(--muted2);">Подзаголовки содержат фразы, которые читатели вводят в Amazon и Google — самый сильный инструмент ранжирования, которым управляет автор.</div></div>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div style="width:32px;height:32px;border-radius:8px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.8rem;color:var(--amber2);font-weight:700;">2</div>
+            <div><div style="font-size:0.9rem;font-weight:600;margin-bottom:0.2rem;">Метаданные в каждом файле</div><div style="font-size:0.84rem;color:var(--muted2);">PDF, EPUB, DOCX и PPTX содержат название, автора, описание, ключевые слова и язык, встроенные в файл — то, что читают магазины и поисковики.</div></div>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div style="width:32px;height:32px;border-radius:8px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.8rem;color:var(--amber2);font-weight:700;">3</div>
+            <div><div style="font-size:0.9rem;font-weight:600;margin-bottom:0.2rem;">Полный набор инструментов KDP для каждой книги</div><div style="font-size:0.84rem;color:var(--muted2);">Готовое для Amazon описание (обычное + HTML), 7 поисковых ключевых слов, 3 предложения категорий, текст для задней обложки и точная ширина корешка — один клик для копирования каждого.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="analysis-card">
+        <div class="analysis-title">KDP Metadata Pack — генерируется с каждой книгой</div>
+        <div class="density-row"><span class="density-label">Описание для Amazon</span><span class="density-score">✓ обычное + HTML</span></div>
+        <div class="density-row"><span class="density-label">Текст для задней обложки</span><span class="density-score">✓ готово к печати</span></div>
+        <div class="density-row"><span class="density-label">Ширина корешка</span><span class="density-score">0.58" @ 232 стр.</span></div>
+        <div class="toc-preview">
+          <div class="toc-preview-label">7 поисковых ключевых слов</div>
+          <div class="toc-items">
+            <div class="toc-item"><div class="toc-num">1</div><span>системы продуктивности для творческих людей</span></div>
+            <div class="toc-item"><div class="toc-num">2</div><span>структура управления временем</span></div>
+            <div class="toc-item"><div class="toc-num">3</div><span>привычки глубокой работы</span></div>
+            <div class="toc-item"><div class="toc-num">4</div><span>техники концентрации для предпринимателей</span></div>
+            <div class="toc-item"><div class="toc-num">5</div><span>+ ещё 3, уникальные для каждой книги…</span></div>
+          </div>
+        </div>
+        <div class="toc-preview">
+          <div class="toc-preview-label">Предложения категорий</div>
+          <div class="toc-items">
+            <div class="toc-item"><div class="toc-num">›</div><span>Бизнес и деньги &gt; Управление временем</span></div>
+            <div class="toc-item"><div class="toc-num">›</div><span>Саморазвитие &gt; Личностная трансформация</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WRITING STYLES -->
+<section class="styles-section" id="styles">
+  <div class="styles-inner">
+    <div class="fade-in-up" style="max-width:1100px;margin:0 auto;">
+      <span class="section-label">Стили письма</span>
+      <h2 class="section-title">Ваша книга, ваш голос</h2>
+    </div>
+    <div class="styles-layout fade-in-up" style="max-width:1100px;margin:0 auto;">
+      <div>
+        <p class="section-sub" style="max-width:100%;">Выберите стиль письма, подходящий вашей аудитории, перед генерацией. ИИ адаптирует тон, лексику и структуру — от академической строгости до непринужденного повествования.</p>
+        <div class="style-tags" id="style-tags">
+          <div class="style-tag active" data-style="Professional" data-preview="The following framework provides a systematic approach to optimising your workflow. By implementing these <em>evidence-based methodologies</em>, organisations can achieve measurable improvements in operational efficiency.">Профессиональный</div>
+          <div class="style-tag" data-style="Conversational" data-preview="Here's the thing nobody tells you about productivity — it's not about doing more. It's about <em>doing the right things</em>. Let me walk you through what actually changed everything for me.">Разговорный</div>
+          <div class="style-tag" data-style="Stoic" data-preview="The obstacle before you is not a barrier. It is the path. <em>What you resist persists; what you engage with transforms.</em> Begin where you are. Use what you have. Do what you can.">Сдержанный</div>
+          <div class="style-tag" data-style="Storytelling" data-preview="It was a Tuesday in October when Marcus first realised the system was broken. He'd spent <em>three years</em> following the same routine — and for the first time, he stopped to ask why.">Повествовательный</div>
+          <div class="style-tag" data-style="Academic" data-preview="This chapter examines the theoretical underpinnings of the proposed model. Drawing upon <em>Bourdieu's concept of cultural capital</em>, the analysis situates the findings within a broader socio-economic context.">Академический</div>
+          <div class="style-tag" data-style="Inspirational" data-preview="You already have everything you need. The gap between where you are and where you want to be isn't talent — it's <em>decision</em>. Today is the day you close that gap.">Вдохновляющий</div>
+        </div>
+      </div>
+      <div>
+        <div class="styles-preview">
+          <div class="preview-style-chip" id="style-chip">✦ Профессиональный</div>
+          <div class="preview-label">Пример абзаца — Глава 2</div>
+          <div class="preview-title">Объяснение основной структуры</div>
+          <div class="preview-text" id="style-preview-text">Следующая структура предлагает системный подход к оптимизации вашего рабочего процесса. Внедряя эти <em>методы, основанные на доказательствах</em>, организации могут достичь измеримых улучшений в операционной эффективности.</div>
+        </div>
+        <p style="font-size:0.78rem;color:var(--muted);margin-top:1rem;text-align:center;">Нажмите на любой стиль, чтобы увидеть тон ИИ</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="features-inner">
+    <div class="fade-in-up">
+      <span class="section-label">Возможности</span>
+      <h2 class="section-title">Все, что нужно для<br>профессиональной публикации</h2>
+    </div>
+    <div class="features-grid fade-in-up">
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <h3>Найти тему <span class="feat-new">Новое</span></h3>
+        <p>Не знаете, о чем писать? Посмотрите, что сейчас в тренде в США, Великобритании, Германии, Канаде, Австралии и Франции — бесплатно. Узнайте, какие фразы читатели вводят в Amazon, сколько книг уже конкурируют, и получите список лучших видео и статей для создания книги. <strong>Ищите спрос, а не гадайте.</strong></p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon green"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+        <h3>Книги из нескольких источников <span class="feat-new">Новое</span></h3>
+        <p>Объединяйте до 25 видео с YouTube, веб-статей, <strong>документов Word, PowerPoint и PDF</strong> и вставленного текста в одну книгу — загружайте с компьютера или по ссылке. Вставьте целую неопубликованную рукопись объемом до 500 печатных страниц, и она будет реструктурирована. TubeBook читает все, строит единый план по всему набору, а затем пишет каждую главу на основе источников, которые действительно ее освещают.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon blue"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <h3>Только ваши источники <span class="feat-new">Новое</span></h3>
+        <p>TubeBook никогда не ищет в интернете во время написания. По умолчанию он также не использует собственные знания ИИ — <strong>каждый факт, цифра, имя и пример восходят к предоставленным вами материалам</strong>, поэтому вы можете отвечать за свою книгу. Хотите также использовать фоновые знания модели? Включите это осознанно, и такие книги будут помечены, чтобы вы знали, какие это. Ни одна из настроек не позволяет выдумывать статистику, исследования или цитаты.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon green"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>3 режима точности и 6 стилей письма</h3>
+        <p>Конвейер на основе передовых моделей с автоматическим переключением создает связный, готовый к публикации текст — а не выгрузку транскриптов. Высокая точность для переработки вашего контента, Умная адаптация для обновления бренда, Низкая точность для полностью оригинальных коммерческих электронных книг — затем выберите профессиональный, разговорный, повествовательный, академический, вдохновляющий или сдержанный стиль. Все выбирается до написания.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <h3>Проверка рисков публикации <span class="feat-new">Новое</span></h3>
+        <p>Перед публикацией TubeBook проверяет ваш заголовок, подзаголовок и ключевые слова для KDP на наличие брендов, франшиз, ныне живущих авторов и заявлений об официальном одобрении — тех метаданных, из-за которых Amazon скрывает книги. Он отмечает каждый случай, объясняет, почему это важно, предлагает более безопасную формулировку и дает прямую ссылку на реестр товарных знаков США, чтобы вы видели, кому принадлежит имя. На каждом тарифе один кредит проверяет все отмеченные знаки сразу и показывает владельца и активен ли он. Он никогда не блокирует вас и никогда не говорит, что книга безопасна: <strong>права всегда остаются за вами.</strong></p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <h3>Готово для SEO и KDP <span class="feat-new">Новое</span></h3>
+        <p>Оптимизированные по ключевым словам подзаголовки, метаданные, встроенные в каждый файл, и пакет для KDP «копируй и вставляй»: описание, 7 ключевых слов, категории, текст для задней обложки. Если сначала исследовать тему, эти ключевые слова берутся из <strong>реальных поисковых фраз</strong> а не из догадок.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon red"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div>
+        <h3>Утверждение и части книги <span class="feat-new">Новое</span></h3>
+        <p>Просмотрите и отредактируйте структуру глав до начала написания и отметьте, какие именно части будет содержать книга — введение, заключение, об авторе и другие. Выходные данные издательского уровня: настоящая страница с копирайтом, включающая импринт, город, издание, указание на дизайн и необязательный дисклеймер о профессиональных услугах, предисловие с указанием автора и QR-код для печатного издания. Все, что вы оставите пустым, просто не войдет в книгу. Выберите, заканчиваются ли главы разделом <strong>Ключевые выводы</strong> и <strong>Размышление</strong> или ни тем, ни другим. Ничего не создается до вашего одобрения, неудачные генерации возвращаются, а если вы передумаете позже, файлы будут пересобраны бесплатно.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon red"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
+        <h3>Три длины <span class="feat-new">Новое</span></h3>
+        <p>Лид-магнит на 10–25 страниц для роста вашего списка рассылки, короткая книга на 25–50 страниц, которую можно продавать в мягкой обложке на KDP, или полноценная коммерческая книга от 25 000 слов — вы выбираете до начала генерации. Установите размер шрифта <strong>12, 14 или настоящий крупный 16 pt</strong> для пожилых читателей, выберите один из восьми форматов обрезки KDP и двенадцати шрифтов и наблюдайте, как оценка количества страниц обновляется в реальном времени с учетом минимальных 24 страниц для мягкой обложки Amazon.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon red"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
+        <h3>Обложка и иллюстрации на ваш выбор <span class="feat-new">Новое</span></h3>
+        <p>Для обложки и каждой главы выберите <strong>три варианта, созданных ИИ</strong>, найдите <strong>стоковые фото</strong> на Unsplash, Pexels и Pixabay или <strong>загрузите собственные изображения</strong> — все это доступно на любом тарифе. Кредиты и ссылки на стоковые фото сохраняются в экспортированной книге. Размещайте изображение каждой главы автоматически или выберите точный раздел и абзац, после которого оно появится. Напишите один бриф для единого визуального стиля, сравнивайте варианты бок о бок и пересобирайте только после выбора. 14 дизайн-пресетов, 1 кредит за каждую сгенерированную иллюстрацию, обложка бесплатно.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+        <h3>Двенадцать шаблонов книг <span class="feat-new">Новое</span></h3>
+        <p>Выберите <strong>какой тип книги</strong> до того, как вы его напишете — практическое руководство, 7-дневный план, рабочая тетрадь, ежедневное чтение, полевой справочник, справочник. Каждый из них задает объем, тон и структуру глав и меняет то, как строится глава: полевой справочник использует одни и те же три такта каждый раз, ежедневное чтение самодостаточно в каждой записи, рабочая тетрадь дает больше места работе читателя, чем объяснению. Все, что задает шаблон, — это параметры, которые вы можете изменить.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
+        <h3>Написано в вашем стиле <span class="feat-new">Новое</span></h3>
+        <p>Загрузите что-то, что вы уже написали — пост, главу, эссе — и ваши книги будут написаны <strong>то, как вы пишете</strong>: ваш ритм, формы предложений, то, как вы открываете мысль и как завершаете ее. Вместо плоского, осторожного регистра, к которому тяготеет ИИ. Ваши файлы читаются один раз и затем удаляются; ничего не используется для обучения моделей, и ваши тексты никогда не попадают в чужие книги.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Второе мнение при редактировании <span class="feat-new">Новое</span></h3>
+        <p>Спросите о направлении, темпе или о том, оправдывает ли глава свою длину, — и получите ответ от того, кто прочитал ваш план и главу перед вами. Попросите изменить формулировку — и получите <strong>предложение, которое вы прочитаете целиком и примете или отклоните</strong>. Оно никогда не редактирует вашу книгу самостоятельно.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
+        <h3>Редактируйте после написания <span class="feat-new">Новое</span></h3>
+        <p>Готовая книга не застывшая. Измените любой абзац сами бесплатно, примените точечную коррекцию корректора на основе ИИ за <strong>0,1 кредита</strong> или закажите <strong>полную переработку раздела за 1 кредит</strong> в том же стиле, с той же точностью и на том же языке, что и остальная книга. Существующие файлы продолжают работать, пока вы редактируете, и пересобираются после завершения.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>Каждая глава проверена до того, как вы её увидите <span class="feat-new">Новое</span></h3>
+        <p>Языковая модель останавливается на полуслове, когда заканчивается место, и черновик выглядит завершённым, потому что предыдущий абзац читается нормально. Поэтому каждая глава проходит вторую проверку: линейное редактирование структуры, а затем проверка, которая <strong>дописывает недостающий конец главы, которая была обрезана</strong>, удаляет любые инструкции, попавшие в текст, заменяет дословно повторяющиеся заголовки и применяет типографику языка книги — узкие пробелы перед французской пунктуацией, правильные кавычки, правильные тире. Вы не запускаете его, и он не тратит кредиты. Он происходит по пути к вашим файлам, и вы видите это в индикаторе прогресса.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="m8 11 2 2 4-4"/></svg></div>
+        <h3>Вычитка перед публикацией <span class="feat-new">Новое</span></h3>
+        <p>Грамматика, повторы и ясность по главам — плюс проблемы, которые не видны в отдельной главе: термин, названный двумя способами, идея, использованная до того, как она введена, обещание, которое не выполнено. Каждое замечание <strong>цитирует точные слова</strong>, и клик по нему ведёт прямо к ним. Бесплатно, сколько бы раз вы ни запускали.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <h3>Ссылки, которые действительно верны <span class="feat-new">Новое</span></h3>
+        <p>Библиография, составленная из <strong>источников, на основе которых написана ваша книга</strong>, сгруппированных по главам, в которых они использованы, — а не список, выдуманный моделью для солидности. Включите её для книги, законченной в прошлом месяце, и пересоберите.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M5 3v18l15-9z"/></svg></div>
+        <h3>Аудиокниги <span class="feat-new">Новое</span></h3>
+        <p>Превратите любую готовую книгу в озвученную аудиокнигу. Озвучивается всё — главы, а также вступительная и заключительная части, так что вы получаете <strong>по одному файлу на часть</strong>  и можете затем <strong>объединить выбранные части в один файл</strong>. Один клик также создаёт <strong>дистрибутивный пакет</strong>: каждая часть в виде нумерованного MP3 <strong>192 kbps CBR, 44.1 кГц</strong>, с нормализацией громкости, как требуют агрегаторы при загрузке, плюс <strong>обложка 3000&times;3000</strong>,  <strong>пятиминутный ознакомительный фрагмент</strong> и метаданные, указывающие на ИИ-озвучку — файлы в том виде, в котором их запрашивают агрегаторы. Мужские и женские голоса на десяти языках в стандартном варианте, или более естественный премиум-голос на английском и испанском — вы можете прослушать образец перед публикацией. Ваши списки, заголовки и сокращения адаптируются для восприятия на слух, так что текст звучит как от диктора, а не как от синтезатора речи. Продавайте напрямую через Gumroad, Payhip, Shopify или на своём сайте — или выходите на Audible через агрегатор, который принимает ИИ-озвучку (<a href="help.html#audiobooks">что нужно знать заранее</a>).</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon green"><svg viewBox="0 0 24 24"><path d="M2 12h20"/><path d="M12 2a15 15 0 010 20 15 15 0 010-20z"/><circle cx="12" cy="12" r="10"/></svg></div>
+        <h3>Семь языков <span class="feat-new">Новое</span></h3>
+        <p>Всего семь: ваш оригинальный английский вариант плюс французский, испанский, немецкий, португальский, итальянский и нидерландский. Каждый становится <strong>отдельной книгой</strong> — это необходимо для Amazon, так как каждый язык — отдельная позиция. Ваши обложка и иллюстрации используются повторно, а ключевые слова подбираются заново для этого рынка, поэтому второе издание стоит около 40% от первого. <strong>Каждую из них можно озвучить</strong>, мужским или женским голосом, так что переведённое издание может выйти в виде аудиокниги точно так же, как оригинал.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon blue"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+        <h3>Безопасность и конфиденциальность</h3>
+        <p>Все файлы хранятся в приватных хранилищах, привязанных к владельцу. На уровне строк защищены все таблицы базы данных. Ваш контент принадлежит только вам — всегда.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section style="background:var(--bg2);padding:6rem 4rem;">
+  <div class="testimonials-inner">
+    <div class="fade-in-up" style="text-align:center;margin-bottom:3.5rem;">
+      <span class="section-label">Отзывы</span>
+      <h2 class="section-title">Создатели любят TubeBook</h2>
+    </div>
+    <div class="testi-grid fade-in-up">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <div class="testi-tag green">Low Fidelity — KDP</div>
+        <p class="testi-quote">Я использовал режим Low Fidelity на видео о публичных финансах и получил <strong>электронную книгу на 22 000 слов</strong> Теперь я продаю её на Amazon KDP. Выбранный мной стиль письма идеально соответствовал моему бренду.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:rgba(255,98,0,0.15);color:var(--amber2);">JM</div>
+          <div><div class="testi-name">Джеймс М.</div><div class="testi-role">Преподаватель финансов, 180 тыс. подписчиков</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <div class="testi-tag red-t">High Fidelity — Репозиторинг</div>
+        <p class="testi-quote">Я переработал весь свой курс из 40 видео, используя режим High Fidelity. Каждое видео стало главой. <strong>Мой собственный контент, наконец, в книге.</strong></p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:rgba(255,59,59,0.12);color:#ff7b7b;">SR</div>
+          <div><div class="testi-name">София Р.</div><div class="testi-role">Бизнес-коуч и автор</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <div class="testi-tag yellow">Smart Adapt — лид-магнит</div>
+        <p class="testi-quote">Предпросмотр оглавления изменил всё — я отредактировала две главы до утверждения, и итоговая электронная книга получилась именно такой, как нужно. <strong>Моя база подписчиков выросла в 3 раза за два месяца.</strong></p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:rgba(80,130,255,0.12);color:#7ab0ff;">АТ</div>
+          <div><div class="testi-name">Алекс Т.</div><div class="testi-role">Разработчик и создатель курсов</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="pricing-inner">
+    <div class="fade-in-up">
+      <span class="section-label">Цены</span>
+      <h2 class="section-title">Простая система на кредитах</h2>
+      <p class="section-sub" style="margin:0 auto;">Каждый тариф работает на кредитах: лид-магнит — 30, короткая книга — 60, полная коммерческая книга — 100, каждый дополнительный источник — 8. Исследование темы стоит <strong>5 кредитов</strong> на нишу, повторное открытие той же ниши в течение 14 дней бесплатно. Лид-магнит из 5 источников стоит 30 + 4 × 8 = <strong>62 кредита</strong>. Все тарифы включают исследование темы, книги из нескольких источников, режимы точности, стили письма, проверку и утверждение плана, а также набор инструментов для метаданных KDP. Ежемесячные тарифы автоматически пополняют кредиты.</p>
+    </div>
+    <div class="pricing-grid fade-in-up">
+      <div class="plan-card">
+        <div class="plan-name">Бесплатно</div>
+        <div class="plan-price"><sup>$</sup>0</div>
+        <div class="plan-target">100 кредитов каждый месяц</div>
+        <p class="plan-desc">Создавайте каждый месяц с полным функционалом — без карты и без ограничений.</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li><span class="chk">✓</span>100 кредитов каждый месяц</li>
+          <li><span class="chk">✓</span>Те же функции, что и в платных тарифах</li>
+          <li><span class="chk">✓</span>Доски трендовых тем — бесплатный просмотр</li>
+          <li><span class="chk">✓</span>Любой объем: лид-магнит, короткая или полная книга</li>
+          <li><span class="chk">✓</span>До 25 источников на электронную книгу</li>
+          <li><span class="chk">✓</span>Исследование темы (5 кредитов за нишу)</li>
+          <li><span class="chk">✓</span>Все 3 режима точности и 6 стилей письма</li>
+          <li><span class="chk">✓</span>Просмотр и утверждение плана</li>
+          <li><span class="chk">✓</span>Все экспорты, обложки, редактирование и инструменты качества</li>
+        </ul>
+        <a href="https://app.tubebook.org/signup" class="plan-btn outline">Начать бесплатно</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Старт</div>
+        <div class="plan-price"><sup>$</sup>9<span class="per">/мес</span></div>
+        <div class="plan-target">250 кредитов/мес</div>
+        <p class="plan-desc">Для авторов, которые регулярно превращают контент в лид-магниты, краткие руководства и официальные документы.</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li><span class="chk">✓</span>250 кредитов/мес (≈ 8 лид-магнитов или 2 коммерческие электронные книги — или комбинируйте)</li>
+          <li><span class="chk">✓</span>Кредиты пополняются ежемесячно — неиспользованные не переносятся</li>
+          <li><span class="chk">✓</span>Те же функции, что и в любом тарифе</li>
+          <li><span class="chk">✓</span>До 25 источников на электронную книгу</li>
+          <li><span class="chk">✓</span>Исследование темы + предложенные источники</li>
+          <li><span class="chk">✓</span>Все 3 режима точности и 6 стилей письма</li>
+          <li><span class="chk">✓</span>Просмотр и утверждение плана</li>
+          <li><span class="chk">✓</span>Все экспорты, обложки, редактирование и инструменты качества</li>
+        </ul>
+        <a href="https://app.tubebook.org/signup?plan=starter" class="plan-btn outline">Начать со Starter</a>
+      </div>
+      <div class="plan-card popular">
+        <div class="popular-badge">Самый популярный</div>
+        <div class="plan-name">Pro</div>
+        <div class="plan-price"><sup>$</sup>29<span class="per">/мес</span></div>
+        <div class="plan-target">1 000 кредитов/мес</div>
+        <p class="plan-desc">Для серьезных авторов, публикующих полноформатные электронные книги на KDP, Gumroad или собственном сайте.</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li><span class="chk">✓</span>1 000 кредитов/мес (≈ 33 лид-магнита или 10 коммерческих электронных книг — или комбинируйте)</li>
+          <li><span class="chk">✓</span>Кредиты пополняются ежемесячно — неиспользованные не переносятся</li>
+          <li><span class="chk">✓</span>Те же функции, что и в любом тарифе</li>
+          <li><span class="chk">✓</span>До 25 источников на электронную книгу</li>
+          <li><span class="chk">✓</span>Исследование темы + предложенные источники</li>
+          <li><span class="chk">✓</span>Проверка товарных знаков (1 кредит за проверку)</li>
+          <li><span class="chk">✓</span>Все 3 режима точности и 6 стилей письма</li>
+          <li><span class="chk">✓</span>Просмотр и утверждение плана</li>
+          <li><span class="chk">✓</span>Все экспорты, обложки, редактирование и инструменты качества</li>
+        </ul>
+        <a href="https://app.tubebook.org/signup?plan=pro" class="plan-btn filled">Начать с Pro →</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Pro Audio</div>
+        <div class="plan-price"><sup>$</sup>49<span class="per">/мес</span></div>
+        <div class="plan-target">1 000 кредитов + 900 аудиокредитов/мес</div>
+        <p class="plan-desc">Для издателей, которые выпускают аудиокнигу вместе с книгой. Озвучка стоит $200–500 за готовый час; три коммерческие аудиокниги в месяц — это примерно восемь часов озвучки. Озвучиваете редко? Купите пакет аудиокредитов — подписка не нужна.</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li><span class="chk">✓</span>Всё из тарифа Pro, плюс:</li>
+          <li><span class="chk">✓</span>900 аудиокредитов/мес — пополняются ежемесячно, неиспользованные не переносятся</li>
+          <li><span class="chk">✓</span>≈ 3 коммерческие аудиокниги на премиальном голосе или 7 на стандартном</li>
+          <li><span class="chk">✓</span>Мужские и женские голоса на 10 языках</li>
+          <li><span class="chk">✓</span>Один файл на часть или объединение выбранных частей в один файл</li>
+          <li><span class="chk">✓</span>Пакет для дистрибуции — мастера 192 kbps, квадратная обложка, розничный сэмпл</li>
+          <li><span class="chk">✓</span>Мастера без потерь WAV, доступные для скачивания по главам в течение 30 дней</li>
+          <li><span class="chk">✓</span>Резервный поставщик озвучки</li>
+        </ul>
+        <a href="https://app.tubebook.org/signup?plan=pro_audio" class="plan-btn outline">Начать с Pro Audio</a>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:2rem;font-size:0.84rem;color:var(--muted);">
+      Отмена в любой момент · Годовая оплата: Starter $90/год, Pro $290/год, Pro Audio $490/год · Кредиты тарифа пополняются ежемесячно в каждом расчетном периоде, включая годовой, неиспользованные не переносятся · Пакеты кредитов не сгорают · Возврат в течение 14 дней при первой подписке
+    </p>
+
+    <!-- CREDIT PACKS -->
+    <div class="fade-in-up" style="margin-top: 4rem;">
+      <span class="section-label">Дополнения</span>
+      <h3 style="font-size: 1.5rem; font-weight: 700; margin: 0.5rem 0 0.5rem;">Нужно больше кредитов?</h3>
+      <p style="font-size: 0.88rem; color: var(--muted2); margin-bottom: 2rem;">Разовые пакеты кредитов сочетаются с любым тарифом, не сгорают и убирают упоминание в подвале на бесплатном тарифе. Исследование темы = 5 кредитов за нишу (бесплатно для повторного открытия в течение 14 дней) · Лид-магнит = 30 кредитов · Короткая книга = 60 · Полноформатная коммерческая книга = 100 · Иллюстрации глав, созданные ИИ, +1 кредит за изображение · Каждый дополнительный источник +8 кредитов · Проверка товарного знака = 1 кредит за книгу. Аудиокниги оплачиваются с отдельного баланса аудиокредитов: стандартный голос = 40 / 80 / 120 аудиокредитов в зависимости от длины книги, премиум = 100 / 200 / 300.</p>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; max-width: 780px; margin: 0 auto;">
+        <div class="plan-card" style="padding: 1.5rem 1.4rem;">
+          <div class="plan-name">Стартовый пакет</div>
+          <div class="plan-price" style="font-size: 2rem;"><sup>$</sup>5</div>
+          <p class="plan-desc" style="margin: 0.6rem 0 0.8rem;">100 кредитов<br><span style="font-size: 0.8rem;">~3 лид-магнита или 1 коммерческая электронная книга</span></p>
+          <a href="https://app.tubebook.org/billing" class="plan-btn outline" style="margin-top: 1rem;">Купить пакет</a>
+        </div>
+        <div class="plan-card popular" style="padding: 1.5rem 1.4rem;">
+          <div class="popular-badge">Лучшая цена</div>
+          <div class="plan-name">Пакет Boost</div>
+          <div class="plan-price" style="font-size: 2rem;"><sup>$</sup>15</div>
+          <p class="plan-desc" style="margin: 0.6rem 0 0.8rem;">400 кредитов<br><span style="font-size: 0.8rem;">~13 лид-магнитов или 4 коммерческие электронные книги</span></p>
+          <a href="https://app.tubebook.org/billing" class="plan-btn filled" style="margin-top: 1rem;">Купить пакет →</a>
+        </div>
+        <div class="plan-card" style="padding: 1.5rem 1.4rem;">
+          <div class="plan-name">Пакет Power</div>
+          <div class="plan-price" style="font-size: 2rem;"><sup>$</sup>40</div>
+          <p class="plan-desc" style="margin: 0.6rem 0 0.8rem;">1 500 кредитов<br><span style="font-size: 0.8rem;">~50 лид-магнитов или 15 коммерческих электронных книг</span></p>
+          <a href="https://app.tubebook.org/billing" class="plan-btn outline" style="margin-top: 1rem;">Купить пакет</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- AUDIO CREDIT PACKS -->
+    <div class="fade-in-up" style="margin-top: 3.5rem;">
+      <h3 style="font-size: 1.5rem; font-weight: 700; margin: 0.5rem 0 0.5rem;">Нужна только одна аудиокнига?</h3>
+      <p style="font-size: 0.88rem; color: var(--muted2); margin-bottom: 2rem;">Аудиокредиты можно купить отдельно, на любом тарифе, включая бесплатный — подписка не нужна. Они не сгорают и тратятся только на озвучку, поэтому ваши кредиты на электронные книги остаются нетронутыми. Если вы озвучиваете чаще раза в месяц, Pro Audio выгоднее.</p>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; max-width: 780px; margin: 0 auto;">
+        <div class="plan-card" style="padding: 1.5rem 1.4rem;">
+          <div class="plan-name">Одна аудиокнига</div>
+          <div class="plan-price" style="font-size: 2rem;"><sup>$</sup>12</div>
+          <p class="plan-desc" style="margin: 0.6rem 0 0.8rem;">120 аудиокредитов<br><span style="font-size: 0.8rem;">1 коммерческая аудиокнига, стандартный голос</span></p>
+          <a href="https://app.tubebook.org/billing" class="plan-btn outline" style="margin-top: 1rem;">Купить пакет</a>
+        </div>
+        <div class="plan-card popular" style="padding: 1.5rem 1.4rem;">
+          <div class="plan-name">Пакет Author</div>
+          <div class="plan-price" style="font-size: 2rem;"><sup>$</sup>27</div>
+          <p class="plan-desc" style="margin: 0.6rem 0 0.8rem;">300 аудиокредитов<br><span style="font-size: 0.8rem;">1 коммерческая аудиокнига, премиальный голос</span></p>
+          <a href="https://app.tubebook.org/billing" class="plan-btn filled" style="margin-top: 1rem;">Купить пакет</a>
+        </div>
+        <div class="plan-card" style="padding: 1.5rem 1.4rem;">
+          <div class="plan-name">Пакет Studio</div>
+          <div class="plan-price" style="font-size: 2rem;"><sup>$</sup>69</div>
+          <p class="plan-desc" style="margin: 0.6rem 0 0.8rem;">900 аудиокредитов<br><span style="font-size: 0.8rem;">3 коммерческие аудиокниги на премиуме или 7 на стандарте</span></p>
+          <a href="https://app.tubebook.org/billing" class="plan-btn outline" style="margin-top: 1rem;">Купить пакет</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="faq-inner">
+    <div class="hiw-header fade-in-up">
+      <span class="section-label">Вопросы</span>
+      <h2 class="section-title">Ответы до того, как вы потратите кредит</h2>
+      <p class="section-sub">Самые частые вопросы — с понятными ответами. Если чего-то не хватает, загляните в <a href="help.html">справку</a>.</p>
+    </div>
+    <div class="faq-list fade-in-up">
+      <details class="faq-item">
+        <summary>Нужно ли владеть видео, на основе которого я создаю книгу?</summary>
+        <div class="faq-a"><p>Нет, подойдёт любое публичное видео на YouTube — но опубликованное — ваша ответственность. Именно для этого есть три режима точности. <strong>Высокая точность</strong> следует структуре видео и подходит для вашего собственного контента; <strong>Умный</strong> и <strong>Низкий</strong> переработать идеи в существенно оригинальный текст, что безопаснее для чужого видео. Веб-страницы извлекаются только там, где условия владельца страницы это разрешают.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Примет ли Amazon книгу, написанную таким образом?</summary>
+        <div class="faq-a"><p>Да. KDP допускает контент, созданный ИИ, и просит указать это при загрузке — это флажок, а не препятствие. Каждая книга поставляется с метаданными, категориями и ключевыми словами, необходимыми для листинга, а небольшой объем позволяет пройти минимум KDP в 24 страницы для мягкой обложки, так что вы можете продавать ее в печатном виде, а не только как электронную книгу.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Сколько реально стоит одна книга?</summary>
+        <div class="faq-a"><p>Лид-магнит — 30 кредитов, короткая книга — 60, полная коммерческая книга — 100. Иллюстрации к главам добавляют 1 кредит за изображение, каждый дополнительный источник — 8 кредитов, исследование темы — 5 кредитов за нишу, а проверка товарного знака — 1 кредит на каждом плане. Аудиокниги оплачиваются отдельно, из аудиокредитов.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Переносятся ли неиспользованные кредиты?</summary>
+        <div class="faq-a"><p>Кредиты плана пополняются каждый месяц — даже при ежегодной оплате — и неиспользованные не переносятся на следующий месяц. Кредиты, купленные пакетом, ведут себя противоположным образом: они никогда не сгорают, пока ваш аккаунт активен, а если на балансе есть и те, и другие, сначала тратятся истекающие кредиты плана, чтобы ничего не пропало.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Спишут ли деньги, если что-то не получится?</summary>
+        <div class="faq-a"><p>Нет. Если исследование не удалось частично, 5 кредитов возвращаются автоматически. Если некоторые источники недоступны или закрыты платной подпиской, книга все равно создается из остальных, а в панели управления указано, какие были пропущены; книга не удается только в том случае, если ни один источник не удалось прочитать, и тогда кредиты также автоматически возвращаются.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>На каких языках я могу публиковать и озвучивать?</summary>
+        <div class="faq-a"><p>Вы можете публиковать на <strong>семи</strong> — английском, французском, испанском, португальском, немецком, итальянском и нидерландском — и каждый перевод становится отдельной книгой, что и требуется Amazon, поскольку каждый язык — это отдельный листинг. Озвучивание охватывает <strong>все эти семь плюс китайский, японский и корейский</strong> — всего десять, с мужским и женским голосом на каждом. Каждое издание, которое вы можете опубликовать, вы также можете превратить в аудиокнигу.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Можно ли продавать аудиокнигу на Audible?</summary>
+        <div class="faq-a"><p>Через агрегатора — да. Author's Republic, Kobo Writing Life и программа Spotify для аудиокниг принимают ИИ-озвучивание и распространяют его в каталоге Audible с указанием этого. Собственный процесс подачи ACX предназначен для человеческого озвучивания, если только название не <em>авторизовано</em> заранее, поэтому сначала свяжитесь с ACX, а не отправляйте и надейтесь. Пакет, который мы собираем, соответствует техническим требованиям, которые они проверяют; разрешение — это то, что вы организуете.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Что входит в пакет аудиокниги?</summary>
+        <div class="faq-a"><p>Каждая часть в виде пронумерованного MP3 с битрейтом 192 кбит/с CBR, 44,1 кГц, уровнем около −20 дБ RMS с пиком ниже −3 дБ, плюс обложка 3000×3000, пятиминутный образец для магазина, теги ID3 со встроенной обложкой и файл метаданных, объявляющий озвучивание цифровым. Потери WAV-мастеров хранятся рядом и могут быть загружены по частям.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Обязательно ли начинать с видео?</summary>
+        <div class="faq-a"><p>Нет. Книгу можно создать из веб-статей, документов Word, презентаций PowerPoint и PDF-файлов, а также видео, и их можно смешивать в одной книге. Если у вас вообще нет темы, начните с трендовых досок и исследования тем — они покажут, что люди реально ищут, прежде чем вы потратите кредиты на написание.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Как долго хранятся мои книги?</summary>
+        <div class="faq-a"><p>Файлы хранятся 30 дней, с обратным отсчетом на каждой карточке в панели управления, затем ресурсы удаляются, а запись о книге остается в вашем аккаунте. Озвучивание аудиокниги истекает по тем же часам, что и книга, к которой оно относится. Скачивайте все, что хотите сохранить, — ничто не мешает вам скачивать это сколько угодно раз в течение этого окна.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Бесплатный план действительно бесплатный?</summary>
+        <div class="faq-a"><p>Да, и карта не требуется. Бесплатные аккаунты получают 100 кредитов каждый месяц и используют те же функции создания, редактирования, источников изображений, качества, аудиокниг, перевода и экспорта, что и платные. Планы отличаются доступными кредитами, а не заблокированными инструментами. Купленные кредиты остаются на вашем балансе, пока ежемесячное пополнение обновляется.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Нужно ли мне знать, какую книгу я хочу?</summary>
+        <div class="faq-a"><p>Нет — для этого и нужны шаблоны. Выберите из двенадцати видов (руководство, 7-дневный план, рабочая тетрадь, ежедневное чтение, кейсы, полевое руководство, справочник и другие), и длина, тон и структура глав будут заданы за вас. Это не просто ярлык: полевое руководство строит каждую главу из одних и тех же трех тактов, ежедневное чтение делает каждую запись самостоятельной, рабочая тетрадь дает больше места упражнениям, чем объяснениям. Все, что задает шаблон, — это элемент управления, который вы все равно можете изменить, а полностью пропустить его тоже можно.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Могу ли я изменить книгу до того, как она будет написана?</summary>
+        <div class="faq-a"><p>В этом и смысл этапа создания плана. ИИ предлагает структуру глав, и ничего не пишется, пока вы её не одобрите, так что вы можете переименовывать, менять порядок, добавлять и удалять главы, пока это ещё дёшево. В книгах из нескольких источников вы также видите, из какого источника взята каждая глава.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Можно ли изменить книгу после её создания?</summary>
+        <div class="faq-a"><p>Да — каждое слово. <strong>Редактировать текст</strong> позволяет вручную менять что угодно бесплатно, применить точечное предложение корректора за 0.1 кредита или переписать целый раздел за 1 кредит в том же стиле и на том же языке, что и остальная книга. Ваши готовые файлы продолжают работать со старой версией текста, пока вы не пересоберёте их, так что вы никогда не останетесь без загрузок в процессе правки.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Будет ли проверяться грамматика перед публикацией?</summary>
+        <div class="faq-a"><p>Да, и бесплатно, сколько бы раз вы ни запускали проверку. Она читает каждую главу на предмет грамматики, повторов и ясности, а затем просматривает всю книгу на предмет того, что одна глава не может выявить — термин, названный двумя разными способами, идея, использованная до её введения, обещание, которое не выполнено. Каждое замечание цитирует точные слова, и клик по нему переносит вас к ним. Замечания, которые не удаётся найти в тексте дословно, отбрасываются, а не показываются с предположением, так что короткий список, которому можно доверять, лучше длинного, который пришлось бы проверять самому.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Может ли он писать в моём стиле, и используются ли мои тексты для его обучения?</summary>
+        <div class="faq-a"><p>Может, и не используются. Загрузите что-то, что вы уже написали, и <strong>описание того, как вы пишете</strong> будет составлено на его основе — длина предложений и её вариативность, как вы начинаете и заканчиваете раздел, обращаетесь ли вы к читателю, ваши привычки в пунктуации — и каждая последующая глава пишется с учётом этого описания. Никакая модель не дообучается, ничто из загруженного не используется для чужих книг, а ваши файлы <strong>удаляются сразу после прочтения</strong>. Стиль, ритм и лексика заметно меняются; текст не станет неотличимым от вашего, и мы предпочитаем сказать об этом прямо, чем позволить вам обнаружить это самим.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-orb"></div>
+  <div class="cta-inner fade-in-up">
+    <span class="section-label">Начать</span>
+    <h2 class="section-title">Ваша следующая электронная книга<br>в одном URL</h2>
+    <p class="section-sub" style="margin:0 auto 2.5rem;">Добавьте один источник или двадцать. Выберите режим точности, стиль письма, одобрите план — и позвольте TubeBook написать книгу.</p>
+    <a href="https://app.tubebook.org/signup" class="btn-primary" style="display:inline-flex;font-size:1.05rem;">Создать бесплатную книгу →</a>
+    <p style="margin-top:1.2rem;font-size:0.82rem;color:var(--muted);">Бесплатный план · 100 кредитов каждый месяц · Все функции · Без кредитной карты</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">© 2026 TubeBook · <a href="https://tubebook.org">tubebook.org</a></div>
+  <div class="footer-links">
+    <a href="https://app.tubebook.org/ideas">Идеи для книг</a>
+    <a href="/ru/help">Помощь и руководства</a>
+    <a href="/ru/privacy">Политика конфиденциальности</a>
+    <a href="/ru/terms">Условия</a>
+    <a href="/ru/contact">Контакты</a>
+  </div>
+  <div class="footer-note">TubeBook (tubebook.org) — независимый продукт и <strong>не связан с TubeBook AI (tubebookai.com)</strong>, отдельной компанией с похожим названием. TubeBook продаётся только через tubebook.org — у нас нет дилеров и нет плана на всю жизнь или безлимитного плана.</div>
+</footer>
+
+<script>
+// Typing URL
+const urls=['dQw4w9WgXcQ','jNQXAC9IVRw','hY7m5jF7iO4','kXYiU8k6t5E'];
+let uI=0,cI=0,del=false;
+const tEl=document.getElementById('typing-url');
+function typeUrl(){const c=urls[uI];if(!del){tEl.textContent=c.slice(0,++cI);if(cI===c.length){del=true;setTimeout(typeUrl,1800);return;}}else{tEl.textContent=c.slice(0,--cI);if(cI===0){del=false;uI=(uI+1)%urls.length;}}setTimeout(typeUrl,del?60:110);}
+typeUrl();
+
+// Demo steps
+const dSteps=document.querySelectorAll('.demo-step');
+let aC=1;
+setInterval(()=>{dSteps.forEach((s,i)=>s.classList.toggle('active',i<aC));aC=aC>=dSteps.length?1:aC+1;},900);
+
+// Demo controls cycle
+const fidels=[{dot:'green',label:'Low — Commercial Ready'},{dot:'yellow',label:'Smart — Check Rights'},{dot:'red',label:'High — Repurposing Only'}];
+const styls=['Professional','Conversational','Storytelling','Academic','Inspirational','Stoic'];
+let fI=0,sI=0;
+setInterval(()=>{fI=(fI+1)%fidels.length;const f=fidels[fI];document.getElementById('demo-fidelity').innerHTML=`<span class="chip-dot ${f.dot}"></span> ${f.label}`;},2200);
+setInterval(()=>{sI=(sI+1)%styls.length;document.getElementById('demo-style').textContent='✦ '+styls[sI];},1800);
+
+// Style tag preview
+document.querySelectorAll('.style-tag').forEach(tag=>{
+  tag.addEventListener('click',()=>{
+    document.querySelectorAll('.style-tag').forEach(t=>t.classList.remove('active'));
+    tag.classList.add('active');
+    document.getElementById('style-preview-text').innerHTML=tag.dataset.preview;
+    document.getElementById('style-chip').textContent='✦ '+tag.dataset.style;
+  });
+});
+
+// Scroll fade-in
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:0.1});
+document.querySelectorAll('.fade-in-up').forEach(el=>obs.observe(el));
+</script>
+<script src="/promo-banner.js" defer></script>
+</body>
+</html>

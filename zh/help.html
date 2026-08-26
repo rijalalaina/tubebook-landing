@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-tubebook_32x32.png" />
+<title>帮助与教程 — TubeBook</title>
+<meta name="description" content="了解如何使用 TubeBook 将 YouTube 视频、网页文章和文字记录转换为精美的电子书——支持单一来源或多来源。包含分步教程、积分使用、导出和故障排除。" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* ─── TUBEBOOK INNER PAGE — SHARED CSS ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #08090d; --bg2: #0f1118; --bg3: #14171f; --card: #131620;
+  --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
+  --amber: #ff6200; --amber2: #ff8c42; --amber-dim: rgba(255,98,0,0.12);
+  --red: #ff3b3b; --red-dim: rgba(255,59,59,0.12);
+  --green: #2ecc71; --green-dim: rgba(46,204,113,0.11);
+  --text: #f0eee8; --muted: #7b7d8a; --muted2: #a0a3b1;
+  --radius: 14px; --radius-lg: 20px;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; overflow-x: hidden; }
+a { color: var(--amber); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--amber2); text-decoration: underline; }
+strong { color: var(--text); font-weight: 600; }
+code, kbd { background: var(--bg3); border: 1px solid var(--border); padding: 2px 7px; border-radius: 5px; font-size: .85em; font-family: 'DM Mono', 'Fira Code', monospace; color: var(--amber2); }
+
+/* NAV */
+nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 4rem; background: rgba(8,9,13,0.88); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); }
+.nav-logo { display: flex; align-items: center; gap: 10px; font-size: 1.2rem; font-weight: 700; color: var(--text); text-decoration: none; }
+.nav-logo:hover { text-decoration: none; }
+.logo-icon { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, #ff6200 0%, #cc4e00 100%); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0; }
+.logo-text span { color: var(--amber); }
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-links a { color: var(--muted2); font-size: 0.875rem; text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--amber); text-decoration: none; }
+.nav-cta { background: var(--amber); color: #1a1200 !important; font-size: 0.85rem; font-weight: 600; padding: 0.5rem 1.2rem; border-radius: 8px; text-decoration: none !important; transition: background 0.2s; }
+.nav-cta:hover { background: var(--amber2); }
+
+/* LAYOUT */
+.page-wrap { max-width: 860px; margin: 0 auto; padding: 0 2rem 6rem; }
+.page-header { padding: 4rem 0 2.5rem; border-bottom: 1px solid var(--border); margin-bottom: 3rem; position: relative; overflow: hidden; }
+.page-header::after { content: ''; position: absolute; top: 0; inset-inline-end: -40px; width: 340px; height: 220px; background: radial-gradient(ellipse, rgba(255,98,0,0.06) 0%, transparent 70%); pointer-events: none; }
+.breadcrumb { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; display: flex; align-items: center; gap: 6px; }
+.breadcrumb a { color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--amber); }
+.breadcrumb span { opacity: 0.4; }
+h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 900; line-height: 1.15; letter-spacing: -0.02em; color: var(--text); }
+.page-lead { font-size: 1.05rem; color: var(--muted2); margin-top: 0.8rem; max-width: 580px; line-height: 1.7; }
+.page-meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.6rem; }
+
+/* TYPOGRAPHY */
+h2 { font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 700; color: var(--text); margin: 3rem 0 1rem; letter-spacing: -0.01em; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+.sec-num { font-family: 'Outfit', sans-serif; font-size: 0.7rem; font-weight: 600; color: var(--amber); background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.22); padding: 0.15rem 0.55rem; border-radius: 100px; letter-spacing: 0.05em; flex-shrink: 0; }
+h3 { font-size: 0.97rem; font-weight: 600; color: var(--text); margin: 1.5rem 0 0.5rem; }
+p { color: var(--muted2); line-height: 1.75; margin-bottom: 0.8rem; }
+ul, ol { color: var(--muted2); padding-inline-start: 1.4rem; line-height: 1.75; }
+li { margin-bottom: 0.45rem; }
+
+/* CARDS */
+.card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.6rem 1.8rem; margin: 1rem 0; position: relative; overflow: hidden; }
+.card::before { content: ''; position: absolute; top: 0; inset-inline-start: 0; inset-inline-end: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,98,0,0.18), transparent); }
+
+/* TOC */
+.toc-box { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem 1.8rem; margin-bottom: 2.5rem; }
+.toc-box-title { font-size: 0.72rem; font-weight: 600; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.8rem; }
+.toc-box ol { padding-inline-start: 1.2rem; }
+.toc-box li { margin-bottom: 0.3rem; }
+.toc-box a { font-size: 0.88rem; color: var(--muted2); text-decoration: none; }
+.toc-box a:hover { color: var(--amber); }
+
+/* TABLES */
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+th { text-align:start; padding: 0.7rem 0.9rem; font-size: 0.75rem; font-weight: 600; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1px solid var(--border2); }
+td { padding: 0.7rem 0.9rem; color: var(--muted2); border-bottom: 1px solid var(--border); }
+tr:last-child td { border-bottom: none; }
+td strong { color: var(--text); }
+
+/* PILLS */
+.pill { display: inline-block; background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.25); color: var(--amber2); font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.65rem; border-radius: 100px; letter-spacing: 0.04em; margin-inline-end: 6px; vertical-align: middle; }
+
+/* ALERT BOXES */
+.alert-warn { background: rgba(255,59,59,0.07); border: 1px solid rgba(255,59,59,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: #ff9a9a; }
+.alert-tip { background: var(--green-dim); border: 1px solid rgba(46,204,113,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: #7be8a8; }
+.alert-info { background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: var(--amber2); }
+
+/* FOOTER */
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2.5rem 4rem; }
+.footer-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.footer-brand { font-size: 0.82rem; color: var(--muted); }
+.footer-brand a { color: var(--amber); text-decoration: none; }
+.footer-links { display: flex; gap: 1.8rem; flex-wrap: wrap; }
+.footer-links a { font-size: 0.82rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text); }
+
+@media (max-width: 760px) {
+  nav { padding: 0.9rem 1.2rem; }
+  .nav-links { display: none; }
+  .page-wrap { padding: 0 1.2rem 4rem; }
+  footer { padding: 2rem 1.2rem; }
+}
+
+
+/* PAGE-SPECIFIC */
+.toc-nav { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 1.5rem 0 2.5rem; }
+.toc-nav a { display: block; padding: 0.9rem 1.1rem; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); color: var(--muted2); font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+.toc-nav a:hover { border-color: rgba(255,98,0,0.4); color: var(--amber); text-decoration: none; }
+.step-list { display: flex; flex-direction: column; gap: 1rem; }
+.step-row { display: flex; gap: 1rem; align-items: flex-start; }
+.step-n { flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.3); color: var(--amber); font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+.step-body { color: var(--muted2); font-size: 0.92rem; line-height: 1.65; }
+.step-body strong { color: var(--text); }
+
+
+    .footer-note { max-width: 780px; margin: 1.25rem auto 0; font-size: 0.78rem; line-height: 1.6; color: var(--muted); text-align: center; }
+    .footer-note strong { color: var(--muted2); font-weight: 600; }
+</style>
+<!-- i18n:begin -->
+<link rel="alternate" hreflang="en" href="https://tubebook.org/help" />
+<link rel="alternate" hreflang="fr" href="https://tubebook.org/fr/help" />
+<link rel="alternate" hreflang="es" href="https://tubebook.org/es/help" />
+<link rel="alternate" hreflang="pt" href="https://tubebook.org/pt/help" />
+<link rel="alternate" hreflang="de" href="https://tubebook.org/de/help" />
+<link rel="alternate" hreflang="ru" href="https://tubebook.org/ru/help" />
+<link rel="alternate" hreflang="zh-Hans" href="https://tubebook.org/zh/help" />
+<link rel="alternate" hreflang="ar" href="https://tubebook.org/ar/help" />
+<link rel="alternate" hreflang="x-default" href="https://tubebook.org/help" />
+<link rel="canonical" href="https://tubebook.org/zh/help" />
+<script src="/lang-switcher.js" defer></script>
+<!-- i18n:end -->
+</head>
+<body>
+
+<nav>
+  <a href="/zh/" class="nav-logo" style="padding:0;">
+    <img src="/logo-tubebook-1500x450.png" alt="TubeBook" style="height:48px;width:auto;display:block;" />
+  </a>
+  <div class="nav-links">
+    <a href="/zh/help" class="active">帮助</a>
+    <a href="/zh/privacy">隐私</a>
+    <a href="/zh/terms">条款</a>
+    <a href="/zh/contact">联系</a>
+  </div>
+  <a href="https://app.tubebook.org" class="nav-cta">打开应用 →</a>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-header">
+    <div class="breadcrumb"><a href="/zh/">首页</a><span>/</span>帮助与教程</div>
+    <h1>帮助与教程</h1>
+    <p class="page-lead">使用 TubeBook，您可以将 YouTube 视频、文章、文档和您自己的手稿转化为可出版的电子书。</p>
+  </div>
+
+  <div class="toc-nav">
+    <a href="#getting-started">入门指南</a>
+    <a href="#generation">生成电子书</a>
+    <a href="#design">设计与可读性</a>
+    <a href="#artwork">封面与插图</a>
+    <a href="#grounding">事实来源</a>
+    <a href="#book-parts">书籍组成部分</a>
+    <a href="#templates">书籍模板</a>
+    <a href="#writing-style">您的写作风格</a>
+    <a href="#editing">编辑与校对</a>
+    <a href="#references">参考文献</a>
+    <a href="#title">标题与副标题</a>
+    <a href="#languages">其他语言</a>
+    <a href="#audiobooks">有声书</a>
+    <a href="#find-a-topic">寻找主题</a>
+    <a href="#credits">积分与定价</a>
+    <a href="#exports">导出与格式</a>
+    <a href="#publishing-risk">导出与格式</a>
+    <a href="#troubleshooting">出版风险检查</a>
+    <a href="#account">账户与账单</a>
+  </div>
+
+  <!-- GETTING STARTED -->
+  <div class="card" id="getting-started">
+    <h2>入门指南</h2>
+    <div class="step-list">
+      <div class="step-row">
+        <div class="step-n">1</div>
+        <div class="step-body">免费创建账户，请访问 <a href="https://app.tubebook.org">TubeBook 应用</a>。免费账户每月获得 <strong>100 个积分</strong>，无需绑定银行卡，功能与付费账户相同。</div>
+      </div>
+      <div class="step-row">
+        <div class="step-n">2</div>
+        <div class="step-body">不确定写什么？先打开 <strong>寻找主题</strong> ——看看读者在搜索什么，选一个主题，TubeBook 会为你提供素材。或者直接跳到第 3 步。</div>
+      </div>
+      <div class="step-row">
+        <div class="step-n">3</div>
+        <div class="step-body">打开 <strong>生成</strong>，粘贴 YouTube 链接或文字稿，选择保真模式和写作风格，然后提交。</div>
+      </div>
+      <div class="step-row">
+        <div class="step-n">4</div>
+        <div class="step-body">TubeBook 会处理其余部分——阅读素材、构建结构、撰写内容、质量检查、可选封面和章节图片——然后导出为 <strong>PDF、DOCX、EPUB 和 PPTX</strong> ，所有套餐均支持，另附打印版平装和 Kindle 资源。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GENERATION -->
+  <div class="card" id="generation">
+    <h2>生成电子书</h2>
+    <h3>选择篇幅</h3>
+    <ul>
+      <li><strong>短篇引流产品</strong> ——约 10-25 页印刷页（约 6,000 字，5 章）。适合作为邮件列表的免费赠品或订阅诱饵。 <strong>30 积分。</strong></li>
+      <li><strong>短篇书</strong> ——约 25-50 页（约 13,000 字，9 章）。足够达到 Amazon KDP 平装书 24 页的最低要求，因此可以印刷销售。 <strong>60 积分。</strong></li>
+      <li><strong>完整商业书籍</strong> ——长篇，10-14 章，25,000 字以上。结构和样式最为深入。 <strong>100 积分。</strong></li>
+    </ul>
+    <p>所有篇幅在所有套餐（包括免费版）中均可用——限制因素是你的积分余额，而非订阅等级。</p>
+    <div class="alert-tip">💡 页数是根据字数和开本估算的，因此同一本书在较大开本下显示的页数较少。如果你计划销售平装书，请注意生成页面上的页数估算：亚马逊不会印刷少于 24 页的书。6″ × 9″ 开本的短篇书籍可以轻松达标；8.5″ × 11″ 开本则可能不足。</div>
+    <h3>保真模式</h3>
+    <ul>
+      <li><strong>高保真</strong> ——严格遵循原始素材的结构、名称和观点。仅用于重新利用你自己的内容。</li>
+      <li><strong>智能改编（默认）</strong> ——将原始素材重写并重构为全新文本，同时保持与原始主题紧密相关。</li>
+      <li><strong>低保真</strong> ——仅将视频作为主题种子；生成实质性的原创内容，可安全用于商业出版（Amazon KDP、Gumroad 等）。</li>
+    </ul>
+    <h3>写作风格</h3>
+    <p>在生成前从专业、对话、叙事、学术、励志或斯多葛中选择。</p>
+    <h3>来源</h3>
+    <p>在生成页面，你首先选择 <strong>单一来源</strong> 或 <strong>多个来源</strong>.</p>
+    <p><strong>单一来源</strong> 是经典流程——一个 YouTube 链接，或你粘贴的转录文本。</p>
+    <p><strong>多个来源</strong> 让你将整个研究集合并成一本电子书。根据你的计划添加任意数量的条目，可以混合使用：</p>
+    <ul>
+      <li><strong>YouTube 链接</strong> ——TubeBook 直接摄取视频并提取其转录文本。</li>
+      <li><strong>网页</strong> ——粘贴文章或博客链接，TubeBook 提取可读文本。付费墙和仅 JavaScript 的页面无法读取；请改为粘贴文本。</li>
+      <li><strong>粘贴文本</strong> ——任何转录文本、文章或笔记（最少 200 字符）。</li>
+      <li><strong>文档</strong> —— <strong>.docx</strong>, <strong>.pptx</strong> 或 <strong>.pdf</strong>，可从电脑上传（最大 25 MB）或通过链接提供。Word 手稿、幻灯片、研究论文、报告和课程笔记均可。</li>
+    </ul>
+    <p>你选择 <em>文档</em> ，仅此而已——TubeBook 根据文件本身识别格式，而非文件名，因此一个 <code>.docx</code> 实际上是 PDF 的文件会按 PDF 读取，而不会在后续失败。</p>
+    <div class="alert-tip">💡 一个 <strong>扫描的</strong> PDF——即页面是文本照片，无任何可选中内容——会被拒绝并给出明确原因，而不是作为空源摄取。请从原始文件导出新的 PDF，或粘贴文本。</div>
+    <p>文档的成本与网页完全相同：不消耗 YouTube 转录积分，不调用搜索。解析在 TubeBook 内部完成。</p>
+    <p>为每个来源添加可选标签，以便日后识别。来源按添加顺序编号 <strong>S1、S2、S3……</strong> 。</p>
+    <h3>多来源书籍的撰写方式</h3>
+    <ol>
+      <li>TubeBook 会依次读取每个来源并逐一总结。你会在仪表板上看到“正在读取来源 2，共 6 个”。</li>
+      <li>它会合并这些总结，并为整个来源集起草一份大纲。</li>
+      <li>每章都会标注其引用的来源——你会在大纲审阅中看到类似 <strong>S1</strong>, <strong>S4</strong> 的标签。</li>
+      <li>写作时，每章只会获得其自身来源的完整文本，因此它基于真实细节而非共享总结来创作。</li>
+    </ol>
+    <div class="alert-tip">💡 来源是尽力而为的。如果某个 URL 失效或被付费墙拦截，它会被跳过，书籍仍会基于其余来源构建——你会在仪表板上看到“有 1 个来源（共 6 个）无法读取”。只有当 <em>所有</em> 来源都无法读取时，电子书才会失败，且积分会自动退还。</div>
+    <p><strong>我可以使用多少个来源？</strong> 每个套餐每本电子书最多可组合 25 个来源。第一个来源包含在书价中，每增加一个来源需 8 积分。</p>
+
+    <h3>粘贴整份手稿</h3>
+    <p>粘贴框最多可容纳 <strong>850,000 个字符——约 500 页印刷内容</strong>，因此你可以将整本未出版的书粘贴进来，让 TubeBook 重新组织。</p>
+    <p>超过约 47 页后，任何单一步骤都无法一次性读取所有文字，因此 TubeBook 会基于摘录工作——了解其具体方式很重要，因为它不是“前五十页”：</p>
+    <ul>
+      <li>大纲 <strong>大纲</strong> 是基于均匀分布在整个文本中的摘录规划的，并锚定你真实的开头和结尾。 <em>整个</em> 文本</li>
+      <li>每一章 <strong>章节</strong> 都基于其涵盖的手稿片段撰写，窗口之间相互重叠，确保没有内容被遗漏。</li>
+    </ul>
+    <p>生成页面会在你花费积分之前，告知你选择的长度将达到的比例——例如 <em>在5章时，此格式约覆盖47%。</em> 200页的手稿在任何长度下都能完整覆盖；500页的手稿需要更长的格式，或者按部分拆分成多个来源。</p>
+    <h3>图片</h3>
+    <p>所有套餐均包含封面和章节插图。每个位置都可以用AI绘制选项、搜索库存照片或上传自己的图片。AI生成的章节插图每张消耗1个积分；库存照片搜索和上传不消耗图片生成积分。</p>
+    <p>你不必接受生成的结果——参见 <a href="#artwork">封面与插图</a> 了解如何在选项间选择、上传自己的封面、向艺术家说明需求，以及自动放置或精确到章节和段落后放置每张章节图片。</p>
+    <div class="alert-tip">💡 为获得最佳质量，请在批准前审阅并编辑AI起草的大纲——章节范围决定整本书，只有你批准后才会开始写作。</div>
+  </div>
+
+  <!-- DESIGN -->
+  <div class="card" id="design">
+    <h2>设计与可读性</h2>
+    <h3>字号</h3>
+    <p>在生成前选择阅读舒适度，或在成品书上更改并重新生成：</p>
+    <ul>
+      <li><strong>标准——12磅。</strong> 平装书的常规设置。</li>
+      <li><strong>舒适——14磅。</strong> 长时间阅读更轻松。</li>
+      <li><strong>大字号——16磅。</strong> 大字号版本实际使用的字号。如果读者年龄较大，选这个。</li>
+      <li><strong>自定义——11到20磅之间任意值。</strong></li>
+    </ul>
+    <p>在大字号书籍中，前置部分保持自己的比例：版权声明和详细目录保持12磅，因为16磅的版权页看起来像错误而非善意。</p>
+    <div class="alert-warn">⚠️ <strong>字号变化会改变页数</strong>，而页数决定平装书封面的书脊宽度。在KDP上已上架的书更改字号后，必须重新上传 <strong>两个</strong> 文件——内文和封面——旧封面将不再匹配。</div>
+
+    <h3>字体和开本</h3>
+    <p>从十二种字体家族中为标题、副标题和正文选择不同字体，八种KDP开本尺寸从5″ × 8″到8.5″ × 11″，横版或竖版，白色或米色纸张。米色纸张稍厚，会影响书脊。</p>
+    <p>生成页面上的页数估算会随这些更改实时更新，并告知你是否满足亚马逊24页平装书最低要求。</p>
+  </div>
+
+  <!-- ARTWORK -->
+  <div class="card" id="artwork">
+    <h2>封面与插图</h2>
+    <p>所有这些都位于 <strong>编辑此书</strong> 在成品电子书下，并且都遵循一条规则： <strong>绘制图片不会重建任何内容。</strong> 你绘制、比较、选择——然后文件才重建一次。</p>
+
+    <h3>选择封面</h3>
+    <p><strong>生成3个选项</strong> 一次生成三个封面并排显示。它们会保留在候选列表中，所以你四轮前喜欢的那个还在。当你按下 <strong>使用此封面</strong>，TubeBook会重新绘制封面页、Kindle封面和平装本封套，并重建你的文件——你的章节和插图不会受影响。</p>
+    <p>每次生成三个选项，每个对应一个 <em>创意</em> ，而不是同一个创意的三个渲染。如果你再次点击，你会得到三个全新的创意，而不是重新绘制的相同三个。</p>
+    <div class="alert-tip">💡 旧的 <strong>重新生成封面</strong> 按钮仍然存在且有效。它会立即绘制一张图片并重建所有内容——如果你只是想重新生成，这样更快；如果你想要选择，则较慢。</div>
+
+    <h3>上传你自己的封面</h3>
+    <p>有设计师的作品，或你自己拥有的照片？ <strong>上传你自己的</strong> 会将其直接放入候选列表，与生成的选项并列。</p>
+    <p><strong>上传图片，而不是成品封面。</strong> 你的标题、副标题和作者名会在之后绘制在上面，并根据每种格式调整大小——如果封面已经带有标题，最终会导致标题出现两次。竖版，至少1200×1800像素（理想为1600×2560），PNG、JPEG或WebP格式，最大15 MB。</p>
+
+    <h3>艺术简报</h3>
+    <p>TubeBook会根据你的标题、主题和章节列表自动编写艺术指导。这是一个合理的猜测，但也仅仅是猜测——你可能想要墨水线条画、特定时期、特定色调，或者完全不要人物。 <strong>艺术简报</strong> 就是你可以用自己语言说明的地方：</p>
+    <p><em>“精细的墨水线条画，暖色调的棕褐色，不要照片。展现日常场景中的真实人物。”</em></p>
+    <p>一份简报涵盖 <strong>两个</strong> 封面和章节插图，这是有意为之——如果一本书的封面是木刻风格，而章节插图是水彩风格，看起来会比统一风格更糟糕。它适用于你下一次绘制的封面或插图，所以先保存，再绘制。</p>
+    <div class="alert-tip">💡 简报不能要求文字。艺术作品刻意无字——你的真实标题会在之后合成在上面——所以对标题或说明文字的要求应通过图像来表达。这样可以避免封面出现两次标题，其中一次是乱码的AI文字。</div>
+
+    <h3>查看章节插图</h3>
+    <p><strong>查看章节插图</strong> 会显示每个章节及其图片。对于每个章节，你可以：</p>
+    <ul>
+      <li><strong>取消勾选任何不合适的。</strong> 如果你愿意，一个章节可以完全没有插图。</li>
+      <li><strong>用AI生成3个选项</strong> 仅针对该章节——其他章节不受影响。</li>
+      <li><strong>库存照片</strong> 根据章节主题搜索 Unsplash、Pexels 和 Pixabay，同时避免重复建议。所需的摄影师署名和链接会以书籍语言带入导出的书中。</li>
+      <li><strong>上传你自己的</strong> 添加您有权使用的艺术作品。</li>
+      <li><strong>选择位置</strong> 让 TubeBook 自动放置图片，将其放在特定部分之后，或放在该部分的特定段落之后。</li>
+    </ul>
+    <p>重绘保持相同主题并移动镜头——更广、更近、更低、更紧地聚焦手部——因为您反对的是图片，而不是章节内容。</p>
+    <p>选择会即时保存。在您按下 <strong>保存并重建文件</strong>之前，不会触及您的文件，因此一次重建即可覆盖整个审阅过程，无论您调整了多少章节。</p>
+
+    <h3>图片实际描绘的内容</h3>
+    <p>在绘制任何内容之前，TubeBook 会将您的书转化为 <em>可命名的实体场景</em> ——封面一个，每章一个。这就是描绘主题与描绘氛围之间的区别。一本关于对话的书会呈现对话中的人物；一本关于手艺的书会呈现工具和工作空间。</p>
+  </div>
+
+  <!-- GROUNDING -->
+  <div class="card" id="grounding">
+    <h2>事实来源</h2>
+    <p>这是决定您能否为自己的书负责的设置，而且它很容易与保真度混淆。它们回答不同的问题：</p>
+    <ul>
+      <li><strong>保真度</strong> 控制 <em>表达</em> ——结构、顺序、措辞、包含哪些示例。</li>
+      <li><strong>事实依据</strong> 控制 <em>控制</em> 实质内容</li>
+    </ul>
+    <p><strong>——哪些事实、数据、名称和主张可以出现。</strong> TubeBook 在撰写您的书时绝不会搜索网络。</p>
+    <ul>
+      <li><strong>仅我的来源</strong> <em>（默认）</em> ——每个事实、数据、名称、引文和示例都必须来自您提供的材料。如果模型知道某些相关内容但您的来源中没有，则将其省略。深度来自更深入地利用您的材料，而不是引入新材料。</li>
+      <li><strong>来源 + AI 知识</strong> ——您的来源仍是主干，AI 可以在确实有帮助的地方添加公认的背景知识。以这种方式构建的书会在您的仪表板上标记，以便您日后识别。</li>
+    </ul>
+    <p><strong>两种设置都不得捏造证据。</strong> 在这两种模式下，模型都不得编造统计数据、研究、引用或引文，也不得将任何内容归于你的来源中未提及的具名个人或组织。"来源 + AI 知识" 意味着 <em>添加背景</em>，绝不 <em>添加证据</em>.</p>
+    <div class="alert-tip">💡 为什么 <em>仅我的来源</em> 是默认设置：这是你唯一能真正担保的设置。书中的一切都可以追溯到你所选择的内容。如果你切换到另一种设置，在发布前请核实任何无法追溯到来源的内容。</div>
+    <p>结合 <strong>仅我的来源</strong> 和 <strong>高保真</strong> ，你就拥有了真正的"重构我的稿件"模式——只允许你的材料进入。</p>
+    <p>有一个细微差别值得说明，因为这两种设置看起来相互冲突：在 <strong>低保真</strong> 和 <em>仅我的来源</em>模式下，AI 会撰写原创散文和原创插图来阐述你的观点，但它不得编造事实来填充。一个编造的数字无论是否替代了真实数字，都是编造的。</p>
+  </div>
+
+  <!-- BOOK PARTS -->
+  <div class="card" id="book-parts">
+    <h2>选择书中的内容</h2>
+    <p>当你审阅大纲时，你还会得到一份书各部分清单。章节总是包含在内；其他一切由你选择：</p>
+    <ul>
+      <li><strong>标题页</strong>, <strong>版权页</strong>, <strong>前言</strong>, <strong>目录</strong>, <strong>详细目录</strong></li>
+      <li><strong>引言</strong> 和 <strong>结论</strong></li>
+      <li><strong>行动号召</strong>, <strong>关于作者</strong>, <strong>联系方式 / 封底</strong></li>
+    </ul>
+    <div class="alert-tip">💡 在大纲阶段取消勾选引言或结论 <em>，</em> 它们就不会被撰写，因此你无需为生成它们付费。之后取消勾选，它们只会被排除在文件之外。</div>
+    <h3>每章如何结尾</h3>
+    <p>默认情况下，每章结尾都有 <strong>关键要点</strong> 列表和简短 <strong>反思</strong> 提示。现在这两者都可以单独关闭，让书籍读起来就像纯粹的散文。</p>
+    <p>与上述部分不同，这些可以从已经写好的书中移除 <em>已经写好的</em>：它们在构建文件时被移除，因此取消勾选并重新构建是 <strong>免费的，不会重写任何内容</strong>。再次勾选，它们就会回来。</p>
+    <div class="alert-tip">💡 如果你曾看到章节带有“关键要点”标题但下面没有内容，这个问题已修复：任何没有内容的标题现在都会从文件中移除，无论它是什么。</div>
+
+    <h3>之后改变主意</h3>
+    <p>在任何已完成的书籍上，使用 <strong>更改本书内容</strong> 来调整选择并重建文件。这是 <strong>免费的，不消耗积分</strong> ——这些部分在构建文件时组装，因此不会重写任何内容。</p>
+
+    <h3>版权页</h3>
+    <p>填写你想填的内容：笔名、出版社或印记、城市和国家、版本、封面设计师、内页设计师以及印刷国家。 <strong>留空的内容将完全省略</strong> ——你的书中永远不会出现“[出版社名称]”这样的占位符。</p>
+    <p>可选的 <strong>免责声明</strong> 声明本书为教育性质，作者和出版商均不提供法律、财务或医疗建议。默认开启。</p>
+    <p>在 <strong>个人资料 &rarr; 印记默认值</strong> 中设置一次，每本新书都会自动填充这些信息。每本书都保留自己的副本，因此编辑个人资料不会改变已出版的书籍。</p>
+
+    <h3>前言</h3>
+    <p>前言由他人撰写——同行、导师或你所在领域的知名人士。提供他们的姓名、资历、地点和日期，然后要么自己撰写文本，要么让TubeBook根据你书籍的真实主题和章节起草。</p>
+    <div class="alert-tip">💡 如果你使用草稿版本，请让署名者在出版前阅读并批准。因为上面署的是他们的名字，不是你的。</div>
+
+    <h3>二维码</h3>
+    <p>你可以在“关于作者”页面添加二维码，指向你的网站、亚马逊书籍页面或其他任何地方。它会印在 <strong>仅平装</strong> ——在Kindle或EPUB版本中，读者点击链接即可，因此只会占用空间。</p>
+    <p><strong>关于亚马逊，有一点值得了解。</strong> KDP的 <a href="https://kdp.amazon.com/en_US/help/topic/GQ6JQ7FM6C72HE4X" target="_blank" rel="noopener">超链接指南</a> 禁止在书中包含“请求客户信息的网络表单链接”——这正是邮件订阅或引导磁铁落地页。指向亚马逊本身的链接没问题，指向系列中其他书籍的链接也明确允许。二维码是图像而非链接，因此该规则并未明确涵盖，但亚马逊保留自行删除链接的权利。TubeBook会在二维码目标看起来像注册页面时提醒你，如果你保留它，仍会打印——这是你的书。</p>
+  </div>
+
+  <!-- TITLE -->
+  <div class="card" id="title">
+    <h2>标题与副标题</h2>
+    <h3>亚马逊的200字符限制</h3>
+    <p>KDP允许 <strong>标题和副标题合计200个字符</strong>，包括空格和标点。超出后亚马逊会拒绝上架。TubeBook会在可编辑的地方为你计数，并在超出之前而非之后提醒。</p>
+
+    <h3>书籍构建后编辑它们</h3>
+    <p>在 <strong>编辑此书</strong> 下，你可以重写已完成电子书的标题、副标题和作者名并重新构建。这是 <strong>免费</strong>的。封面艺术会保留——只重新绘制上面的文字——亚马逊描述和关键词也会重写以匹配新标题。</p>
+
+    <h3>AI标题建议</h3>
+    <p><strong>建议SEO标题</strong> 会根据你书籍的实际章节，以及如果书籍来自 <em>寻找主题</em>，则根据读者真正搜索的短语，提出替代方案。每个建议都会显示其字符数，与200限制对比。点击一个建议会填充字段；在按下保存之前不会保存任何内容，因此尝试它们无需成本。</p>
+    <p>建议旨在同时以三种方式发挥作用： <strong>搜索</strong> （人们实际输入的关键词）， <strong>答案引擎</strong> （副标题直接、字面地回答问题），以及 <strong>AI推荐</strong> （标题和副标题在单独阅读时，无需封面就能明确主题、范围和读者）。而且绝不堆砌关键词——读起来像SEO诱饵的标题会同时失去人类销售和AI推荐。</p>
+  </div>
+
+  <!-- LANGUAGES -->
+  <div class="card" id="templates">
+    <h2>书籍模板</h2>
+    <p>在 <strong>创建书籍</strong> 上的第一个问题是书籍类型。共有十二个模板，分为四组：</p>
+    <table>
+      <tr><th>实用</th><td><strong>操作指南</strong> ——分步编号，直达一个具体结果。<br><strong>初学者指南</strong> ——假设零基础，定义每个术语。<br><strong>7天快速上手</strong> ——每天一章，每章一个行动。<br><strong>清单式引流</strong> ——短小精悍，适合赠送。</td></tr>
+      <tr><th>商业</th><td><strong>案例研究</strong> ——每章一个完整案例。<br><strong>商业实战手册</strong> ——提供框架及选择标准。</td></tr>
+      <tr><th>个人成长</th><td><strong>练习手册</strong> ——包含读者完成的练习和提示。<br><strong>每日阅读</strong> ——短篇，每篇一个观点。<br><strong>破除迷思</strong> ——每章拆解一个信念。</td></tr>
+      <tr><th>参考</th><td><strong>讲解</strong> ——让复杂主题变得易懂。<br><strong>参考手册</strong> ——用于查阅，而非通读。<br><strong>实地指南</strong> ——识别、理解、知道该怎么做。</td></tr>
+    </table>
+
+    <h3>模板实际改变什么</h3>
+    <p>它设定长度、写作风格、插图数量，以及每章结尾的模块——并改变 <strong>章节的构建方式</strong>。实地指南每次按相同顺序使用相同的三个节拍，因此你可以预测下一章的结构并跳到所需部分。每日阅读器从不交叉引用其他条目，因此随机打开总是有效。工作簿为读者的工作留出比你的解释更多的空间。</p>
+
+    <div class="alert-tip">💡 <strong>模板填充设置——它们不会锁定设置。</strong> 选择一个，其下方的长度、语气和章节块会随之改变；之后更改其中任何一个，你的选择优先。如果你想要一个十二章节模板的九章节版本，没有什么能阻止你。</div>
+
+    <p>选择模板是可选的。跳过它，书籍生成方式与以往完全相同——而且你在模板出现之前制作的书籍不受影响，包括重新生成文件时。</p>
+  </div>
+
+  <div class="card" id="writing-style">
+    <h2>您的写作风格</h2>
+    <p>在你的 <strong>个人资料</strong> 页面的 <strong>您的写作风格</strong>下，上传你已写好的内容——博客文章、章节、文章——或粘贴几页。然后你的书籍会按照你的写作方式生成，而不是采用AI写作默认的那种谨慎、平稳的语域。</p>
+
+    <h3>实际发生的情况</h3>
+    <p>你的样本会被读取一次，并从中得出一个 <strong>你的写作风格描述</strong> ：句子长度及其变化程度、你是否直接称呼读者、你如何开头和结尾、你的标点习惯、你从不做什么。该描述会显示给你，并附上一些简短观察，以便你判断它是否准确。</p>
+    <p>之后你生成的每本书的每一章都会在写作时参考该描述。它取代了通用的语气设置，而后者之前只是一个句子——这就是它产生明显差异的全部原因。</p>
+
+    <div class="alert-info">🔒 <strong>这不是模型训练，你的写作属于你。</strong> 没有模型经过微调，你上传的内容不会用于他人的书籍，你的文件 <strong>被读取后立即删除</strong>。只保留描述和简短摘录——摘录是为了在你添加另一个样本时可以重新生成描述。教我们你的写作风格不应让我们永久保留你的手稿。</div>
+
+    <h3>它能做什么和不能做什么</h3>
+    <p>它会改变语域、节奏和词汇，并且是影响生成书籍阅读体验的最大杠杆。它不会让写作与你的完全无法区分，我们宁愿直说也不愿让你发现。几页的效果远好于几段：一段是偶然，几页是风格。</p>
+
+    <div class="alert-tip">💡 你的风格会在 <strong>创建书籍时复制到每本书上</strong>。之后完善你的个人资料会影响未来的书籍，但绝不会重写你已经发布的书籍。在 <strong>高保真</strong> 它会被忽略，就像每本书的语气设置一样——该模式再现说话者自己的声音，而个人写作风格会破坏这一点。</div>
+  </div>
+
+  <div class="card" id="editing">
+    <h2>编辑与校对</h2>
+    <p>在任何已完成的书籍上， <strong>编辑写作</strong> 会打开编辑器：左侧是你的章节，旁边是其中一章的文本。完成的书籍不是冻结的。</p>
+
+    <h3>自行更改任何内容</h3>
+    <p>编辑章节并按保存。这是免费且无限制的——打字不是我们收费的服务。</p>
+    <div class="alert-info">📄 <strong>你的文件在编辑时保持可用。</strong> 你已有的PDF、EPUB、DOCX和PPTX仍可下载，并保留 <em>上一页</em> 措辞，直到你按下 <strong>重新生成文件</strong>。我们本可以在你改动一个词时就删除它们，但因为你修正了一个错别字就收回你的下载，比直接告诉你它们版本落后更糟糕。</div>
+
+    <h3>重写某个章节</h3>
+    <p>文本下方是章节各部分的列表。选择一部分，可选说明需要更改的内容（“收紧”、“添加具体示例”），然后它会以 <strong>与全书其余部分相同的风格、忠实度、依据和语言——</strong>——重写回来，并且它已经阅读了前后章节，所以能衔接上。最后这一点正是它读起来不像一段外来的文字被硬塞进你章节的原因。</p>
+    <p><strong>1 积分</strong> 每整节重写。费用在模型运行前扣除，如果任何环节失败，积分会自动退还，所以你绝不会为没收到的文字付费。</p>
+
+    <h3>校对书稿</h3>
+    <p><strong>检查</strong> 会阅读你当前所在的章节。 <strong>检查全书</strong> 会阅读每一章，然后寻找单章无法暴露的问题：同一个想法用了两个不同的名字、一个术语在引入之前就被使用、一个承诺从未兑现、两章内容重叠。</p>
+    <p>发现的问题按严重程度从高到低列出。每一条都引用它反对的确切文字，并附上具体的修改建议。 <strong>应用建议</strong> 进行针对性的 AI 修正，费用为 <strong>0.1 积分</strong>; <strong>手动修正</strong> 会打开对应的章节或小节，让你免费自行修改。</p>
+    <div class="alert-tip">💡 <strong>为什么有些真正的问题没有被报告。</strong> 每条发现都必须准确引用你的文本，我们会在章节中搜索该引用后才显示。任何找不到的内容都会被丢弃——偶尔也包括模型引用略有偏差的真实问题。这是有意为之。一份每条都可信的列表，比一份更长但需要你自行核实的列表更有用，而核实正是检查本该做的事。</div>
+    <p>检查是 <strong>免费</strong>免费的，无论你运行多少次。发现不会被保存：检查描述的是你文本在那一刻的状态，而你下一次编辑后，它指向的句子可能已不存在。</p>
+
+    <h3>寻求第二意见</h3>
+    <p>章节下方是 <strong>询问本章</strong>。它已经阅读了你的大纲和当前章节，所以能回答关于方向、节奏、章节是否值得其篇幅，或一个薄弱开头缺少什么的问题。它会告诉你什么时候已经很好，如果它认为某个改动会削弱全书，它会提出一次异议。</p>
+    <p>让它修改措辞，它会以 <strong>提案</strong>：完整的替换文本、它将替换的部分，以及接受或拒绝。它 <strong>绝不会自行编辑您的书</strong> ——接受编辑与保存您自己的输入是同一操作，因此编辑后的所有后续操作（标记为过时的文件、标记为不同步的旁白）都会以完全相同的方式发生。</p>
+    <p>免费，且对话不会被保存——它只属于您当前所在的会话。</p>
+
+    <h3>编辑影响的范围</h3>
+    <ul>
+      <li><strong>您的文件</strong> ——在您重新构建之前，版本会落后，如上所述。</li>
+      <li><strong>您的有声书</strong> ——如果您编辑了已录制旁白的章节，该部分会被标记为不再匹配。 <strong>不会删除任何内容</strong>：您为它花费了音频积分，修复错别字绝不能毁掉您已付费的内容。当您希望它们重新同步时，请重新录制。</li>
+      <li><strong>没有其他影响。</strong> 您的封面、插图、翻译和KDP元数据均不受影响。</li>
+    </ul>
+  </div>
+
+  <div class="card" id="references">
+    <h2>参考文献</h2>
+    <p>勾选 <strong>参考文献</strong> “书籍部件”中的选项，您的书将在末尾获得一个来源列表，按使用各来源的章节分组。重新构建后，列表就会出现——包括您几周前完成的书。</p>
+    <p>它基于 <strong>实际提供给写作引擎的材料构建</strong>：您提供的视频、文章和文档，以及哪些章节由哪些材料编写的记录。它不是通过询问模型它认为自己读了什么来生成的，那样会产生看似合理但可能不对应任何实际内容的引用。对于一本基于研究的书来说，这比完全没有参考书目更糟糕。</p>
+    <div class="alert-info">📚 默认关闭，这是有意为之。在此功能存在之前制作的每本书，在下次重新构建文件时都会自动添加参考书目——包括已经上架的书。如果您勾选后没有列出任何内容，说明您的书是由单个粘贴的转录文本写成的，没有可引用的内容，我们会省略该部分，而不是打印一个空标题。</div>
+  </div>
+
+  <div class="card" id="languages">
+    <h2>以其他语言出版</h2>
+    <p>在任何已完成的书籍上， <strong>编辑此书 → 以其他语言发布</strong> 可创建法语、西班牙语、葡萄牙语、德语、意大利语、荷兰语或英语的完整版本。 <strong>其中每一个都可以录制旁白</strong>，使用男声或女声，因此翻译版可以像原版一样作为有声书发布——请参阅 <a href="#audiobooks">有声书</a>.</p>
+
+    <h3>它成为一本独立的书</h3>
+    <p>不是原书上的附加文件—— <strong>它是您仪表板上的独立书籍</strong>，因为这是亚马逊所需要的。每种语言都有自己的KDP列表、ASIN和关键词，因此法语版有自己的封面文字、亚马逊描述、文件和编辑控件。原书不受影响，两者相互关联，您可以轻松找到彼此。</p>
+
+    <h3>为什么它的成本只是原书的一小部分</h3>
+    <p>你的 <strong>封面设计和每章插图都会复用</strong> ——复制到新版本中，所以即使你之后删除原书，它仍然有效。只有文字部分重新制作，而这部分成本较低。这就是为什么翻译费用大约是原书成本的40%：引流书12积分，短书24积分，商业书40积分。</p>
+
+    <h3>哪些内容翻译，哪些内容重写</h3>
+    <ul>
+      <li><strong>翻译</strong> ——每一章、标题、副标题和章节列表，以目标语言读者的习惯呈现，而非逐字翻译。习语会变成目标语言的习语；专有名词、品牌名、数字和统计数据保持原样。</li>
+      <li><strong>重写而非翻译</strong> ——亚马逊描述和7个KDP关键词，为那个市场重新生成。德语读者不会搜索翻译过来的英语短语，而关键词是这个包的核心。</li>
+      <li><strong>重新设计</strong> ——封面文字，用新语言，基于同一幅设计。</li>
+    </ul>
+    <div class="alert-tip">💡 只提供这七种语言，原因值得了解：版权页、目录和章节标题都针对这些语言进行了完整的本地化。如果一本书的章节是一种语言，而前置部分却是英语，那看起来就是半翻译的，这比不提供更糟。随着这些内容的本地化，会添加更多语言。</div>
+  </div>
+
+  <!-- AUDIOBOOKS -->
+  <div class="card" id="audiobooks">
+    <h2>有声书</h2>
+    <p><strong>编辑本书 → 制作有声书</strong> 为已完成的书配音。它在 <em>之后</em> 你的文件存在，所以书在整个过程中都可下载，配音问题绝不会影响你已经付费的电子书。</p>
+
+    <h3>声音</h3>
+    <ul>
+      <li><strong>标准 — 男声</strong> 和 <strong>标准 — 女声</strong> ——清晰一致，但明显是合成的。支持英语、法语、西班牙语、葡萄牙语、德语、意大利语、荷兰语、中文、日语和韩语。按书长分为40/80/120音频积分。</li>
+      <li><strong>高级</strong> ——自然、富有表现力的配音，由Thalia、Apollo（英语）和Celeste（西班牙语）提供。 <strong>仅限英语和西班牙语</strong> ——高级引擎没有为其他八种语言发布模型，所以德语或日语书使用标准声音。100/200/300音频积分。</li>
+    </ul>
+    <p>两种标准声音覆盖全部十种配音语言——英语、法语、西班牙语、葡萄牙语、德语、意大利语、荷兰语、中文、日语和韩语——并且每种声音在所有语言中保持相同的性别，因此以多种语言出版的书不会在版本之间更换配音员。 <strong>你可以出版的每种语言都可以配音</strong>；中文、日语和韩语仅限配音，适用于已经用这些语言写成的书。</p>
+    <div class="alert-info">🎧 有声书从单独的 <strong>音频积分</strong> 余额中计费，而不是从电子书积分中扣除。写书和配音的成本差异很大，所以分开计费才能让电子书积分保持低价。音频积分随 <strong>Pro Audio</strong> 计划，或可以 <strong>在任何计划上直接购买</strong> ——见下文。</div>
+    <p>只提供真正能朗读你书籍语言的语音，面板会明确说明，而不是悄悄显示一个更短的列表。</p>
+    <div class="alert-tip">💡 高级版比它所叙述的电子书更贵，这不是加价——用高级引擎叙述一本商业书籍确实让我们花费超过书籍的收入。标准版只花费我们几便士，这就是它便宜的原因。先试试标准版；如果你在销售有声书，高级版是值得的。</div>
+
+    <h3>每个部分一个文件——以及一个合并文件</h3>
+    <p>你每个部分得到一个文件，每个文件都有播放器，这样你可以跳到想检查的部分。部分存储为 <strong>无损 WAV 母带</strong> 以叙述引擎实际产生的速率，每个都可以从其播放器下方的链接下载。然后勾选你想要的部分， <strong>下载为单本有声书</strong> 按书籍顺序将它们合并成一个 192 kbps 的 MP3。不会重新叙述，也不会花费积分——你已经为这些部分付费了。</p>
+    <p>MP3 是在 <em>你的浏览器中</em> 点击时构建的，这就是为什么长书需要一分钟。这是故意的：从无损母带编码意味着有损步骤只发生一次，在最后。将小预览转换为 192 kbps 会使文件大小增加三倍，同时保留第一次编码的缺陷而不是音频。</p>
+    <p>分部分文件使我们能够制作三小时的有声书，并且使合并文件成为一种选择而不是固定结果：删除版权页，保留行动号召，重新叙述一章而不影响其他部分。</p>
+    <p>第一个文件以你的标题、副标题和作者姓名开头；最后一个以结束语结尾。标题、项目符号列表和缩写被改写为适合听觉——列表读作“第一……第二……最后……”，40% 变成“百分之四十”，链接和图片说明被删除，因为叙述者朗读 URL 是失去听众的最快方式。</p>
+    <p>你的 <strong>关键要点</strong> 和 <strong>反思</strong> 设置被尊重，所以有声书包含与你的电子书相同的文字。 <strong>每个部分都被叙述</strong> ——包括版权页、目录、你的行动号召和作者简介——因为有声书是否以版权行开头或以你的优惠结尾是你的决定，而不是我们的。章节默认勾选用于合并文件，前置和后置内容不勾选，所以默认是书籍本身。</p>
+
+    <h3>无损母带</h3>
+    <p>播放器流式传输的内容 <strong>是</strong> 母带——叙述存储为无损 PCM（WAV），播放时不会转码。每个播放器下方都有一个链接显示其大小，例如 <em>无损母带 &middot; WAV 24 kHz, 34 MB</em>，下载该部分时以你的书籍和章节命名，而不是 <code>ch03.wav</code>.</p>
+    <p>它们保存在与书籍相同的 <strong>30 天时钟</strong>上，并且它们不是 Pro Audio 的额外功能——任何叙述过的书都有它们，包括用免费计划上的单个音频积分包叙述的书。</p>
+    <div class="alert-info">🎚️ <strong>母带是 24 kHz，而不是 44.1 kHz</strong>，因为这就是叙述引擎实际生成的——它们全都是原生 24 kHz。打包 MP3 中的 44.1 kHz 是在编码时为了满足容器规格而重新采样的。以 44.1 存储档案会使其大小翻倍且毫无益处：那只是把 24 kHz 文件升采样后披上更大的数字。</div>
+
+    <h3>分发包</h3>
+    <p><strong>下载包（ZIP）</strong> 一键生成聚合器所需的一切：</p>
+    <ul>
+      <li>每个部分作为 <strong>编号 MP3</strong> — <code>00-title-page.mp3</code>, <code>02-chapter-01.mp3</code> ——零填充，因此纯字母排序也是正确的播放顺序，上传者正是这样读取的。</li>
+      <li><strong>192 kbps CBR，44.1 kHz，单声道</strong>，电平调整至约 &minus;20 dB RMS，峰值低于 &minus;3 dB。</li>
+      <li><strong>cover.jpg</strong> 3000&times;3000，RGB——这是每个有声书商店要求的方形封面，而电子书封面则不是。</li>
+      <li><strong>retail-sample.mp3</strong>，第一章的前五分钟，在帧边界处剪切。</li>
+      <li><strong>metadata.json</strong> ——标题、作者、叙述者、语言、每个文件的时长和测量电平，以及明确的 <code>"narration": "digital"</code>.</li>
+      <li>每个音轨都带有 ID3 标签和嵌入的封面，因此解压到 VLC 的买家看到的是书，而不是十几个匿名文件。</li>
+    </ul>
+    <div class="alert-info">🔊 <strong>为什么在文件中披露。</strong> 大多数聚合商要求声明 AI 叙述。一个悄悄省略此声明的包不会在上传时被拒绝——而是在分发后、已经售出时被下架。声明它不会造成任何损失，这是目录条目与下架之间的区别。</div>
+
+    <h3>销售——上传前请阅读</h3>
+    <p><strong>直接销售是简单的途径</strong> ——Gumroad、Payhip、Shopify，或在你自己的网站上下载。无需审批，无需音频规格审查，你保留利润。合并后的单个文件正是这些商店期望的格式。</p>
+    <p><strong>Audible 和 ACX 是可能的，但有条件。</strong> ACX 的标准提交流程面向人类叙述：其音频提交要求规定，标题必须由人类叙述 <em>除非另有授权</em>，并列出未经授权的文本转语音和 AI 为禁止项。这是针对 <em>未经授权</em> AI 的规则，而非禁止 AI——但区别在于你必须提前安排，而不是在提交时发现：</p>
+    <ul>
+      <li><strong>先联系ACX支持</strong> 并获得标题授权，而不是通过标准流程提交并寄希望于运气。</li>
+      <li><strong>披露</strong> 在书籍描述中注明AI配音。这是强制要求。</li>
+      <li>ACX会测量音频电平——RMS在-23到-18 dB之间，峰值不高于-3 dB，底噪低于-60 dB。</li>
+      <li><strong>KDP Virtual Voice不适用于这些文件。</strong> 它是亚马逊自己的AI配音项目，使用亚马逊的声音，并且不接受你提供的音频。</li>
+    </ul>
+    <p><strong>聚合商是进入Audible的更容易的途径。</strong> Author's Republic、Kobo Writing Life和Spotify的有声书项目（前身为Findaway Voices）接受AI配音的有声书，并分发到Audible目录，需要披露AI。无需逐本协商授权。</p>
+    <p><strong>我们现在确实测量并设置音频电平。</strong> 包中的每个文件和每次组合下载都会被分析并调整到大约 −20 dB RMS，峰值低于 −3 dB——与上面列出的窗口相同——并且每个轨道的测量值会写入 <code>metadata.json</code> 这样你无需打开编辑器即可检查。响度是在语音本身上测量的，而不是与句子之间的停顿平均，这可以防止有长间隔的部分被推得比书的其余部分更响。</p>
+    <p><strong>我们仍然不会告诉你文件符合ACX标准</strong>，因为电平是我们能证明的部分，而授权不是。一个达到规格中每个数字的文件仍然不符合ACX的标准流程，直到ACX授权该标题。技术方面是我们的；许可是你的。</p>
+    <div class="alert-info">📦 <strong>两个不同的ZIP。</strong> 音频不在你的 <em>电子书</em> 存档中——有声书太大，无法与PDF和EPUB放在一起。有声书有自己的 <strong>下载包（ZIP）</strong> 在有声书面板中，如上所述。</div>
+  </div>
+
+  <!-- FIND A TOPIC -->
+  <div class="card" id="find-a-topic">
+    <h2>寻找主题</h2>
+    <p><strong>寻找主题</strong> 回答了所有问题之前的问题：什么书值得写？输入一个细分市场，TubeBook会显示人们实际在搜索什么，每个主题已经有多拥挤，以及一组基于空白构建的书籍概念——然后找到写作所需的来源。</p>
+    <h3>从完全没有想法开始</h3>
+    <p>如果你还没有细分市场，打开 <strong>热门趋势</strong> 标签。它显示每个国家的看板—— <strong>美国、英国、德国、加拿大、澳大利亚和法国</strong> ——基于该国家/地区的热门YouTube操作指南和教育视频，以及购物者在该国家/地区的亚马逊商店中输入的内容。浏览是 <strong>免费</strong>；选择一个主题会对它进行正常的5积分研究。</p>
+    <p>看板会 <strong>每周</strong> 重建并显示日期。关于如何阅读它们，有两件事值得了解：</p>
+    <ul>
+      <li><strong>许多亚马逊短语本身就是现有的书名。</strong> 《人性的弱点》不是一个主题——它证明了该市场的读者想要关于社交技巧的书。建议的主题是底层主题，而不是要复制的书名。</li>
+      <li><strong>“新闻热点”行不是图书需求。</strong> 它是谷歌的每日热门搜索，主要由体育、股价和名人主导。它被单独显示并标注，因为偶尔一个真实的故事会引发一本真正的书——但大部分是噪音。</li>
+    </ul>
+    <div class="alert-tip">💡 国家精确度到此为止。图书需求确实因城市而异，但没有免费数据源能细分到那个程度，所以我们不假装。</div>
+
+    <h3>数字的含义</h3>
+    <p>这是需要理解的重要部分。需求数据来自 <strong>亚马逊和谷歌的自动补全</strong> 当有人开始输入时——真实查询，按人们输入频率排序。它们是 <strong>搜索需求信号，而非亚马逊销售排名</strong>.</p>
+    <p>我们很乐意展示真实的畅销书排名，但我们故意不伪造。亚马逊收回了该数据的公共访问权限：产品广告API于2026年5月关闭，其替代品要求亚马逊联盟账户并持续产生合格销售。因此，没有诚实的工具能在你没有自己的卖家关系的情况下提供实时BSR。</p>
+    <ul>
+      <li><strong>评分（0-100）</strong> ——仅作为排名辅助，结合需求与竞争。用它来排序你的候选清单，切勿作为销售预测。</li>
+      <li><strong>图书购买者</strong> ——该短语在亚马逊的 <em>图书</em> 或 <em>Kindle商店</em>内自动补全，而不仅仅是所有部门。这是这里最强的购买信号，因为输入它的人已经在寻找一本书。</li>
+      <li><strong>竞争</strong> ——有多少书已经针对该短语，以及它们的评论有多密集。一个被遗忘的书拥挤的书架比一个畅销书的小书架更容易进入，所以两者都被权衡。</li>
+      <li><strong>竞争：未知</strong> ——该短语的竞争查找不可用。这意味着我们不知道， <em>并非</em> 该主题是开放的。</li>
+    </ul>
+    <h3>建议来源</h3>
+    <p>选择一个概念，TubeBook会为它列出 <strong>最多25个来源</strong> ——和Pro书能组合的一样多。过滤器在你看到列表之前就已应用：</p>
+    <ul>
+      <li>视频必须有 <strong>字幕</strong>，因为TubeBook读取的就是这些。没有字幕的视频无法转换为章节，因此建议它们会浪费你的积分。</li>
+      <li>时长不足四分钟的视频会被丢弃——内容太少，不足以构成一章。长篇演讲、讲座和访谈则 <em>包含在内</em>，每一行都显示时长，这是判断视频能承载多少章节内容的最佳单一指标。</li>
+      <li><strong>PDF和Office文档</strong> 在结果中——论文、政府报告、白皮书、课程笔记——会被识别为文档，并使用文档提取器读取，而不是交给无法打开它们的网页阅读器。</li>
+      <li>每个链接都会先进行可达性和安全性检查，使用与摄取器相同的验证。</li>
+    </ul>
+    <p>显示前十个； <strong>显示更多</strong> 会显示其余部分。这些已经加载——显示它们不花费任何成本，也不会进行新的搜索。</p>
+    <p>前十个也是预先选中的，这是有意为之：超过第一个的来源会增加书籍的积分成本，因此TubeBook不会替你勾选二十五个。每个计划最多可组合25个来源，选择器会在此共享限制处停止。</p>
+    <h3>概念如何撰写</h3>
+    <p>每个提议的书名和副标题都必须适用于当今书籍被发现的三种方式： <strong>搜索</strong> （关键词取自真实观察到的短语，绝不虚构）， <strong>答案引擎</strong> （副标题读起来像直接、字面的答案——数字、时间范围、具体情境，不使用双关语），以及 <strong>AI推荐</strong> （书名和副标题使主题、范围和读者一目了然，独立可读）。概念还遵守亚马逊200字符的书名加副标题限制，因此没有一个会无法使用。</p>
+
+    <h3>更好的KDP关键词</h3>
+    <p>当一本书来自研究过的主题时，其7个KDP关键词取自 <strong>搜索中实际观察到的短语</strong> ，而非由AI虚构。一个没人输入的虚构关键词不会带来任何排名，因此这是可发现性上的真正差异。</p>
+    <h3>成本与缓存</h3>
+    <p>研究一个细分市场花费 <strong>5积分</strong>。结果缓存 <strong>14天</strong> ——在该时间段内重新打开同一细分市场是免费的，词序无关紧要（“stoicism for beginners”和“beginners stoicism”是同一细分市场）。为概念寻找来源不额外收费。</p>
+    <div class="alert-tip">💡 如果研究中途失败，你的5积分会自动退还。如果某个细分市场没有返回有用结果，请尝试更宽泛的术语——例如“journaling”而不是“bullet journaling for INFJ nurses”。</div>
+  </div>
+
+  <!-- CREDITS -->
+  <div class="card" id="credits">
+    <h2>积分与定价</h2>
+    <p>TubeBook使用透明的积分系统。每个操作在确认前都会显示其成本。</p>
+
+    <div class="alert-info">🔎 <strong>在其他地方购买了“终身”或“无限”TubeBook 优惠？</strong> 那不是我们。另一家公司销售 <strong>TubeBook AI</strong> (tubebookai.com) 通过推广网络销售；我们 <strong>TubeBook</strong> (tubebook.org) 与他们无关。我们仅通过本网站销售，没有经销商，也从未提供过终身或无限计划——我们的计划是每月9美元、29美元和49美元，外加一次性积分包。如果您为无限升级付费，您的收据上会显示卖家名称，请联系他们获取访问权限或退款。我们从未收到付款，因此无法处理。</div>
+    <p>您的第一个来源始终包含在基础价格中，因此单来源电子书的成本与以往完全相同。5来源的引导磁铁成本为30 + 4 &times; 8 = <strong>62积分</strong>.</p>
+    <table>
+      <thead><tr><th>项目</th><th>积分</th></tr></thead>
+      <tbody>
+        <tr><td>主题研究（每个细分市场，缓存14天免费）</td><td><strong>5</strong></td></tr>
+        <tr><td>短引导磁铁（约6,000字，10-25页）</td><td><strong>30</strong></td></tr>
+        <tr><td>短书（约13,000字，25-50页）</td><td><strong>60</strong></td></tr>
+        <tr><td>完整商业书（25,000字以上）</td><td><strong>100</strong></td></tr>
+        <tr><td>章节插图（每张，可选）</td><td><strong>+1</strong></td></tr>
+        <tr><td>超出第一个的每个来源（多来源书籍）</td><td><strong>+8</strong></td></tr>
+      </tbody>
+    </table>
+    <h3>计划</h3>
+    <ul>
+      <li><span class="pill">免费</span> <strong>100 个积分</strong>，无需信用卡。每本电子书最多25个来源，并提供与付费账户相同的创建、编辑、插图、翻译、有声书和导出功能。免费账户的PDF上会显示一个小的“Made with TubeBook.org”页脚，直到账户进行任何购买。</li>
+      <li><span class="pill">入门版 — 每月9美元</span> 每月250积分 — 约8个引导磁铁或2本商业电子书，或任意组合。功能相同，来源限制为25个；主要区别在于更大的额度。</li>
+      <li><span class="pill">专业版 — 每月29美元</span> 每月1,000积分 — 约33个引导磁铁或10本商业电子书，或任意组合。功能相同，来源限制为25个；主要区别在于更大的额度。</li>
+      <li><span class="pill">专业音频版 — 每月49美元</span> 包含专业版所有功能，外加 <strong>每月900音频积分</strong> — 约3本使用高级语音的商业有声书，或7本使用标准语音。音频积分是单独的余额，是叙述书籍的唯一方式。</li>
+    </ul>
+    <p>所有付费计划均提供年度计费：入门版每年90美元，专业版每年290美元，专业音频版每年490美元——大约免费两个月。</p>
+    <h3>充值积分包</h3>
+    <ul>
+      <li>入门包 — 100积分，\$5</li>
+      <li>加速包 — 400积分，\$15</li>
+      <li>强力包 — 1,500积分，\$40</li>
+    </ul>
+    <h3>音频积分包</h3>
+    <p>制作有声书无需订阅。音频积分可单独购买，适用于包括免费版在内的任何套餐：</p>
+    <ul>
+      <li>单本有声书 — 120 音频积分，\$12 — 标准语音，一本商用有声书</li>
+      <li>作者包 — 300 音频积分，\$27 — 高级语音，一本商用有声书</li>
+      <li>工作室包 — 900 音频积分，\$69 — 高级语音三本，或标准语音七本</li>
+    </ul>
+    <p>与电子书积分包一样，这些积分永不过期。如果你每月旁白超过一次， <strong>Pro Audio</strong> 更划算：每月包含 900 音频积分，仅需 \$49。</p>
+    <p>章节插图每张额外消耗 1 积分（封面图免费）。确认生成前会显示准确总额。</p>
+    <h3>月度配额如何运作</h3>
+    <p>套餐积分是 <strong>配额，而非余额</strong>。它们会在每月初重置为套餐的月度数额，届时未使用的部分将被作废——因此无需囤积，也不会丢失。</p>
+    <p><strong>年度付费同样适用。</strong> 年度套餐以折扣价购买十二个月的使用权，而非一次性获得十二个月的积分：你与月度订阅者一样，每月获得相同的配额，每月重置。音频积分同理。</p>
+    <p><strong>充值积分包则不同，永不过期</strong> 只要账户有效。它们叠加在配额之上，消费时优先使用即将过期的套餐积分——因此你付费购买的积分包绝不会在免费配额过期时被消耗。账单页面会显示余额的构成。</p>
+  </div>
+
+  <!-- EXPORTS -->
+  <div class="card" id="exports">
+    <h2>导出与格式</h2>
+    <ul>
+      <li><strong>PDF</strong> — 完整排版，含封面、所选字体和裁切尺寸。所有套餐可用（免费账户在首次购买前带有小页脚标识）。</li>
+      <li><strong>DOCX</strong> — 可在 Word 或 Google Docs 中编辑。所有套餐可用。</li>
+      <li><strong>EPUB</strong> — 适用于 Kindle、Apple Books 和 Kobo。所有套餐可用。</li>
+      <li><strong>PPTX</strong> — 适用于演讲和网络研讨会的幻灯片版本。所有套餐可用。</li>
+      <li><strong>出版文件</strong> — 打印就绪的平装内页和封面、Kindle 封面、高清封面及 KDP 元数据包。所有套餐可用。</li>
+    </ul>
+    <p>免费账户导出的 PDF 带有小型“Made with TubeBook.org”页脚标识，直至该账户进行任何购买（包括一次性积分包）。所有其他格式均可用，已购买账户的导出文件不含 TubeBook 品牌标识。</p>
+    <div class="alert-info">📦 删除电子书前，TubeBook 会提供包含所有格式及封面图片的 ZIP 压缩包。</div>
+  </div>
+
+  <!-- PUBLISHING RISK -->
+  <div class="card" id="publishing-risk">
+    <h2>出版风险检查</h2>
+    <p>亚马逊将责任归于你，即出版方：你必须“确保其内容不违反法律或版权、商标、品牌、隐私、公开或其他权利。”在元数据方面，它更进一步，声明了 <strong>零容忍政策</strong> 用于任何旨在广告、推广或误导的内容——"包括你不拥有或未经授权使用的品牌"。通常的处罚是你的书停止销售；重复出现问题可能波及账户本身。</p>
+    <p>因此，TubeBook 会审查你书籍的元数据，并标记出理性的 KDP 审核员会处理的内容：</p>
+    <ul>
+      <li><strong>品牌</strong> ——你不拥有的商业商标（乐高、Notion、Peloton）。</li>
+      <li><strong>系列和角色</strong> ——哈利·波特、宝可梦、星球大战。</li>
+      <li><strong>在世作者和公众人物</strong> 书中以姓名提及的。</li>
+      <li><strong>背书声明</strong> ——"官方"、"授权"，或暗示许可的摘要或练习册框架。基于受版权保护书籍的衍生作品需要权利持有人的书面许可。</li>
+      <li><strong>歌词</strong> 和受版权保护作品的冗长引用。</li>
+      <li><strong>无差异的公有领域重印</strong>，KDP 拒绝已有免费版本的作品。</li>
+      <li><strong>不描述你书籍的关键词</strong> ——关键词堆砌。</li>
+    </ul>
+    <h3>运行时机</h3>
+    <p>两次。一次 <strong>在你批准大纲时</strong>，此时标题和副标题仍可编辑；另一次在 <strong>生成的 KDP 元数据</strong> 上——因为一个完全干净的标题仍可能在 7 个关键词中藏有品牌名，而这正是导致列表被屏蔽的典型情况。</p>
+    <h3>疑似商标确认</h3>
+    <p>它标记的每个品牌或系列都附有指向美国商标注册局的一键链接，让你看到实际所有者以及商标是否有效。"MONOPOLY，注册于孩之宝"比"这可能是个品牌"信息量大得多——而且检查只需几秒钟。</p>
+    <p>在 <strong>所有套餐</strong>中，你可以跳过点击：一个按钮即可同时检查所有标记的品牌和系列，并在每个发现旁边显示注册所有者、有效/失效状态和序列号。费用为 <strong>整本书 1 个积分</strong>，无论标记了多少个，而且只有在你看到发现内容后才会要求付费——不会自动检查或收费。没有标记的书籍永远不会提供此选项。</p>
+    <p>每个标记的链接在所有套餐中始终免费，USPTO 自己的搜索也可直接免费使用。你支付的是为你完成查询并就地显示的服务，而不是访问公共数据的费用。</p>
+    <div class="alert-tip">💡 为什么这不仅仅是商标数据库搜索：几乎每个普通英语单词都在某个类别中注册了商标。 <em>Citadel</em>, <em>Moment</em>, <em>Toolbox</em>, <em>Journal</em> 和 <em>Living</em> 都属于某人。一个将你的标题与注册表匹配的工具会标记每一本写过的书，你肯定会停止阅读它。注册表是用来确认特定怀疑的，而不是用来产生怀疑的。</div>
+    <h3>它不会做什么</h3>
+    <p><strong>它从不阻止你的书</strong>，并且 <strong>它从不告诉你一本书是安全的。</strong> 当它没有发现任何内容时，它会说“未标记”——而不是“已批准”或“无问题”，因为那些是任何人都无法做出的承诺。这是一个自动检查，不是法律建议，它可能会遗漏某些内容，也无法预测亚马逊的决定。如果你的书涉及他人的权利，清除这些仍然是你自己的工作——如果你不确定，请咨询律师而不是检查器。</p>
+  </div>
+
+  <!-- TROUBLESHOOTING -->
+  <div class="card" id="troubleshooting">
+    <h2>出版风险检查</h2>
+    <h3>查找主题未返回结果</h3>
+    <p>建议服务偶尔不可用。研究失败时不收取任何费用——5个积分会自动退还。几分钟后重试，或使用更广泛的利基术语。</p>
+    <h3>没有为我的主题建议来源</h3>
+    <p>来源发现依赖于YouTube和我们的搜索提供商的共享每日配额。当这些配额当天用完时，TubeBook会告诉你，而不是静默返回空列表——你的研究结果不受影响，你可以在生成页面上手动添加来源。</p>
+    <h3>“本月转录容量不足”</h3>
+    <p>YouTube转录来自共享的月度配额。当剩余量不足以处理你书中的视频时，TubeBook <strong>会在收费前拒绝</strong> 并告诉你剩余多少以及配额何时重置——而不是从恰好适合的来源构建书并向你收费。非YouTube来源不受影响，因此从文档、文章或粘贴文本构建的书仍然可以运行。</p>
+
+    <h3>我的章节插图不适合这本书</h3>
+    <p>打开 <strong>编辑此书 → 查看章节插图</strong>：取消勾选任何不合适的，或为该章节绘制新选项。如果你想要特定风格，请先写一个 <a href="#artwork">艺术简报</a> ，然后绘制。在你保存之前不会重新构建任何内容。</p>
+
+    <h3>生成似乎卡住了</h3>
+    <p>如果某个步骤被中断，生成会自动恢复——无需操作。大多数电子书在几分钟内完成；带有图片的长商业电子书可能需要更长时间。</p>
+    <h3>YouTube URL无法摄取</h3>
+    <p>确保视频是公开的并且有字幕（自动或手动）。私有、年龄限制或直播视频无法处理。</p>
+    <h3>我没有看到我的电子书</h3>
+    <p>打开 <strong>仪表板</strong>电子书保留 <strong>30天</strong> 生成后——每张卡片上都会显示倒计时。请在过期前下载您想保留的内容。 <strong>有声书旁白与书籍同时过期</strong>，倒计时相同，请在时间耗尽前完成打包。</p>
+    <h3>下载链接已过期</h3>
+    <p>签名下载链接24小时后过期。应用会按需刷新——只需打开您的仪表盘，链接将自动更新。</p>
+  </div>
+
+  <!-- ACCOUNT -->
+  <div class="card" id="account">
+    <h2>账户与账单</h2>
+    <ul>
+      <li>在应用内的 <strong>账单</strong> 中管理您的套餐和支付方式。</li>
+      <li>您可以随时取消；访问权限将持续到当前计费周期结束。</li>
+      <li>需要退款、发票或账户方面的帮助？请发送邮件至 <a href="mailto:support@tubebook.org">support@tubebook.org</a>.</li>
+    </ul>
+  </div>
+
+  <div class="alert-info" style="margin-top: 3rem;">
+    ✉ 还有问题？请发送邮件至 <a href="mailto:support@tubebook.org">support@tubebook.org</a> ——我们通常会在1个工作日内回复。
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">© <span id="y"></span> TubeBook · <a href="https://tubebook.org">tubebook.org</a></div>
+    <div class="footer-links">
+      <a href="/zh/">首页</a><a href="/zh/help">帮助</a><a href="/zh/privacy">隐私</a><a href="/zh/terms">条款</a><a href="/zh/contact">联系</a>
+    </div>
+  </div>
+  <div class="footer-note">TubeBook (tubebook.org) 是独立产品， <strong>与名称相似的独立公司 TubeBook AI (tubebookai.com) 无关</strong>。TubeBook 仅通过 tubebook.org 销售——我们没有经销商，也没有终身或无限套餐。</div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script src="/promo-banner.js" defer></script>
+</body>
+</html>

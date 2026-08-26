@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-tubebook_32x32.png" />
+<title>TubeBook — حوّل فيديوهات YouTube والمقالات إلى كتب إلكترونية قابلة للنشر</title>
+<meta name="description" content="احصل على 100 رصيد مجاني كل شهر. حوّل الفيديوهات والمقالات والمستندات أو المخطوطات إلى كتاب إلكتروني مكتمل الكتابة والرسوم — مع جميع الميزات المتاحة في كل الخطة." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://tubebook.org/" />
+<meta property="og:title" content="TubeBook — حوّل فيديوهات YouTube إلى كتب إلكترونية قابلة للنشر" />
+<meta property="og:description" content="حوّل الفيديوهات والمقالات والمستندات والملاحظات إلى كتاب إلكتروني منظم ومكتمل الكتابة. تشمل كل خطة جميع ميزات الإنشاء والتحرير والرسوم والتصدير؛ وتحصل الخطة المجانية على 100 رصيد شهريًا." />
+<meta property="og:image" content="https://tubebook.org/banner-tubebook_1200x600.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="600" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://tubebook.org/banner-tubebook_1200x600.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:#08090d;--bg2:#0f1118;--bg3:#14171f;--card:#131620;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);
+  --amber:#ff6200;--amber2:#ff8c42;--amber-dim:rgba(255,98,0,0.12);
+  --red:#ff3b3b;--red-dim:rgba(255,59,59,0.12);
+  --green:#2ecc71;--green-dim:rgba(46,204,113,0.11);
+  --yellow:#f5c842;--yellow-dim:rgba(245,200,66,0.11);
+  --text:#f0eee8;--muted:#7b7d8a;--muted2:#a0a3b1;
+  --radius:14px;--radius-lg:20px;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6;}
+nav{position:fixed;top:0;inset-inline-start:0;inset-inline-end:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 4rem;background:rgba(8,9,13,0.80);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:10px;font-size:1.35rem;font-weight:700;color:var(--text);text-decoration:none;}
+.logo-icon{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--red) 0%,#b72a2a 100%);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;flex-shrink:0;}
+.logo-text span{color:var(--amber);}
+.nav-links{display:flex;align-items:center;gap:2rem;}
+.nav-links a{color:var(--muted2);font-size:0.9rem;text-decoration:none;font-weight:400;transition:color 0.2s;}
+.nav-links a:hover{color:var(--text);}
+.nav-cta{background:var(--amber);color:#1a1200;font-size:0.875rem;font-weight:600;padding:0.55rem 1.35rem;border-radius:8px;text-decoration:none;transition:background 0.2s,transform 0.15s;}
+.nav-cta:hover{background:var(--amber2);transform:translateY(-1px);}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 6rem;position:relative;overflow:hidden;}
+.hero-orb-1{position:absolute;top:-180px;left:50%;transform:translateX(-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(255,98,0,0.08) 0%,transparent 70%);pointer-events:none;}
+.hero-orb-2{position:absolute;bottom:-120px;inset-inline-end:-160px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,59,59,0.07) 0%,transparent 70%);pointer-events:none;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.25);color:var(--amber2);font-size:0.8rem;font-weight:500;padding:0.4rem 1rem;border-radius:100px;margin-bottom:2.2rem;animation:fadeDown 0.6s ease both;}
+.hero-badge svg{width:14px;height:14px;fill:var(--amber2);}
+h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,5.2rem);font-weight:900;line-height:1.1;letter-spacing:-0.02em;color:var(--text);max-width:860px;animation:fadeUp 0.7s 0.1s ease both;}
+h1 em{font-style:italic;color:var(--amber);display:block;}
+.hero-sub{max-width:600px;margin:1.8rem auto 0;font-size:1.1rem;color:var(--muted2);line-height:1.7;animation:fadeUp 0.7s 0.2s ease both;}
+.hero-sub strong{color:var(--text);}
+.hero-actions{display:flex;align-items:center;gap:1rem;margin-top:2.8rem;flex-wrap:wrap;justify-content:center;animation:fadeUp 0.7s 0.3s ease both;}
+.btn-primary{background:var(--amber);color:#1a1200;font-size:1rem;font-weight:700;padding:0.85rem 2.2rem;border-radius:10px;text-decoration:none;display:flex;align-items:center;gap:8px;transition:background 0.2s,transform 0.15s,box-shadow 0.2s;box-shadow:0 4px 24px rgba(255,98,0,0.25);}
+.btn-primary:hover{background:var(--amber2);transform:translateY(-2px);box-shadow:0 8px 36px rgba(255,98,0,0.35);}
+.btn-secondary{background:transparent;color:var(--muted2);font-size:1rem;font-weight:500;padding:0.85rem 1.8rem;border-radius:10px;text-decoration:none;border:1px solid var(--border2);transition:border-color 0.2s,color 0.2s;}
+.btn-secondary:hover{border-color:var(--amber);color:var(--amber);}
+.hero-note{margin-top:1.2rem;font-size:0.82rem;color:var(--muted);animation:fadeUp 0.7s 0.4s ease both;}
+
+/* DEMO CARD */
+.demo-wrap{margin-top:4.5rem;width:100%;max-width:700px;animation:fadeUp 0.8s 0.5s ease both;}
+.demo-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:1.6rem 1.8rem;position:relative;overflow:hidden;}
+.demo-card::before{content:'';position:absolute;top:0;inset-inline-start:0;inset-inline-end:0;height:1px;background:linear-gradient(90deg,transparent,var(--amber),transparent);}
+.demo-row{display:flex;align-items:center;gap:10px;margin-bottom:1.2rem;}
+.demo-yt{background:var(--red-dim);border:1px solid rgba(255,59,59,0.2);border-radius:8px;padding:0.55rem 0.9rem;font-size:0.8rem;color:#ff7b7b;font-weight:500;display:flex;align-items:center;gap:7px;flex:1;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.demo-arrow{color:var(--amber);font-size:1.1rem;font-weight:700;flex-shrink:0;animation:pulse 1.5s infinite;}
+.demo-book-tag{background:var(--amber-dim);border:1px solid rgba(255,98,0,0.25);border-radius:8px;padding:0.55rem 0.9rem;font-size:0.8rem;color:var(--amber2);font-weight:500;display:flex;align-items:center;gap:6px;flex-shrink:0;}
+.demo-controls{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem;}
+.demo-control-chip{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:0.55rem 0.85rem;font-size:0.72rem;}
+.chip-label{color:var(--muted);margin-bottom:2px;}
+.chip-value{color:var(--text);font-weight:600;display:flex;align-items:center;gap:6px;}
+.chip-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.chip-dot.green{background:var(--green);}
+.chip-dot.yellow{background:var(--yellow);}
+.chip-dot.red{background:var(--red);}
+.demo-steps{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;}
+.demo-step{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:0.6rem 0.4rem;text-align:center;font-size:0.66rem;color:var(--muted);line-height:1.3;}
+.demo-step.active{border-color:rgba(255,98,0,0.35);color:var(--amber2);background:var(--amber-dim);}
+.demo-step .step-icon{font-size:0.95rem;margin-bottom:3px;display:block;}
+
+/* LOGOS */
+.logos-section{padding:2.8rem 4rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center;}
+.logos-label{font-size:0.78rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.6rem;}
+.logos-row{display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap;}
+.logo-badge{font-size:0.88rem;color:var(--muted);font-weight:500;display:flex;align-items:center;gap:7px;opacity:0.55;filter:grayscale(1);transition:opacity 0.2s,filter 0.2s;}
+.logo-badge:hover{opacity:1;filter:none;}
+.logo-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--amber);opacity:0.5;}
+
+/* SECTIONS */
+section{padding:6rem 4rem;}
+.section-label{display:inline-block;font-size:0.75rem;font-weight:600;color:var(--amber);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1rem;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1.2;letter-spacing:-0.02em;margin-bottom:1rem;}
+.section-sub{font-size:1.05rem;color:var(--muted2);max-width:520px;line-height:1.7;}
+
+/* HOW IT WORKS */
+.hiw{background:var(--bg2);}
+.hiw-inner{max-width:1100px;margin:0 auto;}
+.hiw-header{margin-bottom:3.5rem;}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5px;background:var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+.step-card.step-wide{grid-column:span 2;}
+.step-card{background:var(--card);padding:2rem 1.4rem;position:relative;transition:background 0.3s;}
+.step-card:hover{background:#181b28;}
+.step-num{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;color:rgba(255,98,0,0.14);line-height:1;margin-bottom:1rem;}
+.step-icon-wrap{width:40px;height:40px;border-radius:10px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;}
+.step-icon-wrap svg{width:20px;height:20px;stroke:var(--amber2);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.step-icon-wrap.red-tint{background:var(--red-dim);border-color:rgba(255,59,59,0.2);}
+.step-icon-wrap.red-tint svg{stroke:#ff7b7b;}
+.step-card h3{font-size:0.92rem;font-weight:600;margin-bottom:0.4rem;}
+.step-card p{font-size:0.82rem;color:var(--muted2);line-height:1.6;}
+.step-badge{display:inline-block;font-size:0.62rem;font-weight:600;padding:0.18rem 0.55rem;border-radius:100px;margin-top:0.6rem;letter-spacing:0.04em;background:var(--amber-dim);color:var(--amber2);border:1px solid rgba(255,98,0,0.25);}
+
+/* FIDELITY */
+.fidelity-inner{max-width:1100px;margin:0 auto;}
+.fidelity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-top:3.5rem;}
+.fidelity-card{background:var(--card);padding:2.2rem 2rem;position:relative;overflow:hidden;transition:background 0.3s;}
+.fidelity-card:hover{background:#181b28;}
+.legal-badge{display:inline-flex;align-items:center;gap:7px;font-size:0.72rem;font-weight:700;padding:0.28rem 0.8rem;border-radius:100px;margin-bottom:1.4rem;letter-spacing:0.05em;text-transform:uppercase;}
+.legal-badge.red{background:rgba(255,59,59,0.13);color:#ff7b7b;border:1px solid rgba(255,59,59,0.25);}
+.legal-badge.yellow{background:rgba(245,200,66,0.12);color:var(--yellow);border:1px solid rgba(245,200,66,0.25);}
+.legal-badge.green{background:var(--green-dim);color:var(--green);border:1px solid rgba(46,204,113,0.25);}
+.legal-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.legal-dot.red{background:var(--red);}
+.legal-dot.yellow{background:var(--yellow);}
+.legal-dot.green{background:var(--green);}
+.fidelity-card h3{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin-bottom:0.5rem;}
+.fidelity-tagline{font-size:0.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem;}
+.fidelity-card p{font-size:0.88rem;color:var(--muted2);line-height:1.7;margin-bottom:1rem;}
+.fidelity-uses{display:flex;flex-direction:column;gap:0.45rem;margin-top:1.2rem;}
+.fidelity-use{font-size:0.8rem;color:var(--muted2);display:flex;align-items:center;gap:8px;}
+.fidelity-use::before{content:'→';color:var(--amber);font-size:0.8rem;flex-shrink:0;}
+.fidelity-card.highlight-green{background:linear-gradient(160deg,#0d1a12 0%,var(--card) 100%);}
+.fidelity-card.highlight-green::before{content:'';position:absolute;top:0;inset-inline-start:0;inset-inline-end:0;height:2px;background:linear-gradient(90deg,transparent,var(--green),transparent);}
+.ownership-note{background:rgba(255,59,59,0.07);border:1px solid rgba(255,59,59,0.18);border-radius:10px;padding:0.7rem 1rem;margin-top:1.2rem;font-size:0.76rem;color:#ff9a9a;line-height:1.5;display:flex;gap:8px;align-items:flex-start;}
+.kdp-tip{background:var(--green-dim);border:1px solid rgba(46,204,113,0.2);border-radius:10px;padding:0.7rem 1rem;margin-top:1.2rem;font-size:0.76rem;color:#7be8a8;line-height:1.5;display:flex;gap:8px;align-items:flex-start;}
+
+/* ANALYSIS */
+.analysis-section{background:var(--bg3);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.analysis-inner{max-width:1100px;margin:0 auto;}
+.analysis-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:center;}
+.analysis-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:2rem;position:relative;overflow:hidden;}
+.analysis-card::before{content:'';position:absolute;top:0;inset-inline-start:0;inset-inline-end:0;height:1px;background:linear-gradient(90deg,transparent,var(--amber),transparent);}
+.analysis-title{font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1.4rem;}
+.density-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.6rem;}
+.density-label{font-size:0.82rem;color:var(--muted2);}
+.density-score{font-size:0.82rem;font-weight:700;color:var(--amber2);}
+.density-bar-wrap{background:var(--bg3);border-radius:100px;height:5px;margin-bottom:1.4rem;overflow:hidden;}
+.density-bar{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--amber),var(--amber2));transition:width 1s ease;}
+.toc-preview{margin-top:1.4rem;border-top:1px solid var(--border);padding-top:1.2rem;}
+.toc-preview-label{font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.8rem;}
+.toc-items{display:flex;flex-direction:column;gap:0.5rem;}
+.toc-item{display:flex;align-items:center;gap:10px;font-size:0.82rem;color:var(--muted2);}
+.toc-num{width:20px;height:20px;border-radius:5px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);color:var(--amber2);font-size:0.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.toc-item span{color:var(--text);font-size:0.82rem;}
+.wc-selector{margin-top:1.4rem;border-top:1px solid var(--border);padding-top:1.2rem;}
+.wc-label{font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.8rem;}
+.wc-options{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.wc-option{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:0.7rem 0.9rem;cursor:pointer;transition:all 0.2s;}
+.wc-option.selected{border-color:rgba(255,98,0,0.4);background:var(--amber-dim);}
+.wc-name{font-size:0.8rem;font-weight:600;color:var(--text);}
+.wc-words{font-size:0.72rem;color:var(--muted);}
+.warn-banner{margin-top:0.8rem;background:rgba(245,200,66,0.08);border:1px solid rgba(245,200,66,0.2);border-radius:8px;padding:0.65rem 0.9rem;font-size:0.76rem;color:var(--yellow);line-height:1.5;display:none;gap:8px;align-items:flex-start;}
+.warn-banner.visible{display:flex;}
+
+/* WRITING STYLES */
+.styles-section{background:var(--bg2);}
+.styles-inner{max-width:1100px;margin:0 auto;}
+.styles-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:3.5rem;}
+.style-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:2rem;}
+.style-tag{background:var(--card);border:1px solid var(--border2);border-radius:100px;padding:0.5rem 1.1rem;font-size:0.85rem;font-weight:500;color:var(--muted2);cursor:pointer;transition:all 0.2s;user-select:none;}
+.style-tag:hover,.style-tag.active{background:var(--amber-dim);border-color:rgba(255,98,0,0.4);color:var(--amber2);}
+.styles-preview{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.8rem;position:relative;overflow:hidden;min-height:240px;}
+.styles-preview::before{content:'';position:absolute;top:0;inset-inline-start:0;inset-inline-end:0;height:1px;background:linear-gradient(90deg,transparent,var(--amber),transparent);}
+.preview-label{font-size:0.7rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1rem;}
+.preview-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--text);margin-bottom:0.8rem;}
+.preview-text{font-size:0.88rem;color:var(--muted2);line-height:1.75;}
+.preview-text em{color:var(--amber2);font-style:normal;font-weight:600;}
+.preview-style-chip{display:inline-flex;align-items:center;gap:6px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);color:var(--amber2);font-size:0.7rem;font-weight:600;padding:0.2rem 0.65rem;border-radius:100px;margin-bottom:1.2rem;}
+
+/* FEATURES */
+.features-inner{max-width:1100px;margin:0 auto;}
+.features-grid{margin-top:3.5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+.feat-card{background:var(--bg);padding:2rem 1.8rem;transition:background 0.3s;}
+.feat-card:hover{background:var(--card);}
+.feat-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;}
+.feat-icon.amber{background:var(--amber-dim);}
+.feat-icon.red{background:var(--red-dim);}
+.feat-icon.blue{background:rgba(80,130,255,0.12);}
+.feat-icon.green{background:var(--green-dim);}
+.feat-icon svg{width:20px;height:20px;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;fill:none;}
+.feat-icon.amber svg{stroke:var(--amber2);}
+.feat-icon.red svg{stroke:#ff6b6b;}
+.feat-icon.blue svg{stroke:#7ab0ff;}
+.feat-icon.green svg{stroke:var(--green);}
+.feat-card h3{font-size:0.98rem;font-weight:600;margin-bottom:0.5rem;}
+.feat-card p{font-size:0.86rem;color:var(--muted2);line-height:1.65;}
+.feat-new{display:inline-block;font-size:0.62rem;font-weight:700;background:var(--amber-dim);color:var(--amber2);border:1px solid rgba(255,98,0,0.25);padding:0.15rem 0.5rem;border-radius:100px;margin-inline-start:6px;vertical-align:middle;letter-spacing:0.04em;}
+
+/* TESTIMONIALS */
+.testimonials-inner{max-width:1100px;margin:0 auto;}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3.5rem;}
+.testi-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.8rem;}
+.stars{color:var(--amber2);font-size:0.9rem;margin-bottom:1rem;letter-spacing:2px;}
+.testi-tag{display:inline-block;font-size:0.68rem;font-weight:600;padding:0.18rem 0.6rem;border-radius:100px;margin-bottom:1rem;}
+.testi-tag.green{background:var(--green-dim);color:var(--green);border:1px solid rgba(46,204,113,0.2);}
+.testi-tag.yellow{background:var(--yellow-dim);color:var(--yellow);border:1px solid rgba(245,200,66,0.2);}
+.testi-tag.red-t{background:var(--red-dim);color:#ff9a9a;border:1px solid rgba(255,59,59,0.2);}
+.testi-quote{font-size:0.92rem;color:var(--muted2);line-height:1.7;margin-bottom:1.4rem;}
+.testi-quote strong{color:var(--text);font-weight:500;}
+.testi-author{display:flex;align-items:center;gap:10px;}
+.testi-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;}
+.testi-name{font-size:0.84rem;font-weight:600;}
+.testi-role{font-size:0.75rem;color:var(--muted);}
+
+/* PRICING */
+.pricing{background:var(--bg2);}
+.pricing-inner{max-width:1000px;margin:0 auto;text-align:center;}
+.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3.5rem;text-align:start;}
+.plan-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem 1.8rem;position:relative;transition:border-color 0.3s,transform 0.3s;}
+.plan-card:hover{transform:translateY(-4px);}
+.plan-card.popular{border-color:rgba(255,98,0,0.4);background:linear-gradient(160deg,#1a1c28 0%,#141620 100%);}
+.popular-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--amber);color:#1a1200;font-size:0.72rem;font-weight:700;padding:0.28rem 1rem;border-radius:100px;letter-spacing:0.05em;text-transform:uppercase;white-space:nowrap;}
+.plan-name{font-size:0.8rem;font-weight:600;color:var(--muted2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.8rem;}
+.plan-price{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:900;line-height:1;margin-bottom:0.3rem;}
+.plan-price sup{font-size:1.2rem;vertical-align:super;font-family:'Outfit',sans-serif;font-weight:600;}
+.plan-price .per{font-family:'Outfit',sans-serif;font-size:0.9rem;font-weight:400;color:var(--muted);}
+.plan-target{font-size:0.78rem;font-weight:600;color:var(--amber);margin:0.5rem 0;}
+.plan-desc{font-size:0.84rem;color:var(--muted2);margin:0.6rem 0 1.2rem;line-height:1.5;}
+.plan-divider{height:1px;background:var(--border);margin:1.2rem 0;}
+.plan-features{list-style:none;display:flex;flex-direction:column;gap:0.65rem;}
+.plan-features li{font-size:0.85rem;color:var(--muted2);display:flex;align-items:flex-start;gap:8px;}
+.chk{width:16px;height:16px;flex-shrink:0;border-radius:50%;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.3);display:flex;align-items:center;justify-content:center;font-size:0.6rem;color:var(--amber);margin-top:2px;}
+.plan-features li.dimmed{color:var(--muted);}
+.plan-features li.dimmed .chk{background:rgba(255,255,255,0.04);border-color:var(--border);color:transparent;}
+.plan-btn{display:block;text-align:center;margin-top:1.8rem;padding:0.75rem;border-radius:9px;font-size:0.9rem;font-weight:600;text-decoration:none;transition:all 0.2s;}
+.plan-btn.outline{border:1px solid var(--border2);color:var(--muted2);}
+.plan-btn.outline:hover{border-color:var(--amber);color:var(--amber);}
+.plan-btn.filled{background:var(--amber);color:#1a1200;}
+.plan-btn.filled:hover{background:var(--amber2);transform:translateY(-1px);}
+
+/* CTA */
+.cta-section{background:var(--bg);text-align:center;position:relative;overflow:hidden;}
+.cta-orb{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;border-radius:50%;background:radial-gradient(ellipse,rgba(255,98,0,0.07) 0%,transparent 70%);pointer-events:none;}
+.cta-inner{position:relative;z-index:1;max-width:680px;margin:0 auto;}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 4rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;}
+.footer-brand{font-size:0.82rem;color:var(--muted);}
+.footer-brand a{color:var(--amber);text-decoration:none;}
+.footer-links{display:flex;gap:2rem;flex-wrap:wrap;}
+.footer-links a{font-size:0.82rem;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--text);}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-12px);}to{opacity:1;transform:translateY(0);}}
+@keyframes pulse{0%,100%{transform:translateX(0);opacity:1;}50%{transform:translateX(3px);opacity:0.7;}}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
+.typing-cursor{display:inline-block;width:2px;height:1em;background:var(--amber);margin-inline-start:2px;vertical-align:text-bottom;animation:blink 0.9s infinite;}
+.fade-in-up{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.fade-in-up.visible{opacity:1;transform:translateY(0);}
+
+/* RESPONSIVE */
+@media(max-width:1400px){.steps-grid{grid-template-columns:repeat(3,1fr);}.step-card.step-wide{grid-column:auto;}.pricing-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:1000px){.steps-grid{grid-template-columns:1fr 1fr;}.fidelity-grid{grid-template-columns:1fr;}.styles-layout{grid-template-columns:1fr;gap:2.5rem;}.analysis-layout{grid-template-columns:1fr;gap:2.5rem;}.features-grid{grid-template-columns:1fr 1fr;}.testi-grid{grid-template-columns:1fr;}.pricing-grid{grid-template-columns:1fr;}}
+@media(max-width:760px){nav{padding:1rem 1.5rem;}.nav-links{display:none;}section{padding:4.5rem 1.5rem;}.logos-section{padding:2rem 1.5rem;}.steps-grid{grid-template-columns:1fr;}.features-grid{grid-template-columns:1fr;}footer{padding:2.5rem 1.5rem;}}
+
+    .faq-section { padding: 6rem 4rem; background: var(--bg2); }
+    .faq-inner { max-width: 820px; margin: 0 auto; }
+    .faq-list { margin-top: 3rem; display: flex; flex-direction: column; gap: 0.75rem; }
+    .faq-item { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+    .faq-item summary { cursor: pointer; padding: 1.15rem 1.4rem; font-weight: 600; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; transition: color .15s; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; font-size: 1.4rem; font-weight: 400; color: var(--amber); line-height: 1; flex-shrink: 0; transition: transform .2s; }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item summary:hover { color: var(--amber); }
+    .faq-item[open] { border-color: var(--border2); }
+    .faq-a { padding: 0 1.4rem 1.25rem; color: var(--muted2); font-size: 0.94rem; line-height: 1.7; }
+    .faq-a p { margin: 0; }
+    .faq-a strong { color: var(--fg, #fff); font-weight: 600; }
+    @media (max-width: 720px) {
+      .faq-section { padding: 4rem 1.25rem; }
+      .faq-item summary { padding: 1rem 1.1rem; font-size: 0.95rem; }
+      .faq-a { padding: 0 1.1rem 1.1rem; }
+    }
+
+    .footer-note { max-width: 780px; margin: 1.25rem auto 0; font-size: 0.78rem; line-height: 1.6; color: var(--muted); text-align: center; }
+    .footer-note strong { color: var(--muted2); font-weight: 600; }
+</style>
+<!-- i18n:begin -->
+<link rel="alternate" hreflang="en" href="https://tubebook.org/" />
+<link rel="alternate" hreflang="fr" href="https://tubebook.org/fr/" />
+<link rel="alternate" hreflang="es" href="https://tubebook.org/es/" />
+<link rel="alternate" hreflang="pt" href="https://tubebook.org/pt/" />
+<link rel="alternate" hreflang="de" href="https://tubebook.org/de/" />
+<link rel="alternate" hreflang="ru" href="https://tubebook.org/ru/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://tubebook.org/zh/" />
+<link rel="alternate" hreflang="ar" href="https://tubebook.org/ar/" />
+<link rel="alternate" hreflang="x-default" href="https://tubebook.org/" />
+<link rel="canonical" href="https://tubebook.org/ar/" />
+<script src="/lang-switcher.js" defer></script>
+<!-- i18n:end -->
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/ar/" class="nav-logo" style="padding:0;">
+    <img src="/logo-tubebook-1500x450.png" alt="TubeBook" style="height:48px;width:auto;display:block;" />
+  </a>
+  <div class="nav-links">
+    <a href="#how-it-works">كيف يعمل</a>
+    <a href="#fidelity">أوضاع الدقة</a>
+    <a href="#features">الميزات</a>
+    <a href="#pricing">الأسعار</a>
+    <a href="#faq">الأسئلة الشائعة</a>
+  </div>
+  <a href="https://app.tubebook.org/signup" class="nav-cta">ابدأ مجانًا ←</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-orb-1"></div>
+  <div class="hero-orb-2"></div>
+  <div class="hero-badge">
+    <svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+    جديد: مصادرك فقط — كل حقيقة يمكن تتبعها إلى ما قدمته
+  </div>
+  <h1>ابحث عن الموضوع. اجمع المصادر.<br><em>انشر الكتاب — بأي لغة، مطبوعًا أو صوتيًا.</em></h1>
+  <p class="hero-sub">TubeBook لا ينسخ — بل <strong>يكتب كتابًا كاملاً</strong>. ابدأ برؤية <strong>ما يبحث عنه القراء فعلاً</strong>، ثم أضف الفيديوهات أو المقالات أو المستندات أو مخطوطتك الخاصة، واختر مدى الالتزام بها، ووافق على المخطط التفصيلي قبل كتابة كلمة واحدة. <strong style="color:var(--amber2);">الحسابات المجانية تحصل على 100 رصيد كل شهر</strong> — مع نفس أدوات الإنشاء والتحرير والرسوم والتصدير المتاحة في كل خطة مدفوعة. افتراضيًا، كل حقيقة في الكتاب تأتي من <strong>مصادرك فقط ولا شيء غيرها</strong>.</p>
+  <div class="hero-actions">
+    <a href="https://app.tubebook.org/signup" class="btn-primary">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l-4 4-4-4"/><circle cx="12" cy="12" r="10"/></svg>
+      أنشئ كتابك الإلكتروني الأول مجانًا
+    </a>
+    <a href="#how-it-works" class="btn-secondary">شاهد كيف يعمل</a>
+  </div>
+  <p class="hero-note">خطة مجانية · 100 رصيد كل شهر · جميع الميزات · بدون بطاقة ائتمان</p>
+
+  <div class="demo-wrap">
+    <div class="demo-card">
+      <div class="demo-row">
+        <div class="demo-yt">
+          <span style="color:var(--red);font-size:0.9rem;flex-shrink:0;">▶</span>
+          youtube.com/watch?v=<span id="typing-url"></span><span class="typing-cursor"></span>
+        </div>
+        <div class="demo-arrow">→</div>
+        <div class="demo-book-tag">📖 كتاب إلكتروني</div>
+      </div>
+      <div class="demo-controls">
+        <div class="demo-control-chip">
+          <div class="chip-label">وضع الدقة</div>
+          <div class="chip-value" id="demo-fidelity"><span class="chip-dot green"></span> منخفضة — جاهزة للنشر التجاري</div>
+        </div>
+        <div class="demo-control-chip">
+          <div class="chip-label">أسلوب الكتابة</div>
+          <div class="chip-value" id="demo-style">✦ احترافية</div>
+        </div>
+      </div>
+      <div class="demo-steps">
+        <div class="demo-step"><span class="step-icon">🎬</span>تحليل</div>
+        <div class="demo-step"><span class="step-icon">⚙️</span>إعداد</div>
+        <div class="demo-step"><span class="step-icon">📋</span>معاينة الفهرس</div>
+        <div class="demo-step"><span class="step-icon">✍️</span>كتابة</div>
+        <div class="demo-step"><span class="step-icon">🔍</span>فحص الجودة</div>
+        <div class="demo-step"><span class="step-icon">📄</span>تصدير</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGOS -->
+<div class="logos-section">
+  <p class="logos-label">مبني على بنية تحتية عالمية المستوى</p>
+  <div class="logos-row">
+    <div class="logo-badge"><div class="dot"></div>ذكاء اصطناعي متعدد النماذج</div>
+    <div class="logo-badge"><div class="dot"></div>Supabase</div>
+    <div class="logo-badge"><div class="dot"></div>Cloudflare Workers</div>
+    <div class="logo-badge"><div class="dot"></div>Stripe Payments</div>
+    <div class="logo-badge"><div class="dot"></div>TanStack Start</div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="hiw" id="how-it-works">
+  <div class="hiw-inner">
+    <div class="hiw-header fade-in-up">
+      <span class="section-label">العملية</span>
+      <h2 class="section-title">سبع خطوات، كتاب واحد قابل للنشر</h2>
+      <p class="section-sub">ابدأ بموضوع مُبحث أو انطلق مباشرة بمصادرك الخاصة. في كلتا الحالتين، أنت توافق على البنية قبل كتابة أي كلمة.</p>
+    </div>
+    <div class="steps-grid fade-in-up">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <div class="step-icon-wrap red-tint"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <h3>ابحث عن موضوع <span style="font-size:0.7rem;color:var(--muted);font-weight:400;">(اختياري)</span></h3>
+        <p>أدخل مجالًا وشاهد العبارات التي يكتبها الأشخاص فعليًا في Amazon وGoogle، وأيها تُظهر نية شراء الكتب، ومدى ازدحام كل منها — ثم اختر فكرة كتاب مبنية على الفجوات. 5 أرصدة، مجاني لإعادة الفتح لمدة 14 يومًا.</p>
+        <span class="step-badge">جديد</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <div class="step-icon-wrap red-tint"><svg viewBox="0 0 24 24"><path d="M15 10l-4 4-4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
+        <h3>أضف مصادرك</h3>
+        <p>دع TubeBook يقترح قائمة مختصرة تصل إلى 25 فيديو ومقالًا ومستندًا لموضوعك — فقط تلك التي يمكنه قراءتها فعليًا — أو أضف مصادرك الخاصة: روابط YouTube، وصفحات الويب، <strong>ملفات Word وPowerPoint وPDF</strong>، أو الصق مخطوطة كاملة من 500 صفحة. حتى 25 مصدرًا لكل كتاب.</p>
+        <span class="step-badge">جديد</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <div class="step-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+        <h3>تحليل تلقائي للمصادر</h3>
+        <p>يقرأ TubeBook كل مصدر، ويكتشف اللغة، ويحدد الموضوع والمواضيع والجمهور عبر جميعها قبل كتابة أي كلمة.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <div class="step-icon-wrap"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+        <h3>إعداد كتابك</h3>
+        <p>اختر وضع الدقة (عالية / ذكية / منخفضة)، وأسلوب الكتابة، ونمط الغلاف، والرسوم التوضيحية، وتعليماتك المخصصة — قبل بدء أي توليد.</p>
+        <span class="step-badge">جديد</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">05</div>
+        <div class="step-icon-wrap"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div>
+        <h3>معاينة جدول المحتويات والموافقة عليه</h3>
+        <p>راجع هيكل الفصول الذي أنشأه الذكاء الاصطناعي. عدّل الفصول أو أعد كتابتها بحرية، وفي الكتب متعددة المصادر، اطلع على المصادر التي يعتمد عليها كل فصل — لا تتم كتابة أي شيء حتى توافق، ويُسترجع المبلغ تلقائيًا في حال فشل التوليد.</p>
+        <span class="step-badge">جديد</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">06</div>
+        <div class="step-icon-wrap"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+        <h3>فحص الجودة</h3>
+        <p>يخضع كل فصل لمراجعة ثانية قبل أن تراه: تحرير سطري للبنية والوضوح، ثم فحص سلامة يضمن <strong>إكمال فصل مقطوع في منتصف الجملة</strong>، يزيل أي تعليمات تسربت إلى النص، ويصحح العناوين المكررة أو المرقمة، ويطبق قواعد الطباعة الخاصة بلغة الكتاب. معظم الأدوات تعطيك المسودة الأولى. هذه هي المرحلة التي تجعلها مخطوطة.</p>
+        <span class="step-badge">جديد</span>
+      </div>
+      <div class="step-card step-wide">
+        <div class="step-num">07</div>
+        <div class="step-icon-wrap"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <h3>نزّل كتابك الإلكتروني</h3>
+        <p>PDF وDOCX وEPUB وPPTX في كل الخطة، مع الغلاف والرسوم والخطوط التي اخترتها — بالإضافة إلى نسخة داخلية جاهزة للطباعة وغلاف مطبوع وحزمة بيانات KDP.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIDELITY MODES -->
+<section id="fidelity">
+  <div class="fidelity-inner">
+    <div class="fade-in-up" style="text-align:center;max-width:640px;margin:0 auto;">
+      <span class="section-label">أوضاع الدقة</span>
+      <h2 class="section-title">ما مدى قرب كتابك الإلكتروني من الفيديو؟</h2>
+      <p class="section-sub" style="margin:0 auto;">ثلاثة أوضاع. ثلاثة مواقف قانونية. أنت تختار درجة الأصالة التي يحتاجها الناتج.</p>
+    </div>
+    <div class="fidelity-grid fade-in-up">
+      <div class="fidelity-card">
+        <div class="legal-badge red"><span class="legal-dot red"></span>إعادة الاستخدام فقط</div>
+        <div class="fidelity-tagline">دقة عالية</div>
+        <h3>فيديو كلمة بكلمة، بنية مطابقة</h3>
+        <p>يتبع الكتاب الإلكتروني البنية الدقيقة والأسماء والقصص والأفكار في النص — مثالي لإعادة استخدام محتواك الخاص في كتاب.</p>
+        <div class="fidelity-uses">
+          <div class="fidelity-use">أعد استخدام قناتك على يوتيوب</div>
+          <div class="fidelity-use">محتوى الدورة → دليل مرافق</div>
+          <div class="fidelity-use">سلسلة محاضرات → كتاب دراسي مطبوع</div>
+        </div>
+        <div class="ownership-note">⚠ يجب أن تمتلك حقوق الفيديو المصدر. توزيع مخرجات الدقة العالية من محتوى طرف ثالث دون إذن يعد انتهاكًا لحقوق النشر.</div>
+      </div>
+      <div class="fidelity-card">
+        <div class="legal-badge yellow"><span class="legal-dot yellow"></span>تحقق من حقوقك</div>
+        <div class="fidelity-tagline">تكيف ذكي <span style="font-size:0.68rem;color:var(--muted);font-weight:400;">(افتراضي)</span></div>
+        <h3>نفس الأفكار، بنية معاد بناؤها</h3>
+        <p>يعيد الذكاء الاصطناعي كتابة المصدر وإعادة هيكلته — قد تتغير الأسماء، ويعاد بناء التدفق، لكن يبقى المحتوى الأساسي قريبًا من الأصل.</p>
+        <div class="fidelity-uses">
+          <div class="fidelity-use">حدّث محتوى قديمًا لعلامة تجارية جديدة</div>
+          <div class="fidelity-use">حوّل برنامجًا تعليميًا إلى دليل إرشادي</div>
+          <div class="fidelity-use">أعد تجميع المقابلات في دراسات حالة</div>
+        </div>
+      </div>
+      <div class="fidelity-card highlight-green">
+        <div class="legal-badge green"><span class="legal-dot green"></span>جاهز للبيع التجاري</div>
+        <div class="fidelity-tagline">دقة منخفضة</div>
+        <h3>مستوحى من الفيديو، أصلي حقًا</h3>
+        <p>الفيديو مجرد بذرة موضوعية. يولد الذكاء الاصطناعي محتوى أصليًا بشكل كبير — الأسماء والبنية والصياغة كلها جديدة. آمن للنشر على KDP وجامرود والنشر التجاري.</p>
+        <div class="fidelity-uses">
+          <div class="fidelity-use">البيع على Amazon KDP</div>
+          <div class="fidelity-use">النشر على Gumroad أو موقعك الخاص</div>
+          <div class="fidelity-use">أنشئ كتبًا إلكترونية من أي فيديو عام</div>
+        </div>
+        <div class="kdp-tip">💡 لامتلاك حقوق النشر بالكامل، أضف رؤاك الخاصة إلى مسودة الذكاء الاصطناعي قبل النشر. التحرير البشري هو ما يصنع التأليف.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANALYSIS DEEP DIVE -->
+<section class="analysis-section" id="analysis">
+  <div class="analysis-inner">
+    <div class="analysis-layout fade-in-up">
+      <div>
+        <span class="section-label">مصمم ليكون مكتشفًا</span>
+        <h2 class="section-title" style="font-size:clamp(1.8rem,3.5vw,2.5rem);">جاهز للنشر والبحث،<br>من الصندوق</h2>
+        <p class="section-sub" style="max-width:100%;">كل كتاب يُصدر محسّنًا للأماكن التي يجدها القراء فعليًا: بحث أمازون، وجوجل، وخطوط استيعاب المتاجر. لا واجبات منزلية لتحسين محركات البحث.</p>
+        <div style="margin-top:2rem;display:flex;flex-direction:column;gap:1rem;">
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div style="width:32px;height:32px;border-radius:8px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.8rem;color:var(--amber2);font-weight:700;">1</div>
+            <div><div style="font-size:0.9rem;font-weight:600;margin-bottom:0.2rem;">عناوين وعناوين فرعية محسّنة لمحركات البحث</div><div style="font-size:0.84rem;color:var(--muted2);">العناوين الفرعية مكتوبة لتحتوي على العبارات التي يكتبها القراء فعليًا في أمازون وجوجل — أقوى سطح ترتيب يتحكم فيه المؤلف.</div></div>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div style="width:32px;height:32px;border-radius:8px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.8rem;color:var(--amber2);font-weight:700;">2</div>
+            <div><div style="font-size:0.9rem;font-weight:600;margin-bottom:0.2rem;">بيانات وصفية مضمّنة في كل ملف</div><div style="font-size:0.84rem;color:var(--muted2);">PDF و EPUB و DOCX و PPTX تُشحن مع العنوان والمؤلف والوصف والكلمات المفتاحية واللغة مدمجة في الملف — ما تقرأه خطوط استيعاب المتاجر ومحركات البحث فعليًا.</div></div>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div style="width:32px;height:32px;border-radius:8px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.8rem;color:var(--amber2);font-weight:700;">3</div>
+            <div><div style="font-size:0.9rem;font-weight:600;margin-bottom:0.2rem;">عدة KDP كاملة لكل كتاب</div><div style="font-size:0.84rem;color:var(--muted2);">وصف جاهز لأمازون (نص عادي + HTML منسق)، و7 كلمات مفتاحية للبحث، و3 اقتراحات فئات، ونص الغلاف الخلفي، وعرض ظهر دقيق — نقرة واحدة لنسخ كل عنصر.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="analysis-card">
+        <div class="analysis-title">حزمة بيانات KDP الوصفية — تُنشأ مع كل كتاب</div>
+        <div class="density-row"><span class="density-label">وصف أمازون</span><span class="density-score">✓ نص عادي + HTML</span></div>
+        <div class="density-row"><span class="density-label">نص الغلاف الخلفي</span><span class="density-score">✓ جاهز للطباعة</span></div>
+        <div class="density-row"><span class="density-label">عرض الظهر</span><span class="density-score">0.58" @ 232 صفحة</span></div>
+        <div class="toc-preview">
+          <div class="toc-preview-label">7 كلمات مفتاحية للبحث</div>
+          <div class="toc-items">
+            <div class="toc-item"><div class="toc-num">1</div><span>أنظمة إنتاجية للمبدعين</span></div>
+            <div class="toc-item"><div class="toc-num">2</div><span>إطار إدارة الوقت</span></div>
+            <div class="toc-item"><div class="toc-num">3</div><span>عادات العمل العميق</span></div>
+            <div class="toc-item"><div class="toc-num">4</div><span>تقنيات التركيز لرواد الأعمال</span></div>
+            <div class="toc-item"><div class="toc-num">5</div><span>+ 3 إضافية، فريدة لكل كتاب…</span></div>
+          </div>
+        </div>
+        <div class="toc-preview">
+          <div class="toc-preview-label">اقتراحات الفئات</div>
+          <div class="toc-items">
+            <div class="toc-item"><div class="toc-num">›</div><span>الأعمال والمال &gt; إدارة الوقت</span></div>
+            <div class="toc-item"><div class="toc-num">›</div><span>تطوير الذات &gt; التحول الشخصي</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WRITING STYLES -->
+<section class="styles-section" id="styles">
+  <div class="styles-inner">
+    <div class="fade-in-up" style="max-width:1100px;margin:0 auto;">
+      <span class="section-label">أنماط الكتابة</span>
+      <h2 class="section-title">كتابك، بأسلوبك</h2>
+    </div>
+    <div class="styles-layout fade-in-up" style="max-width:1100px;margin:0 auto;">
+      <div>
+        <p class="section-sub" style="max-width:100%;">اختر أسلوب الكتابة الذي يناسب جمهورك قبل التوليد. تتكيف الذكاء الاصطناعي مع النبرة والمفردات والبنية وفقًا لذلك — من الدقة الأكاديمية إلى السرد القصصي غير الرسمي.</p>
+        <div class="style-tags" id="style-tags">
+          <div class="style-tag active" data-style="Professional" data-preview="The following framework provides a systematic approach to optimising your workflow. By implementing these <em>evidence-based methodologies</em>, organisations can achieve measurable improvements in operational efficiency.">احترافي</div>
+          <div class="style-tag" data-style="Conversational" data-preview="Here's the thing nobody tells you about productivity — it's not about doing more. It's about <em>doing the right things</em>. Let me walk you through what actually changed everything for me.">محادثة</div>
+          <div class="style-tag" data-style="Stoic" data-preview="The obstacle before you is not a barrier. It is the path. <em>What you resist persists; what you engage with transforms.</em> Begin where you are. Use what you have. Do what you can.">رواقي</div>
+          <div class="style-tag" data-style="Storytelling" data-preview="It was a Tuesday in October when Marcus first realised the system was broken. He'd spent <em>three years</em> following the same routine — and for the first time, he stopped to ask why.">سرد قصصي</div>
+          <div class="style-tag" data-style="Academic" data-preview="This chapter examines the theoretical underpinnings of the proposed model. Drawing upon <em>Bourdieu's concept of cultural capital</em>, the analysis situates the findings within a broader socio-economic context.">أكاديمي</div>
+          <div class="style-tag" data-style="Inspirational" data-preview="You already have everything you need. The gap between where you are and where you want to be isn't talent — it's <em>decision</em>. Today is the day you close that gap.">ملهم</div>
+        </div>
+      </div>
+      <div>
+        <div class="styles-preview">
+          <div class="preview-style-chip" id="style-chip">✦ احترافية</div>
+          <div class="preview-label">فقرة نموذجية — الفصل 2</div>
+          <div class="preview-title">شرح الإطار الأساسي</div>
+          <div class="preview-text" id="style-preview-text">يوفر الإطار التالي منهجًا منظمًا لتحسين سير عملك. من خلال تنفيذ هذه <em>المنهجيات القائمة على الأدلة</em>، يمكن للمؤسسات تحقيق تحسينات قابلة للقياس في الكفاءة التشغيلية.</div>
+        </div>
+        <p style="font-size:0.78rem;color:var(--muted);margin-top:1rem;text-align:center;">انقر على أي نمط لمعاينة نبرة الذكاء الاصطناعي</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="features-inner">
+    <div class="fade-in-up">
+      <span class="section-label">الميزات</span>
+      <h2 class="section-title">كل ما تحتاجه<br>لتنشر كالمحترفين</h2>
+    </div>
+    <div class="features-grid fade-in-up">
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <h3>ابحث عن موضوع <span class="feat-new">جديد</span></h3>
+        <p>لا تعرف ماذا تكتب؟ تصفح المواضيع الرائجة في الولايات المتحدة والمملكة المتحدة وألمانيا وكندا وأستراليا وفرنسا — مجانًا. ثم شاهد العبارات التي يكتبها القراء فعليًا في أمازون، وعدد الكتب المنافسة، واحصل على قائمة مختصرة بأفضل الفيديوهات والمقالات للبناء عليها. <strong>ابحث عن الطلب، لا التخمين.</strong></p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon green"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+        <h3>كتب متعددة المصادر <span class="feat-new">جديد</span></h3>
+        <p>ادمج حتى 25 فيديو من يوتيوب، ومقالات ويب، و <strong>مستندات وورد وبوربوينت وPDF</strong> ونصًا ملصقًا في كتاب واحد — مرفوعة من جهازك أو عبر روابط. الصق مخطوطة كاملة غير منشورة، حتى 500 صفحة مطبوعة، وأعد هيكلتها. يقرأ TubeBook كل شيء، ويبني مخططًا موحدًا عبر المجموعة، ثم يكتب كل فصل من المصادر التي تغطيه فعليًا.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon blue"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <h3>مصادرك فقط <span class="feat-new">جديد</span></h3>
+        <p>لا يبحث TubeBook أبدًا في الويب أثناء الكتابة. افتراضيًا، لا يعتمد على معرفة الذكاء الاصطناعي الخاصة به أيضًا — <strong>كل حقيقة ورقم واسم ومثال يعود إلى المواد التي قدمتها</strong>، لذا يمكنك أن تقف خلف كتابك. هل تريد معرفة النموذج الخلفية أيضًا؟ فعّلها عن قصد، ويتم تمييز هذه الكتب لتعرف أيها هو. لا يُسمح لأي إعداد باختلاق إحصائية أو دراسة أو اقتباس.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon green"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>3 أوضاع دقة و6 أنماط كتابة</h3>
+        <p>خط أنابيب نموذج متطور مع تجاوز تلقائي يكتب نثرًا متماسكًا وجاهزًا للنشر — وليس تفريغًا للنص. دقة عالية لإعادة استخدام محتواك، وتكيف ذكي لتجديد العلامة التجارية، ودقة منخفضة لكتب إلكترونية تجارية أصلية تمامًا — ثم اختر احترافي أو محادثة أو سرد قصصي أو أكاديمي أو ملهم أو رواقي. كل ذلك يُختار قبل كتابة كلمة.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <h3>فحص مخاطر النشر <span class="feat-new">جديد</span></h3>
+        <p>قبل النشر، يراجع TubeBook عنوانك وعنوانك الفرعي وكلمات KDP الرئيسية بحثًا عن أسماء العلامات التجارية والامتيازات والمؤلفين الأحياء وادعاءات التأييد الرسمي — البيانات الوصفية التي تحجبها أمازون للكتب. يحدد كل عنصر، ويشرح سبب أهميته، ويقترح صياغة أكثر أمانًا، ويربطك مباشرة بسجل العلامات التجارية الأمريكي لترى من يملك الاسم. في كل خطة، رصيد واحد يفحص كل علامة تم تحديدها مرة واحدة ويظهر لك المالك وما إذا كانت نشطة. لا يمنعك أبدًا، ولا يخبرك أبدًا أن الكتاب آمن: <strong>الحقوق دائمًا لك للتحقق.</strong></p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <h3>جاهز لتحسين محركات البحث وKDP <span class="feat-new">جديد</span></h3>
+        <p>عناوين فرعية محسّنة للكلمات المفتاحية، وبيانات وصفية مضمّنة في كل ملف، وحزمة KDP جاهزة للنسخ واللصق: وصف، و7 كلمات مفتاحية، وفئات، ونص الغلاف الخلفي. ابحث في موضوع أولاً وتأتي تلك الكلمات المفتاحية من <strong>عبارات بحث حقيقية ملاحظة</strong> بدلاً من التخمين.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon red"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div>
+        <h3>الموافقة وأجزاء الكتاب <span class="feat-new">جديد</span></h3>
+        <p>راجع وعدّل بنية الفصول قبل بدء الكتابة، وحدد بالضبط الأجزاء التي يحتويها الكتاب — مقدمة، خاتمة، عن المؤلف والمزيد. المادة الأمامية بجودة الناشر: صفحة حقوق نشر حقيقية مع بصمة الناشر والمدينة والطبعة واعتمادات التصميم وإخلاء مسؤولية اختياري للخدمات المهنية، ومقدمة مع سطر اسم المساهم، ورمز QR لنسختك المطبوعة. أي شيء تتركه فارغًا يتم حذفه ببساطة. اختر ما إذا كانت الفصول تنتهي بـ <strong>نقاط رئيسية</strong> و <strong>تأمل</strong> موجه — أو لا شيء. لا تتم صياغة أي شيء حتى توافق، ويتم استرداد الأموال للإنشاءات الفاشلة، وتغيير رأيك بعد ذلك يعيد بناء الملفات مجانًا.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon red"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
+        <h3>ثلاثة أطوال <span class="feat-new">جديد</span></h3>
+        <p>مغناطيس رصاص من 10-25 صفحة لتنمية قائمتك، أو كتاب قصير من 25-50 صفحة يمكنك بيعه ككتاب ورقي على KDP، أو كتاب تجاري كامل من 25,000+ كلمة — تختار قبل الإنشاء. اضبط النوع على <strong>12 أو 14 أو 16 نقطة حقيقية للطباعة الكبيرة</strong> للقراء الأكبر سنًا، واختر من بين ثمانية أحجام قص KDP واثني عشر خطًا، وشاهد تقدير الصفحات يتحدث مباشرة مقابل الحد الأدنى لكتاب أمازون الورقي البالغ 24 صفحة.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon red"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
+        <h3>غلاف ورسوم من اختيارك <span class="feat-new">جديد</span></h3>
+        <p>للغلاف وكل فصل، اختر <strong>ثلاثة خيارات مرسومة بالذكاء الاصطناعي</strong>، أو ابحث عن <strong>صور مخزنة</strong> من Unsplash وPexels وPixabay، أو <strong>ارفع أعمالك الفنية الخاصة</strong> — كل ذلك في كل خطة. يتم الحفاظ على اعتمادات وروابط الصور المخزنة في الكتاب المُصدَّر. ضع صورة كل فصل تلقائيًا أو اختر القسم والفقرة المحددين بعدها. اكتب موجزًا فنيًا واحدًا للغة بصرية متسقة، وقارن الخيارات جنبًا إلى جنب، وأعد البناء فقط بعد اختيارك. 14 قالب تصميم، رصيد واحد لكل رسم توضيحي مُنشأ، غلاف مجاني.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+        <h3>اثنا عشر قالب كتاب <span class="feat-new">جديد</span></h3>
+        <p>اختر <strong>نوع الكتاب</strong> قبل أن تكتبه — دليل إرشادي، خطة 7 أيام، كتاب عمل، قارئ يومي، دليل ميداني، كتيب مرجعي. كل نمط يحدد الطول والنبرة وكتل الفصول، ويغير طريقة بناء الفصل فعليًا: الدليل الميداني يستخدم نفس النمط ثلاث مرات في كل مرة، القارئ اليومي يقف وحده في كل مدخل، كتاب العمل يعطي مساحة أكبر لعمل القارئ من الشرح. كل ما يحدده القالب هو عنصر تحكم يمكنك تغييره.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
+        <h3>مكتوب بأسلوبك الخاص <span class="feat-new">جديد</span></h3>
+        <p>ارفع شيئًا كتبته بالفعل — منشورًا، فصلًا، مقالًا — وتُكتب كتبك <strong>أسلوبك في الكتابة</strong>: إيقاعك، أشكال جملتك، كيف تفتح فكرة وكيف تختتمها. بدلاً من النبرة المسطحة والحذرة التي ينتجها الذكاء الاصطناعي افتراضيًا. تُقرأ ملفاتك مرة واحدة ثم تُحذف؛ لا يُستخدم أي شيء لتدريب نموذج، ولا تلامس كتاباتك كتب أي شخص آخر.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>رأي ثانٍ أثناء التحرير <span class="feat-new">جديد</span></h3>
+        <p>اسأل عن الاتجاه أو الإيقاع أو ما إذا كانت الفقرة تستحق طولها — واحصل على إجابة من شيء قرأ مخططك والفصل الذي أمامك. اطلب تغييرًا في الصياغة فيعود إليك <strong>اقتراحًا تقرؤه بالكامل وتقبله أو ترفضه</strong>. لا يعدّل كتابك من تلقاء نفسه أبدًا.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
+        <h3>حرّره بعد كتابته <span class="feat-new">جديد</span></h3>
+        <p>الكتاب المنتهي ليس كتابًا متجمدًا. غيّر أي فقرة بنفسك مجانًا، أو طبّق تصحيحًا مركّزًا من مدقق لغوي بالذكاء الاصطناعي مقابل <strong>0.1 رصيد</strong>، أو اطلب <strong>إعادة كتابة قسم كامل مقابل رصيد واحد</strong> بنفس الأسلوب والدقة واللغة المستخدمة في بقية الكتاب. تظل الملفات الحالية تعمل أثناء التحرير وتُعاد بناؤها عند الانتهاء.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>كل فصل يُفحص قبل أن تراه <span class="feat-new">جديد</span></h3>
+        <p>يتوقف نموذج اللغة في منتصف الجملة عندما ينفد مجاله، ويبدو المسودة مكتملًا لأن الفقرة السابقة تُقرأ جيدًا. لذا يحصل كل فصل على مراجعة ثانية: تحرير سطري للبنية، ثم فحص <strong>يكتب النهاية المفقودة لفصل انقطع</strong>، يزيل أي تعليمات تسربت إلى النص، ويستبدل العناوين المكررة حرفيًا، ويطبق طباعة لغة الكتاب — المسافات الضيقة قبل علامات الترقيم الفرنسية، علامات الاقتباس الصحيحة، الشرطات الصحيحة. لا تشغّلها أبدًا ولا تكلفك رصيدًا. تحدث في الطريق إلى ملفاتك، وتشاهدها تحدث على شريط التقدم.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="m8 11 2 2 4-4"/></svg></div>
+        <h3>دقّق قبل النشر <span class="feat-new">جديد</span></h3>
+        <p>القواعد والتكرار والوضوح فصلًا بفصل — بالإضافة إلى المشكلات التي لا يكشفها فصل واحد: مصطلح يُسمى بطريقتين مختلفتين، فكرة تُطرح بعد استخدامها، وعد لم يُوفَ. كل نتيجة <strong>تقتبس الكلمات الدقيقة</strong>، والنقر على إحداها ينقلك إليها مباشرة. مجاني مهما كررته.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <h3>مراجع حقيقية فعلاً <span class="feat-new">جديد</span></h3>
+        <p>قائمة مراجع مبنية من <strong>المصادر التي كُتب كتابك منها</strong>، مجمعة حسب الفصل الذي استخدم كل مصدر — وليست قائمة اختلقها نموذج ليبدو أكاديميًا. فعّلها لكتاب أنهيته الشهر الماضي وأعد البناء.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M5 3v18l15-9z"/></svg></div>
+        <h3>كتب صوتية <span class="feat-new">جديد</span></h3>
+        <p>حوّل أي كتاب منتهٍ إلى كتاب صوتي مُروى. كل جزء يُروى — الفصول والمقدمة والخاتمة — فتحصل على <strong>ملف واحد لكل جزء</strong> ويمكنك بعد ذلك <strong>دمج الأجزاء التي تختارها في ملف واحد</strong>. بنقرة واحدة يُبنى أيضًا <strong>حزمة التوزيع</strong>: كل جزء كملف MP3 مرقّم بمعدل <strong>192 كيلوبت في الثانية CBR، 44.1 كيلوهرتز</strong>، مضبوط على مستوى الصوت الذي تتحقق منه مجمعات الصوت عند الرفع، بالإضافة إلى <strong>غلاف 3000×3000</strong>، و <strong>عينة بيع بالتجزئة مدتها خمس دقائق</strong> وبيانات وصفية تكشف أن السرد بالذكاء الاصطناعي — الملفات التي تطلبها المجمعات، بالشكل الذي تطلبه. رواة ذكور وإناث بعشر لغات بالصوت القياسي، أو صوت طبيعي متميز بالإنجليزية والإسبانية، وتسمع عينة قبل النشر. قوائمك وعناوينك واختصاراتك تُعاد كتابتها للأذن، فيبدو السرد كراوٍ وليس قارئ شاشة. بع مباشرة على Gumroad أو Payhip أو Shopify أو موقعك الخاص — أو وصل إلى Audible عبر مجمع يقبل السرد بالذكاء الاصطناعي (<a href="help.html#audiobooks">ما يجب معرفته أولاً</a>).</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon green"><svg viewBox="0 0 24 24"><path d="M2 12h20"/><path d="M12 2a15 15 0 010 20 15 15 0 010-20z"/><circle cx="12" cy="12" r="10"/></svg></div>
+        <h3>سبع لغات <span class="feat-new">جديد</span></h3>
+        <p>سبع لغات إجمالاً: نسختك الإنجليزية الأصلية بالإضافة إلى الفرنسية والإسبانية والألمانية والبرتغالية والإيطالية والهولندية. كل واحدة تصبح <strong>كتابًا مستقلًا</strong> — وهذا ما يحتاجه أمازون، لأن كل لغة تُدرج بشكل منفصل. يُعاد استخدام غلافك ورسومك التوضيحية، وتُبحث الكلمات المفتاحية من جديد لتلك السوق، لذا تكلفة النسخة الثانية حوالي 40% من الأولى. <strong>يمكن سرد كل واحدة منها أيضًا</strong>، ذكرًا كان أو أنثى، لذا يمكن إصدار النسخة المترجمة ككتاب صوتي تمامًا مثل الأصل.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon blue"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+        <h3>آمن وخاص</h3>
+        <p>جميع الملفات في مخازن خاصة مملوكة للمستخدم. أمان على مستوى الصفوف في كل جدول قاعدة بيانات. محتواك ملكك وحدك — دائمًا.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section style="background:var(--bg2);padding:6rem 4rem;">
+  <div class="testimonials-inner">
+    <div class="fade-in-up" style="text-align:center;margin-bottom:3.5rem;">
+      <span class="section-label">شهادات</span>
+      <h2 class="section-title">المبدعون يحبون TubeBook</h2>
+    </div>
+    <div class="testi-grid fade-in-up">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <div class="testi-tag green">دقة منخفضة — KDP</div>
+        <p class="testi-quote">استخدمت وضع الدقة المنخفضة على فيديو مالي عام وحصلت على <strong>كتاب إلكتروني من 22,000 كلمة</strong> أنا الآن أبيع على Amazon KDP. أسلوب الكتابة الذي اخترته طابق علامتي التجارية تمامًا.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:rgba(255,98,0,0.15);color:var(--amber2);">JM</div>
+          <div><div class="testi-name">جيمس م.</div><div class="testi-role">مربي مالي، 180 ألف مشترك</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <div class="testi-tag red-t">دقة عالية — إعادة استخدام</div>
+        <p class="testi-quote">أعدت استخدام سلسلة التدريب الكاملة المكونة من 40 فيديو باستخدام وضع الدقة العالية. أصبح كل فيديو فصلًا. <strong>محتواي الخاص، أخيرًا في كتاب.</strong></p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:rgba(255,59,59,0.12);color:#ff7b7b;">SR</div>
+          <div><div class="testi-name">صوفيا ر.</div><div class="testi-role">مدرب أعمال ومؤلف</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <div class="testi-tag yellow">الرصاص المغناطيسي — Smart Adapt</div>
+        <p class="testi-quote">معاينة جدول المحتويات غيّرت كل شيء — عدّلت فصلين قبل الموافقة وكان الكتاب النهائي مطابقًا تمامًا. <strong>نمت قائمتي البريدية 3 أضعاف في شهرين.</strong></p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:rgba(80,130,255,0.12);color:#7ab0ff;">أ.ت.</div>
+          <div><div class="testi-name">أليكس ت.</div><div class="testi-role">مطور ومنشئ دورات</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="pricing-inner">
+    <div class="fade-in-up">
+      <span class="section-label">الأسعار</span>
+      <h2 class="section-title">تسعير بسيط قائم على الرصيد</h2>
+      <p class="section-sub" style="margin:0 auto;">تعمل كل الخطة على الرصيد — الرصاص المغناطيسي يستخدم 30، والكتاب القصير 60، والكتاب التجاري الكامل 100، وكل مصدر إضافي يضيف 8. البحث عن الموضوع يكلف <strong>5 أرصدة</strong> لكل تخصص، وإعادة فتح نفس التخصص خلال 14 يومًا مجانية. مغناطيس رصاص من 5 مصادر يكلف 30 + 4 × 8 = <strong>62 رصيدًا</strong>. تشمل جميع الخطط البحث عن الموضوع، الكتب متعددة المصادر، أوضاع الدقة، أنماط الكتابة، مراجعة المخطط التفصيلي والموافقة عليه، وحزمة أدوات KDP. الخطط الشهرية تعيد تعبئة الرصيد تلقائيًا.</p>
+    </div>
+    <div class="pricing-grid fade-in-up">
+      <div class="plan-card">
+        <div class="plan-name">مجاني</div>
+        <div class="plan-price"><sup>$</sup>0</div>
+        <div class="plan-target">100 رصيد كل شهر</div>
+        <p class="plan-desc">أنشئ كل شهر باستخدام المنتج الكامل — بدون بطاقة ودون حواجز ميزات.</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li><span class="chk">✓</span>100 رصيد كل شهر</li>
+          <li><span class="chk">✓</span>نفس ميزات كل الخطط المدفوعة</li>
+          <li><span class="chk">✓</span>لوحات المواضيع الرائجة — تصفح مجاني</li>
+          <li><span class="chk">✓</span>أي طول: رصاص مغناطيسي، كتاب قصير أو كتاب كامل</li>
+          <li><span class="chk">✓</span>حتى 25 مصدرًا لكل كتاب إلكتروني</li>
+          <li><span class="chk">✓</span>البحث عن الموضوع (5 أرصدة لكل مجال)</li>
+          <li><span class="chk">✓</span>جميع أوضاع الدقة الثلاثة وأنماط الكتابة الستة</li>
+          <li><span class="chk">✓</span>مراجعة المخطط التفصيلي + الموافقة</li>
+          <li><span class="chk">✓</span>جميع أدوات التصدير والتصميم والتحرير والجودة</li>
+        </ul>
+        <a href="https://app.tubebook.org/signup" class="plan-btn outline">ابدأ مجانًا</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">مبتدئ</div>
+        <div class="plan-price"><sup>$</sup>9<span class="per">/شهريًا</span></div>
+        <div class="plan-target">250 رصيدًا/شهر</div>
+        <p class="plan-desc">لمنشئي المحتوى الذين يحولون المحتوى بانتظام إلى رصاص مغناطيسي وأدلة سريعة وملفات بيضاء.</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li><span class="chk">✓</span>250 رصيد/شهر (≈ 8 مغناطيسات عملاء أو كتابين تجاريين — أو مزيج)</li>
+          <li><span class="chk">✓</span>يُتجدد الرصيد شهريًا — ولا يُرحَّل غير المستخدم</li>
+          <li><span class="chk">✓</span>نفس ميزات كل الخطة</li>
+          <li><span class="chk">✓</span>حتى 25 مصدرًا لكل كتاب إلكتروني</li>
+          <li><span class="chk">✓</span>بحث الموضوع + المصادر المقترحة</li>
+          <li><span class="chk">✓</span>جميع أوضاع الدقة الثلاثة وأنماط الكتابة الستة</li>
+          <li><span class="chk">✓</span>مراجعة المخطط التفصيلي + الموافقة</li>
+          <li><span class="chk">✓</span>جميع أدوات التصدير والتصميم والتحرير والجودة</li>
+        </ul>
+        <a href="https://app.tubebook.org/signup?plan=starter" class="plan-btn outline">ابدأ المبتدئ</a>
+      </div>
+      <div class="plan-card popular">
+        <div class="popular-badge">الأكثر شيوعًا</div>
+        <div class="plan-name">احترافي</div>
+        <div class="plan-price"><sup>$</sup>29<span class="per">/شهريًا</span></div>
+        <div class="plan-target">1,000 رصيد/شهر</div>
+        <p class="plan-desc">للمبدعين الجادين الذين ينشرون كتبًا كاملة للبيع على KDP أو Gumroad أو موقعهم الخاص.</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li><span class="chk">✓</span>1,000 رصيد/شهر (≈ 33 مغناطيس عميل أو 10 كتب تجارية — أو مزيج)</li>
+          <li><span class="chk">✓</span>يُتجدد الرصيد شهريًا — ولا يُرحَّل غير المستخدم</li>
+          <li><span class="chk">✓</span>نفس ميزات كل الخطة</li>
+          <li><span class="chk">✓</span>حتى 25 مصدرًا لكل كتاب إلكتروني</li>
+          <li><span class="chk">✓</span>بحث الموضوع + المصادر المقترحة</li>
+          <li><span class="chk">✓</span>فحوصات سجل العلامات التجارية (رصيد واحد لكل فحص)</li>
+          <li><span class="chk">✓</span>جميع أوضاع الدقة الثلاثة وأنماط الكتابة الستة</li>
+          <li><span class="chk">✓</span>مراجعة المخطط التفصيلي + الموافقة</li>
+          <li><span class="chk">✓</span>جميع أدوات التصدير والتصميم والتحرير والجودة</li>
+        </ul>
+        <a href="https://app.tubebook.org/signup?plan=pro" class="plan-btn filled">ابدأ الاحترافي ←</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">احترافي صوتي</div>
+        <div class="plan-price"><sup>$</sup>49<span class="per">/شهريًا</span></div>
+        <div class="plan-target">1,000 رصيد + 900 رصيد صوتي/شهر</div>
+        <p class="plan-desc">للناشرين الذين يطلقون الكتاب الصوتي مع الكتاب. يكلف الراوي 200-500 دولار لكل ساعة منتهية؛ ثلاثة كتب صوتية تجارية شهريًا تعني حوالي ثماني ساعات من السرد. تروي فقط من حين لآخر؟ اشترِ حزمة رصيد صوتي بدلاً من ذلك — لا حاجة لاشتراك.</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li><span class="chk">✓</span>كل ما في الاحترافي، بالإضافة إلى:</li>
+          <li><span class="chk">✓</span>900 رصيد صوتي/شهر — يتجدد شهريًا، غير المستخدم لا يُرحَّل</li>
+          <li><span class="chk">✓</span>≈ 3 كتب صوتية تجارية بالصوت المميز، أو 7 بالصوت القياسي</li>
+          <li><span class="chk">✓</span>رواة ذكور وإناث بـ 10 لغات</li>
+          <li><span class="chk">✓</span>ملف واحد لكل جزء، أو ادمج الأجزاء التي تختارها في ملف واحد</li>
+          <li><span class="chk">✓</span>حزمة التوزيع — ملفات رئيسية بجودة 192 كيلوبت في الثانية، غلاف مربع، عينة للبيع بالتجزئة</li>
+          <li><span class="chk">✓</span>نسخ WAV رئيسية بدون فقدان، قابلة للتنزيل لكل فصل لمدة 30 يومًا</li>
+          <li><span class="chk">✓</span>مزود سرد ثانٍ في وضع الاستعداد</li>
+        </ul>
+        <a href="https://app.tubebook.org/signup?plan=pro_audio" class="plan-btn outline">ابدأ الاحترافي الصوتي</a>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:2rem;font-size:0.84rem;color:var(--muted);">
+      إلغاء في أي وقت · الفوترة السنوية متاحة: المبتدئ 90$ سنويًا، الاحترافي 290$ سنويًا، الاحترافي الصوتي 490$ سنويًا · أرصدة الخطة تتجدد شهريًا في كل دورة فوترة، بما في ذلك السنوية، وغير المستخدم لا يُرحَّل · حزم الأرصدة لا تنتهي صلاحيتها أبدًا · استرداد خلال 14 يومًا على أول اشتراك
+    </p>
+
+    <!-- CREDIT PACKS -->
+    <div class="fade-in-up" style="margin-top: 4rem;">
+      <span class="section-label">إضافات</span>
+      <h3 style="font-size: 1.5rem; font-weight: 700; margin: 0.5rem 0 0.5rem;">تحتاج المزيد من الأرصدة؟</h3>
+      <p style="font-size: 0.88rem; color: var(--muted2); margin-bottom: 2rem;">حزم الأرصدة لمرة واحدة تتراكم مع أي خطة، لا تنتهي صلاحيتها أبدًا، وتزيل تذييل الرصيد في الخطة المجانية. بحث الموضوع = 5 أرصدة لكل مجال (مجاني لإعادة الفتح لمدة 14 يومًا) · مغناطيس العميل = 30 رصيدًا · كتاب قصير = 60 · كتاب تجاري كامل = 100 · رسوم توضيحية للفصول مولدة بالذكاء الاصطناعي +1 رصيد لكل صورة · كل مصدر إضافي +8 أرصدة · فحص سجل العلامات التجارية = رصيد واحد لكل كتاب. تُفوتر الكتب الصوتية من رصيد صوتي منفصل: صوت قياسي = 40 / 80 / 120 رصيدًا صوتيًا حسب طول الكتاب، مميز = 100 / 200 / 300.</p>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; max-width: 780px; margin: 0 auto;">
+        <div class="plan-card" style="padding: 1.5rem 1.4rem;">
+          <div class="plan-name">حزمة المبتدئ</div>
+          <div class="plan-price" style="font-size: 2rem;"><sup>$</sup>5</div>
+          <p class="plan-desc" style="margin: 0.6rem 0 0.8rem;">100 رصيد<br><span style="font-size: 0.8rem;">~3 مغناطيسات أو كتاب تجاري واحد</span></p>
+          <a href="https://app.tubebook.org/billing" class="plan-btn outline" style="margin-top: 1rem;">اشترِ الحزمة</a>
+        </div>
+        <div class="plan-card popular" style="padding: 1.5rem 1.4rem;">
+          <div class="popular-badge">أفضل قيمة</div>
+          <div class="plan-name">حزمة التعزيز</div>
+          <div class="plan-price" style="font-size: 2rem;"><sup>$</sup>15</div>
+          <p class="plan-desc" style="margin: 0.6rem 0 0.8rem;">400 رصيد<br><span style="font-size: 0.8rem;">~13 مغناطيسات أو 4 كتب تجارية</span></p>
+          <a href="https://app.tubebook.org/billing" class="plan-btn filled" style="margin-top: 1rem;">اشترِ الحزمة ←</a>
+        </div>
+        <div class="plan-card" style="padding: 1.5rem 1.4rem;">
+          <div class="plan-name">حزمة الطاقة</div>
+          <div class="plan-price" style="font-size: 2rem;"><sup>$</sup>40</div>
+          <p class="plan-desc" style="margin: 0.6rem 0 0.8rem;">1,500 رصيد<br><span style="font-size: 0.8rem;">~50 مغناطيسات أو 15 كتابًا تجاريًا</span></p>
+          <a href="https://app.tubebook.org/billing" class="plan-btn outline" style="margin-top: 1rem;">اشترِ الحزمة</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- AUDIO CREDIT PACKS -->
+    <div class="fade-in-up" style="margin-top: 3.5rem;">
+      <h3 style="font-size: 1.5rem; font-weight: 700; margin: 0.5rem 0 0.5rem;">تريد كتابًا صوتيًا واحدًا فقط؟</h3>
+      <p style="font-size: 0.88rem; color: var(--muted2); margin-bottom: 2rem;">يمكن شراء أرصدة الصوت بشكل منفصل، على أي خطة بما في ذلك المجانية — دون اشتراك. لا تنتهي صلاحيتها أبدًا وتُستخدم فقط للتعليق الصوتي، لذا تبقى أرصدة كتبك الإلكترونية دون مساس. إذا كنت تسجل أكثر من مرة شهريًا، فإن الصوت الاحترافي أرخص.</p>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; max-width: 780px; margin: 0 auto;">
+        <div class="plan-card" style="padding: 1.5rem 1.4rem;">
+          <div class="plan-name">كتاب صوتي واحد</div>
+          <div class="plan-price" style="font-size: 2rem;"><sup>$</sup>12</div>
+          <p class="plan-desc" style="margin: 0.6rem 0 0.8rem;">120 رصيدًا صوتيًا<br><span style="font-size: 0.8rem;">كتاب صوتي تجاري واحد، صوت قياسي</span></p>
+          <a href="https://app.tubebook.org/billing" class="plan-btn outline" style="margin-top: 1rem;">اشترِ الحزمة</a>
+        </div>
+        <div class="plan-card popular" style="padding: 1.5rem 1.4rem;">
+          <div class="plan-name">حزمة المؤلف</div>
+          <div class="plan-price" style="font-size: 2rem;"><sup>$</sup>27</div>
+          <p class="plan-desc" style="margin: 0.6rem 0 0.8rem;">300 رصيد صوتي<br><span style="font-size: 0.8rem;">كتاب صوتي تجاري واحد، صوت مميز</span></p>
+          <a href="https://app.tubebook.org/billing" class="plan-btn filled" style="margin-top: 1rem;">اشترِ الحزمة</a>
+        </div>
+        <div class="plan-card" style="padding: 1.5rem 1.4rem;">
+          <div class="plan-name">حزمة الاستوديو</div>
+          <div class="plan-price" style="font-size: 2rem;"><sup>$</sup>69</div>
+          <p class="plan-desc" style="margin: 0.6rem 0 0.8rem;">900 رصيد صوتي<br><span style="font-size: 0.8rem;">3 كتب صوتية تجارية بصوت مميز، أو 7 بصوت قياسي</span></p>
+          <a href="https://app.tubebook.org/billing" class="plan-btn outline" style="margin-top: 1rem;">اشترِ الحزمة</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="faq-inner">
+    <div class="hiw-header fade-in-up">
+      <span class="section-label">الأسئلة</span>
+      <h2 class="section-title">إجابات قبل أن تنفق رصيدًا</h2>
+      <p class="section-sub">الأكثر شيوعًا التي يسألنا عنها الناس، مجاب عنها بوضوح. أي شيء مفقود موجود في <a href="help.html">مركز المساعدة</a>.</p>
+    </div>
+    <div class="faq-list fade-in-up">
+      <details class="faq-item">
+        <summary>هل يجب أن أملك الفيديو الذي أبني منه؟</summary>
+        <div class="faq-a"><p>لا، أي فيديو عام على YouTube يعمل — لكن ما تنشره هو مسؤوليتك. لهذا توجد أوضاع الدقة الثلاثة. <strong>دقة عالية</strong> يتبع بنية الفيديو عن كثب ويناسب محتواك الخاص؛ <strong>ذكي</strong> و <strong>منخفض</strong> أعد بناء الأفكار في كتابة أصلية بشكل كبير، وهو الخيار الأكثر أمانًا لفيديو شخص آخر. يتم استرداد صفحات الويب فقط حيث تسمح شروط مالك الصفحة بذلك.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>هل سيقبل أمازون كتابًا مكتوبًا بهذه الطريقة؟</summary>
+        <div class="faq-a"><p>نعم. يسمح KDP بالمحتوى المُنشأ بالذكاء الاصطناعي ويطلب منك الإعلان عنه عند الرفع — مجرد مربع اختيار، وليس عائقًا. يأتي كل كتاب مع البيانات الوصفية والفئات والكلمات المفتاحية التي يحتاجها القائمة، والطول القصير يتجاوز الحد الأدنى لـ KDP البالغ 24 صفحة للغلاف الورقي، لذا يمكنك بيعه مطبوعًا وليس فقط ككتاب إلكتروني.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>كم تكلفة كتاب واحد فعليًا؟</summary>
+        <div class="faq-a"><p>الرصاص المغناطيسي 30 رصيدًا، والكتاب القصير 60، والكتاب التجاري الكامل 100. الرسوم التوضيحية للفصول تضيف رصيدًا واحدًا لكل صورة، وكل مصدر إضافي 8 أرصدة، والبحث في الموضوع 5 أرصدة لكل تخصص، وفحص سجل العلامات التجارية رصيد واحد في كل خطة. تُفوتر الكتب الصوتية بشكل منفصل، من أرصدة الصوت.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>هل تتراكم الأرصدة غير المستخدمة؟</summary>
+        <div class="faq-a"><p>تُجدد أرصدة الخطة كل شهر — حتى مع الفوترة السنوية — ولا تُرحل غير المستخدمة إلى الشهر التالي. الأرصدة التي تشتريها كحزمة تتصرف بالعكس: لا تنتهي صلاحيتها أبدًا طالما كان حسابك نشطًا، وحيث يحتفظ رصيدك بكليهما، تُنفق أرصدة الخطة المنتهية أولاً حتى لا يُهدر شيء.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>هل我会被收费 إذا فشل شيء ما؟</summary>
+        <div class="faq-a"><p>لا. إذا فشل البحث في منتصف الطريق، تعود الأرصدة الخمسة تلقائيًا. إذا كانت بعض مصادرك معطلة أو خلف جدار حماية، لا يزال الكتاب يُبنى من الباقي وتقول لوحة التحكم أيها تم تخطيه؛ يفشل الكتاب فقط إذا لم يمكن قراءة أي منها، وعندها تُسترد الأرصدة تلقائيًا أيضًا.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>ما اللغات التي يمكنني النشر والسرد بها؟</summary>
+        <div class="faq-a"><p>يمكنك النشر بـ <strong>سبع</strong> لغات — الإنجليزية والفرنسية والإسبانية والبرتغالية والألمانية والإيطالية والهولندية — وكل ترجمة تصبح كتابًا خاصًا بها، وهو ما يحتاجه أمازون، لأن كل لغة قائمة منفصلة. يغطي السرد <strong>كل هذه السبع بالإضافة إلى الصينية واليابانية والكورية</strong> — عشر لغات إجمالاً، مع راوٍ ذكر وأنثى في كل منها. كل إصدار يمكنك نشره، يمكنك أيضًا تحويله إلى كتاب صوتي.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>هل يمكنني بيع الكتاب الصوتي على Audible؟</summary>
+        <div class="faq-a"><p>عبر مُجمّع، نعم — Author's Republic وKobo Writing Life وبرنامج الكتب الصوتية في Spotify يقبلون السرد بالذكاء الاصطناعي ويوزعونه في كتالوج Audible، مع الإفصاح. مسار التقديم الخاص بـ ACX مخصص للسرد البشري إلا إذا كان العنوان <em>مصرحًا به</em> مسبقًا، لذا اتصل بـ ACX أولاً بدلاً من التقديم والأمل. الحزمة التي نبنيها تلبي المواصفات الفنية التي يفحصونها؛ الإذن هو الجزء الذي ترتبه أنت.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>ماذا تتضمن حزمة الكتاب الصوتي؟</summary>
+        <div class="faq-a"><p>كل جزء كملف MP3 مرقم بمعدل 192 كيلوبت في الثانية CBR، و44.1 كيلوهرتز، ومستوى صوت حوالي −20 ديسيبل RMS مع ذروة أقل من −3 ديسيبل، بالإضافة إلى غلاف مربع 3000×3000، وعينة بيع مدتها خمس دقائق، وعلامات ID3 مع عمل فني مضمّن، وملف بيانات يعلن أن السرد رقمي. يتم الاحتفاظ بنسخ WAV الرئيسية غير المفقودة بجانبها ويمكن تنزيلها لكل جزء.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>هل يجب أن أبدأ من فيديو؟</summary>
+        <div class="faq-a"><p>لا. يمكن بناء كتاب من مقالات الويب ومستندات Word وعروض PowerPoint التقديمية وملفات PDF بالإضافة إلى الفيديو، ويمكنك مزجها في كتاب واحد. إذا لم يكن لديك موضوع على الإطلاق، فابدأ من لوحات الاتجاهات والبحث في الموضوع بدلاً من ذلك — فهي تُظهر ما يبحث عنه الناس فعليًا قبل أن تلتزم بأرصدة لكتابة أي شيء.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>كم من الوقت تُحفظ كتبي؟</summary>
+        <div class="faq-a"><p>تبقى الملفات لمدة 30 يومًا، مع عد تنازلي على كل بطاقة في لوحة التحكم، ثم تُحذف الأصول بينما يبقى سجل الكتاب في حسابك. تنتهي صلاحية السرد الصوتي بنفس مهلة الكتاب الذي ينتمي إليه. نزّل أي شيء تريد الاحتفاظ به — لا شيء يمنعك من إعادة تنزيله كما تشاء خلال الفترة.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>هل الخطة المجانية مجانية حقًا؟</summary>
+        <div class="faq-a"><p>نعم، ولا يلزم بطاقة. تتلقى الحسابات المجانية 100 رصيد كل شهر وتستخدم نفس ميزات الإنشاء والتحرير ومصدر الصور والجودة والكتاب الصوتي والترجمة والتصدير مثل الحسابات المدفوعة. تختلف الخطط بالأرصدة المتاحة، وليس بأدوات مقفلة. تبقى الأرصدة المشتراة في رصيدك بينما يتجدد البدل الشهري.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>هل يجب أن أعرف نوع الكتاب الذي أريده؟</summary>
+        <div class="faq-a"><p>لا — هذا ما هي القوالب من أجله. اختر من اثني عشر نوعًا (دليل إرشادي، خطة 7 أيام، كتاب تمارين، قراءات يومية، دراسات حالة، دليل ميداني، كتيب مرجعي والمزيد) ويتم تعيين الطول والنبرة وهيكل الفصول لك. ليس مجرد تسمية: الدليل الميداني يبني كل فصل من نفس الإيقاعات الثلاث، والقراءات اليومية تجعل كل مدخل قائمًا بذاته، وكتاب التمارين يعطي مساحة أكبر لتمارينك أكثر من الشرح. كل ما يحدده القالب هو عنصر تحكم لا يزال بإمكانك تغييره، وتخطيه تمامًا أمر مقبول.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>هل يمكنني تغيير الكتاب قبل كتابته؟</summary>
+        <div class="faq-a"><p>هذا هو الهدف من خطوة المخطط التفصيلي. يقوم الذكاء الاصطناعي بصياغة هيكل الفصول ولا يُكتب أي شيء حتى توافق عليه، لذا يمكنك إعادة تسمية الفصول وإعادة ترتيبها وإضافتها وحذفها بينما لا يزال تغيير رأيك مكلفًا. في الكتب متعددة المصادر، يمكنك أيضًا رؤية المصدر الذي يستمد منه كل فصل.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>هل يمكنني تعديل الكتاب بعد إنشائه؟</summary>
+        <div class="faq-a"><p>نعم — كل كلمة فيه. <strong>تحرير النص</strong> يتيح لك تغيير أي شيء يدويًا مجانًا، أو تطبيق اقتراح مدقق لغوي مركّز مقابل 0.1 رصيد، أو إعادة كتابة قسم كامل مقابل رصيد واحد بنفس الأسلوب واللغة المستخدمة في بقية الكتاب. تستمر ملفاتك الحالية في العمل بالنص السابق حتى تعيد بناءها، لذا لن تُترك أبدًا بدون تنزيلات في منتصف التعديل.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>هل سيتحقق من القواعد قبل النشر؟</summary>
+        <div class="faq-a"><p>نعم، ومجانًا مهما كررت التشغيل. يقرأ كل فصل للتحقق من القواعد والتكرار والوضوح، ثم ينظر عبر الكتاب كله بحثًا عن الأمور التي لا يكشفها فصل واحد — مصطلح يُذكر بطريقتين مختلفتين، أو فكرة تُستخدم قبل تقديمها، أو وعد لا يُوفى. كل نتيجة تقتبس الكلمات الدقيقة والنقر عليها ينقلك إليها. النتائج التي لا يمكن تحديد موقعها في نصك حرفيًا تُهمل بدلاً من عرضها بتخمين، لذا قائمة أقصر تثق بها أفضل من قائمة أطول تحتاج إلى التحقق منها بنفسك.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>هل يمكنه الكتابة بأسلوبي الخاص، وهل تُستخدم كتاباتي لتدريبه؟</summary>
+        <div class="faq-a"><p>يمكنه ذلك، ولا تُستخدم. ارفع شيئًا كتبته مسبقًا و <strong>وصفًا لأسلوب كتابتك</strong> يُستنتج منه — طول الجمل وتنوعها، وكيف تفتح وتغلق قسمًا، وما إذا كنت تخاطب القارئ، وعاداتك في الترقيم — ويُكتب كل فصل لاحقًا مع وضع هذا الوصف أمام الكاتب. لا يتم ضبط أي نموذج، ولا يُستخدم أي شيء ترفعه لكتب الآخرين، وملفاتك <strong>تُحذف بمجرد قراءتها</strong>. يغير بشكل ملحوظ المستوى والإيقاع والمفردات؛ ولن يجعل الكتابة مطابقة لأسلوبك تمامًا، ونفضل أن نقول ذلك بدلاً من أن تكتشفه بنفسك.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-orb"></div>
+  <div class="cta-inner fade-in-up">
+    <span class="section-label">ابدأ الآن</span>
+    <h2 class="section-title">كتابك الإلكتروني التالي<br>على بُعد رابط واحد</h2>
+    <p class="section-sub" style="margin:0 auto 2.5rem;">أضف مصدرًا واحدًا أو عشرين. اختر وضع الدقة، وحدد أسلوب الكتابة، ووافق على المخطط — ثم دع TubeBook يكتب الكتاب.</p>
+    <a href="https://app.tubebook.org/signup" class="btn-primary" style="display:inline-flex;font-size:1.05rem;">أنشئ كتابك الإلكتروني مجانًا ←</a>
+    <p style="margin-top:1.2rem;font-size:0.82rem;color:var(--muted);">الخطة المجانية · 100 رصيد كل شهر · جميع الميزات · لا حاجة لبطاقة ائتمان</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">© 2026 TubeBook · <a href="https://tubebook.org">tubebook.org</a></div>
+  <div class="footer-links">
+    <a href="https://app.tubebook.org/ideas">أفكار للكتب</a>
+    <a href="/ar/help">المساعدة والدروس التعليمية</a>
+    <a href="/ar/privacy">سياسة الخصوصية</a>
+    <a href="/ar/terms">الشروط</a>
+    <a href="/ar/contact">اتصل بنا</a>
+  </div>
+  <div class="footer-note">TubeBook (tubebook.org) منتج مستقل و <strong>غير تابع لـ TubeBook AI (tubebookai.com)</strong>، وهي شركة منفصلة باسم مشابه. يُباع TubeBook فقط عبر tubebook.org — ليس لدينا موزعون، ولا خطة مدى الحياة أو غير محدودة.</div>
+</footer>
+
+<script>
+// Typing URL
+const urls=['dQw4w9WgXcQ','jNQXAC9IVRw','hY7m5jF7iO4','kXYiU8k6t5E'];
+let uI=0,cI=0,del=false;
+const tEl=document.getElementById('typing-url');
+function typeUrl(){const c=urls[uI];if(!del){tEl.textContent=c.slice(0,++cI);if(cI===c.length){del=true;setTimeout(typeUrl,1800);return;}}else{tEl.textContent=c.slice(0,--cI);if(cI===0){del=false;uI=(uI+1)%urls.length;}}setTimeout(typeUrl,del?60:110);}
+typeUrl();
+
+// Demo steps
+const dSteps=document.querySelectorAll('.demo-step');
+let aC=1;
+setInterval(()=>{dSteps.forEach((s,i)=>s.classList.toggle('active',i<aC));aC=aC>=dSteps.length?1:aC+1;},900);
+
+// Demo controls cycle
+const fidels=[{dot:'green',label:'Low — Commercial Ready'},{dot:'yellow',label:'Smart — Check Rights'},{dot:'red',label:'High — Repurposing Only'}];
+const styls=['Professional','Conversational','Storytelling','Academic','Inspirational','Stoic'];
+let fI=0,sI=0;
+setInterval(()=>{fI=(fI+1)%fidels.length;const f=fidels[fI];document.getElementById('demo-fidelity').innerHTML=`<span class="chip-dot ${f.dot}"></span> ${f.label}`;},2200);
+setInterval(()=>{sI=(sI+1)%styls.length;document.getElementById('demo-style').textContent='✦ '+styls[sI];},1800);
+
+// Style tag preview
+document.querySelectorAll('.style-tag').forEach(tag=>{
+  tag.addEventListener('click',()=>{
+    document.querySelectorAll('.style-tag').forEach(t=>t.classList.remove('active'));
+    tag.classList.add('active');
+    document.getElementById('style-preview-text').innerHTML=tag.dataset.preview;
+    document.getElementById('style-chip').textContent='✦ '+tag.dataset.style;
+  });
+});
+
+// Scroll fade-in
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:0.1});
+document.querySelectorAll('.fade-in-up').forEach(el=>obs.observe(el));
+</script>
+<script src="/promo-banner.js" defer></script>
+</body>
+</html>

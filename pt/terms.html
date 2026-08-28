@@ -15,7 +15,7 @@
 :root {
   --bg: #08090d; --bg2: #0f1118; --bg3: #14171f; --card: #131620;
   --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
-  --amber: #ff6200; --amber2: #ff8c42; --amber-dim: rgba(255,98,0,0.12);
+  --amber: #ff6200;--brand-outline:#ff6b00; --amber2: #ff8c42; --amber-dim: rgba(255,98,0,0.12);
   --red: #ff3b3b; --red-dim: rgba(255,59,59,0.12);
   --green: #2ecc71; --green-dim: rgba(46,204,113,0.11);
   --text: #f0eee8; --muted: #7b7d8a; --muted2: #a0a3b1;
@@ -88,13 +88,13 @@ td strong { color: var(--text); }
 .alert-info { background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: var(--amber2); }
 
 /* FOOTER */
-footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2.5rem 4rem; }
+footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); padding: 2.5rem 4rem; }
 .footer-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
 .footer-brand { font-size: 0.82rem; color: var(--muted); }
 .footer-brand a { color: var(--amber); text-decoration: none; }
 .footer-links { display: flex; gap: 1.8rem; flex-wrap: wrap; }
-.footer-links a { font-size: 0.82rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-.footer-links a:hover { color: var(--text); }
+.footer-links a { font-size: 1rem; font-weight: 600; color: var(--text); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--brand-outline); }
 
 @media (max-width: 760px) {
   nav { padding: 0.9rem 1.2rem; }
@@ -197,20 +197,20 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
 
   <h2 id="s4"><span class="sec-num">04</span>Conteúdo e propriedade</h2>
   <h3>Podemos alterar os preços com aviso prévio de pelo menos 30 dias; os períodos de cobrança existentes não são afetados.</h3>
-  <p>Seu conteúdo</p>
+  <p>Você mantém todos os direitos sobre o material que enviar — URLs do YouTube, URLs de páginas da web e transcrições ou textos que colar. Você declara que, para cada fonte fornecida, tem os direitos necessários para enviá-la e para gerar obras derivadas dela. Isso se aplica a cada fonte individualmente em um ebook com múltiplas fontes: combinar várias fontes não cria direitos que você não possui em cada uma delas, e as orientações do modo de fidelidade abaixo se aplicam a todas elas.</p>
   <p>Você mantém todos os direitos sobre o material que enviar — URLs do YouTube, URLs de páginas da web e transcrições ou textos que colar. Você declara que, para cada fonte fornecida, tem os direitos necessários para enviá-la e gerar obras derivadas dela. Isso se aplica a cada fonte individualmente em um ebook de múltiplas fontes: combinar várias fontes não cria direitos que você não possui em nenhuma delas, e as orientações do modo de fidelidade abaixo se aplicam a todas elas.</p>
   <h3>Quando você envia uma URL de página da web, o TubeBook recupera o texto publicamente acessível dessa página para gerar seu ebook. Você é responsável por garantir que isso seja permitido pelos termos de uso do proprietário da página e por respeitar os direitos autorais de qualquer material de terceiros que você fornecer.</h3>
-  <p>Saída gerada</p>
+  <p>Sujeito à sua conformidade com estes Termos e ao pagamento das taxas aplicáveis, você é o proprietário dos ebooks e dos ativos gerados por IA produzidos através do Serviço e pode usá-los comercialmente, sujeito aos direitos e restrições de qualquer conteúdo fornecido ou de banco de imagens. PDF, DOCX, EPUB, PPTX e ativos de publicação suportados estão disponíveis em todos os planos. Exportações em PDF de contas gratuitas incluem um pequeno crédito de rodapé "Feito com TubeBook.org" até que a conta faça qualquer compra (assinatura, pacote de créditos de ebook ou pacote de créditos de áudio); após qualquer compra, as exportações não carregam a marca TubeBook.</p>
   <h3>Sujeito à sua conformidade com estes Termos e ao pagamento das taxas aplicáveis, você é dono dos ebooks e dos ativos gerados por IA produzidos através do Serviço e pode usá-los comercialmente, sujeito aos direitos e restrições de qualquer conteúdo fornecido ou de banco de imagens. PDF, DOCX, EPUB, PPTX e ativos de publicação suportados estão disponíveis em todos os planos. As exportações em PDF de contas gratuitas incluem um pequeno rodapé com os créditos "Feito com TubeBook.org" até que a conta faça qualquer compra (assinatura, pacote de créditos de ebook ou pacote de créditos de áudio); após qualquer compra, as exportações não carregam a marca TubeBook.</h3>
   <ul>
-    <li><strong>Modos de fidelidade e responsabilidade de direitos autorais</strong> Alta fidelidade</li>
-    <li><strong>— cria uma obra derivada que segue de perto a fonte. Você deve ser o dono do vídeo, ter uma licença explícita do detentor dos direitos ou estar confiante de que a fonte está em domínio público.</strong> Adaptação inteligente</li>
-    <li><strong>— reescreve e reestrutura a fonte. Geralmente mais seguro para publicação original, mas você continua responsável por verificar se a saída não reproduz expressão protegida.</strong> Baixa fidelidade</li>
+    <li><strong>Modos de fidelidade e responsabilidade de direitos autorais</strong> — cria uma obra derivada que segue de perto a fonte. Você deve ser o proprietário do vídeo, ter uma licença explícita do detentor dos direitos ou estar confiante de que a fonte está em domínio público.</li>
+    <li><strong>— cria uma obra derivada que segue de perto a fonte. Você deve ser o dono do vídeo, ter uma licença explícita do detentor dos direitos ou estar confiante de que a fonte está em domínio público.</strong> — reescreve e reestrutura a fonte. Geralmente mais seguro para publicação original, mas você continua responsável por verificar se o resultado não reproduz expressão protegida.</li>
+    <li><strong>— reescreve e reestrutura a fonte. Geralmente mais seguro para publicação original, mas você continua responsável por verificar se a saída não reproduz expressão protegida.</strong> — usa o vídeo apenas como semente temática e produz conteúdo substancialmente original. Recomendado para publicação comercial quando você não é o proprietário da fonte. Para maximizar a proteção de direitos autorais, adicione suas próprias contribuições editoriais antes de publicar.</li>
   </ul>
   <div class="alert-warn">— usa o vídeo apenas como semente temática e produz conteúdo substancialmente original. Recomendado para publicação comercial quando você não é dono da fonte. Para maximizar a proteção de direitos autorais, adicione suas próprias contribuições editoriais antes de publicar.</div>
   <h3>⚠ Em muitas jurisdições, texto puramente gerado por IA tem proteção de direitos autorais limitada. Suas escolhas editoriais, instruções personalizadas e edições pós-geração são o que criam autoria humana. O TubeBook não garante que qualquer saída específica seja registrável como sua obra protegida.</h3>
-  <p>Verificação de risco de publicação <strong>O Serviço pode sinalizar possíveis riscos de propriedade intelectual nos metadados do seu livro — por exemplo, nomes de marcas, franquias, indivíduos nomeados ou alegações de endosso em título, subtítulo ou palavras-chave — e pode fornecer um link para um registro público de marcas para que você possa verificar um termo sinalizado. Não realizamos essa busca por você e não fazemos declarações sobre o conteúdo do registro. Isso é um</strong>auxílio automatizado e consultivo apenas. Não é aconselhamento jurídico, não é uma busca de autorização e não é uma opinião legal</p>
-  <p>, e nenhuma relação advogado-cliente surge disso. <strong>A verificação é deliberadamente incompleta: ela revisa metadados e títulos de capítulos, não seu manuscrito completo, pode perder coisas, dados de terceiros podem estar errados ou desatualizados, e não pode prever nenhuma decisão da Amazon ou de qualquer outro varejista.</strong> Onde o Serviço relata que nada foi sinalizado, isso significa apenas que esta verificação automatizada não levantou nada — não que seu livro seja seguro para publicar.</p>
+  <p>O Serviço pode sinalizar possíveis riscos de propriedade intelectual nos metadados do seu livro — por exemplo, nomes de marcas, franquias, indivíduos nomeados ou alegações de endosso em título, subtítulo ou palavras-chave — e pode fornecer um link para um registro público de marcas para que você mesmo verifique um termo sinalizado. Não realizamos essa busca por você e não fazemos declarações sobre o conteúdo do registro. Isso é um <strong>O Serviço pode sinalizar possíveis riscos de propriedade intelectual nos metadados do seu livro — por exemplo, nomes de marcas, franquias, indivíduos nomeados ou alegações de endosso em título, subtítulo ou palavras-chave — e pode fornecer um link para um registro público de marcas para que você possa verificar um termo sinalizado. Não realizamos essa busca por você e não fazemos declarações sobre o conteúdo do registro. Isso é um</strong>auxílio automatizado e consultivo apenas. Não é aconselhamento jurídico, não é uma busca de autorização e não é uma opinião legal</p>
+  <p>A verificação é deliberadamente incompleta: ela revisa metadados e títulos de capítulos, não o manuscrito completo, pode deixar passar coisas, dados de terceiros podem estar errados ou desatualizados, e não pode prever qualquer decisão da Amazon ou de qualquer outro varejista. <strong>A verificação é deliberadamente incompleta: ela revisa metadados e títulos de capítulos, não seu manuscrito completo, pode perder coisas, dados de terceiros podem estar errados ou desatualizados, e não pode prever nenhuma decisão da Amazon ou de qualquer outro varejista.</strong> Onde o Serviço relata que nada foi sinalizado, isso significa apenas que esta verificação automatizada não levantou nada — não que seu livro seja seguro para publicar.</p>
   <p>Nada nesta verificação reduz ou transfere suas obrigações sob esta seção ou seção 06. Você continua sendo o único responsável por deter os direitos sobre tudo o que publicar e por qualquer consequência da publicação, incluindo supressão, remoção ou encerramento da sua conta por um varejista. Se estiver em dúvida, consulte um advogado qualificado.</p>
   <h3>Nossa propriedade intelectual</h3>
   <p>O Serviço, incluindo software, prompts, design e marca, é de propriedade da TubeBook e de seus licenciadores. Nenhum direito é concedido, exceto conforme expressamente declarado.</p>

@@ -245,12 +245,12 @@ section{padding:6rem 4rem;}
 .cta-inner{position:relative;z-index:1;max-width:680px;margin:0 auto;}
 
 /* FOOTER */
-footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 4rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;}
+footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding:3.5rem 4rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;}
 .footer-brand{font-size:0.82rem;color:var(--muted);}
 .footer-brand a{color:var(--amber);text-decoration:none;}
 .footer-links{display:flex;gap:2rem;flex-wrap:wrap;}
-.footer-links a{font-size:0.82rem;color:var(--muted);text-decoration:none;transition:color 0.2s;}
-.footer-links a:hover{color:var(--text);}
+.footer-links a{font-size:1rem;font-weight:600;color:var(--text);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--brand-outline);}
 
 /* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
@@ -648,7 +648,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 4
       <div class="feat-card">
         <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
         <h3>每章在你看之前都经过检查 <span class="feat-new">新</span></h3>
-        <p>语言模型在空间不足时会中途停句，而草稿看起来完整，因为前面的段落读起来没问题。所以每章都会经过第二遍处理：先进行结构上的行编辑，然后检查 <strong>补写被截断章节的缺失结尾</strong>，删除任何泄漏到正文中的指令，替换逐字重复的标题，并应用书籍自身语言的排版规则——法语标点前的窄空格、正确的引号、正确的破折号。您无需运行它，它也不消耗积分。它在生成文件的过程中自动发生，您可以在进度条上看到。</p>
+        <p>语言模型在空间不足时会中途停句，而草稿看起来完整，因为前面的段落读起来没问题。所以每章都会经过第二遍处理：先进行结构上的行编辑，然后检查 <strong>为被截断的章节补写缺失的结尾</strong>，删除任何泄漏到正文中的指令，替换逐字重复的标题，并应用书籍自身语言的排版规则——法语标点前的窄空格、正确的引号、正确的破折号。您无需运行它，它也不消耗积分。它在生成文件的过程中自动发生，您可以在进度条上看到。</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon amber"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="m8 11 2 2 4-4"/></svg></div>

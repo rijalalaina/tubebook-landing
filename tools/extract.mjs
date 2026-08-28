@@ -6,7 +6,7 @@
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import { PAGES, keyOf, walk } from "./i18n.mjs";
+import { LOCALES, DEFAULT_LOCALE, PAGES, keyOf, walk } from "./i18n.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -31,8 +31,35 @@ for (const page of PAGES) {
 
   writeFileSync(out, JSON.stringify(Object.fromEntries(found), null, 2) + "\n");
   total += found.size;
+
+  // ── Retired English takes its translations with it ──────────────────────
+  // Reporting a retired key was not enough. The translations for it stayed in
+  // every locale file, so wording removed from the English site was still
+  // sitting in the repository in seven languages — which matters when the
+  // reason for removing it was that the sentence should not be there at all.
+  // Compared against the CURRENT English, not against what this run happened
+  // to retire. A key orphaned by an earlier extract is just as orphaned, and
+  // keying off `gone` left one behind for exactly that reason: wording removed
+  // from the English site was still sitting in seven locale files afterwards.
+  let pruned = 0;
+  for (const { code } of LOCALES) {
+    if (code === DEFAULT_LOCALE) continue;
+    const path = join(ROOT, "i18n", `${page}.${code}.json`);
+    if (!existsSync(path)) continue;
+    const cat = JSON.parse(readFileSync(path, "utf8"));
+    let touched = false;
+    for (const key of Object.keys(cat)) {
+      if (found.has(key)) continue;
+      delete cat[key];
+      touched = true;
+      pruned++;
+    }
+    if (touched) writeFileSync(path, JSON.stringify(cat, null, 2) + "\n");
+  }
+
   console.log(
-    `${page}: ${found.size} strings` + (gone.length ? ` (${gone.length} retired)` : ""),
+    `${page}: ${found.size} strings` +
+      (gone.length ? ` (${gone.length} retired, ${pruned} translations pruned)` : ""),
   );
 }
 console.log(`\n${total} strings total`);

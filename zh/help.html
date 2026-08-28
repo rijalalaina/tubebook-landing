@@ -15,7 +15,7 @@
 :root {
   --bg: #08090d; --bg2: #0f1118; --bg3: #14171f; --card: #131620;
   --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
-  --amber: #ff6200; --amber2: #ff8c42; --amber-dim: rgba(255,98,0,0.12);
+  --amber: #ff6200;--brand-outline:#ff6b00; --amber2: #ff8c42; --amber-dim: rgba(255,98,0,0.12);
   --red: #ff3b3b; --red-dim: rgba(255,59,59,0.12);
   --green: #2ecc71; --green-dim: rgba(46,204,113,0.11);
   --text: #f0eee8; --muted: #7b7d8a; --muted2: #a0a3b1;
@@ -88,13 +88,13 @@ td strong { color: var(--text); }
 .alert-info { background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: var(--amber2); }
 
 /* FOOTER */
-footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2.5rem 4rem; }
+footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); padding: 2.5rem 4rem; }
 .footer-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
 .footer-brand { font-size: 0.82rem; color: var(--muted); }
 .footer-brand a { color: var(--amber); text-decoration: none; }
 .footer-links { display: flex; gap: 1.8rem; flex-wrap: wrap; }
-.footer-links a { font-size: 0.82rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-.footer-links a:hover { color: var(--text); }
+.footer-links a { font-size: 1rem; font-weight: 600; color: var(--text); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--brand-outline); }
 
 @media (max-width: 760px) {
   nav { padding: 0.9rem 1.2rem; }
@@ -246,7 +246,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <p>粘贴框最多可容纳 <strong>850,000 个字符——约 500 页印刷内容</strong>，因此你可以将整本未出版的书粘贴进来，让 TubeBook 重新组织。</p>
     <p>超过约 47 页后，任何单一步骤都无法一次性读取所有文字，因此 TubeBook 会基于摘录工作——了解其具体方式很重要，因为它不是“前五十页”：</p>
     <ul>
-      <li>大纲 <strong>大纲</strong> 是基于均匀分布在整个文本中的摘录规划的，并锚定你真实的开头和结尾。 <em>整个</em> 文本</li>
+      <li>大纲 <strong>大纲</strong> 是基于均匀分布在整个文本中的摘录规划的，并锚定你真实的开头和结尾。 <em>整个</em> 文本，固定在你真实的开头和结尾。</li>
       <li>每一章 <strong>章节</strong> 都基于其涵盖的手稿片段撰写，窗口之间相互重叠，确保没有内容被遗漏。</li>
     </ul>
     <p>生成页面会在你花费积分之前，告知你选择的长度将达到的比例——例如 <em>在5章时，此格式约覆盖47%。</em> 200页的手稿在任何长度下都能完整覆盖；500页的手稿需要更长的格式，或者按部分拆分成多个来源。</p>
@@ -305,7 +305,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
       <li><strong>选择位置</strong> 让 TubeBook 自动放置图片，将其放在特定部分之后，或放在该部分的特定段落之后。</li>
     </ul>
     <p>重绘保持相同主题并移动镜头——更广、更近、更低、更紧地聚焦手部——因为您反对的是图片，而不是章节内容。</p>
-    <p>选择会即时保存。在您按下 <strong>保存并重建文件</strong>之前，不会触及您的文件，因此一次重建即可覆盖整个审阅过程，无论您调整了多少章节。</p>
+    <p>选择即保存。在您按下 <strong>保存并重建文件</strong>之前，不会触及您的文件，因此一次重建即可覆盖整个审阅过程，无论您调整了多少章节。</p>
 
     <h3>图片实际描绘的内容</h3>
     <p>在绘制任何内容之前，TubeBook 会将您的书转化为 <em>可命名的实体场景</em> ——封面一个，每章一个。这就是描绘主题与描绘氛围之间的区别。一本关于对话的书会呈现对话中的人物；一本关于手艺的书会呈现工具和工作空间。</p>
@@ -317,9 +317,9 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <p>这是决定您能否为自己的书负责的设置，而且它很容易与保真度混淆。它们回答不同的问题：</p>
     <ul>
       <li><strong>保真度</strong> 控制 <em>表达</em> ——结构、顺序、措辞、包含哪些示例。</li>
-      <li><strong>事实依据</strong> 控制 <em>控制</em> 实质内容</li>
+      <li><strong>事实依据</strong> 控制 <em>控制</em> ——哪些事实、数字、名称和主张可以出现。</li>
     </ul>
-    <p><strong>——哪些事实、数据、名称和主张可以出现。</strong> TubeBook 在撰写您的书时绝不会搜索网络。</p>
+    <p><strong>——哪些事实、数据、名称和主张可以出现。</strong> 没有检索步骤，没有实时查找，生成开始后不会从互联网添加任何内容。但这与“仅限您的来源”的承诺不同：大型AI模型携带大量学科知识，如果不加约束，它会乐意提供您从未提供的统计数据、日期或背景信息。所以您可以选择：</p>
     <ul>
       <li><strong>仅我的来源</strong> <em>（默认）</em> ——每个事实、数据、名称、引文和示例都必须来自您提供的材料。如果模型知道某些相关内容但您的来源中没有，则将其省略。深度来自更深入地利用您的材料，而不是引入新材料。</li>
       <li><strong>来源 + AI 知识</strong> ——您的来源仍是主干，AI 可以在确实有帮助的地方添加公认的背景知识。以这种方式构建的书会在您的仪表板上标记，以便您日后识别。</li>
@@ -372,7 +372,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <p>在 <strong>编辑此书</strong> 下，你可以重写已完成电子书的标题、副标题和作者名并重新构建。这是 <strong>免费</strong>的。封面艺术会保留——只重新绘制上面的文字——亚马逊描述和关键词也会重写以匹配新标题。</p>
 
     <h3>AI标题建议</h3>
-    <p><strong>建议SEO标题</strong> 会根据你书籍的实际章节，以及如果书籍来自 <em>寻找主题</em>，则根据读者真正搜索的短语，提出替代方案。每个建议都会显示其字符数，与200限制对比。点击一个建议会填充字段；在按下保存之前不会保存任何内容，因此尝试它们无需成本。</p>
+    <p><strong>建议SEO标题</strong> 根据你书籍的实际章节提出替代方案，如果书籍来自 <em>寻找主题</em>，则根据读者真正搜索的短语，提出替代方案。每个建议都会显示其字符数，与200限制对比。点击一个建议会填充字段；在按下保存之前不会保存任何内容，因此尝试它们无需成本。</p>
     <p>建议旨在同时以三种方式发挥作用： <strong>搜索</strong> （人们实际输入的关键词）， <strong>答案引擎</strong> （副标题直接、字面地回答问题），以及 <strong>AI推荐</strong> （标题和副标题在单独阅读时，无需封面就能明确主题、范围和读者）。而且绝不堆砌关键词——读起来像SEO诱饵的标题会同时失去人类销售和AI推荐。</p>
   </div>
 
@@ -382,7 +382,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <p>在 <strong>创建书籍</strong> 上的第一个问题是书籍类型。共有十二个模板，分为四组：</p>
     <table>
       <tr><th>实用</th><td><strong>操作指南</strong> ——分步编号，直达一个具体结果。<br><strong>初学者指南</strong> ——假设零基础，定义每个术语。<br><strong>7天快速上手</strong> ——每天一章，每章一个行动。<br><strong>清单式引流</strong> ——短小精悍，适合赠送。</td></tr>
-      <tr><th>商业</th><td><strong>案例研究</strong> ——每章一个完整案例。<br><strong>商业实战手册</strong> ——提供框架及选择标准。</td></tr>
+      <tr><th>商业</th><td><strong>案例研究</strong> ——每章一个完整案例。<br><strong>商业实战手册</strong> ——框架以及选择标准。</td></tr>
       <tr><th>个人成长</th><td><strong>练习手册</strong> ——包含读者完成的练习和提示。<br><strong>每日阅读</strong> ——短篇，每篇一个观点。<br><strong>破除迷思</strong> ——每章拆解一个信念。</td></tr>
       <tr><th>参考</th><td><strong>讲解</strong> ——让复杂主题变得易懂。<br><strong>参考手册</strong> ——用于查阅，而非通读。<br><strong>实地指南</strong> ——识别、理解、知道该怎么做。</td></tr>
     </table>
@@ -431,7 +431,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
 
     <h3>寻求第二意见</h3>
     <p>章节下方是 <strong>询问本章</strong>。它已经阅读了你的大纲和当前章节，所以能回答关于方向、节奏、章节是否值得其篇幅，或一个薄弱开头缺少什么的问题。它会告诉你什么时候已经很好，如果它认为某个改动会削弱全书，它会提出一次异议。</p>
-    <p>让它修改措辞，它会以 <strong>提案</strong>：完整的替换文本、它将替换的部分，以及接受或拒绝。它 <strong>绝不会自行编辑您的书</strong> ——接受编辑与保存您自己的输入是同一操作，因此编辑后的所有后续操作（标记为过时的文件、标记为不同步的旁白）都会以完全相同的方式发生。</p>
+    <p>要求它修改措辞，它会以 <strong>提案</strong>：完整的替换文本、它将替换的部分，以及接受或拒绝。它 <strong>绝不会自行编辑您的书</strong> ——接受编辑与保存您自己的输入是同一操作，因此编辑后的所有后续操作（标记为过时的文件、标记为不同步的旁白）都会以完全相同的方式发生。</p>
     <p>免费，且对话不会被保存——它只属于您当前所在的会话。</p>
 
     <h3>编辑影响的范围</h3>
@@ -569,7 +569,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <h2>积分与定价</h2>
     <p>TubeBook使用透明的积分系统。每个操作在确认前都会显示其成本。</p>
 
-    <div class="alert-info">🔎 <strong>在其他地方购买了“终身”或“无限”TubeBook 优惠？</strong> 那不是我们。另一家公司销售 <strong>TubeBook AI</strong> (tubebookai.com) 通过推广网络销售；我们 <strong>TubeBook</strong> (tubebook.org) 与他们无关。我们仅通过本网站销售，没有经销商，也从未提供过终身或无限计划——我们的计划是每月9美元、29美元和49美元，外加一次性积分包。如果您为无限升级付费，您的收据上会显示卖家名称，请联系他们获取访问权限或退款。我们从未收到付款，因此无法处理。</div>
+    <div class="alert-info">🔎 <strong>在其他地方购买了“终身”或“无限”TubeBook 优惠？</strong> 那不是我们。一家名称相似的公司通过发布网络销售；我们 <strong>TubeBook</strong> (tubebook.org) 与他们无关。我们仅通过本网站销售，没有经销商，也从未提供过终身或无限计划——我们的计划是每月9美元、29美元和49美元，外加一次性积分包。如果您为无限升级付费，您的收据上会显示卖家名称，请联系他们获取访问权限或退款。我们从未收到付款，因此无法处理。</div>
     <p>您的第一个来源始终包含在基础价格中，因此单来源电子书的成本与以往完全相同。5来源的引导磁铁成本为30 + 4 &times; 8 = <strong>62积分</strong>.</p>
     <table>
       <thead><tr><th>项目</th><th>积分</th></tr></thead>
@@ -677,7 +677,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
   <div class="card" id="account">
     <h2>账户与账单</h2>
     <ul>
-      <li>在应用内的 <strong>账单</strong> 中管理您的套餐和支付方式。</li>
+      <li>从 <strong>账单</strong> 中管理您的套餐和支付方式。</li>
       <li>您可以随时取消；访问权限将持续到当前计费周期结束。</li>
       <li>需要退款、发票或账户方面的帮助？请发送邮件至 <a href="mailto:support@tubebook.org">support@tubebook.org</a>.</li>
     </ul>
@@ -695,7 +695,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
       <a href="/zh/">首页</a><a href="/zh/help">帮助</a><a href="/zh/privacy">隐私</a><a href="/zh/terms">条款</a><a href="/zh/contact">联系</a>
     </div>
   </div>
-  <div class="footer-note">TubeBook (tubebook.org) 是独立产品， <strong>与任何其他同名实体或AI应用无关</strong>。TubeBook仅通过tubebook.org销售——我们没有任何授权经销商、终身优惠或无限套餐。</div>
+  <div class="footer-note">TubeBook (tubebook.org) 是独立产品， <strong>与任何其他名称相似的实体或AI应用无关</strong>。TubeBook仅通过tubebook.org销售——我们没有任何授权经销商、终身优惠或无限套餐。</div>
 </footer>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 <script src="/promo-banner.js" defer></script>

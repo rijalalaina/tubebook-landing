@@ -15,7 +15,7 @@
 :root {
   --bg: #08090d; --bg2: #0f1118; --bg3: #14171f; --card: #131620;
   --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
-  --amber: #ff6200; --amber2: #ff8c42; --amber-dim: rgba(255,98,0,0.12);
+  --amber: #ff6200;--brand-outline:#ff6b00; --amber2: #ff8c42; --amber-dim: rgba(255,98,0,0.12);
   --red: #ff3b3b; --red-dim: rgba(255,59,59,0.12);
   --green: #2ecc71; --green-dim: rgba(46,204,113,0.11);
   --text: #f0eee8; --muted: #7b7d8a; --muted2: #a0a3b1;
@@ -88,13 +88,13 @@ td strong { color: var(--text); }
 .alert-info { background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: var(--amber2); }
 
 /* FOOTER */
-footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2.5rem 4rem; }
+footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); padding: 2.5rem 4rem; }
 .footer-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
 .footer-brand { font-size: 0.82rem; color: var(--muted); }
 .footer-brand a { color: var(--amber); text-decoration: none; }
 .footer-links { display: flex; gap: 1.8rem; flex-wrap: wrap; }
-.footer-links a { font-size: 0.82rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-.footer-links a:hover { color: var(--text); }
+.footer-links a { font-size: 1rem; font-weight: 600; color: var(--text); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--brand-outline); }
 
 @media (max-width: 760px) {
   nav { padding: 0.9rem 1.2rem; }
@@ -317,7 +317,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <p>Este es el ajuste que decide si puedes respaldar tu propio libro, y es fácil confundirlo con la fidelidad. Responden a preguntas distintas:</p>
     <ul>
       <li><strong>Fidelidad</strong> rige la <em>expresión</em> : la estructura, el orden, la redacción, qué ejemplos aparecen.</li>
-      <li><strong>Fundamento</strong> rige la <em>la</em> sustancia</li>
+      <li><strong>Fundamento</strong> rige la <em>la</em> — qué hechos, cifras, nombres y afirmaciones pueden aparecer en absoluto.</li>
     </ul>
     <p><strong>TubeBook nunca busca en la web mientras escribe tu libro.</strong> No hay paso de recuperación, ni búsqueda en vivo, ni nada añadido de internet una vez que comienza la generación. Pero eso no es lo mismo que prometer "solo tus fuentes": un modelo de IA grande lleva una enorme cantidad de conocimiento temático y, si no se restringe, proporcionará encantado una estadística, una fecha o un dato de contexto que nunca proporcionaste. Así que tú eliges:</p>
     <ul>
@@ -569,7 +569,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <h2>Créditos y precios</h2>
     <p>TubeBook utiliza un sistema de créditos transparente. Cada acción muestra su costo antes de que confirmes.</p>
 
-    <div class="alert-info">🔎 <strong>¿Compraste un acuerdo de TubeBook de &ldquo;por vida&rdquo; o &ldquo;ilimitado&rdquo; en otro sitio?</strong> Eso no fuimos nosotros. Una empresa separada vende <strong>TubeBook AI</strong> (tubebookai.com) a través de redes de lanzamiento; nosotros somos <strong>TubeBook</strong> (tubebook.org) y no estamos afiliados con ellos. Vendemos solo a través de este sitio, no tenemos revendedores y nunca hemos ofrecido un plan de por vida o ilimitado: nuestros planes son de $9, $29 y $49 al mes, más paquetes de créditos de pago único. Si pagaste por una actualización ilimitada, tu recibo mostrará el nombre del vendedor, y es a ellos a quienes debes contactar para obtener acceso o un reembolso. Nosotros nunca recibimos el pago, por lo que no podemos gestionar ninguna de las dos cosas.</div>
+    <div class="alert-info">🔎 <strong>¿Compraste un acuerdo de TubeBook de &ldquo;por vida&rdquo; o &ldquo;ilimitado&rdquo; en otro sitio?</strong> Eso no fuimos nosotros. Una empresa separada que opera bajo un nombre similar vende a través de redes de lanzamiento; nosotros somos <strong>TubeBook</strong> (tubebook.org) y no estamos afiliados con ellos. Vendemos solo a través de este sitio, no tenemos revendedores y nunca hemos ofrecido un plan de por vida o ilimitado: nuestros planes son de $9, $29 y $49 al mes, más paquetes de créditos de pago único. Si pagaste por una actualización ilimitada, tu recibo mostrará el nombre del vendedor, y es a ellos a quienes debes contactar para obtener acceso o un reembolso. Nosotros nunca recibimos el pago, por lo que no podemos gestionar ninguna de las dos cosas.</div>
     <p>Tu primera fuente siempre está incluida en el precio base, por lo que un ebook de una sola fuente cuesta exactamente lo que siempre ha costado. Un lead magnet de 5 fuentes cuesta 30 + 4 &times; 8 = <strong>62 créditos</strong>.</p>
     <table>
       <thead><tr><th>Artículo</th><th>Créditos</th></tr></thead>

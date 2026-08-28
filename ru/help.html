@@ -15,7 +15,7 @@
 :root {
   --bg: #08090d; --bg2: #0f1118; --bg3: #14171f; --card: #131620;
   --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
-  --amber: #ff6200; --amber2: #ff8c42; --amber-dim: rgba(255,98,0,0.12);
+  --amber: #ff6200;--brand-outline:#ff6b00; --amber2: #ff8c42; --amber-dim: rgba(255,98,0,0.12);
   --red: #ff3b3b; --red-dim: rgba(255,59,59,0.12);
   --green: #2ecc71; --green-dim: rgba(46,204,113,0.11);
   --text: #f0eee8; --muted: #7b7d8a; --muted2: #a0a3b1;
@@ -88,13 +88,13 @@ td strong { color: var(--text); }
 .alert-info { background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: var(--amber2); }
 
 /* FOOTER */
-footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2.5rem 4rem; }
+footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); padding: 2.5rem 4rem; }
 .footer-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
 .footer-brand { font-size: 0.82rem; color: var(--muted); }
 .footer-brand a { color: var(--amber); text-decoration: none; }
 .footer-links { display: flex; gap: 1.8rem; flex-wrap: wrap; }
-.footer-links a { font-size: 0.82rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-.footer-links a:hover { color: var(--text); }
+.footer-links a { font-size: 1rem; font-weight: 600; color: var(--text); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--brand-outline); }
 
 @media (max-width: 760px) {
   nav { padding: 0.9rem 1.2rem; }
@@ -246,7 +246,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <p>Поле для вставки принимает до <strong>850 000 символов — примерно 500 печатных страниц</strong>, так что вы можете вставить целую неопубликованную книгу, и TubeBook перестроит её.</p>
     <p>Если объём превышает примерно 47 страниц, ни один шаг не может прочитать весь текст сразу, поэтому TubeBook работает с отрывками — и важно понимать, как именно, потому что это не «первые пятьдесят страниц»:</p>
     <ul>
-      <li>План <strong>составляется по отрывкам, равномерно распределённым по</strong> всему <em>тексту, с привязкой к вашему реальному началу и реальному концу.</em> текст, привязанный к вашему реальному началу и реальному концу.</li>
+      <li>План <strong>составляется по отрывкам, равномерно распределённым по</strong> планируется из отрывков, равномерно распределенных по <em>тексту, с привязкой к вашему реальному началу и реальному концу.</em> текст, привязанный к вашему реальному началу и реальному концу.</li>
       <li>Каждая <strong>глава</strong> пишется по тому фрагменту рукописи, который она охватывает, при этом окна перекрываются, чтобы ничего не потерялось между главами.</li>
     </ul>
     <p>На странице создания книги до списания кредита вы увидите, какую долю текста охватит выбранная вами длина — например <em>"При 5 главах этот формат охватывает около 47%."</em> Рукопись на 200 страниц покрывается полностью при любой длине; для 500 страниц нужен формат подлиннее или разбейте её на несколько источников по частям.</p>
@@ -569,7 +569,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <h2>Кредиты и цены</h2>
     <p>TubeBook использует прозрачную систему кредитов. Каждое действие показывает свою стоимость до подтверждения.</p>
 
-    <div class="alert-info">🔎 <strong>Купили «пожизненную» или «безлимитную» сделку TubeBook где-то еще?</strong> Это были не мы. Отдельная компания продает <strong>TubeBook AI</strong> (tubebookai.com) через партнерские сети; мы — <strong>TubeBook</strong> (tubebook.org), и мы не связаны с ними. Мы продаем только через этот сайт, у нас нет дилеров, и мы никогда не предлагали пожизненный или безлимитный план — наши планы стоят $9, $29 и $49 в месяц, плюс разовые пакеты кредитов. Если вы заплатили за безлимитное обновление, в чеке будет указан продавец, и именно к нему нужно обращаться за доступом или возвратом. Мы не получали платеж, поэтому не можем ни предоставить доступ, ни вернуть деньги.</div>
+    <div class="alert-info">🔎 <strong>Купили «пожизненную» или «безлимитную» сделку TubeBook где-то еще?</strong> Это были не мы. Отдельная компания с похожим названием продает через сети запуска; мы <strong>TubeBook</strong> (tubebook.org), и мы не связаны с ними. Мы продаем только через этот сайт, у нас нет дилеров, и мы никогда не предлагали пожизненный или безлимитный план — наши планы стоят $9, $29 и $49 в месяц, плюс разовые пакеты кредитов. Если вы заплатили за безлимитное обновление, в чеке будет указан продавец, и именно к нему нужно обращаться за доступом или возвратом. Мы не получали платеж, поэтому не можем ни предоставить доступ, ни вернуть деньги.</div>
     <p>Первый источник всегда включен в базовую цену, поэтому электронная книга из одного источника стоит ровно столько же, сколько и раньше. Лид-магнит из 5 источников стоит 30 + 4 &times; 8 = <strong>62 кредита</strong>.</p>
     <table>
       <thead><tr><th>Позиция</th><th>Кредиты</th></tr></thead>

@@ -180,7 +180,6 @@
   "a6b3fbc33a": ": la estructura, el orden, la redacción, qué ejemplos aparecen.",
   "1953f23d54": "Fundamento",
   "54ccb2d90f": "la",
-  "d074195ab4": "sustancia",
   "f0ba495bdd": "TubeBook nunca busca en la web mientras escribe tu libro.",
   "1db5ae6ff4": "No hay paso de recuperación, ni búsqueda en vivo, ni nada añadido de internet una vez que comienza la generación. Pero eso no es lo mismo que prometer \"solo tus fuentes\": un modelo de IA grande lleva una enorme cantidad de conocimiento temático y, si no se restringe, proporcionará encantado una estadística, una fecha o un dato de contexto que nunca proporcionaste. Así que tú eliges:",
   "729112dab6": "Solo mis fuentes",
@@ -568,9 +567,6 @@
   "5c52b8df27": "— reabrir el mismo nicho en ese período es gratis, y el orden de las palabras no importa (\"estoicismo para principiantes\" y \"principiantes estoicismo\" son el mismo nicho). Encontrar fuentes para un concepto no cuesta nada extra.",
   "47e226a8cc": "💡 Si la investigación falla a mitad de camino, tus 5 créditos se reembolsan automáticamente. Si un nicho no devuelve nada útil, prueba con un término más amplio: \"journaling\" en lugar de \"bullet journaling para enfermeras INFJ\".",
   "fb67fc7961": "TubeBook utiliza un sistema de créditos transparente. Cada acción muestra su costo antes de que confirmes.",
-  "065e3b913d": "Eso no fuimos nosotros. Una empresa separada vende",
-  "f0772bfad3": "TubeBook AI",
-  "417321483e": "(tubebookai.com) a través de redes de lanzamiento; nosotros somos",
   "afa276a9e0": "(tubebook.org) y no estamos afiliados con ellos. Vendemos solo a través de este sitio, no tenemos revendedores y nunca hemos ofrecido un plan de por vida o ilimitado: nuestros planes son de $9, $29 y $49 al mes, más paquetes de créditos de pago único. Si pagaste por una actualización ilimitada, tu recibo mostrará el nombre del vendedor, y es a ellos a quienes debes contactar para obtener acceso o un reembolso. Nosotros nunca recibimos el pago, por lo que no podemos gestionar ninguna de las dos cosas.",
   "1ba1f7fe41": "Tu primera fuente siempre está incluida en el precio base, por lo que un ebook de una sola fuente cuesta exactamente lo que siempre ha costado. Un lead magnet de 5 fuentes cuesta 30 + 4 &times; 8 =",
   "5b04e1d716": "62 créditos",
@@ -707,8 +703,6 @@
   "34659adb5b": "TubeBook ·",
   "d615b20b0e": "tubebook.org",
   "bbcb8c647a": "TubeBook (tubebook.org) es un producto independiente y",
-  "2d444dfabf": "no está afiliado a TubeBook AI (tubebookai.com)",
-  "885470b1e7": ", una empresa distinta con un nombre similar. TubeBook se vende únicamente a través de tubebook.org: no tenemos revendedores ni planes de por vida o ilimitados.",
   "a97936a973": "Ayuda y tutoriales — TubeBook",
   "b4178af86e": "Ayuda y tutoriales",
   "53f36c6e15": "Diseño y legibilidad",
@@ -740,5 +734,7 @@
   "26beb752e8": "Compradores de libros",
   "71b5d21768": "¿Compraste un acuerdo de TubeBook de &ldquo;por vida&rdquo; o &ldquo;ilimitado&rdquo; en otro sitio?",
   "ea100d164e": "no está afiliado con ninguna otra entidad o aplicación de IA que opere bajo un nombre similar",
-  "c6d9939e73": ". TubeBook se vende exclusivamente a través de tubebook.org: no tenemos revendedores autorizados, ofertas de por vida ni planes ilimitados."
+  "c6d9939e73": ". TubeBook se vende exclusivamente a través de tubebook.org: no tenemos revendedores autorizados, ofertas de por vida ni planes ilimitados.",
+  "d074195ab4": "— qué hechos, cifras, nombres y afirmaciones pueden aparecer en absoluto.",
+  "8cfe91c313": "Eso no fuimos nosotros. Una empresa separada que opera bajo un nombre similar vende a través de redes de lanzamiento; nosotros somos"
 }

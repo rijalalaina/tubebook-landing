@@ -15,7 +15,7 @@
 :root {
   --bg: #08090d; --bg2: #0f1118; --bg3: #14171f; --card: #131620;
   --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
-  --amber: #ff6200; --amber2: #ff8c42; --amber-dim: rgba(255,98,0,0.12);
+  --amber: #ff6200;--brand-outline:#ff6b00; --amber2: #ff8c42; --amber-dim: rgba(255,98,0,0.12);
   --red: #ff3b3b; --red-dim: rgba(255,59,59,0.12);
   --green: #2ecc71; --green-dim: rgba(46,204,113,0.11);
   --text: #f0eee8; --muted: #7b7d8a; --muted2: #a0a3b1;
@@ -88,13 +88,13 @@ td strong { color: var(--text); }
 .alert-info { background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: var(--amber2); }
 
 /* FOOTER */
-footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2.5rem 4rem; }
+footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); padding: 2.5rem 4rem; }
 .footer-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
 .footer-brand { font-size: 0.82rem; color: var(--muted); }
 .footer-brand a { color: var(--amber); text-decoration: none; }
 .footer-links { display: flex; gap: 1.8rem; flex-wrap: wrap; }
-.footer-links a { font-size: 0.82rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-.footer-links a:hover { color: var(--text); }
+.footer-links a { font-size: 1rem; font-weight: 600; color: var(--text); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--brand-outline); }
 
 @media (max-width: 760px) {
   nav { padding: 0.9rem 1.2rem; }
@@ -569,7 +569,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <h2>Credits &amp; pricing</h2>
     <p>TubeBook uses a transparent credit system. Every action shows its cost before you confirm.</p>
 
-    <div class="alert-info">🔎 <strong>Bought a &ldquo;lifetime&rdquo; or &ldquo;unlimited&rdquo; TubeBook deal somewhere else?</strong> That was not us. A separate company sells <strong>TubeBook AI</strong> (tubebookai.com) through launch networks; we are <strong>TubeBook</strong> (tubebook.org) and we are not affiliated with them. We sell only through this site, we have no resellers, and we have never offered a lifetime or unlimited plan — our plans are $9, $29 and $49 a month, plus one-time credit packs. If you paid for an unlimited upgrade, your receipt will name the seller, and they are who to contact for access or a refund. We never received the payment, so we cannot action either.</div>
+    <div class="alert-info">🔎 <strong>Bought a &ldquo;lifetime&rdquo; or &ldquo;unlimited&rdquo; TubeBook deal somewhere else?</strong> That was not us. A separate company operating under a similar name sells through launch networks; we are <strong>TubeBook</strong> (tubebook.org) and we are not affiliated with them. We sell only through this site, we have no resellers, and we have never offered a lifetime or unlimited plan — our plans are $9, $29 and $49 a month, plus one-time credit packs. If you paid for an unlimited upgrade, your receipt will name the seller, and they are who to contact for access or a refund. We never received the payment, so we cannot action either.</div>
     <p>Your first source is always included in the base price, so a single-source ebook costs exactly what it always has. A 5-source lead magnet costs 30 + 4 &times; 8 = <strong>62 credits</strong>.</p>
     <table>
       <thead><tr><th>Item</th><th>Credits</th></tr></thead>

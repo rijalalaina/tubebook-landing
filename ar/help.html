@@ -15,7 +15,7 @@
 :root {
   --bg: #08090d; --bg2: #0f1118; --bg3: #14171f; --card: #131620;
   --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
-  --amber: #ff6200; --amber2: #ff8c42; --amber-dim: rgba(255,98,0,0.12);
+  --amber: #ff6200;--brand-outline:#ff6b00; --amber2: #ff8c42; --amber-dim: rgba(255,98,0,0.12);
   --red: #ff3b3b; --red-dim: rgba(255,59,59,0.12);
   --green: #2ecc71; --green-dim: rgba(46,204,113,0.11);
   --text: #f0eee8; --muted: #7b7d8a; --muted2: #a0a3b1;
@@ -88,13 +88,13 @@ td strong { color: var(--text); }
 .alert-info { background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: var(--amber2); }
 
 /* FOOTER */
-footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2.5rem 4rem; }
+footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); padding: 2.5rem 4rem; }
 .footer-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
 .footer-brand { font-size: 0.82rem; color: var(--muted); }
 .footer-brand a { color: var(--amber); text-decoration: none; }
 .footer-links { display: flex; gap: 1.8rem; flex-wrap: wrap; }
-.footer-links a { font-size: 0.82rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-.footer-links a:hover { color: var(--text); }
+.footer-links a { font-size: 1rem; font-weight: 600; color: var(--text); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--brand-outline); }
 
 @media (max-width: 760px) {
   nav { padding: 0.9rem 1.2rem; }
@@ -569,7 +569,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <h2>الرصيد والتسعير</h2>
     <p>يستخدم TubeBook نظام رصيد شفاف. كل إجراء يُظهر تكلفته قبل التأكيد.</p>
 
-    <div class="alert-info">🔎 <strong>اشتريت صفقة "مدى الحياة" أو "غير محدود" من TubeBook في مكان آخر؟</strong> هذا ليس نحن. شركة منفصلة تبيع <strong>TubeBook AI</strong> (tubebookai.com) عبر شبكات الإطلاق؛ نحن <strong>TubeBook</strong> (tubebook.org) ولا نتبع لهم. نبيع فقط عبر هذا الموقع، ولا يوجد لدينا موزعون، ولم نقدم أبدًا خطة مدى الحياة أو غير محدودة — خططنا هي 9$ و29$ و49$ شهريًا، بالإضافة إلى حزم ائتمان لمرة واحدة. إذا دفعت مقابل ترقية غير محدودة، فستظهر اسم البائع في إيصالك، وعليك التواصل معه للحصول على الوصول أو استرداد الأموال. لم نستلم الدفعة أبدًا، لذا لا يمكننا اتخاذ أي إجراء.</div>
+    <div class="alert-info">🔎 <strong>اشتريت صفقة "مدى الحياة" أو "غير محدود" من TubeBook في مكان آخر؟</strong> لم يكن ذلك منا. شركة منفصلة تعمل باسم مشابه تبيع عبر شبكات الإطلاق؛ نحن <strong>TubeBook</strong> (tubebook.org) ولا نتبع لهم. نبيع فقط عبر هذا الموقع، ولا يوجد لدينا موزعون، ولم نقدم أبدًا خطة مدى الحياة أو غير محدودة — خططنا هي 9$ و29$ و49$ شهريًا، بالإضافة إلى حزم ائتمان لمرة واحدة. إذا دفعت مقابل ترقية غير محدودة، فستظهر اسم البائع في إيصالك، وعليك التواصل معه للحصول على الوصول أو استرداد الأموال. لم نستلم الدفعة أبدًا، لذا لا يمكننا اتخاذ أي إجراء.</div>
     <p>مصدرك الأول مشمول دائمًا في السعر الأساسي، لذا فإن كتابًا إلكترونيًا بمصدر واحد يكلف بالضبط ما كان عليه دائمًا. تكلفة lead magnet من 5 مصادر 30 + 4 × 8 = <strong>62 ائتمانًا</strong>.</p>
     <table>
       <thead><tr><th>البند</th><th>الائتمانات</th></tr></thead>

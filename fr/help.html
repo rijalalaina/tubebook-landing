@@ -15,7 +15,7 @@
 :root {
   --bg: #08090d; --bg2: #0f1118; --bg3: #14171f; --card: #131620;
   --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
-  --amber: #ff6200; --amber2: #ff8c42; --amber-dim: rgba(255,98,0,0.12);
+  --amber: #ff6200;--brand-outline:#ff6b00; --amber2: #ff8c42; --amber-dim: rgba(255,98,0,0.12);
   --red: #ff3b3b; --red-dim: rgba(255,59,59,0.12);
   --green: #2ecc71; --green-dim: rgba(46,204,113,0.11);
   --text: #f0eee8; --muted: #7b7d8a; --muted2: #a0a3b1;
@@ -88,13 +88,13 @@ td strong { color: var(--text); }
 .alert-info { background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: var(--amber2); }
 
 /* FOOTER */
-footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2.5rem 4rem; }
+footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); padding: 2.5rem 4rem; }
 .footer-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
 .footer-brand { font-size: 0.82rem; color: var(--muted); }
 .footer-brand a { color: var(--amber); text-decoration: none; }
 .footer-links { display: flex; gap: 1.8rem; flex-wrap: wrap; }
-.footer-links a { font-size: 0.82rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-.footer-links a:hover { color: var(--text); }
+.footer-links a { font-size: 1rem; font-weight: 600; color: var(--text); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--brand-outline); }
 
 @media (max-width: 760px) {
   nav { padding: 0.9rem 1.2rem; }
@@ -569,7 +569,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <h2>Crédits &amp; tarifs</h2>
     <p>TubeBook utilise un système de crédits transparent. Chaque action affiche son coût avant que vous confirmiez.</p>
 
-    <div class="alert-info">🔎 <strong>Acheteurs de livres</strong> Ce n'était pas nous. Une société distincte vend <strong>TubeBook AI</strong> (tubebookai.com) via des réseaux de lancement ; nous sommes <strong>TubeBook</strong> (tubebook.org) et nous ne sommes pas affiliés à eux. Nous vendons uniquement via ce site, nous n'avons pas de revendeurs, et nous n'avons jamais proposé de forfait à vie ou illimité — nos forfaits sont à 9 $, 29 $ et 49 $ par mois, plus des packs de crédits à usage unique. Si vous avez payé pour une mise à niveau illimitée, votre reçu indiquera le vendeur, et c'est à lui qu'il faut s'adresser pour l'accès ou le remboursement. Nous n'avons jamais reçu le paiement, nous ne pouvons donc pas intervenir.</div>
+    <div class="alert-info">🔎 <strong>Vous avez acheté une offre TubeBook « à vie » ou « illimitée » ailleurs ?</strong> Ce n'était pas nous. Une autre société, portant un nom similaire, vend via des réseaux de lancement ; nous sommes <strong>TubeBook</strong> (tubebook.org) et nous ne sommes pas affiliés à eux. Nous vendons uniquement via ce site, nous n'avons pas de revendeurs, et nous n'avons jamais proposé de forfait à vie ou illimité — nos forfaits sont à 9 $, 29 $ et 49 $ par mois, plus des packs de crédits à usage unique. Si vous avez payé pour une mise à niveau illimitée, votre reçu indiquera le vendeur, et c'est à lui qu'il faut s'adresser pour l'accès ou le remboursement. Nous n'avons jamais reçu le paiement, nous ne pouvons donc pas intervenir.</div>
     <p>Votre première source est toujours incluse dans le prix de base, donc un ebook à source unique coûte exactement ce qu'il a toujours coûté. Un aimant à prospects à 5 sources coûte 30 + 4 &times; 8 = <strong>62 crédits</strong>.</p>
     <table>
       <thead><tr><th>Élément</th><th>Crédits</th></tr></thead>

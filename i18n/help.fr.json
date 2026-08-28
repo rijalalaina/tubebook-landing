@@ -587,9 +587,6 @@
   "5c52b8df27": "— rouvrir la même niche dans cette fenêtre est gratuit, et l'ordre des mots n'a pas d'importance (\"stoïcisme pour débutants\" et \"débutants stoïcisme\" sont la même niche). Trouver des sources pour un concept ne coûte rien de plus.",
   "47e226a8cc": "💡 Si la recherche échoue en cours de route, vos 5 crédits sont remboursés automatiquement. Si une niche ne renvoie rien d'utile, essayez un terme plus large — \"journaling\" plutôt que \"bullet journaling pour infirmières INFJ\".",
   "fb67fc7961": "TubeBook utilise un système de crédits transparent. Chaque action affiche son coût avant que vous confirmiez.",
-  "065e3b913d": "Ce n'était pas nous. Une société distincte vend",
-  "f0772bfad3": "TubeBook AI",
-  "417321483e": "(tubebookai.com) via des réseaux de lancement ; nous sommes",
   "afa276a9e0": "(tubebook.org) et nous ne sommes pas affiliés à eux. Nous vendons uniquement via ce site, nous n'avons pas de revendeurs, et nous n'avons jamais proposé de forfait à vie ou illimité — nos forfaits sont à 9 $, 29 $ et 49 $ par mois, plus des packs de crédits à usage unique. Si vous avez payé pour une mise à niveau illimitée, votre reçu indiquera le vendeur, et c'est à lui qu'il faut s'adresser pour l'accès ou le remboursement. Nous n'avons jamais reçu le paiement, nous ne pouvons donc pas intervenir.",
   "1ba1f7fe41": "Votre première source est toujours incluse dans le prix de base, donc un ebook à source unique coûte exactement ce qu'il a toujours coûté. Un aimant à prospects à 5 sources coûte 30 + 4 &times; 8 =",
   "5b04e1d716": "62 crédits",
@@ -726,8 +723,6 @@
   "34659adb5b": "TubeBook ·",
   "d615b20b0e": "tubebook.org",
   "bbcb8c647a": "TubeBook (tubebook.org) est un produit indépendant et",
-  "2d444dfabf": "n'est pas affilié à TubeBook AI (tubebookai.com)",
-  "885470b1e7": ", une société distincte portant un nom similaire. TubeBook est vendu uniquement via tubebook.org — nous n'avons ni revendeurs, ni formule à vie ou illimitée.",
   "38889db353": "Exports &amp; formats",
   "5250f04e23": "Vérification des risques d'édition",
   "cc92ba12c3": "Enregistrer &amp; reconstruire les fichiers",
@@ -738,7 +733,8 @@
   "6ae363f8a7": "Sous le texte se trouve une liste des sections du chapitre. Choisissez-en une, dites éventuellement ce qui devrait changer (« resserrer », « ajouter un exemple concret »), et elle revient réécrite — dans",
   "cecc1443df": "sauf autorisation contraire",
   "26beb752e8": "Vous avez acheté un accord TubeBook « à vie » ou « illimité » ailleurs ?",
-  "71b5d21768": "Acheteurs de livres",
   "ea100d164e": "n'est affilié à aucune autre entité ou application d'IA opérant sous un nom similaire",
-  "c6d9939e73": ". TubeBook est vendu exclusivement via tubebook.org—nous n'avons ni revendeurs agréés, ni offres à vie, ni forfaits illimités."
+  "c6d9939e73": ". TubeBook est vendu exclusivement via tubebook.org—nous n'avons ni revendeurs agréés, ni offres à vie, ni forfaits illimités.",
+  "71b5d21768": "Vous avez acheté une offre TubeBook « à vie » ou « illimitée » ailleurs ?",
+  "8cfe91c313": "Ce n'était pas nous. Une autre société, portant un nom similaire, vend via des réseaux de lancement ; nous sommes"
 }

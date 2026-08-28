@@ -15,7 +15,7 @@
 :root {
   --bg: #08090d; --bg2: #0f1118; --bg3: #14171f; --card: #131620;
   --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
-  --amber: #ff6200; --amber2: #ff8c42; --amber-dim: rgba(255,98,0,0.12);
+  --amber: #ff6200;--brand-outline:#ff6b00; --amber2: #ff8c42; --amber-dim: rgba(255,98,0,0.12);
   --red: #ff3b3b; --red-dim: rgba(255,59,59,0.12);
   --green: #2ecc71; --green-dim: rgba(46,204,113,0.11);
   --text: #f0eee8; --muted: #7b7d8a; --muted2: #a0a3b1;
@@ -88,13 +88,13 @@ td strong { color: var(--text); }
 .alert-info { background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: var(--amber2); }
 
 /* FOOTER */
-footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2.5rem 4rem; }
+footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); padding: 2.5rem 4rem; }
 .footer-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
 .footer-brand { font-size: 0.82rem; color: var(--muted); }
 .footer-brand a { color: var(--amber); text-decoration: none; }
 .footer-links { display: flex; gap: 1.8rem; flex-wrap: wrap; }
-.footer-links a { font-size: 0.82rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-.footer-links a:hover { color: var(--text); }
+.footer-links a { font-size: 1rem; font-weight: 600; color: var(--text); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--brand-outline); }
 
 @media (max-width: 760px) {
   nav { padding: 0.9rem 1.2rem; }
@@ -302,7 +302,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
       <li><strong>Gerar 3 opções com IA</strong> para esse capítulo apenas — os outros capítulos ficam intactos.</li>
       <li><strong>Fotos de banco de imagens</strong> busca no Unsplash, Pexels e Pixabay usando o assunto do capítulo, evitando sugestões duplicadas. A atribuição e os links exigidos do fotógrafo são levados para o livro exportado no idioma do livro.</li>
       <li><strong>Enviar a sua</strong> adiciona arte que você tem o direito de usar.</li>
-      <li><strong>para deixar o TubeBook posicionar a imagem automaticamente, colocá-la após uma seção específica ou após um parágrafo específico dessa seção.</strong> Escolha o posicionamento</li>
+      <li><strong>para deixar o TubeBook posicionar a imagem automaticamente, colocá-la após uma seção específica ou após um parágrafo específico dessa seção.</strong> para deixar o TubeBook posicionar a imagem automaticamente, coloque-a após uma seção específica ou após um parágrafo específico dessa seção.</li>
     </ul>
     <p>Um redesenho mantém o mesmo assunto e move a câmera — mais aberto, mais próximo, mais baixo, mais fechado nas mãos — porque você se opôs à imagem, não ao assunto do capítulo.</p>
     <p>As seleções são salvas conforme você as faz. Nada chega aos seus arquivos até você pressionar <strong>Salvar e reconstruir arquivos</strong>, então uma reconstrução cobre toda uma rodada de revisão, não importa quantos capítulos você ajustou.</p>
@@ -317,9 +317,9 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <p>Esta é a configuração que decide se você pode defender seu próprio livro, e é fácil confundir com fidelidade. Elas respondem a perguntas diferentes:</p>
     <ul>
       <li><strong>Fidelidade</strong> rege a <em>expressão</em> — a estrutura, a ordem, a redação, quais exemplos aparecem.</li>
-      <li><strong>Fundamentação</strong> rege a <em>rege a</em> substância</li>
+      <li><strong>Fundamentação</strong> rege a <em>rege a</em> — quais fatos, números, nomes e alegações podem aparecer.</li>
     </ul>
-    <p><strong>— quais fatos, números, nomes e alegações podem aparecer.</strong> O TubeBook nunca pesquisa na web enquanto escreve seu livro.</p>
+    <p><strong>— quais fatos, números, nomes e alegações podem aparecer.</strong> Não há etapa de recuperação, nem consulta ao vivo, nada é adicionado da internet depois que a geração começa. Mas isso não é a mesma promessa de "apenas suas fontes": um grande modelo de IA carrega uma quantidade enorme de conhecimento de domínio e, se não for limitado, ele fornecerá alegremente uma estatística, uma data ou um contexto que você nunca forneceu. Então você escolhe:</p>
     <ul>
       <li><strong>Apenas minhas fontes</strong> <em>(padrão)</em> — todo fato, número, nome, citação e exemplo deve vir do material que você forneceu. Se o modelo sabe algo relevante que suas fontes não contêm, isso é omitido. A profundidade vem de trabalhar seu material com mais afinco, não de importar material novo.</li>
       <li><strong>Fontes + conhecimento de IA</strong> — suas fontes continuam sendo a espinha dorsal, e a IA pode adicionar conhecimento consolidado onde isso realmente ajuda. Livros construídos assim recebem um selo no seu painel para você identificá-los depois.</li>
@@ -569,7 +569,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <h2>Créditos e preços</h2>
     <p>O TubeBook usa um sistema de créditos transparente. Cada ação mostra seu custo antes de você confirmar.</p>
 
-    <div class="alert-info">🔎 <strong>Comprou um acordo de "vitalício" ou "ilimitado" do TubeBook em outro lugar?</strong> Não fomos nós. Uma empresa separada vende <strong>TubeBook AI</strong> (tubebookai.com) por meio de redes de lançamento; nós somos <strong>TubeBook</strong> (tubebook.org) e não somos afiliados a eles. Vendemos apenas por este site, não temos revendedores e nunca oferecemos um plano vitalício ou ilimitado — nossos planos são de $9, $29 e $49 por mês, além de pacotes de créditos avulsos. Se você pagou por um upgrade ilimitado, o recibo terá o nome do vendedor, e é com ele que você deve falar para obter acesso ou reembolso. Nós nunca recebemos o pagamento, então não podemos agir.</div>
+    <div class="alert-info">🔎 <strong>Comprou um acordo de "vitalício" ou "ilimitado" do TubeBook em outro lugar?</strong> Isso não fomos nós. Uma empresa separada que opera sob um nome semelhante vende através de redes de lançamento; nós somos <strong>TubeBook</strong> (tubebook.org) e não somos afiliados a eles. Vendemos apenas por este site, não temos revendedores e nunca oferecemos um plano vitalício ou ilimitado — nossos planos são de $9, $29 e $49 por mês, além de pacotes de créditos avulsos. Se você pagou por um upgrade ilimitado, o recibo terá o nome do vendedor, e é com ele que você deve falar para obter acesso ou reembolso. Nós nunca recebemos o pagamento, então não podemos agir.</div>
     <p>Sua primeira fonte está sempre incluída no preço base, então um ebook de fonte única custa exatamente o que sempre custou. Um lead magnet de 5 fontes custa 30 + 4 &times; 8 = <strong>62 créditos</strong>.</p>
     <table>
       <thead><tr><th>Item</th><th>Créditos</th></tr></thead>

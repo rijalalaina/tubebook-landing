@@ -67,6 +67,7 @@ WHAT MUST NOT CHANGE
 - Numbers, prices, credit amounts, percentages, file sizes and technical specs stay EXACTLY as written. They are facts about the product, not phrasing.
 - HTML entities (&amp; &rsquo; &mdash; &nbsp; &times;) must be reproduced byte for byte. They are markup: "&" alone would corrupt the page.
 - Placeholders in braces like {count} keep their exact spelling. They are replaced with values at runtime.
+- Some strings contain inline HTML: <strong>, <em>, <code>. Reproduce every one of these tags exactly, in the same order, opener and closer both. They mark emphasis INSIDE the sentence — put them around the words that carry the emphasis in ${language}, which may not be the same position as in English. Do not add tags that were not there, and do not translate the tag names.
 
 FORM
 - A string that is a button or a nav label stays a label — no final period, no sentence.
@@ -77,30 +78,67 @@ Reply with a JSON object mapping each input id to its ${language} translation. N
 }
 
 /**
- * Makes a translation safe to substitute back into the page.
+ * The inline tags a translated string may contain.
  *
- * The model returns "Recherche & KDP" where the source had "&amp;" — the right
- * words, but a bare ampersand is not valid HTML. Rejecting those cost 302 good
- * translations on the first run; re-encoding them keeps the translation and
- * fixes the markup, which is what was wanted both times.
- *
- * Entities that came back intact are left alone: the negative lookahead means
- * an existing "&amp;" is not turned into "&amp;amp;".
+ * Kept in step with INLINE in i18n.mjs: those are the tags the extractor now
+ * leaves inside a sentence, so those are the ones a translation is allowed to
+ * carry back. Anything else that looks like a tag is escaped.
  */
-function sanitize(text) {
-  return text
-    .replace(/&(?![a-zA-Z][a-zA-Z0-9]*;|#\d+;|#x[0-9a-fA-F]+;)/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
+const INLINE_TAG =
+  /<\/?(?:strong|em|b|i|code|small|mark|u|sub|sup)(?:\s[^<>]*)?>/gi;
+
+/** The tag's identity for comparison: name and whether it closes, no attributes. */
+function tagName(tag) {
+  return tag.toLowerCase().replace(/^<(\/?)\s*([a-z]+)[\s\S]*$/, "<$1$2>");
 }
 
 /**
- * What must survive translation: the placeholders. Entity SPELLING may change
- * — sanitize() has already normalised it — but a dropped {placeholder} leaves
- * a hole in a sentence that nothing downstream can detect.
+ * Makes a translation safe to substitute back into the page.
+ *
+ * Two jobs. A bare "&" is not valid HTML and the model returns them freely —
+ * "Recherche & KDP" where the source had "&amp;" — so it is re-encoded rather
+ * than the translation thrown away, which is what used to happen to 302 good
+ * strings in a run.
+ *
+ * And angle brackets are escaped EXCEPT the inline tags the sentence is
+ * allowed to carry. Without that exception this function would turn every
+ * <strong> the extractor now includes into &lt;strong&gt; and print the markup
+ * on the page; without the escaping, a model that invents a tag would inject
+ * it. Placeholdering the legitimate tags first is what lets both be true.
+ */
+function sanitize(text, source = "") {
+  // Attributes come from the SOURCE tag at the same position, never from the
+  // model: one <strong style="color:var(--amber2);"> in the copy is enough to
+  // matter, and re-applying our own attributes means an invented
+  // onclick= can never ride back in on a tag we allow.
+  const fromSource = source.match(INLINE_TAG) ?? [];
+  const kept = [];
+  const withPlaceholders = text.replace(INLINE_TAG, (tag) => {
+    const at = kept.length;
+    kept.push(fromSource[at] ?? tagName(tag));
+    return `\u0000${at}\u0000`;
+  });
+  const escaped = withPlaceholders
+    .replace(/&(?![a-zA-Z][a-zA-Z0-9]*;|#\d+;|#x[0-9a-fA-F]+;)/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+  return escaped.replace(/\u0000(\d+)\u0000/g, (_, n) => kept[Number(n)]);
+}
+
+/**
+ * What must survive translation: the placeholders, and the inline tags.
+ *
+ * A dropped {placeholder} leaves a hole in a sentence. A dropped <strong>
+ * loses the emphasis the sentence was written around; an unbalanced one breaks
+ * the page it is substituted into. The tag SEQUENCE is compared rather than
+ * the set, so an opener without its closer is caught.
  */
 function holes(text) {
   return [...text.matchAll(/\{(\w+)\}/g)].map((m) => m[1]).sort().join(",");
+}
+
+function tagShape(text) {
+  return (text.match(INLINE_TAG) ?? []).map(tagName).join(",");
 }
 
 async function translateBatch(provider, entries, language) {
@@ -153,8 +191,8 @@ for (const { code, endonym, page, outPath, have, missing } of plan) {
       for (const [k, source] of slice) {
         const v = got[k];
         if (typeof v !== "string" || !v.trim()) continue;
-        const clean = sanitize(v);
-        if (holes(source) !== holes(clean)) {
+        const clean = sanitize(v, source);
+        if (holes(source) !== holes(clean) || tagShape(source) !== tagShape(clean)) {
           rejected++;
           continue;
         }

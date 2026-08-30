@@ -31,12 +31,6 @@
   "f4ab84974f": "Unsere Adresse lautet",
   "5df2b868ed": "JavaScript aktivieren, um es zu sehen",
   "7e331eba9c": "— Die Schaltflächen oben öffnen eine voradressierte E-Mail. Wenn Sie über ein E-Book-Problem schreiben, geben Sie den E-Book-Titel oder die ID an.",
-  "c731f04860": "Sicherheit:",
-  "2d66d23319": "Wir senden E-Mails nur von",
-  "6d7fa0f366": "@tubebook.org",
-  "1758356db2": "oder",
-  "3d673fadc2": "@blissfulplan.com",
-  "c5f7945871": ", und wir werden Sie niemals per E-Mail nach Ihrem Passwort, einem Bestätigungscode oder Zahlungsdaten fragen. Wenn etwas, das vorgibt, TubeBook zu sein, dies tut, sind wir es nicht – leiten Sie es an unsere Support-Adresse weiter.",
   "9741ee4f14": "Bevor Sie schreiben",
   "c84a54f375": "Hier finden Sie vielleicht schneller eine Antwort:",
   "efe79cf110": "Erste-Schritte-Anleitung",
@@ -45,5 +39,6 @@
   "816ab673bc": "Konto &amp; Abrechnung",
   "be1484a0a4": "Tarifvergleich &amp; Preise",
   "34659adb5b": "TubeBook ·",
-  "d615b20b0e": "tubebook.org"
+  "d615b20b0e": "tubebook.org",
+  "9cdea55d95": "<strong>Sicherheit:</strong> Wir senden E-Mails ausschließlich von <strong>@tubebook.org</strong> oder <strong>@blissfulplan.com</strong> und fragen niemals per E-Mail nach Ihrem Passwort, einem Bestätigungscode oder Zahlungsdaten. Wenn etwas, das vorgibt, TubeBook zu sein, dies tut, sind wir es nicht – leiten Sie es an unsere Support-Adresse weiter."
 }

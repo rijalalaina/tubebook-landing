@@ -23,7 +23,7 @@
 :root {
   --bg:#08090d;--bg2:#0f1118;--bg3:#14171f;--card:#131620;
   --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);
-  --amber:#ff6200;--amber2:#ff8c42;--amber-dim:rgba(255,98,0,0.12);
+  --amber:#ff6b00;--amber2:#ff9542;--amber-dim:rgba(255,107,0,0.12);
   --red:#ff3b3b;--red-dim:rgba(255,59,59,0.12);
   --green:#2ecc71;--green-dim:rgba(46,204,113,0.11);
   --yellow:#f5c842;--yellow-dim:rgba(245,200,66,0.11);
@@ -44,17 +44,17 @@ nav{position:fixed;top:0;inset-inline-start:0;inset-inline-end:0;z-index:100;dis
 
 /* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 6rem;position:relative;overflow:hidden;}
-.hero-orb-1{position:absolute;top:-180px;left:50%;transform:translateX(-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(255,98,0,0.08) 0%,transparent 70%);pointer-events:none;}
+.hero-orb-1{position:absolute;top:-180px;left:50%;transform:translateX(-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(255,107,0,0.08) 0%,transparent 70%);pointer-events:none;}
 .hero-orb-2{position:absolute;bottom:-120px;inset-inline-end:-160px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,59,59,0.07) 0%,transparent 70%);pointer-events:none;}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.25);color:var(--amber2);font-size:0.8rem;font-weight:500;padding:0.4rem 1rem;border-radius:100px;margin-bottom:2.2rem;animation:fadeDown 0.6s ease both;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--amber-dim);border:1px solid rgba(255,107,0,0.25);color:var(--amber2);font-size:0.8rem;font-weight:500;padding:0.4rem 1rem;border-radius:100px;margin-bottom:2.2rem;animation:fadeDown 0.6s ease both;}
 .hero-badge svg{width:14px;height:14px;fill:var(--amber2);}
 h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,5.2rem);font-weight:900;line-height:1.1;letter-spacing:-0.02em;color:var(--text);max-width:860px;animation:fadeUp 0.7s 0.1s ease both;}
 h1 em{font-style:italic;color:var(--amber);display:block;}
 .hero-sub{max-width:600px;margin:1.8rem auto 0;font-size:1.1rem;color:var(--muted2);line-height:1.7;animation:fadeUp 0.7s 0.2s ease both;}
 .hero-sub strong{color:var(--text);}
 .hero-actions{display:flex;align-items:center;gap:1rem;margin-top:2.8rem;flex-wrap:wrap;justify-content:center;animation:fadeUp 0.7s 0.3s ease both;}
-.btn-primary{background:var(--amber);color:#1a1200;font-size:1rem;font-weight:700;padding:0.85rem 2.2rem;border-radius:10px;text-decoration:none;display:flex;align-items:center;gap:8px;transition:background 0.2s,transform 0.15s,box-shadow 0.2s;box-shadow:0 4px 24px rgba(255,98,0,0.25);}
-.btn-primary:hover{background:var(--amber2);transform:translateY(-2px);box-shadow:0 8px 36px rgba(255,98,0,0.35);}
+.btn-primary{background:var(--amber);color:#1a1200;font-size:1rem;font-weight:700;padding:0.85rem 2.2rem;border-radius:10px;text-decoration:none;display:flex;align-items:center;gap:8px;transition:background 0.2s,transform 0.15s,box-shadow 0.2s;box-shadow:0 4px 24px rgba(255,107,0,0.25);}
+.btn-primary:hover{background:var(--amber2);transform:translateY(-2px);box-shadow:0 8px 36px rgba(255,107,0,0.35);}
 .btn-secondary{background:transparent;color:var(--muted2);font-size:1rem;font-weight:500;padding:0.85rem 1.8rem;border-radius:10px;text-decoration:none;border:1px solid var(--border2);transition:border-color 0.2s,color 0.2s;}
 .btn-secondary:hover{border-color:var(--amber);color:var(--amber);}
 .hero-note{margin-top:1.2rem;font-size:0.82rem;color:var(--muted);animation:fadeUp 0.7s 0.4s ease both;}
@@ -66,7 +66,7 @@ h1 em{font-style:italic;color:var(--amber);display:block;}
 .demo-row{display:flex;align-items:center;gap:10px;margin-bottom:1.2rem;}
 .demo-yt{background:var(--red-dim);border:1px solid rgba(255,59,59,0.2);border-radius:8px;padding:0.55rem 0.9rem;font-size:0.8rem;color:#ff7b7b;font-weight:500;display:flex;align-items:center;gap:7px;flex:1;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
 .demo-arrow{color:var(--amber);font-size:1.1rem;font-weight:700;flex-shrink:0;animation:pulse 1.5s infinite;}
-.demo-book-tag{background:var(--amber-dim);border:1px solid rgba(255,98,0,0.25);border-radius:8px;padding:0.55rem 0.9rem;font-size:0.8rem;color:var(--amber2);font-weight:500;display:flex;align-items:center;gap:6px;flex-shrink:0;}
+.demo-book-tag{background:var(--amber-dim);border:1px solid rgba(255,107,0,0.25);border-radius:8px;padding:0.55rem 0.9rem;font-size:0.8rem;color:var(--amber2);font-weight:500;display:flex;align-items:center;gap:6px;flex-shrink:0;}
 .demo-controls{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem;}
 .demo-control-chip{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:0.55rem 0.85rem;font-size:0.72rem;}
 .chip-label{color:var(--muted);margin-bottom:2px;}
@@ -77,7 +77,7 @@ h1 em{font-style:italic;color:var(--amber);display:block;}
 .chip-dot.red{background:var(--red);}
 .demo-steps{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;}
 .demo-step{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:0.6rem 0.4rem;text-align:center;font-size:0.66rem;color:var(--muted);line-height:1.3;}
-.demo-step.active{border-color:rgba(255,98,0,0.35);color:var(--amber2);background:var(--amber-dim);}
+.demo-step.active{border-color:rgba(255,107,0,0.35);color:var(--amber2);background:var(--amber-dim);}
 .demo-step .step-icon{font-size:0.95rem;margin-bottom:3px;display:block;}
 
 /* LOGOS */
@@ -102,14 +102,14 @@ section{padding:6rem 4rem;}
 .step-card.step-wide{grid-column:span 2;}
 .step-card{background:var(--card);padding:2rem 1.4rem;position:relative;transition:background 0.3s;}
 .step-card:hover{background:#181b28;}
-.step-num{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;color:rgba(255,98,0,0.14);line-height:1;margin-bottom:1rem;}
-.step-icon-wrap{width:40px;height:40px;border-radius:10px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;}
+.step-num{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;color:rgba(255,107,0,0.14);line-height:1;margin-bottom:1rem;}
+.step-icon-wrap{width:40px;height:40px;border-radius:10px;background:var(--amber-dim);border:1px solid rgba(255,107,0,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;}
 .step-icon-wrap svg{width:20px;height:20px;stroke:var(--amber2);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
 .step-icon-wrap.red-tint{background:var(--red-dim);border-color:rgba(255,59,59,0.2);}
 .step-icon-wrap.red-tint svg{stroke:#ff7b7b;}
 .step-card h3{font-size:0.92rem;font-weight:600;margin-bottom:0.4rem;}
 .step-card p{font-size:0.82rem;color:var(--muted2);line-height:1.6;}
-.step-badge{display:inline-block;font-size:0.62rem;font-weight:600;padding:0.18rem 0.55rem;border-radius:100px;margin-top:0.6rem;letter-spacing:0.04em;background:var(--amber-dim);color:var(--amber2);border:1px solid rgba(255,98,0,0.25);}
+.step-badge{display:inline-block;font-size:0.62rem;font-weight:600;padding:0.18rem 0.55rem;border-radius:100px;margin-top:0.6rem;letter-spacing:0.04em;background:var(--amber-dim);color:var(--amber2);border:1px solid rgba(255,107,0,0.25);}
 
 /* FIDELITY */
 .fidelity-inner{max-width:1100px;margin:0 auto;}
@@ -151,13 +151,13 @@ section{padding:6rem 4rem;}
 .toc-preview-label{font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.8rem;}
 .toc-items{display:flex;flex-direction:column;gap:0.5rem;}
 .toc-item{display:flex;align-items:center;gap:10px;font-size:0.82rem;color:var(--muted2);}
-.toc-num{width:20px;height:20px;border-radius:5px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);color:var(--amber2);font-size:0.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.toc-num{width:20px;height:20px;border-radius:5px;background:var(--amber-dim);border:1px solid rgba(255,107,0,0.2);color:var(--amber2);font-size:0.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .toc-item span{color:var(--text);font-size:0.82rem;}
 .wc-selector{margin-top:1.4rem;border-top:1px solid var(--border);padding-top:1.2rem;}
 .wc-label{font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.8rem;}
 .wc-options{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
 .wc-option{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:0.7rem 0.9rem;cursor:pointer;transition:all 0.2s;}
-.wc-option.selected{border-color:rgba(255,98,0,0.4);background:var(--amber-dim);}
+.wc-option.selected{border-color:rgba(255,107,0,0.4);background:var(--amber-dim);}
 .wc-name{font-size:0.8rem;font-weight:600;color:var(--text);}
 .wc-words{font-size:0.72rem;color:var(--muted);}
 .warn-banner{margin-top:0.8rem;background:rgba(245,200,66,0.08);border:1px solid rgba(245,200,66,0.2);border-radius:8px;padding:0.65rem 0.9rem;font-size:0.76rem;color:var(--yellow);line-height:1.5;display:none;gap:8px;align-items:flex-start;}
@@ -169,14 +169,14 @@ section{padding:6rem 4rem;}
 .styles-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:3.5rem;}
 .style-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:2rem;}
 .style-tag{background:var(--card);border:1px solid var(--border2);border-radius:100px;padding:0.5rem 1.1rem;font-size:0.85rem;font-weight:500;color:var(--muted2);cursor:pointer;transition:all 0.2s;user-select:none;}
-.style-tag:hover,.style-tag.active{background:var(--amber-dim);border-color:rgba(255,98,0,0.4);color:var(--amber2);}
+.style-tag:hover,.style-tag.active{background:var(--amber-dim);border-color:rgba(255,107,0,0.4);color:var(--amber2);}
 .styles-preview{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.8rem;position:relative;overflow:hidden;min-height:240px;}
 .styles-preview::before{content:'';position:absolute;top:0;inset-inline-start:0;inset-inline-end:0;height:1px;background:linear-gradient(90deg,transparent,var(--amber),transparent);}
 .preview-label{font-size:0.7rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1rem;}
 .preview-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--text);margin-bottom:0.8rem;}
 .preview-text{font-size:0.88rem;color:var(--muted2);line-height:1.75;}
 .preview-text em{color:var(--amber2);font-style:normal;font-weight:600;}
-.preview-style-chip{display:inline-flex;align-items:center;gap:6px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);color:var(--amber2);font-size:0.7rem;font-weight:600;padding:0.2rem 0.65rem;border-radius:100px;margin-bottom:1.2rem;}
+.preview-style-chip{display:inline-flex;align-items:center;gap:6px;background:var(--amber-dim);border:1px solid rgba(255,107,0,0.2);color:var(--amber2);font-size:0.7rem;font-weight:600;padding:0.2rem 0.65rem;border-radius:100px;margin-bottom:1.2rem;}
 
 /* FEATURES */
 .features-inner{max-width:1100px;margin:0 auto;}
@@ -195,7 +195,7 @@ section{padding:6rem 4rem;}
 .feat-icon.green svg{stroke:var(--green);}
 .feat-card h3{font-size:0.98rem;font-weight:600;margin-bottom:0.5rem;}
 .feat-card p{font-size:0.86rem;color:var(--muted2);line-height:1.65;}
-.feat-new{display:inline-block;font-size:0.62rem;font-weight:700;background:var(--amber-dim);color:var(--amber2);border:1px solid rgba(255,98,0,0.25);padding:0.15rem 0.5rem;border-radius:100px;margin-inline-start:6px;vertical-align:middle;letter-spacing:0.04em;}
+.feat-new{display:inline-block;font-size:0.62rem;font-weight:700;background:var(--amber-dim);color:var(--amber2);border:1px solid rgba(255,107,0,0.25);padding:0.15rem 0.5rem;border-radius:100px;margin-inline-start:6px;vertical-align:middle;letter-spacing:0.04em;}
 
 /* TESTIMONIALS */
 .testimonials-inner{max-width:1100px;margin:0 auto;}
@@ -219,7 +219,7 @@ section{padding:6rem 4rem;}
 .pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3.5rem;text-align:start;}
 .plan-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem 1.8rem;position:relative;transition:border-color 0.3s,transform 0.3s;}
 .plan-card:hover{transform:translateY(-4px);}
-.plan-card.popular{border-color:rgba(255,98,0,0.4);background:linear-gradient(160deg,#1a1c28 0%,#141620 100%);}
+.plan-card.popular{border-color:rgba(255,107,0,0.4);background:linear-gradient(160deg,#1a1c28 0%,#141620 100%);}
 .popular-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--amber);color:#1a1200;font-size:0.72rem;font-weight:700;padding:0.28rem 1rem;border-radius:100px;letter-spacing:0.05em;text-transform:uppercase;white-space:nowrap;}
 .plan-name{font-size:0.8rem;font-weight:600;color:var(--muted2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.8rem;}
 .plan-price{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:900;line-height:1;margin-bottom:0.3rem;}
@@ -230,7 +230,7 @@ section{padding:6rem 4rem;}
 .plan-divider{height:1px;background:var(--border);margin:1.2rem 0;}
 .plan-features{list-style:none;display:flex;flex-direction:column;gap:0.65rem;}
 .plan-features li{font-size:0.85rem;color:var(--muted2);display:flex;align-items:flex-start;gap:8px;}
-.chk{width:16px;height:16px;flex-shrink:0;border-radius:50%;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.3);display:flex;align-items:center;justify-content:center;font-size:0.6rem;color:var(--amber);margin-top:2px;}
+.chk{width:16px;height:16px;flex-shrink:0;border-radius:50%;background:var(--amber-dim);border:1px solid rgba(255,107,0,0.3);display:flex;align-items:center;justify-content:center;font-size:0.6rem;color:var(--amber);margin-top:2px;}
 .plan-features li.dimmed{color:var(--muted);}
 .plan-features li.dimmed .chk{background:rgba(255,255,255,0.04);border-color:var(--border);color:transparent;}
 .plan-btn{display:block;text-align:center;margin-top:1.8rem;padding:0.75rem;border-radius:9px;font-size:0.9rem;font-weight:600;text-decoration:none;transition:all 0.2s;}
@@ -241,16 +241,16 @@ section{padding:6rem 4rem;}
 
 /* CTA */
 .cta-section{background:var(--bg);text-align:center;position:relative;overflow:hidden;}
-.cta-orb{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;border-radius:50%;background:radial-gradient(ellipse,rgba(255,98,0,0.07) 0%,transparent 70%);pointer-events:none;}
+.cta-orb{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;border-radius:50%;background:radial-gradient(ellipse,rgba(255,107,0,0.07) 0%,transparent 70%);pointer-events:none;}
 .cta-inner{position:relative;z-index:1;max-width:680px;margin:0 auto;}
 
 /* FOOTER */
-footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding:3.5rem 4rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;}
+footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 4rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;}
 .footer-brand{font-size:0.82rem;color:var(--muted);}
 .footer-brand a{color:var(--amber);text-decoration:none;}
 .footer-links{display:flex;gap:2rem;flex-wrap:wrap;}
 .footer-links a{font-size:1rem;font-weight:600;color:var(--text);text-decoration:none;transition:color 0.2s;}
-.footer-links a:hover{color:var(--brand-outline);}
+.footer-links a:hover{color:var(--amber);}
 
 /* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
@@ -328,7 +328,7 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
     Novo: Somente suas fontes — cada fato rastreável até o que você forneceu
   </div>
   <h1>Encontre o tópico. Reúna as fontes.<br><em>Publique o livro — em qualquer idioma, impresso ou em áudio.</em></h1>
-  <p class="hero-sub">O TubeBook não transcreve — ele <strong>escreve um livro completo</strong>. Comece vendo <strong>o que os leitores realmente procuram</strong>, adicione vídeos, artigos, documentos ou seu próprio manuscrito, depois escolha o quão fiel seguir e aprove o sumário antes que uma única palavra seja escrita. <strong style="color:var(--amber2);">Contas gratuitas recebem 100 créditos todo mês</strong> — com as mesmas ferramentas de criação, edição, arte e exportação de todos os planos pagos. Por padrão, cada fato do livro vem de <strong>suas fontes e nada mais</strong>.</p>
+  <p class="hero-sub">O TubeBook não transcreve — ele <strong>escreve um livro completo</strong>. Comece vendo <strong>o que os leitores realmente estão procurando</strong>, adicione vídeos, artigos, documentos ou seu próprio manuscrito, depois escolha o quão fiel seguir a eles e aprove o esboço antes que uma única palavra seja escrita. <strong style="color:var(--amber2);">Contas gratuitas recebem 100 créditos todo mês</strong> — com as mesmas ferramentas de criação, edição, arte e exportação de todos os planos pagos. Por padrão, cada fato no livro vem de <strong>suas fontes e nada mais</strong>.</p>
   <div class="hero-actions">
     <a href="https://app.tubebook.org/signup" class="btn-primary">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l-4 4-4-4"/><circle cx="12" cy="12" r="10"/></svg>
@@ -402,7 +402,7 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
         <div class="step-num">02</div>
         <div class="step-icon-wrap red-tint"><svg viewBox="0 0 24 24"><path d="M15 10l-4 4-4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
         <h3>Adicione Suas Fontes</h3>
-        <p>Deixe o TubeBook selecionar até 25 vídeos, artigos e documentos para o seu tópico — apenas aqueles que ele consegue ler — ou adicione os seus: URLs do YouTube, páginas da web, <strong>arquivos Word, PowerPoint e PDF</strong>, ou cole um manuscrito inteiro de 500 páginas. Até 25 fontes por livro.</p>
+        <p>Deixe o TubeBook selecionar até 25 vídeos, artigos e documentos para o seu tópico — apenas os que ele consegue ler — ou adicione os seus: URLs do YouTube, páginas da web, <strong>arquivos Word, PowerPoint e PDF</strong>, ou cole um manuscrito de 500 páginas. Até 25 fontes por livro.</p>
         <span class="step-badge">Novo</span>
       </div>
       <div class="step-card">
@@ -429,7 +429,7 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
         <div class="step-num">06</div>
         <div class="step-icon-wrap"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
         <h3>Verificação de Qualidade</h3>
-        <p>Cada capítulo passa por uma segunda revisão antes de você vê-lo: uma edição de linha para estrutura e legibilidade, e depois uma verificação de integridade que <strong>completa um capítulo cortado no meio de uma frase</strong>, remove qualquer instrução que vazou para o texto, corrige títulos repetidos ou numerados e aplica as regras tipográficas do idioma do livro. A maioria das ferramentas entrega o primeiro rascunho. Esta é a etapa que o transforma em manuscrito.</p>
+        <p>Cada capítulo passa por uma segunda revisão antes que você o veja: uma edição de linha para estrutura e legibilidade, e depois uma verificação de integridade que <strong>completa um capítulo cortado no meio da frase</strong>, remove qualquer instrução que vazou para a prosa, corrige títulos repetidos ou numerados e aplica as regras tipográficas do idioma do livro. A maioria das ferramentas entrega o primeiro rascunho. Esta é a passagem que o transforma em manuscrito.</p>
         <span class="step-badge">Novo</span>
       </div>
       <div class="step-card step-wide">
@@ -500,15 +500,15 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
         <p class="section-sub" style="max-width:100%;">Cada livro sai otimizado para os lugares onde leitores realmente procuram: busca da Amazon, Google e pipelines de ingestão de lojas. Sem lição de casa de SEO.</p>
         <div style="margin-top:2rem;display:flex;flex-direction:column;gap:1rem;">
           <div style="display:flex;gap:12px;align-items:flex-start;">
-            <div style="width:32px;height:32px;border-radius:8px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.8rem;color:var(--amber2);font-weight:700;">1</div>
+            <div style="width:32px;height:32px;border-radius:8px;background:var(--amber-dim);border:1px solid rgba(255,107,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.8rem;color:var(--amber2);font-weight:700;">1</div>
             <div><div style="font-size:0.9rem;font-weight:600;margin-bottom:0.2rem;">Títulos e subtítulos otimizados para busca</div><div style="font-size:0.84rem;color:var(--muted2);">Os subtítulos são escritos para conter as frases que leitores realmente digitam na Amazon e no Google — a superfície de ranqueamento mais forte que um autor controla.</div></div>
           </div>
           <div style="display:flex;gap:12px;align-items:flex-start;">
-            <div style="width:32px;height:32px;border-radius:8px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.8rem;color:var(--amber2);font-weight:700;">2</div>
+            <div style="width:32px;height:32px;border-radius:8px;background:var(--amber-dim);border:1px solid rgba(255,107,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.8rem;color:var(--amber2);font-weight:700;">2</div>
             <div><div style="font-size:0.9rem;font-weight:600;margin-bottom:0.2rem;">Metadados embutidos em cada arquivo</div><div style="font-size:0.84rem;color:var(--muted2);">PDF, EPUB, DOCX e PPTX vêm com título, autor, descrição, palavras-chave e idioma embutidos no arquivo — o que as lojas e mecanismos de busca realmente leem.</div></div>
           </div>
           <div style="display:flex;gap:12px;align-items:flex-start;">
-            <div style="width:32px;height:32px;border-radius:8px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.8rem;color:var(--amber2);font-weight:700;">3</div>
+            <div style="width:32px;height:32px;border-radius:8px;background:var(--amber-dim);border:1px solid rgba(255,107,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.8rem;color:var(--amber2);font-weight:700;">3</div>
             <div><div style="font-size:0.9rem;font-weight:600;margin-bottom:0.2rem;">Kit KDP completo por livro</div><div style="font-size:0.84rem;color:var(--muted2);">Descrição pronta para Amazon (texto simples + HTML formatado), 7 palavras-chave de busca, 3 sugestões de categoria, texto para contracapa e largura exata da lombada — um clique para copiar cada.</div></div>
           </div>
         </div>
@@ -564,7 +564,7 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
           <div class="preview-style-chip" id="style-chip">✦ Profissional</div>
           <div class="preview-label">Parágrafo de exemplo — Capítulo 2</div>
           <div class="preview-title">O Framework Central Explicado</div>
-          <div class="preview-text" id="style-preview-text">O framework a seguir fornece uma abordagem sistemática para otimizar seu fluxo de trabalho. Ao implementar essas <em>metodologias baseadas em evidências</em>, as organizações podem alcançar melhorias mensuráveis na eficiência operacional.</div>
+          <div class="preview-text" id="style-preview-text">O seguinte framework fornece uma abordagem sistemática para otimizar seu fluxo de trabalho. Ao implementar essas <em>metodologias baseadas em evidências</em>, as organizações podem alcançar melhorias mensuráveis na eficiência operacional.</div>
         </div>
         <p style="font-size:0.78rem;color:var(--muted);margin-top:1rem;text-align:center;">Clique em qualquer estilo para pré-visualizar o tom da IA</p>
       </div>
@@ -583,17 +583,17 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
       <div class="feat-card">
         <div class="feat-icon amber"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
         <h3>Encontre um Tópico <span class="feat-new">Novo</span></h3>
-        <p>Não sabe sobre o que escrever? Veja o que está em alta nos EUA, Reino Unido, Alemanha, Canadá, Austrália e França — grátis. Depois, veja as frases que os leitores realmente digitam na Amazon, quantos livros já competem, e receba uma lista dos melhores vídeos e artigos para começar. <strong>Pesquise demanda, não adivinhe.</strong></p>
+        <p>Não sabe sobre o que escrever? Veja o que está em alta nos EUA, Reino Unido, Alemanha, Canadá, Austrália e França — grátis. Depois veja as frases que os leitores realmente digitam na Amazon, quantos livros já competem, e receba uma lista dos melhores vídeos e artigos para construir. <strong>Demanda de pesquisa, não adivinhação.</strong></p>
       </div>
       <div class="feat-card">
         <div class="feat-icon green"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
         <h3>Livros Multi-Fonte <span class="feat-new">Novo</span></h3>
-        <p>Combine até 25 vídeos do YouTube, artigos da web, <strong>documentos do Word, PowerPoint e PDF</strong> e texto colado em um único livro — enviados do seu computador ou por link. Cole um manuscrito inteiro não publicado, de até 500 páginas impressas, e tenha-o reestruturado. O TubeBook lê tudo, cria um único esboço para o conjunto e escreve cada capítulo a partir das fontes que realmente o cobrem.</p>
+        <p>Combine até 25 vídeos do YouTube, artigos da web, <strong>documentos Word, PowerPoint e PDF</strong> e texto colado em um único livro — enviados do seu computador ou por link. Cole um manuscrito inédito inteiro, de até 500 páginas impressas, e tenha-o reestruturado. O TubeBook lê tudo, cria um sumário único para o conjunto e depois escreve cada capítulo a partir das fontes que realmente o cobrem.</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon blue"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
         <h3>Apenas Suas Fontes <span class="feat-new">Novo</span></h3>
-        <p>O TubeBook nunca pesquisa na web enquanto escreve. Por padrão, ele também não usa o conhecimento próprio da IA — <strong>cada fato, número, nome e exemplo remonta ao material que você forneceu</strong>, para que você possa garantir seu próprio livro. Quer também o conhecimento de fundo do modelo? Ative-o deliberadamente, e esses livros recebem um selo para você saber a diferença. Nenhuma das configurações pode inventar estatísticas, estudos ou citações.</p>
+        <p>O TubeBook nunca pesquisa na web enquanto escreve. Por padrão, também não usa o conhecimento próprio da IA — <strong>cada fato, número, nome e exemplo remonta ao material que você forneceu</strong>, para que você possa defender seu próprio livro. Quer também o conhecimento de fundo do modelo? Ative-o deliberadamente, e esses livros recebem um selo para você saber a diferença. Nenhuma configuração pode inventar uma estatística, um estudo ou uma citação.</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon green"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
@@ -603,72 +603,72 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
       <div class="feat-card">
         <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
         <h3>Verificação de Risco de Publicação <span class="feat-new">Novo</span></h3>
-        <p>Antes de publicar, o TubeBook revisa seu título, subtítulo e palavras-chave KDP em busca de marcas registradas, franquias, autores vivos e alegações de endosso oficial — os metadados que o Amazon suprime. Ele sinaliza cada um, explica por que importa, sugere uma redação mais segura e linka direto para o registro de marcas dos EUA para ver quem é o dono do nome. Em todos os planos, um crédito verifica todas as marcas sinalizadas de uma vez e mostra o proprietário e se está ativa. Nunca bloqueia você e nunca diz que um livro é seguro: <strong>os direitos são sempre seus para verificar.</strong></p>
+        <p>Antes de publicar, o TubeBook revisa seu título, subtítulo e palavras-chave do KDP em busca de marcas, franquias, autores vivos e alegações de endosso oficial — os metadados pelos quais a Amazon suprime livros. Ele sinaliza cada um, explica por que importa, sugere uma redação mais segura e linka direto para o registro de marcas dos EUA para ver quem é o dono do nome. Em todos os planos, um crédito verifica todas as marcas sinalizadas de uma vez e mostra o proprietário e se está ativa. Nunca bloqueia você e nunca diz que um livro é seguro: <strong>os direitos são sempre seus para verificar.</strong></p>
       </div>
       <div class="feat-card">
         <div class="feat-icon amber"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
         <h3>SEO &amp; KDP Pronto <span class="feat-new">Novo</span></h3>
-        <p>Subtítulos otimizados para palavras-chave, metadados embutidos em cada arquivo e um pacote KDP copiar-e-colar: descrição, 7 palavras-chave, categorias, texto da contracapa. Pesquise um tópico primeiro e essas palavras-chave vêm de <strong>frases de busca reais observadas</strong> em vez de suposições.</p>
+        <p>Subtítulos otimizados para palavras-chave, metadados incorporados em cada arquivo e um pacote KDP copiar-e-colar: descrição, 7 palavras-chave, categorias, texto da contracapa. Pesquise um tópico primeiro e essas palavras-chave virão de <strong>frases de pesquisa reais observadas</strong> em vez de adivinhação.</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon red"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div>
         <h3>Aprovação &amp; Partes do Livro <span class="feat-new">Novo</span></h3>
-        <p>Revise e edite a estrutura de capítulos antes de começar a escrever e marque exatamente quais partes o livro contém — introdução, conclusão, sobre o autor e mais. Os frontais são de nível profissional: uma página de direitos autorais real com selo editorial, cidade, edição, créditos de design e um aviso opcional de serviços profissionais, um prefácio com a assinatura do colaborador e um código QR para sua edição impressa. Qualquer coisa que você deixar em branco é simplesmente omitida. Escolha se os capítulos terminam com <strong>Principais Conclusões</strong> e um <strong>Prompt de Reflexão</strong> — ou nenhum. Nada é redigido até você aprovar, gerações falhas são reembolsadas, e mudar de ideia depois reconstrói os arquivos gratuitamente.</p>
+        <p>Revise e edite a estrutura dos capítulos antes de começar a escrever, e marque exatamente quais partes o livro contém — introdução, conclusão, sobre o autor e mais. Os elementos pré-textuais são de nível editorial: uma página de direitos autorais real com selo editorial, cidade, edição, créditos de design e um aviso opcional de serviços profissionais, um prefácio com assinatura do colaborador e um código QR para sua edição impressa. Qualquer coisa que você deixar em branco é simplesmente omitida. Escolha se os capítulos terminam com <strong>Principais Conclusões</strong> e um prompt de <strong>Reflexão</strong> — ou nenhum. Nada é rascunhado até você aprovar, gerações falhas são reembolsadas, e mudar de ideia depois reconstrói os arquivos gratuitamente.</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon red"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
         <h3>Três Tamanhos <span class="feat-new">Novo</span></h3>
-        <p>Um ímã de leads de 10 a 25 páginas para crescer sua lista, um livro curto de 25 a 50 páginas que você pode vender como brochura no KDP, ou um livro comercial completo de 25.000+ palavras — você escolhe antes de gerar. Defina o tipo em <strong>12, 14 ou 16 pt em letras grandes</strong> para leitores mais velhos, escolha entre oito tamanhos de corte KDP e doze fontes, e veja a estimativa de páginas atualizar ao vivo contra o mínimo de 24 páginas do Amazon para brochura.</p>
+        <p>Um lead magnet de 10 a 25 páginas para crescer sua lista, um livro curto de 25 a 50 páginas que você pode vender como brochura no KDP, ou um livro comercial completo de 25.000+ palavras — você escolhe antes de gerar. Defina o tipo em <strong>12, 14 ou 16 pt verdadeiro para letras grandes</strong> para leitores mais velhos, escolha entre oito tamanhos de corte do KDP e doze fontes, e veja a estimativa de páginas atualizar ao vivo contra o mínimo de 24 páginas da Amazon para brochura.</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon red"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
         <h3>Capa &amp; Ilustrações Você Escolhe <span class="feat-new">Novo</span></h3>
-        <p>Para a capa e cada capítulo, escolha <strong>três opções geradas por IA</strong>, pesquise <strong>fotos de banco de imagens</strong> do Unsplash, Pexels e Pixabay, ou <strong>envie sua própria arte</strong> — tudo em todos os planos. Créditos e links de fotos de banco de imagens são preservados no livro exportado. Posicione cada imagem de capítulo automaticamente ou escolha a seção e o parágrafo exatos após os quais ela aparece. Escreva um briefing de arte para uma linguagem visual consistente, compare opções lado a lado e reconstrua somente depois de escolher. 14 predefinições de design, 1 crédito por ilustração gerada, arte da capa gratuita.</p>
+        <p>Para a capa e cada capítulo, escolha <strong>três opções geradas por IA</strong>, pesquise <strong>fotos de banco de imagens</strong> do Unsplash, Pexels e Pixabay, ou <strong>envie sua própria arte</strong> — tudo em todos os planos. Créditos de fotos de banco de imagens e links são preservados no livro exportado. Posicione cada imagem de capítulo automaticamente ou escolha a seção e o parágrafo exatos após os quais ela aparece. Escreva um briefing de arte para uma linguagem visual consistente, compare opções lado a lado e reconstrua somente depois de escolher. 14 predefinições de design, 1 crédito por ilustração gerada, arte da capa grátis.</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon amber"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
         <h3>Doze modelos de livro <span class="feat-new">Novo</span></h3>
-        <p>Escolha <strong>que tipo de livro</strong> antes de escrevê-lo — um guia prático, um plano de 7 dias, um caderno de exercícios, um livro de leitura diária, um guia de campo, um manual de referência. Cada um define a extensão, o tom e os blocos de capítulo, e muda a forma como um capítulo é realmente construído: um guia de campo usa os mesmos três ritmos todas as vezes, um livro de leitura diária se sustenta sozinho em cada entrada, um caderno de exercícios dá mais espaço ao trabalho do leitor do que à explicação. Tudo o que um modelo define é um controle que você ainda pode alterar.</p>
+        <p>Escolha <strong>que tipo de livro</strong> antes de escrevê-lo — um guia prático, um plano de 7 dias, um livro de exercícios, um leitor diário, um guia de campo, um manual de referência. Cada um define o comprimento, o tom e os blocos de capítulo, e muda como um capítulo é realmente construído: um guia de campo usa os mesmos três ritmos toda vez, um leitor diário se sustenta sozinho em cada entrada, um livro de exercícios dá mais espaço ao trabalho do leitor do que à explicação. Tudo o que um modelo define é um controle que você ainda pode alterar.</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
         <h3>Escrito no seu próprio estilo <span class="feat-new">Novo</span></h3>
-        <p>Envie algo que você já escreveu — um post, um capítulo, um ensaio — e seus livros são escritos <strong>o seu jeito de escrever</strong>: seu ritmo, suas estruturas de frase, como você abre uma ideia e como a conclui. Em vez do registro plano e cuidadoso que a escrita de IA usa por padrão. Seus arquivos são lidos uma vez e depois excluídos; nada é usado para treinar um modelo, e sua escrita nunca toca os livros de ninguém.</p>
+        <p>Envie algo que você já escreveu — um post, um capítulo, um ensaio — e seus livros serão escritos <strong>do seu jeito</strong>: seu ritmo, suas estruturas de frase, como você abre uma ideia e como a conclui. Em vez do registro plano e cuidadoso que a IA normalmente usa. Seus arquivos são lidos uma vez e depois excluídos; nada é usado para treinar um modelo, e sua escrita nunca toca os livros de mais ninguém.</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
         <h3>Uma segunda opinião enquanto você edita <span class="feat-new">Novo</span></h3>
-        <p>Pergunte sobre direção, ritmo ou se um capítulo merece o tamanho que tem — e receba uma resposta de algo que leu seu esboço e o capítulo à sua frente. Peça uma mudança na redação e ela volta como <strong>uma proposta que você lê por inteiro e aceita ou descarta</strong>. Nunca edita seu livro por conta própria.</p>
+        <p>Pergunte sobre direção, ritmo, ou se um capítulo merece seu comprimento — e receba uma resposta de algo que leu seu sumário e o capítulo à sua frente. Peça uma mudança na redação e ela volta como <strong>uma proposta que você lê por completo e aceita ou descarta</strong>. Nunca edita seu livro por conta própria.</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
         <h3>Edite depois de escrito <span class="feat-new">Novo</span></h3>
-        <p>Um livro pronto não é um livro congelado. Altere qualquer parágrafo você mesmo, de graça, aplique uma correção focada de IA de um revisor por <strong>0,1 crédito</strong>, ou peça uma <strong>reescrita completa de seção por 1 crédito</strong> no mesmo estilo, fidelidade e idioma do resto do livro. Os arquivos existentes continuam funcionando enquanto você edita e são reconstruídos quando você termina.</p>
+        <p>Um livro acabado não é um livro congelado. Altere qualquer parágrafo você mesmo gratuitamente, aplique a correção focada de um revisor com IA por <strong>0,1 crédito</strong>, ou tenha uma <strong>seção inteira reescrita por 1 crédito</strong> no mesmo estilo, fidelidade e idioma do resto do livro. Os arquivos existentes continuam funcionando enquanto você edita e são reconstruídos quando você termina.</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
         <h3>Cada capítulo verificado antes de você ver <span class="feat-new">Novo</span></h3>
-        <p>Um modelo de linguagem para no meio da frase quando o espaço acaba, e o rascunho parece completo porque o parágrafo anterior está bem escrito. Então cada capítulo passa por uma segunda revisão: uma edição de linha para estrutura e depois uma verificação que <strong>escreve o final que faltava de um capítulo cortado</strong>, exclui qualquer instrução que vazou para o texto, substitui títulos repetidos palavra por palavra e aplica a tipografia do idioma do livro — os espaços estreitos antes da pontuação francesa, as aspas corretas, os travessões corretos. Você nunca o executa e ele nunca custa um crédito. Acontece no caminho para seus arquivos, e você o vê acontecer na barra de progresso.</p>
+        <p>Um modelo de linguagem para no meio da frase quando fica sem espaço, e o rascunho parece completo porque o parágrafo anterior está bem. Então cada capítulo recebe uma segunda passagem: uma edição de linha para estrutura, depois uma verificação que <strong>escreve o final que falta de um capítulo cortado</strong>, exclui qualquer instrução que vazou para a prosa, substitui títulos repetidos palavra por palavra e aplica a tipografia do idioma do livro — os espaços estreitos antes da pontuação francesa, as aspas corretas, os travessões corretos. Você nunca executa e nunca custa um crédito. Acontece no caminho para seus arquivos, e você vê acontecer na barra de progresso.</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon amber"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="m8 11 2 2 4-4"/></svg></div>
         <h3>Revisão antes de publicar <span class="feat-new">Novo</span></h3>
-        <p>Gramática, repetição e clareza capítulo por capítulo — além dos problemas que nenhum capítulo isolado mostra: um termo nomeado de duas formas, uma ideia apresentada depois de usada, uma promessa nunca cumprida. Cada achado <strong>cita as palavras exatas</strong>, e clicar em um leva você direto a elas. Grátis, quantas vezes você executar.</p>
+        <p>Gramática, repetição e clareza capítulo por capítulo — além dos problemas que nenhum capítulo isolado pode mostrar: um termo nomeado de duas maneiras diferentes, uma ideia introduzida depois de usada, uma promessa nunca cumprida. Cada descoberta <strong>cita as palavras exatas</strong>, e clicar em uma leva você direto a elas. Grátis, quantas vezes você executar.</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
         <h3>Referências que são verdadeiras <span class="feat-new">Novo</span></h3>
-        <p>Uma bibliografia construída a partir de <strong>as fontes com que seu livro foi escrito</strong>, agrupadas pelo capítulo que usou cada uma — não uma lista inventada por um modelo para parecer acadêmica. Ative para um livro que você terminou no mês passado e reconstrua.</p>
+        <p>Uma bibliografia construída a partir de <strong>as fontes das quais seu livro foi escrito</strong>, agrupada pelo capítulo que usou cada uma — não uma lista que um modelo inventou para parecer acadêmica. Ative-a para um livro que você terminou no mês passado e reconstrua.</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M5 3v18l15-9z"/></svg></div>
         <h3>Audiobooks <span class="feat-new">Novo</span></h3>
-        <p>Transforme qualquer livro pronto em um audiolivro narrado. Cada parte é narrada — capítulos e material de abertura e encerramento — então você recebe <strong>um arquivo por parte</strong> e pode então <strong>combinar as partes que escolher em um único arquivo</strong>. Um clique também cria um <strong>pacote de distribuição</strong>: cada parte como MP3 numerado em <strong>192 kbps CBR, 44,1 kHz</strong>, nivelado para o volume que os agregadores verificam no upload, além de uma <strong>capa 3000&times;3000</strong>, uma <strong>amostra de varejo de cinco minutos</strong> e metadados que revelam a narração por IA — os arquivos que um agregador pede, no formato que eles pedem. Narradores masculinos e femininos em dez idiomas na voz padrão, ou uma voz premium natural em inglês e espanhol, e você ouve uma amostra antes de publicar. Suas listas, títulos e abreviações são reescritos para o ouvido, para que soe como um narrador, não como um leitor de tela. Venda direto no Gumroad, Payhip, Shopify ou no seu próprio site — ou alcance o Audible por meio de um agregador que aceite narração por IA (<a href="help.html#audiobooks">o que saber primeiro</a>).</p>
+        <p>Transforme qualquer livro acabado em um audiolivro narrado. Cada parte é narrada — capítulos e elementos pré e pós-textuais — então você obtém <strong>um arquivo por parte</strong> e pode então <strong>combinar as partes escolhidas em um único arquivo</strong>. Um clique também cria um <strong>pacote de distribuição</strong>: cada parte como um MP3 numerado a <strong>192 kbps CBR, 44,1 kHz</strong>, nivelado para o volume que os agregadores verificam no upload, além de uma <strong>capa 3000&times;3000</strong>, uma <strong>amostra de varejo de cinco minutos</strong> e metadados que divulgam a narração por IA — os arquivos que um agregador pede, na forma que pede. Narradores masculinos e femininos em dez idiomas na voz padrão, ou uma voz premium natural em inglês e espanhol, e você ouve uma amostra antes de publicar. Suas listas, títulos e abreviações são reescritos para o ouvido, para que soe como um narrador em vez de um leitor de tela. Venda diretamente no Gumroad, Payhip, Shopify ou seu próprio site — ou alcance o Audible por meio de um agregador que aceita narração por IA (<a href="help.html#audiobooks">o que saber primeiro</a>).</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon green"><svg viewBox="0 0 24 24"><path d="M2 12h20"/><path d="M12 2a15 15 0 010 20 15 15 0 010-20z"/><circle cx="12" cy="12" r="10"/></svg></div>
         <h3>Sete Idiomas <span class="feat-new">Novo</span></h3>
-        <p>Sete no total: sua edição original em inglês mais francês, espanhol, alemão, português, italiano e holandês. Cada uma se torna <strong>seu próprio livro</strong> — que é o que a Amazon precisa, já que cada idioma é uma listagem separada. Sua arte de capa e ilustrações são reutilizadas e as palavras-chave são pesquisadas do zero para aquele mercado, então uma segunda edição custa cerca de 40% da primeira. <strong>Cada uma delas também pode ser narrada</strong>, masculino ou feminino, então uma edição traduzida pode ser lançada como audiolivro exatamente como o original.</p>
+        <p>Sete no total: sua edição original em inglês mais francês, espanhol, alemão, português, italiano e holandês. Cada uma se torna <strong>seu próprio livro</strong> — que é o que a Amazon precisa, já que cada idioma é uma listagem separada. Sua arte de capa e ilustrações são reutilizadas e as palavras-chave são pesquisadas do zero para aquele mercado, então uma segunda edição custa cerca de 40% da primeira. <strong>Cada uma delas também pode ser narrada</strong>, masculina ou feminina, então uma edição traduzida pode ser lançada como audiolivro exatamente como a original.</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon blue"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
@@ -690,9 +690,9 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
       <div class="testi-card">
         <div class="stars">★★★★★</div>
         <div class="testi-tag green">Baixa Fidelidade — KDP</div>
-        <p class="testi-quote">Usei o modo Baixa Fidelidade em um vídeo de finanças públicas e obtive um <strong>ebook de 22.000 palavras</strong> Agora estou vendendo na Amazon KDP. O estilo de escrita que escolhi combinou perfeitamente com minha marca.</p>
+        <p class="testi-quote">Usei o modo Baixa Fidelidade em um vídeo de finanças públicas e obtive um <strong>ebook de 22.000 palavras</strong> que agora vendo na Amazon KDP. O estilo de escrita que escolhi combinou perfeitamente com minha marca.</p>
         <div class="testi-author">
-          <div class="testi-avatar" style="background:rgba(255,98,0,0.15);color:var(--amber2);">JM</div>
+          <div class="testi-avatar" style="background:rgba(255,107,0,0.15);color:var(--amber2);">JM</div>
           <div><div class="testi-name">James M.</div><div class="testi-role">Educador Financeiro, 180 mil inscritos</div></div>
         </div>
       </div>
@@ -708,7 +708,7 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
       <div class="testi-card">
         <div class="stars">★★★★★</div>
         <div class="testi-tag yellow">Smart Adapt — Isca Digital</div>
-        <p class="testi-quote">A prévia do sumário mudou tudo — editei dois capítulos antes de aprovar e o ebook final ficou exatamente como eu queria. <strong>Minha lista de e-mails cresceu 3× em dois meses.</strong></p>
+        <p class="testi-quote">A prévia do sumário mudou tudo — editei dois capítulos antes de aprovar e o ebook final ficou exatamente certo. <strong>Minha lista de e-mails cresceu 3× em dois meses.</strong></p>
         <div class="testi-author">
           <div class="testi-avatar" style="background:rgba(80,130,255,0.12);color:#7ab0ff;">AT</div>
           <div><div class="testi-name">Alex T.</div><div class="testi-role">Desenvolvedor &amp; Criador de Cursos</div></div>
@@ -724,7 +724,7 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
     <div class="fade-in-up">
       <span class="section-label">Preços</span>
       <h2 class="section-title">Preço simples baseado em créditos</h2>
-      <p class="section-sub" style="margin:0 auto;">Todos os planos funcionam com créditos — uma isca digital usa 30, um livro curto 60, um livro comercial completo 100, e cada fonte adicional soma 8. Pesquisa de tópicos custa <strong>5 créditos</strong> por nicho, e reabrir o mesmo nicho em até 14 dias é grátis. Uma isca digital com 5 fontes custa 30 + 4 &times; 8 = <strong>62 créditos</strong>. Todos os planos incluem pesquisa de tópicos, livros com múltiplas fontes, modos de fidelidade, estilos de escrita, revisão e aprovação do sumário e o kit de ferramentas de metadados KDP. Planos mensais reabastecem créditos automaticamente.</p>
+      <p class="section-sub" style="margin:0 auto;">Todos os planos funcionam com créditos — um lead magnet usa 30, um livro curto 60, um livro comercial completo 100, e cada fonte além da primeira adiciona 8. Pesquisa de tópico custa <strong>5 créditos</strong> por nicho, e reabrir o mesmo nicho em 14 dias é grátis. Um lead magnet com 5 fontes custa 30 + 4 &times; 8 = <strong>62 créditos</strong>. Todos os planos incluem pesquisa de tópico, livros com múltiplas fontes, modos de fidelidade, estilos de escrita, revisão e aprovação do sumário e o kit de metadados KDP. Planos mensais recarregam créditos automaticamente.</p>
     </div>
     <div class="pricing-grid fade-in-up">
       <div class="plan-card">
@@ -874,7 +874,7 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
     <div class="faq-list fade-in-up">
       <details class="faq-item">
         <summary>Preciso ser dono do vídeo que uso para criar?</summary>
-        <div class="faq-a"><p>Não, qualquer vídeo público do YouTube serve — mas o que você publica é de sua responsabilidade. É para isso que servem os três modos de fidelidade. <strong>Alta Fidelidade</strong> segue a estrutura do vídeo de perto e é adequado para conteúdo próprio; <strong>Inteligente</strong> e <strong>Baixo</strong> reconstruir as ideias em um texto substancialmente original, que é a opção mais segura para o vídeo de outra pessoa. As páginas da web são recuperadas apenas onde os termos do proprietário da página o permitem.</p></div>
+        <div class="faq-a"><p>Não, qualquer vídeo público do YouTube serve — mas o que você publica é de sua responsabilidade. É para isso que servem os três modos de fidelidade. <strong>Alta fidelidade</strong> segue a estrutura do vídeo de perto e é adequado para o seu próprio conteúdo; <strong>Inteligente</strong> e <strong>Baixa</strong> reconstroem as ideias em texto substancialmente original, que é a escolha mais segura para o vídeo de outra pessoa. As páginas da web são recuperadas apenas quando os termos do proprietário da página permitem.</p></div>
       </details>
       <details class="faq-item">
         <summary>A Amazon aceitará um livro escrito dessa forma?</summary>
@@ -894,11 +894,11 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
       </details>
       <details class="faq-item">
         <summary>Em quais idiomas posso publicar e narrar?</summary>
-        <div class="faq-a"><p>Você pode publicar em <strong>sete</strong> — inglês, francês, espanhol, português, alemão, italiano e holandês — e cada tradução vira seu próprio livro, que é o que a Amazon exige, já que cada idioma é uma listagem separada. A narração cobre <strong>todos esses sete mais chinês, japonês e coreano</strong> — dez no total, com um narrador masculino e um feminino em cada. Cada edição que você pode publicar, também pode transformar em audiolivro.</p></div>
+        <div class="faq-a"><p>Você pode publicar em <strong>sete</strong> idiomas — inglês, francês, espanhol, português, alemão, italiano e holandês — e cada tradução vira um livro próprio, que é o que a Amazon exige, já que cada idioma é uma listagem separada. A narração cobre <strong>todos esses sete mais chinês, japonês e coreano</strong> — dez no total, com um narrador masculino e um feminino em cada. Cada edição que você pode publicar, você também pode transformar em audiolivro.</p></div>
       </details>
       <details class="faq-item">
         <summary>Posso vender o audiolivro no Audible?</summary>
-        <div class="faq-a"><p>Através de um agregador, sim — Author's Republic, Kobo Writing Life e o programa de audiolivros do Spotify aceitam narração por IA e distribuem no catálogo do Audible, com divulgação. O fluxo de envio do ACX é para narração humana, a menos que o título seja <em>autorizado</em> com antecedência, então entre em contato com o ACX primeiro em vez de enviar e torcer. O pacote que construímos atende à especificação técnica que eles verificam; a permissão é a parte que você providencia.</p></div>
+        <div class="faq-a"><p>Através de um agregador, sim — Author's Republic, Kobo Writing Life e o programa de audiolivros do Spotify aceitam narração por IA e distribuem no catálogo do Audible, com divulgação. O fluxo de submissão do ACX é para narração humana, a menos que o título seja <em>autorizado</em> antecipadamente, então entre em contato com o ACX primeiro em vez de enviar e torcer. O pacote que montamos atende à especificação técnica que eles verificam; a permissão é a parte que você providencia.</p></div>
       </details>
       <details class="faq-item">
         <summary>O que está incluído no pacote do audiolivro?</summary>
@@ -926,7 +926,7 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
       </details>
       <details class="faq-item">
         <summary>Posso alterar o livro depois de gerado?</summary>
-        <div class="faq-a"><p>Sim — cada palavra dele. <strong>Edite o texto</strong> permite que você altere qualquer coisa manualmente de graça, aplique uma sugestão focada de IA de um revisor por 0,1 crédito, ou reescreva uma seção inteira por 1 crédito no mesmo estilo e idioma do resto do livro. Seus arquivos existentes continuam funcionando com o texto anterior até que você os reconstrua, então você nunca fica sem downloads no meio de uma edição.</p></div>
+        <div class="faq-a"><p>Sim — cada palavra. <strong>Editar o texto</strong> permite que você altere qualquer coisa manualmente de graça, aplique uma sugestão focada de IA de um revisor por 0,1 crédito, ou reescreva uma seção inteira por 1 crédito no mesmo estilo e idioma do resto do livro. Seus arquivos existentes continuam funcionando com o texto anterior até você reconstruí-los, então você nunca fica sem downloads no meio de uma edição.</p></div>
       </details>
       <details class="faq-item">
         <summary>Ele verificará minha gramática antes de eu publicar?</summary>
@@ -934,7 +934,7 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
       </details>
       <details class="faq-item">
         <summary>Ele pode escrever no meu próprio estilo, e meu texto é usado para treiná-lo?</summary>
-        <div class="faq-a"><p>Pode, e não é. Envie algo que você já escreveu e uma <strong>descrição de como você escreve</strong> é elaborada a partir disso — comprimento e variação de frases, como você abre e fecha uma seção, se você se dirige ao leitor, seus hábitos de pontuação — e cada capítulo seguinte é escrito com essa descrição diante do escritor. Nenhum modelo é ajustado, nada que você enviar é usado para os livros de outras pessoas, e seus arquivos são <strong>excluídos assim que forem lidos</strong>. Ele muda visivelmente o registro, o ritmo e o vocabulário; não tornará o texto indistinguível do seu, e preferimos dizer isso a deixar você descobrir.</p></div>
+        <div class="faq-a"><p>Pode, e não é. Envie algo que você já escreveu e uma <strong>descrição de como você escreve</strong> é extraída disso — comprimento e variação de frases, como você abre e fecha uma seção, se você se dirige ao leitor, seus hábitos de pontuação — e cada capítulo seguinte é escrito com essa descrição diante do escritor. Nenhum modelo é ajustado, nada que você enviar é usado nos livros de outras pessoas, e seus arquivos são <strong>excluídos assim que são lidos</strong>. Isso muda registro, ritmo e vocabulário de forma perceptível; não tornará a escrita indistinguível da sua, e preferimos dizer isso a deixar você descobrir.</p></div>
       </details>
     </div>
   </div>
@@ -962,7 +962,7 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
     <a href="/pt/terms">Termos</a>
     <a href="/pt/contact">Contato</a>
   </div>
-  <div class="footer-note">TubeBook (tubebook.org) é um produto independente e <strong>não afiliado a nenhuma outra entidade ou aplicativo de IA que opere sob nome semelhante</strong>. O TubeBook é vendido exclusivamente pelo tubebook.org — não temos revendedores autorizados, ofertas vitalícias ou planos ilimitados.</div>
+  <div class="footer-note">TubeBook (tubebook.org) é um produto independente e <strong>não é afiliado a nenhuma outra entidade ou aplicativo de IA que opere com nome semelhante</strong>. O TubeBook é vendido exclusivamente através do tubebook.org — não temos revendedores autorizados, ofertas vitalícias ou planos ilimitados.</div>
 </footer>
 
 <script>

@@ -15,7 +15,7 @@
 :root {
   --bg: #08090d; --bg2: #0f1118; --bg3: #14171f; --card: #131620;
   --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
-  --amber: #ff6200;--brand-outline:#ff6b00; --amber2: #ff8c42; --amber-dim: rgba(255,98,0,0.12);
+  --amber:#ff6b00; --amber2:#ff9542; --amber-dim: rgba(255,107,0,0.12);
   --red: #ff3b3b; --red-dim: rgba(255,59,59,0.12);
   --green: #2ecc71; --green-dim: rgba(46,204,113,0.11);
   --text: #f0eee8; --muted: #7b7d8a; --muted2: #a0a3b1;
@@ -32,7 +32,7 @@ code, kbd { background: var(--bg3); border: 1px solid var(--border); padding: 2p
 nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 4rem; background: rgba(8,9,13,0.88); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); }
 .nav-logo { display: flex; align-items: center; gap: 10px; font-size: 1.2rem; font-weight: 700; color: var(--text); text-decoration: none; }
 .nav-logo:hover { text-decoration: none; }
-.logo-icon { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, #ff6200 0%, #cc4e00 100%); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0; }
+.logo-icon { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, #ff6b00 0%, #cc5700 100%); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0; }
 .logo-text span { color: var(--amber); }
 .nav-links { display: flex; align-items: center; gap: 2rem; }
 .nav-links a { color: var(--muted2); font-size: 0.875rem; text-decoration: none; transition: color 0.2s; }
@@ -43,7 +43,7 @@ nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center
 /* LAYOUT */
 .page-wrap { max-width: 860px; margin: 0 auto; padding: 0 2rem 6rem; }
 .page-header { padding: 4rem 0 2.5rem; border-bottom: 1px solid var(--border); margin-bottom: 3rem; position: relative; overflow: hidden; }
-.page-header::after { content: ''; position: absolute; top: 0; inset-inline-end: -40px; width: 340px; height: 220px; background: radial-gradient(ellipse, rgba(255,98,0,0.06) 0%, transparent 70%); pointer-events: none; }
+.page-header::after { content: ''; position: absolute; top: 0; inset-inline-end: -40px; width: 340px; height: 220px; background: radial-gradient(ellipse, rgba(255,107,0,0.06) 0%, transparent 70%); pointer-events: none; }
 .breadcrumb { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; display: flex; align-items: center; gap: 6px; }
 .breadcrumb a { color: var(--muted); text-decoration: none; }
 .breadcrumb a:hover { color: var(--amber); }
@@ -54,7 +54,7 @@ h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 2.8rem)
 
 /* TYPOGRAPHY */
 h2 { font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 700; color: var(--text); margin: 3rem 0 1rem; letter-spacing: -0.01em; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
-.sec-num { font-family: 'Outfit', sans-serif; font-size: 0.7rem; font-weight: 600; color: var(--amber); background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.22); padding: 0.15rem 0.55rem; border-radius: 100px; letter-spacing: 0.05em; flex-shrink: 0; }
+.sec-num { font-family: 'Outfit', sans-serif; font-size: 0.7rem; font-weight: 600; color: var(--amber); background: var(--amber-dim); border: 1px solid rgba(255,107,0,0.22); padding: 0.15rem 0.55rem; border-radius: 100px; letter-spacing: 0.05em; flex-shrink: 0; }
 h3 { font-size: 0.97rem; font-weight: 600; color: var(--text); margin: 1.5rem 0 0.5rem; }
 p { color: var(--muted2); line-height: 1.75; margin-bottom: 0.8rem; }
 ul, ol { color: var(--muted2); padding-inline-start: 1.4rem; line-height: 1.75; }
@@ -62,7 +62,7 @@ li { margin-bottom: 0.45rem; }
 
 /* CARDS */
 .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.6rem 1.8rem; margin: 1rem 0; position: relative; overflow: hidden; }
-.card::before { content: ''; position: absolute; top: 0; inset-inline-start: 0; inset-inline-end: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,98,0,0.18), transparent); }
+.card::before { content: ''; position: absolute; top: 0; inset-inline-start: 0; inset-inline-end: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,107,0,0.18), transparent); }
 
 /* TOC */
 .toc-box { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem 1.8rem; margin-bottom: 2.5rem; }
@@ -80,21 +80,21 @@ tr:last-child td { border-bottom: none; }
 td strong { color: var(--text); }
 
 /* PILLS */
-.pill { display: inline-block; background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.25); color: var(--amber2); font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.65rem; border-radius: 100px; letter-spacing: 0.04em; margin-inline-end: 6px; vertical-align: middle; }
+.pill { display: inline-block; background: var(--amber-dim); border: 1px solid rgba(255,107,0,0.25); color: var(--amber2); font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.65rem; border-radius: 100px; letter-spacing: 0.04em; margin-inline-end: 6px; vertical-align: middle; }
 
 /* ALERT BOXES */
 .alert-warn { background: rgba(255,59,59,0.07); border: 1px solid rgba(255,59,59,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: #ff9a9a; }
 .alert-tip { background: var(--green-dim); border: 1px solid rgba(46,204,113,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: #7be8a8; }
-.alert-info { background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: var(--amber2); }
+.alert-info { background: var(--amber-dim); border: 1px solid rgba(255,107,0,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: var(--amber2); }
 
 /* FOOTER */
-footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); padding: 2.5rem 4rem; }
+footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 2.5rem 4rem; }
 .footer-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
 .footer-brand { font-size: 0.82rem; color: var(--muted); }
 .footer-brand a { color: var(--amber); text-decoration: none; }
 .footer-links { display: flex; gap: 1.8rem; flex-wrap: wrap; }
 .footer-links a { font-size: 1rem; font-weight: 600; color: var(--text); text-decoration: none; transition: color 0.2s; }
-.footer-links a:hover { color: var(--brand-outline); }
+.footer-links a:hover { color: var(--amber); }
 
 @media (max-width: 760px) {
   nav { padding: 0.9rem 1.2rem; }
@@ -177,7 +177,7 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); p
       <li>Generierte Ebooks, Cover, Kapitelbilder, Hörbuchdateien, Übersetzungen, Bearbeitungen, Qualitätsprüfungsergebnisse und zugehörige Veröffentlichungsmetadaten.</li>
       <li>Von Ihnen hochgeladene Kunstwerke und die Platzierungsentscheidungen, die Sie für Bilder in einem Buch treffen.</li>
       <li>Schreibproben, die Sie bereitstellen, um ein persönliches Stilprofil zu erstellen. Die hochgeladene Datei wird nach dem Lesen gelöscht; die resultierende Stilbeschreibung und kurze Auszüge werden in Ihrem Profil gespeichert, damit Sie sie überprüfen, verfeinern oder löschen können.</li>
-      <li><strong>Themenrecherche-Anfragen.</strong> Die Nische oder das Thema, das Sie in "Thema finden" eingeben, zusammen mit den dafür zurückgegebenen Ergebnissen, wird in Ihrem Konto gespeichert, damit Sie die Recherche erneut öffnen können, ohne erneut zu bezahlen. Die Rechercheergebnisse werden zwischengespeichert und können wiederverwendet werden, um eine gleichwertige Anfrage eines anderen Benutzers zu beantworten – der zwischengespeicherte Datensatz enthält nur das Thema und öffentliche Marktdaten, niemals Ihre Identität oder Ihr Quellmaterial.</li>
+      <li><strong>Topic-Rechercheanfragen.</strong> Die Nische oder das Thema, das Sie in „Thema finden“ eingeben, sowie die dafür zurückgegebenen Ergebnisse werden in Ihrem Konto gespeichert, damit Sie die Recherche erneut öffnen können, ohne erneut zu bezahlen. Die Rechercheergebnisse werden zwischengespeichert und können wiederverwendet werden, um eine ähnliche Anfrage eines anderen Benutzers zu beantworten – der zwischengespeicherte Datensatz enthält nur das Thema und öffentliche Marktdaten, niemals Ihre Identität oder Ihr Quellenmaterial.</li>
     </ul>
     <h3>Technische Daten</h3>
     <ul>
@@ -208,47 +208,47 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); p
   </div>
 
   <h3>Hörbuch-Narration</h3>
-  <p>Wenn Sie ein Buch vertonen, wird der <strong>Text dieses Buches</strong> an einen Text-to-Speech-Anbieter gesendet, damit es gesprochen werden kann. Sonst wird nichts mitgesendet – kein Name, keine E-Mail, keine Konto-ID – und der Anbieter gibt Audio zurück und behält keine Rechte daran. Welcher Anbieter hängt von der gewählten Stimme und der Verfügbarkeit ab:</p>
+  <p>Wenn Sie ein Buch vertonen, wird der <strong>Text dieses Buches</strong> an einen Text-to-Speech-Anbieter gesendet, damit er gesprochen werden kann. Sonst wird nichts mitgesendet – kein Name, keine E-Mail, keine Kontokennung – und der Anbieter gibt Audio zurück und behält keine Rechte daran. Welcher Anbieter verwendet wird, hängt von der gewählten Stimme und der Verfügbarkeit ab:</p>
   <div class="card">
     <ul>
-      <li><strong>Google Cloud Text-to-Speech</strong> — die Standard-Stimmen.</li>
-      <li><strong>Cloudflare Workers AI</strong> (Deepgram Aura) — die Premium-Stimmen, verarbeitet auf derselben Infrastruktur, die bereits die App hostet.</li>
-      <li><strong>OpenAI</strong> — nur als Fallback verwendet, wenn der Anbieter für Ihre gewählte Stimme nicht verfügbar ist. Gemäß den API-Bedingungen von OpenAI werden diese Inhalte nicht zum Trainieren ihrer Modelle verwendet.</li>
+      <li><strong>Google Cloud Text-to-Speech</strong> – die Standardstimmen.</li>
+      <li><strong>Cloudflare Workers AI</strong> (Deepgram Aura) – die Premium-Stimmen, verarbeitet auf derselben Infrastruktur, die bereits die App hostet.</li>
+      <li><strong>OpenAI</strong> – nur als Fallback verwendet, wenn der Anbieter für Ihre gewählte Stimme nicht verfügbar ist. Gemäß den API-Bedingungen von OpenAI wird dieser Inhalt nicht zum Trainieren ihrer Modelle verwendet.</li>
     </ul>
   </div>
   <p>Die Erzählung ist optional und läuft nur, wenn Sie sie für ein bestimmtes Buch anfordern. Wenn Sie nicht möchten, dass Ihr Text jemals einen Sprach-Anbieter erreicht, erzählen Sie dieses Buch nicht.</p>
 
   <h3>Stockfotos und Benutzerkunstwerke</h3>
-  <p>Wenn Sie <strong>Stockfotos</strong>wählen, sendet TubeBook eine beschreibende Suchanfrage, die aus dem Buch- oder Kapitelthema abgeleitet wird, an eine oder mehrere unterstützte Bibliotheken. Es sendet nicht Ihren Namen, Ihre E-Mail-Adresse oder Ihre Kontokennung. Die Suchergebnisse können die Bildkennung des Anbieters, den Fotografennamen, die Quell-URL und die Attributions-URL enthalten; TubeBook speichert diese Details zusammen mit dem ausgewählten Bild, sodass die erforderliche Quellenangabe und Links im Editor und im exportierten Buch enthalten sein können.</p>
+  <p>Wenn Sie <strong>Stockfotos</strong> wählen, sendet TubeBook eine beschreibende Suchanfrage, die aus dem Buch- oder Kapitelthema abgeleitet wird, an eine oder mehrere unterstützte Bibliotheken. Es sendet nicht Ihren Namen, Ihre E-Mail oder Ihre Kontokennung. Die Suchergebnisse können die Bildkennung des Anbieters, den Fotografennamen, die Quell-URL und die Attribution-URL enthalten; TubeBook speichert diese Details zusammen mit dem ausgewählten Bild, damit die erforderliche Quellenangabe und Links im Editor und im exportierten Buch enthalten sein können.</p>
   <div class="card">
     <ul>
-      <li><strong>Unsplash</strong> — Stockfoto-Suche, Download-Tracking gemäß den API-Richtlinien und verlinkte Fotografen-Attribution.</li>
-      <li><strong>Pexels</strong> und <strong>Pixabay</strong> — Stockfoto-Suche und Quellenangabe, wo verfügbar.</li>
+      <li><strong>Unsplash</strong> – Stockfotosuche, Download-Tracking gemäß den API-Richtlinien und verlinkte Fotografen-Attribution.</li>
+      <li><strong>Pexels</strong> und <strong>Pixabay</strong> – Stockfotosuche und Quellenangabe, wo verfügbar.</li>
     </ul>
   </div>
   <p>Wenn Sie eigene Kunstwerke hochladen, wird die Datei privat mit dem Buch gespeichert und nur für die von Ihnen gewählte Cover- oder Kapitelplatzierung verwendet. Sie sind dafür verantwortlich, die Rechte zur Nutzung zu besitzen.</p>
   <h3>Themenrecherche</h3>
-  <p>Wenn Sie "Thema finden" verwenden, wird der <strong>von Ihnen eingegebene Themantext</strong> (und daraus abgeleitete Phrasen) an die folgenden Dienste gesendet, um Marktdaten zu suchen. Ihr Name, Ihre E-Mail-Adresse, Ihre Kontokennung und Ihr Quellmaterial werden <strong>nicht</strong> gesendet — diese Anfragen werden von unserem Server gestellt und enthalten keine Informationen, die Sie identifizieren.</p>
+  <p>Wenn Sie „Thema finden“ verwenden, wird der <strong>von Ihnen eingegebene Thementext</strong> (und daraus abgeleitete Phrasen) an die folgenden Dienste gesendet, um Marktdaten nachzuschlagen. Ihr Name, Ihre E-Mail, Ihre Kontokennung und Ihr Quellenmaterial werden <strong>nicht</strong> gesendet – diese Anfragen werden von unserem Server gestellt und enthalten keine Informationen, die Sie identifizieren.</p>
   <div class="card">
     <ul>
-      <li><strong>Amazon</strong> — öffentlicher Suchvorschlagsdienst, um zu sehen, was Käufer eingeben.</li>
-      <li><strong>Google</strong> — öffentlicher Suchvorschlagsdienst, für denselben Zweck.</li>
-      <li><strong>Google Books API</strong> — um bereits veröffentlichte Titel zu zählen und zu beschreiben.</li>
-      <li><strong>YouTube Data API</strong> (Google) — um passende Quellvideos zu finden.</li>
-      <li><strong>Serper</strong> — Google-Suchergebnisse, um passende Quellartikel zu finden.</li>
+      <li><strong>Amazon</strong> – öffentlicher Suchvorschlagsdienst, um zu sehen, was Käufer eingeben.</li>
+      <li><strong>Google</strong> – öffentlicher Suchvorschlagsdienst, für denselben Zweck.</li>
+      <li><strong>Google Books API</strong> – um bereits veröffentlichte Titel zu zählen und zu beschreiben.</li>
+      <li><strong>YouTube Data API</strong> (Google) – um Kandidaten-Quellvideos zu finden.</li>
+      <li><strong>Serper</strong> – Google-Suchergebnisse, um Kandidaten-Quellartikel zu finden.</li>
     </ul>
   </div>
   <p>Jeder dieser Anbieter kann die Anfrage gemäß seiner eigenen Datenschutzrichtlinie protokollieren. Da die Anfrage ein Thema und keine persönlichen Daten darstellt und ohne Kontokennungen gesendet wird, betrachten wir dies als risikoarm – wenn Sie jedoch nicht möchten, dass ein Thema unsere Systeme verlässt, geben Sie es nicht in „Thema finden“ ein.</p>
 
   <h3>Prüfung auf Veröffentlichungsrisiken</h3>
-  <p>Um mögliche Risiken im Zusammenhang mit geistigem Eigentum zu kennzeichnen, werden der <strong>Titel, Untertitel, Beschreibung, Schlüsselwörter, Kategorien und Kapitelüberschriften</strong> Ihres Buches an die oben genannten KI-Anbieter gesendet. Der Fließtext Ihrer Kapitel wird nicht gesendet.</p>
-  <p>Wir <strong>nicht</strong> senden nichts an einen Markenregister-Dienst. Wenn die Prüfung eine Marke nennt, zeigt TubeBook Ihnen einen Link zum öffentlichen Register; das Folgen des Links ist Ihre Entscheidung, und die Anfrage erfolgt über Ihren Browser und nicht über uns.</p>
+  <p>Um mögliche Risiken in Bezug auf geistiges Eigentum zu kennzeichnen, werden der <strong>Titel, Untertitel, die Beschreibung, Schlüsselwörter, Kategorien und Kapitelüberschriften</strong> Ihres Buches an dieselben KI-Anbieter gesendet, die oben beschrieben wurden. Der Fließtext Ihrer Kapitel wird nicht gesendet.</p>
+  <p>Wir senden <strong>nichts</strong> an einen Markenregister-Dienst. Wenn die Prüfung eine Marke nennt, zeigt TubeBook Ihnen einen Link zum öffentlichen Register; das Folgen ist Ihre Wahl, und die Anfrage wird von Ihrem Browser gestellt, nicht von uns.</p>
 
   <h2 id="s4"><span class="sec-num">04</span>Datenaufbewahrung</h2>
   <ul>
-    <li>Generierte E-Books werden für <strong>30 Tage</strong>aufbewahrt und dann archiviert/gelöscht. Laden Sie alles herunter, was Sie behalten möchten.</li>
-    <li>Hörbuch-Sprecher &mdash; die verlustfreien Master und alles, was daraus erstellt wurde &mdash; wird am <strong>gleichen 30-Tage-Zeitplan</strong> wie das zugehörige Buch gelöscht. Audio wird nicht länger aufbewahrt als das E-Book.</li>
-    <li>Ergebnisse der Themenrecherche werden für <strong>14 Tage</strong>zwischengespeichert, danach wird dieselbe Nische neu recherchiert. Die gespeicherten Aufzeichnungen Ihrer eigenen früheren Suchen bleiben in Ihrem Konto verfügbar, bis Sie Ihr Konto löschen.</li>
+    <li>Generierte ebooks werden <strong>30 Tage</strong> lang aufbewahrt und dann archiviert/gelöscht. Laden Sie alles herunter, was Sie behalten möchten.</li>
+    <li>Hörbuch-Narration &mdash; die verlustfreien Master und alles, was daraus erstellt wurde &mdash; wird nach dem <strong>gleichen 30-Tage-Zeitraum</strong> gelöscht wie das zugehörige Buch. Audio wird nicht länger aufbewahrt als das ebook.</li>
+    <li>Topic-Rechercheergebnisse werden <strong>14 Tage</strong> lang zwischengespeichert, danach wird dieselbe Nische neu recherchiert. Der gespeicherte Datensatz Ihrer eigenen früheren Suchen bleibt in Ihrem Konto verfügbar, bis Sie Ihr Konto löschen.</li>
     <li>Konto- und Abrechnungsdaten werden aufbewahrt, solange Ihr Konto aktiv ist und wie gesetzlich vorgeschrieben (in der Regel bis zu 7 Jahre für Rechnungen).</li>
     <li>Sie können jederzeit die Löschung Ihres Kontos beantragen (siehe Abschnitt 7).</li>
   </ul>

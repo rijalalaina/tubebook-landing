@@ -30,12 +30,6 @@
   "f4ab84974f": "Notre adresse est",
   "5df2b868ed": "activer JavaScript pour afficher",
   "7e331eba9c": "— les boutons ci-dessus ouvrent un e-mail pré-adressé. Si vous écrivez au sujet d'un problème d'ebook, incluez le titre ou l'ID de l'ebook.",
-  "c731f04860": "Restez en sécurité :",
-  "2d66d23319": "nous n'envoyons des e-mails qu'à partir de",
-  "6d7fa0f366": "@tubebook.org",
-  "1758356db2": "ou",
-  "3d673fadc2": "@blissfulplan.com",
-  "c5f7945871": ", et nous ne vous demanderons jamais votre mot de passe, un code de vérification ou des informations de paiement par e-mail. Si quelque chose prétendant être TubeBook le fait, ce n'est pas nous — transférez-le à notre adresse d'assistance.",
   "9741ee4f14": "Avant d'écrire",
   "c84a54f375": "Vous trouverez peut-être une réponse plus rapide ici :",
   "efe79cf110": "Guide de démarrage",
@@ -45,5 +39,6 @@
   "44c1404f19": "Le plus rapide &amp; le plus sûr",
   "92529be2dd": "Crédits &amp; tarifs expliqués",
   "816ab673bc": "Compte &amp; facturation",
-  "be1484a0a4": "Comparatif des offres &amp; tarifs"
+  "be1484a0a4": "Comparatif des offres &amp; tarifs",
+  "9cdea55d95": "<strong>Pour votre sécurité :</strong> nous n'envoyons des e-mails qu'à partir de <strong>@tubebook.org</strong> ou <strong>@blissfulplan.com</strong>, et nous ne vous demanderons jamais votre mot de passe, un code de vérification ou vos informations de paiement par e-mail. Si un message prétendant provenir de TubeBook vous demande cela, ce n'est pas nous — transmettez-le à notre adresse d'assistance."
 }

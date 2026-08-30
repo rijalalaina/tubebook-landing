@@ -15,7 +15,7 @@
 :root {
   --bg: #08090d; --bg2: #0f1118; --bg3: #14171f; --card: #131620;
   --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
-  --amber: #ff6200;--brand-outline:#ff6b00; --amber2: #ff8c42; --amber-dim: rgba(255,98,0,0.12);
+  --amber:#ff6b00; --amber2:#ff9542; --amber-dim: rgba(255,107,0,0.12);
   --red: #ff3b3b; --red-dim: rgba(255,59,59,0.12);
   --green: #2ecc71; --green-dim: rgba(46,204,113,0.11);
   --text: #f0eee8; --muted: #7b7d8a; --muted2: #a0a3b1;
@@ -32,7 +32,7 @@ code, kbd { background: var(--bg3); border: 1px solid var(--border); padding: 2p
 nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 4rem; background: rgba(8,9,13,0.88); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); }
 .nav-logo { display: flex; align-items: center; gap: 10px; font-size: 1.2rem; font-weight: 700; color: var(--text); text-decoration: none; }
 .nav-logo:hover { text-decoration: none; }
-.logo-icon { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, #ff6200 0%, #cc4e00 100%); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0; }
+.logo-icon { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, #ff6b00 0%, #cc5700 100%); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0; }
 .logo-text span { color: var(--amber); }
 .nav-links { display: flex; align-items: center; gap: 2rem; }
 .nav-links a { color: var(--muted2); font-size: 0.875rem; text-decoration: none; transition: color 0.2s; }
@@ -43,7 +43,7 @@ nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center
 /* LAYOUT */
 .page-wrap { max-width: 860px; margin: 0 auto; padding: 0 2rem 6rem; }
 .page-header { padding: 4rem 0 2.5rem; border-bottom: 1px solid var(--border); margin-bottom: 3rem; position: relative; overflow: hidden; }
-.page-header::after { content: ''; position: absolute; top: 0; inset-inline-end: -40px; width: 340px; height: 220px; background: radial-gradient(ellipse, rgba(255,98,0,0.06) 0%, transparent 70%); pointer-events: none; }
+.page-header::after { content: ''; position: absolute; top: 0; inset-inline-end: -40px; width: 340px; height: 220px; background: radial-gradient(ellipse, rgba(255,107,0,0.06) 0%, transparent 70%); pointer-events: none; }
 .breadcrumb { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; display: flex; align-items: center; gap: 6px; }
 .breadcrumb a { color: var(--muted); text-decoration: none; }
 .breadcrumb a:hover { color: var(--amber); }
@@ -54,7 +54,7 @@ h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 2.8rem)
 
 /* TYPOGRAPHY */
 h2 { font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 700; color: var(--text); margin: 3rem 0 1rem; letter-spacing: -0.01em; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
-.sec-num { font-family: 'Outfit', sans-serif; font-size: 0.7rem; font-weight: 600; color: var(--amber); background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.22); padding: 0.15rem 0.55rem; border-radius: 100px; letter-spacing: 0.05em; flex-shrink: 0; }
+.sec-num { font-family: 'Outfit', sans-serif; font-size: 0.7rem; font-weight: 600; color: var(--amber); background: var(--amber-dim); border: 1px solid rgba(255,107,0,0.22); padding: 0.15rem 0.55rem; border-radius: 100px; letter-spacing: 0.05em; flex-shrink: 0; }
 h3 { font-size: 0.97rem; font-weight: 600; color: var(--text); margin: 1.5rem 0 0.5rem; }
 p { color: var(--muted2); line-height: 1.75; margin-bottom: 0.8rem; }
 ul, ol { color: var(--muted2); padding-inline-start: 1.4rem; line-height: 1.75; }
@@ -62,7 +62,7 @@ li { margin-bottom: 0.45rem; }
 
 /* CARDS */
 .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.6rem 1.8rem; margin: 1rem 0; position: relative; overflow: hidden; }
-.card::before { content: ''; position: absolute; top: 0; inset-inline-start: 0; inset-inline-end: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,98,0,0.18), transparent); }
+.card::before { content: ''; position: absolute; top: 0; inset-inline-start: 0; inset-inline-end: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,107,0,0.18), transparent); }
 
 /* TOC */
 .toc-box { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem 1.8rem; margin-bottom: 2.5rem; }
@@ -80,21 +80,21 @@ tr:last-child td { border-bottom: none; }
 td strong { color: var(--text); }
 
 /* PILLS */
-.pill { display: inline-block; background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.25); color: var(--amber2); font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.65rem; border-radius: 100px; letter-spacing: 0.04em; margin-inline-end: 6px; vertical-align: middle; }
+.pill { display: inline-block; background: var(--amber-dim); border: 1px solid rgba(255,107,0,0.25); color: var(--amber2); font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.65rem; border-radius: 100px; letter-spacing: 0.04em; margin-inline-end: 6px; vertical-align: middle; }
 
 /* ALERT BOXES */
 .alert-warn { background: rgba(255,59,59,0.07); border: 1px solid rgba(255,59,59,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: #ff9a9a; }
 .alert-tip { background: var(--green-dim); border: 1px solid rgba(46,204,113,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: #7be8a8; }
-.alert-info { background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: var(--amber2); }
+.alert-info { background: var(--amber-dim); border: 1px solid rgba(255,107,0,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: var(--amber2); }
 
 /* FOOTER */
-footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); padding: 2.5rem 4rem; }
+footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 2.5rem 4rem; }
 .footer-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
 .footer-brand { font-size: 0.82rem; color: var(--muted); }
 .footer-brand a { color: var(--amber); text-decoration: none; }
 .footer-links { display: flex; gap: 1.8rem; flex-wrap: wrap; }
 .footer-links a { font-size: 1rem; font-weight: 600; color: var(--text); text-decoration: none; transition: color 0.2s; }
-.footer-links a:hover { color: var(--brand-outline); }
+.footer-links a:hover { color: var(--amber); }
 
 @media (max-width: 760px) {
   nav { padding: 0.9rem 1.2rem; }
@@ -105,13 +105,13 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); p
 /* PAGE-SPECIFIC */
 .channel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 1.5rem 0 2.5rem; }
 .channel-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.3rem 1.5rem; transition: border-color 0.2s; position: relative; overflow: hidden; }
-.channel-card::before { content: ''; position: absolute; top: 0; inset-inline-start: 0; inset-inline-end: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,98,0,0.18), transparent); }
+.channel-card::before { content: ''; position: absolute; top: 0; inset-inline-start: 0; inset-inline-end: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,107,0,0.18), transparent); }
 .channel-card:hover { border-color: var(--border2); }
 .channel-icon { font-size: 1.3rem; margin-bottom: 0.7rem; display: block; }
 .channel-card h3 { font-size: 0.9rem; font-weight: 600; margin: 0 0 0.3rem; }
 .channel-card p { font-size: 0.8rem; color: var(--muted); margin: 0 0 0.8rem; line-height: 1.45; }
-.channel-card a.ch-btn { display: inline-block; background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.3); color: var(--amber2); font-size: 0.78rem; font-weight: 600; padding: 0.35rem 0.9rem; border-radius: 7px; text-decoration: none; transition: background 0.2s; }
-.channel-card a.ch-btn:hover { background: rgba(255,98,0,0.22); text-decoration: none; }
+.channel-card a.ch-btn { display: inline-block; background: var(--amber-dim); border: 1px solid rgba(255,107,0,0.3); color: var(--amber2); font-size: 0.78rem; font-weight: 600; padding: 0.35rem 0.9rem; border-radius: 7px; text-decoration: none; transition: background 0.2s; }
+.channel-card a.ch-btn:hover { background: rgba(255,107,0,0.22); text-decoration: none; }
 .form-wrap { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; margin-top: 0.5rem; position: relative; overflow: hidden; }
 .form-wrap::before { content: ''; position: absolute; top: 0; inset-inline-start: 0; inset-inline-end: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--amber), transparent); }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
@@ -119,7 +119,7 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); p
 .form-group { margin-bottom: 1.1rem; }
 label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--muted2); margin-bottom: 0.4rem; }
 input, select, textarea { width: 100%; background: var(--bg3); border: 1px solid var(--border); border-radius: 9px; padding: 0.7rem 1rem; color: var(--text); font-family: 'Outfit', sans-serif; font-size: 0.92rem; outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
-input:focus, select:focus, textarea:focus { border-color: rgba(255,98,0,0.4); box-shadow: 0 0 0 3px rgba(255,98,0,0.08); }
+input:focus, select:focus, textarea:focus { border-color: rgba(255,107,0,0.4); box-shadow: 0 0 0 3px rgba(255,107,0,0.08); }
 select option { background: var(--bg3); }
 textarea { min-height: 140px; resize: vertical; line-height: 1.6; }
 .btn-submit { background: var(--amber); color: #1a1200; font-size: 0.95rem; font-weight: 700; padding: 0.8rem 2rem; border-radius: 10px; border: none; cursor: pointer; font-family: 'Outfit', sans-serif; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 8px; margin-top: 0.5rem; }
@@ -127,7 +127,7 @@ textarea { min-height: 140px; resize: vertical; line-height: 1.6; }
 .form-note { font-size: 0.76rem; color: var(--muted); margin-top: 0.6rem; }
 .quick-links { display: flex; flex-direction: column; gap: 0.55rem; margin-top: 1rem; }
 .quick-link { display: flex; align-items: center; gap: 10px; padding: 0.75rem 1rem; background: var(--bg3); border: 1px solid var(--border); border-radius: 10px; font-size: 0.875rem; color: var(--muted2); text-decoration: none; transition: border-color 0.2s, color 0.2s; }
-.quick-link:hover { border-color: rgba(255,98,0,0.3); color: var(--amber); text-decoration: none; }
+.quick-link:hover { border-color: rgba(255,107,0,0.3); color: var(--amber); text-decoration: none; }
 .quick-link-arrow { margin-inline-start: auto; opacity: 0.5; }
 </style>
 <!-- i18n:begin -->
@@ -205,7 +205,7 @@ textarea { min-height: 140px; resize: vertical; line-height: 1.6; }
   <p class="form-note" style="margin-top:-1.4rem;">Nuestra dirección es <span class="mail-inline">activa JavaScript para ver</span> — los botones de arriba abren un correo con la dirección ya puesta. Si escribes sobre un problema con un ebook, incluye el título o ID del ebook.</p>
 
   <div class="alert-info" style="margin-top:2rem;">
-    <strong>Mantente seguro:</strong> solo enviamos correos desde <strong>@tubebook.org</strong> o <strong>@blissfulplan.com</strong>, y nunca te pediremos tu contraseña, un código de verificación ni datos de pago por correo. Si algo que dice ser TubeBook lo hace, no somos nosotros: reenvíalo a nuestra dirección de soporte.
+    <strong>Mantente seguro:</strong> solo enviamos correos desde <strong>@tubebook.org</strong> o <strong>@blissfulplan.com</strong>, y nunca te pediremos tu contraseña, un código de verificación o datos de pago por correo. Si algo que dice ser TubeBook lo hace, no somos nosotros: reenvíalo a nuestra dirección de soporte.
   </div>
 
   <h2 style="margin-top: 3.5rem;">Antes de escribir</h2>

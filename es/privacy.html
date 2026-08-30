@@ -15,7 +15,7 @@
 :root {
   --bg: #08090d; --bg2: #0f1118; --bg3: #14171f; --card: #131620;
   --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
-  --amber: #ff6200;--brand-outline:#ff6b00; --amber2: #ff8c42; --amber-dim: rgba(255,98,0,0.12);
+  --amber:#ff6b00; --amber2:#ff9542; --amber-dim: rgba(255,107,0,0.12);
   --red: #ff3b3b; --red-dim: rgba(255,59,59,0.12);
   --green: #2ecc71; --green-dim: rgba(46,204,113,0.11);
   --text: #f0eee8; --muted: #7b7d8a; --muted2: #a0a3b1;
@@ -32,7 +32,7 @@ code, kbd { background: var(--bg3); border: 1px solid var(--border); padding: 2p
 nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 4rem; background: rgba(8,9,13,0.88); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); }
 .nav-logo { display: flex; align-items: center; gap: 10px; font-size: 1.2rem; font-weight: 700; color: var(--text); text-decoration: none; }
 .nav-logo:hover { text-decoration: none; }
-.logo-icon { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, #ff6200 0%, #cc4e00 100%); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0; }
+.logo-icon { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, #ff6b00 0%, #cc5700 100%); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0; }
 .logo-text span { color: var(--amber); }
 .nav-links { display: flex; align-items: center; gap: 2rem; }
 .nav-links a { color: var(--muted2); font-size: 0.875rem; text-decoration: none; transition: color 0.2s; }
@@ -43,7 +43,7 @@ nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center
 /* LAYOUT */
 .page-wrap { max-width: 860px; margin: 0 auto; padding: 0 2rem 6rem; }
 .page-header { padding: 4rem 0 2.5rem; border-bottom: 1px solid var(--border); margin-bottom: 3rem; position: relative; overflow: hidden; }
-.page-header::after { content: ''; position: absolute; top: 0; inset-inline-end: -40px; width: 340px; height: 220px; background: radial-gradient(ellipse, rgba(255,98,0,0.06) 0%, transparent 70%); pointer-events: none; }
+.page-header::after { content: ''; position: absolute; top: 0; inset-inline-end: -40px; width: 340px; height: 220px; background: radial-gradient(ellipse, rgba(255,107,0,0.06) 0%, transparent 70%); pointer-events: none; }
 .breadcrumb { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; display: flex; align-items: center; gap: 6px; }
 .breadcrumb a { color: var(--muted); text-decoration: none; }
 .breadcrumb a:hover { color: var(--amber); }
@@ -54,7 +54,7 @@ h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 2.8rem)
 
 /* TYPOGRAPHY */
 h2 { font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 700; color: var(--text); margin: 3rem 0 1rem; letter-spacing: -0.01em; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
-.sec-num { font-family: 'Outfit', sans-serif; font-size: 0.7rem; font-weight: 600; color: var(--amber); background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.22); padding: 0.15rem 0.55rem; border-radius: 100px; letter-spacing: 0.05em; flex-shrink: 0; }
+.sec-num { font-family: 'Outfit', sans-serif; font-size: 0.7rem; font-weight: 600; color: var(--amber); background: var(--amber-dim); border: 1px solid rgba(255,107,0,0.22); padding: 0.15rem 0.55rem; border-radius: 100px; letter-spacing: 0.05em; flex-shrink: 0; }
 h3 { font-size: 0.97rem; font-weight: 600; color: var(--text); margin: 1.5rem 0 0.5rem; }
 p { color: var(--muted2); line-height: 1.75; margin-bottom: 0.8rem; }
 ul, ol { color: var(--muted2); padding-inline-start: 1.4rem; line-height: 1.75; }
@@ -62,7 +62,7 @@ li { margin-bottom: 0.45rem; }
 
 /* CARDS */
 .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.6rem 1.8rem; margin: 1rem 0; position: relative; overflow: hidden; }
-.card::before { content: ''; position: absolute; top: 0; inset-inline-start: 0; inset-inline-end: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,98,0,0.18), transparent); }
+.card::before { content: ''; position: absolute; top: 0; inset-inline-start: 0; inset-inline-end: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,107,0,0.18), transparent); }
 
 /* TOC */
 .toc-box { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem 1.8rem; margin-bottom: 2.5rem; }
@@ -80,21 +80,21 @@ tr:last-child td { border-bottom: none; }
 td strong { color: var(--text); }
 
 /* PILLS */
-.pill { display: inline-block; background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.25); color: var(--amber2); font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.65rem; border-radius: 100px; letter-spacing: 0.04em; margin-inline-end: 6px; vertical-align: middle; }
+.pill { display: inline-block; background: var(--amber-dim); border: 1px solid rgba(255,107,0,0.25); color: var(--amber2); font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.65rem; border-radius: 100px; letter-spacing: 0.04em; margin-inline-end: 6px; vertical-align: middle; }
 
 /* ALERT BOXES */
 .alert-warn { background: rgba(255,59,59,0.07); border: 1px solid rgba(255,59,59,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: #ff9a9a; }
 .alert-tip { background: var(--green-dim); border: 1px solid rgba(46,204,113,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: #7be8a8; }
-.alert-info { background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: var(--amber2); }
+.alert-info { background: var(--amber-dim); border: 1px solid rgba(255,107,0,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: var(--amber2); }
 
 /* FOOTER */
-footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); padding: 2.5rem 4rem; }
+footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 2.5rem 4rem; }
 .footer-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
 .footer-brand { font-size: 0.82rem; color: var(--muted); }
 .footer-brand a { color: var(--amber); text-decoration: none; }
 .footer-links { display: flex; gap: 1.8rem; flex-wrap: wrap; }
 .footer-links a { font-size: 1rem; font-weight: 600; color: var(--text); text-decoration: none; transition: color 0.2s; }
-.footer-links a:hover { color: var(--brand-outline); }
+.footer-links a:hover { color: var(--amber); }
 
 @media (max-width: 760px) {
   nav { padding: 0.9rem 1.2rem; }
@@ -177,7 +177,7 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); p
       <li>Libros electrónicos generados, portadas, imágenes de capítulos, archivos de audiolibro, traducciones, ediciones, hallazgos de control de calidad y metadatos de publicación relacionados.</li>
       <li>Arte que subes y las opciones de colocación que eliges para las imágenes dentro de un libro.</li>
       <li>Muestras de escritura que proporcionas para crear un perfil de estilo personal. El archivo subido se elimina después de leerse; la descripción de estilo resultante y extractos cortos se guardan con tu perfil para que puedas revisarlos, refinarlos o eliminarlos.</li>
-      <li><strong>Consultas de investigación de temas.</strong> El nicho o tema que escribes en Encontrar un tema, junto con los resultados devueltos, se almacenan en tu cuenta para que puedas reabrir la investigación sin pagar de nuevo. Los resultados de investigación se guardan en caché y pueden reutilizarse para responder a una consulta equivalente de otro usuario: el registro en caché contiene solo el tema y datos públicos de mercado, nunca tu identidad ni tu material fuente.</li>
+      <li><strong>Consultas de investigación de temas.</strong> El nicho o tema que escribes en Buscar un tema, junto con los resultados que devuelve, se guardan en tu cuenta para que puedas reabrir la investigación sin pagar de nuevo. Los resultados de la investigación se almacenan en caché y pueden reutilizarse para responder a una consulta equivalente de otro usuario; el registro en caché contiene solo el tema y los datos públicos del mercado, nunca tu identidad ni tu material fuente.</li>
     </ul>
     <h3>Datos técnicos</h3>
     <ul>
@@ -201,14 +201,14 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); p
     <ul>
       <li><strong>Supabase / Lovable Cloud</strong> — base de datos, autenticación, almacenamiento.</li>
       <li><strong>Stripe</strong> — pagos y gestión de suscripciones.</li>
-      <li><strong>Cloudflare</strong> — alojamiento, runtime edge, protección DDoS y los modelos de IA utilizados para ilustraciones de capítulos y narración premium.</li>
-      <li><strong>Google</strong> — generación de texto e imágenes Gemini cuando se selecciona o se usa como respaldo.</li>
-      <li><strong>DeepSeek</strong> y <strong>Anthropic</strong> — generación de texto, edición o revisión de calidad cuando lo configura TubeBook.</li>
+      <li><strong>Cloudflare</strong> — hosting, runtime de borde, protección DDoS y los modelos de IA utilizados para las ilustraciones de capítulos y la narración premium.</li>
+      <li><strong>Google</strong> — generación de texto e imágenes con Gemini cuando se selecciona o se usa como respaldo.</li>
+      <li><strong>DeepSeek</strong> y <strong>Anthropic</strong> — generación de texto, edición o revisión de calidad cuando TubeBook los configura.</li>
     </ul>
   </div>
 
   <h3>Narración de audiolibros</h3>
-  <p>Si narras un libro, el <strong>texto de ese libro</strong> se envía a un proveedor de texto a voz para que pueda ser hablado. Nada más va con él — ni nombre, ni correo, ni identificador de cuenta — y el proveedor devuelve audio y no retiene derechos sobre él. El proveedor depende de la voz que elegiste y de la disponibilidad:</p>
+  <p>Si narras un libro, el <strong>texto de ese libro</strong> se envía a un proveedor de texto a voz para que pueda ser leído. No se envía nada más: ni nombre, ni correo electrónico, ni identificador de cuenta. El proveedor devuelve el audio y no conserva ningún derecho sobre él. El proveedor depende de la voz que elijas y de la disponibilidad:</p>
   <div class="card">
     <ul>
       <li><strong>Google Cloud Text-to-Speech</strong> — las voces estándar.</li>
@@ -219,7 +219,7 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); p
   <p>La narración es opcional y solo se ejecuta cuando la solicitas para un libro específico. Si prefieres que tu texto nunca llegue a un proveedor de voz, no narres ese libro.</p>
 
   <h3>Fotografías de stock y arte del usuario</h3>
-  <p>Si eliges <strong>Fotos de stock</strong>, TubeBook envía una consulta de búsqueda descriptiva derivada del tema del libro o capítulo a una o más bibliotecas compatibles. No envía tu nombre, correo electrónico ni identificador de cuenta. Los resultados de búsqueda pueden incluir el identificador de imagen del proveedor, el nombre del fotógrafo, la URL de origen y la URL de atribución; TubeBook almacena esos detalles con la imagen seleccionada para que el crédito y los enlaces requeridos se incluyan en el editor y en el libro exportado.</p>
+  <p>Si eliges <strong>Fotos de stock</strong>, TubeBook envía una consulta de búsqueda descriptiva derivada del tema del libro o capítulo a una o más bibliotecas compatibles. No envía tu nombre, correo electrónico ni identificador de cuenta. Los resultados de búsqueda pueden incluir el identificador de imagen del proveedor, el nombre del fotógrafo, la URL de origen y la URL de atribución; TubeBook almacena esos detalles con la imagen seleccionada para que se puedan incluir el crédito y los enlaces requeridos en el editor y en el libro exportado.</p>
   <div class="card">
     <ul>
       <li><strong>Unsplash</strong> — búsqueda de fotos de stock, seguimiento de descargas requerido por sus pautas de API y atribución vinculada al fotógrafo.</li>
@@ -228,27 +228,27 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); p
   </div>
   <p>Si subes tu propio arte, el archivo se almacena de forma privada con el libro y se usa solo para la portada o la ubicación del capítulo que elijas. Eres responsable de tener los derechos para usarlo.</p>
   <h3>Investigación de temas</h3>
-  <p>Cuando usas Buscar un tema, el <strong>texto del tema que ingresas</strong> (y las frases derivadas de él) se envían a los servicios siguientes para buscar datos de mercado. Tu nombre, correo electrónico, identificador de cuenta y material de origen <strong>no</strong> se envían — estas solicitudes las realiza nuestro servidor y no llevan información que te identifique.</p>
+  <p>Cuando usas Buscar un tema, el <strong>texto del tema que introduces</strong> (y las frases derivadas de él) se envía a los siguientes servicios para consultar datos de mercado. Tu nombre, correo electrónico, identificador de cuenta y material fuente <strong>no</strong> se envían: estas solicitudes las realiza nuestro servidor y no llevan información que te identifique.</p>
   <div class="card">
     <ul>
       <li><strong>Amazon</strong> — servicio público de sugerencias de búsqueda, para ver qué escriben los compradores.</li>
       <li><strong>Google</strong> — servicio público de sugerencias de búsqueda, con el mismo propósito.</li>
       <li><strong>Google Books API</strong> — para contar y describir títulos ya publicados.</li>
       <li><strong>YouTube Data API</strong> (Google) — para encontrar videos fuente candidatos.</li>
-      <li><strong>Serper</strong> — Resultados de búsqueda de Google, para encontrar artículos fuente candidatos.</li>
+      <li><strong>Serper</strong> — resultados de búsqueda de Google, para encontrar artículos fuente candidatos.</li>
     </ul>
   </div>
   <p>Cada uno de estos proveedores puede registrar la consulta que recibe según su propia política de privacidad. Dado que la consulta es un tema y no datos personales, y se envía sin identificadores de cuenta, consideramos que el riesgo es bajo; pero si prefiere que un tema nunca salga de nuestros sistemas, no lo introduzca en Buscar un tema.</p>
 
   <h3>Comprobación de riesgo editorial</h3>
-  <p>Para señalar posibles riesgos de propiedad intelectual, el <strong>título, subtítulo, descripción, palabras clave, categorías y encabezados de capítulos</strong> de su libro se envían a los mismos proveedores de IA descritos anteriormente. El texto del cuerpo de sus capítulos no se envía.</p>
-  <p>No <strong>no</strong> enviamos nada a un servicio de registro de marcas. Cuando la comprobación menciona una marca, TubeBook le muestra un enlace al registro público; seguirlo es su elección, y la solicitud la realiza su navegador, no nosotros.</p>
+  <p>Para señalar posibles riesgos de propiedad intelectual, el <strong>título, subtítulo, descripción, palabras clave, categorías y encabezados de capítulos</strong> de tu libro se envían a los mismos proveedores de IA descritos anteriormente. El texto del cuerpo de tus capítulos no se envía.</p>
+  <p>No enviamos <strong>nada</strong> a un servicio de registro de marcas. Cuando la verificación menciona una marca, TubeBook te muestra un enlace al registro público; seguirlo es tu elección, y la solicitud la realiza tu navegador, no nosotros.</p>
 
   <h2 id="s4"><span class="sec-num">04</span>Retención de datos</h2>
   <ul>
-    <li>Los libros electrónicos generados se conservan durante <strong>30 días</strong>, y luego se archivan/eliminan. Descargue todo lo que desee conservar.</li>
-    <li>La narración de audiolibros &mdash; los másteres sin pérdida y todo lo que se construye a partir de ellos &mdash; se elimina en el <strong>mismo plazo de 30 días</strong> que el libro al que pertenece. El audio no se conserva más tiempo que el libro electrónico.</li>
-    <li>Los resultados de la investigación de temas se almacenan en caché durante <strong>14 días</strong>, tras lo cual se investiga de nuevo el mismo nicho. El registro almacenado de sus propias búsquedas anteriores permanece disponible en su cuenta hasta que elimine su cuenta.</li>
+    <li>Los ebooks generados se conservan durante <strong>30 días</strong> y luego se archivan/eliminan. Descarga todo lo que quieras conservar.</li>
+    <li>La narración del audiolibro &mdash; las masters sin pérdida y todo lo que se construye a partir de ellas &mdash; se elimina en el <strong>mismo plazo de 30 días</strong> que el libro al que pertenece. El audio no se conserva más tiempo que el ebook.</li>
+    <li>Los resultados de la investigación de temas se almacenan en caché durante <strong>14 días</strong>, después de los cuales el mismo nicho se investiga de nuevo. El registro almacenado de tus propias búsquedas pasadas permanece disponible en tu cuenta hasta que elimines tu cuenta.</li>
     <li>Los registros de cuenta y facturación se conservan mientras su cuenta esté activa y según lo exija la ley (normalmente hasta 7 años para facturas).</li>
     <li>Puede solicitar la eliminación de su cuenta en cualquier momento (ver Sección 7).</li>
   </ul>

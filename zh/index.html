@@ -23,7 +23,7 @@
 :root {
   --bg:#08090d;--bg2:#0f1118;--bg3:#14171f;--card:#131620;
   --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);
-  --amber:#ff6200;--amber2:#ff8c42;--amber-dim:rgba(255,98,0,0.12);
+  --amber:#ff6b00;--amber2:#ff9542;--amber-dim:rgba(255,107,0,0.12);
   --red:#ff3b3b;--red-dim:rgba(255,59,59,0.12);
   --green:#2ecc71;--green-dim:rgba(46,204,113,0.11);
   --yellow:#f5c842;--yellow-dim:rgba(245,200,66,0.11);
@@ -44,17 +44,17 @@ nav{position:fixed;top:0;inset-inline-start:0;inset-inline-end:0;z-index:100;dis
 
 /* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 6rem;position:relative;overflow:hidden;}
-.hero-orb-1{position:absolute;top:-180px;left:50%;transform:translateX(-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(255,98,0,0.08) 0%,transparent 70%);pointer-events:none;}
+.hero-orb-1{position:absolute;top:-180px;left:50%;transform:translateX(-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(255,107,0,0.08) 0%,transparent 70%);pointer-events:none;}
 .hero-orb-2{position:absolute;bottom:-120px;inset-inline-end:-160px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,59,59,0.07) 0%,transparent 70%);pointer-events:none;}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.25);color:var(--amber2);font-size:0.8rem;font-weight:500;padding:0.4rem 1rem;border-radius:100px;margin-bottom:2.2rem;animation:fadeDown 0.6s ease both;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--amber-dim);border:1px solid rgba(255,107,0,0.25);color:var(--amber2);font-size:0.8rem;font-weight:500;padding:0.4rem 1rem;border-radius:100px;margin-bottom:2.2rem;animation:fadeDown 0.6s ease both;}
 .hero-badge svg{width:14px;height:14px;fill:var(--amber2);}
 h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,5.2rem);font-weight:900;line-height:1.1;letter-spacing:-0.02em;color:var(--text);max-width:860px;animation:fadeUp 0.7s 0.1s ease both;}
 h1 em{font-style:italic;color:var(--amber);display:block;}
 .hero-sub{max-width:600px;margin:1.8rem auto 0;font-size:1.1rem;color:var(--muted2);line-height:1.7;animation:fadeUp 0.7s 0.2s ease both;}
 .hero-sub strong{color:var(--text);}
 .hero-actions{display:flex;align-items:center;gap:1rem;margin-top:2.8rem;flex-wrap:wrap;justify-content:center;animation:fadeUp 0.7s 0.3s ease both;}
-.btn-primary{background:var(--amber);color:#1a1200;font-size:1rem;font-weight:700;padding:0.85rem 2.2rem;border-radius:10px;text-decoration:none;display:flex;align-items:center;gap:8px;transition:background 0.2s,transform 0.15s,box-shadow 0.2s;box-shadow:0 4px 24px rgba(255,98,0,0.25);}
-.btn-primary:hover{background:var(--amber2);transform:translateY(-2px);box-shadow:0 8px 36px rgba(255,98,0,0.35);}
+.btn-primary{background:var(--amber);color:#1a1200;font-size:1rem;font-weight:700;padding:0.85rem 2.2rem;border-radius:10px;text-decoration:none;display:flex;align-items:center;gap:8px;transition:background 0.2s,transform 0.15s,box-shadow 0.2s;box-shadow:0 4px 24px rgba(255,107,0,0.25);}
+.btn-primary:hover{background:var(--amber2);transform:translateY(-2px);box-shadow:0 8px 36px rgba(255,107,0,0.35);}
 .btn-secondary{background:transparent;color:var(--muted2);font-size:1rem;font-weight:500;padding:0.85rem 1.8rem;border-radius:10px;text-decoration:none;border:1px solid var(--border2);transition:border-color 0.2s,color 0.2s;}
 .btn-secondary:hover{border-color:var(--amber);color:var(--amber);}
 .hero-note{margin-top:1.2rem;font-size:0.82rem;color:var(--muted);animation:fadeUp 0.7s 0.4s ease both;}
@@ -66,7 +66,7 @@ h1 em{font-style:italic;color:var(--amber);display:block;}
 .demo-row{display:flex;align-items:center;gap:10px;margin-bottom:1.2rem;}
 .demo-yt{background:var(--red-dim);border:1px solid rgba(255,59,59,0.2);border-radius:8px;padding:0.55rem 0.9rem;font-size:0.8rem;color:#ff7b7b;font-weight:500;display:flex;align-items:center;gap:7px;flex:1;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
 .demo-arrow{color:var(--amber);font-size:1.1rem;font-weight:700;flex-shrink:0;animation:pulse 1.5s infinite;}
-.demo-book-tag{background:var(--amber-dim);border:1px solid rgba(255,98,0,0.25);border-radius:8px;padding:0.55rem 0.9rem;font-size:0.8rem;color:var(--amber2);font-weight:500;display:flex;align-items:center;gap:6px;flex-shrink:0;}
+.demo-book-tag{background:var(--amber-dim);border:1px solid rgba(255,107,0,0.25);border-radius:8px;padding:0.55rem 0.9rem;font-size:0.8rem;color:var(--amber2);font-weight:500;display:flex;align-items:center;gap:6px;flex-shrink:0;}
 .demo-controls{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem;}
 .demo-control-chip{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:0.55rem 0.85rem;font-size:0.72rem;}
 .chip-label{color:var(--muted);margin-bottom:2px;}
@@ -77,7 +77,7 @@ h1 em{font-style:italic;color:var(--amber);display:block;}
 .chip-dot.red{background:var(--red);}
 .demo-steps{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;}
 .demo-step{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:0.6rem 0.4rem;text-align:center;font-size:0.66rem;color:var(--muted);line-height:1.3;}
-.demo-step.active{border-color:rgba(255,98,0,0.35);color:var(--amber2);background:var(--amber-dim);}
+.demo-step.active{border-color:rgba(255,107,0,0.35);color:var(--amber2);background:var(--amber-dim);}
 .demo-step .step-icon{font-size:0.95rem;margin-bottom:3px;display:block;}
 
 /* LOGOS */
@@ -102,14 +102,14 @@ section{padding:6rem 4rem;}
 .step-card.step-wide{grid-column:span 2;}
 .step-card{background:var(--card);padding:2rem 1.4rem;position:relative;transition:background 0.3s;}
 .step-card:hover{background:#181b28;}
-.step-num{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;color:rgba(255,98,0,0.14);line-height:1;margin-bottom:1rem;}
-.step-icon-wrap{width:40px;height:40px;border-radius:10px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;}
+.step-num{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;color:rgba(255,107,0,0.14);line-height:1;margin-bottom:1rem;}
+.step-icon-wrap{width:40px;height:40px;border-radius:10px;background:var(--amber-dim);border:1px solid rgba(255,107,0,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;}
 .step-icon-wrap svg{width:20px;height:20px;stroke:var(--amber2);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
 .step-icon-wrap.red-tint{background:var(--red-dim);border-color:rgba(255,59,59,0.2);}
 .step-icon-wrap.red-tint svg{stroke:#ff7b7b;}
 .step-card h3{font-size:0.92rem;font-weight:600;margin-bottom:0.4rem;}
 .step-card p{font-size:0.82rem;color:var(--muted2);line-height:1.6;}
-.step-badge{display:inline-block;font-size:0.62rem;font-weight:600;padding:0.18rem 0.55rem;border-radius:100px;margin-top:0.6rem;letter-spacing:0.04em;background:var(--amber-dim);color:var(--amber2);border:1px solid rgba(255,98,0,0.25);}
+.step-badge{display:inline-block;font-size:0.62rem;font-weight:600;padding:0.18rem 0.55rem;border-radius:100px;margin-top:0.6rem;letter-spacing:0.04em;background:var(--amber-dim);color:var(--amber2);border:1px solid rgba(255,107,0,0.25);}
 
 /* FIDELITY */
 .fidelity-inner{max-width:1100px;margin:0 auto;}
@@ -151,13 +151,13 @@ section{padding:6rem 4rem;}
 .toc-preview-label{font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.8rem;}
 .toc-items{display:flex;flex-direction:column;gap:0.5rem;}
 .toc-item{display:flex;align-items:center;gap:10px;font-size:0.82rem;color:var(--muted2);}
-.toc-num{width:20px;height:20px;border-radius:5px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);color:var(--amber2);font-size:0.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.toc-num{width:20px;height:20px;border-radius:5px;background:var(--amber-dim);border:1px solid rgba(255,107,0,0.2);color:var(--amber2);font-size:0.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .toc-item span{color:var(--text);font-size:0.82rem;}
 .wc-selector{margin-top:1.4rem;border-top:1px solid var(--border);padding-top:1.2rem;}
 .wc-label{font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.8rem;}
 .wc-options{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
 .wc-option{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:0.7rem 0.9rem;cursor:pointer;transition:all 0.2s;}
-.wc-option.selected{border-color:rgba(255,98,0,0.4);background:var(--amber-dim);}
+.wc-option.selected{border-color:rgba(255,107,0,0.4);background:var(--amber-dim);}
 .wc-name{font-size:0.8rem;font-weight:600;color:var(--text);}
 .wc-words{font-size:0.72rem;color:var(--muted);}
 .warn-banner{margin-top:0.8rem;background:rgba(245,200,66,0.08);border:1px solid rgba(245,200,66,0.2);border-radius:8px;padding:0.65rem 0.9rem;font-size:0.76rem;color:var(--yellow);line-height:1.5;display:none;gap:8px;align-items:flex-start;}
@@ -169,14 +169,14 @@ section{padding:6rem 4rem;}
 .styles-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:3.5rem;}
 .style-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:2rem;}
 .style-tag{background:var(--card);border:1px solid var(--border2);border-radius:100px;padding:0.5rem 1.1rem;font-size:0.85rem;font-weight:500;color:var(--muted2);cursor:pointer;transition:all 0.2s;user-select:none;}
-.style-tag:hover,.style-tag.active{background:var(--amber-dim);border-color:rgba(255,98,0,0.4);color:var(--amber2);}
+.style-tag:hover,.style-tag.active{background:var(--amber-dim);border-color:rgba(255,107,0,0.4);color:var(--amber2);}
 .styles-preview{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.8rem;position:relative;overflow:hidden;min-height:240px;}
 .styles-preview::before{content:'';position:absolute;top:0;inset-inline-start:0;inset-inline-end:0;height:1px;background:linear-gradient(90deg,transparent,var(--amber),transparent);}
 .preview-label{font-size:0.7rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1rem;}
 .preview-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--text);margin-bottom:0.8rem;}
 .preview-text{font-size:0.88rem;color:var(--muted2);line-height:1.75;}
 .preview-text em{color:var(--amber2);font-style:normal;font-weight:600;}
-.preview-style-chip{display:inline-flex;align-items:center;gap:6px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);color:var(--amber2);font-size:0.7rem;font-weight:600;padding:0.2rem 0.65rem;border-radius:100px;margin-bottom:1.2rem;}
+.preview-style-chip{display:inline-flex;align-items:center;gap:6px;background:var(--amber-dim);border:1px solid rgba(255,107,0,0.2);color:var(--amber2);font-size:0.7rem;font-weight:600;padding:0.2rem 0.65rem;border-radius:100px;margin-bottom:1.2rem;}
 
 /* FEATURES */
 .features-inner{max-width:1100px;margin:0 auto;}
@@ -195,7 +195,7 @@ section{padding:6rem 4rem;}
 .feat-icon.green svg{stroke:var(--green);}
 .feat-card h3{font-size:0.98rem;font-weight:600;margin-bottom:0.5rem;}
 .feat-card p{font-size:0.86rem;color:var(--muted2);line-height:1.65;}
-.feat-new{display:inline-block;font-size:0.62rem;font-weight:700;background:var(--amber-dim);color:var(--amber2);border:1px solid rgba(255,98,0,0.25);padding:0.15rem 0.5rem;border-radius:100px;margin-inline-start:6px;vertical-align:middle;letter-spacing:0.04em;}
+.feat-new{display:inline-block;font-size:0.62rem;font-weight:700;background:var(--amber-dim);color:var(--amber2);border:1px solid rgba(255,107,0,0.25);padding:0.15rem 0.5rem;border-radius:100px;margin-inline-start:6px;vertical-align:middle;letter-spacing:0.04em;}
 
 /* TESTIMONIALS */
 .testimonials-inner{max-width:1100px;margin:0 auto;}
@@ -219,7 +219,7 @@ section{padding:6rem 4rem;}
 .pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3.5rem;text-align:start;}
 .plan-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem 1.8rem;position:relative;transition:border-color 0.3s,transform 0.3s;}
 .plan-card:hover{transform:translateY(-4px);}
-.plan-card.popular{border-color:rgba(255,98,0,0.4);background:linear-gradient(160deg,#1a1c28 0%,#141620 100%);}
+.plan-card.popular{border-color:rgba(255,107,0,0.4);background:linear-gradient(160deg,#1a1c28 0%,#141620 100%);}
 .popular-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--amber);color:#1a1200;font-size:0.72rem;font-weight:700;padding:0.28rem 1rem;border-radius:100px;letter-spacing:0.05em;text-transform:uppercase;white-space:nowrap;}
 .plan-name{font-size:0.8rem;font-weight:600;color:var(--muted2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.8rem;}
 .plan-price{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:900;line-height:1;margin-bottom:0.3rem;}
@@ -230,7 +230,7 @@ section{padding:6rem 4rem;}
 .plan-divider{height:1px;background:var(--border);margin:1.2rem 0;}
 .plan-features{list-style:none;display:flex;flex-direction:column;gap:0.65rem;}
 .plan-features li{font-size:0.85rem;color:var(--muted2);display:flex;align-items:flex-start;gap:8px;}
-.chk{width:16px;height:16px;flex-shrink:0;border-radius:50%;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.3);display:flex;align-items:center;justify-content:center;font-size:0.6rem;color:var(--amber);margin-top:2px;}
+.chk{width:16px;height:16px;flex-shrink:0;border-radius:50%;background:var(--amber-dim);border:1px solid rgba(255,107,0,0.3);display:flex;align-items:center;justify-content:center;font-size:0.6rem;color:var(--amber);margin-top:2px;}
 .plan-features li.dimmed{color:var(--muted);}
 .plan-features li.dimmed .chk{background:rgba(255,255,255,0.04);border-color:var(--border);color:transparent;}
 .plan-btn{display:block;text-align:center;margin-top:1.8rem;padding:0.75rem;border-radius:9px;font-size:0.9rem;font-weight:600;text-decoration:none;transition:all 0.2s;}
@@ -241,16 +241,16 @@ section{padding:6rem 4rem;}
 
 /* CTA */
 .cta-section{background:var(--bg);text-align:center;position:relative;overflow:hidden;}
-.cta-orb{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;border-radius:50%;background:radial-gradient(ellipse,rgba(255,98,0,0.07) 0%,transparent 70%);pointer-events:none;}
+.cta-orb{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;border-radius:50%;background:radial-gradient(ellipse,rgba(255,107,0,0.07) 0%,transparent 70%);pointer-events:none;}
 .cta-inner{position:relative;z-index:1;max-width:680px;margin:0 auto;}
 
 /* FOOTER */
-footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding:3.5rem 4rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;}
+footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 4rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;}
 .footer-brand{font-size:0.82rem;color:var(--muted);}
 .footer-brand a{color:var(--amber);text-decoration:none;}
 .footer-links{display:flex;gap:2rem;flex-wrap:wrap;}
 .footer-links a{font-size:1rem;font-weight:600;color:var(--text);text-decoration:none;transition:color 0.2s;}
-.footer-links a:hover{color:var(--brand-outline);}
+.footer-links a:hover{color:var(--amber);}
 
 /* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
@@ -328,7 +328,7 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
     新功能：仅限您的来源——每个事实都可追溯至您提供的内容
   </div>
   <h1>找到主题，收集来源。<br><em>出版书籍——以任何语言，印刷版或音频版。</em></h1>
-  <p class="hero-sub">TubeBook 不进行转录——它 <strong>撰写完整书籍</strong>。首先查看 <strong>读者真正在搜索什么</strong>，添加视频、文章、文档或您自己的手稿，然后选择遵循程度并批准大纲，之后才开始撰写。 <strong style="color:var(--amber2);">免费账户每月获得100个积分</strong> ——与所有付费计划一样，包含相同的创作、编辑、插图和导出工具。默认情况下，书中的每个事实都来自 <strong>您的来源，别无其他</strong>.</p>
+  <p class="hero-sub">TubeBook 不做转录——它<strong>撰写一本完整的书</strong>。首先查看<strong>读者真正在搜索什么</strong>，添加视频、文章、文档或您自己的手稿，然后选择遵循它们的紧密程度，并在写出一个字之前批准大纲。<strong style="color:var(--amber2);">免费账户每月获得 100 个积分</strong>——与所有付费计划一样，拥有相同的创作、编辑、插图和导出工具。默认情况下，书中的每个事实都来自<strong>您的来源，仅此而已</strong>。</p>
   <div class="hero-actions">
     <a href="https://app.tubebook.org/signup" class="btn-primary">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l-4 4-4-4"/><circle cx="12" cy="12" r="10"/></svg>
@@ -402,7 +402,7 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
         <div class="step-num">02</div>
         <div class="step-icon-wrap red-tint"><svg viewBox="0 0 24 24"><path d="M15 10l-4 4-4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
         <h3>添加来源</h3>
-        <p>让TubeBook为你的主题筛选最多25个视频、文章和文档——只筛选它真正能读取的——或者添加你自己的：YouTube链接、网页、 <strong>Word、PowerPoint和PDF文件</strong>，或粘贴整个500页手稿。每本书最多25个来源。</p>
+        <p>让 TubeBook 为您的主题筛选最多25个视频、文章和文档——仅限它能读取的——或添加您自己的：YouTube URL、网页、<strong>Word、PowerPoint 和 PDF 文件</strong>，或粘贴整个500页手稿。每本书最多25个来源。</p>
         <span class="step-badge">新</span>
       </div>
       <div class="step-card">
@@ -429,7 +429,7 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
         <div class="step-num">06</div>
         <div class="step-icon-wrap"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
         <h3>质量检查</h3>
-        <p>每一章在您看到之前都会经过二次处理：先进行结构和可读性的行编辑，然后进行完整性检查， <strong>补全被截断的章节</strong>，删除任何泄漏到正文中的指令，修复重复或编号的标题，并应用书籍自身语言的排版规则。大多数工具只给你初稿。这一步让它成为手稿。</p>
+        <p>每一章在您看到之前都会经过第二次处理：先进行结构和可读性的行编辑，然后进行完整性检查，<strong>补全被截断的章节</strong>，删除泄漏到正文中的任何指令，修复重复或编号的标题，并应用书籍自身语言的排版规则。大多数工具只给您初稿。这次处理使其成为手稿。</p>
         <span class="step-badge">新</span>
       </div>
       <div class="step-card step-wide">
@@ -500,15 +500,15 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
         <p class="section-sub" style="max-width:100%;">每本书都针对读者实际找到它的地方进行了优化：亚马逊搜索、谷歌和商店摄取管道。无需 SEO 功课。</p>
         <div style="margin-top:2rem;display:flex;flex-direction:column;gap:1rem;">
           <div style="display:flex;gap:12px;align-items:flex-start;">
-            <div style="width:32px;height:32px;border-radius:8px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.8rem;color:var(--amber2);font-weight:700;">1</div>
+            <div style="width:32px;height:32px;border-radius:8px;background:var(--amber-dim);border:1px solid rgba(255,107,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.8rem;color:var(--amber2);font-weight:700;">1</div>
             <div><div style="font-size:0.9rem;font-weight:600;margin-bottom:0.2rem;">搜索优化的标题和副标题</div><div style="font-size:0.84rem;color:var(--muted2);">副标题旨在包含读者实际在亚马逊和谷歌中输入的短语——作者控制的最强排名表面。</div></div>
           </div>
           <div style="display:flex;gap:12px;align-items:flex-start;">
-            <div style="width:32px;height:32px;border-radius:8px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.8rem;color:var(--amber2);font-weight:700;">2</div>
+            <div style="width:32px;height:32px;border-radius:8px;background:var(--amber-dim);border:1px solid rgba(255,107,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.8rem;color:var(--amber2);font-weight:700;">2</div>
             <div><div style="font-size:0.9rem;font-weight:600;margin-bottom:0.2rem;">每个文件都嵌入了元数据</div><div style="font-size:0.84rem;color:var(--muted2);">PDF、EPUB、DOCX 和 PPTX 随文件内置标题、作者、描述、关键词和语言——商店摄取和搜索引擎实际读取的内容。</div></div>
           </div>
           <div style="display:flex;gap:12px;align-items:flex-start;">
-            <div style="width:32px;height:32px;border-radius:8px;background:var(--amber-dim);border:1px solid rgba(255,98,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.8rem;color:var(--amber2);font-weight:700;">3</div>
+            <div style="width:32px;height:32px;border-radius:8px;background:var(--amber-dim);border:1px solid rgba(255,107,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.8rem;color:var(--amber2);font-weight:700;">3</div>
             <div><div style="font-size:0.9rem;font-weight:600;margin-bottom:0.2rem;">每本书完整的 KDP 工具包</div><div style="font-size:0.84rem;color:var(--muted2);">亚马逊就绪描述（纯文本 + 格式化 HTML）、7 个搜索关键词、3 个类别建议、封底文案和精确书脊宽度——一键复制每个。</div></div>
           </div>
         </div>
@@ -564,7 +564,7 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
           <div class="preview-style-chip" id="style-chip">✦ 专业</div>
           <div class="preview-label">示例段落——第2章</div>
           <div class="preview-title">核心框架详解</div>
-          <div class="preview-text" id="style-preview-text">以下框架提供了一种系统化的方法来优化你的工作流程。通过实施这些 <em>基于证据的方法</em>，组织可以实现运营效率的显著提升。</div>
+          <div class="preview-text" id="style-preview-text">以下框架提供了一种系统化的方法来优化您的工作流程。通过实施这些<em>基于证据的方法</em>，组织可以在运营效率上实现可衡量的改进。</div>
         </div>
         <p style="font-size:0.78rem;color:var(--muted);margin-top:1rem;text-align:center;">点击任意风格预览AI的语气</p>
       </div>
@@ -583,17 +583,17 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
       <div class="feat-card">
         <div class="feat-icon amber"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
         <h3>寻找主题 <span class="feat-new">新</span></h3>
-        <p>不知道写什么？免费浏览美国、英国、德国、加拿大、澳大利亚和法国的热门话题。然后查看读者在亚马逊上实际输入的短语、已有多少竞争书籍，并获得最佳视频和文章候选列表。 <strong>搜索需求，而非猜测。</strong></p>
+        <p>不知道写什么？免费浏览美国、英国、德国、加拿大、澳大利亚和法国的热门趋势。然后查看读者在亚马逊上实际输入的短语、已有多少竞争书籍，并获得最佳视频和文章的候选列表。<strong>搜索需求，而非猜测。</strong></p>
       </div>
       <div class="feat-card">
         <div class="feat-icon green"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
         <h3>多源书籍 <span class="feat-new">新</span></h3>
-        <p>将多达25个YouTube视频、网页文章、 <strong>Word、PowerPoint和PDF文档</strong> 以及粘贴的文本合并为一本书——从你的电脑上传或通过链接。粘贴整部未出版的手稿（最多500页），并让它重新结构化。TubeBook会读取所有内容，构建一个统一的提纲，然后根据实际涵盖这些内容的来源撰写每一章。</p>
+        <p>将最多25个 YouTube 视频、网页文章、<strong>Word、PowerPoint 和 PDF 文档</strong>以及粘贴的文本合并为一本书——从您的计算机上传或通过链接添加。粘贴整个未出版的手稿，最多500印刷页，并让其重构。TubeBook 读取所有内容，构建一个统一的提纲，然后根据实际涵盖该主题的来源撰写每一章。</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon blue"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
         <h3>仅限你的来源 <span class="feat-new">新</span></h3>
-        <p>TubeBook在写作时从不搜索网络。默认情况下，它也不会利用AI自身的知识—— <strong>每个事实、数字、名称和示例都追溯到你提供的材料</strong>，这样你就可以为自己的书负责。想要模型的知识背景？可以主动开启，这些书会带有标记，以便你区分。无论哪种设置，都不会编造统计数据、研究或引文。</p>
+        <p>TubeBook 在写作时绝不搜索网络。默认情况下，它也不会利用 AI 自身的知识——<strong>每个事实、数字、名称和示例都追溯到您提供的材料</strong>，因此您可以对自己的书负责。想要模型的基础知识？请有意开启，这些书会被标记，以便您知道区别。两种设置都不会编造统计数据、研究或引文。</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon green"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
@@ -603,72 +603,72 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
       <div class="feat-card">
         <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
         <h3>出版风险检查 <span class="feat-new">新</span></h3>
-        <p>在发布前，TubeBook 会检查你的标题、副标题和 KDP 关键词，查找品牌名、特许经营权、在世作者和官方认可声明——这些是亚马逊会屏蔽书籍的元数据。它会标记每个问题，解释原因，建议更安全的措辞，并直接链接到美国商标注册局，查看谁拥有该名称。在每个计划中，一个积分会同时检查所有标记，并显示所有者及其是否有效。它从不阻止你，也从不告诉你一本书是安全的： <strong>权利始终由你自行检查。</strong></p>
+        <p>在出版前，TubeBook 会检查您的标题、副标题和 KDP 关键词，查找品牌名称、特许经营权、在世作者和官方认可声明——这些元数据是亚马逊会压制书籍的。它会标记每个问题，解释其重要性，建议更安全的措辞，并直接链接到美国商标注册处，查看名称所有者。在每个计划中，一个积分即可同时检查所有标记，并显示所有者及其是否有效。它从不阻止您，也从不告诉您书籍是安全的：<strong>权利始终由您自行检查。</strong></p>
       </div>
       <div class="feat-card">
         <div class="feat-icon amber"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
         <h3>SEO与KDP就绪 <span class="feat-new">新</span></h3>
-        <p>关键词优化的副标题、嵌入每个文件的元数据，以及可复制粘贴的 KDP 包：描述、7 个关键词、类别、封底文案。先研究主题，这些关键词来自 <strong>真实观察到的搜索短语</strong> 而非猜测。</p>
+        <p>关键词优化的副标题、嵌入每个文件的元数据，以及一个可复制粘贴的 KDP 包：描述、7个关键词、类别、封底文案。先研究主题，这些关键词来自<strong>真实观察到的搜索短语</strong>，而非猜测。</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon red"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div>
         <h3>批准与书籍部件 <span class="feat-new">新</span></h3>
-        <p>在写作开始前审阅和编辑章节结构，并勾选书籍包含的确切部分——引言、结论、关于作者等。前页是出版级别的：真实的版权页，包含印记、城市、版本、设计署名和可选的专业服务免责声明；带贡献者署名的前言；以及印刷版的二维码。任何留空的内容都会被省略。选择章节是否以 <strong>关键要点</strong> 和 <strong>反思</strong> 提示结尾——或两者都不要。在你批准之前不会起草任何内容，失败的生成会退款，之后改变主意可免费重建文件。</p>
+        <p>在写作开始前审查和编辑章节结构，并勾选书籍包含的确切部分——引言、结论、关于作者等。前置部分达到出版级别：真正的版权页，包含出版信息、城市、版本、设计署名和可选的专业服务免责声明，带贡献者署名的前言，以及印刷版的二维码。留空的内容将被省略。选择章节是否以<strong>关键要点</strong>和<strong>反思</strong>提示结尾——或两者都不要。在您批准之前不会起草任何内容，失败的生成会退款，之后更改想法将免费重建文件。</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon red"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
         <h3>三种篇幅 <span class="feat-new">新</span></h3>
-        <p>10-25 页的引导磁铁以增长你的列表，25-50 页的短书可在 KDP 上作为平装本销售，或完整的 25,000 字以上的商业书籍——你在生成前选择。将字体大小设置为 <strong>12、14 或真正的 16 磅大字版</strong> 适合老年读者，从八种 KDP 裁切尺寸和十二种字体中选择，并实时查看页面估算是否达到亚马逊 24 页平装本最低要求。</p>
+        <p>一本10-25页的 lead magnet 用于增长邮件列表，一本25-50页的短书可在 KDP 上作为平装本销售，或一本完整的25,000字以上的商业书籍——您可以在生成前选择。设置<strong>12、14或真正的16磅大字</strong>以适应老年读者，从八种 KDP 裁剪尺寸和十二种字体中选择，并实时查看页面估算是否符合亚马逊24页平装本最低要求。</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon red"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
         <h3>您选择的封面与插图 <span class="feat-new">新</span></h3>
-        <p>对于封面和每个章节，选择 <strong>三个 AI 绘制的选项</strong>，搜索 <strong>库存照片</strong> 来自 Unsplash、Pexels 和 Pixabay，或 <strong>上传你自己的作品</strong> ——所有计划均可用。库存照片的署名和链接保留在导出的书籍中。自动放置每个章节图片，或选择其出现的具体章节和段落。编写一份艺术简报以保持一致的视觉语言，并排比较选项，仅在选定后重建。14 种设计预设，每张生成的插图 1 个积分，封面艺术免费。</p>
+        <p>对于封面和每一章，选择<strong>三幅 AI 绘制的选项</strong>，搜索<strong>来自 Unsplash、Pexels 和 Pixabay 的库存照片</strong>，或<strong>上传您自己的艺术作品</strong>——所有计划均可用。库存照片的积分和链接保留在导出的书籍中。自动放置每章图片，或选择其出现的具体章节和段落之后。编写一个艺术简报以保持一致的视觉语言，并排比较选项，并在选择后重建。14种设计预设，每幅生成的插图1积分，封面艺术免费。</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon amber"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
         <h3>十二种书籍模板 <span class="feat-new">新</span></h3>
-        <p>选择 <strong>哪种书籍</strong> 在写作之前——操作指南、7天计划、练习册、每日阅读、实地指南、参考手册。每种模板设定长度、语气和章节块，并改变章节的实际构建方式：实地指南每次使用相同的三个节拍，每日阅读每个条目独立成篇，练习册给读者留出的空间多于解释。模板设定的每个控件您都可以更改。</p>
+        <p>在写作之前选择<strong>书籍类型</strong>——操作指南、7天计划、工作簿、每日阅读、实地指南、参考手册。每种类型设置长度、语气和章节块，并改变章节的实际构建方式：实地指南每次使用相同的三个节拍，每日阅读在每一条目独立，工作簿给读者更多空间而非解释。模板设置的每个控件您都可以更改。</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
         <h3>用你自己的风格写作 <span class="feat-new">新</span></h3>
-        <p>上传你已写的内容——帖子、章节、文章——你的书籍将用 <strong>你的写作方式</strong>：您的节奏、您的句式、您如何开启一个想法以及如何收尾。而不是AI写作默认的平淡、谨慎的语域。您的文件只读取一次然后删除；不会用于训练模型，您的写作永远不会触及他人的书籍。</p>
+        <p>上传您已经写好的内容——帖子、章节、文章——您的书籍将<strong>以您的方式撰写</strong>：您的节奏、您的句子结构、您如何展开一个想法以及如何收尾。而不是 AI 写作默认的平淡、谨慎的语域。您的文件被读取一次后即删除；不会用于训练模型，您的写作也不会触及他人的书籍。</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
         <h3>编辑时的第二意见 <span class="feat-new">新</span></h3>
-        <p>询问方向、节奏，或某章是否值得其篇幅——并从一个读过你大纲和当前章节的对象那里得到答案。要求修改措辞，返回的将是 <strong>一份你完整阅读并接受或舍弃的提案</strong>。它绝不会自行编辑你的书。</p>
+        <p>询问方向、节奏，或章节是否值得其长度——并从已阅读您的提纲和当前章节的某处获得答案。要求更改措辞，它会以<strong>您完整阅读并接受或拒绝的提案</strong>形式返回。它绝不会自行编辑您的书籍。</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
         <h3>写完后仍可编辑 <span class="feat-new">新</span></h3>
-        <p>完成的书不是冻结的。你可以免费自行修改任何段落，应用校对者的精准AI修正，花费 <strong>0.1积分</strong>，或让 <strong>整个章节以1积分重写</strong> ，风格、忠实度和语言与全书一致。编辑时现有文件保持可用，完成后重建。</p>
+        <p>一本完成的书不是冻结的。您可以免费自行修改任何段落，应用校对员的专注 AI 修正，费用为<strong>0.1积分</strong>，或让<strong>整个部分重写，费用为1积分</strong>，风格、保真度和语言与书籍其余部分一致。编辑时现有文件继续工作，完成后重建。</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
         <h3>每章在你看之前都经过检查 <span class="feat-new">新</span></h3>
-        <p>语言模型在空间不足时会中途停句，而草稿看起来完整，因为前面的段落读起来没问题。所以每章都会经过第二遍处理：先进行结构上的行编辑，然后检查 <strong>为被截断的章节补写缺失的结尾</strong>，删除任何泄漏到正文中的指令，替换逐字重复的标题，并应用书籍自身语言的排版规则——法语标点前的窄空格、正确的引号、正确的破折号。您无需运行它，它也不消耗积分。它在生成文件的过程中自动发生，您可以在进度条上看到。</p>
+        <p>语言模型在空间不足时会中途停止，而草稿看起来已完成，因为前面的段落读起来正常。因此每一章都会经过第二次处理：先进行结构行编辑，然后检查<strong>补全被截断的章节缺失的结尾</strong>，删除泄漏到正文中的任何指令，替换逐字重复的标题，并应用书籍自身语言的排版——法语标点前的窄空格、正确的引号、正确的破折号。您无需运行它，也不消耗积分。它在生成文件的过程中发生，您可以在进度条上看到。</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon amber"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="m8 11 2 2 4-4"/></svg></div>
         <h3>出版前校对 <span class="feat-new">新</span></h3>
-        <p>逐章检查语法、重复和清晰度——以及单章无法显示的问题：一个术语有两种叫法，一个想法在用过之后才介绍，一个承诺从未兑现。每项发现 <strong>引用确切文字</strong>，点击即可直达。免费，无论运行多少次。</p>
+        <p>逐章检查语法、重复和清晰度——以及单章无法显示的问题：一个术语以两种方式命名、一个想法在使用后才被引入、一个承诺从未兑现。每个发现<strong>引用确切词语</strong>，点击即可直接跳转。免费，无论运行多少次。</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
         <h3>真实可信的参考文献 <span class="feat-new">新</span></h3>
-        <p>参考文献列表基于 <strong>你写书所用的来源</strong>，按使用它们的章节分组——而不是模型为了显得学术而编造的列表。为上月完成的书开启此功能并重建。</p>
+        <p>一份从<strong>撰写书籍所用来源</strong>构建的参考书目，按使用每个来源的章节分组——而非模型为了看起来学术而编造的列表。为上个月完成的书籍开启并重建。</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon amber"><svg viewBox="0 0 24 24"><path d="M5 3v18l15-9z"/></svg></div>
         <h3>有声书 <span class="feat-new">新</span></h3>
-        <p>将任何完成的书转化为有旁白的有声书。每个部分都有旁白——章节、前言和后记——因此你会得到 <strong>每个部分一个文件</strong> ，然后可以 <strong>将你选择的部分合并为单个文件</strong>。一键还能构建 <strong>发行包</strong>：每个部分作为编号的MP3， <strong>192 kbps CBR，44.1 kHz</strong>，音量已调整至聚合商上传时检查的标准，外加 <strong>3000×3000封面</strong>、 <strong>五分钟零售样章</strong> 以及披露AI旁白的元数据——聚合商要求的文件，以他们要求的形式呈现。标准语音提供男声和女声，支持十种语言，或英语和西班牙语的自然高级语音，发布前可试听。您的列表、标题和缩写会被改写以适应听觉，使其听起来像真人旁白而非屏幕阅读器。可通过Gumroad、Payhip、Shopify或您自己的网站直接销售——或通过接受AI旁白的聚合商触达Audible（<a href="help.html#audiobooks">先了解什么</a>).</p>
+        <p>将任何完成的书籍转变为有声书。每个部分都被叙述——章节以及前置和后置内容——因此您获得<strong>每个部分一个文件</strong>，然后可以<strong>将您选择的部分合并为单个文件</strong>。一键构建<strong>分发包</strong>：每个部分作为编号的 MP3，<strong>192 kbps CBR，44.1 kHz</strong>，电平调整到聚合器上传时检查的响度，加上<strong>3000×3000封面</strong>、<strong>五分钟零售样本</strong>以及披露 AI 叙述的元数据——聚合器要求的文件，以它们要求的格式。标准语音有十种语言的男性和女性叙述者，或英语和西班牙语的自然高级语音，您可以在发布前试听。您的列表、标题和缩写会被改写为适合听觉，因此读起来像叙述者而非屏幕阅读器。直接在 Gumroad、Payhip、Shopify 或您自己的网站销售——或通过接受 AI 叙述的聚合器触达 Audible（<a href="help.html#audiobooks">先了解什么</a>).</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon green"><svg viewBox="0 0 24 24"><path d="M2 12h20"/><path d="M12 2a15 15 0 010 20 15 15 0 010-20z"/><circle cx="12" cy="12" r="10"/></svg></div>
         <h3>七种语言 <span class="feat-new">新</span></h3>
-        <p>共七种：您的原始英文版加上法语、西班牙语、德语、葡萄牙语、意大利语和荷兰语。每种语言都成为 <strong>独立的书</strong> ——这正是亚马逊所需的，因为每种语言都是独立的列表。您的封面和插图会被复用，关键词会针对该市场重新研究，因此第二版的成本约为第一版的40%。 <strong>每一种都可以配音</strong>，男声或女声，因此翻译版可以像原版一样以有声书形式发布。</p>
+        <p>总共七种：您的原始英语版本加上法语、西班牙语、德语、葡萄牙语、意大利语和荷兰语。每种都成为<strong>独立的书</strong>——这正是亚马逊需要的，因为每种语言都是单独的列表。您的封面和插图被重用，关键词针对该市场重新研究，因此第二版成本约为第一版的40%。<strong>每一种都可以被叙述</strong>，男性或女性，因此翻译版可以像原版一样作为有声书发布。</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon blue"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
@@ -690,16 +690,16 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
       <div class="testi-card">
         <div class="stars">★★★★★</div>
         <div class="testi-tag green">低保真——KDP</div>
-        <p class="testi-quote">我在一个公共财经视频上使用了低保真模式，得到了一本 <strong>22,000字的电子书</strong> 我现在在亚马逊KDP上销售。我选择的写作风格与我的品牌完美匹配。</p>
+        <p class="testi-quote">我在一个公共财政视频上使用了低保真模式，得到了一本<strong>22,000字的电子书</strong>，现在在亚马逊 KDP 上销售。我选择的写作风格与我的品牌完美匹配。</p>
         <div class="testi-author">
-          <div class="testi-avatar" style="background:rgba(255,98,0,0.15);color:var(--amber2);">JM</div>
+          <div class="testi-avatar" style="background:rgba(255,107,0,0.15);color:var(--amber2);">JM</div>
           <div><div class="testi-name">James M.</div><div class="testi-role">金融教育者，18万订阅者</div></div>
         </div>
       </div>
       <div class="testi-card">
         <div class="stars">★★★★★</div>
         <div class="testi-tag red-t">高保真——再利用</div>
-        <p class="testi-quote">我使用高保真模式重新利用了我整个40视频的培训系列。每个视频都成为一章。 <strong>我自己的内容，终于成书了。</strong></p>
+        <p class="testi-quote">我使用高保真模式重新利用了我整个40视频培训系列。每个视频成为一章。<strong>我自己的内容，终于成书了。</strong></p>
         <div class="testi-author">
           <div class="testi-avatar" style="background:rgba(255,59,59,0.12);color:#ff7b7b;">SR</div>
           <div><div class="testi-name">Sofia R.</div><div class="testi-role">商业教练与作者</div></div>
@@ -708,7 +708,7 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
       <div class="testi-card">
         <div class="stars">★★★★★</div>
         <div class="testi-tag yellow">Smart Adapt — 引流磁铁</div>
-        <p class="testi-quote">目录预览改变了一切——我在批准前修改了两章，最终电子书完全符合预期。 <strong>我的邮件列表在两个月内增长了3倍。</strong></p>
+        <p class="testi-quote">目录预览改变了一切——我在批准前编辑了两章，最终的电子书完全正确。<strong>我的邮件列表在两个月内增长了3倍。</strong></p>
         <div class="testi-author">
           <div class="testi-avatar" style="background:rgba(80,130,255,0.12);color:#7ab0ff;">AT</div>
           <div><div class="testi-name">Alex T.</div><div class="testi-role">开发者与课程创作者</div></div>
@@ -724,7 +724,7 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
     <div class="fade-in-up">
       <span class="section-label">定价</span>
       <h2 class="section-title">简单的积分定价</h2>
-      <p class="section-sub" style="margin:0 auto;">每个套餐都基于积分——引流磁铁消耗30积分，短书60积分，完整商业书100积分，每增加一个来源额外加8积分。主题研究每个细分市场花费 <strong>5积分</strong> 每个细分市场，14天内重新打开同一细分市场免费。5个来源的lead magnet花费30 + 4 × 8 = <strong>62积分</strong>。所有套餐均包含主题研究、多来源书籍、保真模式、写作风格、大纲审核与批准，以及KDP元数据工具包。月度套餐自动补充积分。</p>
+      <p class="section-sub" style="margin:0 auto;">每个计划都基于积分运行——lead magnet 使用30，短书60，完整商业书100，每个额外来源加8。主题研究每个细分市场<strong>5积分</strong>，14天内重新打开同一细分市场免费。一个5来源的 lead magnet 花费30 + 4 × 8 = <strong>62积分</strong>。所有计划包括主题研究、多来源书籍、保真模式、写作风格、提纲审查与批准，以及 KDP 元数据工具包。月度计划自动补充积分。</p>
     </div>
     <div class="pricing-grid fade-in-up">
       <div class="plan-card">
@@ -874,7 +874,7 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
     <div class="faq-list fade-in-up">
       <details class="faq-item">
         <summary>我需要拥有我用来制作的视频吗？</summary>
-        <div class="faq-a"><p>不需要，任何公开的YouTube视频都可以——但您发布的内容由您负责。这正是三种保真模式的用途。 <strong>高保真</strong> 紧密跟随视频结构，适合您自己的内容； <strong>智能</strong> 和 <strong>低</strong> 将想法重组为实质性的原创写作，这是处理他人视频时更安全的选择。仅在页面所有者条款允许的情况下检索网页。</p></div>
+        <div class="faq-a"><p>不，任何公开的YouTube视频都可以——但发布的内容由你负责。这正是三种保真模式的意义所在。<strong>高保真</strong>紧密遵循视频结构，适合你自己的内容；<strong>智能</strong>和<strong>低</strong>模式会将观点重组为实质性的原创文字，这是处理他人视频时更安全的选择。网页仅在页面所有者条款允许的情况下才会被获取。</p></div>
       </details>
       <details class="faq-item">
         <summary>亚马逊会接受这样写的书吗？</summary>
@@ -894,11 +894,11 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
       </details>
       <details class="faq-item">
         <summary>我可以使用哪些语言出版和配音？</summary>
-        <div class="faq-a"><p>你可以用 <strong>七种</strong> 语言出版——英语、法语、西班牙语、葡萄牙语、德语、意大利语和荷兰语——每种翻译都会成为一本独立的书，这正是亚马逊所需要的，因为每种语言都是一个独立的列表。配音覆盖 <strong>上述七种语言以及中文、日语和韩语</strong> ——共十种，每种语言都有男女配音。你能出版的每个版本，也都能制作成有声书。</p></div>
+        <div class="faq-a"><p>你可以发布<strong>七种</strong>语言——英语、法语、西班牙语、葡萄牙语、德语、意大利语和荷兰语——每种翻译都会成为一本独立的书，这正是亚马逊所需要的，因为每种语言都是独立的列表。配音覆盖<strong>上述七种语言外加中文、日语和韩语</strong>——共十种，每种语言都有男女两位配音员。你能发布的每个版本，也都能制作成有声书。</p></div>
       </details>
       <details class="faq-item">
         <summary>我可以在Audible上销售有声书吗？</summary>
-        <div class="faq-a"><p>通过聚合商，可以——Author's Republic、Kobo Writing Life和Spotify的有声书项目接受AI配音，并在披露后分发到Audible目录。ACX自己的提交流程是针对人工配音的，除非标题事先获得 <em>授权</em> ，所以请先联系ACX，而不是提交后碰运气。我们构建的包符合他们检查的技术规范；权限部分由你安排。</p></div>
+        <div class="faq-a"><p>通过聚合商可以——Author's Republic、Kobo Writing Life和Spotify的有声书项目都接受AI配音，并在披露后分发到Audible目录。ACX自己的提交流程仅适用于真人配音，除非事先<em>授权</em>，所以请先联系ACX，而不是直接提交碰运气。我们构建的包符合他们检查的技术规格；授权部分由你安排。</p></div>
       </details>
       <details class="faq-item">
         <summary>有声书包中包含什么？</summary>
@@ -926,7 +926,7 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
       </details>
       <details class="faq-item">
         <summary>生成后我可以修改书籍吗？</summary>
-        <div class="faq-a"><p>可以——每一个字都可以。 <strong>编辑内容</strong> 让你免费手动修改任何内容，或花费 0.1 积分应用校对者的精准 AI 建议，或花费 1 积分以与书籍其余部分相同的风格和语言重写整个章节。你现有的文件在重新构建之前会继续使用之前的措辞，因此你在编辑过程中永远不会缺少下载。</p></div>
+        <div class="faq-a"><p>是的——每一个字都可以。<strong>编辑文字</strong>功能可让你免费手动修改任何内容，使用校对员的针对性AI建议每次0.1积分，或以1积分重写整个章节，风格和语言与全书其余部分保持一致。你现有的文件在重新构建之前会继续使用之前的措辞，因此编辑过程中你永远不会没有下载可用。</p></div>
       </details>
       <details class="faq-item">
         <summary>出版前会检查我的语法吗？</summary>
@@ -934,7 +934,7 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
       </details>
       <details class="faq-item">
         <summary>它能用我自己的风格写作吗？我的写作会被用来训练它吗？</summary>
-        <div class="faq-a"><p>可以，而且不会。上传你已经写过的内容， <strong>你的写作风格描述</strong> 会从中得出——句子长度和变化、你如何开头和结尾、你是否直接称呼读者、你的标点习惯——之后每个章节都会在写作时参考该描述。不会微调任何模型，你上传的内容不会用于他人的书籍，你的文件会在 <strong>读取后立即删除</strong>。它会明显改变语域、节奏和词汇；它不会让写作与你的完全无法区分，我们宁愿提前说明，也不愿让你事后发现。</p></div>
+        <div class="faq-a"><p>可以，而且这并非噱头。上传你已写好的内容，系统会从中分析出<strong>你的写作风格描述</strong>——句子长度和变化、如何开头和结尾、是否直接称呼读者、标点习惯——之后每一章都会在写作时参考该描述。不会微调任何模型，你上传的内容不会用于他人的书籍，你的文件在<strong>读取后立即删除</strong>。它会明显改变语域、节奏和词汇；但不会让文字与你的写作完全无法区分，我们宁愿提前说明，也不愿让你事后才发现。</p></div>
       </details>
     </div>
   </div>
@@ -962,7 +962,7 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--brand-outline);padding
     <a href="/zh/terms">条款</a>
     <a href="/zh/contact">联系我们</a>
   </div>
-  <div class="footer-note">TubeBook (tubebook.org) 是独立产品， <strong>与任何其他同名或名称相似的实体或AI应用均无关联</strong>。TubeBook仅在tubebook.org官方销售——我们没有任何授权经销商、终身优惠或无限量套餐。</div>
+  <div class="footer-note">TubeBook（tubebook.org）是独立产品，<strong>与任何其他同名实体或AI应用均无关联</strong>。TubeBook仅通过tubebook.org销售——我们没有授权经销商、终身优惠或无限套餐。</div>
 </footer>
 
 <script>

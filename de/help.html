@@ -15,7 +15,7 @@
 :root {
   --bg: #08090d; --bg2: #0f1118; --bg3: #14171f; --card: #131620;
   --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
-  --amber: #ff6200;--brand-outline:#ff6b00; --amber2: #ff8c42; --amber-dim: rgba(255,98,0,0.12);
+  --amber:#ff6b00; --amber2:#ff9542; --amber-dim: rgba(255,107,0,0.12);
   --red: #ff3b3b; --red-dim: rgba(255,59,59,0.12);
   --green: #2ecc71; --green-dim: rgba(46,204,113,0.11);
   --text: #f0eee8; --muted: #7b7d8a; --muted2: #a0a3b1;
@@ -32,7 +32,7 @@ code, kbd { background: var(--bg3); border: 1px solid var(--border); padding: 2p
 nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 4rem; background: rgba(8,9,13,0.88); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); }
 .nav-logo { display: flex; align-items: center; gap: 10px; font-size: 1.2rem; font-weight: 700; color: var(--text); text-decoration: none; }
 .nav-logo:hover { text-decoration: none; }
-.logo-icon { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, #ff6200 0%, #cc4e00 100%); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0; }
+.logo-icon { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, #ff6b00 0%, #cc5700 100%); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0; }
 .logo-text span { color: var(--amber); }
 .nav-links { display: flex; align-items: center; gap: 2rem; }
 .nav-links a { color: var(--muted2); font-size: 0.875rem; text-decoration: none; transition: color 0.2s; }
@@ -43,7 +43,7 @@ nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center
 /* LAYOUT */
 .page-wrap { max-width: 860px; margin: 0 auto; padding: 0 2rem 6rem; }
 .page-header { padding: 4rem 0 2.5rem; border-bottom: 1px solid var(--border); margin-bottom: 3rem; position: relative; overflow: hidden; }
-.page-header::after { content: ''; position: absolute; top: 0; inset-inline-end: -40px; width: 340px; height: 220px; background: radial-gradient(ellipse, rgba(255,98,0,0.06) 0%, transparent 70%); pointer-events: none; }
+.page-header::after { content: ''; position: absolute; top: 0; inset-inline-end: -40px; width: 340px; height: 220px; background: radial-gradient(ellipse, rgba(255,107,0,0.06) 0%, transparent 70%); pointer-events: none; }
 .breadcrumb { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; display: flex; align-items: center; gap: 6px; }
 .breadcrumb a { color: var(--muted); text-decoration: none; }
 .breadcrumb a:hover { color: var(--amber); }
@@ -54,7 +54,7 @@ h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 2.8rem)
 
 /* TYPOGRAPHY */
 h2 { font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 700; color: var(--text); margin: 3rem 0 1rem; letter-spacing: -0.01em; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
-.sec-num { font-family: 'Outfit', sans-serif; font-size: 0.7rem; font-weight: 600; color: var(--amber); background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.22); padding: 0.15rem 0.55rem; border-radius: 100px; letter-spacing: 0.05em; flex-shrink: 0; }
+.sec-num { font-family: 'Outfit', sans-serif; font-size: 0.7rem; font-weight: 600; color: var(--amber); background: var(--amber-dim); border: 1px solid rgba(255,107,0,0.22); padding: 0.15rem 0.55rem; border-radius: 100px; letter-spacing: 0.05em; flex-shrink: 0; }
 h3 { font-size: 0.97rem; font-weight: 600; color: var(--text); margin: 1.5rem 0 0.5rem; }
 p { color: var(--muted2); line-height: 1.75; margin-bottom: 0.8rem; }
 ul, ol { color: var(--muted2); padding-inline-start: 1.4rem; line-height: 1.75; }
@@ -62,7 +62,7 @@ li { margin-bottom: 0.45rem; }
 
 /* CARDS */
 .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.6rem 1.8rem; margin: 1rem 0; position: relative; overflow: hidden; }
-.card::before { content: ''; position: absolute; top: 0; inset-inline-start: 0; inset-inline-end: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,98,0,0.18), transparent); }
+.card::before { content: ''; position: absolute; top: 0; inset-inline-start: 0; inset-inline-end: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,107,0,0.18), transparent); }
 
 /* TOC */
 .toc-box { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem 1.8rem; margin-bottom: 2.5rem; }
@@ -80,21 +80,21 @@ tr:last-child td { border-bottom: none; }
 td strong { color: var(--text); }
 
 /* PILLS */
-.pill { display: inline-block; background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.25); color: var(--amber2); font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.65rem; border-radius: 100px; letter-spacing: 0.04em; margin-inline-end: 6px; vertical-align: middle; }
+.pill { display: inline-block; background: var(--amber-dim); border: 1px solid rgba(255,107,0,0.25); color: var(--amber2); font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.65rem; border-radius: 100px; letter-spacing: 0.04em; margin-inline-end: 6px; vertical-align: middle; }
 
 /* ALERT BOXES */
 .alert-warn { background: rgba(255,59,59,0.07); border: 1px solid rgba(255,59,59,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: #ff9a9a; }
 .alert-tip { background: var(--green-dim); border: 1px solid rgba(46,204,113,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: #7be8a8; }
-.alert-info { background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: var(--amber2); }
+.alert-info { background: var(--amber-dim); border: 1px solid rgba(255,107,0,0.2); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; color: var(--amber2); }
 
 /* FOOTER */
-footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); padding: 2.5rem 4rem; }
+footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 2.5rem 4rem; }
 .footer-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
 .footer-brand { font-size: 0.82rem; color: var(--muted); }
 .footer-brand a { color: var(--amber); text-decoration: none; }
 .footer-links { display: flex; gap: 1.8rem; flex-wrap: wrap; }
 .footer-links a { font-size: 1rem; font-weight: 600; color: var(--text); text-decoration: none; transition: color 0.2s; }
-.footer-links a:hover { color: var(--brand-outline); }
+.footer-links a:hover { color: var(--amber); }
 
 @media (max-width: 760px) {
   nav { padding: 0.9rem 1.2rem; }
@@ -107,10 +107,10 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); p
 /* PAGE-SPECIFIC */
 .toc-nav { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 1.5rem 0 2.5rem; }
 .toc-nav a { display: block; padding: 0.9rem 1.1rem; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); color: var(--muted2); font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
-.toc-nav a:hover { border-color: rgba(255,98,0,0.4); color: var(--amber); text-decoration: none; }
+.toc-nav a:hover { border-color: rgba(255,107,0,0.4); color: var(--amber); text-decoration: none; }
 .step-list { display: flex; flex-direction: column; gap: 1rem; }
 .step-row { display: flex; gap: 1rem; align-items: flex-start; }
-.step-n { flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--amber-dim); border: 1px solid rgba(255,98,0,0.3); color: var(--amber); font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+.step-n { flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--amber-dim); border: 1px solid rgba(255,107,0,0.3); color: var(--amber); font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
 .step-body { color: var(--muted2); font-size: 0.92rem; line-height: 1.65; }
 .step-body strong { color: var(--text); }
 
@@ -182,19 +182,19 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); p
     <div class="step-list">
       <div class="step-row">
         <div class="step-n">1</div>
-        <div class="step-body">Erstelle ein kostenloses Konto bei <a href="https://app.tubebook.org">der TubeBook-App</a>. Kostenlose Konten erhalten <strong>100 Credits pro Monat</strong>, ohne Kreditkarte und mit denselben Funktionen wie kostenpflichtige Konten.</div>
+        <div class="step-body">Erstelle ein kostenloses Konto bei <a href="https://app.tubebook.org">der TubeBook-App</a>. Kostenlose Konten erhalten <strong>jeden Monat 100 Credits</strong>, ohne Kreditkarte und mit denselben Funktionen wie kostenpflichtige Konten.</div>
       </div>
       <div class="step-row">
         <div class="step-n">2</div>
-        <div class="step-body">Du weißt nicht, worüber du schreiben sollst? Öffne <strong>Thema finden</strong> zuerst — sieh, wonach Leser suchen, wähle ein Konzept, und TubeBook liefert dir die Quellen. Oder spring direkt zu Schritt 3.</div>
+        <div class="step-body">Sie wissen nicht, worüber Sie schreiben sollen? Öffnen Sie zuerst <strong>Find a topic</strong> – sehen Sie, wonach Leser suchen, wählen Sie ein Konzept, und TubeBook liefert Ihnen die Quellen. Oder springen Sie direkt zu Schritt 3.</div>
       </div>
       <div class="step-row">
         <div class="step-n">3</div>
-        <div class="step-body">Öffnen <strong>Generieren</strong>, füge eine YouTube-URL oder ein Transkript ein, wähle einen Wiedergabetreue-Modus und Schreibstil, und sende ab.</div>
+        <div class="step-body">Öffnen Sie <strong>Generate</strong>, fügen Sie eine YouTube-URL oder ein Transkript ein, wählen Sie einen Wiedergabetreue-Modus und Schreibstil, und senden Sie ab.</div>
       </div>
       <div class="step-row">
         <div class="step-n">4</div>
-        <div class="step-body">TubeBook übernimmt den Rest — Quellen lesen, Strukturieren, Schreiben, Qualitätsprüfungen, optionale Cover- und Kapitelbilder — und exportiert dann in <strong>PDF, DOCX, EPUB und PPTX</strong> auf jedem Plan, plus druckfertige Taschenbuch- und Kindle-Assets.</div>
+        <div class="step-body">TubeBook übernimmt den Rest – Quellenlesen, Strukturieren, Schreiben, Qualitätsprüfungen, optionales Cover und Kapitelbilder – und exportiert dann in <strong>PDF, DOCX, EPUB und PPTX</strong> auf jedem Plan, plus druckfertige Taschenbuch- und Kindle-Assets.</div>
       </div>
     </div>
   </div>
@@ -204,52 +204,52 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); p
     <h2>E-Book erstellen</h2>
     <h3>Länge wählen</h3>
     <ul>
-      <li><strong>Kurzer Lead-Magnet</strong> — etwa 10-25 Druckseiten (~6.000 Wörter, 5 Kapitel). Ideal für Newsletter-Geschenke und Opt-ins. <strong>30 Credits.</strong></li>
-      <li><strong>Kurzes Buch</strong> — etwa 25-50 Seiten (~13.000 Wörter, 9 Kapitel). Lang genug, um das 24-Seiten-Minimum für Taschenbücher bei Amazon KDP zu erfüllen, sodass du es gedruckt verkaufen kannst. <strong>60 Credits.</strong></li>
-      <li><strong>Vollwertiges kommerzielles Buch</strong> — Langform, 10-14 Kapitel, über 25.000 Wörter. Tiefste Struktur und Stil. <strong>100 Credits.</strong></li>
+      <li><strong>Kurzer Lead Magnet</strong> – etwa 10–25 gedruckte Seiten (~6.000 Wörter, 5 Kapitel). Ideal für Newsletter-Geschenke und Opt-ins. <strong>30 Credits.</strong></li>
+      <li><strong>Kurzes Buch</strong> – etwa 25–50 Seiten (~13.000 Wörter, 9 Kapitel). Lang genug, um das 24-Seiten-Minimum für Taschenbücher bei Amazon KDP zu erfüllen, sodass Sie es gedruckt verkaufen können. <strong>60 Credits.</strong></li>
+      <li><strong>Vollwertiges kommerzielles Buch</strong> – Langform, 10–14 Kapitel, 25.000+ Wörter. Tiefste Struktur und Gestaltung. <strong>100 Credits.</strong></li>
     </ul>
     <p>Jede Länge ist auf jedem Plan verfügbar, auch im kostenlosen — sie wird durch dein Credit-Guthaben begrenzt, nicht durch dein Abonnement.</p>
     <div class="alert-tip">💡 Seitenzahlen sind Schätzungen basierend auf Wortzahl und Beschnitt, daher zeigt dasselbe Buch bei größerem Beschnitt weniger Seiten. Wenn du ein Taschenbuch verkaufen möchtest, behalte die Seitenschätzung auf der Generierungsseite im Auge: Amazon druckt nicht unter 24 Seiten. Ein kurzes Buch im Format 6″ × 9″ überschreitet es problemlos; bei 8,5″ × 11″ möglicherweise nicht.</div>
     <h3>Wiedergabetreue-Modi</h3>
     <ul>
-      <li><strong>Hohe Wiedergabetreue</strong> — folgt exakt der Struktur, den Namen und Ideen deiner Quelle. Nur zur Wiederverwendung eigener Inhalte.</li>
-      <li><strong>Smart Adapt (Standard)</strong> — schreibt und strukturiert die Quelle in neuen Text um, bleibt aber thematisch nah am Original.</li>
-      <li><strong>Low Fidelity</strong> — verwendet das Video nur als thematischen Ausgangspunkt; generiert weitgehend originäre Inhalte, die sicher für kommerzielle Veröffentlichungen (Amazon KDP, Gumroad usw.) sind.</li>
+      <li><strong>High Fidelity</strong> – folgt exakt der Struktur, den Namen und Ideen Ihrer Quelle. Nur zur Wiederverwendung eigener Inhalte.</li>
+      <li><strong>Smart Adapt (Standard)</strong> – schreibt die Quelle in neuen Text um und strukturiert sie neu, bleibt dabei thematisch nah am Original.</li>
+      <li><strong>Low Fidelity</strong> – verwendet das Video nur als thematischen Ausgangspunkt; generiert weitgehend originellen Inhalt, der für kommerzielle Veröffentlichung geeignet ist (Amazon KDP, Gumroad usw.).</li>
     </ul>
     <h3>Schreibstile</h3>
     <p>Wählen Sie vor der Generierung zwischen Professionell, Konversationell, Storytelling, Akademisch, Inspirierend oder Stoisch.</p>
     <h3>Quellen</h3>
-    <p>Auf der Generierungsseite wählen Sie zuerst <strong>Eine Quelle</strong> oder <strong>Viele Quellen</strong>.</p>
+    <p>Auf der Generierungsseite wählen Sie zuerst <strong>Eine Quelle</strong> oder <strong>Mehrere Quellen</strong>.</p>
     <p><strong>Eine Quelle</strong> ist der klassische Ablauf – eine einzelne YouTube-URL oder ein Transkript, das Sie einfügen.</p>
-    <p><strong>Viele Quellen</strong> ermöglicht es Ihnen, einen ganzen Recherche-Satz in einem Buch zu kombinieren. Fügen Sie so viele Einträge hinzu, wie Ihr Plan erlaubt, in beliebiger Mischung:</p>
+    <p><strong>Mehrere Quellen</strong> ermöglicht es Ihnen, einen ganzen Forschungssatz in einem Buch zu kombinieren. Fügen Sie so viele Einträge hinzu, wie Ihr Plan erlaubt, in beliebiger Mischung:</p>
     <ul>
       <li><strong>YouTube-URL</strong> – TubeBook erfasst das Video direkt und zieht dessen Transkript.</li>
-      <li><strong>Webseite</strong> – fügen Sie die URL eines Artikels oder Blogbeitrags ein, und TubeBook extrahiert den lesbaren Text. Paywall- und reine JavaScript-Seiten können nicht gelesen werden; fügen Sie stattdessen den Text ein.</li>
+      <li><strong>Webseite</strong> – fügen Sie eine Artikel- oder Blog-URL ein, und TubeBook extrahiert den lesbaren Text. Seiten mit Paywall und reinem JavaScript können nicht gelesen werden; fügen Sie stattdessen den Text ein.</li>
       <li><strong>Eingefügter Text</strong> – jedes Transkript, jeder Artikel oder Notizen (mindestens 200 Zeichen).</li>
-      <li><strong>Dokument</strong> – eine <strong>.docx</strong>, <strong>.pptx</strong> oder <strong>.pdf</strong>, entweder von Ihrem Computer hochgeladen (bis zu 25 MB) oder per URL verlinkt. Word-Manuskripte, Präsentationen, Forschungspapiere, Berichte und Kursnotizen funktionieren alle.</li>
+      <li><strong>Dokument</strong> – eine <strong>.docx</strong>, <strong>.pptx</strong> oder <strong>.pdf</strong>, entweder von Ihrem Computer hochgeladen (bis 25 MB) oder per URL verlinkt. Word-Manuskripte, Präsentationen, Forschungspapiere, Berichte und Kursnotizen funktionieren alle.</li>
     </ul>
-    <p>Sie wählen <em>Dokument</em> und sonst nichts – TubeBook erkennt das Format aus der Datei selbst, nicht aus ihrem Namen, sodass eine <code>.docx</code> , die eigentlich eine PDF ist, als die PDF gelesen wird, die sie ist, statt später zu scheitern.</p>
-    <div class="alert-tip">💡 Eine <strong>gescannte</strong> PDF – Seiten, die Fotografien von Text sind, ohne auswählbaren Inhalt – wird mit einem klaren Grund abgelehnt, statt als leere Quelle übernommen zu werden. Exportieren Sie eine frische PDF aus der Originaldatei oder fügen Sie den Text ein.</div>
+    <p>Sie wählen <em>Dokument</em> und sonst nichts – TubeBook erkennt das Format aus der Datei selbst, nicht aus ihrem Namen, sodass eine <code>.docx</code>, die eigentlich eine PDF ist, als die PDF gelesen wird, die sie ist, statt später zu scheitern.</p>
+    <div class="alert-tip">💡 Eine <strong>gescannte</strong> PDF – Seiten, die Fotografien von Text sind, ohne auswählbaren Inhalt – wird mit einer klaren Begründung abgelehnt, statt als leere Quelle erfasst zu werden. Exportieren Sie eine frische PDF aus der Originaldatei oder fügen Sie den Text ein.</div>
     <p>Ein Dokument kostet genau so viel wie eine Webseite: kein YouTube-Transkript-Credit, kein Suchaufruf. Das Parsing erfolgt innerhalb von TubeBook.</p>
-    <p>Geben Sie jeder Quelle ein optionales Label, damit Sie sie später wiedererkennen. Quellen werden nummeriert <strong>S1, S2, S3…</strong> in der Reihenfolge, in der Sie sie hinzufügen.</p>
+    <p>Geben Sie jeder Quelle ein optionales Label, damit Sie sie später wiedererkennen. Quellen werden in der Reihenfolge, in der Sie sie hinzufügen, als <strong>S1, S2, S3…</strong> nummeriert.</p>
     <h3>Wie Bücher aus mehreren Quellen geschrieben werden</h3>
     <ol>
       <li>TubeBook liest jede Quelle der Reihe nach und fasst sie zusammen. Sie sehen "Quelle 2 von 6 wird gelesen" auf dem Dashboard.</li>
       <li>Es führt diese Zusammenfassungen zusammen und entwirft eine einzige Gliederung für die gesamte Menge.</li>
-      <li>Jedes Kapitel ist mit den Quellen gekennzeichnet, auf die es sich stützt – Sie sehen Chips wie <strong>S1</strong>, <strong>S4</strong> daneben in der Gliederungsprüfung.</li>
+      <li>Jedes Kapitel ist mit den Quellen gekennzeichnet, auf die es sich stützt – Sie sehen Chips wie <strong>S1</strong>, <strong>S4</strong> daneben in der Gliederungsvorschau.</li>
       <li>Beim Schreiben erhält jedes Kapitel den vollständigen Text nur seiner eigenen Quellen, sodass es mit echten Details arbeitet statt mit einer gemeinsamen Zusammenfassung.</li>
     </ol>
-    <div class="alert-tip">💡 Quellen sind nach bestem Bemühen. Wenn eine URL tot oder hinter einer Paywall ist, wird sie übersprungen und das Buch wird trotzdem aus dem Rest erstellt – Sie sehen "1 von 6 Quellen konnte nicht gelesen werden" auf dem Dashboard. Ihr E-Book schlägt nur fehl, wenn <em>keine</em> von ihnen gelesen werden konnte, und dann werden Credits automatisch erstattet.</div>
-    <p><strong>Wie viele Quellen kann ich verwenden?</strong> Jeder Plan kann bis zu 25 Quellen pro E-Book kombinieren. Die erste Quelle ist im Buchpreis enthalten, jede weitere Quelle kostet 8 Credits.</p>
+    <div class="alert-tip">💡 Quellen werden nach bestem Bemühen verarbeitet. Wenn eine URL tot oder hinter einer Paywall ist, wird sie übersprungen, und das Buch wird trotzdem aus den übrigen erstellt – Sie sehen „1 von 6 Quellen konnte nicht gelesen werden“ auf dem Dashboard. Ihr Ebook schlägt nur fehl, wenn <em>keine</em> gelesen werden konnte, und dann werden Credits automatisch erstattet.</div>
+    <p><strong>Wie viele Quellen kann ich verwenden?</strong> Jeder Plan kann bis zu 25 Quellen pro Ebook kombinieren. Die erste Quelle ist im Buchpreis enthalten, und jede weitere Quelle kostet 8 Credits.</p>
 
     <h3>Ein ganzes Manuskript einfügen</h3>
-    <p>Das Einfügefeld nimmt bis zu <strong>850.000 Zeichen – etwa 500 Druckseiten</strong>, sodass Sie ein ganzes unveröffentlichtes Buch hineinwerfen und TubeBook es umstrukturieren lassen können.</p>
+    <p>Das Einfügefeld nimmt bis zu <strong>850.000 Zeichen – etwa 500 gedruckte Seiten</strong> auf, sodass Sie ein ganzes unveröffentlichtes Buch einfügen und von TubeBook umstrukturieren lassen können.</p>
     <p>Ab etwa 47 Seiten kann kein einzelner Schritt alle Wörter auf einmal lesen, daher arbeitet TubeBook mit Auszügen – und es ist wichtig zu wissen, wie genau, denn es sind nicht "die ersten fünfzig Seiten":</p>
     <ul>
-      <li>Die <strong>Gliederung</strong> wird aus Auszügen geplant, die gleichmäßig über den <em>ganz</em> Text verteilt sind, verankert an Ihrem echten Anfang und Ihrem echten Ende.</li>
+      <li>Die <strong>Gliederung</strong> wird aus Auszügen geplant, die gleichmäßig über den <em>gesamten</em> Text verteilt sind, verankert an Ihrem echten Anfang und Ihrem echten Ende.</li>
       <li>Jedes <strong>Kapitel</strong> wird aus dem Abschnitt des Manuskripts geschrieben, den es abdeckt, wobei die Fenster überlappen, sodass nichts zwischen zwei Kapiteln verloren geht.</li>
     </ul>
-    <p>Die Generierungsseite zeigt Ihnen, bevor Sie ein Credit ausgeben, welchen Anteil die von Ihnen gewählte Länge erreichen wird – zum Beispiel <em>"Bei 5 Kapiteln erreicht dieses Format etwa 47 % davon."</em> Ein 200-seitiges Manuskript wird bei jeder Länge vollständig abgedeckt; ein 500-seitiges benötigt ein längeres Format oder Sie teilen es auf mehrere Quellen auf.</p>
+    <p>Die Generierungsseite sagt Ihnen, bevor Sie einen Credit ausgeben, welchen Anteil die von Ihnen gewählte Länge erreichen wird – zum Beispiel <em>„Bei 5 Kapiteln erreicht dieses Format etwa 47 % davon.“</em> Ein 200-seitiges Manuskript wird bei jeder Länge vollständig abgedeckt; ein 500-seitiges benötigt ein längeres Format oder Sie teilen es auf mehrere Quellen nach Teilen auf.</p>
     <h3>Bilder</h3>
     <p>Cover und Kapitelbilder sind in jedem Plan enthalten. Für jede Stelle können Sie Optionen mit KI zeichnen, Stockfotos durchsuchen oder eigene Bilder hochladen. KI-generierte Kapitelillustrationen kosten 1 Guthaben pro Bild; Stockfotosuche und Uploads verbrauchen kein Bildgenerierungs-Guthaben.</p>
     <p>Sie bleiben nicht bei dem hängen, was herauskommt – siehe <a href="#artwork">Cover &amp; Illustrationen</a> zur Auswahl zwischen Optionen, zum Hochladen eines eigenen Covers, zur Anweisung des Künstlers und zum Platzieren jedes Kapitelbildes automatisch oder nach einem bestimmten Abschnitt und Absatz.</p>
@@ -265,10 +265,10 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); p
       <li><strong>Standard – 12 pt.</strong> Die normale Einstellung für ein Taschenbuch.</li>
       <li><strong>Komfortabel – 14 pt.</strong> Leichter für die Augen bei langen Lesesitzungen.</li>
       <li><strong>Großdruck – 16 pt.</strong> Die Größe, mit der Großdruckausgaben tatsächlich gesetzt werden. Wenn Ihre Leser älter sind, ist dies die richtige.</li>
-      <li><strong>Benutzerdefiniert – alles von 11 bis 20 pt.</strong></li>
+      <li><strong>Benutzerdefiniert — alles von 11 bis 20 pt.</strong></li>
     </ul>
     <p>In einem Großdruckbuch behält das Frontmaterial seine eigene Skalierung: Urheberrechtshinweis und detailliertes Inhaltsverzeichnis bleiben bei 12 pt, denn eine Urheberrechtsseite in 16 pt wirkt wie ein Fehler und nicht wie eine Freundlichkeit.</p>
-    <div class="alert-warn">⚠️ <strong>Die Schriftgröße ändert Ihre Seitenzahl</strong>, und die Seitenzahl bestimmt die Rückenbreite beim Taschenbuchumschlag. Wenn Sie sie an einem bereits bei KDP gelisteten Buch ändern, müssen Sie <strong>beide</strong> – das Innere und das Cover – neu hochladen, denn das alte Cover passt nicht mehr.</div>
+    <div class="alert-warn">⚠️ <strong>Die Textgröße ändert Ihre Seitenzahl</strong>, und die Seitenzahl bestimmt die Rückenbreite bei einem Taschenbuch-Umschlag. Wenn Sie sie bei einem bereits bei KDP gelisteten Buch ändern, müssen Sie <strong>sowohl</strong> das Innenteil als auch den Umschlag neu hochladen — der alte Umschlag passt nicht mehr.</div>
 
     <h3>Schriften und Beschnitt</h3>
     <p>Wählen Sie separate Schriften für Überschriften, Untertitel und Fließtext aus zwölf Familien, acht KDP-Beschnittgrößen von 5″ × 8″ bis 8,5″ × 11″, Hoch- oder Querformat und weißes oder cremefarbenes Papier. Cream ist etwas dicker, was den Rücken beeinflusst.</p>
@@ -278,37 +278,37 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); p
   <!-- ARTWORK -->
   <div class="card" id="artwork">
     <h2>Cover &amp; Illustrationen</h2>
-    <p>Alles hier befindet sich unter <strong>Dieses Buch bearbeiten</strong> bei einem fertigen E-Book, und alles folgt einer Regel: <strong>Bilder zeichnen baut nichts neu.</strong> Sie zeichnen, vergleichen, wählen – und erst dann werden die Dateien einmal neu aufgebaut.</p>
+    <p>Alles hier befindet sich unter <strong>Dieses Buch bearbeiten</strong> bei einem fertigen Ebook, und alles folgt einer Regel: <strong>Bilder zeichnen baut nichts neu.</strong> Sie zeichnen, vergleichen, wählen — und erst dann werden die Dateien einmal neu erstellt.</p>
 
     <h3>Cover auswählen</h3>
-    <p><strong>3 Optionen zeichnen</strong> zeigt Ihnen drei Cover nebeneinander. Sie bleiben auf einer Merkliste, sodass das Cover, das Ihnen vor vier Versuchen gefallen hat, immer noch da ist. Wenn Sie <strong>Dieses Cover verwenden</strong>drücken, zeichnet TubeBook die Titelseite, das Kindle-Cover und den Taschenbuch-Umschlag neu und erstellt Ihre Dateien neu – Ihre Kapitel und Illustrationen bleiben unberührt.</p>
-    <p>Drei Optionen pro Druck, eine pro <em>Idee</em> statt drei Darstellungen einer Idee. Wenn Sie erneut drücken, erhalten Sie drei neue Ideen, nicht dieselben drei neu gezeichnet.</p>
-    <div class="alert-tip">💡 Der alte <strong>Cover neu generieren</strong> -Button existiert weiterhin und funktioniert. Er zeichnet ein Bild und erstellt alles sofort neu – schneller, wenn Sie nur neu würfeln möchten, langsamer, wenn Sie eine Auswahl möchten.</div>
+    <p><strong>3 Optionen zeichnen</strong> zeigt Ihnen drei Cover nebeneinander. Sie bleiben auf einer Shortlist, sodass das Cover, das Ihnen vor vier Versuchen gefiel, immer noch da ist. Wenn Sie <strong>Dieses Cover verwenden</strong> drücken, zeichnet TubeBook die Titelseite, das Kindle-Cover und den Taschenbuch-Umschlag neu und erstellt Ihre Dateien neu — Ihre Kapitel und Illustrationen bleiben unberührt.</p>
+    <p>Drei Optionen pro Druck, eine pro <em>Idee</em> statt drei Renderings einer Idee. Wenn Sie erneut drücken, erhalten Sie drei frische Ideen, nicht dieselben drei neu gezeichnet.</p>
+    <div class="alert-tip">💡 Die alte Schaltfläche <strong>Cover neu generieren</strong> existiert weiterhin und funktioniert weiterhin. Sie zeichnet ein Bild und erstellt sofort alles neu — schneller, wenn Sie nur einen Neuwurf möchten, langsamer, wenn Sie eine Auswahl möchten.</div>
 
     <h3>Eigenes Cover hochladen</h3>
-    <p>Haben Sie ein Designerstück oder ein Foto, das Ihnen gehört? <strong>Eigenes hochladen</strong> fügt es direkt in die Merkliste neben den gezeichneten Optionen ein.</p>
-    <p><strong>Laden Sie das Bild hoch, nicht ein fertiges Cover.</strong> Ihr Titel, Untertitel und Autorenname werden anschließend darauf gezeichnet, für jedes Format korrekt skaliert – ein Cover, das bereits einen Titel trägt, endet mit doppeltem Titel. Hochformat, mindestens 1200 × 1800 px (idealerweise 1600 × 2560), PNG, JPEG oder WebP, bis 15 MB.</p>
+    <p>Haben Sie ein Kunstwerk eines Designers oder ein Foto, das Ihnen gehört? <strong>Eigenes hochladen</strong> fügt es direkt in die Shortlist neben den gezeichneten Optionen ein.</p>
+    <p><strong>Laden Sie das Bild hoch, nicht ein fertiges Cover.</strong> Ihr Titel, Untertitel und Autorenname werden anschließend darauf gezeichnet, für jedes Format korrekt skaliert — ein Cover, das bereits seinen Titel trägt, endet mit dem Titel doppelt. Hochformat, mindestens 1200 × 1800px (idealerweise 1600 × 2560), PNG, JPEG oder WebP, bis zu 15 MB.</p>
 
     <h3>Der Kunst-Brief</h3>
-    <p>TubeBook schreibt seine eigene Art Direction aus Titel, Thema und Kapitelliste. Das ist eine vernünftige Vermutung und nur eine Vermutung – Sie möchten vielleicht Tintenzeichnungen, eine Epoche, eine Palette oder keine Personen. Der <strong>Kunst-Brief</strong> ist der Ort, an dem Sie das in eigenen Worten sagen:</p>
-    <p><em>„Feine Tintenzeichnungen, warmes Sepia, keine Fotos. Zeigen Sie echte Menschen in alltäglichen Situationen.“</em></p>
-    <p>Ein Brief gilt für <strong>beide</strong> das Cover und die Kapitelillustrationen, absichtlich – ein Buch mit Holzschnitt-Cover und Aquarell-Kapiteln sieht schlechter aus als jede einheitliche Wahl. Er gilt für das nächste Cover oder die nächste Illustration, die Sie zeichnen. Speichern Sie also zuerst, dann zeichnen.</p>
+    <p>TubeBook schreibt seine eigene Art Direction aus Ihrem Titel, Thema und Kapitelliste. Das ist eine vernünftige Vermutung und nur eine Vermutung — Sie möchten vielleicht Tintenlinienzeichnungen, eine Epoche, eine Palette oder gar keine Personen. Das <strong>Art-Briefing</strong> ist der Ort, an dem Sie dies in Ihren eigenen Worten sagen:</p>
+    <p><em>„Feine Tintenlinienzeichnungen, warmes Sepia, keine Fotografien. Zeigen Sie echte Menschen in alltäglichen Umgebungen.“</em></p>
+    <p>Ein Briefing deckt <strong>sowohl</strong> das Cover als auch die Kapitelillustrationen ab, absichtlich — ein Buch, dessen Cover ein Holzschnitt ist und dessen Kapitel Aquarelle sind, sieht schlechter aus als jede konsistente Wahl. Es gilt für das nächste Cover oder die nächste Illustration, die Sie zeichnen. Speichern Sie es also zuerst, dann zeichnen Sie.</p>
     <div class="alert-tip">💡 Der Brief kann keine Schrift anfordern. Kunstwerke sind bewusst wortlos – Ihr echter Titel wird später darauf gesetzt –, daher wird eine Anfrage für Titel oder Bildunterschrift durch Bilder ausgedrückt. Das erspart Ihnen ein Cover mit doppeltem Titel, einmal in verstümmeltem KI-Text.</div>
 
     <h3>Kapitelillustrationen überprüfen</h3>
     <p><strong>Kapitelillustrationen überprüfen</strong> zeigt jedes Kapitel mit seinen Bildern. Für jedes können Sie:</p>
     <ul>
-      <li><strong>Deaktivieren Sie, was fehlt.</strong> Ein Kapitel kann auch keins haben, wenn Sie möchten.</li>
-      <li><strong>3 Optionen mit KI zeichnen</strong> für dieses Kapitel allein – die anderen Kapitel bleiben unberührt.</li>
-      <li><strong>Stockfotos</strong> durchsucht Unsplash, Pexels und Pixabay anhand des Kapitelthemas und vermeidet dabei doppelte Vorschläge. Erforderliche Fotografenangaben und Links werden in der Sprache des Buches in das exportierte Buch übernommen.</li>
-      <li><strong>Eigenes hochladen</strong> fügt Kunstwerke hinzu, die du verwenden darfst.</li>
-      <li><strong>Platzierung wählen</strong> um TubeBook das Bild automatisch platzieren zu lassen, es nach einem bestimmten Abschnitt einzufügen oder nach einem bestimmten Absatz in diesem Abschnitt.</li>
+      <li><strong>Deaktivieren Sie alle, die nicht passen.</strong> Ein Kapitel kann auch keines haben, wenn Sie bevorzugen.</li>
+      <li><strong>3 Optionen mit KI zeichnen</strong> nur für dieses Kapitel — die anderen Kapitel bleiben unberührt.</li>
+      <li><strong>Stockfotos</strong> durchsucht Unsplash, Pexels und Pixabay mit dem Kapitelthema und vermeidet doppelte Vorschläge. Erforderliche Fotografenangaben und Links werden in der Sprache des Buches in das exportierte Buch übernommen.</li>
+      <li><strong>Eigenes hochladen</strong> fügt Kunstwerke hinzu, die Sie verwenden dürfen.</li>
+      <li><strong>Platzierung wählen</strong>, um TubeBook das Bild automatisch platzieren zu lassen, es nach einem bestimmten Abschnitt oder nach einem bestimmten Absatz in diesem Abschnitt zu setzen.</li>
     </ul>
     <p>Eine Neuzeichnung behält dasselbe Motiv und bewegt die Kamera – weiter weg, näher, tiefer, näher an den Händen –, weil du das Bild abgelehnt hast, nicht das Thema des Kapitels.</p>
-    <p>Auswahlen werden gespeichert, während du sie triffst. Nichts erreicht deine Dateien, bis du <strong>Speichern &amp; Dateien neu erstellen</strong>drückst, sodass ein einziger Neubau einen gesamten Überarbeitungsdurchgang abdeckt, egal wie viele Kapitel du angepasst hast.</p>
+    <p>Auswahlen werden gespeichert, während Sie sie treffen. Nichts erreicht Ihre Dateien, bis Sie <strong>Speichern &amp; Dateien neu erstellen</strong> drücken, sodass ein Neubau einen gesamten Überprüfungsdurchgang abdeckt, egal wie viele Kapitel Sie angepasst haben.</p>
 
     <h3>Worauf es bei den Bildern wirklich ankommt</h3>
-    <p>Bevor etwas gezeichnet wird, verwandelt TubeBook dein Buch in <em>benennbare physische Szenen</em> – eine für das Cover, eine pro Kapitel. Es ist der Unterschied zwischen einem Bild deines Themas und einem Bild einer Stimmung. Ein Buch über Gespräche zeigt Menschen im Gespräch; ein Buch über ein Handwerk zeigt die Werkzeuge und den Arbeitsplatz.</p>
+    <p>Bevor etwas gezeichnet wird, verwandelt TubeBook Ihr Buch in <em>benennbare physische Szenen</em> — eine für das Cover, eine pro Kapitel. Es ist der Unterschied zwischen einem Bild Ihres Themas und einem Bild einer Stimmung. Ein Buch über Konversation zeigt Menschen mitten im Gespräch; ein Buch über ein Handwerk zeigt die Werkzeuge und den Arbeitsplatz.</p>
   </div>
 
   <!-- GROUNDING -->
@@ -316,18 +316,18 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); p
     <h2>Woher die Fakten stammen</h2>
     <p>Dies ist die Einstellung, die darüber entscheidet, ob du hinter deinem eigenen Buch stehen kannst, und sie wird leicht mit Wiedergabetreue verwechselt. Sie beantworten unterschiedliche Fragen:</p>
     <ul>
-      <li><strong>Wiedergabetreue</strong> regelt <em>Ausdruck</em> – die Struktur, die Reihenfolge, den Wortlaut, welche Beispiele erscheinen.</li>
-      <li><strong>Fundierung</strong> regelt <em>Substanz</em> – welche Fakten, Zahlen, Namen und Behauptungen überhaupt erscheinen dürfen.</li>
+      <li><strong>Wiedergabetreue</strong> regelt den <em>Ausdruck</em> — die Struktur, die Reihenfolge, den Wortlaut, welche Beispiele erscheinen.</li>
+      <li><strong>Fundierung</strong> regelt die <em>Substanz</em> — welche Fakten, Zahlen, Namen und Behauptungen überhaupt erscheinen dürfen.</li>
     </ul>
-    <p><strong>TubeBook durchsucht während des Schreibens deines Buches nie das Internet.</strong> Es gibt keinen Abrufschritt, keine Live-Suche, nichts wird nach Beginn der Generierung aus dem Internet hinzugefügt. Aber das ist nicht dasselbe Versprechen wie „nur deine Quellen“: Ein großes KI-Modell trägt enormes Fachwissen in sich, und wenn man es nicht einschränkt, liefert es bereitwillig eine Statistik, ein Datum oder einen Hintergrund, den du nie geliefert hast. Du entscheidest also:</p>
+    <p><strong>TubeBook durchsucht während des Schreibens Ihres Buches nie das Internet.</strong> Es gibt keinen Abrufschritt, keine Live-Suche, nichts wird aus dem Internet hinzugefügt, sobald die Generierung beginnt. Aber das ist nicht dasselbe Versprechen wie „nur Ihre Quellen“: Ein großes KI-Modell trägt eine enorme Menge an Fachwissen in sich, und wenn es uneingeschränkt bleibt, liefert es bereitwillig eine Statistik, ein Datum oder einen Hintergrund, den Sie nie bereitgestellt haben. Sie wählen also:</p>
     <ul>
-      <li><strong>Nur meine Quellen</strong> <em>(Standard)</em> – jeder Fakt, jede Zahl, jeder Name, jedes Zitat und jedes Beispiel muss aus dem von dir gelieferten Material stammen. Wenn das Modell etwas Relevantes weiß, das deine Quellen nicht enthalten, wird es weggelassen. Tiefe entsteht dadurch, dass du dein Material härter bearbeitest, nicht durch das Importieren neuen Materials.</li>
-      <li><strong>Quellen + KI-Wissen</strong> – deine Quellen bleiben das Rückgrat, und die KI darf etabliertes Hintergrundwissen hinzufügen, wo es wirklich hilft. So erstellte Bücher werden auf deinem Dashboard gekennzeichnet, damit du sie später erkennen kannst.</li>
+      <li><strong>Nur meine Quellen</strong> <em>(Standard)</em> — jeder Fakt, jede Zahl, jeder Name, jedes Zitat und jedes Beispiel muss aus dem von Ihnen gelieferten Material stammen. Wenn das Modell etwas Relevantes weiß, das Ihre Quellen nicht enthalten, wird es weggelassen. Tiefe entsteht durch intensiveres Arbeiten mit Ihrem Material, nicht durch Import neuer Materialien.</li>
+      <li><strong>Quellen + KI-Wissen</strong> — Ihre Quellen bleiben das Rückgrat, und die KI darf etabliertes Hintergrundwissen hinzufügen, wo es wirklich hilft. So erstellte Bücher werden auf Ihrem Dashboard gekennzeichnet, damit Sie sie später erkennen können.</li>
     </ul>
-    <p><strong>Keine der Einstellungen darf Beweise erfinden.</strong> In beiden Fällen ist es dem Modell untersagt, Statistiken, Studien, Zitate oder Quellenangaben zu erfinden und einer genannten Person oder Organisation etwas zuzuschreiben, das nicht in Ihren Quellen steht. "Quellen + KI-Wissen" bedeutet <em>Hintergrund hinzufügen</em>, niemals <em>Belege hinzufügen</em>.</p>
-    <div class="alert-tip">💡 Warum <em>Nur meine Quellen</em> die Standardeinstellung ist: Es ist die einzige Einstellung, für die Sie wirklich geradestehen können. Alles im Buch lässt sich auf etwas zurückführen, das Sie ausgewählt haben. Wenn Sie auf die andere umstellen, überprüfen Sie alles, was Sie nicht auf eine Quelle zurückführen können, bevor Sie veröffentlichen.</div>
-    <p>Kombinieren Sie <strong>Nur meine Quellen</strong> mit <strong>Hohe Wiedergabetreue</strong> und Sie haben einen echten "Eigenes Manuskript umstrukturieren"-Modus — nur Ihr Material ist erlaubt.</p>
-    <p>Eine Nuance ist erwähnenswert, da die beiden Einstellungen sich zu widersprechen scheinen: Bei <strong>Low Fidelity</strong> mit <em>Nur meine Quellen</em>schreibt die KI originäre Prosa und originäre Illustrationen Ihrer Punkte, aber sie darf keine Fakten erfinden, um sie zu füllen. Eine erfundene Zahl ist erfunden, ob sie nun eine echte ersetzt oder nicht.</p>
+    <p><strong>Keine Einstellung darf Beweise erfinden.</strong> Bei beiden ist es dem Modell verboten, Statistiken, Studien, Zitate oder Quellen zu erfinden und etwas einer benannten Person oder Organisation zuzuschreiben, die Ihre Quellen nicht enthalten. „Quellen + KI-Wissen“ bedeutet <em>Hintergrund hinzufügen</em>, niemals <em>Beweise hinzufügen</em>.</p>
+    <div class="alert-tip">💡 Warum <em>Nur meine Quellen</em> der Standard ist: Es ist die einzige Einstellung, für die Sie wirklich bürgen können. Alles im Buch lässt sich auf etwas zurückführen, das Sie gewählt haben. Wenn Sie zur anderen wechseln, überprüfen Sie alles, was Sie nicht auf eine Quelle zurückführen können, bevor Sie veröffentlichen.</div>
+    <p>Kombinieren Sie <strong>Nur meine Quellen</strong> mit <strong>Hoher Wiedergabetreue</strong> und Sie haben einen echten Modus „Eigenes Manuskript umstrukturieren“ — Ihr Material ist das Einzige, was erlaubt ist.</p>
+    <p>Eine Nuance, die erwähnenswert ist, weil die beiden Einstellungen wie ein Widerspruch aussehen: Bei <strong>Niedriger Wiedergabetreue</strong> mit <em>Nur meine Quellen</em> schreibt die KI originäre Prosa und originäre Illustrationen Ihrer Punkte, aber sie darf keine Fakten erfinden, um sie zu füllen. Eine erfundene Zahl ist erfunden, ob sie nun eine echte ersetzt hat oder nicht.</p>
   </div>
 
   <!-- BOOK PARTS -->
@@ -336,29 +336,29 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); p
     <p>Wenn Sie die Gliederung überprüfen, erhalten Sie auch eine Checkliste der Buchteile. Kapitel sind immer enthalten; alles andere liegt bei Ihnen:</p>
     <ul>
       <li><strong>Titelseite</strong>, <strong>Impressum</strong>, <strong>Vorwort</strong>, <strong>Inhaltsverzeichnis</strong>, <strong>Detailliertes Inhaltsverzeichnis</strong></li>
-      <li><strong>Einleitung</strong> und <strong>Schluss</strong></li>
-      <li><strong>Handlungsaufruf</strong>, <strong>Über den Autor</strong>, <strong>Kontakt / Rückseite</strong></li>
+      <li><strong>Einleitung</strong> und <strong>Fazit</strong></li>
+      <li><strong>Aufruf zum Handeln</strong>, <strong>Über den Autor</strong>, <strong>Kontakt / Rückseite</strong></li>
     </ul>
-    <div class="alert-tip">💡 Deaktivieren Sie Einleitung oder Schluss <em>in der Gliederungsphase</em> und sie werden nie geschrieben, sodass Sie nicht für ihre Generierung zahlen. Deaktivieren Sie sie später, werden sie nur aus den Dateien weggelassen.</div>
+    <div class="alert-tip">💡 Deaktivieren Sie die Einleitung oder das Fazit <em>in der Gliederungsphase</em> und sie werden nie geschrieben, sodass Sie nicht für ihre Erstellung bezahlen. Deaktivieren Sie sie später, werden sie nur aus den Dateien weggelassen.</div>
     <h3>Wie jedes Kapitel endet</h3>
-    <p>Standardmäßig endet jedes Kapitel mit <strong>Wichtige Erkenntnisse</strong> Liste und ein kurzer <strong>Reflexion</strong> Prompt. Beides können Sie jetzt separat abschalten – für ein Buch, das einfach wie Prosa liest.</p>
-    <p>Anders als die obigen Teile können diese aus einem Buch entfernt werden, das <em>bereits geschrieben</em>ist: Sie werden beim Erstellen der Dateien entfernt, also ist das Abwählen und Neuaufbauen <strong>kostenlos und schreibt nichts neu</strong>. Aktivieren Sie es erneut, und es kommt zurück.</p>
+    <p>Standardmäßig endet jedes Kapitel mit einer Liste <strong>Wichtige Erkenntnisse</strong> und einer kurzen <strong>Reflexions</strong>-Aufforderung. Beides können Sie jetzt separat abschalten – für ein Buch, das einfach als Prosa gelesen wird.</p>
+    <p>Im Gegensatz zu den obigen Teilen können diese aus einem <em>bereits geschriebenen</em> Buch entfernt werden: Sie werden beim Erstellen der Dateien herausgenommen, sodass das Abwählen und Neuerstellen <strong>kostenlos ist und nichts neu schreibt</strong>. Aktivieren Sie sie erneut, kommen sie zurück.</p>
     <div class="alert-tip">💡 Falls Sie je ein Kapitel mit der Überschrift "Wichtige Erkenntnisse" und nichts darunter gesehen haben: Das ist behoben – jede Überschrift ohne Inhalt darunter wird jetzt aus den Dateien entfernt, egal was sie sagt.</div>
 
     <h3>Später die Meinung ändern</h3>
-    <p>Bei jedem fertigen Buch verwenden Sie <strong>Ändern, was in diesem Buch ist</strong> um die Auswahl anzupassen und die Dateien neu zu erstellen. Das ist <strong>kostenlos und verbraucht keine Credits</strong> – diese Teile werden beim Erstellen der Dateien zusammengesetzt, also wird nichts neu geschrieben.</p>
+    <p>Bei jedem fertigen Buch können Sie mit <strong>Ändern, was in diesem Buch ist</strong> die Auswahl anpassen und die Dateien neu erstellen. Das ist <strong>kostenlos und verbraucht keine Credits</strong> – diese Teile werden beim Erstellen der Dateien zusammengesetzt, also wird nichts neu geschrieben.</p>
 
     <h3>Die Urheberrechtsseite</h3>
-    <p>Füllen Sie so viel oder so wenig aus, wie Sie möchten: Pseudonym, Verlag oder Imprint, Stadt und Land, Ausgabe, Coverdesigner, Innendesigner und Druckland. <strong>Alles, was leer bleibt, wird komplett weggelassen</strong> – niemals wird "[Verlagsname]" in Ihrem Buch gedruckt.</p>
-    <p>Der optionale <strong>Haftungsausschluss</strong> stellt fest, dass das Buch lehrreich ist und dass weder Autor noch Verlag rechtliche, finanzielle oder medizinische Beratung anbieten. Er ist standardmäßig aktiviert.</p>
-    <p>Legen Sie diese einmal fest unter <strong>Profil &rarr; Imprint-Standardwerte</strong> und jedes neue Buch wird damit vorausgefüllt. Jedes Buch behält seine eigene Kopie, sodass die Bearbeitung Ihres Profils nie ein bereits veröffentlichtes Buch ändert.</p>
+    <p>Füllen Sie so viel oder so wenig aus, wie Sie möchten: Pseudonym, Verlag oder Imprint, Stadt und Land, Ausgabe, Coverdesigner, Innendesigner und Druckland. <strong>Alles, was leer bleibt, wird komplett weggelassen</strong> – niemals steht „[Verlagsname]“ in Ihrem Buch.</p>
+    <p>Der optionale <strong>Haftungsausschluss</strong> besagt, dass das Buch lehrreich ist und dass weder Autor noch Verlag Rechts-, Finanz- oder Medizinberatung anbieten. Er ist standardmäßig aktiviert.</p>
+    <p>Legen Sie diese einmal unter <strong>Profil &rarr; Impressum-Standards</strong> fest, und jedes neue Buch wird damit vorausgefüllt. Jedes Buch behält seine eigene Kopie, sodass die Bearbeitung Ihres Profils nie ein bereits veröffentlichtes Buch ändert.</p>
 
     <h3>Das Vorwort</h3>
     <p>Ein Vorwort wird von jemand anderem geschrieben – einem Kollegen, Mentor oder einer anerkannten Stimme in Ihrem Fachgebiet. Geben Sie Name, Qualifikationen, Ort und Datum an und schreiben Sie den Text entweder selbst oder lassen Sie TubeBook ihn aus dem tatsächlichen Thema und den Kapiteln Ihres Buches entwerfen.</p>
     <div class="alert-tip">💡 Wenn Sie die entworfene Version verwenden, lassen Sie die genannte Person sie lesen und genehmigen, bevor Sie veröffentlichen. Sie trägt ihren Namen, nicht Ihren.</div>
 
     <h3>QR-Codes</h3>
-    <p>Sie können einen QR-Code zur Seite "Über den Autor" hinzufügen, der auf Ihre Website, Ihre Amazon-Buchseite oder woanders hinweist. Er wird im <strong>nur Taschenbuch</strong> — in einer Kindle- oder EPUB-Ausgabe tippt der Leser stattdessen auf einen Link, also würde es nur Platz wegnehmen.</p>
+    <p>Sie können der Seite „Über den Autor“ einen QR-Code hinzufügen, der auf Ihre Website, Ihre Amazon-Buchseite oder anderswo verweist. Er wird <strong>nur im Taschenbuch</strong> gedruckt – in einer Kindle- oder EPUB-Ausgabe tippt der Leser stattdessen auf einen Link, also würde er nur Platz wegnehmen.</p>
     <p><strong>Eine Sache, die man über Amazon wissen sollte.</strong> KDPs <a href="https://kdp.amazon.com/en_US/help/topic/GQ6JQ7FM6C72HE4X" target="_blank" rel="noopener">Hyperlink-Richtlinien</a> verbieten "Links zu Webformularen, die Kundeninformationen anfordern" in einem Buch – genau das ist ein E-Mail-Opt-in oder eine Lead-Magnet-Landingpage. Links zu Amazon selbst sind in Ordnung, und Links zu anderen Büchern Ihrer Serie sind ausdrücklich erlaubt. Ein QR-Code ist ein Bild und kein Link, daher fällt er nicht unter diese Regel, aber Amazon behält sich das Recht vor, Links nach eigenem Ermessen zu entfernen. TubeBook warnt Sie, wenn ein QR-Ziel wie eine Anmeldeseite aussieht, und druckt es trotzdem, wenn Sie es behalten – es ist Ihr Buch.</p>
   </div>
 
@@ -366,14 +366,14 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); p
   <div class="card" id="title">
     <h2>Titel &amp; Untertitel</h2>
     <h3>Amazons 200-Zeichen-Limit</h3>
-    <p>KDP erlaubt <strong>200 Zeichen für Titel und Untertitel zusammen</strong>, inklusive Leerzeichen und Satzzeichen. Wenn Sie darüber hinausgehen, lehnt Amazon die Veröffentlichung ab. TubeBook zählt sie für Sie, wo immer sie bearbeitet werden können, und warnt, bevor Sie darüber sind, nicht danach.</p>
+    <p>KDP erlaubt <strong>200 Zeichen für Titel und Untertitel zusammen</strong>, inklusive Leerzeichen und Satzzeichen. Wenn Sie darüber hinausgehen, lehnt Amazon die Auflistung ab. TubeBook zählt sie für Sie, wo immer sie bearbeitet werden können, und warnt, bevor Sie darüber sind, nicht danach.</p>
 
     <h3>Bearbeiten nach dem Buchaufbau</h3>
-    <p>Unter <strong>Dieses Buch bearbeiten</strong> können Sie Titel, Untertitel und Autorenname eines fertigen E-Books umschreiben und neu aufbauen. Das ist <strong>kostenlos</strong>. Das Cover-Artwork bleibt erhalten – nur die Beschriftung darüber wird neu gezeichnet – und die Amazon-Beschreibung und Keywords werden an den neuen Titel angepasst.</p>
+    <p>Unter <strong>Dieses Buch bearbeiten</strong> können Sie Titel, Untertitel und Autorenname eines fertigen Ebooks umschreiben und neu erstellen. Das ist <strong>kostenlos</strong>. Das Cover-Artwork bleibt erhalten – nur die Beschriftung darüber wird neu gezeichnet – und die Amazon-Beschreibung und Schlüsselwörter werden an den neuen Titel angepasst.</p>
 
     <h3>KI-Titelvorschläge</h3>
-    <p><strong>SEO-Titel vorschlagen</strong> schlägt Alternativen vor, die auf den tatsächlichen Kapiteln Ihres Buches basieren und, wenn das Buch von <em>Thema finden</em>stammt, auf den Phrasen, die Leser wirklich gesucht haben. Jeder Vorschlag zeigt seine Zeichenanzahl im Vergleich zum 200er-Limit. Ein Klick füllt die Felder; nichts wird gespeichert, bis Sie speichern, also kostet das Ausprobieren nichts.</p>
-    <p>Die Vorschläge sind so geschrieben, dass sie auf drei Arten gleichzeitig funktionieren: <strong>Suche</strong> (Keywords, die Leute tatsächlich eingeben), <strong>Antwortmaschinen</strong> (ein Untertitel, der wie eine direkte, wörtliche Antwort klingt), und <strong>KI-Empfehlungen</strong> (ein Titel und Untertitel, die Thema, Umfang und Leser unmissverständlich machen, wenn sie allein gelesen werden, ohne Cover). Und niemals keywordgestopft – ein Titel, der wie SEO-Köder wirkt, verliert den menschlichen Verkauf und die KI-Empfehlung gleichermaßen.</p>
+    <p><strong>SEO-Titel vorschlagen</strong> schlägt Alternativen vor, die auf den tatsächlichen Kapiteln Ihres Buches basieren und, wenn das Buch aus <em>Thema finden</em> stammt, auf den Phrasen, die Leser wirklich gesucht haben. Jeder Vorschlag zeigt seine Zeichenanzahl im Vergleich zum 200er-Limit. Ein Klick füllt die Felder; nichts wird gespeichert, bis Sie Speichern drücken, also kostet das Ausprobieren nichts.</p>
+    <p>Vorschläge sind so geschrieben, dass sie auf drei Arten gleichzeitig funktionieren: <strong>Suche</strong> (Schlüsselwörter, die Leute tatsächlich eingeben), <strong>Antwortmaschinen</strong> (ein Untertitel, der als direkte, wörtliche Antwort gelesen wird) und <strong>KI-Empfehlungen</strong> (ein Titel und Untertitel, die Thema, Umfang und Leser unmissverständlich machen, wenn sie allein gelesen werden, ohne Cover). Und niemals keywordgestopft – ein Titel, der wie SEO-Köder wirkt, verliert sowohl den menschlichen Verkauf als auch die KI-Empfehlung.</p>
   </div>
 
   <!-- LANGUAGES -->
@@ -381,89 +381,89 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); p
     <h2>Buchvorlagen</h2>
     <p>Die erste Frage bei <strong>Buch erstellen</strong> ist, um welche Art von Buch es sich handelt. Zwölf Vorlagen in vier Gruppen:</p>
     <table>
-      <tr><th>Praktisch</th><td><strong>How-to guide</strong> — numbered steps to one specific result.<br><strong>Leitfaden für Einsteiger</strong> — assumes no prior knowledge, defines every term.<br><strong>7-day quick start</strong> — one chapter per day, one action each.<br><strong>Checklist lead magnet</strong> — short and scannable, built to give away.</td></tr>
-      <tr><th>Business</th><td><strong>Case studies</strong> — one worked example per chapter.<br><strong>Business playbook</strong> — frameworks and the criteria for choosing between them.</td></tr>
-      <tr><th>Personal growth</th><td><strong>Workbook</strong> — exercises and prompts the reader completes.<br><strong>Daily reader</strong> — short entries, one idea each.<br><strong>Myth-busting</strong> — each chapter takes one belief apart.</td></tr>
-      <tr><th>Reference</th><td><strong>Explainer</strong> — makes a complicated subject understandable.<br><strong>Reference handbook</strong> — looked things up in, not read through.<br><strong>Field guide</strong> — recognise it, understand it, know what to do.</td></tr>
+      <tr><th>Praktisch</th><td><strong>How-to-Anleitung</strong> – nummerierte Schritte zu einem bestimmten Ergebnis.<br><strong>Anfängerleitfaden</strong> – setzt kein Vorwissen voraus, definiert jeden Begriff.<br><strong>7-Tage-Schnellstart</strong> – ein Kapitel pro Tag, eine Aktion pro Kapitel.<br><strong>Checklisten-Lead-Magnet</strong> – kurz und überfliegbar, zum Verschenken gebaut.</td></tr>
+      <tr><th>Business</th><td><strong>Fallstudien</strong> – ein ausgearbeitetes Beispiel pro Kapitel.<br><strong>Business-Playbook</strong> – Frameworks und Kriterien zur Auswahl.</td></tr>
+      <tr><th>Personal growth</th><td><strong>Arbeitsbuch</strong> – Übungen und Aufforderungen, die der Leser ausfüllt.<br><strong>Täglicher Leser</strong> – kurze Einträge, eine Idee pro Eintrag.<br><strong>Mythen widerlegen</strong> – jedes Kapitel nimmt eine Überzeugung auseinander.</td></tr>
+      <tr><th>Reference</th><td><strong>Erklärer</strong> – macht ein kompliziertes Thema verständlich.<br><strong>Referenzhandbuch</strong> – zum Nachschlagen, nicht zum Durchlesen.<br><strong>Feldführer</strong> – erkennen, verstehen, wissen, was zu tun ist.</td></tr>
     </table>
 
     <h3>What a template actually changes</h3>
-    <p>It sets the length, the writing style, how many illustrations, and which blocks each chapter ends with — and it changes <strong>how a chapter is built</strong>. Ein Leitfaden verwendet jedes Mal dieselben drei Schritte in derselben Reihenfolge, sodass Sie die Struktur des nächsten Kapitels vorhersagen und direkt zum benötigten Teil springen können. Ein täglicher Reader verweist nie auf andere Einträge, sodass das Öffnen an einer beliebigen Stelle immer funktioniert. Ein Arbeitsbuch gibt dem Schaffen des Lesers mehr Raum als Ihrer Erklärung.</p>
+    <p>Er legt die Länge, den Schreibstil, die Anzahl der Abbildungen und fest, mit welchen Blöcken jedes Kapitel endet – und er ändert <strong>wie ein Kapitel aufgebaut wird</strong>. Ein Feldführer verwendet dieselben drei Schläge in derselben Reihenfolge jedes Mal, sodass Sie die Form des nächsten Kapitels vorhersagen und zu dem Teil springen können, den Sie brauchen. Ein täglicher Leser verweist nie auf einen anderen Eintrag, sodass das Öffnen an einer beliebigen Stelle immer funktioniert. Ein Arbeitsbuch gibt dem Werk des Lesers mehr Raum als Ihrer Erklärung.</p>
 
-    <div class="alert-tip">💡 <strong>Vorlagen füllen die Einstellungen aus – sie sperren sie nicht.</strong> Wählen Sie eine aus, und Länge, Ton und Kapitelblöcke darunter passen sich an; ändern Sie danach eine davon, gewinnt Ihre Wahl. Wenn Sie eine Neun-Kapitel-Version einer Zwölf-Kapitel-Vorlage möchten, hält Sie nichts auf.</div>
+    <div class="alert-tip">💡 <strong>Vorlagen füllen die Einstellungen aus – sie sperren sie nicht.</strong> Wählen Sie eine aus, und Länge, Ton und Kapitelblöcke darunter ändern sich entsprechend; ändern Sie sie danach, gewinnt Ihre Wahl. Wenn Sie eine Neun-Kapitel-Version einer Zwölf-Kapitel-Vorlage möchten, hält Sie nichts auf.</div>
 
     <p>Die Wahl einer Vorlage ist optional. Überspringen Sie sie, und Bücher werden genau wie bisher generiert – und Bücher, die Sie vor der Einführung von Vorlagen erstellt haben, bleiben unberührt, auch wenn Sie ihre Dateien neu erstellen.</p>
   </div>
 
   <div class="card" id="writing-style">
     <h2>Ihr Schreibstil</h2>
-    <p>Auf Ihrer <strong>Profil</strong> Seite, unter <strong>Ihr Schreibstil</strong>, laden Sie etwas hoch, das Sie bereits geschrieben haben – einen Blogbeitrag, ein Kapitel, einen Aufsatz – oder fügen Sie ein paar Seiten ein. Ihre Bücher werden dann so geschrieben, wie Sie schreiben, statt in dem sorgfältigen, gleichmäßigen Register, in das KI-Schreiben standardmäßig verfällt.</p>
+    <p>Laden Sie auf Ihrer <strong>Profil</strong>-Seite unter <strong>Ihr Schreibstil</strong> etwas hoch, das Sie bereits geschrieben haben – einen Blogbeitrag, ein Kapitel, einen Aufsatz – oder fügen Sie ein paar Seiten ein. Ihre Bücher werden dann so geschrieben, wie Sie schreiben, statt in dem sorgfältigen, gleichmäßigen Ton, in den KI-Schreiben standardmäßig verfällt.</p>
 
     <h3>Was tatsächlich passiert</h3>
-    <p>Ihre Probe wird einmal gelesen und eine <strong>Beschreibung, wie Sie schreiben</strong> wird daraus ermittelt: Satzlänge und wie stark sie variiert, ob Sie den Leser direkt ansprechen, wie Sie einen Abschnitt eröffnen und wie Sie ihn beenden, Ihre Interpunktionsgewohnheiten, was Sie nie tun. Diese Beschreibung wird Ihnen zusammen mit ein paar kurzen Beobachtungen angezeigt, damit Sie beurteilen können, ob sie Sie richtig erfasst hat.</p>
+    <p>Ihre Stichprobe wird einmal gelesen und daraus eine <strong>Beschreibung Ihres Schreibstils</strong> erstellt: Satzlänge und ihre Variation, ob Sie den Leser direkt ansprechen, wie Sie einen Abschnitt eröffnen und beenden, Ihre Interpunktionsgewohnheiten, was Sie nie tun. Diese Beschreibung wird Ihnen zusammen mit ein paar kurzen Beobachtungen angezeigt, damit Sie beurteilen können, ob sie Sie richtig erfasst hat.</p>
     <p>Jedes Kapitel jedes danach generierten Buches wird mit dieser Beschreibung vor dem Schreiber geschrieben. Sie ersetzt die generische Toneinstellung, die zuvor ein einzelner Satz war – das ist der ganze Grund, warum es einen sichtbaren Unterschied macht.</p>
 
-    <div class="alert-info">🔒 <strong>Dies ist kein Modelltraining, und Ihr Schreiben gehört Ihnen.</strong> Kein Modell wird feinabgestimmt, nichts, was Sie hochladen, wird für die Bücher anderer verwendet, und Ihre Dateien sind <strong>gelöscht, sobald sie gelesen wurden</strong>. Nur die Beschreibung und kurze Auszüge werden aufbewahrt – die Auszüge, damit die Beschreibung erneut ermittelt werden kann, wenn Sie eine weitere Probe hinzufügen. Uns beizubringen, wie Sie schreiben, sollte uns nicht eine dauerhafte Kopie Ihres Manuskripts in die Hand geben.</div>
+    <div class="alert-info">🔒 <strong>Dies ist kein Modelltraining, und Ihr Text gehört Ihnen.</strong> Es wird kein Modell feinabgestimmt, nichts, was Sie hochladen, wird für Bücher anderer verwendet, und Ihre Dateien werden <strong>gelöscht, sobald sie gelesen wurden</strong>. Nur die Beschreibung und kurze Auszüge werden aufbewahrt – die Auszüge, damit die Beschreibung erneut erstellt werden kann, wenn Sie eine weitere Stichprobe hinzufügen. Uns beizubringen, wie Sie schreiben, bedeutet nicht, dass wir eine dauerhafte Kopie Ihres Manuskripts erhalten.</div>
 
     <h3>Was es tun wird und was nicht</h3>
     <p>Es verschiebt Register, Rhythmus und Wortschatz, und es ist der größte Hebel dafür, wie ein generiertes Buch liest. Es wird das Schreiben nicht ununterscheidbar von Ihrem machen, und wir sagen das lieber, als dass Sie es selbst herausfinden. Ein paar Seiten funktionieren viel besser als ein paar Absätze: Ein Absatz ist ein Zufall, ein paar Seiten sind ein Stil.</p>
 
-    <div class="alert-tip">💡 Ihr Stil wird <strong>bei der Erstellung auf jedes Buch kopiert</strong>. Wenn Sie Ihr Profil später verfeinern, betrifft das zukünftige Bücher und schreibt nie ein bereits veröffentlichtes um. Bei <strong>Hohe Wiedergabetreue</strong> wird es ignoriert, genau wie die bestehende Toneinstellung pro Buch – dieser Modus reproduziert die Stimme des Sprechers aus der Quelle, und ein persönlicher Schreibstil zusätzlich würde den Zweck verfehlen.</div>
+    <div class="alert-tip">💡 Ihr Stil wird <strong>bei der Erstellung auf jedes Buch übertragen</strong>. Wenn Sie Ihr Profil später verfeinern, wirkt sich das auf zukünftige Bücher aus und schreibt nie ein bereits veröffentlichtes Buch um. Bei <strong>High Fidelity</strong> wird er ignoriert, genau wie die pro Buch eingestellte Tonlage – dieser Modus reproduziert die Stimme des Sprechers aus der Quelle, und ein persönlicher Schreibstil obendrauf würde den Zweck verfehlen.</div>
   </div>
 
   <div class="card" id="editing">
     <h2>Bearbeiten &amp; Korrekturlesen</h2>
-    <p>Bei jedem fertigen Buch: <strong>Schreiben bearbeiten</strong> öffnet den Editor: Ihre Kapitel links, der Text eines davon daneben. Ein fertiges Buch ist kein eingefrorenes.</p>
+    <p>Bei jedem fertigen Buch öffnet <strong>Text bearbeiten</strong> den Editor: links Ihre Kapitel, daneben der Text eines davon. Ein fertiges Buch ist kein eingefrorenes.</p>
 
     <h3>Ändern Sie selbst alles</h3>
     <p>Bearbeiten Sie ein Kapitel und drücken Sie Speichern. Das ist kostenlos und unbegrenzt – Tippen ist kein Dienst, für den wir Gebühren erheben.</p>
-    <div class="alert-info">📄 <strong>Ihre Dateien funktionieren weiter, während Sie bearbeiten.</strong> Die PDF-, EPUB-, DOCX- und PPTX-Dateien, die Sie bereits haben, bleiben herunterladbar und behalten die <em>zurück</em> Wortlaut, bis Sie drücken <strong>Dateien neu erstellen</strong>. Wir hätten sie löschen können, sobald Sie ein Wort geändert haben, aber Ihnen Ihre Downloads wegzunehmen, weil Sie einen Tippfehler korrigiert haben, ist schlimmer, als Ihnen klar zu sagen, dass sie eine Version hinterherhinken.</div>
+    <div class="alert-info">📄 <strong>Ihre Dateien bleiben während der Bearbeitung funktionsfähig.</strong> Die bereits vorhandenen PDF-, EPUB-, DOCX- und PPTX-Dateien bleiben herunterladbar und behalten den <em>vorherigen</em> Wortlaut, bis Sie <strong>Dateien neu erstellen</strong> drücken. Wir hätten sie in dem Moment löschen können, in dem Sie ein Wort geändert haben, aber Ihnen Ihre Downloads wegzunehmen, weil Sie einen Tippfehler korrigiert haben, ist schlimmer, als Ihnen klar zu sagen, dass sie eine Version hinterherhinken.</div>
 
     <h3>Abschnitt umschreiben lassen</h3>
-    <p>Unter dem Text befindet sich eine Liste der Abschnitte des Kapitels. Wählen Sie einen aus, geben Sie optional an, was geändert werden soll („straffen“, „ein konkretes Beispiel hinzufügen“), und er kommt umgeschrieben zurück – in <strong>demselben Stil, derselben Genauigkeit, derselben Fundierung und Sprache wie der Rest Ihres Buches</strong>, nachdem er die Abschnitte davor und danach gelesen hat, damit es zusammenpasst. Das ist der Grund, warum es sich nicht wie ein fremder Absatz anfühlt, der in Ihr Kapitel eingefügt wurde.</p>
-    <p><strong>1 Credit</strong> pro vollständiger Abschnittsumschreibung. Es wird vor dem Modelllauf abgebucht und automatisch erstattet, wenn etwas fehlschlägt, sodass Sie nie für Prosa bezahlen, die Sie nicht erhalten haben.</p>
+    <p>Unter dem Text befindet sich eine Liste der Abschnitte des Kapitels. Wählen Sie einen aus, sagen Sie optional, was geändert werden soll („straffen“, „ein konkretes Beispiel hinzufügen“), und er kommt umgeschrieben zurück – im <strong>gleichen Stil, gleicher Genauigkeit, gleicher Fundierung und gleicher Sprache wie der Rest Ihres Buches</strong>, nachdem er die angrenzenden Abschnitte gelesen hat, damit es zusammenpasst. Das ist der Grund, warum es nicht wie ein fremder Absatz wirkt, der in Ihr Kapitel eingefügt wurde.</p>
+    <p><strong>1 Credit</strong> pro vollständiger Abschnittsumschreibung. Er wird vor dem Modelllauf belastet und automatisch erstattet, wenn etwas fehlschlägt, sodass Sie nie für Prosa bezahlen, die Sie nicht erhalten haben.</p>
 
     <h3>Manuskript Korrektur lesen</h3>
-    <p><strong>Prüfen</strong> liest das Kapitel, in dem Sie sich gerade befinden. <strong>Ganzes Buch prüfen</strong> liest jedes Kapitel und sucht dann nach den Problemen, die kein einzelnes Kapitel zeigen kann: dieselbe Idee mit zwei verschiedenen Namen, ein Begriff, der verwendet wird, bevor er eingeführt wird, ein Versprechen, das gemacht und nie gehalten wird, zwei Kapitel, die dasselbe Gebiet abdecken.</p>
-    <p>Ergebnisse werden nach Schweregrad sortiert, die schlimmsten zuerst. Jedes zitiert die genauen Wörter, die es beanstandet, und enthält einen konkreten Änderungsvorschlag. <strong>Vorschlag anwenden</strong> führt die gezielte KI-Korrektur für <strong>0,1 Credit</strong>; <strong>Manuell korrigieren</strong> öffnet das passende Kapitel oder den Abschnitt, damit Sie es selbst kostenlos ändern können.</p>
-    <div class="alert-tip">💡 <strong>Warum einige echte Probleme nicht gemeldet werden.</strong> Jeder Befund muss Ihren Text exakt zitieren, und wir suchen nach diesem Zitat im Kapitel, bevor wir es anzeigen. Alles, was wir nicht finden, wird verworfen – einschließlich gelegentlich eines echten Problems, das das Modell leicht falsch zitiert hat. Das ist beabsichtigt. Eine Liste, bei der jedem Punkt vertraut werden kann, ist nützlicher als eine längere Liste, die Sie selbst überprüfen müssen – das war schließlich die Aufgabe der Prüfung.</div>
-    <p>Die Prüfung ist <strong>kostenlos</strong>, egal wie oft Sie sie ausführen. Befunde werden nicht gespeichert: Eine Prüfung beschreibt Ihren Text in diesem Moment, und Ihre nächste Bearbeitung würde sie auf Sätze verweisen lassen, die nicht mehr existieren.</p>
+    <p><strong>Prüfen</strong> liest das Kapitel, in dem Sie sich befinden. <strong>Ganzes Buch prüfen</strong> liest jedes Kapitel und sucht dann nach den Problemen, die kein einzelnes Kapitel zeigen kann: dieselbe Idee mit zwei verschiedenen Namen, ein Begriff, der verwendet wird, bevor er eingeführt wird, ein Versprechen, das gemacht und nie gehalten wird, zwei Kapitel, die dasselbe Gebiet abdecken.</p>
+    <p>Die Ergebnisse werden nach Schweregrad sortiert angezeigt. Jedes zitiert die genauen Wörter, die es beanstandet, und enthält einen konkreten Ersetzungsvorschlag. <strong>Vorschlag anwenden</strong> führt die gezielte KI-Korrektur für <strong>0,1 Credit</strong> aus; <strong>Manuell korrigieren</strong> öffnet das entsprechende Kapitel oder den Abschnitt, damit Sie es selbst kostenlos ändern können.</p>
+    <div class="alert-tip">💡 <strong>Warum einige echte Probleme nicht gemeldet werden.</strong> Jeder Befund muss Ihren Text exakt zitieren, und wir suchen vor der Anzeige nach diesem Zitat im Kapitel. Alles, was wir nicht finden können, wird verworfen – einschließlich gelegentlich eines echten Problems, das das Modell leicht falsch zitiert hat. Das ist beabsichtigt. Eine Liste, bei der jedem Punkt vertraut werden kann, ist nützlicher als eine längere Liste, die Sie selbst überprüfen müssen – das war die Aufgabe, die die Prüfung übernehmen sollte.</div>
+    <p>Die Prüfung ist <strong>kostenlos</strong>, egal wie oft Sie sie ausführen. Befunde werden nicht gespeichert: Eine Prüfung beschreibt Ihren Text in diesem Moment, und Ihre nächste Bearbeitung würde dazu führen, dass sie auf Sätze verweist, die nicht mehr existieren.</p>
 
     <h3>Zweite Meinung einholen</h3>
-    <p>Unter dem Kapitel befindet sich <strong>Zu diesem Kapitel fragen</strong>. Es hat Ihre Gliederung und das aktuelle Kapitel gelesen, sodass es Fragen zu Richtung, Tempo, ob ein Kapitel seine Länge rechtfertigt oder was einer schwachen Einleitung fehlt, beantworten kann. Es sagt Ihnen, wenn etwas bereits gut ist, und es widerspricht Ihnen einmal, wenn es glaubt, dass eine Änderung das Buch schwächen würde.</p>
-    <p>Bitten Sie es um eine Änderung des Wortlauts, und es kommt als <strong>Vorschlag</strong>: der vollständige Ersatztext, welchen Abschnitt er ersetzt, und Annehmen oder Verwerfen. Er <strong>bearbeitet Ihr Buch nie von selbst</strong> — Annehmen ist dasselbe wie das Speichern Ihrer eigenen Eingaben, daher passiert alles, was einer Bearbeitung folgt (als veraltet markierte Dateien, als nicht mehr synchron markierte Erzählung), genau auf dieselbe Weise.</p>
+    <p>Unter dem Kapitel befindet sich <strong>Zu diesem Kapitel fragen</strong>. Es hat Ihre Gliederung und das aktuelle Kapitel gelesen, sodass es Fragen zu Richtung, Tempo, ob ein Kapitel seine Länge rechtfertigt oder was einer schwachen Einleitung fehlt, beantworten kann. Es wird Ihnen sagen, wenn etwas bereits in Ordnung ist, und es wird Ihnen einmal widersprechen, wenn es denkt, dass eine Änderung das Buch schwächen würde.</p>
+    <p>Bitten Sie es um eine Änderung des Wortlauts, kommt es als <strong>Vorschlag</strong> zurück: der vollständige Ersatztext, welchen Abschnitt es ersetzen würde, und Annehmen oder Verwerfen. Es <strong>bearbeitet Ihr Buch nie selbst</strong> – Annehmen ist dieselbe Aktion wie das Speichern Ihrer eigenen Eingabe, sodass alles, was auf eine Bearbeitung folgt (Dateien als veraltet markiert, Erzählung als nicht mehr synchron markiert), genau gleich abläuft.</p>
     <p>Kostenlos, und das Gespräch wird nicht gespeichert — es gehört zu der Sitzung, in der Sie sich befinden.</p>
 
     <h3>Was die Bearbeitung betrifft</h3>
     <ul>
-      <li><strong>Ihre Dateien</strong> — eine Version zurück, bis Sie neu aufbauen, wie oben.</li>
-      <li><strong>Ihr Hörbuch</strong> — wenn Sie ein Kapitel bearbeiten, das vertont wurde, wird dieser Teil als nicht mehr übereinstimmend markiert. <strong>Nichts wird gelöscht</strong>: Sie haben Audio-Credits dafür ausgegeben, und eine Tippfehlerkorrektur darf nichts zerstören, wofür Sie bezahlt haben. Lassen Sie es erneut vertonen, wenn Sie es wieder synchron haben möchten.</li>
-      <li><strong>Sonst nichts.</strong> Ihr Cover, Illustrationen, Übersetzungen und KDP-Metadaten bleiben unberührt.</li>
+      <li><strong>Ihre Dateien</strong> – eine Version zurück, bis Sie neu erstellen, wie oben.</li>
+      <li><strong>Ihr Hörbuch</strong> – wenn Sie ein Kapitel bearbeiten, das vertont wurde, wird dieser Teil als nicht mehr übereinstimmend markiert. <strong>Nichts wird gelöscht</strong>: Sie haben Audiocredits dafür ausgegeben, und eine Tippfehlerkorrektur darf nichts zerstören, wofür Sie bezahlt haben. Erzählen Sie erneut, wenn Sie sie wieder in Einklang bringen möchten.</li>
+      <li><strong>Sonst nichts.</strong> Ihr Cover, Ihre Illustrationen, Übersetzungen und KDP-Metadaten bleiben unberührt.</li>
     </ul>
   </div>
 
   <div class="card" id="references">
     <h2>Referenzen</h2>
-    <p>Aktivieren <strong>Referenzen</strong> Sie in Buchteilen, und Ihr Buch erhält am Ende eine Quellenliste, gruppiert nach dem Kapitel, das die jeweilige Quelle verwendet hat. Nach dem Neuaufbau erscheint sie — auch bei einem Buch, das Sie vor Wochen fertiggestellt haben.</p>
-    <p>Sie wird erstellt aus <strong>dem Material, das tatsächlich an den Autor übergeben wurde</strong>: die Videos, Artikel und Dokumente, die Sie bereitgestellt haben, sowie die Aufzeichnung, welche Kapitel aus welchen Quellen geschrieben wurden. Sie wird nicht generiert, indem man ein Modell fragt, was es glaubt gelesen zu haben, was plausibel aussehende Zitate erzeugen würde, die möglicherweise nichts entsprechen. Für ein forschungsgestütztes Buch ist das schlimmer als gar keine Bibliografie.</p>
+    <p>Aktivieren Sie <strong>Referenzen</strong> unter Buchteile, und Ihr Buch erhält eine Quellenliste am Ende, gruppiert nach dem Kapitel, das die jeweilige Quelle verwendet hat. Neu erstellen, und sie erscheint – auch bei einem Buch, das Sie vor Wochen fertiggestellt haben.</p>
+    <p>Sie wird aus <strong>dem Material erstellt, das tatsächlich an den Writer gefüttert wurde</strong>: die Videos, Artikel und Dokumente, die Sie bereitgestellt haben, und die Aufzeichnung, welche Kapitel aus welchen geschrieben wurden. Sie wird nicht generiert, indem man ein Modell fragt, was es glaubt gelesen zu haben, was plausibel aussehende Zitate erzeugen würde, die möglicherweise nichts entsprechen. Für ein forschungsgestütztes Buch ist das schlimmer als gar keine Bibliografie.</p>
     <div class="alert-info">📚 Standardmäßig deaktiviert, bewusst. Jedes Buch, das vor dieser Funktion erstellt wurde, würde sonst beim nächsten Neuaufbau seiner Dateien eine Bibliografie erhalten — auch bereits veröffentlichte. Wenn Sie es aktivieren und nichts aufgelistet wird, wurde Ihr Buch aus einem einzigen eingefügten Transkript geschrieben, ohne etwas zu zitieren, und wir lassen den Abschnitt weg, anstatt eine leere Überschrift zu drucken.</div>
   </div>
 
   <div class="card" id="languages">
     <h2>In einer anderen Sprache veröffentlichen</h2>
-    <p>Bei jedem fertigen Buch: <strong>Buch bearbeiten → In anderer Sprache veröffentlichen</strong> erstellt eine vollständige Ausgabe auf Französisch, Spanisch, Portugiesisch, Deutsch, Italienisch, Niederländisch oder Englisch. <strong>Jede davon kann auch vertont werden</strong>, mit einer männlichen oder weiblichen Stimme, sodass eine übersetzte Ausgabe genau wie das Original als Hörbuch erscheinen kann — siehe <a href="#audiobooks">Hörbücher</a>.</p>
+    <p>Bei jedem fertigen Buch erstellt <strong>Dieses Buch bearbeiten → In anderer Sprache veröffentlichen</strong> eine vollständige Ausgabe auf Französisch, Spanisch, Portugiesisch, Deutsch, Italienisch, Niederländisch oder Englisch. <strong>Jede davon kann auch vertont werden</strong>, mit einer männlichen oder weiblichen Stimme, sodass eine übersetzte Ausgabe genau wie das Original als Hörbuch erscheinen kann – siehe <a href="#audiobooks">Hörbücher</a>.</p>
 
     <h3>Es wird ein separates Buch</h3>
-    <p>Nicht zusätzliche Dateien zum Original — <strong>sein eigenes Buch auf Ihrem Dashboard</strong>, denn das benötigt Amazon. Jede Sprache hat ihr eigenes KDP-Listing mit eigener ASIN und eigenen Keywords, daher erhält die französische Ausgabe ihre eigene Cover-Beschriftung, ihre eigene Amazon-Beschreibung, ihre eigenen Dateien und ihre eigenen Bearbeitungssteuerungen. Das Original bleibt unberührt, und die beiden sind verknüpft, sodass Sie eines vom anderen aus finden können.</p>
+    <p>Keine zusätzlichen Dateien zum Original – <strong>ein eigenes Buch auf Ihrem Dashboard</strong>, denn das braucht Amazon. Jede Sprache ist ein eigener KDP-Eintrag mit eigener ASIN und eigenen Keywords, sodass die französische Ausgabe ihre eigene Coverbeschriftung, ihre eigene Amazon-Beschreibung, ihre eigenen Dateien und ihre eigenen Bearbeitungssteuerungen erhält. Das Original bleibt unberührt, und die beiden sind verknüpft, sodass Sie eines vom anderen aus finden können.</p>
 
     <h3>Warum es nur einen Bruchteil des Buches kostet</h3>
-    <p>Ihre <strong>Cover-Artwork und jede Kapitel-Illustration werden wiederverwendet</strong> — in die neue Ausgabe kopiert, sodass es weiterhin funktioniert, auch wenn Sie das Original später löschen. Nur die Wörter werden neu gemacht, was die günstige Hälfte ist. Deshalb kostet eine Übersetzung etwa 40 % des Buches: 12 Credits für einen Lead-Magneten, 24 für ein kurzes Buch, 40 für ein kommerzielles.</p>
+    <p>Ihr <strong>Cover-Artwork und alle Kapitelillustrationen werden wiederverwendet</strong> – in die neue Ausgabe kopiert, sodass sie weiterhin funktioniert, auch wenn Sie das Original später löschen. Nur die Wörter werden neu gemacht, was der günstige Teil ist. Deshalb kostet eine Übersetzung etwa 40 % des Buchpreises: 12 Credits für einen Lead Magnet, 24 für ein kurzes Buch, 40 für ein kommerzielles.</p>
 
     <h3>Was übersetzt und was neu geschrieben wird</h3>
     <ul>
-      <li><strong>Übersetzt</strong> — jedes Kapitel, der Titel, der Untertitel und die Kapitelliste, als Buch für Leser in dieser Sprache, nicht wortwörtlich. Redewendungen werden zu Redewendungen dieser Sprache; Eigennamen, Markennamen, Zahlen und Statistiken bleiben exakt, wie sie sind.</li>
-      <li><strong>Neu geschrieben, nicht übersetzt</strong> — die Amazon-Beschreibung und die 7 KDP-Keywords, neu generiert für diesen Markt. Deutsche Leser suchen nicht nach übersetzten englischen Phrasen, und Keywords sind der ganze Sinn dieses Pakets.</li>
-      <li><strong>Neu gezeichnet</strong> — die Cover-Beschriftung, in der neuen Sprache, über demselben Artwork.</li>
+      <li><strong>Übersetzt</strong> – jedes Kapitel, der Titel, der Untertitel und die Kapitelliste, als Buch für Leser in dieser Sprache und nicht Wort für Wort. Redewendungen werden zu Redewendungen dieser Sprache; Eigennamen, Markennamen, Zahlen und Statistiken bleiben exakt erhalten.</li>
+      <li><strong>Neu geschrieben, nicht übersetzt</strong> – die Amazon-Beschreibung und die 7 KDP-Keywords, frisch für diesen Markt generiert. Deutsche Leser suchen nicht nach übersetzten englischen Phrasen, und Keywords sind der Sinn dieses Pakets.</li>
+      <li><strong>Neu gezeichnet</strong> – die Coverbeschriftung in der neuen Sprache über demselben Artwork.</li>
     </ul>
     <div class="alert-tip">💡 Nur diese sieben Sprachen werden angeboten, und der Grund ist wissenswert: Die Copyright-Seite, das Inhaltsverzeichnis und die Abschnittsüberschriften sind für genau diese ordentlich lokalisiert. Ein Buch, dessen Kapitel in einer Sprache sind und dessen Front Matter auf Englisch ist, wirkt sichtbar halb übersetzt, was schlimmer ist, als es nicht anzubieten. Weitere werden hinzugefügt, sobald diese lokalisiert sind.</div>
   </div>
@@ -471,96 +471,96 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); p
   <!-- AUDIOBOOKS -->
   <div class="card" id="audiobooks">
     <h2>Hörbücher</h2>
-    <p><strong>Dieses Buch bearbeiten → Hörbuch erstellen</strong> erzählt ein fertiges Buch. Es läuft <em>nach</em> Ihre Dateien existieren, sodass das Buch währenddessen herunterladbar bleibt und ein Erzählproblem nie das E-Book beeinträchtigt, das Sie bereits bezahlt haben.</p>
+    <p><strong>Dieses Buch bearbeiten → Hörbuch erstellen</strong> vertont ein fertiges Buch. Es läuft <em>nachdem</em> Ihre Dateien existieren, sodass das Buch währenddessen herunterladbar bleibt und ein Vertonungsproblem nie das Ebook beeinträchtigt, das Sie bereits bezahlt haben.</p>
 
     <h3>Die Stimmen</h3>
     <ul>
-      <li><strong>Standard – männlich</strong> und <strong>Standard – weiblich</strong> — klar und konsistent, und hörbar synthetisch. Englisch, Französisch, Spanisch, Portugiesisch, Deutsch, Italienisch, Niederländisch, Chinesisch, Japanisch und Koreanisch. 40 / 80 / 120 Audio-Credits je nach Buchlänge.</li>
-      <li><strong>Premium</strong> — natürliche, ausdrucksstarke Erzählung, mit Thalia, Apollo (Englisch) und Celeste (Spanisch). <strong>Nur Englisch und Spanisch</strong> — die Premium-Engine veröffentlicht kein Modell für die anderen acht, daher verwendet ein deutsches oder japanisches Buch eine Standardstimme. 100 / 200 / 300 Audio-Credits.</li>
+      <li><strong>Standard – männlich</strong> und <strong>Standard – weiblich</strong> – klar und konsistent, aber hörbar synthetisch. Englisch, Französisch, Spanisch, Portugiesisch, Deutsch, Italienisch, Niederländisch, Chinesisch, Japanisch und Koreanisch. 40 / 80 / 120 Audiocredits je nach Buchlänge.</li>
+      <li><strong>Premium</strong> – natürliche, ausdrucksstarke Vertonung mit Thalia, Apollo (Englisch) und Celeste (Spanisch). <strong>Nur Englisch und Spanisch</strong> – die Premium-Engine veröffentlicht kein Modell für die anderen acht, daher verwendet ein deutsches oder japanisches Buch eine Standardstimme. 100 / 200 / 300 Audiocredits.</li>
     </ul>
-    <p>Beide Standardstimmen decken alle zehn Erzählsprachen ab – Englisch, Französisch, Spanisch, Portugiesisch, Deutsch, Italienisch, Niederländisch, Chinesisch, Japanisch und Koreanisch – und jede behält dasselbe Sprechergeschlecht in allen Sprachen, sodass ein Buch, das in mehreren Sprachen veröffentlicht wird, den Sprecher zwischen den Ausgaben nicht wechselt. <strong>Jede Sprache, in der Sie veröffentlichen können, kann auch erzählt werden</strong>; Chinesisch, Japanisch und Koreanisch sind nur für Erzählungen, für Bücher, die bereits in ihnen geschrieben sind.</p>
-    <div class="alert-info">🎧 Hörbücher werden von einem separaten <strong>Audio-Credit</strong> -Guthaben abgerechnet, nicht von Ihren E-Book-Credits. Ein Buch zu schreiben und eines zu erzählen kostet uns extrem unterschiedliche Beträge, daher hält die Trennung die E-Book-Credits günstig. Audio-Credits sind im <strong>Pro Audio</strong> Plan oder kann <strong>in jedem Plan direkt gekauft werden</strong> — siehe unten.</div>
+    <p>Beide Standardstimmen decken alle zehn Vertonungssprachen ab – Englisch, Französisch, Spanisch, Portugiesisch, Deutsch, Italienisch, Niederländisch, Chinesisch, Japanisch und Koreanisch – und jede behält dasselbe Sprechergeschlecht in allen Sprachen bei, sodass ein in mehreren Sprachen veröffentlichtes Buch nicht zwischen den Ausgaben den Sprecher wechselt. <strong>Jede Sprache, in der Sie veröffentlichen können, kann auch vertont werden</strong>; Chinesisch, Japanisch und Koreanisch sind nur zur Vertonung, für Bücher, die bereits in ihnen geschrieben sind.</p>
+    <div class="alert-info">🎧 Hörbücher werden von einem separaten <strong>Audiocredit</strong>-Kontingent abgerechnet, nicht von Ihren Ebook-Credits. Ein Buch zu schreiben und es zu vertonen kostet uns extrem unterschiedliche Beträge, daher hält die Trennung die Ebook-Credits günstig. Audiocredits sind im <strong>Pro Audio</strong>-Plan enthalten oder können <strong>in jedem Plan direkt gekauft werden</strong> – siehe unten.</div>
     <p>Es werden nur Stimmen angeboten, die die Sprache Ihres Buches tatsächlich sprechen können, und das Panel sagt dies deutlich, anstatt still eine kürzere Liste zu zeigen.</p>
     <div class="alert-tip">💡 Premium kostet mehr als das E-Book, das es vertont, und das ist kein Aufschlag — die Vertonung eines kommerziellen Buches mit der Premium-Engine kostet uns tatsächlich mehr, als das Buch einbringt. Standard kostet uns nur ein paar Cent, daher ist es günstig. Probieren Sie zuerst Standard; wenn Sie das Hörbuch verkaufen, lohnt sich Premium.</div>
 
     <h3>Eine Datei pro Teil — und eine kombinierte Datei</h3>
-    <p>Sie erhalten eine Datei pro Teil, mit einem Player für jeden, damit Sie direkt zu dem Teil springen können, den Sie prüfen möchten. Die Teile werden als <strong>verlustfreie WAV-Master</strong> in der tatsächlichen Rate der Vertonungs-Engine gespeichert, und jeder kann über den Link unter seinem Player heruntergeladen werden. Dann markieren Sie die gewünschten Teile und <strong>Als ein Hörbuch herunterladen</strong> fügt sie in Buchreihenfolge zu einer einzigen MP3-Datei mit 192 kbps zusammen. Es wird nichts neu vertont und keine Credits werden ausgegeben — Sie haben diese Teile bereits bezahlt.</p>
-    <p>Die MP3s werden <em>in Ihrem Browser</em> beim Klick erstellt, weshalb ein langes Buch eine Minute dauert. Das ist beabsichtigt: Die Kodierung aus dem verlustfreien Master bedeutet, dass der einzige verlustbehaftete Schritt einmal am Ende erfolgt. Die Konvertierung einer kleinen Vorschau auf 192 kbps würde die Dateigröße verdreifachen und die Fehler der ersten Kodierung statt des Audios beibehalten.</p>
+    <p>Sie erhalten eine Datei pro Teil mit einem Player, sodass Sie zu dem springen können, den Sie prüfen möchten. Teile werden als <strong>verlustfreie WAV-Master</strong> in der tatsächlichen Rate der Vertonungs-Engine gespeichert, und jeder kann über den Link unter seinem Player heruntergeladen werden. Aktivieren Sie dann die gewünschten Teile und <strong>Als ein Hörbuch herunterladen</strong> fügt sie in Buchreihenfolge zu einer einzigen MP3 mit 192 kbps zusammen. Es wird nichts neu vertont und keine Credits werden ausgegeben – Sie haben diese Teile bereits bezahlt.</p>
+    <p>Die MP3s werden <em>in Ihrem Browser</em> erstellt, wenn Sie klicken, weshalb ein langes Buch eine Minute dauert. Das ist beabsichtigt: Die Kodierung aus dem verlustfreien Master bedeutet, dass der eine verlustbehaftete Schritt nur einmal am Ende passiert. Die Konvertierung einer kleinen Vorschau auf 192 kbps würde die Dateigröße verdreifachen und dabei die Fehler der ersten Kodierung statt des Audios bewahren.</p>
     <p>Die Dateien pro Teil ermöglichen es uns, überhaupt ein dreistündiges Hörbuch zu produzieren, und sie machen die kombinierte Datei zu einer Wahl statt zu einem festen Ergebnis: Entfernen Sie die Copyright-Seite, behalten Sie den Call-to-Action, vertonen Sie ein Kapitel neu, ohne den Rest anzufassen.</p>
     <p>Die erste Datei beginnt mit Ihrem Titel, Untertitel und Autorennamen; die letzte endet mit einer Verabschiedung. Überschriften, Aufzählungen und Abkürzungen werden für das Ohr umgeschrieben — eine Liste wird als „Erstens… Zweitens… Und schließlich…“ gelesen, „40%“ wird zu „40 Prozent“, und Links und Bildunterschriften werden entfernt, denn ein Sprecher, der eine URL vorliest, ist der schnellste Weg, einen Hörer zu verlieren.</p>
-    <p>Ihre <strong>Wichtige Erkenntnisse</strong> und <strong>Reflexion</strong> Einstellungen werden respektiert, sodass das Hörbuch dieselben Wörter enthält wie Ihr E-Book. <strong>Jeder Teil wird vertont</strong> — einschließlich der Copyright-Seite, der Inhaltsverzeichnisse, Ihres Call-to-Action und Ihrer Autorenbiografie — denn ob ein Hörbuch mit einer Copyright-Zeile beginnt oder mit Ihrem Angebot endet, ist Ihre Entscheidung, nicht unsere. Kapitel sind für die kombinierte Datei standardmäßig aktiviert, Front- und Backmatter nicht, sodass der Standard das Buch allein ist.</p>
+    <p>Ihre <strong>Key Takeaways</strong>- und <strong>Reflexion</strong>-Einstellungen werden respektiert, sodass das Hörbuch dieselben Wörter enthält wie Ihr ebook. <strong>Jeder Teil wird gesprochen</strong> – einschließlich der Copyright-Seite, der Inhaltsverzeichnisse, Ihres Aufrufs zum Handeln und Ihrer Autorenbiografie – denn ob ein Hörbuch mit einer Copyright-Zeile beginnt oder mit Ihrem Angebot endet, ist Ihre Entscheidung, nicht unsere. Kapitel sind für die kombinierte Datei standardmäßig aktiviert, Vor- und Nachsatz nicht, also ist die Standardeinstellung das Buch allein.</p>
 
     <h3>Die verlustfreien Master</h3>
-    <p>Was der Player streamt <strong>ist</strong> der Master — die Vertonung wird als verlustfreies PCM (WAV) gespeichert und für die Wiedergabe nicht transkodiert. Unter jedem Player befindet sich ein Link mit der Größe, z. B. <em>Verlustfreier Master &middot; WAV 24 kHz, 34 MB</em>, der diesen Teil benannt nach Ihrem Buch und Kapitel herunterlädt, nicht als <code>ch03.wav</code>.</p>
-    <p>Sie werden auf der <strong>gleichen 30-Tage-Uhr wie das Buch</strong>aufbewahrt, und sie sind kein Pro-Audio-Extra — jedes vertonte Buch hat sie, auch eines, das mit einem einzelnen Audio-Credit-Paket im kostenlosen Plan vertont wurde.</p>
-    <div class="alert-info">🎚️ <strong>Die Master haben 24 kHz, nicht 44,1 kHz</strong>, weil das tatsächlich die Abtastrate ist, die die Vorlese-Engines erzeugen — jede von ihnen arbeitet nativ mit 24 kHz. Die 44,1 kHz in den verpackten MP3s sind ein Resampling zur Encodierungszeit, um die Container-Spezifikation zu erfüllen. Das Archiv mit 44,1 kHz zu speichern würde die Größe verdoppeln und nichts bringen: Es wäre eine hochgesampelte 24-kHz-Datei mit einer größeren Zahl.</div>
+    <p>Was der Player streamt, <strong>ist</strong> der Master – die Erzählung wird als verlustfreies PCM (WAV) gespeichert und für die Wiedergabe wird nichts transkodiert. Unter jedem Player befindet sich ein Link, der seine Größe zeigt, z. B. <em>Verlustfreier Master &middot; WAV 24 kHz, 34 MB</em>, der diesen Teil herunterlädt, benannt nach Ihrem Buch und Kapitel, nicht <code>ch03.wav</code>.</p>
+    <p>Sie werden auf der <strong>gleichen 30-Tage-Uhr wie das Buch</strong> gehalten und sind kein Pro-Audio-Extra – jedes gesprochene Buch hat sie, einschließlich eines, das mit einem einzigen Audio-Credit-Paket im kostenlosen Plan gesprochen wurde.</p>
+    <div class="alert-info">🎚️ <strong>Die Master sind 24 kHz, nicht 44,1 kHz</strong>, weil das ist, was die Erzähl-Engines tatsächlich produzieren – jede einzelne ist nativ 24 kHz. Die 44,1 kHz in den verpackten MP3s sind ein Resample, das zur Kodierzeit durchgeführt wird, um die Container-Spezifikation zu erfüllen. Das Archiv bei 44,1 zu speichern würde seine Größe verdoppeln und nichts hinzufügen: Es wäre eine hochgesampelte 24-kHz-Datei mit einer größeren Zahl.</div>
 
     <h3>Das Distributionspaket</h3>
     <p><strong>Download-Paket (ZIP)</strong> erstellt alles, was ein Aggregator verlangt, mit einem Klick:</p>
     <ul>
-      <li>Jeder Teil als <strong>nummerierte MP3</strong> — <code>00-title-page.mp3</code>, <code>02-chapter-01.mp3</code> — mit führenden Nullen, sodass eine einfache alphabetische Sortierung auch der richtigen Wiedergabereihenfolge entspricht, so liest sie ein Uploader.</li>
-      <li><strong>192 kbps CBR, 44,1 kHz, mono</strong>, normalisiert auf etwa &minus;20 dB RMS mit Spitzen unter &minus;3 dB.</li>
-      <li><strong>cover.jpg</strong> bei 3000&times;3000, RGB — das quadratische Artwork, das jeder Hörbuch-Store verlangt und kein E-Book-Cover hat.</li>
-      <li><strong>retail-sample.mp3</strong>, die ersten fünf Minuten von Kapitel eins, an einer Frame-Grenze geschnitten.</li>
-      <li><strong>metadata.json</strong> — Titel, Autor, Sprecher, Sprache, Dateilängen und gemessene Pegel pro Datei sowie eine explizite <code>"narration": "digital"</code>.</li>
+      <li>Jeder Teil als <strong>nummerierte MP3</strong> – <code>00-title-page.mp3</code>, <code>02-chapter-01.mp3</code> – nullgepolstert, sodass eine einfache alphabetische Sortierung auch die richtige Wiedergabereihenfolge ist, so wie ein Uploader sie liest.</li>
+      <li><strong>192 kbps CBR, 44,1 kHz, Mono</strong>, auf etwa &minus;20 dB RMS mit Spitze unter &minus;3 dB eingepegelt.</li>
+      <li><strong>cover.jpg</strong> bei 3000&times;3000, RGB – das quadratische Artwork, das jeder Hörbuch-Store verlangt und kein ebook-Cover ist.</li>
+      <li><strong>retail-sample.mp3</strong>, die ersten fünf Minuten von Kapitel eins, auf einer Frame-Grenze geschnitten.</li>
+      <li><strong>metadata.json</strong> – Titel, Autor, Sprecher, Sprache, Dauern pro Datei und gemessene Pegel sowie ein explizites <code>"narration": "digital"</code>.</li>
       <li>ID3-Tags und eingebettetes Cover auf jedem Track, sodass ein Käufer, der in VLC entpackt, ein Buch sieht statt ein Dutzend anonymer Dateien.</li>
     </ul>
-    <div class="alert-info">🔊 <strong>Warum die Offenlegung in der Datei steht.</strong> Die meisten Aggregatoren verlangen, dass KI-Erzählung deklariert wird. Ein Paket, das sie stillschweigend weglässt, wird nicht beim Upload abgelehnt — es wird nach der Verteilung entfernt, sobald es verkauft wurde. Es kostet nichts, es zu deklarieren, und es ist der Unterschied zwischen einem Katalogeintrag und einer Entfernung.</div>
+    <div class="alert-info">🔊 <strong>Warum die Offenlegung in der Datei ist.</strong> Die meisten Aggregatoren verlangen, dass KI-Erzählung deklariert wird. Ein Paket, das sie stillschweigend weglässt, wird nicht beim Upload abgelehnt – es wird nach der Verteilung entfernt, sobald es verkauft wurde. Es zu deklarieren kostet nichts und ist der Unterschied zwischen einem Katalogeintrag und einer Entfernung.</div>
 
     <h3>Verkauf — lesen Sie dies vor dem Upload</h3>
-    <p><strong>Direktverkauf ist der einfache Weg</strong> — Gumroad, Payhip, Shopify oder ein Download auf Ihrer eigenen Website. Keine Genehmigung, keine Audio-Spezifikationsprüfung, und Sie behalten die Marge. Die kombinierte Einzeldatei ist das Format, das diese Stores erwarten.</p>
-    <p><strong>Audible und ACX sind möglich, aber mit Bedingungen.</strong> Der Standard-Einreichungsprozess von ACX ist für menschliche Erzählung: Seine Audio-Submission-Anforderungen besagen, dass ein Titel von Menschen erzählt sein muss <em>sofern nicht anders genehmigt</em>, und listet nicht autorisierte Text-to-Speech und KI als verboten auf. Das ist eine Regel gegen <em>nicht autorisierte</em> KI, kein Verbot von KI — aber der Unterschied muss im Voraus arrangiert werden, nicht erst bei der Einreichung entdeckt:</p>
+    <p><strong>Direktverkauf ist der einfache Weg</strong> – Gumroad, Payhip, Shopify oder ein Download auf Ihrer eigenen Website. Keine Genehmigung, keine Audio-Spezifikationsprüfung, und Sie behalten die Marge. Die kombinierte einzelne Datei ist das Format, das diese Stores erwarten.</p>
+    <p><strong>Audible und ACX sind möglich, aber bedingt.</strong> Der Standard-Einreichungsprozess von ACX ist für menschliche Erzählung: Seine Audio-Einreichungsanforderungen besagen, dass ein Titel menschlich erzählt sein muss <em>sofern nicht anders autorisiert</em>, und listen nicht autorisierte Text-to-Speech und KI als verboten auf. Das ist eine Regel gegen <em>nicht autorisierte</em> KI, kein Verbot von KI – aber der Unterschied muss im Voraus arrangiert werden, nicht bei der Einreichung entdeckt:</p>
     <ul>
-      <li><strong>Kontaktieren Sie zuerst den ACX-Support</strong> und lassen Sie den Titel autorisieren, statt über den Standardprozess zu gehen und zu hoffen.</li>
-      <li><strong>Offenlegen</strong> Sie die KI-Erzählung in der Buchbeschreibung. Dies ist Pflicht.</li>
+      <li><strong>Kontaktieren Sie zuerst den ACX-Support</strong> und lassen Sie den Titel autorisieren, anstatt über den Standardprozess einzureichen und zu hoffen.</li>
+      <li><strong>Offenlegen</strong> Sie die KI-Erzählung in der Buchbeschreibung. Dies wird durchgesetzt.</li>
       <li>ACX misst Audio-Pegel – RMS zwischen −23 und −18 dB, Spitze nicht höher als −3 dB, Rauschabstand unter −60 dB.</li>
       <li><strong>KDP Virtual Voice ist kein Weg für diese Dateien.</strong> Es ist Amazons eigenes KI-Erzählprogramm, es verwendet Amazons Stimmen und akzeptiert kein von Ihnen geliefertes Audio.</li>
     </ul>
-    <p><strong>Aggregatoren sind der einfachere Weg zu Audible.</strong> Author's Republic, Kobo Writing Life und Spotifys Hörbuchprogramm (ehemals Findaway Voices) akzeptieren KI-erzählte Hörbücher und vertreiben sie in Audibles Katalog, mit KI-Offenlegungspflicht. Keine Autorisierung pro Titel nötig.</p>
-    <p><strong>Wir messen und setzen jetzt Audio-Pegel.</strong> Jede Datei im Paket und jeder kombinierte Download wird analysiert und auf etwa −20 dB RMS mit einer Spitze unter −3 dB eingestellt – dasselbe Fenster wie oben aufgeführt – und die gemessenen Werte für jeden Titel werden in <code>metadata.json</code> geschrieben, sodass Sie sie ohne Editor prüfen können. Die Lautstärke wird an der Sprache selbst gemessen, nicht über die Pausen zwischen Sätzen gemittelt, was verhindert, dass ein Teil mit langen Pausen lauter wird als der Rest des Buches.</p>
-    <p><strong>Wir werden Ihnen weiterhin nicht sagen, dass eine Datei ACX-konform ist</strong>, denn Pegel sind der Teil, den wir beweisen können, und Autorisierung nicht. Eine Datei, die jede Zahl der Spezifikation trifft, ist immer noch nicht für den Standardprozess von ACX geeignet, bis ACX den Titel autorisiert hat. Die technische Seite ist unsere; die Erlaubnis ist Ihre.</p>
-    <div class="alert-info">📦 <strong>Zwei verschiedene ZIPs.</strong> Audio ist nicht in Ihrem <em>E-Book</em> -Archiv – ein Hörbuch ist viel zu groß, um neben PDF und EPUB zu liegen. Das Hörbuch hat seine eigene <strong>Download-Paket (ZIP)</strong> im Hörbuch-Panel, wie oben beschrieben.</div>
+    <p><strong>Aggregatoren sind der einfachere Weg zu Audible.</strong> Author's Republic, Kobo Writing Life und das Hörbuchprogramm von Spotify (ehemals Findaway Voices) akzeptieren KI-erzählte Hörbücher und verteilen sie in den Audible-Katalog, mit erforderlicher KI-Offenlegung. Keine Autorisierung pro Titel zu verhandeln.</p>
+    <p><strong>Wir messen und setzen jetzt Audio-Pegel.</strong> Jede Datei im Paket und jeder kombinierte Download wird analysiert und auf etwa &minus;20 dB RMS mit Spitze unter &minus;3 dB eingepegelt – dasselbe Fenster wie oben aufgeführt – und die gemessenen Werte für jeden Track werden in <code>metadata.json</code> geschrieben, damit Sie sie ohne Editor überprüfen können. Die Lautstärke wird an der Sprache selbst gemessen und nicht mit den Pausen zwischen Sätzen gemittelt, was verhindert, dass ein Teil mit langen Lücken lauter wird als der Rest des Buches.</p>
+    <p><strong>Wir werden Ihnen weiterhin nicht sagen, dass eine Datei ACX-konform ist</strong>, denn Pegel sind der Teil, den wir beweisen können, und Autorisierung nicht. Eine Datei, die jeden Wert in der Spezifikation trifft, ist immer noch nicht für den Standardprozess von ACX geeignet, bis ACX den Titel autorisiert hat. Die technische Seite ist unsere; die Erlaubnis ist Ihre.</p>
+    <div class="alert-info">📦 <strong>Zwei verschiedene ZIPs.</strong> Audio ist nicht in Ihrem <em>ebook</em>-Archiv – ein Hörbuch ist viel zu groß, um neben PDF und EPUB zu liegen. Das Hörbuch hat sein eigenes <strong>Download-Paket (ZIP)</strong> im Hörbuch-Panel, wie oben beschrieben.</div>
   </div>
 
   <!-- FIND A TOPIC -->
   <div class="card" id="find-a-topic">
     <h2>Thema finden</h2>
-    <p><strong>Thema finden</strong> beantwortet die Frage, die vor allem anderen kommt: Welches Buch ist es wert, geschrieben zu werden? Geben Sie eine Nische ein und TubeBook zeigt Ihnen, wonach die Leute tatsächlich suchen, wie überfüllt jedes Thema bereits ist, und eine Reihe von Buchentwürfen, die aus den Lücken entstehen – und findet dann die Quellen, um daraus zu schreiben.</p>
+    <p><strong>Ein Thema finden</strong> beantwortet die Frage, die vor allem anderen kommt: Welches Buch ist es wert, geschrieben zu werden? Geben Sie eine Nische ein und TubeBook zeigt Ihnen, wonach Menschen tatsächlich suchen, wie überfüllt jedes Thema bereits ist, und eine Reihe von Buchkonzepten, die aus den Lücken erstellt wurden – dann findet es die Quellen, um daraus zu schreiben.</p>
     <h3>Ohne jede Idee starten</h3>
-    <p>Wenn Sie noch keine Nische haben, öffnen Sie den <strong>Trends</strong> -Tab. Er zeigt ein Board pro Land – <strong>USA, Großbritannien, Deutschland, Kanada, Australien und Frankreich</strong> – aufgebaut aus trendigen YouTube-Anleitungs- und Bildungsvideos in diesem Land, plus dem, was Käufer in den Amazon-Shop dieses Landes eingeben. Das Stöbern ist <strong>kostenlos</strong>; ein Thema auszuwählen führt die normale 5-Credits-Recherche durch.</p>
-    <p>Boards werden <strong>wöchentlich</strong> neu aufgebaut und zeigen ihr Datum. Zwei Dinge, die Sie über das Lesen wissen sollten:</p>
+    <p>Wenn Sie noch keine Nische haben, öffnen Sie den Tab <strong>Was ist im Trend</strong>. Er zeigt ein Board pro Land – <strong>Vereinigte Staaten, Vereinigtes Königreich, Deutschland, Kanada, Australien und Frankreich</strong> – erstellt aus trendigen YouTube-How-to- und Bildungsvideos in diesem Land, plus dem, was Käufer in den Amazon-Store dieses Landes tippen. Das Stöbern ist <strong>kostenlos</strong>; die Auswahl eines Themas führt die normale 5-Credit-Recherche durch.</p>
+    <p>Boards werden <strong>wöchentlich</strong> neu erstellt und zeigen ihr Datum. Zwei Dinge, die es wert sind, über das Lesen zu wissen:</p>
     <ul>
-      <li><strong>Viele Amazon-Phrasen sind bestehende Buchtitel.</strong> "Wie man Freunde gewinnt" ist kein Thema – es ist der Beweis, dass Leser in diesem Markt Bücher über soziale Fähigkeiten wollen. Die vorgeschlagenen Themen sind die zugrunde liegenden Themen, keine Titel zum Kopieren.</li>
-      <li><strong>Die Zeile "in den Nachrichten" ist keine Buchnachfrage.</strong> Es sind Googles tägliche Trend-Suchen, die von Sport, Aktienkursen und Prominenten dominiert werden. Sie wird separat und beschriftet angezeigt, weil gelegentlich eine echte Geschichte ein echtes Buch auslöst – aber das meiste ist Rauschen.</li>
+      <li><strong>Viele Amazon-Phrasen sind bestehende Buchtitel.</strong> "Wie man Freunde gewinnt" ist kein Thema – es ist ein Beweis dafür, dass Leser in diesem Markt Bücher über soziale Fähigkeiten wollen. Die vorgeschlagenen Themen sind die zugrunde liegenden Themen, keine Titel zum Kopieren.</li>
+      <li><strong>Die Zeile "in den Nachrichten steigend" ist keine Buchnachfrage.</strong> Es sind Googles tägliche Trend-Suchen, die von Sport, Aktienkursen und Prominenten dominiert werden. Sie wird separat und beschriftet angezeigt, weil gelegentlich eine echte Geschichte ein echtes Buch startet – aber das meiste ist Rauschen.</li>
     </ul>
     <div class="alert-tip">💡 Land ist so genau, wie es nur geht. Die Buchnachfrage variiert tatsächlich von Stadt zu Stadt, aber keine freie Datenquelle schlüsselt das so weit auf, also tun wir nicht so.</div>
 
     <h3>Was die Zahlen bedeuten</h3>
-    <p>Das ist der wichtige Teil, den es zu verstehen gilt. Die Nachfragezahlen stammen von <strong>dem, was Amazon und Google autovervollständigen</strong> wenn jemand tippt – echte Suchanfragen, geordnet nach Häufigkeit. Sie sind <strong>Suchnachfrage-Signale, keine Amazon-Verkaufsränge</strong>.</p>
+    <p>Das ist der wichtige Teil zu verstehen. Die Nachfragezahlen stammen von <strong>dem, was Amazon und Google automatisch vervollständigen</strong>, wenn jemand tippt – echte Suchanfragen, geordnet nach Häufigkeit. Sie sind <strong>Suchnachfrage-Signale, keine Amazon-Verkaufsränge</strong>.</p>
     <p>Wir würden Ihnen gerne den echten Bestseller-Rang zeigen, und wir täuschen ihn bewusst nicht vor. Amazon hat den öffentlichen Zugang zu diesen Daten eingestellt: Die Product Advertising API wurde im Mai 2026 geschlossen, und ihr Nachfolger erfordert ein Amazon-Partnerkonto mit laufenden qualifizierten Verkäufen. Kein ehrliches Tool kann Ihnen also Live-BSR liefern, ohne dass Sie eine eigene Verkäuferbeziehung zu Amazon haben.</p>
     <ul>
-      <li><strong>Punktzahl (0-100)</strong> – nur ein Ranking-Hilfsmittel, das Nachfrage mit Wettbewerb kombiniert. Nutzen Sie es, um Ihre Shortlist zu ordnen, niemals als Verkaufsprognose.</li>
-      <li><strong>Buchkäufer</strong> – diese Phrase wird in Amazons <em>Bücher</em> oder <em>Kindle-Shop</em>autovervollständigt, nicht nur in allen Abteilungen. Es ist das stärkste Kaufsignal hier, denn die Person, die tippt, ist bereits auf der Suche nach einem Buch.</li>
-      <li><strong>Wettbewerb</strong> – wie viele Bücher die Phrase bereits ansprechen und wie stark sie bewertet sind. Ein überfülltes Regal mit vergessenen Titeln ist leichter zu betreten als ein kleines Regal mit Bestsellern, also werden beide gewichtet.</li>
-      <li><strong>Wettbewerb: unbekannt</strong> – die Wettbewerbsabfrage war für diese Phrase nicht verfügbar. Das bedeutet, wir wissen nicht, <em>nicht</em> dass das Thema offen ist.</li>
+      <li><strong>Score (0-100)</strong> – nur ein Ranking-Hilfsmittel, das Nachfrage mit Wettbewerb kombiniert. Verwenden Sie es, um Ihre Shortlist zu ordnen, niemals als Verkaufsprognose.</li>
+      <li><strong>Buchkäufer</strong> – diese Phrase wird in Amazons <em>Bücher</em>- oder <em>Kindle-Store</em> automatisch vervollständigt, nicht nur in allen Abteilungen. Es ist das stärkste Kaufsignal, das hier verfügbar ist, weil die Person, die es tippt, bereits nach einem Buch sucht.</li>
+      <li><strong>Wettbewerb</strong> – wie viele Bücher bereits auf die Phrase abzielen und wie stark sie bewertet sind. Ein überfülltes Regal mit vergessenen Titeln ist leichter zu betreten als ein kleines Regal mit Bestsellern, also werden beide gewichtet.</li>
+      <li><strong>Wettbewerb: unbekannt</strong> — die Wettbewerbsabfrage war für diesen Begriff nicht verfügbar. Das bedeutet, wir wissen es nicht, <em>nicht</em>, dass das Thema völlig offen ist.</li>
     </ul>
     <h3>Vorgeschlagene Quellen</h3>
-    <p>Wählen Sie ein Konzept und TubeBook erstellt eine Shortlist mit <strong>bis zu 25 Quellen</strong> dafür – so viele, wie ein Pro-Buch kombinieren kann. Filter werden angewendet, bevor Sie die Liste sehen:</p>
+    <p>Wähle ein Konzept und TubeBook erstellt eine Shortlist mit <strong>bis zu 25 Quellen</strong> — so viele, wie ein Pro-Buch kombinieren kann. Filter werden angewendet, bevor du die Liste überhaupt siehst:</p>
     <ul>
-      <li>Videos müssen <strong>Untertitel</strong>, denn genau das liest TubeBook. Ein Video ohne sie kann nicht in ein Kapitel verwandelt werden, es vorzuschlagen würde Ihre Credits verschwenden.</li>
-      <li>Videos unter vier Minuten werden verworfen – zu wenig für ein Kapitel. Lange Vorträge, Vorlesungen und Interviews sind <em>eingeschlossen</em>, und jede Zeile zeigt die Laufzeit, die der beste Anhaltspunkt dafür ist, wie viel eines Kapitels ein Video tragen kann.</li>
-      <li><strong>PDFs und Office-Dokumente</strong> in den Ergebnissen – Papiere, Regierungsberichte, Whitepapers, Kursnotizen – werden als Dokumente erkannt und mit dem Dokumentextraktor gelesen, statt an einen Web-Reader übergeben zu werden, der sie nicht öffnen kann.</li>
+      <li>Videos müssen <strong>Untertitel</strong> haben, denn die liest TubeBook. Ein Video ohne Untertitel kann nicht in ein Kapitel verwandelt werden, daher wäre ein Vorschlag eine Verschwendung deiner Credits.</li>
+      <li>Videos unter vier Minuten werden verworfen — zu wenig für ein Kapitel. Lange Vorträge, Vorlesungen und Interviews sind <em>eingeschlossen</em>, und jede Zeile zeigt die Laufzeit, die der beste Anhaltspunkt dafür ist, wie viel eines Kapitels ein Video tragen kann.</li>
+      <li><strong>PDFs und Office-Dokumente</strong> in den Ergebnissen — Papiere, Regierungsberichte, Whitepapers, Kursnotizen — werden als Dokumente erkannt und mit dem Dokumentextraktor gelesen, statt einem Web-Reader übergeben zu werden, der sie nicht öffnen kann.</li>
       <li>Jeder Link wird zuerst auf Erreichbarkeit und Sicherheit geprüft, mit derselben Validierung, die auch der Ingester anwendet.</li>
     </ul>
-    <p>Die ersten zehn werden angezeigt; <strong>Zeig 10 mehr</strong> zeigt den Rest. Diese sind bereits geladen – sie anzuzeigen kostet nichts und löst keine neuen Suchen aus.</p>
+    <p>Die ersten zehn werden angezeigt; <strong>10 weitere anzeigen</strong> zeigt den Rest. Diese sind bereits geladen — das Anzeigen kostet nichts und löst keine neuen Suchen aus.</p>
     <p>Die ersten zehn sind auch die vorausgewählten, bewusst: Quellen über die ersten zehn hinaus erhöhen die Credits des Buches, also tickt TubeBook nicht fünfundzwanzig in Ihrem Namen an. Jeder Plan kann bis zu 25 Quellen kombinieren, und der Auswahl stoppt an dieser gemeinsamen Grenze.</p>
     <h3>Wie die Konzepte geschrieben werden</h3>
-    <p>Jeder vorgeschlagene Titel und Untertitel muss für alle drei Arten funktionieren, wie ein Buch heute gefunden wird: <strong>Suche</strong> (Schlüsselwörter aus tatsächlich beobachteten Phrasen, nie erfunden), <strong>Antwortmaschinen</strong> (ein Untertitel, der als direkte, wörtliche Antwort liest – eine Zahl, ein Zeitrahmen, eine benannte Situation, und kein Wortspiel), und <strong>KI-Empfehlungen</strong> (ein Titel und Untertitel, die Thema, Umfang und Leser unmissverständlich machen, wenn sie allein gelesen werden). Konzepte respektieren auch Amazons 200-Zeichen-Limit für Titel plus Untertitel, also kommt keines unbrauchbar an.</p>
+    <p>Jeder vorgeschlagene Titel und Untertitel muss für alle drei Arten funktionieren, wie ein Buch heute gefunden wird: <strong>Suche</strong> (Schlüsselwörter aus tatsächlich beobachteten Phrasen, nie erfunden), <strong>Antwortmaschinen</strong> (ein Untertitel, der wie eine direkte, wörtliche Antwort liest — eine Zahl, ein Zeitrahmen, eine benannte Situation, und keine Wortspiele) und <strong>KI-Empfehlungen</strong> (ein Titel und Untertitel, die Thema, Umfang und Leser unmissverständlich machen, wenn sie allein gelesen werden). Konzepte respektieren auch Amazons Limit von 200 Zeichen für Titel plus Untertitel, sodass keines unbrauchbar ankommt.</p>
 
     <h3>Bessere KDP-Schlüsselwörter</h3>
-    <p>Wenn ein Buch aus einem recherchierten Thema entsteht, werden seine 7 KDP-Schlüsselwörter aus den <strong>tatsächlich in der Suche beobachteten Phrasen</strong> gezogen, statt von der KI erfunden. Ein erfundenes Schlüsselwort, das niemand tippt, rankt für nichts, also ist dies ein echter Unterschied in der Auffindbarkeit.</p>
+    <p>Wenn ein Buch aus einem recherchierten Thema stammt, werden seine 7 KDP-Schlüsselwörter aus den <strong>tatsächlich in der Suche beobachteten Phrasen</strong> abgeleitet, statt von der KI erfunden. Ein erfundenes Schlüsselwort, das niemand tippt, rankt für nichts, also ist dies ein echter Unterschied in der Auffindbarkeit.</p>
     <h3>Kosten und Caching</h3>
-    <p>Die Recherche einer Nische kostet <strong>5 Credits</strong>. Ergebnisse werden für <strong>14 Tage</strong> zwischengespeichert – das erneute Öffnen derselben Nische in diesem Zeitraum ist kostenlos, und die Wortreihenfolge spielt keine Rolle („Stoizismus für Anfänger“ und „Anfänger Stoizismus“ sind dieselbe Nische). Das Finden von Quellen für ein Konzept kostet nichts extra.</p>
+    <p>Die Recherche einer Nische kostet <strong>5 Credits</strong>. Ergebnisse werden für <strong>14 Tage</strong> zwischengespeichert — das erneute Öffnen derselben Nische in diesem Zeitraum ist kostenlos, und die Wortreihenfolge spielt keine Rolle ("Stoizismus für Anfänger" und "Anfänger Stoizismus" sind dieselbe Nische). Das Finden von Quellen für ein Konzept kostet nichts extra.</p>
     <div class="alert-tip">💡 Wenn die Recherche teilweise fehlschlägt, werden Ihre 5 Credits automatisch erstattet. Wenn eine Nische nichts Nützliches ergibt, versuchen Sie einen breiteren Begriff – „Journaling“ statt „Bullet Journaling für INFJ-Krankenschwestern“.</div>
   </div>
 
@@ -569,8 +569,8 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); p
     <h2>Guthaben &amp; Preise</h2>
     <p>TubeBook verwendet ein transparentes Creditsystem. Jede Aktion zeigt ihre Kosten, bevor Sie bestätigen.</p>
 
-    <div class="alert-info">🔎 <strong>Haben Sie irgendwo anders ein „lebenslanges“ oder „unbegrenztes“ TubeBook-Angebot gekauft?</strong> Das waren nicht wir. Ein separates Unternehmen mit ähnlichem Namen verkauft über Launch-Netzwerke; wir sind <strong>TubeBook</strong> (tubebook.org) und wir sind nicht mit ihnen verbunden. Wir verkaufen nur über diese Website, wir haben keine Wiederverkäufer und wir haben nie einen Lifetime- oder unbegrenzten Plan angeboten – unsere Pläne kosten 9 $, 29 $ und 49 $ pro Monat, plus einmalige Credit-Pakete. Wenn Sie für ein unbegrenztes Upgrade bezahlt haben, steht auf Ihrer Quittung der Verkäufer, und an diesen müssen Sie sich für Zugang oder Erstattung wenden. Wir haben die Zahlung nie erhalten und können daher weder das eine noch das andere veranlassen.</div>
-    <p>Ihre erste Quelle ist immer im Grundpreis enthalten, daher kostet ein E-Book mit einer Quelle genau so viel wie immer. Ein Lead-Magnet mit 5 Quellen kostet 30 + 4 &times; 8 = <strong>62 Credits</strong>.</p>
+    <div class="alert-info">🔎 <strong>Hast du irgendwo anders ein &ldquo;lebenslanges&rdquo; oder &ldquo;unbegrenztes&rdquo; TubeBook-Angebot gekauft?</strong> Das waren nicht wir. Ein separates Unternehmen mit ähnlichem Namen verkauft über Launch-Netzwerke; wir sind <strong>TubeBook</strong> (tubebook.org) und nicht mit ihnen verbunden. Wir verkaufen nur über diese Website, wir haben keine Wiederverkäufer und wir haben nie einen lebenslangen oder unbegrenzten Plan angeboten — unsere Pläne kosten 9 $, 29 $ und 49 $ pro Monat, plus einmalige Credit-Pakete. Wenn du für ein unbegrenztes Upgrade bezahlt hast, nennt deine Quittung den Verkäufer, und an den musst du dich für Zugang oder Erstattung wenden. Wir haben die Zahlung nie erhalten, daher können wir weder Zugang gewähren noch erstatten.</div>
+    <p>Deine erste Quelle ist immer im Basispreis enthalten, also kostet ein Ein-Quellen-Ebook genau das, was es immer gekostet hat. Ein Lead-Magnet mit 5 Quellen kostet 30 + 4 &times; 8 = <strong>62 Credits</strong>.</p>
     <table>
       <thead><tr><th>Artikel</th><th>Credits</th></tr></thead>
       <tbody>
@@ -584,10 +584,10 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); p
     </table>
     <h3>Pläne</h3>
     <ul>
-      <li><span class="pill">Kostenlos</span> <strong>100 Credits pro Monat</strong>, keine Karte erforderlich. Bis zu 25 Quellen pro E-Book und dieselben Funktionen zum Erstellen, Bearbeiten, Gestalten, Übersetzen, Hörbuch-Erstellen und Exportieren wie bei kostenpflichtigen Konten. Auf PDFs von kostenlosen Konten erscheint eine kleine Fußzeile "Erstellt mit TubeBook.org", bis das Konto einen Kauf tätigt.</li>
+      <li><span class="pill">Kostenlos</span> <strong>100 Credits jeden Monat</strong>, keine Karte erforderlich. Bis zu 25 Quellen pro Ebook und dieselben Erstellungs-, Bearbeitungs-, Artwork-, Übersetzungs-, Hörbuch- und Exportfunktionen wie bei kostenpflichtigen Konten. Ein kleiner "Erstellt mit TubeBook.org"-Fußzeile erscheint auf PDFs von kostenlosen Konten, bis das Konto einen Kauf tätigt.</li>
       <li><span class="pill">Starter – 9 $/Monat</span> 250 Credits/Monat – ≈ 8 Lead-Magnete oder 2 kommerzielle E-Books oder eine beliebige Mischung. Gleiche Funktionen und 25-Quellen-Limit; der größere Umfang ist der Unterschied.</li>
       <li><span class="pill">Pro – 29 $/Monat</span> 1.000 Credits/Monat – ≈ 33 Lead-Magnete oder 10 kommerzielle E-Books oder eine beliebige Mischung. Gleiche Funktionen und 25-Quellen-Limit; der größere Umfang ist der Unterschied.</li>
-      <li><span class="pill">Pro Audio – 49 $/Monat</span> Alles in Pro, plus <strong>900 Audio-Credits/Monat</strong> – ≈ 3 kommerzielle Hörbücher mit der Premium-Stimme oder 7 mit der Standard-Stimme. Audio-Credits sind ein separates Guthaben und die einzige Möglichkeit, ein Buch zu vertonen.</li>
+      <li><span class="pill">Pro Audio – 49 $/Monat</span> Alles in Pro, plus <strong>900 Audio-Credits/Monat</strong> — ≈ 3 kommerzielle Hörbücher mit der Premium-Stimme oder 7 mit Standard. Audio-Credits sind ein separates Guthaben und der einzige Weg, ein Buch zu vertonen.</li>
     </ul>
     <p>Jährliche Abrechnung ist bei jedem kostenpflichtigen Plan verfügbar: Starter 90 $/Jahr, Pro 290 $/Jahr, Pro Audio 490 $/Jahr – etwa zwei Monate gratis.</p>
     <h3>Credit-Pakete zum Aufladen</h3>
@@ -603,23 +603,23 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); p
       <li>Autorenpaket – 300 Audioguthaben, 27 $ – ein kommerzielles Hörbuch mit der Premiumstimme</li>
       <li>Studio-Paket – 900 Audioguthaben, 69 $ – drei kommerzielle Hörbücher mit Premiumstimme oder sieben mit Standardstimme</li>
     </ul>
-    <p>Wie bei den E-Book-Guthabenpaketen verfallen diese nie. Wenn Sie mehr als etwa einmal im Monat aufnehmen, <strong>Pro Audio</strong> ist es günstiger: Es enthält 900 Audioguthaben jeden Monat für 49 $.</p>
+    <p>Wie Ebook-Credit-Pakete verfallen diese nie. Wenn du mehr als etwa einmal im Monat vertonst, ist <strong>Pro Audio</strong> günstiger: Es enthält 900 Audio-Credits jeden Monat für \$49.</p>
     <p>Kapitelillustrationen kosten 1 zusätzliches Guthaben pro Bild (Cover-Artwork ist kostenlos enthalten). Der genaue Gesamtbetrag wird angezeigt, bevor Sie eine Generierung bestätigen.</p>
     <h3>So funktioniert das monatliche Kontingent</h3>
-    <p>Planguthaben sind ein <strong>Kontingent, kein Guthaben</strong>. Sie werden zu Beginn jedes Monats auf den monatlichen Betrag Ihres Plans aufgefüllt, und was zu diesem Zeitpunkt ungenutzt ist, verfällt – es gibt also nichts zu horten und nichts zu verfolgen.</p>
-    <p><strong>Dies gilt auch für die jährliche Abrechnung.</strong> Ein Jahresplan kauft zwölf Monate Zugang mit Rabatt, nicht zwölf Monate Guthaben auf einmal: Sie erhalten das gleiche monatliche Kontingent wie ein monatlicher Abonnent, das jeden Monat aufgefüllt wird. Audioguthaben funktionieren identisch.</p>
-    <p><strong>Zusätzliche Guthabenpakete sind anders und verfallen nie</strong> , solange Ihr Konto aktiv ist. Sie liegen zusätzlich zu Ihrem Kontingent, und wenn Sie ausgeben, werden zuerst die verfallenden Planguthaben verwendet – so wird ein von Ihnen bezahltes Paket nie verbraucht, während ein kostenloses Kontingent daneben abläuft. Ihre Abrechnungsseite zeigt, welcher Teil Ihres Guthabens was ist.</p>
+    <p>Plan-Credits sind ein <strong>Kontingent, kein Guthaben</strong>. Sie werden zu Beginn jedes Monats auf die monatliche Zahl deines Plans aufgestockt, und was dann ungenutzt ist, verfällt — es gibt also nichts zu horten und nichts aus den Augen zu verlieren.</p>
+    <p><strong>Das gilt auch für die jährliche Abrechnung.</strong> Ein Jahresplan kauft zwölf Monate Zugang mit Rabatt, nicht zwölf Monate Credits auf einmal: Du erhältst dasselbe monatliche Kontingent wie ein monatlicher Abonnent, das jeden Monat aufgestockt wird. Audio-Credits funktionieren identisch.</p>
+    <p><strong>Credit-Pakete zum Aufladen sind anders und verfallen nie</strong>, solange dein Konto aktiv ist. Sie liegen oben auf deinem Kontingent, und wenn du ausgibst, werden zuerst die verfallenden Plan-Credits verwendet — so wird ein bezahltes Paket nie verbrannt, während ein kostenloses Kontingent daneben abläuft. Deine Abrechnungsseite zeigt, welcher Teil deines Guthabens was ist.</p>
   </div>
 
   <!-- EXPORTS -->
   <div class="card" id="exports">
     <h2>Exporte &amp; Formate</h2>
     <ul>
-      <li><strong>PDF</strong> – vollständig gestaltet mit Cover, gewählten Schriftarten und Beschnittformat. Verfügbar auf allen Plänen (kleine Fußzeile auf kostenlosem Konto bis zum ersten Kauf).</li>
-      <li><strong>DOCX</strong> – bearbeitbar in Word oder Google Docs. Verfügbar auf jedem Plan.</li>
-      <li><strong>EPUB</strong> – Kindle, Apple Books und Kobo. Verfügbar auf jedem Plan.</li>
-      <li><strong>PPTX</strong> – Folienversion für Vorträge und Webinare. Verfügbar auf jedem Plan.</li>
-      <li><strong>Veröffentlichungsdateien</strong> – druckfertiges Taschenbuch-Inneres und Umschlag, Kindle-Cover, HD-Cover und KDP-Metadatenpaket. Verfügbar auf jedem Plan.</li>
+      <li><strong>PDF</strong> — vollständig gestaltet mit Cover, gewählten Schriftarten und Beschnittformat. Verfügbar in allen Plänen (kleiner Fußzeilen-Credit bei einem kostenlosen Konto bis zum ersten Kauf).</li>
+      <li><strong>DOCX</strong> — bearbeitbar in Word oder Google Docs. Verfügbar in jedem Plan.</li>
+      <li><strong>EPUB</strong> — Kindle, Apple Books und Kobo. Verfügbar in jedem Plan.</li>
+      <li><strong>PPTX</strong> — Folienversion für Vorträge und Webinare. Verfügbar in jedem Plan.</li>
+      <li><strong>Veröffentlichungsdateien</strong> — druckfertiges Taschenbuch-Innenlayout und Wrap-Cover, Kindle-Cover, HD-Cover und KDP-Metadatenpaket. Verfügbar in jedem Plan.</li>
     </ul>
     <p>PDFs auf kostenlosen Konten enthalten einen kleinen "Erstellt mit TubeBook.org"-Fußzeilenhinweis, bis dieses Konto einen Kauf tätigt, einschließlich eines einmaligen Guthabenpakets. Alle anderen Formate sind verfügbar, und Exporte von Konten mit Kauf enthalten kein TubeBook-Branding.</p>
     <div class="alert-info">📦 Vor dem Löschen eines E-Books bietet TubeBook ein ZIP-Archiv aller Formate plus Cover-Bild an.</div>
@@ -628,26 +628,26 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); p
   <!-- PUBLISHING RISK -->
   <div class="card" id="publishing-risk">
     <h2>Der Veröffentlichungsrisiko-Check</h2>
-    <p>Amazon legt die Verantwortung auf Sie, den Verleger: Sie müssen "sicherstellen, dass Ihre Inhalte keine Gesetze oder Urheberrechte, Marken, Markenrechte, Datenschutz, Öffentlichkeitsrechte oder andere Rechte verletzen." Bei Metadaten geht es weiter und erklärt eine <strong>Null-Toleranz-Politik</strong> für alles, was Werbung, Promotion oder Irreführung bezweckt – "einschließlich Marken, die Sie nicht besitzen oder deren Nutzung Sie nicht autorisiert sind". Die übliche Strafe ist, dass Ihr Titel nicht mehr verkauft wird; wiederholte Probleme können bis zum Konto reichen.</p>
+    <p>Amazon legt die Last auf dich, den Verlag: Du musst "sicherstellen, dass deine Inhalte keine Gesetze oder Urheberrechte, Marken, Markenrechte, Privatsphäre, Publizitätsrechte oder andere Rechte verletzen." Bei Metadaten geht es weiter und stellt eine <strong>Null-Toleranz-Politik</strong> für alles fest, was Werbung, Promotion oder Irreführung bezweckt — "einschließlich Marken, die du nicht besitzt oder deren Verwendung dir nicht gestattet ist". Die übliche Strafe ist, dass dein Titel nicht mehr verkauft wird; wiederholte Probleme können das Konto selbst betreffen.</p>
     <p>TubeBook prüft also die Metadaten Ihres Buches und markiert, was ein vernünftiger KDP-Prüfer beanstanden würde:</p>
     <ul>
-      <li><strong>Marken</strong> – ein kommerzielles Warenzeichen, das Ihnen nicht gehört (Lego, Notion, Peloton).</li>
-      <li><strong>Franchises und Figuren</strong> – Harry Potter, Pokémon, Star Wars.</li>
-      <li><strong>Lebende Autoren und öffentliche Persönlichkeiten</strong> , mit denen das Buch namentlich handelt.</li>
-      <li><strong>Behauptung einer Empfehlung</strong> – "offiziell", "autorisiert" oder eine Zusammenfassungs- oder Arbeitsbuch-Rahmung, die eine Genehmigung impliziert. Begleitwerke, die auf einem urheberrechtlich geschützten Buch basieren, benötigen die schriftliche Genehmigung des Rechteinhabers.</li>
-      <li><strong>Songtexte</strong> und lange Zitate aus urheberrechtlich geschütztem Material.</li>
+      <li><strong>Marken</strong> — eine kommerzielle Marke, die du nicht besitzt (Lego, Notion, Peloton).</li>
+      <li><strong>Franchises und Charaktere</strong> – Harry Potter, Pokémon, Star Wars.</li>
+      <li><strong>Lebende Autoren und öffentliche Persönlichkeiten</strong>, die im Buch namentlich genannt werden.</li>
+      <li><strong>Behauptungen über Empfehlungen</strong> – „offiziell“, „autorisiert“ oder eine Zusammenfassung oder ein Arbeitsbuch, die eine Erlaubnis implizieren. Begleitwerke, die auf einem urheberrechtlich geschützten Buch basieren, benötigen die schriftliche Genehmigung des Rechteinhabers.</li>
+      <li><strong>Songtexte</strong> und lange Zitate aus urheberrechtlich geschützten Werken.</li>
       <li><strong>Undifferenzierte Public-Domain-Nachdrucke</strong>, die KDP ablehnt, wenn bereits eine kostenlose Version existiert.</li>
-      <li><strong>Keywords, die Ihr Buch nicht beschreiben</strong> – Keyword-Stuffing.</li>
+      <li><strong>Schlüsselwörter, die dein Buch nicht beschreiben</strong> – Keyword-Stuffing.</li>
     </ul>
     <h3>Wann es läuft</h3>
-    <p>Zweimal. Einmal <strong>wenn Sie die Gliederung freigeben</strong>, wo Titel und Untertitel noch von Ihnen bearbeitet werden können, und erneut bei den <strong>generierten KDP-Metadaten</strong> – denn ein völlig sauberer Titel kann trotzdem einen Markennamen in einem der 7 Keywords enthalten, und genau das führt oft zur Sperrung des Listings.</p>
+    <p>Zweimal. Einmal <strong>wenn du die Gliederung genehmigst</strong>, wo Titel und Untertitel noch von dir bearbeitet werden können, und noch einmal bei den <strong>generierten KDP-Metadaten</strong> – denn ein völlig sauberer Titel kann trotzdem einen Markennamen in einem der 7 Schlüsselwörter enthalten, und genau das führt dazu, dass ein Eintrag unterdrückt wird.</p>
     <h3>Vermutete Marken werden bestätigt</h3>
     <p>Jede Marke oder jedes Franchise, das markiert wird, enthält einen Ein-Klick-Link zum US-Markenregister, sodass Sie den tatsächlichen Inhaber und den Status der Marke sehen können. "MONOPOLY, eingetragen bei Hasbro" sagt Ihnen weit mehr als "das könnte eine Marke sein" – und die Prüfung dauert Sekunden.</p>
-    <p>Bei <strong>jedem Plan</strong>können Sie das Klicken überspringen: Ein Knopf prüft alle markierten Marken und Franchises auf einmal und zeigt den eingetragenen Inhaber, den Status (aktiv/erloschen) und die Seriennummer neben jedem Befund. Es kostet <strong>1 Credit für das gesamte Buch</strong>, egal wie viele Marken markiert wurden, und Sie werden erst gefragt, nachdem Sie gesehen haben, was gefunden wurde – nichts wird automatisch geprüft oder berechnet. Ein Buch ohne Markierungen bietet es nie an.</p>
+    <p>Bei <strong>jedem Plan</strong> kannst du das Klicken überspringen: Ein Knopf prüft alle markierten Marken und Franchises auf einmal und zeigt neben jedem Befund den eingetragenen Inhaber, den Status (aktiv/inaktiv) und die Seriennummer an. Das kostet <strong>1 Credit für das gesamte Buch</strong>, egal wie viele Markierungen vorhanden sind, und du wirst erst gefragt, nachdem du gesehen hast, was gefunden wurde – nichts wird automatisch geprüft oder berechnet. Ein Buch ohne Markierungen bietet diese Option nie an.</p>
     <p>Die Links pro Marke bleiben bei jedem Plan kostenlos, und die eigene Suche des USPTO ist direkt kostenlos nutzbar. Sie zahlen dafür, dass die Recherchen für Sie erledigt und an Ort und Stelle angezeigt werden, nicht für den Zugang zu öffentlichen Daten.</p>
-    <div class="alert-tip">💡 Warum das keine bloße Markenrecherche ist: Fast jedes normale englische Wort ist in irgendeiner Klasse als Marke eingetragen. <em>Citadel</em>, <em>Moment</em>, <em>Toolbox</em>, <em>Journal</em> und <em>Living</em> gehören alle jemandem. Ein Tool, das Ihren Titel mit dem Register abgleicht, würde jedes je geschriebene Buch markieren, und Sie würden es zu Recht nicht mehr lesen. Das Register dient dazu, einen konkreten Verdacht zu bestätigen, nicht um Verdachtsmomente zu erzeugen.</div>
+    <div class="alert-tip">💡 Warum das nicht nur eine Markendatenbank-Suche ist: Fast jedes gewöhnliche englische Wort ist in irgendeiner Klasse als Marke eingetragen. <em>Citadel</em>, <em>Moment</em>, <em>Toolbox</em>, <em>Journal</em> und <em>Living</em> gehören alle jemandem. Ein Tool, das deinen Titel mit dem Register abgleicht, würde jedes jemals geschriebene Buch markieren, und du würdest zu Recht aufhören, es zu lesen. Das Register dient dazu, einen konkreten Verdacht zu bestätigen, nicht um Verdachtsmomente zu erzeugen.</div>
     <h3>Was es nicht tut</h3>
-    <p><strong>Es blockiert Ihr Buch nie</strong>, und <strong>es sagt Ihnen nie, dass ein Buch sicher ist.</strong> Wenn es nichts findet, sagt es „nichts markiert“ – nicht „genehmigt“ und nicht „keine Probleme“, denn das wären Versprechen, die niemand machen kann. Dies ist eine automatisierte Prüfung, keine Rechtsberatung; sie kann Dinge übersehen und kann Amazons Entscheidung nicht vorhersagen. Wenn Ihr Buch die Rechte anderer berührt, ist die Klärung weiterhin Ihre Aufgabe – und wenn Sie unsicher sind, fragen Sie einen Anwalt statt eines Checkers.</p>
+    <p><strong>Es blockiert dein Buch nie</strong> und <strong>es sagt dir nie, dass ein Buch sicher ist.</strong> Wenn es nichts findet, sagt es „nichts markiert“ – nicht „genehmigt“ und nicht „keine Probleme“, denn das wären Versprechen, die niemand machen kann. Dies ist eine automatisierte Prüfung, keine Rechtsberatung, sie kann Dinge übersehen und kann Amazons Entscheidung nicht vorhersagen. Wenn dein Buch die Rechte anderer berührt, ist die Klärung immer noch deine Aufgabe – und wenn du unsicher bist, frage einen Anwalt statt eines Prüfers.</p>
   </div>
 
   <!-- TROUBLESHOOTING -->
@@ -658,17 +658,17 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); p
     <h3>Keine Quellen für mein Thema vorgeschlagen</h3>
     <p>Die Quellenfindung nutzt gemeinsame Tageskontingente von YouTube und unserem Suchanbieter. Wenn diese für den Tag aufgebraucht sind, teilt TubeBook Ihnen das mit, statt stillschweigend eine leere Liste zurückzugeben – Ihre Rechercheergebnisse sind davon nicht betroffen, und Sie können Quellen auf der Generierungsseite manuell hinzufügen.</p>
     <h3>„Nicht genügend Transkriptkapazität diesen Monat“</h3>
-    <p>YouTube-Transkripte stammen aus einem gemeinsamen Monatskontingent. Wenn für die Videos in Ihrem Buch nicht genug übrig ist, lehnt TubeBook <strong>vor der Belastung ab</strong> und teilt Ihnen mit, wie viele übrig sind und wann das Kontingent zurückgesetzt wird – statt das Buch aus den Quellen zu erstellen, die zufällig passten, und es Ihnen zu berechnen. Nicht-YouTube-Quellen sind nicht betroffen, sodass ein Buch aus Dokumenten, Artikeln oder eingefügtem Text weiterhin funktioniert.</p>
+    <p>YouTube-Transkripte stammen aus einem gemeinsamen monatlichen Kontingent. Wenn nicht genug für die Videos in deinem Buch übrig ist, lehnt TubeBook <strong>ab, bevor es dir etwas berechnet</strong> und teilt dir mit, wie viele noch übrig sind und wann das Kontingent zurückgesetzt wird – anstatt das Buch aus den Quellen zu erstellen, die zufällig passen, und es dir in Rechnung zu stellen. Nicht-YouTube-Quellen sind nicht betroffen, sodass ein Buch aus Dokumenten, Artikeln oder eingefügtem Text weiterhin funktioniert.</p>
 
     <h3>Meine Kapitelillustrationen passen nicht zum Buch</h3>
-    <p>Öffnen <strong>Buch bearbeiten → Kapitelillustrationen prüfen</strong>: Deaktivieren Sie die, die nicht passen, oder zeichnen Sie neue Optionen für dieses Kapitel. Schreiben Sie eine <a href="#artwork">Kunst-Brief</a> zuerst, wenn Sie einen bestimmten Stil möchten, dann zeichnen. Nichts wird neu erstellt, bis Sie speichern.</p>
+    <p>Öffne <strong>Dieses Buch bearbeiten → Kapitelillustrationen überprüfen</strong>: Deaktiviere alle, die fehlen, oder zeichne neue Optionen für dieses Kapitel. Schreiben Sie eine <a href="#artwork">Kunst-Brief</a> zuerst, wenn Sie einen bestimmten Stil möchten, dann zeichnen. Nichts wird neu erstellt, bis Sie speichern.</p>
 
     <h3>Generierung scheint festzuhängen</h3>
     <p>Generierungen werden automatisch fortgesetzt, wenn ein Schritt unterbrochen wird – kein Handeln nötig. Die meisten Ebooks sind in wenigen Minuten fertig; lange kommerzielle Ebooks mit Bildern können länger dauern.</p>
     <h3>YouTube-URL wird nicht übernommen</h3>
     <p>Stellen Sie sicher, dass das Video öffentlich ist und Untertitel hat (automatisch oder manuell). Private, altersbeschränkte oder Live-Videos können nicht verarbeitet werden.</p>
     <h3>Ich sehe mein Ebook nicht</h3>
-    <p>Öffnen <strong>Dashboard</strong>. Ebooks werden <strong>30 Tage</strong> nach der Erstellung aufbewahrt — auf jeder Karte wird ein Countdown angezeigt. Laden Sie alles herunter, was Sie behalten möchten, bevor es abläuft. <strong>Die Audiobuch-Erzählung läuft mit ihrem Buch ab</strong>, im selben Countdown, also erstellen Sie das Paket, bevor die Zeit abläuft.</p>
+    <p>Öffne das <strong>Dashboard</strong>. Ebooks werden <strong>30 Tage</strong> nach der Erstellung aufbewahrt – auf jeder Karte wird ein Countdown angezeigt. Lade alles herunter, was du behalten möchtest, bevor es abläuft. <strong>Die Hörbuch-Erzählung verfällt mit ihrem Buch</strong> im selben Countdown, also erstelle das Paket, bevor die Zeit abläuft.</p>
     <h3>Download-Link abgelaufen</h3>
     <p>Signierte Download-URLs laufen nach 24 Stunden ab. Die App aktualisiert sie bei Bedarf — öffnen Sie einfach Ihr Dashboard und die Links werden automatisch aktualisiert.</p>
   </div>
@@ -677,7 +677,7 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); p
   <div class="card" id="account">
     <h2>Konto &amp; Abrechnung</h2>
     <ul>
-      <li>Verwalten Sie Ihren Plan und Ihre Zahlungsmethode über <strong>Abrechnung</strong> in der App.</li>
+      <li>Verwalte deinen Plan und deine Zahlungsmethode unter <strong>Abrechnung</strong> in der App.</li>
       <li>Sie können jederzeit kündigen; der Zugriff bleibt bis zum Ende des aktuellen Abrechnungszeitraums bestehen.</li>
       <li>Benötigen Sie Hilfe bei Rückerstattung, Rechnung oder Konto? Schreiben Sie an <a href="mailto:support@tubebook.org">support@tubebook.org</a>.</li>
     </ul>
@@ -695,7 +695,7 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--brand-outline); p
       <a href="/de/">Start</a><a href="/de/help">Hilfe</a><a href="/de/privacy">Datenschutz</a><a href="/de/terms">AGB</a><a href="/de/contact">Kontakt</a>
     </div>
   </div>
-  <div class="footer-note">TubeBook (tubebook.org) ist ein unabhängiges Produkt und <strong>keine Verbindung zu anderen Unternehmen oder KI-Anwendungen mit ähnlichem Namen</strong>. TubeBook wird ausschließlich über tubebook.org verkauft – wir haben keine autorisierten Wiederverkäufer, Lifetime-Deals oder unbegrenzte Pläne.</div>
+  <div class="footer-note">TubeBook (tubebook.org) ist ein unabhängiges Produkt und <strong>ist mit keiner anderen Einrichtung oder KI-Anwendung verbunden, die unter einem ähnlichen Namen operiert</strong>. TubeBook wird ausschließlich über tubebook.org verkauft – wir haben keine autorisierten Wiederverkäufer, Lifetime-Deals oder unbegrenzte Pläne.</div>
 </footer>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 <script src="/promo-banner.js" defer></script>

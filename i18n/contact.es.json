@@ -27,12 +27,6 @@
   "f4ab84974f": "Nuestra dirección es",
   "5df2b868ed": "activa JavaScript para ver",
   "7e331eba9c": "— los botones de arriba abren un correo con la dirección ya puesta. Si escribes sobre un problema con un ebook, incluye el título o ID del ebook.",
-  "c731f04860": "Mantente seguro:",
-  "2d66d23319": "solo enviamos correos desde",
-  "6d7fa0f366": "@tubebook.org",
-  "1758356db2": "o",
-  "3d673fadc2": "@blissfulplan.com",
-  "c5f7945871": ", y nunca te pediremos tu contraseña, un código de verificación ni datos de pago por correo. Si algo que dice ser TubeBook lo hace, no somos nosotros: reenvíalo a nuestra dirección de soporte.",
   "9741ee4f14": "Antes de escribir",
   "c84a54f375": "Puede que encuentres una respuesta más rápida aquí:",
   "efe79cf110": "Guía de inicio",
@@ -45,5 +39,6 @@
   "b4a1d6330b": "Alianzas y prensa",
   "92529be2dd": "Créditos y precios explicados",
   "816ab673bc": "Cuenta y facturación",
-  "be1484a0a4": "Comparación de planes y precios"
+  "be1484a0a4": "Comparación de planes y precios",
+  "9cdea55d95": "<strong>Mantente seguro:</strong> solo enviamos correos desde <strong>@tubebook.org</strong> o <strong>@blissfulplan.com</strong>, y nunca te pediremos tu contraseña, un código de verificación o datos de pago por correo. Si algo que dice ser TubeBook lo hace, no somos nosotros: reenvíalo a nuestra dirección de soporte."
 }

@@ -33,6 +33,29 @@ export const PAGES = ["index", "help", "support", "contact", "privacy", "terms"]
 /** Elements whose text is code or styling, never prose. */
 const OPAQUE = new Set(["script", "style", "noscript"]);
 
+/**
+ * Elements that live INSIDE a sentence rather than ending one.
+ *
+ * The tokenizer used to break a text run at every tag, so
+ *   "Nothing reaches your files until you press <strong>Save</strong>, so one
+ *    rebuild covers a whole review pass."
+ * reached a translator as three unrelated pieces: a clause ending in "you
+ * press", a button name, and a clause starting with a comma. That is 138 of
+ * the 621 text blocks on this site — 22% of its prose — and it is why Chinese
+ * rendered "Manage your plan and payment method from" as the single character
+ * "从". No translator could have done better; the sentence was never shown to
+ * them.
+ *
+ * These tags now travel WITH the text, so the catalog holds the whole sentence
+ * and its emphasis, and the translation may move the emphasis to wherever that
+ * language needs it.
+ *
+ * `a` is deliberately absent. Its href would ride along into the catalog and
+ * into a model's output, and a rewritten URL is a worse failure than a split
+ * sentence. `span` too: it is a styling hook here, not emphasis.
+ */
+const INLINE = new Set(["strong", "em", "b", "i", "code", "small", "mark", "u", "sub", "sup"]);
+
 /** Attributes that hold words a reader sees. */
 const ATTRS = new Set(["title", "alt", "placeholder", "aria-label"]);
 
@@ -76,6 +99,16 @@ export function walk(html, visit) {
   let i = 0;
   let skipUntil = null;
 
+  // Text and the inline markup within it, held until a tag that really does
+  // end the sentence. Flushing on every tag is what used to cut sentences in
+  // three; flushing on BLOCK tags keeps them whole.
+  let buffer = "";
+  const flush = () => {
+    if (!buffer) return;
+    out += emitText(buffer, visit);
+    buffer = "";
+  };
+
   // Comments and the doctype are matched FIRST so they are stepped over as
   // markup. Without them the tokenizer, which only recognises tags beginning
   // with a letter, hands "<!-- NAV -->" to the walker as though it were a
@@ -92,11 +125,12 @@ export function walk(html, visit) {
     if (skipUntil) {
       out += textBefore;
     } else if (textBefore) {
-      out += emitText(textBefore, visit);
+      buffer += textBefore;
     }
 
     // A comment or doctype: no capture groups, nothing to translate.
     if (m[1] === undefined) {
+      if (!skipUntil) flush();
       out += m[0];
       i = TAG.lastIndex;
       continue;
@@ -109,16 +143,27 @@ export function walk(html, visit) {
       if (isClose && tagName === skipUntil) skipUntil = null;
       out += m[0];
     } else if (!isClose && OPAQUE.has(tagName)) {
+      flush();
       skipUntil = tagName;
       out += m[0];
+    } else if (INLINE.has(tagName)) {
+      // Part of the sentence, not the end of it.
+      buffer += m[0];
     } else {
+      flush();
       out += isClose ? m[0] : rewriteTag(m[0], tagName, m[2], visit);
     }
     i = TAG.lastIndex;
   }
 
   const tail = html.slice(i);
-  out += skipUntil ? tail : emitText(tail, visit);
+  if (skipUntil) {
+    flush();
+    out += tail;
+  } else {
+    buffer += tail;
+    flush();
+  }
   return out;
 }
 

@@ -298,6 +298,10 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
 .footer-eco-social{display:flex;flex-wrap:wrap;gap:0.5rem;}
 .footer-eco-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid var(--border2);border-radius:50%;color:var(--muted2);transition:color 0.2s,border-color 0.2s;}
 .footer-eco-social svg{width:16px;height:16px;fill:currentColor;}
+
+/* Credit packs (3 per row) and the demo steps stack on phones instead of spilling past the screen edge. */
+.packs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;max-width:780px;margin:0 auto;}
+@media(max-width:760px){.packs-grid{grid-template-columns:1fr;}.demo-steps{grid-template-columns:repeat(3,1fr);}}
 </style>
 <!-- i18n:begin -->
 <link rel="alternate" hreflang="en" href="https://tubebook.org/" />
@@ -823,7 +827,7 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
       <span class="section-label">Add-ons</span>
       <h3 style="font-size: 1.5rem; font-weight: 700; margin: 0.5rem 0 0.5rem;">Need more credits?</h3>
       <p style="font-size: 0.88rem; color: var(--muted2); margin-bottom: 2rem;">One-time credit packs stack with any plan, never expire, and remove the free-plan footer credit. Topic research = 5 credits per niche (free to reopen for 14 days) · Lead magnet = 30 credits · Short book = 60 · Full commercial book = 100 · AI-generated chapter illustrations +1 credit per image · Each extra source +8 credits · Trademark register check = 1 credit per book. Audiobooks are billed from a separate audio-credit balance: standard voice = 40 / 80 / 120 audio credits by book length, premium = 100 / 200 / 300.</p>
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; max-width: 780px; margin: 0 auto;">
+      <div class="packs-grid">
         <div class="plan-card" style="padding: 1.5rem 1.4rem;">
           <div class="plan-name">Starter Pack</div>
           <div class="plan-price" style="font-size: 2rem;"><sup>$</sup>5</div>
@@ -850,7 +854,7 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
     <div class="fade-in-up" style="margin-top: 3.5rem;">
       <h3 style="font-size: 1.5rem; font-weight: 700; margin: 0.5rem 0 0.5rem;">只要一本有声书？</h3>
       <p style="font-size: 0.88rem; color: var(--muted2); margin-bottom: 2rem;">音频积分可单独购买，适用于包括免费版在内的任何套餐——无需订阅。它们永不过期，且仅用于旁白，因此您的电子书积分不受影响。如果您每月旁白超过一次，Pro Audio更划算。</p>
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; max-width: 780px; margin: 0 auto;">
+      <div class="packs-grid">
         <div class="plan-card" style="padding: 1.5rem 1.4rem;">
           <div class="plan-name">单本有声书</div>
           <div class="plan-price" style="font-size: 2rem;"><sup>$</sup>12</div>

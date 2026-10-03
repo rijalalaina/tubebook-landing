@@ -298,6 +298,10 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
 .footer-eco-social{display:flex;flex-wrap:wrap;gap:0.5rem;}
 .footer-eco-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid var(--border2);border-radius:50%;color:var(--muted2);transition:color 0.2s,border-color 0.2s;}
 .footer-eco-social svg{width:16px;height:16px;fill:currentColor;}
+
+/* Credit packs (3 per row) and the demo steps stack on phones instead of spilling past the screen edge. */
+.packs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;max-width:780px;margin:0 auto;}
+@media(max-width:760px){.packs-grid{grid-template-columns:1fr;}.demo-steps{grid-template-columns:repeat(3,1fr);}}
 </style>
 <!-- i18n:begin -->
 <link rel="alternate" hreflang="en" href="https://tubebook.org/" />
@@ -823,7 +827,7 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
       <span class="section-label">Zusatzoptionen</span>
       <h3 style="font-size: 1.5rem; font-weight: 700; margin: 0.5rem 0 0.5rem;">Mehr Credits nötig?</h3>
       <p style="font-size: 0.88rem; color: var(--muted2); margin-bottom: 2rem;">Einmalige Credit-Pakete kombinierbar mit jedem Plan, verfallen nie und entfernen den Footer-Credit im kostenlosen Plan. Themenrecherche = 5 Credits pro Nische (14 Tage kostenlos erneut aufrufbar) · Lead Magnet = 30 Credits · Kurzbuch = 60 · Vollständiges kommerzielles Buch = 100 · KI-generierte Kapitel-Illustrationen +1 Credit pro Bild · Jede zusätzliche Quelle +8 Credits · Markenregister-Check = 1 Credit pro Buch. Hörbücher werden von einem separaten Audio-Credit-Guthaben abgerechnet: Standard-Stimme = 40 / 80 / 120 Audio-Credits je nach Buchlänge, Premium = 100 / 200 / 300.</p>
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; max-width: 780px; margin: 0 auto;">
+      <div class="packs-grid">
         <div class="plan-card" style="padding: 1.5rem 1.4rem;">
           <div class="plan-name">Starter-Paket</div>
           <div class="plan-price" style="font-size: 2rem;"><sup>$</sup>5</div>
@@ -850,7 +854,7 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
     <div class="fade-in-up" style="margin-top: 3.5rem;">
       <h3 style="font-size: 1.5rem; font-weight: 700; margin: 0.5rem 0 0.5rem;">Nur ein Hörbuch?</h3>
       <p style="font-size: 0.88rem; color: var(--muted2); margin-bottom: 2rem;">Audiocredits können separat erworben werden, in jedem Tarif, auch im kostenlosen – ohne Abo. Sie verfallen nie und werden nur für die Vertonung verwendet, sodass deine E-Book-Credits unberührt bleiben. Wenn du mehr als einmal im Monat vertonst, ist Pro Audio günstiger.</p>
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; max-width: 780px; margin: 0 auto;">
+      <div class="packs-grid">
         <div class="plan-card" style="padding: 1.5rem 1.4rem;">
           <div class="plan-name">Einzelnes Hörbuch</div>
           <div class="plan-price" style="font-size: 2rem;"><sup>$</sup>12</div>

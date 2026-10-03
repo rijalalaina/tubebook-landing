@@ -298,6 +298,10 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
 .footer-eco-social{display:flex;flex-wrap:wrap;gap:0.5rem;}
 .footer-eco-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid var(--border2);border-radius:50%;color:var(--muted2);transition:color 0.2s,border-color 0.2s;}
 .footer-eco-social svg{width:16px;height:16px;fill:currentColor;}
+
+/* Credit packs (3 per row) and the demo steps stack on phones instead of spilling past the screen edge. */
+.packs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;max-width:780px;margin:0 auto;}
+@media(max-width:760px){.packs-grid{grid-template-columns:1fr;}.demo-steps{grid-template-columns:repeat(3,1fr);}}
 </style>
 <!-- i18n:begin -->
 <link rel="alternate" hreflang="en" href="https://tubebook.org/" />
@@ -823,7 +827,7 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
       <span class="section-label">Options supplémentaires</span>
       <h3 style="font-size: 1.5rem; font-weight: 700; margin: 0.5rem 0 0.5rem;">Besoin de plus de crédits ?</h3>
       <p style="font-size: 0.88rem; color: var(--muted2); margin-bottom: 2rem;">Les packs de crédits à usage unique s'ajoutent à n'importe quel plan, n'expirent jamais et suppriment la mention de crédit du plan gratuit. Recherche de sujet = 5 crédits par niche (gratuit pour rouvrir pendant 14 jours) · Aimant à prospects = 30 crédits · Livre court = 60 · Livre commercial complet = 100 · Illustrations de chapitre générées par IA +1 crédit par image · Chaque source supplémentaire +8 crédits · Vérification du registre des marques = 1 crédit par livre. Les livres audio sont facturés sur un solde de crédits audio séparé : voix standard = 40 / 80 / 120 crédits audio selon la longueur du livre, premium = 100 / 200 / 300.</p>
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; max-width: 780px; margin: 0 auto;">
+      <div class="packs-grid">
         <div class="plan-card" style="padding: 1.5rem 1.4rem;">
           <div class="plan-name">Pack Starter</div>
           <div class="plan-price" style="font-size: 2rem;"><sup>$</sup>5</div>
@@ -850,7 +854,7 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
     <div class="fade-in-up" style="margin-top: 3.5rem;">
       <h3 style="font-size: 1.5rem; font-weight: 700; margin: 0.5rem 0 0.5rem;">Vous voulez un seul livre audio ?</h3>
       <p style="font-size: 0.88rem; color: var(--muted2); margin-bottom: 2rem;">Les crédits audio peuvent être achetés séparément, sur n'importe quel forfait, y compris Gratuit — sans abonnement. Ils n'expirent jamais et ne sont utilisés que pour la narration, vos crédits ebook restent donc intacts. Si vous narrez plus d'une fois par mois, Pro Audio est plus avantageux.</p>
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; max-width: 780px; margin: 0 auto;">
+      <div class="packs-grid">
         <div class="plan-card" style="padding: 1.5rem 1.4rem;">
           <div class="plan-name">Livre audio unique</div>
           <div class="plan-price" style="font-size: 2rem;"><sup>$</sup>12</div>

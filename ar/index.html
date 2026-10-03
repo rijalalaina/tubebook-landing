@@ -298,6 +298,10 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
 .footer-eco-social{display:flex;flex-wrap:wrap;gap:0.5rem;}
 .footer-eco-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid var(--border2);border-radius:50%;color:var(--muted2);transition:color 0.2s,border-color 0.2s;}
 .footer-eco-social svg{width:16px;height:16px;fill:currentColor;}
+
+/* Credit packs (3 per row) and the demo steps stack on phones instead of spilling past the screen edge. */
+.packs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;max-width:780px;margin:0 auto;}
+@media(max-width:760px){.packs-grid{grid-template-columns:1fr;}.demo-steps{grid-template-columns:repeat(3,1fr);}}
 </style>
 <!-- i18n:begin -->
 <link rel="alternate" hreflang="en" href="https://tubebook.org/" />
@@ -823,7 +827,7 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
       <span class="section-label">إضافات</span>
       <h3 style="font-size: 1.5rem; font-weight: 700; margin: 0.5rem 0 0.5rem;">تحتاج المزيد من الأرصدة؟</h3>
       <p style="font-size: 0.88rem; color: var(--muted2); margin-bottom: 2rem;">حزم الأرصدة لمرة واحدة تتراكم مع أي خطة، لا تنتهي صلاحيتها أبدًا، وتزيل تذييل الرصيد في الخطة المجانية. بحث الموضوع = 5 أرصدة لكل مجال (مجاني لإعادة الفتح لمدة 14 يومًا) · مغناطيس العميل = 30 رصيدًا · كتاب قصير = 60 · كتاب تجاري كامل = 100 · رسوم توضيحية للفصول مولدة بالذكاء الاصطناعي +1 رصيد لكل صورة · كل مصدر إضافي +8 أرصدة · فحص سجل العلامات التجارية = رصيد واحد لكل كتاب. تُفوتر الكتب الصوتية من رصيد صوتي منفصل: صوت قياسي = 40 / 80 / 120 رصيدًا صوتيًا حسب طول الكتاب، مميز = 100 / 200 / 300.</p>
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; max-width: 780px; margin: 0 auto;">
+      <div class="packs-grid">
         <div class="plan-card" style="padding: 1.5rem 1.4rem;">
           <div class="plan-name">حزمة المبتدئ</div>
           <div class="plan-price" style="font-size: 2rem;"><sup>$</sup>5</div>
@@ -850,7 +854,7 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
     <div class="fade-in-up" style="margin-top: 3.5rem;">
       <h3 style="font-size: 1.5rem; font-weight: 700; margin: 0.5rem 0 0.5rem;">تريد كتابًا صوتيًا واحدًا فقط؟</h3>
       <p style="font-size: 0.88rem; color: var(--muted2); margin-bottom: 2rem;">يمكن شراء أرصدة الصوت بشكل منفصل، على أي خطة بما في ذلك المجانية — دون اشتراك. لا تنتهي صلاحيتها أبدًا وتُستخدم فقط للتعليق الصوتي، لذا تبقى أرصدة كتبك الإلكترونية دون مساس. إذا كنت تسجل أكثر من مرة شهريًا، فإن الصوت الاحترافي أرخص.</p>
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; max-width: 780px; margin: 0 auto;">
+      <div class="packs-grid">
         <div class="plan-card" style="padding: 1.5rem 1.4rem;">
           <div class="plan-name">كتاب صوتي واحد</div>
           <div class="plan-price" style="font-size: 2rem;"><sup>$</sup>12</div>

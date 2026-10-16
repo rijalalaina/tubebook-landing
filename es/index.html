@@ -601,6 +601,11 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
         <p>¿No sabes sobre qué escribir? Explora lo que está en tendencia en EE. UU., Reino Unido, Alemania, Canadá, Australia y Francia — gratis. Luego ve las frases que los lectores realmente escriben en Amazon, cuántos libros ya compiten, y obtén una lista corta de los mejores videos y artículos para construir. <strong>Demanda de búsqueda, no suposiciones.</strong></p>
       </div>
       <div class="feat-card">
+        <div class="feat-icon green"><svg viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg></div>
+        <h3>Usa tus propias claves (BYOK) <span class="feat-new">Nuevo</span></h3>
+        <p>¿Ya pagas Claude, OpenAI, DeepSeek o Gemini? Usa TubeBook con tu propia clave por una tarifa fija — todas las funciones, sin créditos, hasta 30 ebooks al mes. Tus claves se cifran y <strong>un ebook solo se ejecuta con las claves que tú has añadido.</strong></p>
+      </div>
+      <div class="feat-card">
         <div class="feat-icon green"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
         <h3>Libros de múltiples fuentes <span class="feat-new">Nuevo</span></h3>
         <p>Combina hasta 25 videos de YouTube, artículos web, <strong>documentos de Word, PowerPoint y PDF</strong> y texto pegado en un solo libro — subidos desde tu computadora o enlazados. Pega un manuscrito completo inédito, de hasta 500 páginas impresas, y haz que lo reestructuren. TubeBook lee todo, construye un esquema único para el conjunto, y luego escribe cada capítulo a partir de las fuentes que realmente lo cubren.</p>
@@ -822,6 +827,40 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
       Cancela cuando quieras · Facturación anual disponible: Starter $90/año, Pro $290/año, Pro Audio $490/año · Los créditos del plan se renuevan mensualmente en cada ciclo de facturación, incluido el anual, y los no utilizados no se acumulan · Los paquetes de créditos nunca caducan · Reembolso de 14 días en la primera suscripción
     </p>
 
+    <!-- BYOK -->
+    <div class="fade-in-up" id="byok" style="margin-top: 4rem;">
+      <span class="section-label">Usa tus propias claves</span>
+      <h3 style="font-size: 1.5rem; font-weight: 700; margin: 0.5rem 0 0.5rem;">¿Ya pagas un modelo de IA? Úsalo aquí.</h3>
+      <p style="font-size: 0.88rem; color: var(--muted2); margin-bottom: 2rem;">Los planes BYOK hacen funcionar todas las funciones de TubeBook con tu propia clave de Anthropic (Claude), OpenAI, DeepSeek o Google Gemini. Tu proveedor te cobra los tokens — unos céntimos por ebook con DeepSeek — y TubeBook cobra una tarifa fija, nunca créditos.</p>
+      <div class="packs-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));max-width:760px;margin-left:auto;margin-right:auto;">
+        <div class="plan-card">
+          <div class="plan-name">BYOK Ebook</div>
+          <div class="plan-price"><sup>$</sup>9<span class="per">/mes</span></div>
+          <div class="plan-target">o 79 $/año · precio fundador 49 $/año para los 100 primeros</div>
+          <div class="plan-divider"></div>
+          <ul class="plan-features">
+            <li><span class="chk">✓</span>Todas las funciones de ebook y todos los formatos de exportación</li>
+            <li><span class="chk">✓</span>Imágenes de IA con tu clave de Gemini u OpenAI, más fotos de archivo</li>
+            <li><span class="chk">✓</span>Hasta 30 ebooks al mes</li>
+          </ul>
+          <a href="https://app.tubebook.org/billing" class="plan-btn outline">Elegir BYOK Ebook</a>
+        </div>
+        <div class="plan-card">
+          <div class="plan-name">BYOK Studio</div>
+          <div class="plan-price"><sup>$</sup>15<span class="per">/mes</span></div>
+          <div class="plan-target">o 129 $/año · precio fundador 99 $/año para los 100 primeros</div>
+          <div class="plan-divider"></div>
+          <ul class="plan-features">
+            <li><span class="chk">✓</span>Todo lo de BYOK Ebook</li>
+            <li><span class="chk">✓</span>Narración de audiolibros con tu clave de OpenAI, en 10 idiomas</li>
+            <li><span class="chk">✓</span>Hasta 30 ebooks al mes</li>
+          </ul>
+          <a href="https://app.tubebook.org/billing" class="plan-btn outline">Elegir BYOK Studio</a>
+        </div>
+      </div>
+      <p style="text-align:center;margin-top:1.5rem;font-size:0.84rem;color:var(--muted);">Los precios fundadores se mantienen mientras sigas suscrito. Las claves se cifran y nunca se vuelven a mostrar. <a href="terms.html#byok">Condiciones BYOK</a></p>
+    </div>
+
     <!-- CREDIT PACKS -->
     <div class="fade-in-up" style="margin-top: 4rem;">
       <span class="section-label">Complementos</span>
@@ -950,6 +989,18 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
       <details class="faq-item">
         <summary>¿Puede escribir en mi propio estilo, y se usa mi escritura para entrenarlo?</summary>
         <div class="faq-a"><p>Puede, y no es magia. Sube algo que ya hayas escrito y a partir de eso se deduce una <strong>descripción de cómo escribes</strong>: longitud y variación de frases, cómo abres y cierras una sección, si te diriges al lector, tus hábitos de puntuación. Cada capítulo posterior se escribe con esa descripción delante del escritor. No se ajusta ningún modelo, nada de lo que subas se usa para los libros de otros, y tus archivos se <strong>eliminan en cuanto se han leído</strong>. Cambia notablemente el registro, el ritmo y el vocabulario; no hará que el texto sea indistinguible del tuyo, y preferimos decirlo a que lo descubras por tu cuenta.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>¿Puedo usar mi propia cuenta de IA en lugar de créditos?</summary>
+        <div class="faq-a"><p>Sí — para eso están los planes BYOK. Añade tu propia clave de Anthropic (Claude), OpenAI, DeepSeek o Google Gemini y cada ebook se escribe en tu cuenta: tu proveedor te cobra los tokens y TubeBook cobra una tarifa fija de <strong>9 $ al mes o 79 $ al año</strong> en lugar de créditos. <strong>BYOK Studio</strong>, por 15 $ al mes, añade la narración de audiolibros con tu clave de OpenAI. Ambos incluyen hasta 30 ebooks al mes.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>¿Qué claves necesito para BYOK?</summary>
+        <div class="faq-a"><p>Basta con una clave de Anthropic, OpenAI, DeepSeek o Gemini para escribir un ebook; DeepSeek es la más barata, a unos céntimos por ebook. Las ilustraciones y portadas de IA necesitan una clave de Gemini u OpenAI — sin ella, los ebooks usan fotos de archivo. Los audiolibros de BYOK Studio necesitan una clave de OpenAI. Cada clave se comprueba al guardarla, así que sabes enseguida si una cuenta no tiene saldo.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>¿Están seguras mis claves de API?</summary>
+        <div class="faq-a"><p>Las claves se cifran en cuanto las guardas, se usan solo para los ebooks que pides y nunca se vuelven a mostrar — ni a ti ni a nosotros. En tus ajustes solo aparecen los cuatro últimos caracteres. Puedes eliminar una clave en cualquier momento, y te recomendamos revocarla en el proveedor cuando dejes de usarla.</p></div>
       </details>
     </div>
   </div>

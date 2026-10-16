@@ -601,6 +601,11 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
         <p>不知道写什么？免费浏览美国、英国、德国、加拿大、澳大利亚和法国的热门趋势。然后查看读者在亚马逊上实际输入的短语、已有多少竞争书籍，并获得最佳视频和文章的候选列表。<strong>搜索需求，而非猜测。</strong></p>
       </div>
       <div class="feat-card">
+        <div class="feat-icon green"><svg viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg></div>
+        <h3>使用自己的密钥（BYOK） <span class="feat-new">新</span></h3>
+        <p>已经在为 Claude、OpenAI、DeepSeek 或 Gemini 付费？用您自己的密钥运行 TubeBook，只付固定费用——全部功能，不扣额度，每月最多 30 本书。您的密钥经过加密，而且<strong>一本书只会使用您添加的密钥运行。</strong></p>
+      </div>
+      <div class="feat-card">
         <div class="feat-icon green"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
         <h3>多源书籍 <span class="feat-new">新</span></h3>
         <p>将最多25个 YouTube 视频、网页文章、<strong>Word、PowerPoint 和 PDF 文档</strong>以及粘贴的文本合并为一本书——从您的计算机上传或通过链接添加。粘贴整个未出版的手稿，最多500印刷页，并让其重构。TubeBook 读取所有内容，构建一个统一的提纲，然后根据实际涵盖该主题的来源撰写每一章。</p>
@@ -822,6 +827,40 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
       Cancel anytime · Annual billing available: Starter $90/yr, Pro $290/yr, Pro Audio $490/yr · Plan credits refill monthly on every billing cycle, including annual, and unused ones do not roll over · Credit packs never expire · 14-day refund on first subscription
     </p>
 
+    <!-- BYOK -->
+    <div class="fade-in-up" id="byok" style="margin-top: 4rem;">
+      <span class="section-label">使用自己的密钥</span>
+      <h3 style="font-size: 1.5rem; font-weight: 700; margin: 0.5rem 0 0.5rem;">已经在为 AI 模型付费？在这里直接用它。</h3>
+      <p style="font-size: 0.88rem; color: var(--muted2); margin-bottom: 2rem;">BYOK 方案让 TubeBook 的全部功能运行在您自己的 Anthropic（Claude）、OpenAI、DeepSeek 或 Google Gemini 密钥上。令牌费用由您的提供商直接向您收取——用 DeepSeek 每本书只需几美分——TubeBook 只收取固定费用，从不扣除额度。</p>
+      <div class="packs-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));max-width:760px;margin-left:auto;margin-right:auto;">
+        <div class="plan-card">
+          <div class="plan-name">BYOK Ebook</div>
+          <div class="plan-price"><sup>$</sup>9<span class="per">/月</span></div>
+          <div class="plan-target">或每年 79 美元 · 前 100 名创始价每年 49 美元</div>
+          <div class="plan-divider"></div>
+          <ul class="plan-features">
+            <li><span class="chk">✓</span>全部电子书功能与导出格式</li>
+            <li><span class="chk">✓</span>通过您的 Gemini 或 OpenAI 密钥生成 AI 图片，另有图库照片</li>
+            <li><span class="chk">✓</span>每月最多 30 本书</li>
+          </ul>
+          <a href="https://app.tubebook.org/billing" class="plan-btn outline">选择 BYOK Ebook</a>
+        </div>
+        <div class="plan-card">
+          <div class="plan-name">BYOK Studio</div>
+          <div class="plan-price"><sup>$</sup>15<span class="per">/月</span></div>
+          <div class="plan-target">或每年 129 美元 · 前 100 名创始价每年 99 美元</div>
+          <div class="plan-divider"></div>
+          <ul class="plan-features">
+            <li><span class="chk">✓</span>包含 BYOK Ebook 的全部内容</li>
+            <li><span class="chk">✓</span>通过您的 OpenAI 密钥为有声书配音，支持 10 种语言</li>
+            <li><span class="chk">✓</span>每月最多 30 本书</li>
+          </ul>
+          <a href="https://app.tubebook.org/billing" class="plan-btn outline">选择 BYOK Studio</a>
+        </div>
+      </div>
+      <p style="text-align:center;margin-top:1.5rem;font-size:0.84rem;color:var(--muted);">只要保持订阅，创始价就一直锁定。密钥经过加密，且永远不会再次显示。 <a href="terms.html#byok">BYOK 条款</a></p>
+    </div>
+
     <!-- CREDIT PACKS -->
     <div class="fade-in-up" style="margin-top: 4rem;">
       <span class="section-label">Add-ons</span>
@@ -950,6 +989,18 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
       <details class="faq-item">
         <summary>它能用我自己的风格写作吗？我的写作会被用来训练它吗？</summary>
         <div class="faq-a"><p>可以，而且这并非噱头。上传你已写好的内容，系统会从中分析出<strong>你的写作风格描述</strong>——句子长度和变化、如何开头和结尾、是否直接称呼读者、标点习惯——之后每一章都会在写作时参考该描述。不会微调任何模型，你上传的内容不会用于他人的书籍，你的文件在<strong>读取后立即删除</strong>。它会明显改变语域、节奏和词汇；但不会让文字与你的写作完全无法区分，我们宁愿提前说明，也不愿让你事后才发现。</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>我可以用自己的 AI 账户代替额度吗？</summary>
+        <div class="faq-a"><p>可以——这正是 BYOK 方案的用途。添加您自己的 Anthropic（Claude）、OpenAI、DeepSeek 或 Google Gemini 密钥，每本书都在您的账户上写成：令牌费用由您的提供商收取，TubeBook 则以<strong>每月 9 美元或每年 79 美元</strong>的固定费用代替额度。<strong>BYOK Studio</strong> 每月 15 美元，增加通过您的 OpenAI 密钥进行有声书配音。两者每月都包含最多 30 本书。</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>BYOK 需要哪些密钥？</summary>
+        <div class="faq-a"><p>只需 Anthropic、OpenAI、DeepSeek 或 Gemini 中任意一个密钥即可写书；DeepSeek 最便宜，每本书仅需几美分。AI 插图和封面需要 Gemini 或 OpenAI 密钥——没有的话，书籍会使用图库照片。BYOK Studio 的有声书需要 OpenAI 密钥。每个密钥在保存时都会检查，因此账户余额不足时您会立刻知道。</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>我的 API 密钥安全吗？</summary>
+        <div class="faq-a"><p>密钥在保存的那一刻即被加密，只用于您请求的书籍，并且永远不会再次显示——对您和我们都是如此。设置中只显示最后四个字符。您可以随时删除密钥；不再使用时，我们也建议您在提供商处将其撤销。</p></div>
       </details>
     </div>
   </div>

@@ -181,6 +181,7 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 
     <a href="#audiobooks">Livres audio</a>
     <a href="#find-a-topic">Trouver un sujet</a>
     <a href="#credits">Crédits &amp; tarifs</a>
+    <a href="#byok">Vos propres clés</a>
     <a href="#exports">Exports &amp; formats</a>
     <a href="#publishing-risk">Vérification des risques d'édition</a>
     <a href="#troubleshooting">Vérification des risques de publication</a>
@@ -623,6 +624,41 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 
   </div>
 
   <!-- EXPORTS -->
+  <div class="card" id="byok">
+    <h2>Vos propres clés (BYOK)</h2>
+    <p>Avec une offre BYOK, vos ebooks sont rédigés sur vos propres comptes d'IA. Vous payez à TubeBook un forfait pour le logiciel, votre fournisseur vous facture les tokens, et aucun crédit n'est jamais prélevé.</p>
+    <h3>Mise en place</h3>
+    <ol>
+      <li>Sur la page <strong>Facturation</strong>, choisissez <strong>BYOK Ebook</strong> ou <strong>BYOK Studio</strong>.</li>
+      <li>Ouvrez <strong>Paramètres → Clés d'API</strong> et ajoutez au moins une clé.</li>
+      <li>Chaque clé est vérifiée à l'enregistrement : <strong>Fonctionne</strong> ; <strong>Sans crédit</strong> (rechargez-la chez le fournisseur) ; <strong>Refusée</strong> (une clé erronée, qui n'est pas enregistrée) ; ou <strong>Enregistrée — pas encore confirmée</strong> (le fournisseur était injoignable, votre premier ebook la confirmera).</li>
+      <li>Créez vos ebooks comme d'habitude. La page Clés d'API indique combien de vos 30 ebooks mensuels vous avez utilisés.</li>
+    </ol>
+    <h3>Quelle clé sert à quoi</h3>
+    <table>
+      <thead><tr><th>Pour…</th><th>Il vous faut</th></tr></thead>
+      <tbody>
+        <tr><td>Rédiger un ebook</td><td>Une clé Anthropic, OpenAI, DeepSeek ou Gemini</td></tr>
+        <tr><td>Couvertures et illustrations IA</td><td>Gemini ou OpenAI — sinon, des photos libres de droits sont utilisées</td></tr>
+        <tr><td>Narrer un livre audio (BYOK Studio)</td><td>OpenAI — ou un compte de service Google Text-to-Speech pour les voix standard de Google</td></tr>
+      </tbody>
+    </table>
+    <h3>Si un ebook s'arrête</h3>
+    <ul>
+      <li><strong>« Aucune clé ajoutée pour : … »</strong> — ces fournisseurs ont été ignorés car vous n'avez pas de clé pour eux. C'est normal ; cela ne pose problème que si aucune de vos clés n'a pu répondre.</li>
+      <li><strong>« Sans crédit : … »</strong> — le compte associé à cette clé est vide. Rechargez-le chez le fournisseur et réessayez ; TubeBook ne facture rien pour la tentative.</li>
+      <li>Un ebook BYOK ne bascule jamais sur les comptes de TubeBook. Si aucune de vos clés ne peut répondre, l'ebook s'arrête et vous indique quelle clé corriger.</li>
+    </ul>
+    <h3>Offres et limites</h3>
+    <ul>
+      <li><span class="pill">BYOK Ebook</span> 9 $/mois ou 79 $/an — toutes les fonctionnalités et tous les exports ebook.</li>
+      <li><span class="pill">BYOK Studio</span> 15 $/mois ou 129 $/an — ajoute la narration de livres audio.</li>
+      <li>Tarif fondateur pour les 100 premiers abonnés : 49 $/an (Ebook) ou 99 $/an (Studio), conservé tant que l'abonnement reste actif.</li>
+      <li>Jusqu'à 30 ebooks par mois civil (le compteur repart le 1er) et 25 sources par ebook.</li>
+    </ul>
+    <p>Vous pouvez passer d'une offre BYOK à une offre à crédits à tout moment depuis la page Facturation. Tous les détails figurent dans les <a href="terms.html#byok">Conditions</a>.</p>
+  </div>
+
   <div class="card" id="exports">
     <h2>Exports &amp; formats</h2>
     <ul>

@@ -181,6 +181,7 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 
     <a href="#audiobooks">Audiolibros</a>
     <a href="#find-a-topic">Encontrar un tema</a>
     <a href="#credits">Créditos y precios</a>
+    <a href="#byok">Usa tus propias claves</a>
     <a href="#exports">Exportaciones y formatos</a>
     <a href="#publishing-risk">Exportaciones y formatos</a>
     <a href="#troubleshooting">Comprobación de riesgo de publicación</a>
@@ -623,6 +624,41 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 
   </div>
 
   <!-- EXPORTS -->
+  <div class="card" id="byok">
+    <h2>Usa tus propias claves (BYOK)</h2>
+    <p>Con un plan BYOK, tus ebooks se escriben en tus propias cuentas de IA. Pagas a TubeBook una tarifa fija por el software, tu proveedor te cobra los tokens y nunca se cobran créditos.</p>
+    <h3>Configuración</h3>
+    <ol>
+      <li>En la página de <strong>Facturación</strong>, elige <strong>BYOK Ebook</strong> o <strong>BYOK Studio</strong>.</li>
+      <li>Abre <strong>Ajustes → Claves de API</strong> y añade al menos una clave.</li>
+      <li>Cada clave se comprueba al guardarla: <strong>Funciona</strong>; <strong>Sin saldo</strong> (recárgala en el proveedor); <strong>Rechazada</strong> (una clave errónea, que no se guarda); o <strong>Guardada — sin confirmar</strong> (no se pudo contactar con el proveedor; tu primer ebook la confirmará).</li>
+      <li>Crea ebooks como siempre. La página Claves de API muestra cuántos de tus 30 ebooks mensuales has usado.</li>
+    </ol>
+    <h3>Qué clave sirve para qué</h3>
+    <table>
+      <thead><tr><th>Para…</th><th>Necesitas</th></tr></thead>
+      <tbody>
+        <tr><td>Escribir un ebook</td><td>Una clave de Anthropic, OpenAI, DeepSeek o Gemini</td></tr>
+        <tr><td>Portadas e ilustraciones de IA</td><td>Gemini u OpenAI — si no, se usan fotos de archivo</td></tr>
+        <tr><td>Narrar un audiolibro (BYOK Studio)</td><td>OpenAI — o una cuenta de servicio de Google Text-to-Speech para las voces estándar de Google</td></tr>
+      </tbody>
+    </table>
+    <h3>Si un ebook se detiene</h3>
+    <ul>
+      <li><strong>«No se añadió clave para: …»</strong> — esos proveedores se omitieron porque no tienes clave para ellos. Es normal; solo importa cuando ninguna de tus claves pudo responder.</li>
+      <li><strong>«Sin saldo: …»</strong> — la cuenta de esa clave está vacía. Recárgala en el proveedor y vuelve a intentarlo; TubeBook no cobra nada por el intento.</li>
+      <li>Un ebook BYOK nunca recurre a las cuentas de TubeBook. Si ninguna de tus claves puede responder, el ebook se detiene y te dice qué clave corregir.</li>
+    </ul>
+    <h3>Planes y límites</h3>
+    <ul>
+      <li><span class="pill">BYOK Ebook</span> 9 $/mes o 79 $/año — todas las funciones y exportaciones de ebook.</li>
+      <li><span class="pill">BYOK Studio</span> 15 $/mes o 129 $/año — añade la narración de audiolibros.</li>
+      <li>Precio fundador para los 100 primeros suscriptores: 49 $/año (Ebook) o 99 $/año (Studio), que se mantiene mientras la suscripción siga activa.</li>
+      <li>Hasta 30 ebooks por mes natural (el contador se reinicia el día 1) y 25 fuentes por ebook.</li>
+    </ul>
+    <p>Puedes cambiar entre planes BYOK y planes de créditos en cualquier momento desde la página de Facturación. Todos los detalles están en las <a href="terms.html#byok">Condiciones</a>.</p>
+  </div>
+
   <div class="card" id="exports">
     <h2>Exportaciones y formatos</h2>
     <ul>

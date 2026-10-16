@@ -601,6 +601,11 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
         <p>Не знаете, о чём писать? Смотрите, что сейчас в тренде в США, Великобритании, Германии, Канаде, Австралии и Франции — бесплатно. Затем увидьте фразы, которые читатели реально вводят в Amazon, сколько книг уже конкурируют, и получите список лучших видео и статей для работы. <strong>Спрос, а не догадки.</strong></p>
       </div>
       <div class="feat-card">
+        <div class="feat-icon green"><svg viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg></div>
+        <h3>Свои ключи (BYOK) <span class="feat-new">Новое</span></h3>
+        <p>Уже платите за Claude, OpenAI, DeepSeek или Gemini? Используйте TubeBook со своим ключом за фиксированную плату — все функции, без кредитов, до 30 книг в месяц. Ваши ключи шифруются, и <strong>книга работает только на тех ключах, которые вы добавили.</strong></p>
+      </div>
+      <div class="feat-card">
         <div class="feat-icon green"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
         <h3>Книги из нескольких источников <span class="feat-new">Новое</span></h3>
         <p>Объедините до 25 видео YouTube, веб-статей, <strong>документов Word, PowerPoint и PDF</strong> и вставленного текста в одну книгу — загруженных с компьютера или по ссылке. Вставьте целую неопубликованную рукопись до 500 печатных страниц, и она будет реструктурирована. TubeBook читает всё, строит единый план по всему набору, затем пишет каждую главу из источников, которые действительно её освещают.</p>
@@ -822,6 +827,40 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
       Отмена в любой момент · Годовая оплата: Starter $90/год, Pro $290/год, Pro Audio $490/год · Кредиты тарифа пополняются ежемесячно в каждом расчетном периоде, включая годовой, неиспользованные не переносятся · Пакеты кредитов не сгорают · Возврат в течение 14 дней при первой подписке
     </p>
 
+    <!-- BYOK -->
+    <div class="fade-in-up" id="byok" style="margin-top: 4rem;">
+      <span class="section-label">Свои ключи</span>
+      <h3 style="font-size: 1.5rem; font-weight: 700; margin: 0.5rem 0 0.5rem;">Уже платите за модель ИИ? Используйте её здесь.</h3>
+      <p style="font-size: 0.88rem; color: var(--muted2); margin-bottom: 2rem;">Тарифы BYOK запускают все функции TubeBook на вашем собственном ключе Anthropic (Claude), OpenAI, DeepSeek или Google Gemini. Токены вам оплачивает ваш провайдер — несколько центов за книгу на DeepSeek, — а TubeBook берёт фиксированную плату и никогда не списывает кредиты.</p>
+      <div class="packs-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));max-width:760px;margin-left:auto;margin-right:auto;">
+        <div class="plan-card">
+          <div class="plan-name">BYOK Ebook</div>
+          <div class="plan-price"><sup>$</sup>9<span class="per">/мес</span></div>
+          <div class="plan-target">или 79 $/год · цена основателя 49 $/год для первых 100</div>
+          <div class="plan-divider"></div>
+          <ul class="plan-features">
+            <li><span class="chk">✓</span>Все функции и форматы экспорта электронных книг</li>
+            <li><span class="chk">✓</span>Изображения ИИ через ваш ключ Gemini или OpenAI, плюс стоковые фото</li>
+            <li><span class="chk">✓</span>До 30 книг в месяц</li>
+          </ul>
+          <a href="https://app.tubebook.org/billing" class="plan-btn outline">Выбрать BYOK Ebook</a>
+        </div>
+        <div class="plan-card">
+          <div class="plan-name">BYOK Studio</div>
+          <div class="plan-price"><sup>$</sup>15<span class="per">/мес</span></div>
+          <div class="plan-target">или 129 $/год · цена основателя 99 $/год для первых 100</div>
+          <div class="plan-divider"></div>
+          <ul class="plan-features">
+            <li><span class="chk">✓</span>Всё, что входит в BYOK Ebook</li>
+            <li><span class="chk">✓</span>Озвучивание аудиокниг через ваш ключ OpenAI на 10 языках</li>
+            <li><span class="chk">✓</span>До 30 книг в месяц</li>
+          </ul>
+          <a href="https://app.tubebook.org/billing" class="plan-btn outline">Выбрать BYOK Studio</a>
+        </div>
+      </div>
+      <p style="text-align:center;margin-top:1.5rem;font-size:0.84rem;color:var(--muted);">Цена основателя сохраняется, пока вы остаётесь подписчиком. Ключи шифруются и больше никогда не показываются. <a href="terms.html#byok">Условия BYOK</a></p>
+    </div>
+
     <!-- CREDIT PACKS -->
     <div class="fade-in-up" style="margin-top: 4rem;">
       <span class="section-label">Дополнения</span>
@@ -950,6 +989,18 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
       <details class="faq-item">
         <summary>Может ли он писать в моём стиле, и используются ли мои тексты для его обучения?</summary>
         <div class="faq-a"><p>Может, и это не проблема. Загрузите уже написанный текст, и по нему будет составлено <strong>описание вашего стиля</strong> — длина и вариативность предложений, как вы начинаете и заканчиваете раздел, обращаетесь ли к читателю, ваши привычки в пунктуации — и каждая последующая глава будет написана с учётом этого описания. Никакая модель не дообучается, ничто из загруженного не используется для чужих книг, а ваши файлы <strong>удаляются сразу после прочтения</strong>. Это заметно меняет регистр, ритм и лексику; но не сделает текст неотличимым от вашего, и мы честно говорим об этом, чтобы вы не обнаружили это сами.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Можно ли использовать свой аккаунт ИИ вместо кредитов?</summary>
+        <div class="faq-a"><p>Да — для этого и существуют тарифы BYOK. Добавьте свой ключ Anthropic (Claude), OpenAI, DeepSeek или Google Gemini, и каждая книга будет написана на вашем аккаунте: токены вам оплачивает ваш провайдер, а TubeBook вместо кредитов берёт фиксированные <strong>9 $ в месяц или 79 $ в год</strong>. <strong>BYOK Studio</strong> за 15 $ в месяц добавляет озвучивание аудиокниг через ваш ключ OpenAI. Оба тарифа включают до 30 книг в месяц.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Какие ключи нужны для BYOK?</summary>
+        <div class="faq-a"><p>Для написания книги достаточно одного ключа Anthropic, OpenAI, DeepSeek или Gemini; дешевле всего DeepSeek — несколько центов за книгу. Для иллюстраций и обложек ИИ нужен ключ Gemini или OpenAI — без него в книгах используются стоковые фото. Для аудиокниг в BYOK Studio нужен ключ OpenAI. Каждый ключ проверяется при сохранении, поэтому вы сразу узнаете, если на аккаунте нет средств.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Безопасны ли мои ключи API?</summary>
+        <div class="faq-a"><p>Ключи шифруются в момент сохранения, используются только для запрошенных вами книг и больше никогда не показываются — ни вам, ни нам. В настройках видны только последние четыре символа. Вы можете удалить ключ в любой момент; рекомендуем также отозвать его у провайдера, когда он вам больше не нужен.</p></div>
       </details>
     </div>
   </div>

@@ -601,6 +601,11 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
         <p>Don't know what to write about? Browse what's trending in the US, UK, Germany, Canada, Australia and France — free. Then see the phrases readers actually type into Amazon, how many books already compete, and get a shortlist of the best videos and articles to build from. <strong>Search demand, not guesswork.</strong></p>
       </div>
       <div class="feat-card">
+        <div class="feat-icon green"><svg viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg></div>
+        <h3>Bring Your Own Key <span class="feat-new">New</span></h3>
+        <p>Already paying for Claude, OpenAI, DeepSeek or Gemini? Run TubeBook on your own key for a flat fee — every feature, no credits, up to 30 books a month. Your keys are encrypted, and <strong>a book only ever runs on the keys you added.</strong></p>
+      </div>
+      <div class="feat-card">
         <div class="feat-icon green"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
         <h3>Multi-Source Books <span class="feat-new">New</span></h3>
         <p>Combine up to 25 YouTube videos, web articles, <strong>Word, PowerPoint and PDF documents</strong> and pasted text into one book — uploaded from your computer or linked. Paste a whole unpublished manuscript, up to 500 printed pages, and have it restructured. TubeBook reads everything, builds a single outline across the set, then writes each chapter from the sources that actually cover it.</p>
@@ -822,6 +827,40 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
       Cancel anytime · Annual billing available: Starter $90/yr, Pro $290/yr, Pro Audio $490/yr · Plan credits refill monthly on every billing cycle, including annual, and unused ones do not roll over · Credit packs never expire · 14-day refund on first subscription
     </p>
 
+    <!-- BYOK -->
+    <div class="fade-in-up" id="byok" style="margin-top: 4rem;">
+      <span class="section-label">Bring your own key</span>
+      <h3 style="font-size: 1.5rem; font-weight: 700; margin: 0.5rem 0 0.5rem;">Already pay for an AI model? Use it here.</h3>
+      <p style="font-size: 0.88rem; color: var(--muted2); margin-bottom: 2rem;">BYOK plans run every TubeBook feature on your own Anthropic (Claude), OpenAI, DeepSeek or Google Gemini key. Your provider bills you for the tokens — a few cents a book on DeepSeek — and TubeBook charges a flat fee, never credits.</p>
+      <div class="packs-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));max-width:760px;margin-left:auto;margin-right:auto;">
+        <div class="plan-card">
+          <div class="plan-name">BYOK Ebook</div>
+          <div class="plan-price"><sup>$</sup>9<span class="per">/mo</span></div>
+          <div class="plan-target">or $79/yr · founding price $49/yr for the first 100</div>
+          <div class="plan-divider"></div>
+          <ul class="plan-features">
+            <li><span class="chk">✓</span>Every ebook feature and export format</li>
+            <li><span class="chk">✓</span>AI images on your Gemini or OpenAI key, plus stock photos</li>
+            <li><span class="chk">✓</span>Up to 30 books a month</li>
+          </ul>
+          <a href="https://app.tubebook.org/billing" class="plan-btn outline">Choose BYOK Ebook</a>
+        </div>
+        <div class="plan-card">
+          <div class="plan-name">BYOK Studio</div>
+          <div class="plan-price"><sup>$</sup>15<span class="per">/mo</span></div>
+          <div class="plan-target">or $129/yr · founding price $99/yr for the first 100</div>
+          <div class="plan-divider"></div>
+          <ul class="plan-features">
+            <li><span class="chk">✓</span>Everything in BYOK Ebook</li>
+            <li><span class="chk">✓</span>Audiobook narration on your OpenAI key, in 10 languages</li>
+            <li><span class="chk">✓</span>Up to 30 books a month</li>
+          </ul>
+          <a href="https://app.tubebook.org/billing" class="plan-btn outline">Choose BYOK Studio</a>
+        </div>
+      </div>
+      <p style="text-align:center;margin-top:1.5rem;font-size:0.84rem;color:var(--muted);">Founding prices stay locked for as long as you stay subscribed. Keys are encrypted and never shown again. <a href="terms.html#byok">BYOK terms</a></p>
+    </div>
+
     <!-- CREDIT PACKS -->
     <div class="fade-in-up" style="margin-top: 4rem;">
       <span class="section-label">Add-ons</span>
@@ -950,6 +989,18 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
       <details class="faq-item">
         <summary>Can it write in my own style, and is my writing used to train it?</summary>
         <div class="faq-a"><p>It can, and it is not. Upload something you have already written and a <strong>description of how you write</strong> is worked out from it — sentence length and variation, how you open and close a section, whether you address the reader, your punctuation habits — and every chapter afterwards is written with that description in front of the writer. No model is fine-tuned, nothing you upload is used for anyone else's books, and your files are <strong>deleted as soon as they have been read</strong>. It shifts register, rhythm and vocabulary noticeably; it will not make the writing indistinguishable from yours, and we would rather say so than let you discover it.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Can I use my own AI account instead of credits?</summary>
+        <div class="faq-a"><p>Yes — that is what the BYOK plans are for. Add your own Anthropic (Claude), OpenAI, DeepSeek or Google Gemini key and every book is written on your account: your provider bills you for the tokens, and TubeBook charges a flat <strong>$9 a month or $79 a year</strong> instead of credits. <strong>BYOK Studio</strong>, at $15 a month, adds audiobook narration on your OpenAI key. Both include up to 30 books a month.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Which keys do I need for BYOK?</summary>
+        <div class="faq-a"><p>Any one of Anthropic, OpenAI, DeepSeek or Gemini writes a book; DeepSeek is the cheapest, at a few cents a book. AI illustrations and covers need a Gemini or OpenAI key — without one, books use stock photos. Audiobooks on BYOK Studio need an OpenAI key. Each key is checked when you save it, so you know straight away if an account has no credit.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Are my API keys safe?</summary>
+        <div class="faq-a"><p>Keys are encrypted the moment you save them, used only for the books you ask for, and never shown again — not to you, and not to us. Only the last four characters appear in your settings. You can delete a key at any time, and we recommend revoking it at the provider when you stop using it.</p></div>
       </details>
     </div>
   </div>

@@ -181,6 +181,7 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 
     <a href="#audiobooks">有声书</a>
     <a href="#find-a-topic">寻找主题</a>
     <a href="#credits">积分与定价</a>
+    <a href="#byok">使用自己的密钥</a>
     <a href="#exports">导出与格式</a>
     <a href="#publishing-risk">导出与格式</a>
     <a href="#troubleshooting">出版风险检查</a>
@@ -623,6 +624,41 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 
   </div>
 
   <!-- EXPORTS -->
+  <div class="card" id="byok">
+    <h2>使用自己的密钥（BYOK）</h2>
+    <p>在 BYOK 方案下，您的书籍在您自己的 AI 账户上写成。您向 TubeBook 支付软件的固定费用，令牌费用由您的提供商收取，并且从不扣除额度。</p>
+    <h3>设置步骤</h3>
+    <ol>
+      <li>在<strong>计费</strong>页面选择 <strong>BYOK Ebook</strong> 或 <strong>BYOK Studio</strong>。</li>
+      <li>打开<strong>设置 → API 密钥</strong>，至少添加一个密钥。</li>
+      <li>每个密钥在保存时都会检查：<strong>可用</strong>；<strong>余额不足</strong>（请在提供商处充值）；<strong>被拒绝</strong>（密钥有误，不会被保存）；或<strong>已保存——尚未确认</strong>（暂时无法连接提供商，您的第一本书会完成确认）。</li>
+      <li>照常创建书籍。API 密钥页面会显示您本月 30 本书的已用数量。</li>
+    </ol>
+    <h3>哪个密钥用于什么</h3>
+    <table>
+      <thead><tr><th>要……</th><th>您需要</th></tr></thead>
+      <tbody>
+        <tr><td>写一本书</td><td>Anthropic、OpenAI、DeepSeek 或 Gemini 中的任意一个密钥</td></tr>
+        <tr><td>生成 AI 封面和插图</td><td>Gemini 或 OpenAI——否则使用图库照片</td></tr>
+        <tr><td>为有声书配音（BYOK Studio）</td><td>OpenAI——或用于 Google 标准语音的 Google 文字转语音服务账号</td></tr>
+      </tbody>
+    </table>
+    <h3>如果书籍停止生成</h3>
+    <ul>
+      <li><strong>“未添加以下提供商的密钥：……”</strong>——这些提供商因您没有对应密钥而被跳过。这很正常；只有当您已有的密钥都无法响应时才需要处理。</li>
+      <li><strong>“余额不足：……”</strong>——该密钥对应的账户已无余额。请在提供商处充值后重试；TubeBook 不会为此次尝试收费。</li>
+      <li>BYOK 书籍绝不会转用 TubeBook 自己的账户。如果您的密钥都无法响应，书籍会停止并告诉您需要修复哪个密钥。</li>
+    </ul>
+    <h3>方案与限制</h3>
+    <ul>
+      <li><span class="pill">BYOK Ebook</span> 每月 9 美元或每年 79 美元——全部电子书功能与导出。</li>
+      <li><span class="pill">BYOK Studio</span> 每月 15 美元或每年 129 美元——增加有声书配音。</li>
+      <li>前 100 名订阅者的创始价：每年 49 美元（Ebook）或 99 美元（Studio），订阅保持有效期间不变。</li>
+      <li>每个自然月最多 30 本书（每月 1 日重置计数），每本书最多 25 个来源。</li>
+    </ul>
+    <p>您可以随时在计费页面在 BYOK 方案与额度方案之间切换。完整细节请见<a href="terms.html#byok">条款</a>。</p>
+  </div>
+
   <div class="card" id="exports">
     <h2>导出与格式</h2>
     <ul>

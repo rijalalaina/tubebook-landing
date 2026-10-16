@@ -601,6 +601,11 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
         <p>لا تعرف ماذا تكتب؟ تصفح ما هو رائج في الولايات المتحدة والمملكة المتحدة وألمانيا وكندا وأستراليا وفرنسا — مجانًا. ثم شاهد العبارات التي يكتبها القراء فعليًا في أمازون، وكم عدد الكتب المنافسة، واحصل على قائمة بأفضل الفيديوهات والمقالات للبناء عليها. <strong>ابحث عن الطلب، لا التخمين.</strong></p>
       </div>
       <div class="feat-card">
+        <div class="feat-icon green"><svg viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg></div>
+        <h3>استخدم مفاتيحك الخاصة (BYOK) <span class="feat-new">جديد</span></h3>
+        <p>تدفع بالفعل لـ Claude أو OpenAI أو DeepSeek أو Gemini؟ شغّل TubeBook بمفتاحك الخاص مقابل رسم ثابت — كل الميزات، بلا أرصدة، حتى 30 كتاباً شهرياً. تُشفَّر مفاتيحك، و<strong>لا يعمل الكتاب إلا على المفاتيح التي أضفتها.</strong></p>
+      </div>
+      <div class="feat-card">
         <div class="feat-icon green"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
         <h3>كتب متعددة المصادر <span class="feat-new">جديد</span></h3>
         <p>اجمع حتى 25 فيديو من يوتيوب، ومقالات ويب، <strong>ومستندات Word وPowerPoint وPDF</strong> ونصًا ملصقًا في كتاب واحد — مرفوعًا من جهازك أو عبر رابط. الصق مخطوطة كاملة غير منشورة، حتى 500 صفحة مطبوعة، وأعد هيكلتها. يقرأ TubeBook كل شيء، ويبني مخططًا واحدًا عبر المجموعة، ثم يكتب كل فصل من المصادر التي تغطيه فعليًا.</p>
@@ -822,6 +827,40 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
       إلغاء في أي وقت · الفوترة السنوية متاحة: المبتدئ 90$ سنويًا، الاحترافي 290$ سنويًا، الاحترافي الصوتي 490$ سنويًا · أرصدة الخطة تتجدد شهريًا في كل دورة فوترة، بما في ذلك السنوية، وغير المستخدم لا يُرحَّل · حزم الأرصدة لا تنتهي صلاحيتها أبدًا · استرداد خلال 14 يومًا على أول اشتراك
     </p>
 
+    <!-- BYOK -->
+    <div class="fade-in-up" id="byok" style="margin-top: 4rem;">
+      <span class="section-label">استخدم مفاتيحك الخاصة</span>
+      <h3 style="font-size: 1.5rem; font-weight: 700; margin: 0.5rem 0 0.5rem;">تدفع بالفعل لنموذج ذكاء اصطناعي؟ استخدمه هنا.</h3>
+      <p style="font-size: 0.88rem; color: var(--muted2); margin-bottom: 2rem;">تشغّل خطط BYOK كل ميزات TubeBook على مفتاحك الخاص من Anthropic (Claude) أو OpenAI أو DeepSeek أو Google Gemini. يفوترك مزوّدك على الرموز — بضعة سنتات للكتاب مع DeepSeek — وتتقاضى TubeBook رسماً ثابتاً، ولا تخصم أرصدة أبداً.</p>
+      <div class="packs-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));max-width:760px;margin-left:auto;margin-right:auto;">
+        <div class="plan-card">
+          <div class="plan-name">BYOK Ebook</div>
+          <div class="plan-price"><sup>$</sup>9<span class="per">/شهريًا</span></div>
+          <div class="plan-target">أو 79 دولاراً سنوياً · سعر المؤسّسين 49 دولاراً سنوياً لأول 100</div>
+          <div class="plan-divider"></div>
+          <ul class="plan-features">
+            <li><span class="chk">✓</span>كل ميزات الكتب الإلكترونية وكل صيغ التصدير</li>
+            <li><span class="chk">✓</span>صور ذكاء اصطناعي عبر مفتاحك من Gemini أو OpenAI، إضافة إلى صور المخزون</li>
+            <li><span class="chk">✓</span>حتى 30 كتاباً شهرياً</li>
+          </ul>
+          <a href="https://app.tubebook.org/billing" class="plan-btn outline">اختر BYOK Ebook</a>
+        </div>
+        <div class="plan-card">
+          <div class="plan-name">BYOK Studio</div>
+          <div class="plan-price"><sup>$</sup>15<span class="per">/شهريًا</span></div>
+          <div class="plan-target">أو 129 دولاراً سنوياً · سعر المؤسّسين 99 دولاراً سنوياً لأول 100</div>
+          <div class="plan-divider"></div>
+          <ul class="plan-features">
+            <li><span class="chk">✓</span>كل ما في BYOK Ebook</li>
+            <li><span class="chk">✓</span>سرد الكتب الصوتية عبر مفتاحك من OpenAI، بعشر لغات</li>
+            <li><span class="chk">✓</span>حتى 30 كتاباً شهرياً</li>
+          </ul>
+          <a href="https://app.tubebook.org/billing" class="plan-btn outline">اختر BYOK Studio</a>
+        </div>
+      </div>
+      <p style="text-align:center;margin-top:1.5rem;font-size:0.84rem;color:var(--muted);">يبقى سعر المؤسّسين ثابتاً ما دمت مشتركاً. تُشفَّر المفاتيح ولا تُعرض مجدداً أبداً. <a href="terms.html#byok">شروط BYOK</a></p>
+    </div>
+
     <!-- CREDIT PACKS -->
     <div class="fade-in-up" style="margin-top: 4rem;">
       <span class="section-label">إضافات</span>
@@ -950,6 +989,18 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
       <details class="faq-item">
         <summary>هل يمكنه الكتابة بأسلوبي الخاص، وهل تُستخدم كتاباتي لتدريبه؟</summary>
         <div class="faq-a"><p>يمكنه ذلك، وهو ليس كذلك. ارفع شيئًا كتبته بالفعل وسيُستنتج منه <strong>وصف لأسلوبك في الكتابة</strong> — طول الجملة وتنوعها، كيف تفتح وتغلق قسمًا، هل تخاطب القارئ، عادات الترقيم — ويُكتب كل فصل لاحق بهذا الوصف أمام الكاتب. لا يتم ضبط أي نموذج، ولا يُستخدم ما ترفعه لكتب أي شخص آخر، وتُحذف ملفاتك <strong>بمجرد قراءتها</strong>. يغيّر النبرة والإيقاع والمفردات بشكل ملحوظ؛ لن يجعل الكتابة مطابقة لأسلوبك تمامًا، ونفضل أن نقول ذلك بدلًا من أن تكتشفه بنفسك.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>هل يمكنني استخدام حسابي الخاص للذكاء الاصطناعي بدلاً من الأرصدة؟</summary>
+        <div class="faq-a"><p>نعم — هذا هو الغرض من خطط BYOK. أضف مفتاحك الخاص من Anthropic (Claude) أو OpenAI أو DeepSeek أو Google Gemini، فيُكتب كل كتاب على حسابك: يفوترك مزوّدك على الرموز، وتتقاضى TubeBook رسماً ثابتاً قدره <strong>9 دولارات شهرياً أو 79 دولاراً سنوياً</strong> بدلاً من الأرصدة. وتضيف <strong>BYOK Studio</strong>، مقابل 15 دولاراً شهرياً، سرد الكتب الصوتية عبر مفتاحك من OpenAI. وتشمل الخطتان حتى 30 كتاباً شهرياً.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>ما المفاتيح التي أحتاجها لـ BYOK؟</summary>
+        <div class="faq-a"><p>يكفي مفتاح واحد من Anthropic أو OpenAI أو DeepSeek أو Gemini لكتابة كتاب؛ وDeepSeek هو الأرخص، ببضعة سنتات للكتاب. تحتاج الرسوم التوضيحية والأغلفة بالذكاء الاصطناعي إلى مفتاح من Gemini أو OpenAI — ومن دونه تستخدم الكتب صور المخزون. وتحتاج الكتب الصوتية في BYOK Studio إلى مفتاح من OpenAI. يُفحص كل مفتاح عند حفظه، فتعرف فوراً إن كان الحساب بلا رصيد.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>هل مفاتيح API الخاصة بي آمنة؟</summary>
+        <div class="faq-a"><p>تُشفَّر المفاتيح لحظة حفظها، ولا تُستخدم إلا للكتب التي تطلبها، ولا تُعرض مجدداً أبداً — لا لك ولا لنا. لا يظهر في إعداداتك سوى آخر أربعة أحرف. يمكنك حذف أي مفتاح في أي وقت، ونوصي بإلغائه لدى المزوّد حين تتوقف عن استخدامه.</p></div>
       </details>
     </div>
   </div>

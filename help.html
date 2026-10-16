@@ -181,6 +181,7 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 
     <a href="#audiobooks">Audiobooks</a>
     <a href="#find-a-topic">Find a topic</a>
     <a href="#credits">Credits &amp; pricing</a>
+    <a href="#byok">Bring your own key</a>
     <a href="#exports">Exports &amp; formats</a>
     <a href="#publishing-risk">Publishing-risk check</a>
     <a href="#troubleshooting">Troubleshooting</a>
@@ -623,6 +624,41 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 
   </div>
 
   <!-- EXPORTS -->
+  <div class="card" id="byok">
+    <h2>Bring your own key (BYOK)</h2>
+    <p>On a BYOK plan your books are written on your own AI accounts. You pay TubeBook a flat fee for the software, your provider bills you for the tokens, and no credits are ever charged.</p>
+    <h3>Setting up</h3>
+    <ol>
+      <li>On the <strong>Billing</strong> page, choose <strong>BYOK Ebook</strong> or <strong>BYOK Studio</strong>.</li>
+      <li>Open <strong>Settings → API keys</strong> and add at least one key.</li>
+      <li>Each key is checked as you save it: <strong>Working</strong>; <strong>Out of credit</strong> (top it up at the provider); <strong>Rejected</strong> (a wrong key, which is not saved); or <strong>Saved — not yet confirmed</strong> (the provider could not be reached, and your first book will confirm it).</li>
+      <li>Create books as usual. The API keys page shows how many of your 30 monthly books you have used.</li>
+    </ol>
+    <h3>Which key does what</h3>
+    <table>
+      <thead><tr><th>To…</th><th>You need</th></tr></thead>
+      <tbody>
+        <tr><td>Write a book</td><td>Any one of Anthropic, OpenAI, DeepSeek or Gemini</td></tr>
+        <tr><td>AI covers &amp; illustrations</td><td>Gemini or OpenAI — otherwise stock photos are used</td></tr>
+        <tr><td>Narrate an audiobook (BYOK Studio)</td><td>OpenAI — or a Google Text-to-Speech service account for Google's standard voices</td></tr>
+      </tbody>
+    </table>
+    <h3>If a book stops</h3>
+    <ul>
+      <li><strong>“No key added for: …”</strong> — those providers were skipped because you have no key for them. That is normal; it only matters when none of the keys you do have could answer.</li>
+      <li><strong>“Out of credit: …”</strong> — the account behind that key is empty. Top it up at the provider and try again; TubeBook charges nothing for the attempt.</li>
+      <li>A BYOK book never falls back to TubeBook's own accounts. If none of your keys can answer, the book stops and tells you which key to fix.</li>
+    </ul>
+    <h3>Plans &amp; limits</h3>
+    <ul>
+      <li><span class="pill">BYOK Ebook</span> $9/mo or $79/yr — every ebook feature and export.</li>
+      <li><span class="pill">BYOK Studio</span> $15/mo or $129/yr — adds audiobook narration.</li>
+      <li>Founding price for the first 100 subscribers: $49/yr (Ebook) or $99/yr (Studio), kept while the subscription stays active.</li>
+      <li>Up to 30 books per calendar month (the count resets on the 1st) and 25 sources per book.</li>
+    </ul>
+    <p>You can move between BYOK and credit plans at any time from the Billing page. Full details are in the <a href="terms.html#byok">Terms</a>.</p>
+  </div>
+
   <div class="card" id="exports">
     <h2>Exports &amp; formats</h2>
     <ul>

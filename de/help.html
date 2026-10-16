@@ -181,6 +181,7 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 
     <a href="#audiobooks">Hörbücher</a>
     <a href="#find-a-topic">Thema finden</a>
     <a href="#credits">Guthaben &amp; Preise</a>
+    <a href="#byok">Eigene Schlüssel</a>
     <a href="#exports">Exporte &amp; Formate</a>
     <a href="#publishing-risk">Veröffentlichungsrisiko-Check</a>
     <a href="#troubleshooting">Veröffentlichungsrisiko-Check</a>
@@ -623,6 +624,41 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 
   </div>
 
   <!-- EXPORTS -->
+  <div class="card" id="byok">
+    <h2>Eigene Schlüssel (BYOK)</h2>
+    <p>In einem BYOK-Tarif werden Ihre Bücher über Ihre eigenen KI-Konten geschrieben. Sie zahlen TubeBook eine Pauschale für die Software, Ihr Anbieter berechnet Ihnen die Tokens, und es werden nie Credits abgebucht.</p>
+    <h3>Einrichtung</h3>
+    <ol>
+      <li>Wählen Sie auf der Seite <strong>Abrechnung</strong> <strong>BYOK Ebook</strong> oder <strong>BYOK Studio</strong>.</li>
+      <li>Öffnen Sie <strong>Einstellungen → API-Schlüssel</strong> und fügen Sie mindestens einen Schlüssel hinzu.</li>
+      <li>Jeder Schlüssel wird beim Speichern geprüft: <strong>Funktioniert</strong>; <strong>Kein Guthaben</strong> (beim Anbieter aufladen); <strong>Abgelehnt</strong> (ein falscher Schlüssel, der nicht gespeichert wird); oder <strong>Gespeichert — noch nicht bestätigt</strong> (der Anbieter war nicht erreichbar; Ihr erstes Buch bestätigt ihn).</li>
+      <li>Erstellen Sie Bücher wie gewohnt. Die Seite API-Schlüssel zeigt, wie viele Ihrer 30 monatlichen Bücher Sie genutzt haben.</li>
+    </ol>
+    <h3>Welcher Schlüssel wofür</h3>
+    <table>
+      <thead><tr><th>Um…</th><th>Benötigen Sie</th></tr></thead>
+      <tbody>
+        <tr><td>ein Buch zu schreiben</td><td>Einen Schlüssel von Anthropic, OpenAI, DeepSeek oder Gemini</td></tr>
+        <tr><td>KI-Cover und -Illustrationen zu erstellen</td><td>Gemini oder OpenAI — sonst werden Stockfotos verwendet</td></tr>
+        <tr><td>ein Hörbuch zu vertonen (BYOK Studio)</td><td>OpenAI — oder ein Google-Text-to-Speech-Dienstkonto für die Standardstimmen von Google</td></tr>
+      </tbody>
+    </table>
+    <h3>Wenn ein Buch anhält</h3>
+    <ul>
+      <li><strong>„Kein Schlüssel hinzugefügt für: …“</strong> — diese Anbieter wurden übersprungen, weil Sie für sie keinen Schlüssel haben. Das ist normal; es spielt nur eine Rolle, wenn keiner Ihrer Schlüssel antworten konnte.</li>
+      <li><strong>„Kein Guthaben: …“</strong> — das Konto hinter diesem Schlüssel ist leer. Laden Sie es beim Anbieter auf und versuchen Sie es erneut; TubeBook berechnet für den Versuch nichts.</li>
+      <li>Ein BYOK-Buch weicht nie auf die Konten von TubeBook aus. Kann keiner Ihrer Schlüssel antworten, hält das Buch an und zeigt Ihnen, welchen Schlüssel Sie korrigieren müssen.</li>
+    </ul>
+    <h3>Tarife und Grenzen</h3>
+    <ul>
+      <li><span class="pill">BYOK Ebook</span> 9 $/Monat oder 79 $/Jahr — alle Ebook-Funktionen und Exporte.</li>
+      <li><span class="pill">BYOK Studio</span> 15 $/Monat oder 129 $/Jahr — zusätzlich Hörbuch-Vertonung.</li>
+      <li>Gründerpreis für die ersten 100 Abonnenten: 49 $/Jahr (Ebook) oder 99 $/Jahr (Studio), gültig, solange das Abonnement aktiv bleibt.</li>
+      <li>Bis zu 30 Bücher pro Kalendermonat (der Zähler beginnt am 1. neu) und 25 Quellen pro Buch.</li>
+    </ul>
+    <p>Sie können jederzeit auf der Seite Abrechnung zwischen BYOK- und Credit-Tarifen wechseln. Alle Einzelheiten finden Sie in den <a href="terms.html#byok">Bedingungen</a>.</p>
+  </div>
+
   <div class="card" id="exports">
     <h2>Exporte &amp; Formate</h2>
     <ul>

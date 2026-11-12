@@ -181,7 +181,7 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 
     <a href="#audiobooks">Livres audio</a>
     <a href="#find-a-topic">Trouver un sujet</a>
     <a href="#credits">Crédits &amp; tarifs</a>
-    <a href="#byok">Vos propres clés</a>
+    <a href="#byok">Utilisez votre propre clé</a>
     <a href="#exports">Exports &amp; formats</a>
     <a href="#publishing-risk">Vérification des risques d'édition</a>
     <a href="#troubleshooting">Vérification des risques de publication</a>
@@ -194,7 +194,7 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 
     <div class="step-list">
       <div class="step-row">
         <div class="step-n">1</div>
-        <div class="step-body">Créez un compte gratuit sur <a href="https://app.tubebook.org">l'application TubeBook</a>. Les comptes gratuits reçoivent <strong>100 crédits chaque mois</strong>, sans carte requise et avec les mêmes fonctionnalités que les comptes payants.</div>
+        <div class="step-body">Créez un compte gratuit sur <a href="https://app.tubebook.org">l'application TubeBook</a>. Les nouveaux comptes reçoivent <strong>50 crédits offerts</strong>, sans carte et avec les mêmes fonctionnalités que les comptes payants.</div>
       </div>
       <div class="step-row">
         <div class="step-n">2</div>
@@ -596,7 +596,7 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 
     </table>
     <h3>Forfaits</h3>
     <ul>
-      <li><span class="pill">Gratuit</span> <strong>100 crédits chaque mois</strong>, sans carte requise. Jusqu'à 25 sources par ebook et les mêmes fonctionnalités de création, d'édition, d'illustration, de traduction, de livre audio et d'exportation que les comptes payants. Un petit pied de page "Créé avec TubeBook.org" apparaît sur les PDF des comptes gratuits jusqu'à ce que le compte effectue un achat.</li>
+      <li><span class="pill">Gratuit</span> <strong>50 crédits une seule fois, à l'inscription</strong>, sans carte. Jusqu'à 25 sources par ebook et les mêmes fonctionnalités de création, d'édition, d'illustration, de traduction, de livre audio et d'export que les comptes payants. Un petit pied de page « Made with TubeBook.org » apparaît sur les PDF des comptes gratuits jusqu'au premier achat.</li>
       <li><span class="pill">Démarrage — 9 $/mois</span> 250 crédits/mois — ≈ 8 aimants à prospects ou 2 ebooks commerciaux, ou un mélange. Mêmes fonctionnalités et limite de 25 sources ; la plus grande allocation fait la différence.</li>
       <li><span class="pill">Pro — 29 $/mois</span> 1 000 crédits/mois — ≈ 33 aimants à prospects ou 10 ebooks commerciaux, ou un mélange. Mêmes fonctionnalités et limite de 25 sources ; la plus grande allocation fait la différence.</li>
       <li><span class="pill">Pro Audio — 49 $/mois</span> Tout ce qui est dans Pro, plus <strong>900 crédits audio/mois</strong> — ≈ 3 livres audio commerciaux avec la voix premium, ou 7 avec la voix standard. Les crédits audio sont un solde séparé et sont le seul moyen de narrer un livre.</li>
@@ -625,38 +625,38 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 
 
   <!-- EXPORTS -->
   <div class="card" id="byok">
-    <h2>Vos propres clés (BYOK) <span class="pill">Nouveau</span></h2>
-    <p>Avec une offre BYOK, vos ebooks sont rédigés sur vos propres comptes d'IA. Vous payez à TubeBook un forfait pour le logiciel, votre fournisseur vous facture les tokens, et aucun crédit n'est jamais prélevé.</p>
-    <h3>Mise en place</h3>
+    <h2>Utilisez votre propre clé (BYOK) <span class="pill">Nouveau</span></h2>
+    <p>Avec un plan BYOK, vos livres sont rédigés sur vos propres comptes d'IA. Vous payez à TubeBook un forfait fixe pour le logiciel, votre fournisseur vous facture les tokens, et aucun crédit n'est jamais débité.</p>
+    <h3>Configuration</h3>
     <ol>
       <li>Sur la page <strong>Facturation</strong>, choisissez <strong>BYOK Ebook</strong> ou <strong>BYOK Studio</strong>.</li>
-      <li>Ouvrez <strong>Paramètres → Clés d'API</strong> et ajoutez au moins une clé.</li>
-      <li>Chaque clé est vérifiée à l'enregistrement : <strong>Fonctionne</strong> ; <strong>Sans crédit</strong> (rechargez-la chez le fournisseur) ; <strong>Refusée</strong> (une clé erronée, qui n'est pas enregistrée) ; ou <strong>Enregistrée — pas encore confirmée</strong> (le fournisseur était injoignable, votre premier ebook la confirmera).</li>
-      <li>Créez vos ebooks comme d'habitude. La page Clés d'API indique combien de vos 30 ebooks mensuels vous avez utilisés.</li>
+      <li>Ouvrez <strong>Paramètres → Clés API</strong> et ajoutez au moins une clé.</li>
+      <li>Chaque clé est vérifiée à l'enregistrement : <strong>Fonctionne</strong> ; <strong>Plus de crédit</strong> (rechargez-la chez le fournisseur) ; <strong>Refusée</strong> (une clé erronée, qui n'est pas enregistrée) ; ou <strong>Enregistrée — pas encore confirmée</strong> (le fournisseur était injoignable, et votre premier livre la confirmera).</li>
+      <li>Créez vos livres comme d'habitude. La page Clés API indique combien de vos 30 livres mensuels vous avez utilisés.</li>
     </ol>
     <h3>Quelle clé sert à quoi</h3>
     <table>
       <thead><tr><th>Pour…</th><th>Il vous faut</th></tr></thead>
       <tbody>
-        <tr><td>Rédiger un ebook</td><td>Une clé Anthropic, OpenAI, DeepSeek ou Gemini</td></tr>
-        <tr><td>Couvertures et illustrations IA</td><td>Gemini ou OpenAI — sinon, des photos libres de droits sont utilisées</td></tr>
+        <tr><td>Écrire un livre</td><td>Une clé Anthropic, OpenAI, DeepSeek ou Gemini</td></tr>
+        <tr><td>Couvertures &amp; illustrations IA</td><td>Gemini ou OpenAI — sinon des photos de stock sont utilisées</td></tr>
         <tr><td>Narrer un livre audio (BYOK Studio)</td><td>OpenAI — ou un compte de service Google Text-to-Speech pour les voix standard de Google</td></tr>
       </tbody>
     </table>
-    <h3>Si un ebook s'arrête</h3>
+    <h3>Si un livre s'arrête</h3>
     <ul>
       <li><strong>« Aucune clé ajoutée pour : … »</strong> — ces fournisseurs ont été ignorés car vous n'avez pas de clé pour eux. C'est normal ; cela ne pose problème que si aucune de vos clés n'a pu répondre.</li>
-      <li><strong>« Sans crédit : … »</strong> — le compte associé à cette clé est vide. Rechargez-le chez le fournisseur et réessayez ; TubeBook ne facture rien pour la tentative.</li>
-      <li>Un ebook BYOK ne bascule jamais sur les comptes de TubeBook. Si aucune de vos clés ne peut répondre, l'ebook s'arrête et vous indique quelle clé corriger.</li>
+      <li><strong>« Plus de crédit : … »</strong> — le compte derrière cette clé est vide. Rechargez-le chez le fournisseur et réessayez ; TubeBook ne facture rien pour la tentative.</li>
+      <li>Un livre BYOK ne bascule jamais sur les comptes de TubeBook. Si aucune de vos clés ne peut répondre, le livre s'arrête et vous indique quelle clé corriger.</li>
     </ul>
-    <h3>Offres et limites</h3>
+    <h3>Plans &amp; limites</h3>
     <ul>
-      <li><span class="pill">BYOK Ebook</span> 9 $/mois ou 79 $/an — toutes les fonctionnalités et tous les exports ebook.</li>
+      <li><span class="pill">BYOK Ebook</span> 9 $/mois ou 79 $/an — toutes les fonctionnalités ebook et tous les exports.</li>
       <li><span class="pill">BYOK Studio</span> 15 $/mois ou 129 $/an — ajoute la narration de livres audio.</li>
-      <li>Tarif fondateur pour les 100 premiers abonnés : 49 $/an (Ebook) ou 99 $/an (Studio), conservé tant que l'abonnement reste actif.</li>
-      <li>Jusqu'à 30 ebooks par mois civil (le compteur repart le 1er) et 25 sources par ebook.</li>
+      <li>Prix fondateur pour les 100 premiers abonnés : 49 $/an (Ebook) ou 99 $/an (Studio), conservé tant que l'abonnement reste actif.</li>
+      <li>Jusqu'à 30 livres par mois civil (le compteur repart le 1er) et 25 sources par livre.</li>
     </ul>
-    <p>Vous pouvez passer d'une offre BYOK à une offre à crédits à tout moment depuis la page Facturation. Tous les détails figurent dans les <a href="terms.html#byok">Conditions</a>.</p>
+    <p>Vous pouvez passer d'un plan BYOK à un plan à crédits à tout moment depuis la page Facturation. Tous les détails figurent dans les <a href="terms.html#byok">Conditions</a>.</p>
   </div>
 
   <div class="card" id="exports">

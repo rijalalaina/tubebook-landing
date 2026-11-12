@@ -181,7 +181,7 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 
     <a href="#audiobooks">Outros idiomas</a>
     <a href="#find-a-topic">Audiolivros</a>
     <a href="#credits">Créditos e preços</a>
-    <a href="#byok">Use as suas próprias chaves</a>
+    <a href="#byok">Use sua própria chave</a>
     <a href="#exports">Exportações e formatos</a>
     <a href="#publishing-risk">Conta e cobrança</a>
     <a href="#troubleshooting">Verificação de risco de publicação</a>
@@ -194,7 +194,7 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 
     <div class="step-list">
       <div class="step-row">
         <div class="step-n">1</div>
-        <div class="step-body">Crie uma conta gratuita no <a href="https://app.tubebook.org">aplicativo TubeBook</a>. Contas gratuitas recebem <strong>100 créditos todo mês</strong>, sem necessidade de cartão e com os mesmos recursos das contas pagas.</div>
+        <div class="step-body">Crie uma conta gratuita no <a href="https://app.tubebook.org">aplicativo TubeBook</a>. Contas novas recebem <strong>50 créditos grátis</strong>, sem cartão e com os mesmos recursos das contas pagas.</div>
       </div>
       <div class="step-row">
         <div class="step-n">2</div>
@@ -596,7 +596,7 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 
     </table>
     <h3>Planos</h3>
     <ul>
-      <li><span class="pill">Grátis</span> <strong>100 créditos todos os meses</strong>, sem cartão de crédito. Até 25 fontes por ebook e os mesmos recursos de criação, edição, arte, tradução, audiolivro e exportação das contas pagas. Um pequeno rodapé "Feito com TubeBook.org" aparece nos PDFs de contas gratuitas até que a conta faça qualquer compra.</li>
+      <li><span class="pill">Grátis</span> <strong>50 créditos uma única vez, no cadastro</strong>, sem cartão. Até 25 fontes por ebook e os mesmos recursos de criação, edição, ilustração, tradução, audiobook e exportação das contas pagas. Um pequeno rodapé "Made with TubeBook.org" aparece nos PDFs de contas gratuitas até a conta fazer qualquer compra.</li>
       <li><span class="pill">Starter — $9/mês</span> 250 créditos/mês — ≈ 8 lead magnets ou 2 ebooks comerciais, ou qualquer combinação. Mesmos recursos e limite de 25 fontes; a diferença é a maior cota.</li>
       <li><span class="pill">Pro — $29/mês</span> 1.000 créditos/mês — ≈ 33 lead magnets ou 10 ebooks comerciais, ou qualquer combinação. Mesmos recursos e limite de 25 fontes; a diferença é a maior cota.</li>
       <li><span class="pill">Pro Audio — $49/mês</span> Tudo do Pro, mais <strong>900 créditos de áudio/mês</strong> — ≈ 3 audiolivros comerciais na voz premium, ou 7 na padrão. Créditos de áudio são um saldo separado e são a única forma de narrar um livro.</li>
@@ -625,38 +625,38 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 
 
   <!-- EXPORTS -->
   <div class="card" id="byok">
-    <h2>Use as suas próprias chaves (BYOK) <span class="pill">Novo</span></h2>
-    <p>Num plano BYOK, os seus ebooks são escritos nas suas próprias contas de IA. Paga à TubeBook uma tarifa fixa pelo software, o seu fornecedor cobra-lhe os tokens e nunca são cobrados créditos.</p>
+    <h2>Use sua própria chave (BYOK) <span class="pill">Novo</span></h2>
+    <p>Em um plano BYOK, seus livros são escritos nas suas próprias contas de IA. Você paga ao TubeBook um valor fixo pelo software, seu provedor cobra os tokens, e nenhum crédito é cobrado.</p>
     <h3>Configuração</h3>
     <ol>
-      <li>Na página de <strong>Faturação</strong>, escolha <strong>BYOK Ebook</strong> ou <strong>BYOK Studio</strong>.</li>
-      <li>Abra <strong>Definições → Chaves de API</strong> e adicione pelo menos uma chave.</li>
-      <li>Cada chave é verificada ao ser guardada: <strong>A funcionar</strong>; <strong>Sem saldo</strong> (carregue-a no fornecedor); <strong>Recusada</strong> (uma chave errada, que não é guardada); ou <strong>Guardada — por confirmar</strong> (não foi possível contactar o fornecedor; o seu primeiro ebook irá confirmá-la).</li>
-      <li>Crie ebooks como de costume. A página Chaves de API mostra quantos dos seus 30 ebooks mensais já usou.</li>
+      <li>Na página de <strong>Cobrança</strong>, escolha <strong>BYOK Ebook</strong> ou <strong>BYOK Studio</strong>.</li>
+      <li>Abra <strong>Configurações → Chaves de API</strong> e adicione pelo menos uma chave.</li>
+      <li>Cada chave é verificada ao ser salva: <strong>Funcionando</strong>; <strong>Sem saldo</strong> (recarregue no provedor); <strong>Rejeitada</strong> (uma chave errada, que não é salva); ou <strong>Salva — ainda não confirmada</strong> (não foi possível contatar o provedor, e seu primeiro livro vai confirmá-la).</li>
+      <li>Crie livros normalmente. A página de chaves de API mostra quantos dos seus 30 livros mensais você já usou.</li>
     </ol>
-    <h3>Que chave serve para quê</h3>
+    <h3>Qual chave faz o quê</h3>
     <table>
-      <thead><tr><th>Para…</th><th>Precisa de</th></tr></thead>
+      <thead><tr><th>Para…</th><th>Você precisa de</th></tr></thead>
       <tbody>
-        <tr><td>Escrever um ebook</td><td>Uma chave Anthropic, OpenAI, DeepSeek ou Gemini</td></tr>
-        <tr><td>Capas e ilustrações de IA</td><td>Gemini ou OpenAI — caso contrário, são usadas fotografias de banco de imagens</td></tr>
-        <tr><td>Narrar um audiolivro (BYOK Studio)</td><td>OpenAI — ou uma conta de serviço Google Text-to-Speech para as vozes padrão da Google</td></tr>
+        <tr><td>Escrever um livro</td><td>Qualquer uma entre Anthropic, OpenAI, DeepSeek ou Gemini</td></tr>
+        <tr><td>Capas &amp; ilustrações de IA</td><td>Gemini ou OpenAI — caso contrário, são usadas fotos de banco de imagens</td></tr>
+        <tr><td>Narrar um audiobook (BYOK Studio)</td><td>OpenAI — ou uma conta de serviço do Google Text-to-Speech para as vozes padrão do Google</td></tr>
       </tbody>
     </table>
-    <h3>Se um ebook parar</h3>
+    <h3>Se um livro parar</h3>
     <ul>
-      <li><strong>«Nenhuma chave adicionada para: …»</strong> — esses fornecedores foram ignorados porque não tem chave para eles. É normal; só importa quando nenhuma das chaves que tem conseguiu responder.</li>
-      <li><strong>«Sem saldo: …»</strong> — a conta associada a essa chave está vazia. Carregue-a no fornecedor e tente de novo; a TubeBook não cobra nada pela tentativa.</li>
-      <li>Um ebook BYOK nunca recorre às contas da TubeBook. Se nenhuma das suas chaves conseguir responder, o ebook para e indica-lhe que chave corrigir.</li>
+      <li><strong>“Nenhuma chave adicionada para: …”</strong> — esses provedores foram ignorados porque você não tem chave para eles. Isso é normal; só importa quando nenhuma das suas chaves conseguiu responder.</li>
+      <li><strong>“Sem saldo: …”</strong> — a conta por trás dessa chave está vazia. Recarregue no provedor e tente de novo; o TubeBook não cobra nada pela tentativa.</li>
+      <li>Um livro BYOK nunca recorre às contas do próprio TubeBook. Se nenhuma das suas chaves puder responder, o livro para e informa qual chave corrigir.</li>
     </ul>
-    <h3>Planos e limites</h3>
+    <h3>Planos &amp; limites</h3>
     <ul>
-      <li><span class="pill">BYOK Ebook</span> 9 $/mês ou 79 $/ano — todas as funcionalidades e exportações de ebook.</li>
-      <li><span class="pill">BYOK Studio</span> 15 $/mês ou 129 $/ano — acrescenta a narração de audiolivros.</li>
-      <li>Preço de fundador para os primeiros 100 subscritores: 49 $/ano (Ebook) ou 99 $/ano (Studio), mantido enquanto a subscrição permanecer ativa.</li>
-      <li>Até 30 ebooks por mês civil (a contagem recomeça no dia 1) e 25 fontes por ebook.</li>
+      <li><span class="pill">BYOK Ebook</span> US$ 9/mês ou US$ 79/ano — todos os recursos de ebook e exportações.</li>
+      <li><span class="pill">BYOK Studio</span> US$ 15/mês ou US$ 129/ano — adiciona narração de audiobooks.</li>
+      <li>Preço de fundador para os 100 primeiros assinantes: US$ 49/ano (Ebook) ou US$ 99/ano (Studio), mantido enquanto a assinatura estiver ativa.</li>
+      <li>Até 30 livros por mês civil (a contagem reinicia no dia 1º) e 25 fontes por livro.</li>
     </ul>
-    <p>Pode alternar entre planos BYOK e planos de créditos a qualquer momento na página de Faturação. Todos os detalhes estão nos <a href="terms.html#byok">Termos</a>.</p>
+    <p>Você pode alternar entre planos BYOK e planos de créditos a qualquer momento na página de Cobrança. Todos os detalhes estão nos <a href="terms.html#byok">Termos</a>.</p>
   </div>
 
   <div class="card" id="exports">

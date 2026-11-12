@@ -22,7 +22,7 @@ var PROMO_ENDPOINT = 'https://app.tubebook.org/api/public/promo';
   // Bump when the OFFER changes, so people who dismissed the old one see the
   // new one. Not for copy tweaks — a banner that keeps returning is one people
   // learn to ignore.
-  var VERSION = '2026-08-free100';
+  var VERSION = '2026-08-free100'; // offer ended Nov 2026; endpoint now reports enabled:false
 
   function dismissed() {
     try {

@@ -107,6 +107,12 @@ footer {
 .result .k{font-size:0.75rem;color:var(--muted);}
 .note{font-size:0.82rem;color:var(--muted);margin-top:1rem;}
 .warn{color:#fcc45a;}
+.tpl{margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid var(--border2);}
+.tpl-title{font-weight:600;color:var(--text);font-size:0.95rem;}
+.tpl-btns{display:flex;gap:0.6rem;flex-wrap:wrap;margin-top:0.8rem;}
+.tpl-btn{background:var(--amber);color:#1a1200;border:1px solid var(--amber);border-radius:8px;padding:0.55rem 1.1rem;font:inherit;font-weight:600;font-size:0.88rem;cursor:pointer;}
+.tpl-btn.ghost{background:transparent;color:var(--amber2);}
+.tpl-btn:disabled{opacity:0.5;cursor:not-allowed;}
 .cta-box{background:linear-gradient(135deg,rgba(240,168,50,0.12),rgba(240,168,50,0.03));border:1px solid rgba(240,168,50,0.35);border-radius:var(--radius-lg);padding:1.5rem;margin:2.5rem 0;}
 .cta-box p{color:var(--text)!important;}
 .cta-btn{display:inline-block;background:var(--amber);color:#1a1200!important;font-weight:600;padding:0.6rem 1.3rem;border-radius:8px;text-decoration:none!important;margin-top:0.5rem;}
@@ -133,7 +139,7 @@ footer {
     <div id="pagesField"><label for="pages">Interior page count</label><input id="pages" type="number" min="1" max="1000" value="120" inputmode="numeric" /></div>
     <div id="wordsField" hidden><label for="words">Word count</label><input id="words" type="number" min="100" max="400000" value="30000" inputmode="numeric" /></div>
     <div id="fontField" hidden><label for="font">Body text size</label>
-      <select id="font"><option value="11">11 pt</option><option value="12" selected>12 pt (typical)</option><option value="13">13 pt</option><option value="14">14 pt (large print)</option></select></div>
+      <select id="font"><option value="11">11 pt</option><option value="12" selected>12 pt (typical)</option><option value="13">13 pt</option><option value="14">14 pt</option><option value="16">16 pt (large print — KDP minimum)</option><option value="18">18 pt (large print)</option></select></div>
     <div><label for="trim">Trim size</label>
       <select id="trim">
         <option value="5x8">5" × 8"</option><option value="5.25x8">5.25" × 8"</option><option value="5.5x8.5">5.5" × 8.5"</option>
@@ -150,13 +156,22 @@ footer {
     <div class="result"><div class="v" id="rPx">–</div><div class="k">Cover at 300 DPI</div></div>
   </div>
   <p class="note" id="rNote"></p>
+  <div class="tpl">
+    <p class="tpl-title">Download a cover template for these numbers</p>
+    <p class="note" style="margin-top:0.2rem;">Full-wrap layout at the exact size: bleed, trim and safe lines, the spine and its text area, and KDP's barcode area. Design on top of it, then hide the guide layer before you export.</p>
+    <div class="tpl-btns">
+      <button type="button" id="dlPng" class="tpl-btn">PNG template (300 DPI)</button>
+      <button type="button" id="dlSvg" class="tpl-btn ghost">SVG template (vector)</button>
+    </div>
+  </div>
 </div>
 
 <h2>How the numbers are worked out</h2>
 <p><strong>Spine width</strong> = page count × paper thickness: 0.002252" per page on white paper, 0.0025" on cream.</p>
 <p><strong>Full-wrap cover</strong> width = 0.125" bleed + back cover + spine + front cover + 0.125" bleed. Height = trim height + 0.25" (0.125" bleed top and bottom). At 300 DPI, multiply inches by 300 for the pixel size.</p>
 <p><strong>Page count from words</strong> uses typical book typography for each trim size at a 10 pt calibration (about 340 words per page on 6" × 9"), scaled for larger body text. Front matter, chapter openings and images add pages, so treat it as an estimate.</p>
-<p><strong>KDP limits:</strong> a paperback needs at least 24 pages, and KDP allows text on the spine only when the book has more than 79 pages. Always confirm the final figure with KDP's own cover template before uploading.</p>
+<p><strong>KDP limits:</strong> a paperback needs at least 24 pages, and KDP allows text on the spine only when the book has more than 79 pages. A <strong>large-print</strong> book needs body text of at least 16 pt. Always confirm the final figure with KDP's own cover template before uploading.</p>
+<p><strong>The template</strong> marks the 0.125" bleed (background art must reach the outer edge), the trim line, a safe area 0.125" inside the trim for text and important images, 0.0625" of clearance on each side of the spine text, and the 2" × 1.2" area at the bottom right of the back cover where KDP prints the barcode.</p>
 
 <div class="cta-box">
   <p><strong>Need the book itself?</strong> TubeBook turns YouTube videos, articles and notes into a fully written ebook — and on paid accounts produces the print-ready paperback interior, the full-wrap cover at the exact spine width, and the Kindle cover for you.</p>
@@ -172,12 +187,15 @@ footer {
   function trimDims(t){var p=t.split("x");return {w:parseFloat(p[0]),h:parseFloat(p[1])};}
   function wordsPerPage(trim,pt){return Math.max(40,Math.round((WPP[trim]||340)*Math.pow(10/pt,2)));}
   function fmt(n,d){return n.toFixed(d).replace(/\.?0+$/,"");}
+  var last=null;
   function calc(){
     var trim=$("trim").value, paper=$("paper").value, pages;
     if(mode==="pages"){pages=Math.round(+$("pages").value||0);}
     else{var w=+$("words").value||0;pages=w>0?Math.max(1,Math.round(w/wordsPerPage(trim,+$("font").value))):0; if(pages%2) pages++;}
-    if(!pages){["rPages","rSpine","rCover","rPx"].forEach(function(i){$(i).textContent="–";});$("rNote").textContent="";return;}
+    if(!pages){last=null;$("dlPng").disabled=$("dlSvg").disabled=true;["rPages","rSpine","rCover","rPx"].forEach(function(i){$(i).textContent="–";});$("rNote").textContent="";return;}
     var spine=pages*PAPER[paper], d=trimDims(trim), W=0.125+d.w+spine+d.w+0.125, H=d.h+0.25;
+    last={pages:pages,spine:spine,trim:trim,paper:paper,w:d.w,h:d.h,W:W,H:H};
+    $("dlPng").disabled=$("dlSvg").disabled=false;
     $("rPages").textContent=pages;
     $("rSpine").textContent=fmt(spine,3)+'" · '+fmt(spine*25.4,2)+" mm";
     $("rCover").textContent=fmt(W,3)+'" × '+fmt(H,3)+'"';
@@ -194,6 +212,91 @@ footer {
       $("pagesField").hidden=mode!=="pages"; $("wordsField").hidden=mode!=="words"; $("fontField").hidden=mode!=="words";
       calc();
     });
+  });
+
+  // ── Cover template ────────────────────────────────────────────────────
+  // Built in inches (1 SVG unit = 1/100 inch) so the SVG prints at exact size
+  // and the PNG is the same drawing rendered at 300 DPI.
+  function buildSvg(r){
+    var U=100, B=0.125, SAFE=0.125, SPINE_PAD=0.0625;
+    var W=r.W*U, H=r.H*U, b=B*U, tw=r.w*U, th=r.h*U, sp=r.spine*U;
+    var backX=b, spineX=b+tw, frontX=b+tw+sp, top=b;
+    var sf=SAFE*U, f=function(n){return (+n).toFixed(2);};
+    var lbl=function(x,y,t,size,anchor,col,weight){return '<text x="'+f(x)+'" y="'+f(y)+'" font-family="Helvetica, Arial, sans-serif" font-size="'+size+'" fill="'+(col||"#334155")+'" text-anchor="'+(anchor||"middle")+'" font-weight="'+(weight||"600")+'">'+t+'</text>';};
+    var o=[];
+    o.push('<svg xmlns="http://www.w3.org/2000/svg" width="'+f(r.W)+'in" height="'+f(r.H)+'in" viewBox="0 0 '+f(W)+' '+f(H)+'">');
+    o.push('<rect width="'+f(W)+'" height="'+f(H)+'" fill="#ffffff"/>');
+    o.push('<g id="guides">');
+    // bleed band
+    o.push('<path fill="#fee2e2" fill-rule="evenodd" d="M0 0H'+f(W)+'V'+f(H)+'H0Z M'+f(b)+' '+f(b)+'V'+f(H-b)+'H'+f(W-b)+'V'+f(b)+'Z"/>');
+    // spine
+    o.push('<rect x="'+f(spineX)+'" y="'+f(top)+'" width="'+f(sp)+'" height="'+f(th)+'" fill="#e0e7ff"/>');
+    // barcode area: 2" x 1.2", 0.25" from the spine edge and the bottom trim of the back cover
+    var bw=2*U, bh=1.2*U, bx=spineX-0.25*U-bw, by=top+th-0.25*U-bh;
+    o.push('<rect x="'+f(bx)+'" y="'+f(by)+'" width="'+f(bw)+'" height="'+f(bh)+'" fill="#fef9c3" stroke="#ca8a04" stroke-width="1"/>');
+    o.push(lbl(bx+bw/2,by+bh/2-4,"BARCODE AREA",11,"middle","#a16207"));
+    o.push(lbl(bx+bw/2,by+bh/2+12,'2" × 1.2" — keep clear',9,"middle","#a16207","400"));
+    // trim line
+    o.push('<rect x="'+f(b)+'" y="'+f(b)+'" width="'+f(W-2*b)+'" height="'+f(th)+'" fill="none" stroke="#dc2626" stroke-width="1" stroke-dasharray="6 4"/>');
+    // safe areas (back + front)
+    o.push('<rect x="'+f(backX+sf)+'" y="'+f(top+sf)+'" width="'+f(tw-2*sf)+'" height="'+f(th-2*sf)+'" fill="none" stroke="#2563eb" stroke-width="1" stroke-dasharray="3 3"/>');
+    o.push('<rect x="'+f(frontX+sf)+'" y="'+f(top+sf)+'" width="'+f(tw-2*sf)+'" height="'+f(th-2*sf)+'" fill="none" stroke="#2563eb" stroke-width="1" stroke-dasharray="3 3"/>');
+    // spine edges + spine text area
+    o.push('<line x1="'+f(spineX)+'" y1="0" x2="'+f(spineX)+'" y2="'+f(H)+'" stroke="#4f46e5" stroke-width="1"/>');
+    o.push('<line x1="'+f(frontX)+'" y1="0" x2="'+f(frontX)+'" y2="'+f(H)+'" stroke="#4f46e5" stroke-width="1"/>');
+    var spineText=r.pages>79;
+    if(spineText && sp>2*SPINE_PAD*U){
+      o.push('<rect x="'+f(spineX+SPINE_PAD*U)+'" y="'+f(top+sf)+'" width="'+f(sp-2*SPINE_PAD*U)+'" height="'+f(th-2*sf)+'" fill="none" stroke="#2563eb" stroke-width="1" stroke-dasharray="3 3"/>');
+    }
+    // labels
+    var cy=top+th/2;
+    o.push(lbl(backX+tw/2,cy-10,"BACK COVER",22));
+    o.push(lbl(frontX+tw/2,cy-10,"FRONT COVER",22));
+    o.push(lbl(backX+tw/2,cy+14,r.w+'" × '+r.h+'"',12,"middle","#64748b","400"));
+    o.push(lbl(frontX+tw/2,cy+14,r.w+'" × '+r.h+'"',12,"middle","#64748b","400"));
+    var spineLabel="SPINE "+fmt(r.spine,3)+'"'+(spineText?"":" — no spine text (79 pages or fewer)");
+    o.push('<text transform="translate('+f(spineX+sp/2+4)+' '+f(cy)+') rotate(90)" font-family="Helvetica, Arial, sans-serif" font-size="'+Math.min(11,Math.max(5,sp*0.6)).toFixed(1)+'" fill="#3730a3" text-anchor="middle" font-weight="600">'+spineLabel+'</text>');
+    // legend inside the back cover top
+    var lx=backX+sf+6, ly=top+sf+16;
+    o.push(lbl(lx,ly,"TubeBook KDP cover template — "+r.pages+" pages, "+r.paper+" paper, "+r.w+'" × '+r.h+'" trim',10,"start","#0f172a"));
+    o.push(lbl(lx,ly+14,"Full cover "+fmt(r.W,3)+'" × '+fmt(r.H,3)+'" ('+Math.round(r.W*300)+" × "+Math.round(r.H*300)+" px at 300 DPI)",9,"start","#334155","400"));
+    o.push(lbl(lx,ly+28,"Red band: 0.125\" bleed, extend art here · Red dashes: trim · Blue dashes: safe area",9,"start","#334155","400"));
+    o.push(lbl(lx,ly+42,"Hide or delete the guides before exporting your final cover.",9,"start","#b91c1c","400"));
+    o.push('</g></svg>');
+    return o.join("");
+  }
+  function fileBase(r){return "kdp-cover-template-"+r.trim+"-"+r.pages+"p-"+r.paper;}
+  function download(blob,name){
+    var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();
+    setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},1000);
+  }
+  // PNG from a canvas carries no DPI, so design tools import it at 72 DPI and
+  // the wrong physical size. A pHYs chunk (11811 px/m = 300 DPI) fixes that.
+  var CRC=(function(){var t=[],c,n,k;for(n=0;n<256;n++){c=n;for(k=0;k<8;k++)c=c&1?0xedb88320^(c>>>1):c>>>1;t[n]=c>>>0;}return t;})();
+  function crc32(bytes){var c=0xffffffff;for(var i=0;i<bytes.length;i++)c=CRC[(c^bytes[i])&255]^(c>>>8);return (c^0xffffffff)>>>0;}
+  function withDpi(buf,dpi){
+    var src=new Uint8Array(buf), ppm=Math.round(dpi/0.0254);
+    var chunk=new Uint8Array(21), dv=new DataView(chunk.buffer);
+    dv.setUint32(0,9); chunk.set([112,72,89,115],4); dv.setUint32(8,ppm); dv.setUint32(12,ppm); chunk[16]=1;
+    dv.setUint32(17,crc32(chunk.subarray(4,17)));
+    var at=33; // after the 8-byte signature and the 25-byte IHDR chunk
+    var out=new Uint8Array(src.length+21); out.set(src.subarray(0,at)); out.set(chunk,at); out.set(src.subarray(at),at+21);
+    return out;
+  }
+  $("dlSvg").addEventListener("click",function(){
+    if(!last) return;
+    download(new Blob([buildSvg(last)],{type:"image/svg+xml"}),fileBase(last)+".svg");
+  });
+  $("dlPng").addEventListener("click",function(){
+    if(!last) return;
+    var r=last, px=Math.round(r.W*300), py=Math.round(r.H*300);
+    var img=new Image(), url=URL.createObjectURL(new Blob([buildSvg(r)],{type:"image/svg+xml"}));
+    img.onload=function(){
+      var c=document.createElement("canvas"); c.width=px; c.height=py;
+      c.getContext("2d").drawImage(img,0,0,px,py); URL.revokeObjectURL(url);
+      c.toBlob(function(b){ b.arrayBuffer().then(function(ab){ download(new Blob([withDpi(ab,300)],{type:"image/png"}),fileBase(r)+".png"); }); },"image/png");
+    };
+    img.src=url;
   });
   ["pages","words","font","trim","paper"].forEach(function(id){$(id).addEventListener("input",calc);});
   calc();

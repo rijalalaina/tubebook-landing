@@ -107,6 +107,23 @@ footer {
 .result .k{font-size:0.75rem;color:var(--muted);}
 .note{font-size:0.82rem;color:var(--muted);margin-top:1rem;}
 .warn{color:#fcc45a;}
+.spec{margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid var(--border2);}
+.preview{margin:0 0 1.2rem;}
+.preview-row{display:flex;align-items:stretch;gap:0.5rem;}
+.preview-box{flex:1;min-width:0;border-radius:6px;overflow:hidden;line-height:0;box-shadow:0 6px 24px rgba(0,0,0,0.35);}
+.preview-box svg{width:100%;height:auto;display:block;}
+.dim-top,.dim-side{color:var(--amber2);font-size:0.78rem;font-weight:600;display:flex;align-items:center;justify-content:center;position:relative;}
+.dim-top{margin-bottom:0.45rem;margin-inline-end:1.9rem;}
+.dim-top::before,.dim-top::after{content:"";flex:1;height:1px;background:var(--amber);opacity:0.6;margin:0 0.5rem;}
+.dim-side{writing-mode:vertical-rl;width:1.4rem;}
+.dim-side::before,.dim-side::after{content:"";flex:1;width:1px;background:var(--amber);opacity:0.6;margin:0.5rem 0;}
+.tbl-title{font-size:0.95rem;font-weight:600;color:var(--amber);margin:1.4rem 0 0.6rem;}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--border2);border-radius:12px;}
+.tbl{width:100%;border-collapse:collapse;font-size:0.86rem;min-width:520px;}
+.tbl th{background:var(--amber-dim);color:var(--amber2);text-align:start;font-weight:600;padding:0.6rem 0.8rem;}
+.tbl td{padding:0.55rem 0.8rem;border-top:1px solid var(--border);color:var(--muted2);}
+.tbl td{white-space:nowrap;}
+.tbl td:first-child{color:var(--text);font-weight:500;white-space:normal;min-width:11rem;}
 .tpl{margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid var(--border2);}
 .tpl-title{font-weight:600;color:var(--text);font-size:0.95rem;}
 .tpl-btns{display:flex;gap:0.6rem;flex-wrap:wrap;margin-top:0.8rem;}
@@ -156,6 +173,21 @@ footer {
     <div class="result"><div class="v" id="rPx">–</div><div class="k">Cover at 300 DPI</div></div>
   </div>
   <p class="note" id="rNote"></p>
+  <div class="spec" id="spec" hidden>
+    <figure class="preview">
+      <div class="dim-top"><span id="pvW"></span></div>
+      <div class="preview-row">
+        <div class="preview-box" id="preview" role="img" aria-label="Cover template preview"></div>
+        <div class="dim-side"><span id="pvH"></span></div>
+      </div>
+      <figcaption class="note">Live preview of your template. Red band: bleed (trimmed off) · red dashes: trim line · blue dashes: safe area · yellow: barcode area.</figcaption>
+    </figure>
+    <h3 class="tbl-title">Dimensions for your print-ready PDF cover</h3>
+    <div class="tbl-wrap"><table class="tbl" id="dimTable"></table></div>
+    <h3 class="tbl-title">Margins and reserved areas</h3>
+    <div class="tbl-wrap"><table class="tbl" id="marginTable"></table></div>
+    <p class="note">Keep all text and important images inside the safe area. The 0.125" bleed on every outer edge is cut off when the book is trimmed, so extend background colours and images into it.</p>
+  </div>
   <div class="tpl">
     <p class="tpl-title">Download a cover template for these numbers</p>
     <p class="note" style="margin-top:0.2rem;">Full-wrap layout at the exact size: bleed, trim and safe lines, the spine and its text area, and KDP's barcode area. Design on top of it, then hide the guide layer before you export.</p>
@@ -192,9 +224,10 @@ footer {
     var trim=$("trim").value, paper=$("paper").value, pages;
     if(mode==="pages"){pages=Math.round(+$("pages").value||0);}
     else{var w=+$("words").value||0;pages=w>0?Math.max(1,Math.round(w/wordsPerPage(trim,+$("font").value))):0; if(pages%2) pages++;}
-    if(!pages){last=null;$("dlPng").disabled=$("dlSvg").disabled=true;["rPages","rSpine","rCover","rPx"].forEach(function(i){$(i).textContent="–";});$("rNote").textContent="";return;}
+    if(!pages){last=null;$("spec").hidden=true;$("dlPng").disabled=$("dlSvg").disabled=true;["rPages","rSpine","rCover","rPx"].forEach(function(i){$(i).textContent="–";});$("rNote").textContent="";return;}
     var spine=pages*PAPER[paper], d=trimDims(trim), W=0.125+d.w+spine+d.w+0.125, H=d.h+0.25;
     last={pages:pages,spine:spine,trim:trim,paper:paper,w:d.w,h:d.h,W:W,H:H};
+    renderSpec(last);
     $("dlPng").disabled=$("dlSvg").disabled=false;
     $("rPages").textContent=pages;
     $("rSpine").textContent=fmt(spine,3)+'" · '+fmt(spine*25.4,2)+" mm";
@@ -264,6 +297,30 @@ footer {
     o.push(lbl(lx,ly+42,"Hide or delete the guides before exporting your final cover.",9,"start","#b91c1c","400"));
     o.push('</g></svg>');
     return o.join("");
+  }
+  // Every length shown in the four units designers ask for.
+  function units(inch){
+    return [fmt(inch,3)+'"', fmt(inch*2.54,2)+" cm", Math.round(inch*300)+" px", Math.round(inch*72)+" pt"];
+  }
+  function row(label,cells){return "<tr><td>"+label+"</td>"+cells.map(function(c){return "<td>"+c+"</td>";}).join("")+"</tr>";}
+  function renderSpec(r){
+    $("spec").hidden=false;
+    $("preview").innerHTML=buildSvg(r);
+    $("pvW").textContent="Full width "+fmt(r.W,3)+'" · '+fmt(r.W*2.54,2)+" cm";
+    $("pvH").textContent="Height "+fmt(r.H,3)+'" · '+fmt(r.H*2.54,2)+" cm";
+    var cols=["Full cover width","Height","Spine","One cover panel (trim)"];
+    var vals=[units(r.W),units(r.H),units(r.spine),[r.w+'" × '+r.h+'"',fmt(r.w*2.54,2)+" × "+fmt(r.h*2.54,2)+" cm",Math.round(r.w*300)+" × "+Math.round(r.h*300)+" px",Math.round(r.w*72)+" × "+Math.round(r.h*72)+" pt"]];
+    var labels=["Inches","Centimeters","Pixels (300 DPI)","Points"];
+    var h="<thead><tr><th></th>"+cols.map(function(c){return "<th>"+c+"</th>";}).join("")+"</tr></thead><tbody>";
+    for(var i=0;i<4;i++) h+=row(labels[i],vals.map(function(v){return v[i];}));
+    $("dimTable").innerHTML=h+"</tbody>";
+    var m="<thead><tr><th>Zone</th><th>Inches</th><th>Centimeters</th><th>Pixels</th><th>Points</th></tr></thead><tbody>";
+    m+=row("Bleed on every outer edge (trimmed off)",units(0.125));
+    m+=row("Safe margin inside the trim line",units(0.125));
+    m+=row("Safe margin from the file edge (bleed + safe)",units(0.25));
+    m+=row(r.pages>79?"Spine text clearance, each side":"Spine text — not allowed at 79 pages or fewer",r.pages>79?units(0.0625):["–","–","–","–"]);
+    m+=row("Barcode area (back cover, bottom right)",['2" × 1.2"',"5.08 × 3.05 cm","600 × 360 px","144 × 86 pt"]);
+    $("marginTable").innerHTML=m+"</tbody>";
   }
   function fileBase(r){return "kdp-cover-template-"+r.trim+"-"+r.pages+"p-"+r.paper;}
   function download(blob,name){

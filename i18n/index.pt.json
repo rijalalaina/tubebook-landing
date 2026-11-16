@@ -361,6 +361,7 @@
   "c78f7acc0b": "Sim, e não é preciso cartão. Contas novas recebem 50 créditos grátis — o suficiente para um lead magnet ilustrado — e podem criar lead magnets com todas as ferramentas de edição, fontes de imagem, qualidade e exportação. Qualquer compra, mesmo um pacote de créditos de US$ 5, libera livros curtos e completos, arquivos de brochura e Kindle para KDP, traduções e audiobooks. Não é preciso assinatura, e créditos comprados nunca expiram.",
   "4256fddb62": "Plano gratuito · 50 créditos para começar · Sem cartão de crédito obrigatório",
   "9a0da03cef": "Calculadora KDP",
-  "25396a877c": "Funciona com seu agente de IA",
-  "42f352d2e8": "O TubeBook é um servidor MCP. Conecte Claude, Cursor ou seu próprio agente e diga “transforme estes cinco vídeos em um lead magnet” — ele pesquisa o tema, cria o livro, mostra o sumário e busca os arquivos. <strong>Webhooks</strong> avisam Zapier, Make ou n8n assim que um livro fica pronto. Em contas pagas."
+  "89c3d0a999": "Funciona com Claude, ChatGPT &amp; agentes de IA",
+  "f51c118ebe": "Conecte o TubeBook ao <strong>Claude ou ao ChatGPT com um clique</strong>, ou ao Cursor e ao Claude Code com uma chave. Depois é só pedir: “transforme estes cinco vídeos em um lead magnet”. Seu assistente pesquisa o tema, cria o livro, mostra o sumário e busca os arquivos. <strong>Webhooks</strong> avisam Zapier, Make ou n8n quando um livro fica pronto. Em contas pagas.",
+  "64ec8dc538": "Como conectar"
 }

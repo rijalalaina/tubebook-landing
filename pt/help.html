@@ -182,6 +182,7 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 
     <a href="#find-a-topic">Audiolivros</a>
     <a href="#credits">Créditos e preços</a>
     <a href="#byok">Use sua própria chave</a>
+    <a href="#ai-agents">Claude, ChatGPT &amp; agentes de IA</a>
     <a href="#exports">Exportações e formatos</a>
     <a href="#publishing-risk">Conta e cobrança</a>
     <a href="#troubleshooting">Verificação de risco de publicação</a>
@@ -657,6 +658,23 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 
       <li>Até 30 livros por mês civil (a contagem reinicia no dia 1º) e 25 fontes por livro.</li>
     </ul>
     <p>Você pode alternar entre planos BYOK e planos de créditos a qualquer momento na página de Cobrança. Todos os detalhes estão nos <a href="terms.html#byok">Termos</a>.</p>
+  </div>
+
+  <div class="card" id="ai-agents">
+    <h2>Use o TubeBook no Claude, no ChatGPT ou no seu agente de IA <span class="pill">Novo</span></h2>
+    <p>O TubeBook é um servidor MCP, então um assistente de IA pode pesquisar temas, criar livros, mostrar o sumário, ler o manuscrito e buscar os arquivos para você. Ele usa seus créditos exatamente como o app e exige uma conta que já tenha feito uma compra.</p>
+    <h3>Claude ou ChatGPT (um clique)</h3>
+    <ol>
+      <li>No Claude, abra <strong>Configurações → Conectores → Adicionar conector personalizado</strong>. No ChatGPT, abra <strong>Configurações → Apps &amp; Conectores</strong> e crie um conector (modo desenvolvedor).</li>
+      <li>Cole <strong>https://app.tubebook.org/mcp</strong> e clique em <strong>Conectar</strong>.</li>
+      <li>Uma página do TubeBook abre: faça login se for pedido e clique em <strong>Permitir</strong>.</li>
+      <li>Peça, por exemplo: <em>“Transforme estes quatro vídeos do YouTube em um lead magnet na minha conta do TubeBook e mostre o sumário.”</em></li>
+    </ol>
+    <h3>Claude Code, Cursor ou Claude Desktop (chave de API)</h3>
+    <p>Crie uma chave no app em <strong>Agents &amp; API</strong> (menu da conta). A página traz uma configuração pronta para copiar para cada ferramenta. As chaves são exibidas uma única vez e podem ser revogadas a qualquer momento.</p>
+    <h3>Webhooks</h3>
+    <p>Adicione uma URL de webhook na mesma página e o TubeBook envia um evento assinado <strong>book.completed</strong>, com links de download, assim que um livro fica pronto — pronto para Zapier, Make, n8n ou seu próprio servidor.</p>
+    <p>Um assistente conectado não pode alterar seu plano, seus dados de pagamento nem suas configurações. Desconecte-o quando quiser revogando a chave em <strong>Agents &amp; API</strong>.</p>
   </div>
 
   <div class="card" id="exports">

@@ -182,6 +182,7 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 
     <a href="#find-a-topic">寻找主题</a>
     <a href="#credits">积分与定价</a>
     <a href="#byok">使用自己的密钥</a>
+    <a href="#ai-agents">Claude、ChatGPT &amp; AI 代理</a>
     <a href="#exports">导出与格式</a>
     <a href="#publishing-risk">导出与格式</a>
     <a href="#troubleshooting">出版风险检查</a>
@@ -657,6 +658,23 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 
       <li>每个自然月最多 30 本书（每月 1 日重置计数），每本书最多 25 个来源。</li>
     </ul>
     <p>你可以随时在账单页面切换 BYOK 套餐和积分套餐。完整说明见 <a href="terms.html#byok">条款</a>.</p>
+  </div>
+
+  <div class="card" id="ai-agents">
+    <h2>在 Claude、ChatGPT 或你的 AI 代理中使用 TubeBook <span class="pill">新</span></h2>
+    <p>TubeBook 是一个 MCP 服务器，因此 AI 助手可以替你研究主题、创建书籍、展示大纲、阅读书稿并获取文件。它与应用一样消耗你的积分，并要求账户至少进行过一次购买。</p>
+    <h3>Claude 或 ChatGPT（一键连接）</h3>
+    <ol>
+      <li>在 Claude 中打开<strong>设置 → 连接器 → 添加自定义连接器</strong>。在 ChatGPT 中打开<strong>设置 → 应用 &amp; 连接器</strong>并创建一个连接器（开发者模式）。</li>
+      <li>粘贴 <strong>https://app.tubebook.org/mcp</strong>，然后点击<strong>连接</strong>。</li>
+      <li>随后会打开一个 TubeBook 页面：如有需要请先登录，然后点击<strong>允许</strong>。</li>
+      <li>例如可以这样说：<em>“把这四个 YouTube 视频在我的 TubeBook 账户里做成一个 lead magnet，并给我看大纲。”</em></li>
+    </ol>
+    <h3>Claude Code、Cursor 或 Claude Desktop（API 密钥）</h3>
+    <p>在应用的 <strong>Agents &amp; API</strong>（账户菜单）中创建密钥。该页面为每个工具提供可直接复制的配置。密钥只显示一次，可随时撤销。</p>
+    <h3>Webhook</h3>
+    <p>在同一页面添加 Webhook URL，书籍一完成，TubeBook 就会发送带下载链接的签名 <strong>book.completed</strong> 事件——可直接用于 Zapier、Make、n8n 或你自己的服务器。</p>
+    <p>已连接的助手无法更改你的套餐、支付信息或设置。随时可以在 <strong>Agents &amp; API</strong> 中撤销其密钥来断开连接。</p>
   </div>
 
   <div class="card" id="exports">

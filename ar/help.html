@@ -182,6 +182,7 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 
     <a href="#find-a-topic">ابحث عن موضوع</a>
     <a href="#credits">الرصيد والتسعير</a>
     <a href="#byok">استخدم مفتاحك الخاص</a>
+    <a href="#ai-agents">Claude وChatGPT &amp; وكلاء الذكاء الاصطناعي</a>
     <a href="#exports">التصدير والصيغ</a>
     <a href="#publishing-risk">التصدير والصيغ</a>
     <a href="#troubleshooting">فحص مخاطر النشر</a>
@@ -657,6 +658,23 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 
       <li>حتى 30 كتابًا في الشهر الميلادي (يُعاد العدّ في اليوم الأول) و25 مصدرًا لكل كتاب.</li>
     </ul>
     <p>يمكنك التنقل بين خطط BYOK وخطط الأرصدة في أي وقت من صفحة الفوترة. التفاصيل الكاملة موجودة في <a href="terms.html#byok">الشروط</a>.</p>
+  </div>
+
+  <div class="card" id="ai-agents">
+    <h2>استخدم TubeBook من Claude أو ChatGPT أو وكيل الذكاء الاصطناعي لديك <span class="pill">جديد</span></h2>
+    <p>TubeBook خادم MCP، لذا يستطيع مساعد الذكاء الاصطناعي البحث في المواضيع وإنشاء الكتب وعرض المخطط عليك وقراءة المخطوطة وجلب الملفات نيابةً عنك. يستهلك أرصدتك تمامًا كما يفعل التطبيق، ويتطلب حسابًا أجرى عملية شراء.</p>
+    <h3>Claude أو ChatGPT (بنقرة واحدة)</h3>
+    <ol>
+      <li>في Claude افتح <strong>الإعدادات ← الموصلات ← إضافة موصل مخصص</strong>. وفي ChatGPT افتح <strong>الإعدادات ← التطبيقات &amp; الموصلات</strong> وأنشئ موصلًا (وضع المطوّر).</li>
+      <li>الصق <strong>https://app.tubebook.org/mcp</strong> وانقر على <strong>اتصال</strong>.</li>
+      <li>تُفتح صفحة TubeBook: سجّل الدخول إن طُلب منك، ثم انقر على <strong>سماح</strong>.</li>
+      <li>اطلب مثلًا: <em>«حوّل مقاطع YouTube الأربعة هذه إلى مغناطيس عملاء في حسابي على TubeBook واعرض عليّ المخطط.»</em></li>
+    </ol>
+    <h3>Claude Code أو Cursor أو Claude Desktop (مفتاح API)</h3>
+    <p>أنشئ مفتاحًا في التطبيق ضمن <strong>Agents &amp; API</strong> (قائمة الحساب). تمنحك الصفحة إعدادًا جاهزًا للنسخ لكل أداة. يُعرض المفتاح مرة واحدة ويمكن إلغاؤه في أي وقت.</p>
+    <h3>خطافات الويب</h3>
+    <p>أضف عنوان URL لخطاف ويب في الصفحة نفسها، وسيرسل TubeBook حدثًا موقّعًا <strong>book.completed</strong> مع روابط التنزيل لحظة اكتمال الكتاب — جاهزًا لـ Zapier أو Make أو n8n أو خادمك الخاص.</p>
+    <p>لا يستطيع المساعد المتصل تغيير خطتك أو بيانات الدفع أو الإعدادات. افصله في أي وقت بإلغاء مفتاحه ضمن <strong>Agents &amp; API</strong>.</p>
   </div>
 
   <div class="card" id="exports">

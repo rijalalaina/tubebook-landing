@@ -437,5 +437,18 @@
   "9e61fbef4b": "250 Credits/Monat — ≈ 8 Lead Magnets oder 2 kommerzielle Ebooks, oder beliebig gemischt. Alle Buchgrößen, KDP-Dateien, Übersetzungen und Hörbücher.",
   "1cf5e00fea": "1.000 Credits/Monat — ≈ 33 Lead Magnets oder 10 kommerzielle Ebooks, oder beliebig gemischt. Alle Buchgrößen, KDP-Dateien, Übersetzungen und Hörbücher.",
   "a51c38e055": "<strong>Veröffentlichungsdateien</strong> — druckfertiger Taschenbuch-Innenteil und Umschlag, Kindle-Cover, HD-Cover und KDP-Metadatenpaket. HD-Cover und Metadatenpaket gibt es in jedem Tarif; die Taschenbuch- und Kindle-Dateien erfordern einen Kauf.",
-  "9a0da03cef": "KDP-Rechner"
+  "9a0da03cef": "KDP-Rechner",
+  "d921d5f20c": "Claude, ChatGPT &amp; KI-Agenten",
+  "4c767d6716": "TubeBook in Claude, ChatGPT oder Ihrem KI-Agenten nutzen",
+  "0f86b6e827": "TubeBook ist ein MCP-Server: Ein KI-Assistent kann Themen recherchieren, Bücher erstellen, Ihnen die Gliederung zeigen, das Manuskript lesen und die Dateien für Sie holen. Er verbraucht Ihre Credits genau wie die App und setzt ein Konto voraus, das bereits einen Kauf getätigt hat.",
+  "a82e24a956": "Claude oder ChatGPT (mit einem Klick)",
+  "e360231fdd": "Öffnen Sie in Claude <strong>Einstellungen → Konnektoren → Benutzerdefinierten Konnektor hinzufügen</strong>. Öffnen Sie in ChatGPT <strong>Einstellungen → Apps &amp; Konnektoren</strong> und erstellen Sie einen Konnektor (Entwicklermodus).",
+  "99672ebdeb": "Fügen Sie <strong>https://app.tubebook.org/mcp</strong> ein und klicken Sie auf <strong>Verbinden</strong>.",
+  "d3090381fd": "Eine TubeBook-Seite öffnet sich: Melden Sie sich bei Bedarf an und klicken Sie auf <strong>Erlauben</strong>.",
+  "07329c1ae4": "Fragen Sie zum Beispiel: <em>„Mach aus diesen vier YouTube-Videos einen Lead Magnet in meinem TubeBook-Konto und zeig mir die Gliederung.“</em>",
+  "7faec863d6": "Claude Code, Cursor oder Claude Desktop (API-Schlüssel)",
+  "ed213282df": "Erstellen Sie in der App unter <strong>Agents &amp; API</strong> (Kontomenü) einen Schlüssel. Die Seite liefert für jedes Werkzeug eine kopierfertige Einrichtung. Schlüssel werden nur einmal angezeigt und lassen sich jederzeit widerrufen.",
+  "fdfe2da709": "Webhooks",
+  "3c1bc6185c": "Fügen Sie auf derselben Seite eine Webhook-URL hinzu, und TubeBook sendet ein signiertes <strong>book.completed</strong>-Ereignis mit Download-Links, sobald ein Buch fertig ist — bereit für Zapier, Make, n8n oder Ihren eigenen Server.",
+  "f6fa3e884e": "Ein verbundener Assistent kann weder Ihren Tarif noch Ihre Zahlungsdaten oder Einstellungen ändern. Trennen Sie ihn jederzeit, indem Sie seinen Schlüssel unter <strong>Agents &amp; API</strong> widerrufen."
 }

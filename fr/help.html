@@ -182,6 +182,7 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 
     <a href="#find-a-topic">Trouver un sujet</a>
     <a href="#credits">Crédits &amp; tarifs</a>
     <a href="#byok">Utilisez votre propre clé</a>
+    <a href="#ai-agents">Claude, ChatGPT &amp; agents IA</a>
     <a href="#exports">Exports &amp; formats</a>
     <a href="#publishing-risk">Vérification des risques d'édition</a>
     <a href="#troubleshooting">Vérification des risques de publication</a>
@@ -657,6 +658,23 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 
       <li>Jusqu'à 30 livres par mois civil (le compteur repart le 1er) et 25 sources par livre.</li>
     </ul>
     <p>Vous pouvez passer d'un plan BYOK à un plan à crédits à tout moment depuis la page Facturation. Tous les détails figurent dans les <a href="terms.html#byok">Conditions</a>.</p>
+  </div>
+
+  <div class="card" id="ai-agents">
+    <h2>Utiliser TubeBook depuis Claude, ChatGPT ou votre agent IA <span class="pill">Nouveau</span></h2>
+    <p>TubeBook est un serveur MCP : un assistant IA peut étudier des sujets, créer des livres, vous montrer le plan, lire le manuscrit et récupérer les fichiers pour vous. Il utilise vos crédits exactement comme l'application et nécessite un compte ayant effectué un achat.</p>
+    <h3>Claude ou ChatGPT (en un clic)</h3>
+    <ol>
+      <li>Dans Claude, ouvrez <strong>Paramètres → Connecteurs → Ajouter un connecteur personnalisé</strong>. Dans ChatGPT, ouvrez <strong>Paramètres → Apps &amp; Connecteurs</strong> et créez un connecteur (mode développeur).</li>
+      <li>Collez <strong>https://app.tubebook.org/mcp</strong> et cliquez sur <strong>Connecter</strong>.</li>
+      <li>Une page TubeBook s'ouvre : connectez-vous si nécessaire, puis cliquez sur <strong>Autoriser</strong>.</li>
+      <li>Demandez par exemple : <em>« Transforme ces quatre vidéos YouTube en lead magnet dans mon compte TubeBook et montre-moi le plan. »</em></li>
+    </ol>
+    <h3>Claude Code, Cursor ou Claude Desktop (clé API)</h3>
+    <p>Créez une clé dans l'application sous <strong>Agents &amp; API</strong> (menu du compte). La page vous donne une configuration prête à copier pour chaque outil. Les clés ne s'affichent qu'une fois et peuvent être révoquées à tout moment.</p>
+    <h3>Webhooks</h3>
+    <p>Ajoutez une URL de webhook sur la même page et TubeBook envoie un événement signé <strong>book.completed</strong>, avec les liens de téléchargement, dès qu'un livre est terminé — prêt pour Zapier, Make, n8n ou votre propre serveur.</p>
+    <p>Un assistant connecté ne peut pas modifier votre plan, vos informations de paiement ni vos paramètres. Déconnectez-le à tout moment en révoquant sa clé sous <strong>Agents &amp; API</strong>.</p>
   </div>
 
   <div class="card" id="exports">

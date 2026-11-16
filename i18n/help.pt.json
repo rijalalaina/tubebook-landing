@@ -437,5 +437,18 @@
   "9e61fbef4b": "250 créditos/mês — ≈ 8 lead magnets ou 2 ebooks comerciais, ou qualquer combinação. Todos os tamanhos de livro, arquivos KDP, traduções e audiobooks.",
   "1cf5e00fea": "1.000 créditos/mês — ≈ 33 lead magnets ou 10 ebooks comerciais, ou qualquer combinação. Todos os tamanhos de livro, arquivos KDP, traduções e audiobooks.",
   "a51c38e055": "<strong>Arquivos de publicação</strong> — miolo de brochura e capa completa prontos para impressão, capa Kindle, capa HD e pacote de metadados KDP. A capa HD e o pacote de metadados estão em todos os planos; os arquivos de brochura e Kindle exigem uma compra.",
-  "9a0da03cef": "Calculadora KDP"
+  "9a0da03cef": "Calculadora KDP",
+  "d921d5f20c": "Claude, ChatGPT &amp; agentes de IA",
+  "4c767d6716": "Use o TubeBook no Claude, no ChatGPT ou no seu agente de IA",
+  "0f86b6e827": "O TubeBook é um servidor MCP, então um assistente de IA pode pesquisar temas, criar livros, mostrar o sumário, ler o manuscrito e buscar os arquivos para você. Ele usa seus créditos exatamente como o app e exige uma conta que já tenha feito uma compra.",
+  "a82e24a956": "Claude ou ChatGPT (um clique)",
+  "e360231fdd": "No Claude, abra <strong>Configurações → Conectores → Adicionar conector personalizado</strong>. No ChatGPT, abra <strong>Configurações → Apps &amp; Conectores</strong> e crie um conector (modo desenvolvedor).",
+  "99672ebdeb": "Cole <strong>https://app.tubebook.org/mcp</strong> e clique em <strong>Conectar</strong>.",
+  "d3090381fd": "Uma página do TubeBook abre: faça login se for pedido e clique em <strong>Permitir</strong>.",
+  "07329c1ae4": "Peça, por exemplo: <em>“Transforme estes quatro vídeos do YouTube em um lead magnet na minha conta do TubeBook e mostre o sumário.”</em>",
+  "7faec863d6": "Claude Code, Cursor ou Claude Desktop (chave de API)",
+  "ed213282df": "Crie uma chave no app em <strong>Agents &amp; API</strong> (menu da conta). A página traz uma configuração pronta para copiar para cada ferramenta. As chaves são exibidas uma única vez e podem ser revogadas a qualquer momento.",
+  "fdfe2da709": "Webhooks",
+  "3c1bc6185c": "Adicione uma URL de webhook na mesma página e o TubeBook envia um evento assinado <strong>book.completed</strong>, com links de download, assim que um livro fica pronto — pronto para Zapier, Make, n8n ou seu próprio servidor.",
+  "f6fa3e884e": "Um assistente conectado não pode alterar seu plano, seus dados de pagamento nem suas configurações. Desconecte-o quando quiser revogando a chave em <strong>Agents &amp; API</strong>."
 }

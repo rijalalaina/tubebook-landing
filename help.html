@@ -182,6 +182,7 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 
     <a href="#find-a-topic">Find a topic</a>
     <a href="#credits">Credits &amp; pricing</a>
     <a href="#byok">Bring your own key</a>
+    <a href="#ai-agents">Claude, ChatGPT &amp; AI agents</a>
     <a href="#exports">Exports &amp; formats</a>
     <a href="#publishing-risk">Publishing-risk check</a>
     <a href="#troubleshooting">Troubleshooting</a>
@@ -657,6 +658,23 @@ footer { background: var(--bg2); border-top: 0.5mm solid var(--amber); padding: 
       <li>Up to 30 books per calendar month (the count resets on the 1st) and 25 sources per book.</li>
     </ul>
     <p>You can move between BYOK and credit plans at any time from the Billing page. Full details are in the <a href="terms.html#byok">Terms</a>.</p>
+  </div>
+
+  <div class="card" id="ai-agents">
+    <h2>Use TubeBook from Claude, ChatGPT or your AI agent <span class="pill">New</span></h2>
+    <p>TubeBook is an MCP server, so an AI assistant can research topics, create books, show you the outline, read the manuscript and fetch the files for you. It uses your credits exactly as the app does, and it needs an account that has made a purchase.</p>
+    <h3>Claude or ChatGPT (one click)</h3>
+    <ol>
+      <li>In Claude, open <strong>Settings → Connectors → Add custom connector</strong>. In ChatGPT, open <strong>Settings → Apps &amp; Connectors</strong> and create a connector (developer mode).</li>
+      <li>Paste <strong>https://app.tubebook.org/mcp</strong> and click <strong>Connect</strong>.</li>
+      <li>A TubeBook page opens: sign in if asked, then click <strong>Allow</strong>.</li>
+      <li>Ask, for example: <em>“Turn these four YouTube videos into a lead magnet in my TubeBook account and show me the outline.”</em></li>
+    </ol>
+    <h3>Claude Code, Cursor or Claude Desktop (API key)</h3>
+    <p>Create a key in the app under <strong>Agents &amp; API</strong> (account menu). The page gives you a ready-to-copy setup for each tool. Keys are shown once and can be revoked at any time.</p>
+    <h3>Webhooks</h3>
+    <p>Add a webhook URL on the same page and TubeBook sends a signed <strong>book.completed</strong> event, with download links, the moment a book finishes — ready for Zapier, Make, n8n or your own server.</p>
+    <p>A connected assistant cannot change your plan, payment details or settings. Disconnect it at any time by revoking its key under <strong>Agents &amp; API</strong>.</p>
   </div>
 
   <div class="card" id="exports">

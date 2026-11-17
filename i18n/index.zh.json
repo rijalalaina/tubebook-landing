@@ -140,7 +140,6 @@
   "22ea93e1c1": "简单的积分定价",
   "75f527181b": "免费",
   "4f5ec2b19a": "热门主题看板——免费浏览",
-  "1cbed205be": "任意长度：引流磁铁、短书或完整书籍",
   "df8edcbfc0": "每本电子书最多25个来源",
   "c4ce7e36f1": "主题研究（每个细分市场5积分）",
   "cb1a4409ed": "大纲审核 + 批准",
@@ -334,5 +333,6 @@
   "9a0da03cef": "KDP 计算器",
   "89c3d0a999": "支持 Claude、ChatGPT &amp; AI 代理",
   "f51c118ebe": "<strong>一键将 TubeBook 连接到 Claude 或 ChatGPT</strong>，或用密钥连接到 Cursor 和 Claude Code。然后只需说：“把这五个视频做成一个 lead magnet”。你的助手会研究主题、创建书籍、展示大纲并获取文件。书籍完成时，<strong>Webhook</strong> 会通知 Zapier、Make 或 n8n。适用于付费账户。",
-  "64ec8dc538": "如何连接"
+  "64ec8dc538": "如何连接",
+  "eb121556c2": "PDF、EPUB、DOCX &amp; PPTX 导出，配图、编辑和质量工具"
 }

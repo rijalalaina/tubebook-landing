@@ -143,7 +143,6 @@
   "22ea93e1c1": "Tarification simple à base de crédits",
   "75f527181b": "Gratuit",
   "4f5ec2b19a": "Tableaux de sujets tendance — consultation gratuite",
-  "1cbed205be": "Toute longueur : aimant à prospects, petit livre ou livre complet",
   "df8edcbfc0": "Jusqu'à 25 sources par ebook",
   "c4ce7e36f1": "Recherche de sujet (5 crédits par niche)",
   "cb1a4409ed": "Révision et approbation du plan",
@@ -334,5 +333,6 @@
   "9a0da03cef": "Calculateur KDP",
   "89c3d0a999": "Fonctionne avec Claude, ChatGPT &amp; les agents IA",
   "f51c118ebe": "Connectez TubeBook à <strong>Claude ou ChatGPT en un clic</strong>, ou à Cursor et Claude Code avec une clé. Ensuite, demandez simplement : « transforme ces cinq vidéos en lead magnet ». Votre assistant étudie le sujet, crée le livre, vous montre le plan et récupère les fichiers. Des <strong>webhooks</strong> préviennent Zapier, Make ou n8n quand un livre est terminé. Sur les comptes payants.",
-  "64ec8dc538": "Comment se connecter"
+  "64ec8dc538": "Comment se connecter",
+  "eb121556c2": "Exports PDF, EPUB, DOCX &amp; PPTX, illustrations, outils d'édition et de qualité"
 }

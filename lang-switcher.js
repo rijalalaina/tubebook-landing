@@ -82,6 +82,58 @@
   wrap.appendChild(select);
   nav.appendChild(wrap);
 
+  // ── Phone menu ─────────────────────────────────────────────────────────
+  // Below 760px every page hides .nav-links (and below 1100px this script
+  // does too, for tablets), and with it this language
+  // picker, so a phone visitor had neither the section links nor a way to
+  // change language. A menu button reveals the same links as a drop-down
+  // under the fixed header. Styles travel with the script, like the picker's.
+  var bar = nav.parentElement;
+  var btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "nav-menu-btn";
+  btn.setAttribute("aria-label", "Menu");
+  btn.setAttribute("aria-expanded", "false");
+  btn.innerHTML =
+    '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>';
+  var cta = bar.querySelector(".nav-cta");
+  bar.insertBefore(btn, cta ? cta.nextSibling : null);
+  function setOpen(open) {
+    bar.classList.toggle("nav-open", open);
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+  btn.addEventListener("click", function () { setOpen(!bar.classList.contains("nav-open")); });
+  nav.addEventListener("click", function (e) { if (e.target.closest("a")) setOpen(false); });
+
+  var css = document.createElement("style");
+  css.textContent =
+    ".nav-menu-btn{display:none;background:transparent;border:1px solid var(--border2,rgba(255,255,255,0.12));" +
+    "color:var(--text,#f0eee8);border-radius:8px;width:40px;height:40px;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;}" +
+    // 1100px, not the pages' own 760px: on a tablet (768-1024px) the full row
+    // of links does not fit beside the logo and button, and wrapped "How it
+    // works" onto three lines while pushing "Start Free" off the screen.
+    "@media(max-width:1100px){" +
+    "nav .nav-links{display:none;}" +
+    ".nav-menu-btn{display:inline-flex;margin-inline-start:0.5rem;}" +
+    "nav.nav-open .nav-links{display:flex!important;flex-direction:column;align-items:flex-start;gap:1.1rem;" +
+    "position:absolute;top:100%;left:0;right:0;padding:1.2rem 1.5rem 1.4rem;" +
+    "background:var(--bg,#08090d);border-bottom:1px solid var(--border2,rgba(255,255,255,0.12));}" +
+    "nav.nav-open .nav-links a{font-size:1rem;}" +
+    "nav .nav-cta{margin-inline-start:auto;}" +
+    "}" +
+    "@media(max-width:420px){" +
+    "nav .nav-logo img{height:34px!important;}" +
+    "nav .nav-cta{padding:0.5rem 0.75rem!important;font-size:0.8rem!important;white-space:nowrap;}" +
+    "}" +
+    // The longest translations ("Kostenlos starten →") need the last pixels.
+    "@media(max-width:430px){" +
+    "nav{padding-left:1rem!important;padding-right:1rem!important;}" +
+    "nav .nav-logo img{height:28px!important;}" +
+    "nav .nav-cta{font-size:0.76rem!important;padding:0.45rem 0.6rem!important;}" +
+    ".nav-menu-btn{width:36px;height:36px;margin-inline-start:0.4rem;}" +
+    "}";
+  document.head.appendChild(css);
+
   // Renew the cookie for the page actually being read, so arriving on /de/
   // from a search result is itself a choice the app will honour.
   remember(current);

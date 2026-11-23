@@ -41,13 +41,109 @@ var PROMO_ENDPOINT = 'https://app.tubebook.org/api/public/promo';
     for (var i = 0; i < nodes.length; i++) nodes[i].style.display = 'none';
   }
 
+  // ── Sales (Admin → Promotions) ──────────────────────────────────────────
+  // An automatic sale, when one is running, replaces the free-credit banner
+  // and shows the sale price on the pricing cards. The app applies the real
+  // discount at checkout; this only announces it, with the same rules:
+  // founding prices are never discounted.
+  var SALE_TEXT = {
+    en: ['{name}: {p}% off all plans', 'Monthly plans: first {m} months. Yearly plans: first year. Until {d}.', 'See prices', '{p}% off your first {m} months', '{p}% off your first year'],
+    fr: ['{name} : -{p} % sur toutes les formules', 'Mensuel : vos {m} premiers mois. Annuel : votre première année. Jusqu’au {d}.', 'Voir les prix', '-{p} % sur vos {m} premiers mois', '-{p} % sur votre première année'],
+    es: ['{name}: {p} % de descuento en todos los planes', 'Mensual: primeros {m} meses. Anual: primer año. Hasta el {d}.', 'Ver precios', '{p} % de descuento en tus primeros {m} meses', '{p} % de descuento en tu primer año'],
+    pt: ['{name}: {p}% de desconto em todos os planos', 'Mensal: primeiros {m} meses. Anual: primeiro ano. Até {d}.', 'Ver preços', '{p}% de desconto nos primeiros {m} meses', '{p}% de desconto no primeiro ano'],
+    de: ['{name}: {p} % Rabatt auf alle Pläne', 'Monatlich: erste {m} Monate. Jährlich: erstes Jahr. Bis {d}.', 'Preise ansehen', '{p} % Rabatt auf Ihre ersten {m} Monate', '{p} % Rabatt auf Ihr erstes Jahr'],
+    ru: ['{name}: скидка {p}% на все планы', 'Ежемесячно: первые {m} мес. Ежегодно: первый год. До {d}.', 'Смотреть цены', 'Скидка {p}% на первые {m} мес.', 'Скидка {p}% на первый год'],
+    zh: ['{name}：全部方案减 {p}%', '月付：前 {m} 个月。年付：首年。截止 {d}。', '查看价格', '前 {m} 个月减 {p}%', '首年减 {p}%'],
+    ar: ['{name}: خصم {p}% على جميع الخطط', 'الشهري: أول {m} أشهر. السنوي: السنة الأولى. حتى {d}.', 'عرض الأسعار', 'خصم {p}% على أول {m} أشهر', 'خصم {p}% على السنة الأولى'],
+  };
+
+  function saleText(i, sale) {
+    var lang = (document.documentElement.lang || 'en').slice(0, 2);
+    var tpl = (SALE_TEXT[lang] || SALE_TEXT.en)[i];
+    var d = new Date(sale.endsAt).toLocaleString(lang, { timeZone: 'UTC', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' }) + ' GMT';
+    return tpl.replace('{name}', sale.name).replace('{p}', sale.percentOff).replace('{m}', sale.monthlyMonths).replace('{d}', d);
+  }
+
+  // The pricing section of the page in the visitor's language.
+  function pricingHref() {
+    if (document.getElementById('pricing')) return '#pricing';
+    var lang = (document.documentElement.lang || 'en').slice(0, 2);
+    return (lang === 'en' ? '/' : '/' + lang + '/') + '#pricing';
+  }
+
+  function escapeHtml(t) {
+    return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; });
+  }
+
+  // Sale price on each card. Each card has a monthly and a yearly price
+  // element (data-period); the Monthly/Yearly switch shows one of them.
+  function applySaleToCards(sale) {
+    var lang = (document.documentElement.lang || 'en').slice(0, 2);
+    var prices = document.querySelectorAll('#pricing .plan-price[data-period]');
+    for (var i = 0; i < prices.length; i++) {
+      var el = prices[i];
+      var yearly = el.getAttribute('data-period') === 'yearly';
+      var byok = !!el.closest('#byok');
+      if (yearly ? !sale.appliesYearly : !sale.appliesMonthly) continue;
+      if (byok && !sale.appliesByok) continue;
+      var node = null;
+      for (var j = 0; j < el.childNodes.length; j++) {
+        if (el.childNodes[j].nodeType === 3 && /\d/.test(el.childNodes[j].nodeValue)) node = el.childNodes[j];
+      }
+      if (!node) continue;
+      var was = parseFloat(node.nodeValue.replace(/[^0-9.]/g, ''));
+      if (!was) continue;
+      var now = Math.round(was * (100 - sale.percentOff)) / 100;
+      node.nodeValue = now.toLocaleString(lang, { minimumFractionDigits: now % 1 ? 2 : 0, maximumFractionDigits: 2 });
+      var s = document.createElement('s');
+      s.className = 'tb-was';
+      s.textContent = ' $' + was;
+      el.appendChild(s);
+      var note = document.createElement('div');
+      note.className = 'tb-sale-note';
+      note.setAttribute('data-period', el.getAttribute('data-period'));
+      note.textContent = saleText(yearly ? 4 : 3, sale);
+      el.parentNode.insertBefore(note, el.nextSibling);
+    }
+    var style = document.createElement('style');
+    style.textContent =
+      '.tb-was{font-family:Outfit,sans-serif;font-size:1rem;font-weight:400;color:#7b7d8a;margin-inline-start:0.5rem;}' +
+      '.tb-sale-note{font-size:0.8rem;font-weight:700;color:#ff9542;margin:-0.1rem 0 0.4rem;}' +
+      '#pricing[data-billing="monthly"] .tb-sale-note[data-period="yearly"],#pricing[data-billing="yearly"] .tb-sale-note[data-period="monthly"]{display:none;}';
+    document.head.appendChild(style);
+  }
+
   function render(promo) {
+    if (promo && promo.sale) {
+      hideStaticPromoCopy();
+      applySaleToCards(promo.sale);
+      var saleVersion = 'sale-' + promo.sale.name + '-' + promo.sale.endsAt;
+      try {
+        if (localStorage.getItem(KEY) === saleVersion) return;
+      } catch (e) {}
+      VERSION = saleVersion;
+      showBar(
+        '<span><strong>' + escapeHtml(saleText(0, promo.sale)) + '</strong> — ' + escapeHtml(saleText(1, promo.sale)) + '</span>' +
+          '<a class="tb-promo-cta" href="' + pricingHref() + '">' + escapeHtml(saleText(2, promo.sale)) + '</a>',
+        promo.sale.name,
+      );
+      return;
+    }
     if (!promo || !promo.enabled) {
       hideStaticPromoCopy();
       return;
     }
     if (dismissed()) return;
+    showBar(
+      '<span><strong>' + promo.credits + ' free credits every month</strong>' +
+        ' — every feature included, no credit card required.</span>' +
+        '<a class="tb-promo-cta" href="https://app.tubebook.org/signup' +
+        '?utm_source=site&utm_medium=promo_banner">Start free</a>',
+      'Free monthly credits',
+    );
+  }
 
+  function showBar(inner, label) {
     var style = document.createElement('style');
     style.textContent = [
       '.tb-promo{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;',
@@ -75,13 +171,8 @@ var PROMO_ENDPOINT = 'https://app.tubebook.org/api/public/promo';
     var bar = document.createElement('div');
     bar.className = 'tb-promo';
     bar.setAttribute('role', 'region');
-    bar.setAttribute('aria-label', 'Free monthly credits');
-    bar.innerHTML =
-      '<span><strong>' + promo.credits + ' free credits every month</strong>' +
-        ' — every feature included, no credit card required.</span>' +
-      '<a class="tb-promo-cta" href="https://app.tubebook.org/signup' +
-        '?utm_source=site&utm_medium=promo_banner">Start free</a>' +
-      '<button type="button" aria-label="Dismiss">&times;</button>';
+    bar.setAttribute('aria-label', label);
+    bar.innerHTML = inner + '<button type="button" aria-label="Dismiss">&times;</button>';
 
     document.body.insertBefore(bar, document.body.firstChild);
     document.documentElement.classList.add('tb-promo-on');

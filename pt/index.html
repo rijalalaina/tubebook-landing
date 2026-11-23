@@ -225,6 +225,13 @@ section{padding:6rem 4rem;}
 .plan-price{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:900;line-height:1;margin-bottom:0.3rem;}
 .plan-price sup{font-size:1.2rem;vertical-align:super;font-family:'Outfit',sans-serif;font-weight:600;}
 .plan-price .per{font-family:'Outfit',sans-serif;font-size:0.9rem;font-weight:400;color:var(--muted);}
+.billing-switch{display:inline-flex;gap:0.25rem;padding:0.3rem;margin-top:1.6rem;border:1px solid var(--border2);border-radius:999px;background:rgba(255,255,255,0.04);}
+.billing-switch button{font:inherit;font-size:0.9rem;font-weight:600;padding:0.5rem 1.15rem;border:0;border-radius:999px;background:transparent;color:var(--muted2, #aaa);cursor:pointer;display:inline-flex;align-items:center;gap:0.45rem;}
+.billing-switch button[aria-pressed="true"]{background:var(--amber);color:#fff;}
+.billing-switch .bs-save{font-size:0.72rem;font-weight:700;padding:0.12rem 0.5rem;border-radius:999px;background:rgba(46,204,113,0.16);color:var(--green);}
+.billing-switch button[aria-pressed="true"] .bs-save{background:rgba(255,255,255,0.22);color:#fff;}
+.plan-yearly-note{font-size:0.8rem;color:var(--muted2, #aaa);margin:-0.1rem 0 0.4rem;}
+#pricing[data-billing="monthly"] [data-period="yearly"],#pricing[data-billing="yearly"] [data-period="monthly"]{display:none;}
 .plan-target{font-size:0.78rem;font-weight:600;color:var(--amber);margin:0.5rem 0;}
 .plan-desc{font-size:0.84rem;color:var(--muted2);margin:0.6rem 0 1.2rem;line-height:1.5;}
 .plan-divider{height:1px;background:var(--border);margin:1.2rem 0;}
@@ -734,12 +741,18 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
 </section>
 
 <!-- PRICING -->
-<section class="pricing" id="pricing">
+<section class="pricing" id="pricing" data-billing="monthly">
   <div class="pricing-inner">
     <div class="fade-in-up">
       <span class="section-label">Preços</span>
       <h2 class="section-title">Preço simples baseado em créditos</h2>
       <p class="section-sub" style="margin:0 auto;">Todos os planos funcionam com créditos — um lead magnet usa 30, um livro curto 60, um livro comercial completo 100, e cada fonte além da primeira adiciona 8. Pesquisa de tópico custa <strong>5 créditos</strong> por nicho, e reabrir o mesmo nicho em 14 dias é grátis. Um lead magnet com 5 fontes custa 30 + 4 &times; 8 = <strong>62 créditos</strong>. Todos os planos incluem pesquisa de tópico, livros com múltiplas fontes, modos de fidelidade, estilos de escrita, revisão e aprovação do sumário e o kit de metadados KDP. Planos mensais recarregam créditos automaticamente.</p>
+      <div style="text-align:center;">
+        <div class="billing-switch" role="group" aria-label="Período de cobrança">
+          <button type="button" data-set-billing="monthly" aria-pressed="true">Mensal</button>
+          <button type="button" data-set-billing="yearly" aria-pressed="false">Anual <span class="bs-save">2 meses grátis</span></button>
+        </div>
+      </div>
     </div>
     <div class="pricing-grid fade-in-up">
       <div class="plan-card">
@@ -762,7 +775,9 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
       </div>
       <div class="plan-card">
         <div class="plan-name">Iniciante</div>
-        <div class="plan-price"><sup>$</sup>9<span class="per">/mês</span></div>
+        <div class="plan-price" data-period="monthly"><sup>$</sup>9<span class="per">/mês</span></div>
+        <div class="plan-price" data-period="yearly"><sup>$</sup>90<span class="per">/ano</span></div>
+        <div class="plan-yearly-note" data-period="yearly">$7,50/mês, cobrado anualmente · 2 meses grátis</div>
         <div class="plan-target">250 créditos/mês</div>
         <p class="plan-desc">Para criadores que transformam conteúdo em iscas digitais, guias rápidos e whitepapers regularmente.</p>
         <div class="plan-divider"></div>
@@ -781,7 +796,9 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
       <div class="plan-card popular">
         <div class="popular-badge">Mais Popular</div>
         <div class="plan-name">Pro</div>
-        <div class="plan-price"><sup>$</sup>29<span class="per">/mês</span></div>
+        <div class="plan-price" data-period="monthly"><sup>$</sup>29<span class="per">/mês</span></div>
+        <div class="plan-price" data-period="yearly"><sup>$</sup>290<span class="per">/ano</span></div>
+        <div class="plan-yearly-note" data-period="yearly">$24,17/mês, cobrado anualmente · 2 meses grátis</div>
         <div class="plan-target">1.000 créditos/mês</div>
         <p class="plan-desc">Para criadores sérios que publicam ebooks completos à venda na KDP, Gumroad ou em seu próprio site.</p>
         <div class="plan-divider"></div>
@@ -800,7 +817,9 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
       </div>
       <div class="plan-card">
         <div class="plan-name">Pro Audio</div>
-        <div class="plan-price"><sup>$</sup>49<span class="per">/mês</span></div>
+        <div class="plan-price" data-period="monthly"><sup>$</sup>49<span class="per">/mês</span></div>
+        <div class="plan-price" data-period="yearly"><sup>$</sup>490<span class="per">/ano</span></div>
+        <div class="plan-yearly-note" data-period="yearly">$40,83/mês, cobrado anualmente · 2 meses grátis</div>
         <div class="plan-target">1.000 créditos + 900 créditos de áudio/mês</div>
         <p class="plan-desc">Para editoras que lançam o audiolivro junto com o livro. Um narrador custa US$ 200&ndash;500 por hora finalizada; três audiolivros comerciais por mês são aproximadamente oito horas de narração. Narra apenas ocasionalmente? Compre um pacote de créditos de áudio &mdash; sem necessidade de assinatura.</p>
         <div class="plan-divider"></div>
@@ -818,7 +837,7 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
       </div>
     </div>
     <p style="text-align:center;margin-top:2rem;font-size:0.84rem;color:var(--muted);">
-      Cancele quando quiser · Cobrança anual disponível: Starter US$ 90/ano, Pro US$ 290/ano, Pro Audio US$ 490/ano · Os créditos do plano são recarregados todo mês em cada ciclo de cobrança, inclusive no anual, e os não usados não se acumulam · Pacotes de créditos nunca expiram · Experimente primeiro com 50 créditos grátis
+      Cancele quando quiser · Planos anuais custam 10 meses e dão 12 meses de créditos · Os créditos do plano são repostos todo mês em todos os ciclos de cobrança, inclusive no anual, e os não usados não acumulam · Pacotes de créditos nunca expiram · Teste primeiro com 50 créditos grátis
     </p>
 
     <!-- BYOK -->
@@ -829,8 +848,10 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
       <div class="packs-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));max-width:760px;margin-left:auto;margin-right:auto;">
         <div class="plan-card">
           <div class="plan-name">BYOK Ebook</div>
-          <div class="plan-price"><sup>$</sup>9<span class="per">/mês</span></div>
-          <div class="plan-target">ou US$ 79/ano · preço de fundador US$ 49/ano para os 100 primeiros</div>
+          <div class="plan-price" data-period="monthly"><sup>$</sup>9<span class="per">/mês</span></div>
+          <div class="plan-price" data-period="yearly"><sup>$</sup>79<span class="per">/ano</span></div>
+          <div class="plan-target" data-period="monthly">ou US$ 79/ano · preço de fundador US$ 49/ano para os 100 primeiros</div>
+          <div class="plan-target" data-period="yearly">Preço de fundador $49/ano para os primeiros 100</div>
           <div class="plan-divider"></div>
           <ul class="plan-features">
             <li><span class="chk">✓</span>Todos os recursos de ebook e formatos de exportação</li>
@@ -841,8 +862,10 @@ footer{background:var(--bg2);border-top:0.5mm solid var(--amber);padding:3.5rem 
         </div>
         <div class="plan-card">
           <div class="plan-name">BYOK Studio</div>
-          <div class="plan-price"><sup>$</sup>15<span class="per">/mês</span></div>
-          <div class="plan-target">ou US$ 129/ano · preço de fundador US$ 99/ano para os 100 primeiros</div>
+          <div class="plan-price" data-period="monthly"><sup>$</sup>15<span class="per">/mês</span></div>
+          <div class="plan-price" data-period="yearly"><sup>$</sup>129<span class="per">/ano</span></div>
+          <div class="plan-target" data-period="monthly">ou US$ 129/ano · preço de fundador US$ 99/ano para os 100 primeiros</div>
+          <div class="plan-target" data-period="yearly">Preço de fundador $99/ano para os primeiros 100</div>
           <div class="plan-divider"></div>
           <ul class="plan-features">
             <li><span class="chk">✓</span>Tudo do BYOK Ebook</li>
@@ -1059,6 +1082,31 @@ document.querySelectorAll('.style-tag').forEach(tag=>{
 // Scroll fade-in
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:0.1});
 document.querySelectorAll('.fade-in-up').forEach(el=>obs.observe(el));
+</script>
+<script>
+// Monthly / Yearly switch on the pricing cards. Both prices are in the page
+// (so both are translated); this only chooses which one shows, and sends the
+// yearly choice to sign-up so the app opens the yearly checkout.
+(function () {
+  var section = document.getElementById("pricing");
+  if (!section) return;
+  var links = section.querySelectorAll('a[href*="/signup?plan="]');
+  function set(period) {
+    section.setAttribute("data-billing", period);
+    section.querySelectorAll("[data-set-billing]").forEach(function (b) {
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-set-billing") === period));
+    });
+    links.forEach(function (a) {
+      var url = new URL(a.href);
+      if (period === "yearly") url.searchParams.set("interval", "yearly");
+      else url.searchParams.delete("interval");
+      a.href = url.toString();
+    });
+  }
+  section.querySelectorAll("[data-set-billing]").forEach(function (b) {
+    b.addEventListener("click", function () { set(b.getAttribute("data-set-billing")); });
+  });
+})();
 </script>
 <script src="/promo-banner.js" defer></script>
 </body>
